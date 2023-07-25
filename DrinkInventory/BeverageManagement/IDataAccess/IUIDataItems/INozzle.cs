@@ -1,0 +1,4 @@
+﻿namespace Jaxis.Inventory.Data
+{
+
+}

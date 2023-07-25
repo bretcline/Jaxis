@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="TimetrackerLinq">
+  <DataContextMoniker Name="/TimetrackerLinqDataContext" />
+  <nestedChildShapes>
+    <classShape Id="76ddf67f-e4a6-4d2e-a2d7-499b2993e9bd" absoluteBounds="5.125, 0.5, 2, 1.4248478190104168">
+      <DataClassMoniker Name="/TimetrackerLinqDataContext/Project" />
+      <nestedChildShapes>
+        <elementListCompartment Id="627f692c-082c-46c8-ba08-df457100bee8" absoluteBounds="5.14, 0.96, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="55f311e3-897a-4bbe-b0ac-94ffad92cc8a" absoluteBounds="5.25, 2.375, 2, 1.75354248046875">
+      <DataClassMoniker Name="/TimetrackerLinqDataContext/TimeEntry" />
+      <nestedChildShapes>
+        <elementListCompartment Id="48db9acd-0ebd-4106-af6f-fab9ab01ce1c" absoluteBounds="5.265, 2.835, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="89d4b453-6e6e-4fcd-83b3-6d3250b32ac7" absoluteBounds="2.875, 4.375, 2, 1.26050048828125">
+      <DataClassMoniker Name="/TimetrackerLinqDataContext/Security" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8ea5b835-a9e0-4257-a890-f330a1dc36ab" absoluteBounds="2.89, 4.835, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ff200798-2c82-43e5-b7ca-2c4e30e8179f" absoluteBounds="5.375, 4.5, 2, 1.26050048828125">
+      <DataClassMoniker Name="/TimetrackerLinqDataContext/UserSession" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f67203a-514f-42a5-b297-20945a53c597" absoluteBounds="5.39, 4.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="08cd5fe9-b57a-4590-b480-842d2c4e1aae" absoluteBounds="0.5, 5, 2, 2.73962646484375">
+      <DataClassMoniker Name="/TimetrackerLinqDataContext/vwTimeEntry" />
+      <nestedChildShapes>
+        <elementListCompartment Id="925f89b3-2e3c-4ff8-876d-b93639f70682" absoluteBounds="0.51500000000000012, 5.46, 1.9700000000000002, 2.17962646484375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="50e692a6-ea82-4b9b-8481-fad47986984c" absoluteBounds="0.5, 0.5, 2, 1.4248478190104168">
+      <DataClassMoniker Name="/TimetrackerLinqDataContext/Group" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5c9618c8-364c-44f3-a8a0-b3d755359c35" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7df353ef-bcc2-4e5f-a8f3-4adc5c0d1862" absoluteBounds="2.875, 0.5, 2, 1.26050048828125">
+      <DataClassMoniker Name="/TimetrackerLinqDataContext/GroupXProject" />
+      <nestedChildShapes>
+        <elementListCompartment Id="17e20dd6-b893-4678-ac5e-33f5fee5df06" absoluteBounds="2.89, 0.96, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="53a7751c-4bd0-49df-8481-59534ec40d53" absoluteBounds="0.5, 3.625, 2, 1.26050048828125">
+      <DataClassMoniker Name="/TimetrackerLinqDataContext/GroupXSecurity" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7df74977-f64a-4206-b309-bc0f7309bfe5" absoluteBounds="0.515, 4.085, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e51a7cf8-bcb7-429d-a02e-59193bd3af52" absoluteBounds="0.75, 2.25, 2, 1.26050048828125">
+      <DataClassMoniker Name="/TimetrackerLinqDataContext/UserXGroup" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cf83bfb1-d8fc-4fbd-8e55-a92b95d059c7" absoluteBounds="0.765, 2.71, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.625 : 1.92484781901042); (1.625 : 2.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TimetrackerLinqDataContext/Group/Group_UserXGroup" />
+      <nodes>
+        <classShapeMoniker Id="50e692a6-ea82-4b9b-8481-fad47986984c" />
+        <classShapeMoniker Id="e51a7cf8-bcb7-429d-a02e-59193bd3af52" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(0.59375 : 1.92484781901042); (0.59375 : 3.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TimetrackerLinqDataContext/Group/Group_GroupXSecurity" />
+      <nodes>
+        <classShapeMoniker Id="50e692a6-ea82-4b9b-8481-fad47986984c" />
+        <classShapeMoniker Id="53a7751c-4bd0-49df-8481-59534ec40d53" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 4.63025024414063); (2.875 : 4.63025024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TimetrackerLinqDataContext/GroupXSecurity/GroupXSecurity_Security" />
+      <nodes>
+        <classShapeMoniker Id="53a7751c-4bd0-49df-8481-59534ec40d53" />
+        <classShapeMoniker Id="89d4b453-6e6e-4fcd-83b3-6d3250b32ac7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 1.13025024414063); (2.875 : 1.13025024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TimetrackerLinqDataContext/Group/Group_GroupXProject" />
+      <nodes>
+        <classShapeMoniker Id="50e692a6-ea82-4b9b-8481-fad47986984c" />
+        <classShapeMoniker Id="7df353ef-bcc2-4e5f-a8f3-4adc5c0d1862" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.875 : 1.13025024414063); (5.125 : 1.13025024414063)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TimetrackerLinqDataContext/GroupXProject/GroupXProject_Project" />
+      <nodes>
+        <classShapeMoniker Id="7df353ef-bcc2-4e5f-a8f3-4adc5c0d1862" />
+        <classShapeMoniker Id="76ddf67f-e4a6-4d2e-a2d7-499b2993e9bd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.1875 : 1.92484781901042); (6.1875 : 2.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TimetrackerLinqDataContext/Project/Project_TimeEntry" />
+      <nodes>
+        <classShapeMoniker Id="76ddf67f-e4a6-4d2e-a2d7-499b2993e9bd" />
+        <classShapeMoniker Id="55f311e3-897a-4bbe-b0ac-94ffad92cc8a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="87c6e0a4-d492-4705-9f7c-b231ed09e465" absoluteBounds="3, 2, 2, 2.0822371419270831">
+      <DataClassMoniker Name="/TimetrackerLinqDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3c386cd2-a114-41d1-a46f-390708dd36ae" absoluteBounds="3.015, 2.46, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5 : 3.22861857096354); (5.25 : 3.22861857096354)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TimetrackerLinqDataContext/User/User_TimeEntry" />
+      <nodes>
+        <classShapeMoniker Id="87c6e0a4-d492-4705-9f7c-b231ed09e465" />
+        <classShapeMoniker Id="55f311e3-897a-4bbe-b0ac-94ffad92cc8a" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5 : 4.08223714192708); (5.375 : 4.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/TimetrackerLinqDataContext/User/User_UserSession" />
+      <nodes>
+        <classShapeMoniker Id="87c6e0a4-d492-4705-9f7c-b231ed09e465" />
+        <classShapeMoniker Id="ff200798-2c82-43e5-b7ca-2c4e30e8179f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3 : 2.88025024414063); (2.75 : 2.88025024414063)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TimetrackerLinqDataContext/User/User_UserXGroup" />
+      <nodes>
+        <classShapeMoniker Id="87c6e0a4-d492-4705-9f7c-b231ed09e465" />
+        <classShapeMoniker Id="e51a7cf8-bcb7-429d-a02e-59193bd3af52" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

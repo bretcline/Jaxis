@@ -1,0 +1,342 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="ExtensionAttributeList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ExtensionAttribute" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="description" type="xs:string" />
+            <xs:attribute name="status" type="xs:string" />
+            <xs:attribute name="extnTable" type="xs:string" />
+            <xs:attribute name="attribute1" type="xs:string" />
+            <xs:attribute name="attribute2" type="xs:string" />
+            <xs:attribute name="attribute3" type="xs:string" />
+            <xs:attribute name="attribute4" type="xs:string" />
+            <xs:attribute name="attribute5" type="xs:string" />
+            <xs:attribute name="attribute6" type="xs:string" />
+            <xs:attribute name="attribute7" type="xs:string" />
+            <xs:attribute name="attribute8" type="xs:string" />
+            <xs:attribute name="attribute9" type="xs:string" />
+            <xs:attribute name="attribute10" type="xs:string" />
+            <xs:attribute name="attribute11" type="xs:string" />
+            <xs:attribute name="attribute12" type="xs:string" />
+            <xs:attribute name="attribute13" type="xs:string" />
+            <xs:attribute name="attribute14" type="xs:string" />
+            <xs:attribute name="attribute15" type="xs:string" />
+            <xs:attribute name="attribute16" type="xs:string" />
+            <xs:attribute name="attribute17" type="xs:string" />
+            <xs:attribute name="attribute18" type="xs:string" />
+            <xs:attribute name="attribute19" type="xs:string" />
+            <xs:attribute name="attribute20" type="xs:string" />
+            <xs:attribute name="dateAttribute1" type="xs:string" />
+            <xs:attribute name="dateAttribute2" type="xs:string" />
+            <xs:attribute name="dateAttribute3" type="xs:string" />
+            <xs:attribute name="dateAttribute4" type="xs:string" />
+            <xs:attribute name="dateAttribute5" type="xs:string" />
+            <xs:attribute name="numberAttribute1" type="xs:string" />
+            <xs:attribute name="numberAttribute2" type="xs:string" />
+            <xs:attribute name="numberAttribute3" type="xs:string" />
+            <xs:attribute name="numberAttribute4" type="xs:string" />
+            <xs:attribute name="numberAttribute5" type="xs:string" />
+            <xs:attribute name="fieldName" type="xs:string" />
+            <xs:attribute name="groupName" type="xs:string" />
+            <xs:attribute name="fieldType" type="xs:string" />
+            <xs:attribute name="fieldFormat" type="xs:string" />
+            <xs:attribute name="defaultValue" type="xs:string" />
+            <xs:attribute name="valueLength" type="xs:string" />
+            <xs:attribute name="ordinal" type="xs:string" />
+            <xs:attribute name="mapTo" type="xs:string" />
+            <xs:attribute name="displayName" type="xs:string" />
+            <xs:attribute name="displayFormat" type="xs:string" />
+            <xs:attribute name="dataSearchable" type="xs:string" />
+            <xs:attribute name="temporal" type="xs:string" />
+            <xs:attribute name="required" type="xs:string" />
+            <xs:attribute name="visible" type="xs:string" />
+            <xs:attribute name="isKeyField" type="xs:string" />
+            <xs:attribute name="auditTrail" type="xs:string" />
+            <xs:attribute name="validationRule" type="xs:string" />
+            <xs:attribute name="communal" type="xs:string" />
+            <xs:attribute name="mandatory" type="xs:string" />
+            <xs:attribute name="tooltip" type="xs:string" />
+            <xs:attribute name="minLength" type="xs:string" />
+            <xs:attribute name="errorMessage" type="xs:string" />
+            <xs:attribute name="actionScript" type="xs:string" />
+            <xs:attribute name="uiComponenet" type="xs:string" />
+            <xs:attribute name="tooltipValue" type="xs:string" />
+            <xs:attribute name="discreteValue" type="xs:string" />
+            <xs:attribute name="displayMessage" type="xs:string" />
+            <xs:attribute name="valueType" type="xs:string" />
+            <xs:attribute name="valuePackage" type="xs:string" />
+            <xs:attribute name="valueMethod" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EntityConfiguration">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="RuleList" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Rule" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="ruleName" type="xs:string" />
+                  <xs:attribute name="saasOrg" type="xs:string" />
+                  <xs:attribute name="ruleSetName" type="xs:string" />
+                  <xs:attribute name="language" type="xs:string" />
+                  <xs:attribute name="type" type="xs:string" />
+                  <xs:attribute name="description" type="xs:string" />
+                  <xs:attribute name="class" type="xs:string" />
+                  <xs:attribute name="method" type="xs:string" />
+                  <xs:attribute name="errorMessage" type="xs:string" />
+                  <xs:attribute name="failIfNull" type="xs:string" />
+                  <xs:attribute name="stopIfFail" type="xs:string" />
+                  <xs:attribute name="continueIfNull" type="xs:string" />
+                  <xs:attribute name="onCreate" type="xs:string" />
+                  <xs:attribute name="onSave" type="xs:string" />
+                  <xs:attribute name="onUpdate" type="xs:string" />
+                  <xs:attribute name="onDelete" type="xs:string" />
+                  <xs:attribute name="onSend" type="xs:string" />
+                  <xs:attribute name="onReceive" type="xs:string" />
+                  <xs:attribute name="negate" type="xs:string" />
+                  <xs:attribute name="global" type="xs:string" />
+                  <xs:attribute name="document" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MaterialTypeList" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaterialType" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="EntityPermissionList" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+                    <xs:element name="ValidationList" type="xs:string" minOccurs="0" msdata:Ordinal="2" />
+                    <xs:element ref="ExtensionAttributeList" minOccurs="0" maxOccurs="unbounded" />
+                  </xs:sequence>
+                  <xs:attribute name="description" type="xs:string" />
+                  <xs:attribute name="status" type="xs:string" />
+                  <xs:attribute name="extnTable" type="xs:string" />
+                  <xs:attribute name="saasOrg" type="xs:string" />
+                  <xs:attribute name="attribute1" type="xs:string" />
+                  <xs:attribute name="attribute2" type="xs:string" />
+                  <xs:attribute name="attribute3" type="xs:string" />
+                  <xs:attribute name="attribute4" type="xs:string" />
+                  <xs:attribute name="attribute5" type="xs:string" />
+                  <xs:attribute name="attribute6" type="xs:string" />
+                  <xs:attribute name="attribute7" type="xs:string" />
+                  <xs:attribute name="attribute8" type="xs:string" />
+                  <xs:attribute name="attribute9" type="xs:string" />
+                  <xs:attribute name="attribute10" type="xs:string" />
+                  <xs:attribute name="attribute11" type="xs:string" />
+                  <xs:attribute name="attribute12" type="xs:string" />
+                  <xs:attribute name="attribute13" type="xs:string" />
+                  <xs:attribute name="attribute14" type="xs:string" />
+                  <xs:attribute name="attribute15" type="xs:string" />
+                  <xs:attribute name="attribute16" type="xs:string" />
+                  <xs:attribute name="attribute17" type="xs:string" />
+                  <xs:attribute name="attribute18" type="xs:string" />
+                  <xs:attribute name="attribute19" type="xs:string" />
+                  <xs:attribute name="attribute20" type="xs:string" />
+                  <xs:attribute name="dateAttribute1" type="xs:string" />
+                  <xs:attribute name="dateAttribute2" type="xs:string" />
+                  <xs:attribute name="dateAttribute3" type="xs:string" />
+                  <xs:attribute name="dateAttribute4" type="xs:string" />
+                  <xs:attribute name="dateAttribute5" type="xs:string" />
+                  <xs:attribute name="numberAttribute1" type="xs:string" />
+                  <xs:attribute name="numberAttribute2" type="xs:string" />
+                  <xs:attribute name="numberAttribute3" type="xs:string" />
+                  <xs:attribute name="numberAttribute4" type="xs:string" />
+                  <xs:attribute name="numberAttribute5" type="xs:string" />
+                  <xs:attribute name="ImageName" type="xs:string" />
+                  <xs:attribute name="ImageData" type="xs:string" />
+                  <xs:attribute name="root" type="xs:string" />
+                  <xs:attribute name="parent" type="xs:string" />
+                  <xs:attribute name="levelToRoot" type="xs:string" />
+                  <xs:attribute name="headerTable" type="xs:string" />
+                  <xs:attribute name="trackable" type="xs:string" />
+                  <xs:attribute name="materialType" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="MaterialList" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Material" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="ExtensionAttributeValueList" type="xs:string" minOccurs="0" msdata:Ordinal="0" />
+                    <xs:element name="MaterialSchemeList" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+                    <xs:element name="MaterialPackagingList" type="xs:string" minOccurs="0" msdata:Ordinal="2" />
+                    <xs:element name="EntityPermissionList" type="xs:string" minOccurs="0" msdata:Ordinal="3" />
+                  </xs:sequence>
+                  <xs:attribute name="description" type="xs:string" />
+                  <xs:attribute name="status" type="xs:string" />
+                  <xs:attribute name="extnTable" type="xs:string" />
+                  <xs:attribute name="saasOrg" type="xs:string" />
+                  <xs:attribute name="attribute1" type="xs:string" />
+                  <xs:attribute name="attribute2" type="xs:string" />
+                  <xs:attribute name="attribute3" type="xs:string" />
+                  <xs:attribute name="attribute4" type="xs:string" />
+                  <xs:attribute name="attribute5" type="xs:string" />
+                  <xs:attribute name="attribute6" type="xs:string" />
+                  <xs:attribute name="attribute7" type="xs:string" />
+                  <xs:attribute name="attribute8" type="xs:string" />
+                  <xs:attribute name="attribute9" type="xs:string" />
+                  <xs:attribute name="attribute10" type="xs:string" />
+                  <xs:attribute name="attribute11" type="xs:string" />
+                  <xs:attribute name="attribute12" type="xs:string" />
+                  <xs:attribute name="attribute13" type="xs:string" />
+                  <xs:attribute name="attribute14" type="xs:string" />
+                  <xs:attribute name="attribute15" type="xs:string" />
+                  <xs:attribute name="attribute16" type="xs:string" />
+                  <xs:attribute name="attribute17" type="xs:string" />
+                  <xs:attribute name="attribute18" type="xs:string" />
+                  <xs:attribute name="attribute19" type="xs:string" />
+                  <xs:attribute name="attribute20" type="xs:string" />
+                  <xs:attribute name="dateAttribute1" type="xs:string" />
+                  <xs:attribute name="dateAttribute2" type="xs:string" />
+                  <xs:attribute name="dateAttribute3" type="xs:string" />
+                  <xs:attribute name="dateAttribute4" type="xs:string" />
+                  <xs:attribute name="dateAttribute5" type="xs:string" />
+                  <xs:attribute name="numberAttribute1" type="xs:string" />
+                  <xs:attribute name="numberAttribute2" type="xs:string" />
+                  <xs:attribute name="numberAttribute3" type="xs:string" />
+                  <xs:attribute name="numberAttribute4" type="xs:string" />
+                  <xs:attribute name="numberAttribute5" type="xs:string" />
+                  <xs:attribute name="ImageName" type="xs:string" />
+                  <xs:attribute name="ImageData" type="xs:image" />
+                  <xs:attribute name="materialNumber" type="xs:string" />
+                  <xs:attribute name="shortDescription" type="xs:string" />
+                  <xs:attribute name="manufacturer" type="xs:string" />
+                  <xs:attribute name="model" type="xs:string" />
+                  <xs:attribute name="height" type="xs:string" />
+                  <xs:attribute name="width" type="xs:string" />
+                  <xs:attribute name="depth" type="xs:string" />
+                  <xs:attribute name="weight" type="xs:string" />
+                  <xs:attribute name="volume" type="xs:string" />
+                  <xs:attribute name="dimensionUom" type="xs:string" />
+                  <xs:attribute name="baseUom" type="xs:string" />
+                  <xs:attribute name="weightUom" type="xs:string" />
+                  <xs:attribute name="volumeUom" type="xs:string" />
+                  <xs:attribute name="materialType" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EntityWorkObjectList" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EntityWorkObject" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="EntityPermissionList" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+                    <xs:element ref="ExtensionAttributeList" minOccurs="0" maxOccurs="unbounded" />
+                    <xs:element name="ValidationList" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="Validation" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:attribute name="attributeName" type="xs:string" />
+                              <xs:attribute name="ruleName" type="xs:string" />
+                              <xs:attribute name="vType" type="xs:string" />
+                              <xs:attribute name="failIfNull" type="xs:string" />
+                              <xs:attribute name="stopIfFail" type="xs:string" />
+                              <xs:attribute name="continueIfNull" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ActionList" minOccurs="0" maxOccurs="unbounded">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="WorkObjectAction" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="ScriptList" type="xs:string" minOccurs="0" msdata:Ordinal="0" />
+                                <xs:element name="MethodList" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+                                <xs:element name="Handlers" type="xs:string" minOccurs="0" msdata:Ordinal="2" />
+                              </xs:sequence>
+                              <xs:attribute name="actionName" type="xs:string" />
+                              <xs:attribute name="description" type="xs:string" />
+                              <xs:attribute name="onDisposition" type="xs:string" />
+                              <xs:attribute name="javaScript" type="xs:string" />
+                              <xs:attribute name="attribute1" type="xs:string" />
+                              <xs:attribute name="attribute2" type="xs:string" />
+                              <xs:attribute name="attribute3" type="xs:string" />
+                              <xs:attribute name="attribute4" type="xs:string" />
+                              <xs:attribute name="attribute5" type="xs:string" />
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="description" type="xs:string" />
+                  <xs:attribute name="status" type="xs:string" />
+                  <xs:attribute name="extnTable" type="xs:string" />
+                  <xs:attribute name="saasOrg" type="xs:string" />
+                  <xs:attribute name="attribute1" type="xs:string" />
+                  <xs:attribute name="attribute2" type="xs:string" />
+                  <xs:attribute name="attribute3" type="xs:string" />
+                  <xs:attribute name="attribute4" type="xs:string" />
+                  <xs:attribute name="attribute5" type="xs:string" />
+                  <xs:attribute name="attribute6" type="xs:string" />
+                  <xs:attribute name="attribute7" type="xs:string" />
+                  <xs:attribute name="attribute8" type="xs:string" />
+                  <xs:attribute name="attribute9" type="xs:string" />
+                  <xs:attribute name="attribute10" type="xs:string" />
+                  <xs:attribute name="attribute11" type="xs:string" />
+                  <xs:attribute name="attribute12" type="xs:string" />
+                  <xs:attribute name="attribute13" type="xs:string" />
+                  <xs:attribute name="attribute14" type="xs:string" />
+                  <xs:attribute name="attribute15" type="xs:string" />
+                  <xs:attribute name="attribute16" type="xs:string" />
+                  <xs:attribute name="attribute17" type="xs:string" />
+                  <xs:attribute name="attribute18" type="xs:string" />
+                  <xs:attribute name="attribute19" type="xs:string" />
+                  <xs:attribute name="attribute20" type="xs:string" />
+                  <xs:attribute name="dateAttribute1" type="xs:string" />
+                  <xs:attribute name="dateAttribute2" type="xs:string" />
+                  <xs:attribute name="dateAttribute3" type="xs:string" />
+                  <xs:attribute name="dateAttribute4" type="xs:string" />
+                  <xs:attribute name="dateAttribute5" type="xs:string" />
+                  <xs:attribute name="numberAttribute1" type="xs:string" />
+                  <xs:attribute name="numberAttribute2" type="xs:string" />
+                  <xs:attribute name="numberAttribute3" type="xs:string" />
+                  <xs:attribute name="numberAttribute4" type="xs:string" />
+                  <xs:attribute name="numberAttribute5" type="xs:string" />
+                  <xs:attribute name="root" type="xs:string" />
+                  <xs:attribute name="parent" type="xs:string" />
+                  <xs:attribute name="levelToRoot" type="xs:string" />
+                  <xs:attribute name="headerTable" type="xs:string" />
+                  <xs:attribute name="trackable" type="xs:string" />
+                  <xs:attribute name="workObjectName" type="xs:string" />
+                  <xs:attribute name="entityClass" type="xs:string" />
+                  <xs:attribute name="minOccurrence" type="xs:string" />
+                  <xs:attribute name="maxOccurrence" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="Version" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="ExtensionAttributeList" />
+        <xs:element ref="EntityConfiguration" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Jaxis.BeverageManagement.Plugin" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Jaxis.BeverageManagement.Plugin" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfPourInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PourInformation" nillable="true" type="tns:PourInformation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPourInformation" nillable="true" type="tns:ArrayOfPourInformation" />
+  <xs:complexType name="PourInformation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmountLeft" type="xs:double" />
+      <xs:element minOccurs="0" name="BatteryVoltage" type="xs:double" />
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DeviceName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Manufacturer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PourAmount" type="xs:double" />
+      <xs:element minOccurs="0" name="PourTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RootCategory" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TagNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Temperature" type="xs:double" />
+      <xs:element minOccurs="0" name="UPCName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPCSize" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PourInformation" nillable="true" type="tns:PourInformation" />
+</xs:schema>

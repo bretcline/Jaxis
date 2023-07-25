@@ -1,0 +1,2 @@
+"C:\Program Files (x86)\Eziriz\.NET Reactor\dotNET_Reactor.exe" -project "C:\Source\Jaxis\Builds\JaxisEngine\JaxisEngine.nrproj"
+"C:\Program Files (x86)\Eziriz\.NET Reactor\dotNET_Reactor.exe" -project "C:\Source\Jaxis\Builds\Plugins\Plugins.nrproj"

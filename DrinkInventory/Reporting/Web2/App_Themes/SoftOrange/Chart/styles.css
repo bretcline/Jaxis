@@ -1,0 +1,21 @@
+/* -- WebChartControl -- */
+.dxchartsuiLoadingDiv_SoftOrange
+{
+	background-color:Gray;	
+	opacity: 0.01;
+	filter:progid:DXImageTransform.Microsoft.Alpha(Style=0, Opacity=1);
+}
+.dxchartsuiLoadingPanel_SoftOrange
+{
+	font: 12px Tahoma;
+	color: #f88538;
+    background-color: White;
+	border: solid 1px #F88538;
+}
+.dxchartsuiLoadingPanel_SoftOrange td.dx
+{
+	white-space: nowrap;
+	text-align: center;
+	padding: 10px 20px 6px;
+}
+

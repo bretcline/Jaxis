@@ -1,0 +1,37 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCard Info", "iCard Info\iCard Info.csproj", "{43DBB51F-74A5-420F-A558-840561D889AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCard3Scan", "iCard3Scan\iCard3Scan.csproj", "{DD199AFA-798D-43FB-A3E1-F0A02D0A2D69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScanAndSleep", "ScanAndSleep\ScanAndSleep.csproj", "{BC88B88F-DED4-4245-8151-CAC944980DF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Read and Write Tag Data", "Read and Write Tag Data\Read and Write Tag Data.csproj", "{8D59AB12-C4E3-47B3-9464-53E70AB2D526}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43DBB51F-74A5-420F-A558-840561D889AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43DBB51F-74A5-420F-A558-840561D889AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43DBB51F-74A5-420F-A558-840561D889AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43DBB51F-74A5-420F-A558-840561D889AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD199AFA-798D-43FB-A3E1-F0A02D0A2D69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD199AFA-798D-43FB-A3E1-F0A02D0A2D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD199AFA-798D-43FB-A3E1-F0A02D0A2D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD199AFA-798D-43FB-A3E1-F0A02D0A2D69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC88B88F-DED4-4245-8151-CAC944980DF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC88B88F-DED4-4245-8151-CAC944980DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC88B88F-DED4-4245-8151-CAC944980DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC88B88F-DED4-4245-8151-CAC944980DF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D59AB12-C4E3-47B3-9464-53E70AB2D526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D59AB12-C4E3-47B3-9464-53E70AB2D526}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D59AB12-C4E3-47B3-9464-53E70AB2D526}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D59AB12-C4E3-47B3-9464-53E70AB2D526}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

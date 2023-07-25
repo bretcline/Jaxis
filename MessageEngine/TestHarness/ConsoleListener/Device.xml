@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeviceConfigCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Configs>
+        <!--<DeviceConfig>
+            <AssemblyName>TestProdDev.dll</AssemblyName>
+            <AssemblyType>TestProdDev.TestProdDev</AssemblyType>
+            <ID>123</ID>
+            <Name>Test Prod</Name>
+            <Type>DataProducer</Type>
+            <ConsumerMessageType>None</ConsumerMessageType>
+        </DeviceConfig>-->
+        <DeviceConfig>
+            <AssemblyName>PureRFID.dll</AssemblyName>
+            <AssemblyType>Jaxis.Readers.PureRFID.PureRFReader</AssemblyType>
+            <AssemblyVersion>1.0</AssemblyVersion>
+            <ID>321</ID>
+            <Name>PureRFID Device</Name>
+            <Type>DataProducer</Type>
+            <State>Started</State>
+            <ConsumerMessageType>None</ConsumerMessageType>
+            <Options>
+                <!-- Sleep time -->
+                <string>1</string>
+                <!-- IP -->
+                <string></string>
+                <!-- Com or IP Port-->
+                <string>COM15</string>
+                <!-- Device ID's (comma separated list of ints) -->
+                <string>1</string>
+            </Options>
+        </DeviceConfig>
+    </Configs>
+</DeviceConfigCollection>

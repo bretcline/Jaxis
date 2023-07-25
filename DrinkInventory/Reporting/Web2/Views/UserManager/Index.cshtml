@@ -1,0 +1,176 @@
+﻿@{
+    ViewBag.Title = "User Manager";
+}
+
+<table class="layout">
+    <tr>
+        <td class="layoutleft">
+            <div class="navbarbody">
+                <h1>Users</h1>
+                <select id="userList" size="5">
+                </select>
+                <div class="buttonPanel">
+                    <input type="button" id="newUser" value="New" />
+                </div>
+            </div>
+        </td>
+        <td class="layoutright">
+            <div id="editPanel" class="viewbody" style="display: none;">
+                <h1>Update User</h1>
+                <div class="viewsection">
+                    <h2>User Information</h2>
+                    <div class="editor-label">
+                        <label for="userName">User Name</label>
+                    </div>
+                    <div class="editor-field">
+                        <input id="userName" type="text" />
+                    </div>
+
+                    <div class="editor-label">
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="editor-field">
+                        <input type="password" id="password" />
+                    </div>
+
+                    <div class="editor-label">
+                        <label for="confirmPassword">Confirm Password</label>
+                    </div>
+                    <div class="editor-field">
+                        <input type="password" id="confirmPassword" />
+                    </div>
+                    <div class="editor-label">
+                        <label for="orgtree">Root Organization</label>
+                    </div>
+                    <div class="editor-field">
+                        @Html.Partial("_OrganizationSelector", "orgtree")
+                    </div>
+                    <div class="buttonPanel">
+                        <input type="button" id="saveUser" value="Save" />
+                        <input type="button" id="deleteUser" value="Delete" />
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+<input id="userId" type="hidden" />
+<input id="visibleWidgetIds" type="hidden" />
+
+<script type="text/javascript">
+
+    $(document).ready(function ()
+    {
+        $('#userId').val('');
+        loadUserList(function () { });
+        $('#userList').change(onChangeUser);
+        $('#newUser').click(onClickNewUser);
+        $('#deleteUser').click(onClickDeleteUser);
+        $('#saveUser').click(onClickSaveUser);
+    });
+
+    function loadUserList()
+    {
+        callServer('@Url.Action("GetUsers")', null, 'GET', function (data)
+        {
+            $('#userList').children().remove();
+            $(data).each(function ()
+            {
+                $('<option value="' + this.UserId + '">' + this.UserName + '</option>').appendTo('#userList');
+            });
+
+            $('#userList option#[value=' + $('#userId').val() + ']').attr('selected', true);
+        });
+    }
+
+    function onChangeUser()
+    {
+        callServer('@Url.Action("GetUser")', { _userId: $('#userList option:selected:first').val() }, 'GET', setFormUser);
+    }
+
+    function onClickNewUser()
+    {
+        callServer('@Url.Action("NewUser")', null, 'GET', function (data)
+        {
+            setFormUser(data);
+            $('#userList').children().removeAttr('selected', true);
+        });
+    }
+
+    function onClickSaveUser()
+    {
+        var orgSel = $('#orgtree').data('orgSel');
+
+        if (orgSel.selectedOrg == null)
+        {
+            showAlertMessage('A root organization must be selected.');
+            return;
+        }
+
+        if ($('#password').val() != $('#confirmPassword').val())
+        {
+            showAlertMessage('Password confirmation does not match password.');
+            return;
+        }
+
+        callServer('@Url.Action("SaveUser")', getFormUser(), 'POST', function (data)
+        {
+            setFormUser(data);
+            loadUserList();
+        });
+    }
+    
+    function setFormUser(data)
+    {
+        $('#userId').val(data.UserId);
+        $('#userName').val(data.UserName);
+        $('#password').val(data.Password);
+        $('#confirmPassword').val(data.Password);
+        $('#visibleWidgetIds').val(data.VisibleWidgetIds);
+        $('#editPanel').show();
+        var orgSel = $('#orgtree').data('orgSel');
+        if (data.Organization != null)
+        {
+            orgSel.loadOrg(data.Organization, function ()
+            {
+                orgSel.selectOrg(data.Organization.OrganizationId);
+                $('#editPanel').show();
+                $('#userName').focus().select();
+            });
+        }
+        else
+        {
+            orgSel.selectOrg(null);
+            $('#editPanel').show();
+            $('#userName').focus().select();
+        }
+    }
+
+    function getFormUser()
+    {
+        var user =
+        {
+            UserId: $('#userId').val(),
+            UserName: $('#userName').val(),
+            Password: $('#password').val(),
+            VisibleWidgetIds: $('#visibleWidgetIds').val(),
+            OrganizationId: $('#orgtree').data('orgSel').selectedOrg.OrganizationId
+        };
+
+        return user;
+    }
+
+    function onClickDeleteUser()
+    {
+        var conf = confirm('Are you sure you want to delete this user?');
+        if (conf)
+        {
+            callServer('@Url.Action("DeleteUser")', { _userId: $('#userList option:selected:first').val() }, 'POST', function (data)
+            {
+                loadUserList();
+                $('#editPanel').hide();
+            });
+        }
+    }
+
+</script>

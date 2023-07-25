@@ -1,0 +1,93 @@
+<project name="XGridUtils Build File" default="rebuild">
+
+  <property name="svn.executable" value="C:\Program Files\Subversion\bin\svn.exe" />
+  <property name="svn.repository" value="svn://pfdb1:8613" />
+  
+  <property name="configuration" value="release"/>
+  <property name="BasePath" value="${project::get-base-directory()}"/>
+  <property name="SourcePath" value="C:\Source" />
+  
+  <if test="${not property::exists('build.BaseVersion')}">
+    <property name="build.BaseVersion" value="1.0.0" />
+  </if>
+  
+  <if test="${not property::exists('build.output')}">
+    <property name="build.output" value="C:\Build\Local\${build.BaseVersion}" />
+    <property name="build.tempfiles" value="C:\Build\Local\${build.BaseVersion}\Temp" />
+  </if>
+
+  
+  <target name="rebuild" depends="clean, build, produce" />
+
+	<target name="build">
+	    <echo message="----------------------------------------------------------------------------------"/>
+	    <echo message="-----------------------------XGridUtils Build File--------------------------------"/>
+	    <echo message="----------------------------------------------------------------------------------"/>
+	
+	    <call target="SetProperties.Common.XGridUtils" />
+	    <nant buildfile="C:\Source\Common\NAnt\BuildFunctions.xml" target="GetSubVersionRevision" />
+	
+	    <loadtasks assembly="${path::combine(environment::get-variable('NANTCONTRIB_DIR'), 'bin/NAnt.Contrib.Tasks.dll')}" />
+	    <svn command="checkout" uri="${svn.repository}/Common/XGridUtils" destination="C:\Source\Common" />
+		
+	    <solution configuration="${configuration}" solutionfile="XGridUtils.sln" />
+	        
+	    <fail unless="${file::exists(Output.Common.XGridUtils)}">Output file doesn't exist in ${Output.Common.XGridUtils}</fail>
+	        
+	    <property name="Version.Common.XGridUtils" value="${fileversioninfo::get-file-version(fileversioninfo::get-version-info(Output.Common.XGridUtils))}" />
+	
+	    <nant buildfile="C:\Source\Common\NAnt\BuildFunctions.xml" target="RevertAssemblyInfo" />
+	
+	</target>
+
+    <target name="produce" depends="obfuscate">
+       <!-- Copy build results to Production folder -->
+<!--
+       <copy todir="dll" flatten="true">
+         <fileset>
+           <include name="${Output.Common.XGridUtils}" />
+         </fileset>
+       </copy>    
+-->
+ 
+    </target>
+
+    <target name="obfuscate">
+    	
+    	<echo message="----------------------------------------------------------------------------------"/>
+    	<echo message="---------------------------------- Reactor ---------------------------------------"/>
+    	<echo message="----------------------------------------------------------------------------------"/>
+
+		<exec program="C:\Program Files\Eziriz\.NET Reactor\dotNET_Reactor.exe">
+        	<arg line="-file ${Output.Common.XGridUtils}
+        				-protectiontype lib 
+        				-targetfile ${SourcePath}\Common\XGridUtils\dll\XGridUtils.dll" />
+        </exec>
+        
+    </target>
+
+    <target name="clean" description="Delete all previously compiled binaries.">
+      <delete failonerror="false" >
+        <fileset>
+          <include name="**/bin/**" />
+          <include name="**/obj/**" />
+          <include name="**/*.suo" />
+          <include name="**/*.user" />
+        </fileset>
+      </delete>
+      <mkdir dir="${build.tempfiles}" />
+     
+    </target>    
+    
+    <target name="SetProperties.Common.XGridUtils">
+      <property name="BuildFunctions.AssemblyTitle" 		value="XGridUtils" />
+      <property name="BuildFunctions.AssemblyDescription" 	value="XGridUtils" />
+      <property name="BuildFunctions.SVNProjectDirectory"	value="Common/XGridUtils" />
+      <property name="BuildFunctions.LocalProjectDirectory"	value="${BasePath}" />
+      <property name="BuildFunctions.BuildOutputDirectory"	value="${BasePath}\bin\${configuration}\" />
+      <property name="BuildFunctions.BuildOutputFilename"	value="XGridUtils.dll" />
+      <property name="BuildFunctions.TempDirectory"		value="${build.tempfiles}" />
+      <property name="Output.${string::substring(target::get-current-target(), 14, string::get-length(target::get-current-target()) - 14)}" value="${BuildFunctions.BuildOutputDirectory}${BuildFunctions.BuildOutputFilename}" />
+    </target>
+    
+</project>    

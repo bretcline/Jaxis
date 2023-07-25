@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.web.context.edgeware.insync.com/" xmlns:ns1="http://cxf.apache.org/bindings/xformat" name="ContextItemServiceWSService" targetNamespace="http://service.web.context.edgeware.insync.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns:tns="http://lang.java" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://lang.java">
+      <xsd:complexType name="Throwable">
+        <xsd:sequence />
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://util.context.edgeware.insync.com" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://util.context.edgeware.insync.com">
+      <xsd:simpleType name="AttributesTypes">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="CREATE_ITEM" />
+          <xsd:enumeration value="TRACKABLE_NUMBER" />
+          <xsd:enumeration value="TAG_ID" />
+          <xsd:enumeration value="SERIAL_NUMBER" />
+          <xsd:enumeration value="ASSET_ID" />
+          <xsd:enumeration value="SYSTEM_ID" />
+          <xsd:enumeration value="ALTERNATE_TAG_ID" />
+        </xsd:restriction>
+      </xsd:simpleType>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://soap.xml.javax" xmlns:ns0="http://lang.java" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://soap.xml.javax">
+      <xsd:import namespace="http://lang.java" />
+      <xsd:complexType name="SOAPException">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="cause" nillable="true" type="ns0:Throwable" />
+          <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:ns0="http://composer.webservice.context.edgeware.insync.com" xmlns:ns2="http://soap.xml.javax" xmlns:ns1="http://util.context.edgeware.insync.com" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://service.web.context.edgeware.insync.com/">
+      <xsd:import namespace="http://composer.webservice.context.edgeware.insync.com" />
+      <xsd:import namespace="http://util.context.edgeware.insync.com" />
+      <xsd:complexType name="ArrayOfString">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="saveAndUpdateMaterial" type="tns:saveAndUpdateMaterial" />
+      <xsd:complexType name="saveAndUpdateMaterial">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="itemData" nillable="true" type="ns0:MaterialData" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="organizationName" type="xsd:string" />
+      <xsd:element name="userName" type="xsd:string" />
+      <xsd:element name="saveAndUpdateMaterialResponse" type="tns:saveAndUpdateMaterialResponse" />
+      <xsd:complexType name="saveAndUpdateMaterialResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns0:MaterialComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteItemByAttribute" type="tns:deleteItemByAttribute" />
+      <xsd:complexType name="deleteItemByAttribute">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="attributeType" nillable="true" type="ns1:AttributesTypes" />
+          <xsd:element minOccurs="0" name="attributeValue" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteItemByAttributeResponse" type="tns:deleteItemByAttributeResponse" />
+      <xsd:complexType name="deleteItemByAttributeResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns0:ItemComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="itemQueryByAlternateTagIds" type="tns:itemQueryByAlternateTagIds" />
+      <xsd:complexType name="itemQueryByAlternateTagIds">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="alternateTagIds" nillable="true" type="tns:ArrayOfString" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="itemQueryByAlternateTagIdsResponse" type="tns:itemQueryByAlternateTagIdsResponse" />
+      <xsd:complexType name="itemQueryByAlternateTagIdsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns0:ItemComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getMaterialsByNumber" type="tns:getMaterialsByNumber" />
+      <xsd:complexType name="getMaterialsByNumber">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="materialNumbers" nillable="true" type="tns:ArrayOfString" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getMaterialsByNumberResponse" type="tns:getMaterialsByNumberResponse" />
+      <xsd:complexType name="getMaterialsByNumberResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns0:MaterialComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="itemQueryBySystemIds" type="tns:itemQueryBySystemIds" />
+      <xsd:complexType name="itemQueryBySystemIds">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="systemIds" nillable="true" type="tns:ArrayOfString" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="itemQueryBySystemIdsResponse" type="tns:itemQueryBySystemIdsResponse" />
+      <xsd:complexType name="itemQueryBySystemIdsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns0:ItemComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="itemQueryByHistory" type="tns:itemQueryByHistory" />
+      <xsd:complexType name="itemQueryByHistory">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="tagId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="startDate" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="endDate" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="arg4" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="itemQueryByHistoryResponse" type="tns:itemQueryByHistoryResponse" />
+      <xsd:complexType name="itemQueryByHistoryResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns0:ItemComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteMaterialType" type="tns:deleteMaterialType" />
+      <xsd:complexType name="deleteMaterialType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="materialType" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteMaterialTypeResponse" type="tns:deleteMaterialTypeResponse" />
+      <xsd:complexType name="deleteMaterialTypeResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns0:MaterialTypeComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="itemQueryByTrackableNumber" type="tns:itemQueryByTrackableNumber" />
+      <xsd:complexType name="itemQueryByTrackableNumber">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="trackableNumbers" nillable="true" type="tns:ArrayOfString" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="itemQueryByTrackableNumberResponse" type="tns:itemQueryByTrackableNumberResponse" />
+      <xsd:complexType name="itemQueryByTrackableNumberResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns0:ItemComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="itemQueryByAssetIds" type="tns:itemQueryByAssetIds" />
+      <xsd:complexType name="itemQueryByAssetIds">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="assetIds" nillable="true" type="tns:ArrayOfString" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="itemQueryByAssetIdsResponse" type="tns:itemQueryByAssetIdsResponse" />
+      <xsd:complexType name="itemQueryByAssetIdsResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns0:ItemComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteMaterial" type="tns:deleteMaterial" />
+      <xsd:complexType name="deleteMaterial">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="materialNumber" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="deleteMaterialResponse" type="tns:deleteMaterialResponse" />
+      <xsd:complexType name="deleteMaterialResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns0:MaterialComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="saveAndUpdateMaterialType" type="tns:saveAndUpdateMaterialType" />
+      <xsd:complexType name="saveAndUpdateMaterialType">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="itemData" nillable="true" type="ns0:MaterialTypeData" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="saveAndUpdateMaterialTypeResponse" type="tns:saveAndUpdateMaterialTypeResponse" />
+      <xsd:complexType name="saveAndUpdateMaterialTypeResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns0:MaterialTypeComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="itemQueryByTrackableKey" type="tns:itemQueryByTrackableKey" />
+      <xsd:complexType name="itemQueryByTrackableKey">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="trackableKeys" nillable="true" type="tns:ArrayOfString" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="itemQueryByTrackableKeyResponse" type="tns:itemQueryByTrackableKeyResponse" />
+      <xsd:complexType name="itemQueryByTrackableKeyResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns0:ItemComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="itemQueryBySerialNumbers" type="tns:itemQueryBySerialNumbers" />
+      <xsd:complexType name="itemQueryBySerialNumbers">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="serialNumbers" nillable="true" type="tns:ArrayOfString" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="itemQueryBySerialNumbersResponse" type="tns:itemQueryBySerialNumbersResponse" />
+      <xsd:complexType name="itemQueryBySerialNumbersResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns0:ItemComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="itemQueryByTagId" type="tns:itemQueryByTagId" />
+      <xsd:complexType name="itemQueryByTagId">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="tagIds" nillable="true" type="tns:ArrayOfString" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="itemQueryByTagIdResponse" type="tns:itemQueryByTagIdResponse" />
+      <xsd:complexType name="itemQueryByTagIdResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns0:ItemComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getMaterialTypes" type="tns:getMaterialTypes" />
+      <xsd:complexType name="getMaterialTypes">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="materialType" nillable="true" type="tns:ArrayOfString" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getMaterialTypesResponse" type="tns:getMaterialTypesResponse" />
+      <xsd:complexType name="getMaterialTypesResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns0:MaterialTypeComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="saveAndUpdateItem" type="tns:saveAndUpdateItem" />
+      <xsd:complexType name="saveAndUpdateItem">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="itemData" nillable="true" type="ns0:ItemData" />
+          <xsd:element minOccurs="0" name="updateAttribute" nillable="true" type="ns1:AttributesTypes" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="saveAndUpdateItemResponse" type="tns:saveAndUpdateItemResponse" />
+      <xsd:complexType name="saveAndUpdateItemResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns0:ItemComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="SOAPException" nillable="true" type="ns2:SOAPException" />
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://composer.webservice.context.edgeware.insync.com" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://composer.webservice.context.edgeware.insync.com">
+      <xsd:complexType name="ArrayOfItemData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ItemData" nillable="true" type="tns:ItemData" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfMaterialTypeData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="MaterialTypeData" nillable="true" type="tns:MaterialTypeData" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MaterialComposer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="bizErrorMessage" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="materials" nillable="true" type="tns:ArrayOfMaterialData" />
+          <xsd:element minOccurs="0" name="organizationName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="status" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MaterialData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="alternateUom" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="batchManagement" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="custAttribute1" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute10" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute11" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute12" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute13" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute14" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute15" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute16" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute17" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute18" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute19" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute2" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute20" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute3" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute4" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute5" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute6" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute7" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute8" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute9" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custDateAttribute1" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custDateAttribute2" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custDateAttribute3" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custDateAttribute4" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custDateAttribute5" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custNumAttribute1" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="custNumAttribute2" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="custNumAttribute3" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="custNumAttribute4" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="custNumAttribute5" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="dimensionUom" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="maintenance" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="matDepth" nillable="true" type="xsd:double" />
+          <xsd:element minOccurs="0" name="matHeight" nillable="true" type="xsd:double" />
+          <xsd:element minOccurs="0" name="matManufacturer" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="matModel" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="matVol" nillable="true" type="xsd:double" />
+          <xsd:element minOccurs="0" name="matWidth" nillable="true" type="xsd:double" />
+          <xsd:element minOccurs="0" name="matWt" nillable="true" type="xsd:double" />
+          <xsd:element minOccurs="0" name="materialBaseUom" nillable="true" type="xsd:string" />
+          <xsd:element name="MaterialNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="materialType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="materialVolumeUom" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="materialWeightUom" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="mobileZone" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="serialized" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="shortDescription" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="status" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="zoneRadius" nillable="true" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MaterialTypeData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="custAttribute1" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute2" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute3" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute4" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute5" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="description" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="materialType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="trackable" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="typeStatus" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfMaterialData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="MaterialData" nillable="true" type="tns:MaterialData" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="MaterialTypeComposer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="bizErrorMessage" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="materialTypes" nillable="true" type="tns:ArrayOfMaterialTypeData" />
+          <xsd:element minOccurs="0" name="organizationName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="status" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ItemComposer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="bizErrorMessage" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="items" nillable="true" type="tns:ArrayOfItemData" />
+          <xsd:element minOccurs="0" name="organizationName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="status" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ItemData">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="alternateTagId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="appName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="assetId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="batchNumber" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="businessLocation" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="containerSerialNumber" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="containerTrackableNumber" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="currentLocation" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="currentOwner" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="currentReadPoint" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="currentStorageDetailName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="currentStorageName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="currentSubLocation" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute1" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute10" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute11" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute12" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute13" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute14" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute15" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute16" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute17" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute18" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute19" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute2" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute20" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute3" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute4" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute5" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute6" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute7" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute8" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custAttribute9" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custDateAttribute1" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custDateAttribute2" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custDateAttribute3" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custDateAttribute4" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custDateAttribute5" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="custNumAttribute1" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="custNumAttribute2" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="custNumAttribute3" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="custNumAttribute4" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="custNumAttribute5" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="customer" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="itemDisposition" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="itemManufacturer" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="itemOwner" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="itemStatus" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="itemType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="lastLocation" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="lastOperation" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="lastUpdateTime" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="materialNumber" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="netMeasure" nillable="true" type="xsd:double" />
+          <xsd:element minOccurs="0" name="netMeasureUom" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="netQuantity" nillable="true" type="xsd:double" />
+          <xsd:element minOccurs="0" name="netQuantityUom" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="nextLocation" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="operationTimeGMT" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="operationTimeLocal" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="operator" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ownerLocation" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="partnerReferenceDocumentNumber" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="referenceDocumentNumber" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="serialNumber" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="shortDescription" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="supplier" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="systemId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="tagId" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="timeZone" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="trackableNumber" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="deleteMaterialResponse">
+    <wsdl:part name="parameters" element="tns:deleteMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteMaterialType">
+    <wsdl:part name="parameters" element="tns:deleteMaterialType" />
+    <wsdl:part name="organizationName" element="tns:organizationName" />
+    <wsdl:part name="userName" element="tns:userName" />
+  </wsdl:message>
+  <wsdl:message name="itemQueryBySystemIds">
+    <wsdl:part name="parameters" element="tns:itemQueryBySystemIds" />
+    <wsdl:part name="organizationName" element="tns:organizationName" />
+    <wsdl:part name="userName" element="tns:userName" />
+  </wsdl:message>
+  <wsdl:message name="itemQueryBySerialNumbersResponse">
+    <wsdl:part name="parameters" element="tns:itemQueryBySerialNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteMaterial">
+    <wsdl:part name="parameters" element="tns:deleteMaterial" />
+    <wsdl:part name="organizationName" element="tns:organizationName" />
+    <wsdl:part name="userName" element="tns:userName" />
+  </wsdl:message>
+  <wsdl:message name="saveAndUpdateMaterialTypeResponse">
+    <wsdl:part name="parameters" element="tns:saveAndUpdateMaterialTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="itemQueryBySystemIdsResponse">
+    <wsdl:part name="parameters" element="tns:itemQueryBySystemIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="itemQueryByTagIdResponse">
+    <wsdl:part name="parameters" element="tns:itemQueryByTagIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="itemQueryBySerialNumbers">
+    <wsdl:part name="parameters" element="tns:itemQueryBySerialNumbers" />
+    <wsdl:part name="organizationName" element="tns:organizationName" />
+  </wsdl:message>
+  <wsdl:message name="itemQueryByHistory">
+    <wsdl:part name="parameters" element="tns:itemQueryByHistory" />
+    <wsdl:part name="organizationName" element="tns:organizationName" />
+  </wsdl:message>
+  <wsdl:message name="saveAndUpdateMaterial">
+    <wsdl:part name="parameters" element="tns:saveAndUpdateMaterial" />
+    <wsdl:part name="organizationName" element="tns:organizationName" />
+    <wsdl:part name="userName" element="tns:userName" />
+  </wsdl:message>
+  <wsdl:message name="itemQueryByTrackableNumber">
+    <wsdl:part name="parameters" element="tns:itemQueryByTrackableNumber" />
+    <wsdl:part name="organizationName" element="tns:organizationName" />
+  </wsdl:message>
+  <wsdl:message name="itemQueryByTrackableKey">
+    <wsdl:part name="parameters" element="tns:itemQueryByTrackableKey" />
+    <wsdl:part name="organizationName" element="tns:organizationName" />
+  </wsdl:message>
+  <wsdl:message name="getMaterialTypes">
+    <wsdl:part name="parameters" element="tns:getMaterialTypes" />
+    <wsdl:part name="organizationName" element="tns:organizationName" />
+    <wsdl:part name="userName" element="tns:userName" />
+  </wsdl:message>
+  <wsdl:message name="itemQueryByAlternateTagIdsResponse">
+    <wsdl:part name="parameters" element="tns:itemQueryByAlternateTagIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteItemByAttribute">
+    <wsdl:part name="parameters" element="tns:deleteItemByAttribute" />
+    <wsdl:part name="organizationName" element="tns:organizationName" />
+    <wsdl:part name="userName" element="tns:userName" />
+  </wsdl:message>
+  <wsdl:message name="itemQueryByHistoryResponse">
+    <wsdl:part name="parameters" element="tns:itemQueryByHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="itemQueryByAssetIds">
+    <wsdl:part name="parameters" element="tns:itemQueryByAssetIds" />
+    <wsdl:part name="organizationName" element="tns:organizationName" />
+    <wsdl:part name="userName" element="tns:userName" />
+  </wsdl:message>
+  <wsdl:message name="itemQueryByTagId">
+    <wsdl:part name="parameters" element="tns:itemQueryByTagId" />
+    <wsdl:part name="organizationName" element="tns:organizationName" />
+  </wsdl:message>
+  <wsdl:message name="saveAndUpdateItemResponse">
+    <wsdl:part name="parameters" element="tns:saveAndUpdateItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="saveAndUpdateItem">
+    <wsdl:part name="parameters" element="tns:saveAndUpdateItem" />
+    <wsdl:part name="organizationName" element="tns:organizationName" />
+    <wsdl:part name="userName" element="tns:userName" />
+  </wsdl:message>
+  <wsdl:message name="getMaterialsByNumberResponse">
+    <wsdl:part name="parameters" element="tns:getMaterialsByNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="itemQueryByTrackableKeyResponse">
+    <wsdl:part name="parameters" element="tns:itemQueryByTrackableKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMaterialsByNumber">
+    <wsdl:part name="parameters" element="tns:getMaterialsByNumber" />
+    <wsdl:part name="organizationName" element="tns:organizationName" />
+    <wsdl:part name="userName" element="tns:userName" />
+  </wsdl:message>
+  <wsdl:message name="saveAndUpdateMaterialType">
+    <wsdl:part name="parameters" element="tns:saveAndUpdateMaterialType" />
+    <wsdl:part name="organizationName" element="tns:organizationName" />
+    <wsdl:part name="userName" element="tns:userName" />
+  </wsdl:message>
+  <wsdl:message name="itemQueryByAlternateTagIds">
+    <wsdl:part name="parameters" element="tns:itemQueryByAlternateTagIds" />
+    <wsdl:part name="organizationName" element="tns:organizationName" />
+    <wsdl:part name="userName" element="tns:userName" />
+  </wsdl:message>
+  <wsdl:message name="deleteItemByAttributeResponse">
+    <wsdl:part name="parameters" element="tns:deleteItemByAttributeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SOAPException">
+    <wsdl:part name="SOAPException" element="tns:SOAPException" />
+  </wsdl:message>
+  <wsdl:message name="saveAndUpdateMaterialResponse">
+    <wsdl:part name="parameters" element="tns:saveAndUpdateMaterialResponse" />
+  </wsdl:message>
+  <wsdl:message name="getMaterialTypesResponse">
+    <wsdl:part name="parameters" element="tns:getMaterialTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="itemQueryByAssetIdsResponse">
+    <wsdl:part name="parameters" element="tns:itemQueryByAssetIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="itemQueryByTrackableNumberResponse">
+    <wsdl:part name="parameters" element="tns:itemQueryByTrackableNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteMaterialTypeResponse">
+    <wsdl:part name="parameters" element="tns:deleteMaterialTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ContextItemService">
+    <wsdl:operation name="saveAndUpdateMaterial">
+      <wsdl:input name="saveAndUpdateMaterial" message="tns:saveAndUpdateMaterial" />
+      <wsdl:output name="saveAndUpdateMaterialResponse" message="tns:saveAndUpdateMaterialResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteItemByAttribute">
+      <wsdl:input name="deleteItemByAttribute" message="tns:deleteItemByAttribute" />
+      <wsdl:output name="deleteItemByAttributeResponse" message="tns:deleteItemByAttributeResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+    <wsdl:operation name="itemQueryByAlternateTagIds">
+      <wsdl:input name="itemQueryByAlternateTagIds" message="tns:itemQueryByAlternateTagIds" />
+      <wsdl:output name="itemQueryByAlternateTagIdsResponse" message="tns:itemQueryByAlternateTagIdsResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialsByNumber">
+      <wsdl:input name="getMaterialsByNumber" message="tns:getMaterialsByNumber" />
+      <wsdl:output name="getMaterialsByNumberResponse" message="tns:getMaterialsByNumberResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+    <wsdl:operation name="itemQueryBySystemIds">
+      <wsdl:input name="itemQueryBySystemIds" message="tns:itemQueryBySystemIds" />
+      <wsdl:output name="itemQueryBySystemIdsResponse" message="tns:itemQueryBySystemIdsResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+    <wsdl:operation name="itemQueryByHistory">
+      <wsdl:input name="itemQueryByHistory" message="tns:itemQueryByHistory" />
+      <wsdl:output name="itemQueryByHistoryResponse" message="tns:itemQueryByHistoryResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteMaterialType">
+      <wsdl:input name="deleteMaterialType" message="tns:deleteMaterialType" />
+      <wsdl:output name="deleteMaterialTypeResponse" message="tns:deleteMaterialTypeResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+    <wsdl:operation name="itemQueryByTrackableNumber">
+      <wsdl:input name="itemQueryByTrackableNumber" message="tns:itemQueryByTrackableNumber" />
+      <wsdl:output name="itemQueryByTrackableNumberResponse" message="tns:itemQueryByTrackableNumberResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+    <wsdl:operation name="itemQueryByAssetIds">
+      <wsdl:input name="itemQueryByAssetIds" message="tns:itemQueryByAssetIds" />
+      <wsdl:output name="itemQueryByAssetIdsResponse" message="tns:itemQueryByAssetIdsResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteMaterial">
+      <wsdl:input name="deleteMaterial" message="tns:deleteMaterial" />
+      <wsdl:output name="deleteMaterialResponse" message="tns:deleteMaterialResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+    <wsdl:operation name="saveAndUpdateMaterialType">
+      <wsdl:input name="saveAndUpdateMaterialType" message="tns:saveAndUpdateMaterialType" />
+      <wsdl:output name="saveAndUpdateMaterialTypeResponse" message="tns:saveAndUpdateMaterialTypeResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+    <wsdl:operation name="itemQueryByTrackableKey">
+      <wsdl:input name="itemQueryByTrackableKey" message="tns:itemQueryByTrackableKey" />
+      <wsdl:output name="itemQueryByTrackableKeyResponse" message="tns:itemQueryByTrackableKeyResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+    <wsdl:operation name="itemQueryBySerialNumbers">
+      <wsdl:input name="itemQueryBySerialNumbers" message="tns:itemQueryBySerialNumbers" />
+      <wsdl:output name="itemQueryBySerialNumbersResponse" message="tns:itemQueryBySerialNumbersResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+    <wsdl:operation name="itemQueryByTagId">
+      <wsdl:input name="itemQueryByTagId" message="tns:itemQueryByTagId" />
+      <wsdl:output name="itemQueryByTagIdResponse" message="tns:itemQueryByTagIdResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialTypes">
+      <wsdl:input name="getMaterialTypes" message="tns:getMaterialTypes" />
+      <wsdl:output name="getMaterialTypesResponse" message="tns:getMaterialTypesResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+    <wsdl:operation name="saveAndUpdateItem">
+      <wsdl:input name="saveAndUpdateItem" message="tns:saveAndUpdateItem" />
+      <wsdl:output name="saveAndUpdateItemResponse" message="tns:saveAndUpdateItemResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ContextItemServiceWSServiceSoapBinding" type="tns:ContextItemService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="saveAndUpdateMaterial">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="saveAndUpdateMaterial">
+        <soap:header message="tns:saveAndUpdateMaterial" part="organizationName" use="literal" />
+        <soap:header message="tns:saveAndUpdateMaterial" part="userName" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="saveAndUpdateMaterialResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteItemByAttribute">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="deleteItemByAttribute">
+        <soap:header message="tns:deleteItemByAttribute" part="organizationName" use="literal" />
+        <soap:header message="tns:deleteItemByAttribute" part="userName" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="deleteItemByAttributeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="itemQueryByAlternateTagIds">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="itemQueryByAlternateTagIds">
+        <soap:header message="tns:itemQueryByAlternateTagIds" part="organizationName" use="literal" />
+        <soap:header message="tns:itemQueryByAlternateTagIds" part="userName" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="itemQueryByAlternateTagIdsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialsByNumber">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getMaterialsByNumber">
+        <soap:header message="tns:getMaterialsByNumber" part="organizationName" use="literal" />
+        <soap:header message="tns:getMaterialsByNumber" part="userName" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="getMaterialsByNumberResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="itemQueryBySystemIds">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="itemQueryBySystemIds">
+        <soap:header message="tns:itemQueryBySystemIds" part="organizationName" use="literal" />
+        <soap:header message="tns:itemQueryBySystemIds" part="userName" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="itemQueryBySystemIdsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="itemQueryByHistory">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="itemQueryByHistory">
+        <soap:header message="tns:itemQueryByHistory" part="organizationName" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="itemQueryByHistoryResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteMaterialType">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="deleteMaterialType">
+        <soap:header message="tns:deleteMaterialType" part="organizationName" use="literal" />
+        <soap:header message="tns:deleteMaterialType" part="userName" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="deleteMaterialTypeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="itemQueryByTrackableNumber">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="itemQueryByTrackableNumber">
+        <soap:header message="tns:itemQueryByTrackableNumber" part="organizationName" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="itemQueryByTrackableNumberResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="itemQueryByAssetIds">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="itemQueryByAssetIds">
+        <soap:header message="tns:itemQueryByAssetIds" part="organizationName" use="literal" />
+        <soap:header message="tns:itemQueryByAssetIds" part="userName" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="itemQueryByAssetIdsResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteMaterial">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="deleteMaterial">
+        <soap:header message="tns:deleteMaterial" part="organizationName" use="literal" />
+        <soap:header message="tns:deleteMaterial" part="userName" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="deleteMaterialResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="itemQueryByTrackableKey">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="itemQueryByTrackableKey">
+        <soap:header message="tns:itemQueryByTrackableKey" part="organizationName" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="itemQueryByTrackableKeyResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="saveAndUpdateMaterialType">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="saveAndUpdateMaterialType">
+        <soap:header message="tns:saveAndUpdateMaterialType" part="organizationName" use="literal" />
+        <soap:header message="tns:saveAndUpdateMaterialType" part="userName" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="saveAndUpdateMaterialTypeResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="itemQueryBySerialNumbers">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="itemQueryBySerialNumbers">
+        <soap:header message="tns:itemQueryBySerialNumbers" part="organizationName" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="itemQueryBySerialNumbersResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getMaterialTypes">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getMaterialTypes">
+        <soap:header message="tns:getMaterialTypes" part="organizationName" use="literal" />
+        <soap:header message="tns:getMaterialTypes" part="userName" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="getMaterialTypesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="itemQueryByTagId">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="itemQueryByTagId">
+        <soap:header message="tns:itemQueryByTagId" part="organizationName" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="itemQueryByTagIdResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="saveAndUpdateItem">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="saveAndUpdateItem">
+        <soap:header message="tns:saveAndUpdateItem" part="organizationName" use="literal" />
+        <soap:header message="tns:saveAndUpdateItem" part="userName" use="literal" />
+        <soap:body use="literal" parts="parameters" />
+      </wsdl:input>
+      <wsdl:output name="saveAndUpdateItemResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ContextItemServiceWSService">
+    <wsdl:port name="ContextItemServiceWSPort" binding="tns:ContextItemServiceWSServiceSoapBinding">
+      <soap:address location="http://204.232.156.188:8080/sensornet/services/swItemService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

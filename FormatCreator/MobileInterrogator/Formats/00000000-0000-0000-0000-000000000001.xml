@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FormatDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>00000000-0000-0000-0000-000000000001</ID>
+  <Name>Bill of Lading</Name>
+  <Description>Packing slip information</Description>
+  <HeaderRowDef>
+    <ElementDefs>
+      <DataElementDef>
+        <Name>Vendor</Name>
+        <DataType>Text</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Order Number</Name>
+        <DataType>Text</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Order Date</Name>
+        <DataType>DateTime</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Customer Ref Number</Name>
+        <DataType>Text</DataType>
+        <Required>false</Required>
+        <Constraints />
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Total Cost</Name>
+        <DataType>Float</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+    </ElementDefs>
+  </HeaderRowDef>
+  <DataRowDef>
+    <ElementDefs>
+      <DataElementDef>
+        <Name>Item Number</Name>
+        <DataType>Text</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Description</Name>
+        <DataType>Text</DataType>
+        <Required>false</Required>
+        <Constraints>100</Constraints>
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Unit Cost</Name>
+        <DataType>Float</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Qty</Name>
+        <DataType>Float</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Discount</Name>
+        <DataType>Float</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Extended Cost</Name>
+        <DataType>Float</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Notes</Name>
+        <DataType>Text</DataType>
+        <Required>false</Required>
+        <Constraints>100</Constraints>
+      </DataElementDef>
+    </ElementDefs>
+  </DataRowDef>
+  <MaxDataRows>5</MaxDataRows>
+</FormatDef>

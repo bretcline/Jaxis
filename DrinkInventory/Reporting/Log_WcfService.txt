@@ -1,0 +1,31 @@
+2011-12-06 10:56:23,297 INFO - Log::GetLogger( DEFAULT ) - Created Logger
+2011-12-06 10:56:23,325 ERROR - Error
+System.Data.SqlClient.SqlException (0x80131904): Cannot open database "DrinkReporting" requested by the login. The login failed.
+Login failed for user 'JAXISSOLUTIONS\Bret.Cline'.
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning()
+   at System.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at System.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at System.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, Boolean redirectedUserInstance, SqlConnection owningObject, SqlConnectionString connectionOptions, TimeoutTimer timeout)
+   at System.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(SqlConnection owningObject, TimeoutTimer timeout, SqlConnectionString connectionOptions, String newPassword, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, Object providerInfo, String newPassword, SqlConnection owningObject, Boolean redirectedUserInstance)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnection owningConnection, DbConnectionPool pool, DbConnectionOptions options)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionPool.GetConnection(DbConnection owningObject)
+   at System.Data.ProviderBase.DbConnectionFactory.GetConnection(DbConnection owningConnection)
+   at System.Data.ProviderBase.DbConnectionClosed.OpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at SubSonic.DataProviders.DbDataProvider.CreateConnection(String connectionString)
+   at SubSonic.DataProviders.DbDataProvider.CreateConnection()
+   at SubSonic.DataProviders.AutomaticConnectionScope..ctor(IDataProvider provider)
+   at SubSonic.DataProviders.DbDataProvider.ExecuteReader(QueryCommand qry)
+   at SubSonic.Linq.Structure.DbQueryProvider.Execute[T](QueryCommand`1 query, Object[] paramValues)
+   at lambda_method(Closure )
+   at SubSonic.Linq.Structure.DbQueryProvider.Execute(Expression expression)
+   at SubSonic.Linq.Structure.QueryProvider.System.Linq.IQueryProvider.Execute[S](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source)
+   at Jaxis.DrinkInventory.Reporting.Business.BusinessProvider.LogOn(String _userName, String _password) in C:\Source\Jaxis\trunk\DrinkInventory\Reporting\Business\BusinessProvider.cs:line 21
+   at Jaxis.DrinkInventory.Reporting.WcfService.ReportingService.<>c__DisplayClass2.<LogOn>b__1() in C:\Source\Jaxis\trunk\DrinkInventory\Reporting\WcfService\ReportingService.cs:line 17
+   at Jaxis.DrinkInventory.Reporting.WcfService.ReportingService.HandleRequest(Func`1 _action) in C:\Source\Jaxis\trunk\DrinkInventory\Reporting\WcfService\ReportingService.cs:line 81

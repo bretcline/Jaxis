@@ -1,0 +1,162 @@
+﻿@model Jaxis.DrinkInventory.Reporting.Web2.Models.DashboardModel
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+@if (Model != null)
+{
+    <table>
+        <tr>
+            <td class="layoutleft">
+                <div class="navbarbody">
+                    <h1>Suspended Widgets</h1>
+                    <div id="widgetTray">
+                        @foreach (var widget in Model.HiddenWidgets)
+                        {
+                            @Html.Partial("_WidgetContainer", widget)
+                        }
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </td>
+            <td class="layoutright">
+                <div class="viewbody">
+                    <h1>Running Widgets</h1>
+                    <div id="widgetContainer">
+                        @foreach (var widget in Model.VisibleWidgets)
+                        {
+                            @Html.Partial("_WidgetContainer", widget)
+                        }
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+}
+
+<script type="text/javascript">
+
+    // install event handlers and such when page loaded
+    $(document).ready(function ()
+    {
+        // minimize a widget
+        $('.minButton').click(function ()
+        {
+            var widg = $(this).parent().parent();
+            var cont = $(widg).children('.widgetContent');
+            if ($(cont).is(':visible'))
+            {
+                $(cont).slideUp(500,
+                function ()
+                {
+                    $(this).parent().moveTo($('#widgetTray'));
+                    showHideWidgetTray();
+                    saveWidgetInfo();
+                });
+            }
+        });
+
+        // refresh widget data from server manually
+        $('.refreshButton').click(function (event)
+        {
+            event.stopPropagation();
+            var widg = $(this).parent().parent();
+            var cont = $(widg).children('.widgetContent');
+            if ($(cont).is(':visible'))
+            {
+                updateWidget(widg);
+            }
+        });
+
+        // restore a widget from the tray
+        $('.widgetTitle').click(function ()
+        {
+            var widget = $(this).parent();
+            if (!$(widget).children('.widgetContent').is(':visible'))
+            {
+                var id = $(widget).attr('id');
+                $(widget).moveTo($('#widgetContainer'));
+                widget = $('#' + id);
+                updateWidget(widget);
+                saveWidgetInfo();
+            }
+        });
+
+        // make widgets draggable
+        $('#widgetContainer').sortable({
+            handle: '.widgetTitle',
+            cursor: 'move',
+            forcePlaceholderSize: true,
+            opacity: 0.6,
+            stop: saveWidgetInfo
+        }).disableSelection();
+
+        // initial load of visible widget data
+        updateAll();
+        // run the update every so often
+        setInterval(function () { updateAll(); }, 60000);
+        // show the widget tray if needed and also need to hide the "loading" divs
+        showHideWidgetTray();
+        $('#widgetTray .loading').hide();
+    });
+
+    // show or hide the widget tray div if it has children or not
+    function showHideWidgetTray()
+    {
+        if ($('#widgetTray').children().length > 0)
+        {
+            $('#widgetTray').show();
+        }
+        else
+        {
+            $('#widgetTray').hide();
+        }
+    }
+
+    // post the list of "visible" widgets to the server
+    function saveWidgetInfo()
+    {
+
+        var visibleWidgets = '';
+        $('#widgetContainer .widget').each(function ()
+        {
+            var id = $(this).attr('id');
+            visibleWidgets += id.slice(1) + ',';
+        });
+
+        callServer('@Url.Action("SaveWidgetInfo")', { _visibleWidgetIds: visibleWidgets }, 'POST', function () { });
+    }
+
+    // call the server to get the widget's content and update it
+    function updateWidget(widget)
+    {
+        $(widget).children('.widgetContent').hide();
+        $(widget).children('.loading').show();
+        var id = $(widget).attr('id');
+        var loadUrl = '@Url.Action("GetWidgetContent", null, null, "http")' + '?_widgetId=' + id.slice(1);
+        $(widget).children('.widgetContent').load(loadUrl, function ()
+        {
+            $(this).parent().children('.loading').hide();
+            if ($(widget).parent().attr('id') == 'widgetContainer')
+            {
+                $(this).fadeIn(1000);
+            }
+            else
+            {
+                $(this).hide();
+            }
+        });
+    }
+
+    // update all widgets that are in the "visible" widget div
+    function updateAll()
+    {
+        $('#widgetContainer .widget').each(function ()
+        {
+            updateWidget(this);
+        });
+    }
+
+</script>

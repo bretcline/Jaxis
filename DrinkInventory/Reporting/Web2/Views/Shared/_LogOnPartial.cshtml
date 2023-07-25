@@ -1,0 +1,12 @@
+﻿@using Jaxis.DrinkInventory.Reporting.Web2.ReportingService;
+@using Jaxis.DrinkInventory.Reporting.Web2.Models;
+
+@if(Session["UserSession"] is SessionModel)
+{
+    <text>Welcome <strong>@(((SessionModel)(Session["UserSession"])).Session.UserName)</strong>!
+    [ @Html.ActionLink("Log Off", "LogOff", "Account") ]</text>
+}
+else 
+{
+    @:[ @Html.ActionLink("Log On", "LogOn", "Account") ]
+}

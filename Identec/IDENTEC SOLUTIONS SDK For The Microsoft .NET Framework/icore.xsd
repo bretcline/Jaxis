@@ -1,0 +1,1315 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified">
+  <xsd:element name="iCore">
+    <xsd:annotation>
+      <xsd:documentation>
+        iCore configuration
+        <!--
+        $Id: icore.xsd 1021 2008-02-01 14:38:40Z brennerp $
+
+        $URL: https://gforge.identecsolutions.com/svn/i-core/trunk/XML/Configuration/icore.xsd $
+        $Revision: 1021 $
+        $Date: 2008-02-01 15:38:40 +0100 (Fr, 01 Feb 2008) $
+        $Author: brennerp $
+-->
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="Application">
+          <xsd:annotation>
+            <xsd:documentation>
+              General mostly informational settings.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="LogLevel" default="6" maxOccurs="1">
+                <xsd:annotation>
+                  <xsd:documentation>
+                    The logging level for the main process and the devices.
+                  </xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:unsignedInt">
+                    <xsd:maxInclusive value="7"/>
+                    <xsd:minInclusive value="0"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+              <xsd:element name="Project" maxOccurs="1">
+                <xsd:annotation>
+                  <xsd:documentation>
+                    The name of the project.
+                  </xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="128"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+              <xsd:element name="Location" maxOccurs="1">
+                <xsd:annotation>
+                  <xsd:documentation>
+                    The location of the device.
+                  </xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:string">
+                    <xsd:maxLength value="128"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+              <xsd:element name="MainId" maxOccurs="1">
+                <xsd:annotation>
+                  <xsd:documentation>
+                    Main identification number which  is used in a event message
+                  </xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:unsignedInt">
+                    <xsd:maxInclusive value="65535"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+              <xsd:element name="SubId" maxOccurs="1">
+                <xsd:annotation>
+                  <xsd:documentation>
+                    Sub identification number which  is used in a event message
+                  </xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:unsignedInt">
+                    <xsd:maxInclusive value="65535"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+              <xsd:element name="Country" maxOccurs="1">
+                <xsd:annotation>
+                  <xsd:documentation>
+                    The interface number of the identec bus interface.
+                  </xsd:documentation>
+                </xsd:annotation>
+                <xsd:simpleType>
+                  <xsd:restriction base="xsd:unsignedInt">
+                    <xsd:maxInclusive value="65535"/>
+                  </xsd:restriction>
+                </xsd:simpleType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="System">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="Interfaces">
+                <xsd:annotation>
+                  <xsd:documentation>
+                    Setting of the serial and bus interfaces.
+                  </xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="BusInterfaces">
+                      <xsd:complexType>
+                        <xsd:sequence maxOccurs="8">
+                          <xsd:element name="BusInterface" maxOccurs="1"
+                                       type="xsd:unsignedInt"/>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="Defaulthandler">
+                <xsd:annotation>
+                  <xsd:documentation>
+                    The default command and event handler.
+                  </xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="LogLevel" default="6" maxOccurs="1">
+                      <xsd:annotation>
+                        <xsd:documentation>
+                          The logging level of the default handler.
+                        </xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:unsignedInt">
+                          <xsd:maxInclusive value="7"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="ServerPort" default="7070"
+                                 maxOccurs="1" type="xsd:unsignedShort">
+                      <xsd:annotation>
+                        <xsd:documentation>
+                          The TCP port number the handler listens for
+                          cinnections.
+                        </xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="AckTimeout" default="3" maxOccurs="1"
+                                 type="xsd:unsignedShort">
+                      <xsd:annotation>
+                        <xsd:documentation>
+                          Event message acknowledge  time out. An event must be
+                          acknowledge within this time
+                        </xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="HeartBeatCycle" default="0"
+                                 maxOccurs="1" type="xsd:unsignedShort">
+                      <xsd:annotation>
+                        <xsd:documentation>
+                          Heartbeat event message cycle in seconds. 0 = No
+                          heartbeat events will be sent.
+                        </xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="DiagnosticEvents" maxOccurs="1">
+                      <xsd:annotation>
+                        <xsd:documentation>
+                          Whether to send events for diagnostic or not.
+                        </xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="ModuleStateEvents"
+                                       default="false" maxOccurs="1"
+                                       type="xsd:boolean">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                Send events when the state of a module changes.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="Eventhandlers">
+                <xsd:complexType>
+                  <xsd:sequence maxOccurs="8" minOccurs="0">
+                    <xsd:element name="Eventhandler" default="false"
+                                 maxOccurs="1">
+                      <xsd:annotation>
+                        <xsd:documentation>
+                          Additional event hander maybe used by an area.
+                        </xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="Enable" default="false"
+                                       type="xsd:boolean">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                Enable this event handler.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                          </xsd:element>
+                          <xsd:element name="LogLevel" default="6"
+                                       maxOccurs="1">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                The logging level of this event handler.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:unsignedInt">
+                                <xsd:maxInclusive value="7"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                          <xsd:element name="EventhandlerId" maxOccurs="1">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                Identification number of this event handler.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:unsignedInt">
+                                <xsd:maxInclusive value="8"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                          <xsd:element name="Name" maxOccurs="1">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                Name of the event handler.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="128"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                          <xsd:element name="ConnectionTyp"
+                                       maxOccurs="1">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                The operation mode of the event handler.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:string">
+                                <xsd:enumeration value="Server"/>
+                                <xsd:enumeration value="Client"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                          <xsd:element name="ServerPort" default="7070"
+                                       maxOccurs="1" type="xsd:unsignedShort">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                TCP server port number, waiting for incoming
+                                client connections in server mode.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                          </xsd:element>
+                          <xsd:element name="ClientAddress" maxOccurs="1">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                IP address of remote TCP server to connect to in
+                                client mode.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="64"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                          <xsd:element name="ClientPort" maxOccurs="1"
+                                       type="xsd:unsignedShort">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                Port number of remote TCP server to connect to
+                                in client mode.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                          </xsd:element>
+                          <xsd:element name="AckTimeout" default="3"
+                                       maxOccurs="1" type="xsd:unsignedShort">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                Event message acknowledge time out. An event
+                                must be acknowledged within this time
+                              </xsd:documentation>
+                            </xsd:annotation>
+                          </xsd:element>
+                          <xsd:element name="HeartBeatCycle" default="0"
+                                       maxOccurs="1" type="xsd:unsignedShort">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                Heartbeat event message cycle in seconds. 0 = No
+                                heartbeat events will be sent.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                          </xsd:element>
+                          <xsd:element name="DiagnosticEvents" maxOccurs="1">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                 Whether to send events for diagnostic or not.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="ModuleStateEvents"
+                                             default="false" maxOccurs="1"
+                                             type="xsd:boolean">
+                                  <xsd:annotation>
+                                    <xsd:documentation>
+                                      Send events when the state of a module
+                                      changes.
+                                    </xsd:documentation>
+                                  </xsd:annotation>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="Triggers">
+                <xsd:complexType>
+                  <xsd:sequence maxOccurs="4" minOccurs="0">
+                    <xsd:element name="Trigger">
+                      <xsd:complexType>
+                        <xsd:sequence minOccurs="1">
+                          <xsd:element name="Enable" default="false"
+                                       type="xsd:boolean">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                Enable or disable the trigger.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                          </xsd:element>
+                          <xsd:element name="Name" maxOccurs="1">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                The name of the trigger. Only for informational
+                                purposes.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:string">
+                                <xsd:maxLength value="128"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                          <xsd:element name="TriggerId" maxOccurs="1"
+                                       type="xsd:unsignedInt">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                The id of the trigger.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                          </xsd:element>
+                          <xsd:element name="Slope" maxOccurs="1">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                The slope which activates the trigger.
+                                Low	static low level
+                                High	static high level
+                                Raising	raising edge
+                                Falling	falling edge
+                                Any	raising and falling edge.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                            <xsd:simpleType>
+                              <xsd:restriction base="xsd:string">
+                                <xsd:enumeration value="Low"/>
+                                <xsd:enumeration value="High"/>
+                                <xsd:enumeration value="Raising"/>
+                                <xsd:enumeration value="Falling"/>
+                                <xsd:enumeration value="Any"/>
+                              </xsd:restriction>
+                            </xsd:simpleType>
+                          </xsd:element>
+                          <xsd:element name="Inputs" maxOccurs="1"
+                                       type="xsd:string">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                Inputs which activate the trigger. More then one
+                                input can be specified by seperating them by
+                                comma.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                          </xsd:element>
+                          <xsd:element name="Time" default="0"
+                                       type="xsd:unsignedInt" maxOccurs="1">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                Time the trigger is active after the trigger
+                                condition is not met any more.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                          </xsd:element>
+                          <xsd:element name="Retrigger" default="false"
+                                       maxOccurs="1" type="xsd:boolean">
+                            <xsd:annotation>
+                              <xsd:documentation>
+                                Specify if the trigger can be retriggered when
+                                it is still active.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="IOEventHandler">
+                <xsd:complexType>
+                  <xsd:sequence maxOccurs="1">
+                    <xsd:element name="LogLevel" maxOccurs="1">
+                      <xsd:annotation>
+                        <xsd:documentation>
+                          The logging level of the IO Event handler.
+                        </xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:unsignedInt">
+                          <xsd:maxInclusive value="7"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="EventHandlerIndex" maxOccurs="1">
+                      <xsd:annotation>
+                        <xsd:documentation>
+                          The Index of the IO Event handler.
+                        </xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:unsignedInt">
+                          <xsd:maxInclusive value="8"/>
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name="Inputs">
+                      <xsd:complexType>
+                        <xsd:sequence maxOccurs="2">
+                          <xsd:element name="Input">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="EventReasons" maxOccurs="1">
+                                  <xsd:annotation>
+                                    <xsd:documentation>
+                                      Reasons which causes an event message
+                                      being sent.
+                                    </xsd:documentation>
+                                  </xsd:annotation>
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="Raising"
+                                                   maxOccurs="1" default="0"
+                                                   type="xsd:boolean">
+                                        <xsd:annotation>
+                                          <xsd:documentation>
+                                            Raising edge causes an event message.
+                                          </xsd:documentation>
+                                        </xsd:annotation>
+                                      </xsd:element>
+                                      <xsd:element name="Falling"
+                                                   default="0" maxOccurs="1"
+                                                   type="xsd:boolean">
+                                        <xsd:annotation>
+                                          <xsd:documentation>
+                                            Falling edge causes an event.
+                                          </xsd:documentation>
+                                        </xsd:annotation>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="Areas">
+          <xsd:complexType>
+            <xsd:sequence maxOccurs="8" minOccurs="0">
+              <xsd:choice minOccurs="0" maxOccurs="8">
+                <xsd:element name="BasicArea" default="false">
+                  <xsd:annotation>
+                    <xsd:documentation>
+                      Simple area which just creates enter, leave and rereport
+                      events.
+                    </xsd:documentation>
+                  </xsd:annotation>
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="Enable" type="xsd:boolean"
+                                   maxOccurs="1">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            Enable or disable this area.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="AreaId" type="xsd:unsignedInt">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            The id of the area. It is send with the event
+                            messages.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="Name" maxOccurs="1">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            The name of the area. Only for informational
+                            purposes.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                          <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="128"/>
+                          </xsd:restriction>
+                        </xsd:simpleType>
+                      </xsd:element>
+                      <xsd:element name="LogLevel" maxOccurs="1" default="6">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            The logging level of this area.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                          <xsd:restriction base="xsd:unsignedShort">
+                            <xsd:maxInclusive value="7"/>
+                          </xsd:restriction>
+                        </xsd:simpleType>
+                      </xsd:element>
+                      <xsd:element name="ScanPause" type="xsd:unsignedInt"
+                                   default="20" maxOccurs="1">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            The time between scans in 1/10th of seconds.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="ReadRetries" type="xsd:unsignedShort"
+                                   maxOccurs="1" default="3">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            The number of retries if the communication with the
+                            reader fails.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="EventReason" maxOccurs="1">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            The reasons which will cause a event message.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                          <xsd:sequence maxOccurs="1" minOccurs="1">
+                            <xsd:element name="Enter" type="xsd:boolean"
+                                         maxOccurs="1" default="true">
+                              <xsd:annotation>
+                                <xsd:documentation>
+                                  A event message is sent when a new tag is in
+                                  the field
+                                </xsd:documentation>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="Leave" type="xsd:boolean"
+                                         maxOccurs="1" default="true">
+                              <xsd:annotation>
+                                <xsd:documentation>
+                                  A event message is sent when a tag has left
+                                  the field and the inhibit time is expired.
+                                </xsd:documentation>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="Rereport" type="xsd:boolean"
+                                         maxOccurs="1" default="false">
+                              <xsd:annotation>
+                                <xsd:documentation>
+                                  A event message is sent when a tag is still in
+                                  the field and a given time has expired.
+                                </xsd:documentation>
+                              </xsd:annotation>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="EventhandlerId" default="0">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            The id of the event handler to use sending the event
+                            messages. 0 is the default handler.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                          <xsd:restriction base="xsd:unsignedShort">
+                            <xsd:maxInclusive value="8"/>
+                          </xsd:restriction>
+                        </xsd:simpleType>
+                      </xsd:element>
+                      <xsd:element name="InhibitTime" default="10" maxOccurs="1"
+                                   type="xsd:unsignedShort">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            The time where a tag is treated as still in the
+                            field after the last communication with the tag.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="RereportTime" maxOccurs="1" default="0"
+                                   type="xsd:unsignedShort">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            After this time a tag event is sent again if the tag
+                            is still in the field.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="Blink">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            Let the tag blink
+                          </xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="Enable" default="false"
+                                         type="xsd:boolean">
+                              <xsd:annotation>
+                                <xsd:documentation>
+                                  Enable blinking of the tag.
+                                </xsd:documentation>
+                              </xsd:annotation>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="ReadData" maxOccurs="1">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="Enable" type="xsd:boolean"
+                                         maxOccurs="1" default="false">
+                              <xsd:annotation>
+                                <xsd:documentation>
+                                  Enable reading data from the tag.
+                                </xsd:documentation>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="StartAddress">
+                              <xsd:annotation>
+                                <xsd:documentation>
+                                  Start address when reading data.
+                                </xsd:documentation>
+                              </xsd:annotation>
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="IBTag" default="0"
+                                               maxOccurs="1">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        Start address when tag is an IB tag.
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                      <xsd:restriction base="xsd:unsignedShort">
+                                        <xsd:maxInclusive value="8"/>
+                                      </xsd:restriction>
+                                    </xsd:simpleType>
+                                  </xsd:element>
+                                  <xsd:element name="IDTag" maxOccurs="1"
+                                               default="16">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        Start address when tag is an ID tag.
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                      <xsd:restriction base="xsd:unsignedShort">
+                                        <xsd:minInclusive value="16"/>
+                                        <xsd:maxInclusive value="63"/>
+                                      </xsd:restriction>
+                                    </xsd:simpleType>
+                                  </xsd:element>
+                                  <xsd:element name="IQTag" maxOccurs="1"
+                                               default="256">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        Start address when tag is an IQ tag.
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                      <xsd:restriction base="xsd:unsignedShort">
+                                        <xsd:minInclusive value="256"/>
+                                        <xsd:maxInclusive value="32767"/>
+                                      </xsd:restriction>
+                                    </xsd:simpleType>
+                                  </xsd:element>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name="Length">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="IBTag" default="9"
+                                               maxOccurs="1">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        Length of data to read when tag is an IB
+                                        tag.
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                      <xsd:restriction base="xsd:unsignedShort">
+                                        <xsd:minInclusive value="1"/>
+                                        <xsd:maxInclusive value="57"/>
+                                      </xsd:restriction>
+                                    </xsd:simpleType>
+                                  </xsd:element>
+                                  <xsd:element name="IDTag" default="32"
+                                               maxOccurs="1">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        Length of data to read when tag is an ID
+                                        tag.
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                      <xsd:restriction base="xsd:unsignedShort">
+                                        <xsd:minInclusive value="1"/>
+                                        <xsd:maxInclusive value="32"/>
+                                      </xsd:restriction>
+                                    </xsd:simpleType>
+                                  </xsd:element>
+                                  <xsd:element name="IQTag" default="32"
+                                               maxOccurs="1">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        Length of data to read when tag is an IQ
+                                        tag.
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                      <xsd:restriction base="xsd:unsignedShort">
+                                        <xsd:minInclusive value="1"/>
+                                        <xsd:maxInclusive value="32"/>
+                                      </xsd:restriction>
+                                    </xsd:simpleType>
+                                  </xsd:element>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="PowerSave">
+                        <xsd:complexType>
+                          <xsd:sequence>
+                            <xsd:element name="Enable" maxOccurs="1"
+                                         default="false" type="xsd:boolean">
+                              <xsd:annotation>
+                                <xsd:documentation>
+                                  Enable power save.
+                                </xsd:documentation>
+                              </xsd:annotation>
+                            </xsd:element>
+                            <xsd:element name="Duration" default="10"
+                                         maxOccurs="1">
+                              <xsd:annotation>
+                                <xsd:documentation>
+                                  Time the tag is in power save mode.
+                                </xsd:documentation>
+                              </xsd:annotation>
+                              <xsd:simpleType>
+                                <xsd:restriction base="xsd:unsignedShort">
+                                  <xsd:maxInclusive value="255"/>
+                                </xsd:restriction>
+                              </xsd:simpleType>
+                            </xsd:element>
+                            <xsd:element name="Mode">
+                              <xsd:complexType>
+                                <xsd:sequence>
+                                  <xsd:element name="Sleep" default="false"
+                                               maxOccurs="1"
+                                               type="xsd:boolean">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        Send the tag to sleep.
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                  </xsd:element>
+                                  <xsd:element name="Mute" default="false"
+                                               maxOccurs="1"
+                                               type="xsd:boolean">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        Mute tag
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                  </xsd:element>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:choice>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="Modules">
+          <xsd:annotation>
+            <xsd:documentation>
+              The modules on the bus.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence maxOccurs="8" minOccurs="0">
+              <xsd:choice minOccurs="0" maxOccurs="8">
+                <xsd:element name="Marker">
+                  <xsd:annotation>
+                    <xsd:documentation>
+                      Module is a marker.
+                    </xsd:documentation>
+                  </xsd:annotation>
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="Enable" maxOccurs="1"
+                                   type="xsd:boolean">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            Enable this module.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="Name" maxOccurs="1">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            Name of the module. Only for information.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                          <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="128"/>
+                          </xsd:restriction>
+                        </xsd:simpleType>
+                      </xsd:element>
+                      <xsd:element name="SerialNumber" maxOccurs="1">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            Serial number of the module.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                          <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="10"/>
+                          </xsd:restriction>
+                        </xsd:simpleType>
+                      </xsd:element>
+                      <xsd:element name="LoopId" maxOccurs="1">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            The loop id of the marker.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                          <xsd:restriction base="xsd:unsignedInt"/>
+                        </xsd:simpleType>
+                      </xsd:element>
+                      <xsd:element name="LoopCurrent" minOccurs="1"
+                                   maxOccurs="1" default="1000">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            The loop current in mA
+                          </xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                          <xsd:restriction base="xsd:unsignedInt">
+                            <xsd:maxInclusive value="10000"/>
+                          </xsd:restriction>
+                        </xsd:simpleType>
+                      </xsd:element>
+                      <xsd:element name="SyncSlots">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            Which syncronization slots are active.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                          <xsd:sequence maxOccurs="1">
+                            <xsd:element name="Slot1" type="xsd:boolean"
+                                         maxOccurs="1" default="true"/>
+                            <xsd:element name="Slot2" type="xsd:boolean"
+                                         maxOccurs="1" default="true"/>
+                            <xsd:element name="Slot3" type="xsd:boolean"
+                                         maxOccurs="1" default="true"/>
+                            <xsd:element name="Slot4" type="xsd:boolean"
+                                         maxOccurs="1" default="true"/>
+                            <xsd:element name="Slot5" type="xsd:boolean"
+                                         maxOccurs="1" default="true"/>
+                            <xsd:element name="Slot6" type="xsd:boolean"
+                                         maxOccurs="1" default="true"/>
+                            <xsd:element name="Slot7" type="xsd:boolean"
+                                         maxOccurs="1" default="true"/>
+                            <xsd:element name="Slot8" type="xsd:boolean"
+                                         maxOccurs="1" default="true"/>
+                            <xsd:element name="Slot9" type="xsd:boolean"
+                                         maxOccurs="1" default="true"/>
+                            <xsd:element name="Slot10" type="xsd:boolean"
+                                         maxOccurs="1" default="true"/>
+                            <xsd:element name="Slot11" type="xsd:boolean"
+                                         maxOccurs="1" default="true"/>
+                            <xsd:element name="Slot12" type="xsd:boolean"
+                                         maxOccurs="1" default="true"/>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                      <xsd:element name="Threshold">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            Threshold to detect a tag.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                          <xsd:restriction base="xsd:unsignedInt">
+                            <xsd:minInclusive value="1"/>
+                            <xsd:maxInclusive value="100"/>
+                          </xsd:restriction>
+                        </xsd:simpleType>
+                      </xsd:element>
+                      <xsd:element name="RelayControl" maxOccurs="1"
+                                   default="0">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            How to use the relay.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                          <xsd:restriction base="xsd:unsignedInt">
+                            <xsd:maxInclusive value="4"/>
+                          </xsd:restriction>
+                        </xsd:simpleType>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:choice>
+              <xsd:choice minOccurs="0" maxOccurs="8">
+                <xsd:element name="Reader">
+                  <xsd:annotation>
+                    <xsd:documentation>
+                      Module is a reader.
+                    </xsd:documentation>
+                  </xsd:annotation>
+                  <xsd:complexType>
+                    <xsd:sequence>
+                      <xsd:element name="Enable" maxOccurs="1"
+                                   type="xsd:boolean">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            Enable this module.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                      </xsd:element>
+                      <xsd:element name="Name" maxOccurs="1">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            Name of the module. Just for information.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                          <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="128"/>
+                          </xsd:restriction>
+                        </xsd:simpleType>
+                      </xsd:element>
+                      <xsd:element name="ReaderType" maxOccurs="1">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            The type of the reader.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                          <xsd:restriction base="xsd:string">
+                            <xsd:enumeration value="iCard3"/>
+                            <xsd:enumeration value="iPort-R2"/>
+                            <xsd:enumeration value="iPort-T2"/>
+                            <xsd:enumeration value="iPort-MB1"/>
+                            <xsd:enumeration value="iPort-MB2"/>
+                            <xsd:enumeration value="iPort-MQ1"/>
+                            <xsd:enumeration value="iPort-MQ2"/>
+                            <xsd:enumeration value="iPort-MCB1"/>
+                            <xsd:enumeration value="iMark"/>
+                            <xsd:enumeration value="Unknown"/>
+                          </xsd:restriction>
+                        </xsd:simpleType>
+                      </xsd:element>
+                      <xsd:element name="SerialNumber" maxOccurs="1">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            The serial number of the reader.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                          <xsd:restriction base="xsd:string">
+                            <xsd:maxLength value="10"/>
+                          </xsd:restriction>
+                        </xsd:simpleType>
+                      </xsd:element>
+                      <xsd:element name="NrAntennas" maxOccurs="1">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            Maximum numbers of antennas on this reader.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:simpleType>
+                          <xsd:restriction base="xsd:unsignedShort">
+                            <xsd:maxInclusive value="4"/>
+                          </xsd:restriction>
+                        </xsd:simpleType>
+                      </xsd:element>
+                      <xsd:element name="Antennas">
+                        <xsd:annotation>
+                          <xsd:documentation>
+                            Configuration of the antennas.
+                          </xsd:documentation>
+                        </xsd:annotation>
+                        <xsd:complexType>
+                          <xsd:sequence maxOccurs="4" minOccurs="0">
+                            <xsd:element name="Antenna">
+                              <xsd:complexType>
+                                <xsd:sequence maxOccurs="1">
+                                  <xsd:element name="Enable" maxOccurs="1"
+                                               type="xsd:boolean">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        Enable this antenna.
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                  </xsd:element>
+                                  <xsd:element name="LogicalNumber"
+                                               maxOccurs="1">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        Logical antenna number.
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                      <xsd:restriction base="xsd:unsignedShort">
+                                        <xsd:maxInclusive value="32"/>
+                                      </xsd:restriction>
+                                    </xsd:simpleType>
+                                  </xsd:element>
+                                  <xsd:element name="Name" maxOccurs="1"
+                                               type="xsd:string">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        Name of the antenna. Only for
+                                        information.
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                  </xsd:element>
+                                  <xsd:element name="NumberSlots" default="5"
+                                               maxOccurs="1">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        Number of time slots to wait for an
+                                        anwer of response tags.
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                      <xsd:restriction base="xsd:unsignedShort">
+                                        <xsd:minInclusive value="1"/>
+                                        <xsd:maxInclusive value="15"/>
+                                      </xsd:restriction>
+                                    </xsd:simpleType>
+                                  </xsd:element>
+                                  <xsd:element name="PowerSettings">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        Power settings for this antenna.
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:complexType>
+                                      <xsd:sequence>
+                                        <xsd:element name="IBTag">
+                                          <xsd:annotation>
+                                            <xsd:documentation>
+                                              Power settings for IB tags.
+                                            </xsd:documentation>
+                                          </xsd:annotation>
+                                          <xsd:complexType>
+                                            <xsd:sequence>
+                                              <xsd:element name="HighSense"
+                                                           maxOccurs="1"
+                                                           type="xsd:boolean"
+                                                           default="false">
+                                                <xsd:annotation>
+                                                  <xsd:documentation>
+                                                    Reader is high sensitive.
+                                                  </xsd:documentation>
+                                                </xsd:annotation>
+                                              </xsd:element>
+                                            </xsd:sequence>
+                                          </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="IDTag">
+                                          <xsd:annotation>
+                                            <xsd:documentation>
+                                              Power settings for ID tags.
+                                            </xsd:documentation>
+                                          </xsd:annotation>
+                                          <xsd:complexType>
+                                            <xsd:sequence>
+                                              <xsd:element name="TxPower"
+                                                           maxOccurs="1"
+                                                           default="10">
+                                                <xsd:annotation>
+                                                  <xsd:documentation>
+                                                    Transmission power in dBm.
+                                                  </xsd:documentation>
+                                                </xsd:annotation>
+                                                <xsd:simpleType>
+                                                  <xsd:restriction base="xsd:int">
+                                                    <xsd:minInclusive value="-40"/>
+                                                    <xsd:maxInclusive value="23"/>
+                                                  </xsd:restriction>
+                                                </xsd:simpleType>
+                                              </xsd:element>
+                                              <xsd:element name="HighSense"
+                                                           default="false"
+                                                           maxOccurs="1"
+                                                           type="xsd:boolean">
+                                                <xsd:annotation>
+                                                  <xsd:documentation>
+                                                    Reader is high sensitive.
+                                                  </xsd:documentation>
+                                                </xsd:annotation>
+                                              </xsd:element>
+                                            </xsd:sequence>
+                                          </xsd:complexType>
+                                        </xsd:element>
+                                        <xsd:element name="IQTag">
+                                          <xsd:annotation>
+                                            <xsd:documentation>
+                                              Power settings for IQ tags.
+                                            </xsd:documentation>
+                                          </xsd:annotation>
+                                          <xsd:complexType>
+                                            <xsd:sequence>
+                                              <xsd:element name="TxPower"
+                                                           maxOccurs="1"
+                                                           default="-10">
+                                                <xsd:annotation>
+                                                  <xsd:documentation>
+                                                    Transmission power in dBm.
+                                                  </xsd:documentation>
+                                                </xsd:annotation>
+                                                <xsd:simpleType>
+                                                  <xsd:restriction base="xsd:int">
+                                                    <xsd:minInclusive value="-40"/>
+                                                    <xsd:maxInclusive value="6"/>
+                                                  </xsd:restriction>
+                                                </xsd:simpleType>
+                                              </xsd:element>
+                                              <xsd:element name="HighSense"
+                                                           maxOccurs="1"
+                                                           type="xsd:boolean"
+                                                           default="false">
+                                                <xsd:annotation>
+                                                  <xsd:documentation>
+                                                    Reader is high sensitive.
+                                                  </xsd:documentation>
+                                                </xsd:annotation>
+                                              </xsd:element>
+                                            </xsd:sequence>
+                                          </xsd:complexType>
+                                        </xsd:element>
+                                      </xsd:sequence>
+                                    </xsd:complexType>
+                                  </xsd:element>
+                                  <xsd:element name="PowerBoost" maxOccurs="1"
+                                               default="3">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        Power difference in dBm which is added
+                                        on reading and writing operations.
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                      <xsd:restriction base="xsd:int">
+                                        <xsd:maxInclusive value="6"/>
+                                      </xsd:restriction>
+                                    </xsd:simpleType>
+                                  </xsd:element>
+                                  <xsd:element name="RxThresHold" default="-100"
+                                               maxOccurs="1">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        The minimum receiving level a tag is
+                                        recognized.
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                      <xsd:restriction base="xsd:int">
+                                        <xsd:minInclusive value="-127"/>
+                                        <xsd:maxInclusive value="-10"/>
+                                      </xsd:restriction>
+                                    </xsd:simpleType>
+                                  </xsd:element>
+                                  <xsd:element name="Retries" default="3"
+                                               maxOccurs="1">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        The number of retries of the
+                                        communication between the reader and the
+                                        tag.
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                      <xsd:restriction base="xsd:unsignedInt">
+                                        <xsd:maxInclusive value="255"/>
+                                      </xsd:restriction>
+                                    </xsd:simpleType>
+                                  </xsd:element>
+                                  <xsd:element name="CableLoss" default="0"
+                                               maxOccurs="1">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        The loss of RSSI by the cable.
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                      <xsd:restriction base="xsd:int">
+                                        <xsd:minInclusive value="-20"/>
+                                        <xsd:maxInclusive value="0"/>
+                                      </xsd:restriction>
+                                    </xsd:simpleType>
+                                  </xsd:element>
+                                  <xsd:element name="TriggerIndex" default="0"
+                                               maxOccurs="1">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        The id of the trigger which activates
+                                        this antenna.
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                      <xsd:restriction base="xsd:unsignedInt">
+                                        <xsd:maxInclusive value="8"/>
+                                      </xsd:restriction>
+                                    </xsd:simpleType>
+                                  </xsd:element>
+                                  <xsd:element name="AreaIndex" default="0"
+                                               maxOccurs="1">
+                                    <xsd:annotation>
+                                      <xsd:documentation>
+                                        The id of the area the antenna belongs
+                                        to.
+                                      </xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                      <xsd:restriction base="xsd:unsignedInt">
+                                        <xsd:maxInclusive value="8"/>
+                                      </xsd:restriction>
+                                    </xsd:simpleType>
+                                  </xsd:element>
+                                </xsd:sequence>
+                              </xsd:complexType>
+                            </xsd:element>
+                          </xsd:sequence>
+                        </xsd:complexType>
+                      </xsd:element>
+                    </xsd:sequence>
+                  </xsd:complexType>
+                </xsd:element>
+              </xsd:choice>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

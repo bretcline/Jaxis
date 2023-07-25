@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicrosDatabaseConnect", "MicrosDatabaseConnect\MicrosDatabaseConnect.csproj", "{8FD2C49A-CACC-4241-8404-0BCB8F52DF25}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseUtilities", "..\..\..\..\Database\DatabaseUtilities.csproj", "{1E887F5F-13FC-4761-B05A-B4F633338726}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8FD2C49A-CACC-4241-8404-0BCB8F52DF25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FD2C49A-CACC-4241-8404-0BCB8F52DF25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FD2C49A-CACC-4241-8404-0BCB8F52DF25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FD2C49A-CACC-4241-8404-0BCB8F52DF25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E887F5F-13FC-4761-B05A-B4F633338726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E887F5F-13FC-4761-B05A-B4F633338726}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E887F5F-13FC-4761-B05A-B4F633338726}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E887F5F-13FC-4761-B05A-B4F633338726}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

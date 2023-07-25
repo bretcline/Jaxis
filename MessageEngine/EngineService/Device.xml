@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeviceConfigCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Configs>
+    <DeviceConfig>
+      <AssemblyName>Identec.dll</AssemblyName>
+      <AssemblyType>Jaxis.Readers.Identec.IdentecDev</AssemblyType>
+      <AssemblyVersion>1.0</AssemblyVersion>
+      <ID>10415M0914</ID>
+      <Name>10415M0914</Name>
+      <Type>DataProducer</Type>
+      <State>Started</State>
+      <ConsumerMessageType>0</ConsumerMessageType>
+      <ProducerMessageType>8</ProducerMessageType>
+      <Options>
+        <DeviceConfigOption>
+          <Name>IP Address or COM Port</Name>
+          <Value>192.168.236.71</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Timeout</Name>
+          <Value></Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Frequency</Name>
+          <Value>NorthAmerican</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>RFBaudRate</Name>
+          <Value></Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>AllowHeartbeat</Name>
+          <Value>true</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>AllowPours</Name>
+          <Value>true</Value>
+        </DeviceConfigOption>
+      </Options>
+      <Filters>
+        <FilterConfig>
+          <AssemblyName>Jaxis.Engine.Filter.dll</AssemblyName>
+          <AssemblyType>Jaxis.Engine.Filter.DuplicateTagMessageFilter</AssemblyType>
+          <AssemblyVersion>1.0</AssemblyVersion>
+          <Name>Read Time Filter</Name>
+          <Type>Outbound</Type>
+          <Options>
+            <DeviceConfigOption>
+              <Name>Timeout</Name>
+              <Value>1.5</Value>
+            </DeviceConfigOption>
+            <DeviceConfigOption>
+              <Name>Messages to filter</Name>
+              <Value>PhaseMessage|TagAlertMessage</Value>
+            </DeviceConfigOption>
+          </Options>
+        </FilterConfig>
+      </Filters>
+    </DeviceConfig>
+    <DeviceConfig>
+      <AssemblyName>Identec.dll</AssemblyName>
+      <AssemblyType>Jaxis.Readers.Identec.IdentecDetachPlugin</AssemblyType>
+      <AssemblyVersion>1.0</AssemblyVersion>
+      <ID>109</ID>
+      <Name>Identec Detach Filter</Name>
+      <Type>DataProducerConsumer</Type>
+      <State>Started</State>
+      <ConsumerMessageType>8</ConsumerMessageType>
+      <ProducerMessageType>1</ProducerMessageType>
+      <Options>
+        <DeviceConfigOption>
+          <Name>Timeout</Name>
+          <Value>15</Value>
+        </DeviceConfigOption>
+      </Options>
+    </DeviceConfig>
+    <DeviceConfig>
+      <AssemblyName>Jaxis.Readers.POS.dll</AssemblyName>
+      <AssemblyType>Jaxis.Readers.POS.POSReader</AssemblyType>
+      <AssemblyVersion>1.0</AssemblyVersion>
+      <ID>111</ID>
+      <Name>POS Reader</Name>
+      <Type>DataProducer</Type>
+      <State>Stopped</State>
+      <ConsumerMessageType>0</ConsumerMessageType>
+      <ProducerMessageType>1</ProducerMessageType>
+      <Options>
+        <DeviceConfigOption>
+          <Name>Port</Name>
+          <Value>4550</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Poll Time</Name>
+          <Value>10</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Parse Config</Name>
+          <Value>ParserConfig.xml</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Simulator</Name>
+          <Value>false</Value>
+        </DeviceConfigOption>
+      </Options>
+    </DeviceConfig>
+    <DeviceConfig>
+      <AssemblyName>Jaxis.Reader.POS.ClientInterface.dll</AssemblyName>
+      <AssemblyType>Jaxis.Reader.POS.POSClientPlugin</AssemblyType>
+      <AssemblyVersion>1.0</AssemblyVersion>
+      <ID>121</ID>
+      <Name>POS Ticket Interface</Name>
+      <Type>DataProducer</Type>
+      <State>Started</State>
+      <ConsumerMessageType>0</ConsumerMessageType>
+      <ProducerMessageType>1</ProducerMessageType>
+    </DeviceConfig>
+    <DeviceConfig>
+      <AssemblyName>Sprint.dll</AssemblyName>
+      <AssemblyType>Jaxis.Readers.Sprint.Trish</AssemblyType>
+      <AssemblyVersion>1.0</AssemblyVersion>
+      <ID>TRISH</ID>
+      <Name>TRISH</Name>
+      <Type>DataProducer</Type>
+      <State>Started</State>
+      <ConsumerMessageType>0</ConsumerMessageType>
+      <ProducerMessageType>1</ProducerMessageType>
+      <Options>
+        <DeviceConfigOption>
+          <Name>COM Port</Name>
+          <Value>COM6</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Poll Time</Name>
+          <Value>10</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Line Clean Amount</Name>
+          <Value>10000</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>default event</Name>
+          <Value>0045</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Simulator</Name>
+          <Value>false</Value>
+        </DeviceConfigOption>
+      </Options>
+    </DeviceConfig>
+    <DeviceConfig>
+      <AssemblyName>BevMetConsumer.dll</AssemblyName>
+      <AssemblyType>BevMetConsumer.DataConsumer</AssemblyType>
+      <AssemblyVersion>1.0</AssemblyVersion>
+      <ID>101</ID>
+      <Name>BevMet Consumer</Name>
+      <Type>DataConsumer</Type>
+      <State>Stopped</State>
+      <ConsumerMessageType>1</ConsumerMessageType>
+      <ProducerMessageType>0</ProducerMessageType>
+      <Options>
+        <DeviceConfigOption>
+          <Name>Spout breakover</Name>
+          <Value>10</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Connection String - OLD</Name>
+          <Value></Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Default event</Name>
+          <Value>0045</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Simulator</Name>
+          <Value>false</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Pull Tags</Name>
+          <Value>false</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Endpoint Config Name</Name>
+          <Value>PourEngineService</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Endpoint Address</Name>
+          <Value>http://localhost:9091/PourEngineService/</Value>
+        </DeviceConfigOption>
+        <!-- MessageTypes Pour,TagAlert,DeviceAlert,POSTicket,Heartbeat,HeartbeatDetached,Connect,Disconnect,BadBottleAttach,Dormant,MissedMsg,MissedPour,TagMoved, -->
+        <DeviceConfigOption>
+          <Name>Message Types</Name>
+          <Value>Pour,TagAlert,DeviceAlert,POSTicket,Heartbeat,HeartbeatDetached,Connect,Disconnect,BadBottleAttach,Dormant,MissedMsg,MissedPour,TagMoved</Value>
+        </DeviceConfigOption>
+      </Options>
+    </DeviceConfig>
+    <DeviceConfig>
+      <AssemblyName>BevMetConsumer.dll</AssemblyName>
+      <AssemblyType>BevMetConsumer.DataConsumer</AssemblyType>
+      <AssemblyVersion>1.0</AssemblyVersion>
+      <ID>101</ID>
+      <Name>BevMet Consumer</Name>
+      <Type>DataConsumer</Type>
+      <State>Started</State>
+      <ConsumerMessageType>1</ConsumerMessageType>
+      <ProducerMessageType>0</ProducerMessageType>
+      <Options>
+        <DeviceConfigOption>
+          <Name>Spout breakover</Name>
+          <Value>10</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Connection String - OLD</Name>
+          <Value></Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Default event</Name>
+          <Value>0045</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Simulator</Name>
+          <Value>true</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Pull Tags</Name>
+          <Value>false</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Endpoint Config Name</Name>
+          <Value>PourEngineService</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Endpoint Address</Name>
+          <Value>http://localhost:5050/processzone/services/PourEngineService/</Value>
+        </DeviceConfigOption>
+        <!-- MessageTypes Pour,TagAlert,DeviceAlert,POSTicket,Heartbeat,HeartbeatDetached,Connect,Disconnect,BadBottleAttach,Dormant,MissedMsg,MissedPour,TagMoved, -->
+        <DeviceConfigOption>
+          <Name>Message Types</Name>
+          <Value>Pour,TagAlert,DeviceAlert,POSTicket,Heartbeat,HeartbeatDetached,Connect,Disconnect,BadBottleAttach,Dormant,MissedMsg,MissedPour,TagMoved</Value>
+        </DeviceConfigOption>
+      </Options>
+    </DeviceConfig>
+  </Configs>
+</DeviceConfigCollection>

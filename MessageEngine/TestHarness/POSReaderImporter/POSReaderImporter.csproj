@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3CA31EBB-4935-43DA-9331-B6572FD02433}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>POSReaderImporter</RootNamespace>
+    <AssemblyName>POSReaderImporter</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\JaxisEngine\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.Extended, Version=1.0.0.43, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\JaxisEngine\packages\EntityFramework.Extended.1.0.0.43\lib\net40\EntityFramework.Extended.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JaxisLog4Net">
+      <HintPath>..\..\..\DLLS\JaxisLog4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\DLLS\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="SubSonic.Core, Version=3.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\3rd Party\SubSonic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Generated\ActiveRecord1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActiveRecord.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Generated\Context1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Generated\StoredProcedures1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoredProcedures.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\IDataObject.cs" />
+    <Compile Include="POSReaderImport.cs" />
+    <Compile Include="POSTicketData.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Data\Generated\MySQL.ttinclude" />
+    <None Include="Data\Generated\Settings.ttinclude" />
+    <None Include="Data\Generated\SQLServer.ttinclude" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\EngineServiceDll\EngineServiceDll.csproj">
+      <Project>{80E66AA7-DE3F-4BAD-8966-42BC0E349E50}</Project>
+      <Name>EngineServiceDll</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\JaxisInterfaces\JaxisInterfaces.csproj">
+      <Project>{77ab9947-1f31-4bf2-86ed-24d20ed9a5db}</Project>
+      <Name>JaxisInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Messages\MessageLibrary\MessageLibrary.csproj">
+      <Project>{CF1F61FD-C28D-4B31-A3D8-FA07E8AC1175}</Project>
+      <Name>MessageLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Plugins\BaseDevice\BaseDevice.csproj">
+      <Project>{9768CE9C-343E-4EC1-B6DF-F5B86A721C8D}</Project>
+      <Name>BaseDevice</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Plugins\Jaxis\BeverageManagementPlugin\BeverageManagementAPI\BeverageManagementAPI.csproj">
+      <Project>{816fa676-1ac8-4970-acbd-0edac5da5d17}</Project>
+      <Name>BeverageManagementAPI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Plugins\Jaxis\BeverageManagementPlugin\BeverageManagementPlugin.csproj">
+      <Project>{43bf589b-6f4c-4336-88a9-fdc9194485a0}</Project>
+      <Name>BeverageManagementPlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Plugins\Jaxis\BeverageManagementPlugin\BeverageMonitorEntities\BeverageMonitorEntities.csproj">
+      <Project>{19251f7f-db2c-4085-a24c-7dd7215f85e2}</Project>
+      <Name>BeverageMonitorEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Plugins\POSDriver\BasePOSDriver\BasePOSDriver.csproj">
+      <Project>{CD03F41A-9833-40EC-8A33-E180E3409907}</Project>
+      <Name>BasePOSDriver</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Generated\ActiveRecord.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ActiveRecord1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\Generated\Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Context1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Data\Generated\StoredProcedures.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StoredProcedures1.cs</LastGenOutput>
+    </Content>
+    <Content Include="Device.xml">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ParserConfig.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="POSReader.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

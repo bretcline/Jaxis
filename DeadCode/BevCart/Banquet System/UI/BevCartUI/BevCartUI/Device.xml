@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeviceConfigCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Configs>
+	<DeviceConfig>
+	  <AssemblyName>TestProdDev.dll</AssemblyName>
+	  <AssemblyType>TestProdDev.BevProdDev</AssemblyType>
+      <ID>123</ID>
+      <Name>Test Prod</Name>
+      <Type>DataProducer</Type>
+      <ConsumerMessageType>None</ConsumerMessageType>
+    </DeviceConfig>
+    <DeviceConfig>
+      <AssemblyName>BevDBDev.dll</AssemblyName>
+      <AssemblyType>BevDBDev.DBDev</AssemblyType>
+      <ID>321</ID>
+      <Name>DB Device</Name>
+      <Type>DataProducerConsumer</Type>
+      <ConsumerMessageType>RawData</ConsumerMessageType>
+    </DeviceConfig>
+  </Configs>
+</DeviceConfigCollection>

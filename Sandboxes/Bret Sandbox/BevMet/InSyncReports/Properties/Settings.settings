@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="InSyncReports.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="InSyncReports_svcInSyncReports_ContextItemServiceWSService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://204.232.156.188:8080/sensornet/services/swItemService</Value>
+    </Setting>
+    <Setting Name="InSyncReports_svcContextService_ContextReportServiceWSService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://204.232.156.182:8080/sensornet/services/swContextService</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

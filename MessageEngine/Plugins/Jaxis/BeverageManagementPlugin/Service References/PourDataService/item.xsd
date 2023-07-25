@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Jaxis.MessageLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Jaxis.MessageLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8223/HostWCFService/PourEngineService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:8223/HostWCFService/PourEngineService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Jaxis.Interfaces" />
+  <xs:complexType name="CalcPour">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Jaxis.Interfaces" base="q1:BaseMessage">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="BatteryVoltage" type="xs:double" />
+          <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="DeviceID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Location" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OriginalType" type="tns:OriginalMessageType" />
+          <xs:element minOccurs="0" name="PourAmount" type="xs:double" />
+          <xs:element minOccurs="0" name="PourCount" type="xs:int" />
+          <xs:element minOccurs="0" name="PourDuration" type="xs:long" />
+          <xs:element minOccurs="0" name="RawData" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="TagID" type="ser:guid" />
+          <xs:element minOccurs="0" name="TagNumber" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Temperature" type="xs:double" />
+          <xs:element minOccurs="0" name="TotalPoured" type="xs:double" />
+          <xs:element minOccurs="0" name="UPCName" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CalcPour" nillable="true" type="tns:CalcPour" />
+  <xs:simpleType name="OriginalMessageType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Identec">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="Trish">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OriginalMessageType" nillable="true" type="tns:OriginalMessageType" />
+</xs:schema>

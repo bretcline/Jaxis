@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2b97ac32-2873-49cf-a0ec-bbd12ad3d517" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:56355/FormatService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="FormatService.xsd" MetadataType="Schema" ID="8cc1c105-5364-487b-960d-7287850f475d" SourceId="1" SourceUrl="http://localhost:56355/FormatService.svc?xsd=xsd3" />
+    <MetadataFile FileName="FormatService1.xsd" MetadataType="Schema" ID="64ec6c5b-642a-4869-826b-18130b1364d2" SourceId="1" SourceUrl="http://localhost:56355/FormatService.svc?xsd=xsd2" />
+    <MetadataFile FileName="FormatService2.xsd" MetadataType="Schema" ID="5ea22413-02ac-4906-a10a-40d43e7e903d" SourceId="1" SourceUrl="http://localhost:56355/FormatService.svc?xsd=xsd1" />
+    <MetadataFile FileName="FormatService3.xsd" MetadataType="Schema" ID="900c5e3a-399f-4819-885a-855be2b5b2a6" SourceId="1" SourceUrl="http://localhost:56355/FormatService.svc?xsd=xsd0" />
+    <MetadataFile FileName="FormatService.wsdl" MetadataType="Wsdl" ID="345802dd-359d-491d-904b-1f62ffa32848" SourceId="1" SourceUrl="http://localhost:56355/FormatService.svc?wsdl" />
+    <MetadataFile FileName="FormatService.disco" MetadataType="Disco" ID="8d382ddb-fca9-4958-9a15-c135bc39f405" SourceId="1" SourceUrl="http://localhost:56355/FormatService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

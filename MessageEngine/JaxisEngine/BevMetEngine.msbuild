@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\Build\Jaxis.Tasks.Targets" />
+
+    <!--Properties-->
+    <PropertyGroup>
+        <VersionFile>c:\Temp\JaxisVersion.txt</VersionFile>
+        <ProjectFile>BevMet.MessageEngine.sln</ProjectFile>
+
+        <ApplicationName>Jaxis Engine Service</ApplicationName>
+        <OutputLocation Condition=" '$(OutputLocation)' == '' ">C:\Source\Jaxis\Builds\BevMet.MessageEngine\</OutputLocation>
+        <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    </PropertyGroup>
+
+    <Target Name="Build" DependsOnTargets="Version" >
+        
+        <Message Text="Version Number: $(VersionNumber)" />
+
+        <Message Text="OutputLocation=$(OutputLocation)$(VersionNumber)" />
+        <MSBuild Projects="$(MSBuildProjectFile)" Targets="CreateOutputPath" Properties="OutputLocation=$(OutputLocation)$(VersionNumber)" />
+
+        <Message Text="Delete: &quot;$(OutputLocation)$(VersionNumber)\*.*&quot; /f /q" />
+        <Exec Command="del &quot;$(OutputLocation)$(VersionNumber)\*.*&quot; /f /q"/>
+        <Message Text="Delete: &quot;$(OutputLocation)Current\*.*&quot; /f /q" />
+        <Exec Command="del &quot;$(OutputLocation)Current\*.*&quot; /f /q"/>
+
+        <Message Text="Building Jaxis Engine" />
+        <MSBuild Projects="$(MSBuildProjectFile)" Targets="BaseBuild" Properties="OutputLocation=$(OutputLocation)$(VersionNumber)" />
+
+        <Exec Command="xcopy &quot;$(OutputLocation)$(VersionNumber)\*.*&quot; &quot;$(OutputLocation)Current\&quot;" />
+
+        <Message Text="Building BevMet Message Engine" />
+        <Exec Command="svn revert $(AssemblyInfoPath)" />
+
+    </Target>
+    <Target Name="Clean">
+
+        <Message Text="Clean Jaxis Engine Service" />
+<!--         <MSBuild Projects=".\Service\EdgeServ.msbuild" Targets="Clean" /> -->
+
+    </Target>
+</Project>

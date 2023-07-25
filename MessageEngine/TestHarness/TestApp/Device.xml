@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeviceConfigCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Configs>
+        <DeviceConfig>
+            <AssemblyName>TestProdDev.dll</AssemblyName>
+            <AssemblyType>Jaxis.Engine.Device.TestProdDev</AssemblyType>
+            <AssemblyVersion>1.0</AssemblyVersion>
+            <ID>123</ID>
+            <Name>Test Prod</Name>
+            <Type>DataProducer</Type>
+            <State>Started</State>
+            <ProducerMessageType>1</ProducerMessageType>
+            <ConsumerMessageType>0</ConsumerMessageType>
+          <Options>
+            <DeviceConfigOption>
+              <Name>Name1</Name>
+              <Value>Value1</Value>
+            </DeviceConfigOption>
+            <DeviceConfigOption>
+              <Name>Name2</Name>
+              <Value>Value2</Value>
+            </DeviceConfigOption>
+            <DeviceConfigOption>
+              <Name>Name3</Name>
+              <Value>Value3</Value>
+            </DeviceConfigOption>
+          </Options>
+          <Filters>
+          </Filters>
+        </DeviceConfig>
+
+
+      <DeviceConfig>
+        <AssemblyName>Jaxis.BeverageManagement.Plugin.dll</AssemblyName>
+        <AssemblyType>Jaxis.BeverageManagement.Plugin.PourPosReconcile</AssemblyType>
+        <AssemblyVersion>1.0</AssemblyVersion>
+        <ID>321</ID>
+        <Name>Pour Pos Reconcile</Name>
+        <Type>DataProducer</Type>
+        <State>Started</State>
+        <ProducerMessageType>64</ProducerMessageType>
+        <ConsumerMessageType>0</ConsumerMessageType>
+        <Options>
+          <DeviceConfigOption>
+            <Name>Connect String</Name>
+            <Value>http://localhost:8223/HostWCFService/PourEngineService/</Value>
+          </DeviceConfigOption>
+          <DeviceConfigOption>
+            <Name>Poll Interval</Name>
+            <Value>1</Value>
+          </DeviceConfigOption>
+          <DeviceConfigOption>
+            <Name>Alert Interval</Name>
+            <Value>360</Value>
+          </DeviceConfigOption>
+        </Options>
+        <Filters>
+        </Filters>
+      </DeviceConfig>
+
+
+      <!--<DeviceConfig>
+            <AssemblyName>PureRFID.dll</AssemblyName>
+            <AssemblyType>Jaxis.Readers.PureRFID.PureRFReader</AssemblyType>
+            <AssemblyVersion>1.0</AssemblyVersion>
+            <ID>321</ID>
+            <Name>PureRFID Device</Name>
+            <Type>DataProducer</Type>
+            <State>Started</State>
+            <ConsumerMessageType>None</ConsumerMessageType>
+            <Options>
+                <string>1</string>
+                <string></string>
+                <string>COM15</string>
+                <string>1</string>
+            </Options>
+        </DeviceConfig>-->
+    </Configs>
+</DeviceConfigCollection>

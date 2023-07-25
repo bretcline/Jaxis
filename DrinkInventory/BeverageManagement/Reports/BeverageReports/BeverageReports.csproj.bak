@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9820579B-4AA1-4C62-8A9C-CB4B329FEB69}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BeverageReports</RootNamespace>
+    <AssemblyName>BeverageReports</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DatabaseUtilities">
+      <HintPath>..\..\..\..\DLLS\DatabaseUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Reports.v12.1.Designer, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v12.1.Extensions, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dsAlerts.cs">
+      <DependentUpon>dsAlerts.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsInventory.cs">
+      <DependentUpon>dsInventory.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsPourSummaryByUPC.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPourSummaryByUPC.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsPourSummaryByTag.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPourSummaryByTag.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsAlerts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsAlerts.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsInventory.Designer.cs">
+      <DependentUpon>dsInventory.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="dsSummary.cs">
+      <DependentUpon>dsSummary.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsSummary.Designer.cs">
+      <DependentUpon>dsSummary.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="rptAlerts.cs" />
+    <Compile Include="rptAlerts.Designer.cs">
+      <DependentUpon>rptAlerts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptCategorySummaryChart.cs" />
+    <Compile Include="rptCategorySummaryChart.Designer.cs">
+      <DependentUpon>rptCategorySummaryChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptCategorySummary.cs" />
+    <Compile Include="rptCategorySummary.Designer.cs">
+      <DependentUpon>rptCategorySummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptInventory.cs" />
+    <Compile Include="rptInventory.Designer.cs">
+      <DependentUpon>rptInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptPourSummaryByTag.cs" />
+    <Compile Include="rptPourSummaryByTag.Designer.cs">
+      <DependentUpon>rptPourSummaryByTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptPourSummary.cs" />
+    <Compile Include="rptPourSummary.Designer.cs">
+      <DependentUpon>rptPourSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptSummary.cs" />
+    <Compile Include="rptSummary.Designer.cs">
+      <DependentUpon>rptSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="rptAlerts.resx">
+      <DependentUpon>rptAlerts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptCategorySummaryChart.resx">
+      <DependentUpon>rptCategorySummaryChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptCategorySummary.resx">
+      <DependentUpon>rptCategorySummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptInventory.resx">
+      <DependentUpon>rptInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptPourSummaryByTag.resx">
+      <DependentUpon>rptPourSummaryByTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptPourSummary.resx">
+      <DependentUpon>rptPourSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptSummary.resx">
+      <DependentUpon>rptSummary.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="dsPourSummaryByUPC.xsc">
+      <DependentUpon>dsPourSummaryByUPC.xsd</DependentUpon>
+    </None>
+    <None Include="dsPourSummaryByUPC.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPourSummaryByUPC.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsPourSummaryByUPC.xss">
+      <DependentUpon>dsPourSummaryByUPC.xsd</DependentUpon>
+    </None>
+    <None Include="dsPourSummaryByTag.xsc">
+      <DependentUpon>dsPourSummaryByTag.xsd</DependentUpon>
+    </None>
+    <None Include="dsPourSummaryByTag.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPourSummaryByTag.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsPourSummaryByTag.xss">
+      <DependentUpon>dsPourSummaryByTag.xsd</DependentUpon>
+    </None>
+    <None Include="dsAlerts.xsc">
+      <DependentUpon>dsAlerts.xsd</DependentUpon>
+    </None>
+    <None Include="dsAlerts.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsAlerts.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsAlerts.xss">
+      <DependentUpon>dsAlerts.xsd</DependentUpon>
+    </None>
+    <None Include="dsInventory.xsc">
+      <DependentUpon>dsInventory.xsd</DependentUpon>
+    </None>
+    <None Include="dsInventory.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsInventory.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dsInventory.xss">
+      <DependentUpon>dsInventory.xsd</DependentUpon>
+    </None>
+    <None Include="dsSummary.xsc">
+      <DependentUpon>dsSummary.xsd</DependentUpon>
+    </None>
+    <None Include="dsSummary.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSummary.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsSummary.xss">
+      <DependentUpon>dsSummary.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\Jaxis.Inventory.Data.Reports.IRPourTotals.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\IDataAccess\IDataAccess.csproj">
+      <Project>{A9552B6C-5BFA-4D23-B813-9FBB548610FF}</Project>
+      <Name>IDataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

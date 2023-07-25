@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FormatDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>00000000-0000-0000-0000-000000000000</ID>
+  <Name>Well Maintenance History</Name>
+  <Description>Stores maintenance history</Description>
+  <HeaderRowDef>
+    <ElementDefs>
+      <DataElementDef>
+        <Name>Lease</Name>
+        <DataType>Text</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Well Name</Name>
+        <DataType>Text</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Operator</Name>
+        <DataType>PickList</DataType>
+        <Required>true</Required>
+        <Constraints>OXY|BP|Chevron</Constraints>
+      </DataElementDef>
+      <DataElementDef>
+        <Name>First Prod Date</Name>
+        <DataType>DateTime</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+    </ElementDefs>
+  </HeaderRowDef>
+  <DataRowDef>
+    <ElementDefs>
+      <DataElementDef>
+        <Name>Inspection Date</Name>
+        <DataType>DateTime</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Inspected By</Name>
+        <DataType>Text</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Status</Name>
+        <DataType>PickList</DataType>
+        <Required>false</Required>
+        <Constraints>Good|Bad|Ugly</Constraints>
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Notes</Name>
+        <DataType>Text</DataType>
+        <Required>false</Required>
+        <Constraints>200</Constraints>
+      </DataElementDef>
+    </ElementDefs>
+  </DataRowDef>
+  <MaxDataRows>10</MaxDataRows>
+</FormatDef>

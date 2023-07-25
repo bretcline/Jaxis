@@ -1,0 +1,95 @@
+﻿<#@ include file="SQLServer.ttinclude" #>
+<#@ include file="Mappings.ttinclude" #>
+using System;
+using WFT.PSService.ServiceLibrary;
+using LFI.Sync.DataManager;
+
+namespace <#=Namespace #>
+{
+<#
+
+    var tables = LoadTables();
+
+    foreach(Table tbl in tables)
+    {
+	    if(!ExcludeTables.Contains(tbl.Name))
+        {
+        	if( tbl.Name.StartsWith( "cs" ) || tbl.Name.StartsWith( "r_" ) || tbl.Name.StartsWith( "XRRpt" ) )
+			{
+				continue;
+			}
+#>
+    /// <summary>
+    /// A partial class to work with the XR Transactions which represents the <#=tbl.Name #> table in the <#=DatabaseName#> Database.
+    /// </summary>
+    public partial class <#=tbl.CleanName#>Transaction : BaseTransaction<<#=tbl.CleanName#>>
+    {
+        public <#=tbl.CleanName#>Transaction()
+            : base(<#=tbl.CleanName#>Map.TABLE_NAME, <#=tbl.CleanName#>Map.ID)
+        {
+        }
+        
+        public <#=tbl.CleanName#>Transaction( IBaseData _type )
+			: base( _type, <#=tbl.CleanName#>Map.TABLE_NAME, <#=tbl.CleanName#>Map.ID )
+		{
+        }
+
+        public <#=tbl.CleanName#>Transaction( string _PrimaryKey )
+			: base( <#=tbl.CleanName#>Map.TABLE_NAME, <#=tbl.CleanName#>Map.ID, _PrimaryKey )
+		{
+        }
+
+<#		
+		foreach( Column col in tbl.Columns )
+		{
+			if ( col.CleanName.Contains( "LstChgDT" ) )
+			{
+#>
+        public <#=tbl.CleanName#>Transaction( DateTime _lastModified )
+            : base( <#=tbl.CleanName#>Map.TABLE_NAME, <#=tbl.CleanName#>Map.ID, _lastModified, <#=tbl.CleanName#>Map.LastModified )
+        {
+        }				
+<#				break;
+			}
+		}
+#>    
+        public override <#=tbl.CleanName#> BuildFromReader(TransactionReader reader)
+        {
+            <#=tbl.CleanName#> a = new <#=tbl.CleanName#>( );
+<#
+		    foreach(Column col in tbl.Columns)
+			{
+				// A special case, because we cannot have a method called TryReadbyte[]
+				string typeName = col.SysType.Replace("[]", "Array");
+				string colName = ConvertColumn( tbl, col );
+#>
+			a.<#=col.CleanName #> = reader.TryRead<#=typeName#>( <#=tbl.CleanName#>Map.<#=colName #>);
+<#
+			}
+#>    
+            return a;
+        }
+
+   		public override void RegisterParams()
+		{
+			<#=tbl.CleanName#> a = (<#=tbl.CleanName#>)dataObj;
+<#
+		    foreach(Column col in tbl.Columns)
+			{
+				string colName = ConvertColumn( tbl, col );
+//				if( colName.Equals( "ID" ) )
+//				{
+//					continue;
+//				}
+#>
+			this.AddParam( <#=tbl.CleanName#>Map.<#=colName #>, <#=tbl.CleanName#>Map.Param.<#=colName #>, a.<#=colName #> );
+<#
+			}
+#>    
+		}
+    } 
+    
+<#      }
+    }
+#>
+}

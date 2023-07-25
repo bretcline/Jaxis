@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Level2Web", "Level2Web\Level2Web.csproj", "{81CA9CD5-0FF3-48A6-A50C-363FA7F927A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Level2Service", "Level2Service\Level2Service.csproj", "{B2DB9B6D-5281-49C9-8ABB-A2038EA0AAAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81CA9CD5-0FF3-48A6-A50C-363FA7F927A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81CA9CD5-0FF3-48A6-A50C-363FA7F927A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81CA9CD5-0FF3-48A6-A50C-363FA7F927A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81CA9CD5-0FF3-48A6-A50C-363FA7F927A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2DB9B6D-5281-49C9-8ABB-A2038EA0AAAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2DB9B6D-5281-49C9-8ABB-A2038EA0AAAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2DB9B6D-5281-49C9-8ABB-A2038EA0AAAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2DB9B6D-5281-49C9-8ABB-A2038EA0AAAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,53 @@
+2012-07-26 15:17:56,082 INFO - Log::GetLogger( DEFAULT ) - Created Logger
+2012-07-26 15:17:56,110 ERROR - Error
+System.ServiceModel.CommunicationException: The maximum message size quota for incoming messages (1048576) has been exceeded. To increase the quota, use the MaxReceivedMessageSize property on the appropriate binding element. ---> System.ServiceModel.QuotaExceededException: The maximum message size quota for incoming messages (1048576) has been exceeded. To increase the quota, use the MaxReceivedMessageSize property on the appropriate binding element.
+   --- End of inner exception stack trace ---
+
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpInput.ThrowMaxReceivedMessageSizeExceeded()
+   at System.ServiceModel.Channels.HttpInput.ReadBufferedMessage(Stream inputStream)
+   at System.ServiceModel.Channels.HttpInput.ParseIncomingMessage(Exception& requestException)
+   at System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ClientReliableChannelBinder`1.RequestClientReliableChannelBinder`1.OnRequest(TRequestChannel channel, Message message, TimeSpan timeout, MaskingMode maskingMode)
+   at System.ServiceModel.Channels.ClientReliableChannelBinder`1.Request(Message message, TimeSpan timeout, MaskingMode maskingMode)
+   at System.ServiceModel.Security.SecuritySessionClientSettings`1.SecurityRequestSessionChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at Jaxis.DrinkInventory.Reporting.Web2.ReportingService.IReportingService.GetUpcs(Guid _sessionId, String _filter, Boolean _showValidated)
+   at Jaxis.DrinkInventory.Reporting.Web2.ReportingService.ReportingServiceClient.GetUpcs(Guid _sessionId, String _filter, Boolean _showValidated) in C:\Source\Jaxis\trunk\DrinkInventory\Reporting\Web2\Service References\ReportingService\Reference.cs:line 837
+   at Jaxis.DrinkInventory.Reporting.Web2.Controllers.UpcManagerController.<>c__DisplayClass3.<GetUpcs>b__1(IReportingService _svc) in C:\Source\Jaxis\trunk\DrinkInventory\Reporting\Web2\Controllers\UpcManagerController.cs:line 22
+   at Jaxis.DrinkInventory.Reporting.Web2.Infrastructure.ServiceWrapper`2.WithService(Func`2 _action) in C:\Source\Jaxis\trunk\DrinkInventory\Reporting\Web2\Infrastructure\ServiceWrapper.cs:line 48
+   at Jaxis.DrinkInventory.Reporting.Web2.Controllers.UpcManagerController.<>c__DisplayClass3.<GetUpcs>b__0() in C:\Source\Jaxis\trunk\DrinkInventory\Reporting\Web2\Controllers\UpcManagerController.cs:line 21
+   at Jaxis.DrinkInventory.Reporting.Web2.Controllers.BaseController.HandleAjaxAction(JsonRequestBehavior _behavior, Func`1 _action, String _successMessage) in C:\Source\Jaxis\trunk\DrinkInventory\Reporting\Web2\Controllers\BaseController.cs:line 74
+2012-07-26 15:18:08,674 ERROR - Error
+System.ServiceModel.CommunicationException: The maximum message size quota for incoming messages (1048576) has been exceeded. To increase the quota, use the MaxReceivedMessageSize property on the appropriate binding element. ---> System.ServiceModel.QuotaExceededException: The maximum message size quota for incoming messages (1048576) has been exceeded. To increase the quota, use the MaxReceivedMessageSize property on the appropriate binding element.
+   --- End of inner exception stack trace ---
+
+Server stack trace: 
+   at System.ServiceModel.Channels.HttpInput.ThrowMaxReceivedMessageSizeExceeded()
+   at System.ServiceModel.Channels.HttpInput.ReadBufferedMessage(Stream inputStream)
+   at System.ServiceModel.Channels.HttpInput.ParseIncomingMessage(Exception& requestException)
+   at System.ServiceModel.Channels.HttpChannelFactory.HttpRequestChannel.HttpChannelRequest.WaitForReply(TimeSpan timeout)
+   at System.ServiceModel.Channels.RequestChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ClientReliableChannelBinder`1.RequestClientReliableChannelBinder`1.OnRequest(TRequestChannel channel, Message message, TimeSpan timeout, MaskingMode maskingMode)
+   at System.ServiceModel.Channels.ClientReliableChannelBinder`1.Request(Message message, TimeSpan timeout, MaskingMode maskingMode)
+   at System.ServiceModel.Security.SecuritySessionClientSettings`1.SecurityRequestSessionChannel.Request(Message message, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannel.Call(String action, Boolean oneway, ProxyOperationRuntime operation, Object[] ins, Object[] outs, TimeSpan timeout)
+   at System.ServiceModel.Channels.ServiceChannelProxy.InvokeService(IMethodCallMessage methodCall, ProxyOperationRuntime operation)
+   at System.ServiceModel.Channels.ServiceChannelProxy.Invoke(IMessage message)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at Jaxis.DrinkInventory.Reporting.Web2.ReportingService.IReportingService.GetUpcs(Guid _sessionId, String _filter, Boolean _showValidated)
+   at Jaxis.DrinkInventory.Reporting.Web2.ReportingService.ReportingServiceClient.GetUpcs(Guid _sessionId, String _filter, Boolean _showValidated) in C:\Source\Jaxis\trunk\DrinkInventory\Reporting\Web2\Service References\ReportingService\Reference.cs:line 837
+   at Jaxis.DrinkInventory.Reporting.Web2.Controllers.UpcManagerController.<>c__DisplayClass3.<GetUpcs>b__1(IReportingService _svc) in C:\Source\Jaxis\trunk\DrinkInventory\Reporting\Web2\Controllers\UpcManagerController.cs:line 22
+   at Jaxis.DrinkInventory.Reporting.Web2.Infrastructure.ServiceWrapper`2.WithService(Func`2 _action) in C:\Source\Jaxis\trunk\DrinkInventory\Reporting\Web2\Infrastructure\ServiceWrapper.cs:line 48
+   at Jaxis.DrinkInventory.Reporting.Web2.Controllers.UpcManagerController.<>c__DisplayClass3.<GetUpcs>b__0() in C:\Source\Jaxis\trunk\DrinkInventory\Reporting\Web2\Controllers\UpcManagerController.cs:line 21
+   at Jaxis.DrinkInventory.Reporting.Web2.Controllers.BaseController.HandleAjaxAction(JsonRequestBehavior _behavior, Func`1 _action, String _successMessage) in C:\Source\Jaxis\trunk\DrinkInventory\Reporting\Web2\Controllers\BaseController.cs:line 74

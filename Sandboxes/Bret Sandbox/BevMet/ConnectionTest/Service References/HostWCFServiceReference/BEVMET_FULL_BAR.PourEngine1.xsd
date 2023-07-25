@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/BEVMET_FULL_BAR.PourEngine" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BEVMET_FULL_BAR.PourEngine" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="UPCData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmountInBottle" type="xs:short" />
+      <xs:element minOccurs="0" name="BottleSize" type="xs:short" />
+      <xs:element minOccurs="0" name="NozzleDiameter" type="xs:float" />
+      <xs:element minOccurs="0" name="TagID" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ViscocityByTemperature" nillable="true" type="q1:ArrayOfKeyValueOfintdouble" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UPCData" nillable="true" type="tns:UPCData" />
+  <xs:complexType name="EngineSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Formula" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FormulaValues" nillable="true" type="q2:ArrayOfKeyValueOfstringfloat" />
+      <xs:element minOccurs="0" name="IPAddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Port" type="xs:short" />
+      <xs:element minOccurs="0" name="SleepTime" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EngineSettings" nillable="true" type="tns:EngineSettings" />
+  <xs:complexType name="PourData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BatteryVoltage" type="xs:double" />
+      <xs:element minOccurs="0" name="DeviceID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EventID" type="xs:int" />
+      <xs:element minOccurs="0" name="LargePourAmount" type="xs:float" />
+      <xs:element minOccurs="0" name="PourAmount" type="xs:float" />
+      <xs:element minOccurs="0" name="PourCount" type="xs:int" />
+      <xs:element minOccurs="0" name="PourTime" type="ser:duration" />
+      <xs:element minOccurs="0" name="RawData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TagID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Temperature" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PourData" nillable="true" type="tns:PourData" />
+  <xs:complexType name="TagPhase">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BatteryVoltage" type="xs:double" />
+      <xs:element minOccurs="0" name="DeviceID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EventID" type="xs:int" />
+      <xs:element minOccurs="0" name="EventTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EventType" type="tns:TagPhaseType" />
+      <xs:element minOccurs="0" name="TagID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Temperature" type="xs:double" />
+      <xs:element minOccurs="0" name="XMLMessage" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TagPhase" nillable="true" type="tns:TagPhase" />
+  <xs:simpleType name="TagPhaseType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Heartbeat" />
+      <xs:enumeration value="Connect" />
+      <xs:enumeration value="Disconnect" />
+      <xs:enumeration value="Dormant" />
+      <xs:enumeration value="MissedPour" />
+      <xs:enumeration value="MissedMsg" />
+      <xs:enumeration value="BadBottleAttach" />
+      <xs:enumeration value="TagMoved" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TagPhaseType" nillable="true" type="tns:TagPhaseType" />
+  <xs:complexType name="ArrayOfTagPhase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TagPhase" nillable="true" type="tns:TagPhase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTagPhase" nillable="true" type="tns:ArrayOfTagPhase" />
+  <xs:complexType name="DeviceAlert">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlertTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AlertType" type="tns:DeviceAlertType" />
+      <xs:element minOccurs="0" name="DeviceID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeviceAlert" nillable="true" type="tns:DeviceAlert" />
+  <xs:simpleType name="DeviceAlertType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CannotConnect" />
+      <xs:enumeration value="NotReadingTags" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DeviceAlertType" nillable="true" type="tns:DeviceAlertType" />
+</xs:schema>

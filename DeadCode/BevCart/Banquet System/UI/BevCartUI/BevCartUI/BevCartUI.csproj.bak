@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6B3495BE-013E-4687-B521-FDB5FC689565}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BevCartUI</RootNamespace>
+    <AssemblyName>BevCartUI</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BaseDevice, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Plugins\BaseDevice\bin\Debug\BaseDevice.dll</HintPath>
+    </Reference>
+    <Reference Include="BevClasses, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Engine\BevClasses\bin\Debug\BevClasses.dll</HintPath>
+    </Reference>
+    <Reference Include="BevDBDev, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Engine\BevDBDev\bin\Debug\BevDBDev.dll</HintPath>
+    </Reference>
+    <Reference Include="BevWCFDB, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Engine\BevWCFDB\bin\Debug\BevWCFDB.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v11.2.Core, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v11.2, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v11.2, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v11.2, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="IMessage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Engine\IMessage\bin\Debug\IMessage.dll</HintPath>
+    </Reference>
+    <Reference Include="JaxisEngine, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Engine\JaxisEngine\bin\Debug\JaxisEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="JaxisInterfaces, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Engine\JaxisInterfaces\bin\Debug\JaxisInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="JaxisLog4Net, Version=1.0.0.0, Culture=neutral, PublicKeyToken=416b2e9f5e19b05d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Engine\BevCart\bin\Debug\JaxisLog4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\3rd Party\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="SubSonic.Core, Version=3.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\3rd Party\SubSonic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TestProdDev, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Engine\TestProdDev\bin\Debug\TestProdDev.dll</HintPath>
+    </Reference>
+    <Reference Include="WebCam Capture, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WebCam Capture\bin\Debug\WebCam Capture.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BevCart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BevCart.Designer.cs">
+      <DependentUpon>BevCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BeverageItem.cs" />
+    <Compile Include="BeverageList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BeverageList.Designer.cs">
+      <DependentUpon>BeverageList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BrandList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BrandList.designer.cs">
+      <DependentUpon>BrandList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Desktop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Desktop.designer.cs">
+      <DependentUpon>Desktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryItem.cs" />
+    <Compile Include="InventoryList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InventoryList.designer.cs">
+      <DependentUpon>InventoryList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BevCart.resx">
+      <DependentUpon>BevCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BeverageList.resx">
+      <DependentUpon>BeverageList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BrandList.resx">
+      <DependentUpon>BrandList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Desktop.resx">
+      <DependentUpon>Desktop.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryList.resx">
+      <DependentUpon>InventoryList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreenDialog.resx">
+      <DependentUpon>SplashScreenDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransactionList.resx">
+      <DependentUpon>TransactionList.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SplashScreenDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreenDialog.Designer.cs">
+      <DependentUpon>SplashScreenDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionItem.cs" />
+    <Compile Include="TransactionList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TransactionList.Designer.cs">
+      <DependentUpon>TransactionList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UIDataConsumer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Device.xml" />
+    <Content Include="Resources\Absolut_Vodka.png" />
+    <Content Include="Resources\background.jpg" />
+    <Content Include="Resources\bevcart_header.png" />
+    <Content Include="Resources\BevMetLogo.png" />
+    <Content Include="Resources\bevmet_background_tile.png" />
+    <Content Include="Resources\bevmet_header_tile.png" />
+    <Content Include="Resources\bevmet_splashscreen.png" />
+    <Content Include="Resources\black_arrow_glossy_next.png" />
+    <Content Include="Resources\black_arrow_glossy_prev.png" />
+    <Content Include="Resources\black_gloss.png" />
+    <Content Include="Resources\black_gloss_small.png" />
+    <Content Include="Resources\blue_fade.png" />
+    <Content Include="Resources\bottle_empty.png" />
+    <Content Include="Resources\bottle_faded.png" />
+    <Content Include="Resources\bottle_full.png" />
+    <Content Include="Resources\button_Inventory.png" />
+    <Content Include="Resources\button_SelectABrand.png" />
+    <Content Include="Resources\CocaCola.png" />
+    <Content Include="Resources\green_arrow_glossy_next.png" />
+    <Content Include="Resources\green_arrow_glossy_prev.png" />
+    <Content Include="Resources\green_gloss.png" />
+    <Content Include="Resources\Inventory.png" />
+    <Content Include="Resources\Inventory_Title.png" />
+    <Content Include="Resources\Inventory_Title2.png" />
+    <Content Include="Resources\Jack_Daniels.png" />
+    <Content Include="Resources\SelectABrand_Down.png" />
+    <Content Include="Resources\SelectABrand_Up.png" />
+    <Content Include="Resources\Smirnoff_Vodka.png" />
+    <Content Include="Resources\square_black.png" />
+    <Content Include="Resources\square_gray.png" />
+    <Content Include="Resources\square_white.png" />
+    <Content Include="Resources\Ziegenbock.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

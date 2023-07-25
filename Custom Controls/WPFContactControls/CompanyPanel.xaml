@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="WPFContactControls.CompanyPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="526" Width="457">
+    <Grid>
+        <TabControl Margin="10,78,12,243" Name="tabAddresses">
+            <TabItem Header="tabItem1" Name="tabItem1">
+                <Grid>
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,6,0,0" Name="lblStreet" VerticalAlignment="Top" Width="42">Street</Label>
+                    <TextBox Margin="65,6,6,122" Name="txtStreet" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,0,0,90" Name="lblCity" VerticalAlignment="Bottom" Width="53">City</Label>
+                    <TextBox Height="23" Margin="65,0,6,92.723" Name="textBox1" VerticalAlignment="Bottom" />
+                    <TextBox Height="22.723" Margin="65,0,6,64" Name="txtState" VerticalAlignment="Bottom" />
+                    <Label Height="27.723" HorizontalAlignment="Left" Margin="6,0,0,56" Name="lblState" VerticalAlignment="Bottom" Width="42">State</Label>
+                    <TextBox Height="23" Margin="65,0,6,35" Name="txtZip" VerticalAlignment="Bottom" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,0,0,32" Name="lblZip" VerticalAlignment="Bottom" Width="36">Zip</Label>
+                    <ComboBox Height="23" Margin="65,0,6,6" Name="cmbCountry" VerticalAlignment="Bottom" />
+                    <Label Height="28" HorizontalAlignment="Left" Margin="6,0,0,-2" Name="lblCountry" VerticalAlignment="Bottom" Width="53">Country</Label>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Label Height="28" HorizontalAlignment="Left" Margin="10,17,0,0" Name="lblCompanyName" VerticalAlignment="Top" Width="90">Company Name</Label>
+        <Label Height="28" HorizontalAlignment="Left" Margin="10,44,0,0" Name="lblRelationshipType" VerticalAlignment="Top" Width="98">Relationship Type</Label>
+        <TextBox Height="23" Margin="114,17,12,0" Name="txtCompanyName" VerticalAlignment="Top" />
+        <StackPanel Height="100" Margin="12,0,12,12" Name="pnlPhoneNumbers" VerticalAlignment="Bottom" />
+        <ComboBox Height="23" Margin="114,46,12,0" Name="cmbRelationshipType" VerticalAlignment="Top" />
+        <dxg:GridControl Height="119" Margin="12,0,12,118" Name="gridControl1" VerticalAlignment="Bottom" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid">
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn FieldName="Column1" />
+                <dxg:GridColumn FieldName="Column2" />
+            </dxg:GridControl.Columns>
+            <dxg:GridControl.View>
+                <dxg:GridColumnView Name="grdContacts" />
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+    </Grid>
+</UserControl>

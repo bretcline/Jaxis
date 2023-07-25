@@ -1,0 +1,286 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using Jaxis.Engine.Base.Device;
+using Jaxis.Interfaces;
+using Jaxis.MessageLibrary;
+using Jaxis.Util.Log4Net;
+using PCComm;
+using System.Globalization;
+
+namespace Jaxis.Readers.Sprint
+{
+    public class Trish : BaseProducerDevice, IProducer
+    {
+        /*
+        <DeviceConfig>
+            <AssemblyName>Sprint.dll</AssemblyName>
+            <AssemblyType>Jaxis.Readers.Sprint.Trish</AssemblyType>
+            <AssemblyVersion>1.0</AssemblyVersion>
+            <ID>TRISH</ID>
+            <Name>TRISH</Name>
+            <Type>DataProducer</Type>
+            <State>Started</State>
+            <ConsumerMessageType>0</ConsumerMessageType>
+            <ProducerMessageType>1</ProducerMessageType>
+            <Options>
+                <string>COM3</string>
+                <string>10</string>
+                <string>10000</string>
+                <string>Default Event</string>
+                <string>true</string>
+            </Options>
+        </DeviceConfig>
+        */
+
+        [Obfuscation(Exclude = true)]
+        public static DeviceConfig GetDefaultDeviceConfig()
+        {
+            DeviceConfig rc = new DeviceConfig();
+            System.Reflection.Assembly Asm = System.Reflection.Assembly.GetExecutingAssembly();
+            rc.AssemblyName = Asm.ManifestModule.Name;
+            rc.AssemblyType = System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.FullName;
+            rc.AssemblyVersion = System.Diagnostics.FileVersionInfo.GetVersionInfo(BaseDevice.GetPath() + "\\" + rc.AssemblyName).FileVersion;
+            rc.ID = Guid.NewGuid().ToString();
+            rc.Name = "TRISH";
+            rc.Type = DeviceType.DataProducer;
+            rc.State = DeviceState.Stopped;
+            rc.ProducerMessageType = 16;
+            rc.ConsumerMessageType = 0;
+            DeviceConfigOption Option1 = new DeviceConfigOption();
+            Option1.Name = "ComPort/IP Address";
+            Option1.Value = "COM3";
+            rc.Options.Add(Option1);
+            DeviceConfigOption Option2 = new DeviceConfigOption();
+            Option2.Name = "Frequency";
+            Option2.Value = "10";
+            rc.Options.Add(Option2);
+            DeviceConfigOption Option3 = new DeviceConfigOption();
+            Option3.Name = "OverPour";
+            Option3.Value = "10000";
+            rc.Options.Add(Option3);
+            DeviceConfigOption Option4 = new DeviceConfigOption();
+            Option4.Name = "EventID";
+            Option4.Value = "Default Event";
+            rc.Options.Add(Option4);
+            DeviceConfigOption Option5 = new DeviceConfigOption();
+            Option5.Name = "Simulator";
+            Option5.Value = "true";
+            rc.Options.Add(Option5);
+            return rc;
+        }
+
+        protected ICommunicationManager m_Comms = null;
+        private System.Threading.Thread m_Worker;
+
+        protected string CRLF = new string( new char[] { (char)0x0d, (char)0x0a } );
+
+        public Trish( )
+            : this(GetDefaultDeviceConfig())
+        {
+        }
+
+        public Trish( IDeviceConfig _Config )
+            : base( _Config )
+        {
+            try
+            {
+                Log.Debug( _Config.GetType( ).ToString( ) );
+
+                Log.Debug( "Create Trish" );
+                //Config.ConsumerMessageType = MessageType.None;
+                Config.Type = DeviceType.DataProducer;
+                //Config.State = DeviceState.Stopped;
+                //State = DeviceState.Stopped;
+            }
+            catch( Exception exp )
+            {
+                Log.WriteException( "Sprint-Trish::Trish", exp );
+            }
+        }
+
+        override public void Start( )
+        {
+            try
+            {
+                Log.Debug( string.Format( "Start Trish" ) );
+
+                if( null != m_DeviceConfig )
+                {
+                    if( !Config.GetSimulator( ) )
+                    {
+                        string portName = m_DeviceConfig.GetPortName();
+                        Log.Debug(string.Format("Start Trish on {0}", portName));
+
+                        if (portName.Contains("."))
+                        {
+                            string[] data = portName.Split(':');
+                            m_Comms = new TCPCommuncationManager( data[0], data[1] );
+                        }
+                        else
+                        {
+                            m_Comms = new SerialCommunication(m_DeviceConfig.GetBaudRate(), m_DeviceConfig.GetParity(),
+                                                               m_DeviceConfig.GetStopBits(), m_DeviceConfig.GetDataBits(),
+                                                               portName);
+                        }
+                        if (true == m_Comms.Open())
+                        {
+                            State = DeviceState.Started;
+                            Config.State = DeviceState.Started;
+                            m_Stop = false;
+                            m_Worker = new System.Threading.Thread( PollTrish );
+                            m_Worker.Start();
+                        }
+                        else
+                        {
+                            Log.Warn( "Trish not open on {0}", m_DeviceConfig.GetPortName());
+                            Stop();
+                        }
+                    }
+                    else
+                    {
+                        State = DeviceState.Started;
+                        Config.State = DeviceState.Started;
+                        m_Stop = false;
+                        m_Worker = new System.Threading.Thread( SimulateData );
+                        m_Worker.Start( );
+                    }
+                }
+            }
+            catch( Exception exp )
+            {
+                Log.WriteException( "Sprint-Trish:: Start", exp );
+            }
+        }
+
+        override public void Stop( )
+        {
+            try
+            {
+                State = DeviceState.Stopped;
+                Config.State = DeviceState.Stopped;
+            }
+            catch( Exception exp )
+            {
+                Log.WriteException( "Sprint-Trish:: Stop", exp );
+            }
+            finally
+            {
+                m_Stop = true;
+            }
+        }
+
+        private void PollTrish()
+        {
+            int SleepTime = m_DeviceConfig.GetFrequency( );
+            Log.Debug( "Trish: Sleep Time = " + SleepTime );
+            while( !m_Stop )
+            {
+                string Command = "Poll100_" + (char)0x0d + (char)0x0a;
+                Log.Debug( "Trish", "Message: " + Command );
+                m_Comms.WriteData( Command );
+                System.Threading.Thread.Sleep( 1500 );
+                ProcessData( m_Comms.Data );
+                System.Threading.Thread.Sleep( SleepTime * 1000 );
+
+                #warning Need to see if we should send a "Detach" message....how do we do that?
+            }
+        }
+
+
+        private void SimulateData( )
+        {
+            int SleepTime = m_DeviceConfig.GetFrequency( );
+            Log.Debug( "SIMULATED Trish: Sleep Time = " + SleepTime );
+            Random rnd = new Random();
+            while( !m_Stop )
+            {
+                
+                //ProcessData( "2010-11-11,21:49:11,122,002,000003.386,00.312,29" );
+                ProcessData(string.Format("2011-08-24,11:33:26,122,122,000001.329,{0:00.000},18", rnd.NextDouble()));
+                System.Threading.Thread.Sleep( SleepTime * 1000 );
+            }
+        }
+
+        protected void ProcessData( string _Data )
+        {
+            try
+            {
+                if( !string.IsNullOrWhiteSpace( _Data ) )
+                {
+                    string[] Strips = _Data.Replace( CRLF, "|" ).Replace( "\0", "").Split( '|' );
+                    foreach( string Strip in Strips )
+                    {
+                        if( !string.IsNullOrWhiteSpace( Strip ) &&
+                            !Strip.Equals( "EMPTY", StringComparison.CurrentCultureIgnoreCase ) )
+                        {
+                            Log.Debug("Trish", "Strip: " + Strip);
+                            string[] Data = Strip.Split(',');
+
+                            foreach (string val in Data)
+                            {
+                                Log.Debug( "Trish", val);
+                            }
+
+                            var pour = new TrishPour
+                            {
+                                DeviceID = this.m_DeviceConfig.ID,
+                                ReadTime = DateTime.Parse(string.Format("{0} {1}", Data[0], Data[1])),
+                                ServingBar = Convert.ToInt32(Data[2]),
+                                PLUNumber = Convert.ToInt32(Data[3])
+                            };
+
+                            var rawTotal = Convert.ToDouble(Data[4], CultureInfo.InvariantCulture );
+                            var rawPour = Convert.ToDouble(Data[5], CultureInfo.InvariantCulture);
+                            Log.Debug( string.Format( "Raw Total {0} - Raw Pour {1}", rawTotal, rawPour));
+
+                            pour.TotalLiters = rawTotal * 1000; // bottle size - amt in bottle
+                            pour.PouredLiters = rawPour * 1000; //pur amt
+
+                            Log.Debug(string.Format("Total {0} - Pour {1}", pour.TotalLiters, pour.PouredLiters));
+                            pour.Sequence = Convert.ToInt16(Data[6]);
+                            pour.RawData = Strip;
+
+                            Log.Debug( "Trish", string.Format( "{0}{1}{2}", "Trish::ProcessData", System.Environment.NewLine, pour.ToString( ) ) );
+
+                            ProduceMessage( pour );
+                        }
+                    }
+                }
+            }
+            catch( Exception err )
+            {
+                Log.Debug( err.Message );
+            }
+        }
+
+        private void SendMessage( IMessage _Tag )
+        {
+            try
+            {
+                if( _Tag != null )
+                {
+                    ProduceMessage( _Tag );
+                }
+            }
+            catch( Exception exp )
+            {
+                Log.WriteException( "Sprint-Trish:: SendMessage", exp );
+            }
+        }
+
+        private void SendPourMessage( IMessage _Tag )
+        {
+            try
+            {
+                ProduceMessage( _Tag );
+            }
+            catch( Exception exp )
+            {
+                Log.WriteException( "Sprint-Trish:: SendPourMessage", exp );
+            }
+        }
+    }
+}

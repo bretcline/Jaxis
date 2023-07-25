@@ -1,0 +1,199 @@
+﻿@{
+    ViewBag.Title = "Organization Manager";
+}
+
+<table class="layout">
+    <tr>
+        <td class="layoutleft">
+            <div class="navbarbody">
+                <h1>Organizations</h1>
+                @Html.Partial("_OrganizationSelector", "orgtree")
+                <div class="buttonPanel"><input type="button" id="newOrg" value="New" /></div>
+            </div>
+        </td>
+        <td class="layoutright">
+            <div id="editPanel" class="viewbody" style="display: none;">
+                <h1>Edit Organization</h1>
+                <div class="viewsection">
+                    <h2>Organization Information</h2>
+                    <div class="editor-label">Organization Name</div>
+                    <div class="editor-field">
+                        <input id="organizationName" type="text" />
+                    </div>
+                    <div class="editor-label">Short Name</div>
+                    <div class="editor-field">
+                        <input id="shortName" type="text" />
+                    </div>
+                    <h2>User Groups</h2>
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="large-editor-label">Access Granted To</div>
+                                <select size="5" multiple="multiple" id="memberGroups">
+                                </select>
+                            </td>
+                            <td style="padding: 20px;">
+                                <div class="smallmargin"><input type="button" value="&lt;" id="addGroup" /></div>
+                                <div class="smallmargin"><input type="button" value="&gt;" id="removeGroup" /></div>
+                            </td>
+                            <td>
+                                <div class="large-editor-label">Available User Groups</div>
+                                <select size="5" multiple="multiple" id="availableGroups">
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="buttonPanel">
+                        <input type="button" id="saveOrg" value="Save" />
+                        <input type="button" id="delOrg" value="Delete" />
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+<input id="orgId" type="hidden" />
+<input id="parentId" type="hidden" />
+<input id="isNew" type="hidden" />
+
+<script type="text/javascript">
+
+    $(document).ready(function ()
+    {
+        $('#orgtree').bind('selectionChanged', onSelectionChanged);
+        $('#newOrg').click(onClickNewOrg);
+        $('#saveOrg').click(onClickSaveOrg);
+        $('#delOrg').click(onClickDelOrg);
+        $('#addGroup').click(onClickAddGroup);
+        $('#removeGroup').click(onClickRemoveGroup);
+    });
+
+    function onSelectionChanged()
+    {
+        var orgSel = $(this).data('orgSel');
+        if (orgSel.selectedOrg != null)
+        {
+            callServer('@Url.Action("GetOrganization")', { _organizationId: orgSel.selectedOrg.OrganizationId }, 'GET', function (data)
+            {
+                setFormOrg(data);
+                $('#editPanel').show();
+                $('#organizationName').focus().select();
+            });
+        }
+    }
+
+    function onClickSaveOrg()
+    {
+        var org = getFormOrg();
+        callServer('@Url.Action("SaveOrganization")', org, 'POST', function (data)
+        {
+            setFormOrg(data);
+            if (org.IsNew)
+            {
+                $('#orgtree').data('orgSel').expandOrg(org.ParentId, function ()
+                {
+                    $('#orgtree').data('orgSel').selectOrg(org.OrganizationId);
+                });
+            }
+            else
+            {
+                $('#orgtree').data('orgSel').updateOrg(data.Organization);
+            }
+        });
+    }
+
+    function onClickNewOrg()
+    {
+        var orgSel = $('#orgtree').data('orgSel');
+
+        if (orgSel.selectedOrg != null)
+        {
+            callServer('@Url.Action("NewOrganization")', { _parentId: orgSel.selectedOrg.OrganizationId }, 'GET', function (data)
+            {
+                orgSel.selectOrg(null);
+                setFormOrg(data);
+                $('#editPanel').show();
+                $('#organizationName').focus().select();
+            });
+        }
+        else
+        {
+            showAlertMessage('Please select the parent organization first');
+        }
+    }
+
+    function onClickDelOrg()
+    {
+        var orgSel = $('#orgtree').data('orgSel');
+        if (orgSel.selectedOrg != null)
+        {
+            if (confirm('Are you sure you want to delete the organization ' + orgSel.selectedOrg.Name + '?'))
+            {
+                callServer('@Url.Action("DeleteOrganization")', { _orgId: orgSel.selectedOrg.OrganizationId }, 'POST', function (data)
+                {
+                    var parentId = orgSel.selectedOrg.ParentId;
+                    orgSel.removeOrg(orgSel.selectedOrg.OrganizationId);
+                    orgSel.expandOrg(parentId, function ()
+                    {
+                        orgSel.selectOrg(parentId);
+                    });
+                });
+            }
+        }
+        else
+        {
+            showAlertMessage('Please select an orzanization first');
+        }
+    }
+
+    function onClickAddGroup()
+    {
+        $('#availableGroups option:selected').moveTo('#memberGroups');
+    }
+
+    function onClickRemoveGroup()
+    {
+        $('#memberGroups option:selected').moveTo('#availableGroups');
+    }
+
+    function setFormOrg(data)
+    {
+        $('#orgId').val(data.Organization.OrganizationId);
+        $('#parentId').val(data.Organization.ParentId);
+        $('#organizationName').val(data.Organization.Name);
+        $('#shortName').val(data.Organization.ShortName);
+        $('#isNew').val(data.Organization.IsNew);
+        $('#availableGroups').children().remove();
+        $(data.AvailableGroups).each(function ()
+        {
+            var groupTag = $('<option value="' + this.UserGroupId + '">' + this.Name + '</option>');
+            $(groupTag).appendTo('#availableGroups');
+        });
+        $('#memberGroups').children().remove();
+        $(data.Organization.UserGroups).each(function ()
+        {
+            var groupTag = $('<option value="' + this.UserGroupId + '">' + this.Name + '</option>');
+            $(groupTag).appendTo('#memberGroups');
+        });
+    }
+
+    function getFormOrg()
+    {
+        var userGroupIds = [];
+        $('#memberGroups option').each(function ()
+        {
+            userGroupIds.push($(this).val());
+        });
+
+        return (
+        {
+            OrganizationId: $('#orgId').val(),
+            ParentId: $('#parentId').val(),
+            Name: $('#organizationName').val(),
+            ShortName: $('#shortName').val(),
+            UserGroupIds: userGroupIds,
+            IsNew: $('#isNew').val()
+        });
+    }
+
+</script>

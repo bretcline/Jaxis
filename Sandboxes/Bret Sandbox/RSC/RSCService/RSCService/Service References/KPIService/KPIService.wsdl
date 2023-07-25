@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="KPIService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://192.206.176.194/KPIBase/KPIService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://192.206.176.194/KPIBase/KPIService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://192.206.176.194/KPIBase/KPIService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://192.206.176.194/KPIBase/KPIService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/KPIBase.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IKPIService_GetLeniency_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeniency" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetLeniency_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeniencyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetLeniencyDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeniencyDetail" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetLeniencyDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeniencyDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetLeniencySum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeniencySum" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetLeniencySum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeniencySumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetCatalogSpendNonRSCRS_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCatalogSpendNonRSCRS" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetCatalogSpendNonRSCRS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCatalogSpendNonRSCRSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetCatalogSpendRS_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCatalogSpendRS" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetCatalogSpendRS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCatalogSpendRSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetEquipmentUtilization_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentUtilization" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetEquipmentUtilization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEquipmentUtilizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetExchangeTopFive_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExchangeTopFive" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetExchangeTopFive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExchangeTopFiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetMonthlyRerentInvoiceCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMonthlyRerentInvoiceCount" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetMonthlyRerentInvoiceCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMonthlyRerentInvoiceCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetTop10AccountCodeSpend_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTop10AccountCodeSpend" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetTop10AccountCodeSpend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTop10AccountCodeSpendResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetTop10JobsiteSpend_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTop10JobsiteSpend" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetTop10JobsiteSpend_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTop10JobsiteSpendResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetVendorSpendTop10_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVendorSpendTop10" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetVendorSpendTop10_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVendorSpendTop10Response" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetExchangeTopFiveDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExchangeTopFiveDetail" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetExchangeTopFiveDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExchangeTopFiveDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetEarlyOffRentWithGPS_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEarlyOffRentWithGPS" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetEarlyOffRentWithGPS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEarlyOffRentWithGPSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetFreightAvoidance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFreightAvoidance" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetFreightAvoidance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFreightAvoidanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetFreightAvoidanceSum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFreightAvoidanceSum" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetFreightAvoidanceSum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFreightAvoidanceSumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetOnRentUsageByDay_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnRentUsageByDay" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetOnRentUsageByDay_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnRentUsageByDayResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetOnTimeDelivery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnTimeDelivery" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetOnTimeDelivery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOnTimeDeliveryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetOffRentCost_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOffRentCost" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetOffRentCost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOffRentCostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetOffRentCostSum_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOffRentCostSum" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetOffRentCostSum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOffRentCostSumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetOffRentNotifications_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOffRentNotifications" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetOffRentNotifications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOffRentNotificationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetCSUtilization_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCSUtilization" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetCSUtilization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCSUtilizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetInvoiceInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceInfo" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetInvoiceInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetServiceCallsTopFive_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceCallsTopFive" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetServiceCallsTopFive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServiceCallsTopFiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetExchangeAnnual_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExchangeAnnual" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetExchangeAnnual_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExchangeAnnualResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetPastDueForOffRent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPastDueForOffRent" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetPastDueForOffRent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPastDueForOffRentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetReturnNotifications_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetReturnNotifications" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetReturnNotifications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetReturnNotificationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetLeadTimeEquipment_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeadTimeEquipment" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetLeadTimeEquipment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLeadTimeEquipmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetInvoiceAccuracy_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceAccuracy" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetInvoiceAccuracy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceAccuracyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetMiddleMarkUp_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMiddleMarkUp" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetMiddleMarkUp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMiddleMarkUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetUtilizationSavings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUtilizationSavings" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetUtilizationSavings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUtilizationSavingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetMonthlyInvoiceCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMonthlyInvoiceCount" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetMonthlyInvoiceCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMonthlyInvoiceCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetThirdPartyInvoiceValidation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetThirdPartyInvoiceValidation" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetThirdPartyInvoiceValidation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetThirdPartyInvoiceValidationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetGPSLowUtilization_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGPSLowUtilization" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetGPSLowUtilization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGPSLowUtilizationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetGPSTrackers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGPSTrackers" />
+  </wsdl:message>
+  <wsdl:message name="IKPIService_GetGPSTrackers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGPSTrackersResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IKPIService">
+    <wsdl:operation name="GetLeniency">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetLeniency" message="tns:IKPIService_GetLeniency_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetLeniencyResponse" message="tns:IKPIService_GetLeniency_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLeniencyDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetLeniencyDetail" message="tns:IKPIService_GetLeniencyDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetLeniencyDetailResponse" message="tns:IKPIService_GetLeniencyDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLeniencySum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetLeniencySum" message="tns:IKPIService_GetLeniencySum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetLeniencySumResponse" message="tns:IKPIService_GetLeniencySum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCatalogSpendNonRSCRS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetCatalogSpendNonRSCRS" message="tns:IKPIService_GetCatalogSpendNonRSCRS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetCatalogSpendNonRSCRSResponse" message="tns:IKPIService_GetCatalogSpendNonRSCRS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCatalogSpendRS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetCatalogSpendRS" message="tns:IKPIService_GetCatalogSpendRS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetCatalogSpendRSResponse" message="tns:IKPIService_GetCatalogSpendRS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentUtilization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetEquipmentUtilization" message="tns:IKPIService_GetEquipmentUtilization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetEquipmentUtilizationResponse" message="tns:IKPIService_GetEquipmentUtilization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeTopFive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetExchangeTopFive" message="tns:IKPIService_GetExchangeTopFive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetExchangeTopFiveResponse" message="tns:IKPIService_GetExchangeTopFive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMonthlyRerentInvoiceCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetMonthlyRerentInvoiceCount" message="tns:IKPIService_GetMonthlyRerentInvoiceCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetMonthlyRerentInvoiceCountResponse" message="tns:IKPIService_GetMonthlyRerentInvoiceCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTop10AccountCodeSpend">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetTop10AccountCodeSpend" message="tns:IKPIService_GetTop10AccountCodeSpend_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetTop10AccountCodeSpendResponse" message="tns:IKPIService_GetTop10AccountCodeSpend_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTop10JobsiteSpend">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetTop10JobsiteSpend" message="tns:IKPIService_GetTop10JobsiteSpend_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetTop10JobsiteSpendResponse" message="tns:IKPIService_GetTop10JobsiteSpend_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVendorSpendTop10">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetVendorSpendTop10" message="tns:IKPIService_GetVendorSpendTop10_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetVendorSpendTop10Response" message="tns:IKPIService_GetVendorSpendTop10_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeTopFiveDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetExchangeTopFiveDetail" message="tns:IKPIService_GetExchangeTopFiveDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetExchangeTopFiveDetailResponse" message="tns:IKPIService_GetExchangeTopFiveDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEarlyOffRentWithGPS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetEarlyOffRentWithGPS" message="tns:IKPIService_GetEarlyOffRentWithGPS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetEarlyOffRentWithGPSResponse" message="tns:IKPIService_GetEarlyOffRentWithGPS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFreightAvoidance">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetFreightAvoidance" message="tns:IKPIService_GetFreightAvoidance_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetFreightAvoidanceResponse" message="tns:IKPIService_GetFreightAvoidance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFreightAvoidanceSum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetFreightAvoidanceSum" message="tns:IKPIService_GetFreightAvoidanceSum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetFreightAvoidanceSumResponse" message="tns:IKPIService_GetFreightAvoidanceSum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnRentUsageByDay">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetOnRentUsageByDay" message="tns:IKPIService_GetOnRentUsageByDay_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetOnRentUsageByDayResponse" message="tns:IKPIService_GetOnRentUsageByDay_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOnTimeDelivery">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetOnTimeDelivery" message="tns:IKPIService_GetOnTimeDelivery_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetOnTimeDeliveryResponse" message="tns:IKPIService_GetOnTimeDelivery_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOffRentCost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetOffRentCost" message="tns:IKPIService_GetOffRentCost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetOffRentCostResponse" message="tns:IKPIService_GetOffRentCost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOffRentCostSum">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetOffRentCostSum" message="tns:IKPIService_GetOffRentCostSum_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetOffRentCostSumResponse" message="tns:IKPIService_GetOffRentCostSum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOffRentNotifications">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetOffRentNotifications" message="tns:IKPIService_GetOffRentNotifications_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetOffRentNotificationsResponse" message="tns:IKPIService_GetOffRentNotifications_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCSUtilization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetCSUtilization" message="tns:IKPIService_GetCSUtilization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetCSUtilizationResponse" message="tns:IKPIService_GetCSUtilization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetInvoiceInfo" message="tns:IKPIService_GetInvoiceInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetInvoiceInfoResponse" message="tns:IKPIService_GetInvoiceInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCallsTopFive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetServiceCallsTopFive" message="tns:IKPIService_GetServiceCallsTopFive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetServiceCallsTopFiveResponse" message="tns:IKPIService_GetServiceCallsTopFive_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeAnnual">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetExchangeAnnual" message="tns:IKPIService_GetExchangeAnnual_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetExchangeAnnualResponse" message="tns:IKPIService_GetExchangeAnnual_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPastDueForOffRent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetPastDueForOffRent" message="tns:IKPIService_GetPastDueForOffRent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetPastDueForOffRentResponse" message="tns:IKPIService_GetPastDueForOffRent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetReturnNotifications">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetReturnNotifications" message="tns:IKPIService_GetReturnNotifications_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetReturnNotificationsResponse" message="tns:IKPIService_GetReturnNotifications_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLeadTimeEquipment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetLeadTimeEquipment" message="tns:IKPIService_GetLeadTimeEquipment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetLeadTimeEquipmentResponse" message="tns:IKPIService_GetLeadTimeEquipment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceAccuracy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetInvoiceAccuracy" message="tns:IKPIService_GetInvoiceAccuracy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetInvoiceAccuracyResponse" message="tns:IKPIService_GetInvoiceAccuracy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMiddleMarkUp">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetMiddleMarkUp" message="tns:IKPIService_GetMiddleMarkUp_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetMiddleMarkUpResponse" message="tns:IKPIService_GetMiddleMarkUp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtilizationSavings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetUtilizationSavings" message="tns:IKPIService_GetUtilizationSavings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetUtilizationSavingsResponse" message="tns:IKPIService_GetUtilizationSavings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMonthlyInvoiceCount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetMonthlyInvoiceCount" message="tns:IKPIService_GetMonthlyInvoiceCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetMonthlyInvoiceCountResponse" message="tns:IKPIService_GetMonthlyInvoiceCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetThirdPartyInvoiceValidation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetThirdPartyInvoiceValidation" message="tns:IKPIService_GetThirdPartyInvoiceValidation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetThirdPartyInvoiceValidationResponse" message="tns:IKPIService_GetThirdPartyInvoiceValidation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGPSLowUtilization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetGPSLowUtilization" message="tns:IKPIService_GetGPSLowUtilization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetGPSLowUtilizationResponse" message="tns:IKPIService_GetGPSLowUtilization_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGPSTrackers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IKPIService/GetGPSTrackers" message="tns:IKPIService_GetGPSTrackers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IKPIService/GetGPSTrackersResponse" message="tns:IKPIService_GetGPSTrackers_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IKPIService" type="tns:IKPIService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetLeniency">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetLeniency" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLeniencyDetail">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetLeniencyDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLeniencySum">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetLeniencySum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCatalogSpendNonRSCRS">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetCatalogSpendNonRSCRS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCatalogSpendRS">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetCatalogSpendRS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEquipmentUtilization">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetEquipmentUtilization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeTopFive">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetExchangeTopFive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMonthlyRerentInvoiceCount">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetMonthlyRerentInvoiceCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTop10AccountCodeSpend">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetTop10AccountCodeSpend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTop10JobsiteSpend">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetTop10JobsiteSpend" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVendorSpendTop10">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetVendorSpendTop10" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeTopFiveDetail">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetExchangeTopFiveDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEarlyOffRentWithGPS">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetEarlyOffRentWithGPS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFreightAvoidance">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetFreightAvoidance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFreightAvoidanceSum">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetFreightAvoidanceSum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnRentUsageByDay">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetOnRentUsageByDay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOnTimeDelivery">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetOnTimeDelivery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOffRentCost">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetOffRentCost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOffRentCostSum">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetOffRentCostSum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOffRentNotifications">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetOffRentNotifications" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCSUtilization">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetCSUtilization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceInfo">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetInvoiceInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServiceCallsTopFive">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetServiceCallsTopFive" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExchangeAnnual">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetExchangeAnnual" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPastDueForOffRent">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetPastDueForOffRent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetReturnNotifications">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetReturnNotifications" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLeadTimeEquipment">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetLeadTimeEquipment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceAccuracy">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetInvoiceAccuracy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMiddleMarkUp">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetMiddleMarkUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtilizationSavings">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetUtilizationSavings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMonthlyInvoiceCount">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetMonthlyInvoiceCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetThirdPartyInvoiceValidation">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetThirdPartyInvoiceValidation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGPSLowUtilization">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetGPSLowUtilization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGPSTrackers">
+      <soap:operation soapAction="http://tempuri.org/IKPIService/GetGPSTrackers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KPIService">
+    <wsdl:port name="BasicHttpBinding_IKPIService" binding="tns:BasicHttpBinding_IKPIService">
+      <soap:address location="http://192.206.176.194/KPIBase/KPIService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

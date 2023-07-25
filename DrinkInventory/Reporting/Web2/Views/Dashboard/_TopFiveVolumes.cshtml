@@ -1,0 +1,11 @@
+﻿@model Jaxis.DrinkInventory.Reporting.Web2.Widgets.TopFiveVolumes
+
+@Html.DevExpress().Chart(settings => {
+    settings.Name = "TopFiveVolumes";
+
+    Series series = new Series("TopFiveVolumes", DevExpress.XtraCharts.ViewType.Pie);
+    series.ArgumentDataMember = "Description";
+    series.ValueDataMembers[0] = "Amount";
+    settings.Series.Add(series);
+    settings.BorderOptions.Visible = false;
+}).Bind(Model.Values).GetHtml()

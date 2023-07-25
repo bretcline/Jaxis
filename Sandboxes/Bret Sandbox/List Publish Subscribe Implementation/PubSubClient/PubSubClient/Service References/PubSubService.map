@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceReference>
+	<ProxyGenerationParameters
+		ServiceReferenceUri="http://chaks-pc/PubSubService/Service.svc"
+		Name="PubSubService"
+		NotifyPropertyChange="True"
+		UseObservableCollection="False">
+	</ProxyGenerationParameters>
+	<EndPoints>
+		<EndPoint
+			Address="http://chaks-pc/PubSubService/Service.svc"
+			BindingConfiguration="WSDualHttpBinding_IPubSubService"
+			Contract="PubSubClient.PubSubService.IPubSubService"
+			>
+		</EndPoint>
+	</EndPoints>
+</ServiceReference>

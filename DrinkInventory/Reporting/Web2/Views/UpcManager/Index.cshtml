@@ -1,0 +1,198 @@
+﻿@{
+    ViewBag.Title = "UPC Manager";
+}
+
+<table class="layout">
+    <tr>
+        <td class="layoutleft">
+            <div class="navbarbody">
+                <h1>UPCs</h1>
+                <div style="margin-bottom: 6px;">
+                    <img style="vertical-align: middle; float: left; margin-right: 4px;" src="@Url.Content("~/Content/images/magnifyingglass.png")" />
+                    <input id="filterUpc" type="text" style="width:200px;" />
+                    <input id="showValidated" type="checkbox" /> <label for="showValidated">Show Validated</label>
+                </div>
+                <select id="upcList" size="5">
+                </select>
+                <div class="buttonPanel"><input type="button" id="newUpc" value="New" /></div>
+            </div>
+        </td>
+        <td class="layoutright">
+            <div class="viewbody" id="editPanel" style="display:none;">
+                <h1>Edit UPC</h1>
+                <div class="viewsection">
+                    <h2>UPC Information</h2>
+                    <div class="editor-label">Name</div><div class="editor-field"><input id="name" type="text"/></div>
+                    <div class="editor-label">Item Number</div><div class="editor-field"><input id="itemNumber" type="text"/></div>
+                    <div class="editor-label">Size</div><div class="editor-field"><input id="size" type="text"/></div>
+                    <div class="editor-label">Size Label</div><div class="editor-field"><input id="sizeLabel" type="text"/></div>
+                    <div class="editor-label">Category Name</div><div class="editor-field"><input id="categoryName" type="text"/></div>
+                    <div class="editor-label">Root Category Name</div><div class="editor-field"><input id="rootCategoryName" type="text"/></div>
+                    <div class="editor-label">Validated</div><div class="editor-field"><input id="validated" type="checkbox"/></div>
+                    <div class="editor-label">Manufacturer Name</div><div class="editor-field"><input id="manufacturerName" type="text"/></div>
+                    <div class="editor-label">Is Case Item</div><div class="editor-field"><input id="isCaseItem" type="checkbox"/></div>
+                    <div id="caseItemFields">
+                        <div class="editor-label">Child Item Number</div><div class="editor-field"><input id="childItemNumber" type="text"/></div>
+                        <div class="editor-label">Bottle Count</div><div class="editor-field"><input id="bottleCount" type="text"/></div>
+                    </div>
+                    <div class="buttonPanel">
+                        <input type="button" id="saveUpc" value="Save" />
+                        <input type="button" id="deleteUpc" value="Delete" />
+                    </div>
+                </div>
+            </div>
+
+        </td>
+    </tr>    
+</table>
+<input id="upcId" type="hidden" />
+<input id="isNew" type="hidden" />
+
+<script type="text/javascript">
+
+    $(document).ready(function ()
+    {
+        $('input').removeAttr('disabled');
+        $('#upcId').val('');
+        loadUpcList();
+        $('#newUpc').click(onClickNewUpc);
+        $('#upcList').change(onChangeUpc);
+        $('#saveUpc').click(onClickSaveUpc);
+        $('#deleteUpc').click(onClickDeleteUpc);
+        $('#filterUpc').keyup(onFilterUpc);
+        $('#showValidated').change(onFilterUpc);
+        $('#isCaseItem').change(onChangeIsCaseItem);
+    });
+
+    function onClickNewUpc()
+    {
+        callServer('@Url.Action("NewUpc")', null, 'GET', handleUpcResponse);
+    }
+
+    function onChangeUpc()
+    {
+        callServer('@Url.Action("GetUpc")', { _upcId: selectedUPCId() }, 'GET', handleUpcResponse);
+    }
+
+    function onClickSaveUpc()
+    {
+        callServer('@Url.Action("SaveUpc")', getFormUpc(), 'POST', function (response)
+        {
+            handleUpcResponse(response);
+            loadUpcList();
+        });
+    }
+
+    function onClickDeleteUpc()
+    {
+        var upcId = selectedUPCId();
+        if (upcId != undefined)
+        {
+            if (confirm('Are you sure you want to delete this UPC?'))
+            {
+                callServer('@Url.Action("DeleteUpc")', { _upcId: upcId }, 'POST', function (data)
+                {
+                    $('#editPanel').hide();
+                    loadUpcList();
+                });
+            }
+        }
+    }
+
+    function onFilterUpc()
+    {
+        loadUpcList();
+    }
+
+    function onChangeIsCaseItem()
+    {
+        if ($('#isCaseItem').is(':checked'))
+        {
+            $('#caseItemFields').show();
+        }
+        else
+        {
+            $('#caseItemFields').hide();
+        }
+    }
+
+    function handleUpcResponse(data)
+    {
+        setFormUpc(data);
+        $('#editPanel').show();
+        $('#name').focus().select();
+    }
+
+    function setFormUpc(upc)
+    {
+        $('#upcId').val(upc.UPCId);
+        $('#name').val(upc.Name);
+        $('#itemNumber').val(upc.ItemNumber);
+        $('#childItemNumber').val(upc.ChildItemNumber);
+        $('#size').val(upc.Size);
+        $('#sizeLabel').val(upc.SizeLabel);
+        $('#categoryName').val(upc.CategoryName);
+        $('#rootCategoryName').val(upc.RootCategoryName);
+        $('#validated').attr('checked', upc.Validated);
+        $('#bottleCount').val(upc.BottleCount);
+        $('#manufacturerName').val(upc.ManufacturerName);
+        $('#isNew').val(upc.IsNew);
+        
+        if (upc.IsNew) 
+            $('#itemNumber').removeAttr('disabled');
+        else
+            $('#itemNumber').attr('disabled', 'disabled');
+
+        if (upc.ChildItemNumber == null || upc.ChildItemNumber == '')
+        {
+            $('#caseItemFields').hide();
+            $('#isCaseItem').removeAttr('checked');
+        }
+        else
+        {
+            $('#caseItemFields').show();
+            $('#isCaseItem').attr('checked', 'checked');
+        }
+    }
+
+    function getFormUpc()
+    {
+        return (  
+        {
+            UPCId: $('#upcId').val(),
+            ChildItemNumber: $('#isCaseItem').is(':checked') ? $('#childItemNumber').val() : '',
+            Name: $('#name').val(),
+            ItemNumber: $('#itemNumber').val(),
+            Size: $('#size').val(),
+            SizeLabel: $('#sizeLabel').val(),
+            CategoryName: $('#categoryName').val(),
+            RootCategoryName: $('#rootCategoryName').val(),
+            Validated: $('#validated').is(':checked'),
+            BottleCount: $('#bottleCount').val(),
+            ManufacturerName: $('#manufacturerName').val(),
+            IsNew: $('#isNew').val()
+        });
+    }
+
+    function loadUpcList()
+    {
+        callServer('@Url.Action("GetUpcs")', { _filter: $('#filterUpc').val(), 
+            _showValidated: $('#showValidated').is(':checked') }, 'GET', function (data)
+        {
+            $('#upcList').children().remove();
+            $(data).each(function ()
+            {
+                $('<option value="' + this.UPCId + '">' + this.Name + '</option>').appendTo('#upcList');
+            });
+            
+            $('#upcList option#[value=' + $('#upcId').val() + ']').attr('selected', true);
+        });
+    }
+
+    function selectedUPCId()
+    {
+        return $('#upcList option:selected:first').val();
+    }
+
+</script>
+

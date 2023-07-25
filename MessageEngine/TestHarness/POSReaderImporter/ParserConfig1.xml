@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ParserConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Cleanup>
+    <LineParser>
+      <ParseOrder>0</ParseOrder>
+      <SingleElement>false</SingleElement>
+      <RegEx>.*Bev Metric.*</RegEx>
+    </LineParser>
+    <LineParser>
+      <ParseOrder>1</ParseOrder>
+      <SingleElement>false</SingleElement>
+      <RegEx>^\r\n</RegEx>
+    </LineParser>
+    <LineParser>
+      <ParseOrder>2</ParseOrder>
+      <SingleElement>true</SingleElement>
+      <RegEx>Redirect from:\s*.*</RegEx>
+    </LineParser>
+    <LineParser>
+      <ParseOrder>3</ParseOrder>
+      <SingleElement>true</SingleElement>
+      <RegEx>\*\*\* END OF CHECK \*\*\*</RegEx>
+    </LineParser>
+    <LineParser>
+      <ParseOrder>4</ParseOrder>
+      <SingleElement>true</SingleElement>
+      <RegEx>\r</RegEx>
+    </LineParser>
+  </Cleanup>
+  <SectionMarker>-{32}</SectionMarker>
+  <SectionParsers>
+    <ArrayOfLineParser>
+      <LineParser>
+        <ParseOrder>0</ParseOrder>
+        <SingleElement>false</SingleElement>
+        <ItemIndex>Establishment=1</ItemIndex>
+        <RegEx>\s*(\w+ Bar)\s*\r?\n</RegEx>
+        <PropertyName>Establishment</PropertyName>
+        <Replacements>SHULAS L&amp;D  26=SHULAS,LOBBIBAR 34=LOBBIBAR,SPINDLETOP 27=SPINDLETOP</Replacements>
+      </LineParser>
+      <LineParser>
+        <ParseOrder>1</ParseOrder>
+        <SingleElement>false</SingleElement>
+        <ItemIndex>ServerNumber=3,Server=5</ItemIndex>
+        <RegEx>(\((\d*)\) )*((\d+)) (\w+)</RegEx>
+        <PropertyName>Server</PropertyName>
+      </LineParser>
+    </ArrayOfLineParser>
+    <ArrayOfLineParser>
+      <LineParser>
+        <ParseOrder>0</ParseOrder>
+        <SingleElement>false</SingleElement>
+        <ItemIndex>Table=3,Guest=6</ItemIndex>
+        <RegEx>((TBL )(\d*/\d*))\D*((GST )(\d*))</RegEx>
+        <PropertyName>Table</PropertyName>
+      </LineParser>
+      <LineParser>
+        <ParseOrder>1</ParseOrder>
+        <SingleElement>true</SingleElement>
+        <RegEx>(CHK )([0-9]+)</RegEx>
+        <PropertyName>Check</PropertyName>
+      </LineParser>
+    </ArrayOfLineParser>
+    <ArrayOfLineParser>
+      <LineParser>
+        <ParseOrder>0</ParseOrder>
+        <SingleElement>false</SingleElement>
+        <ItemIndex>Quantity=5,Description=2,Price=7</ItemIndex>
+        <RegEx>((\w.*) *\r?\n)( *((\d+) +(\w.+?) *(\d+\.\d*))+ *\r?\n)</RegEx>
+        <PropertyName>LineItem</PropertyName>
+      </LineParser>
+      <LineParser>
+        <ParseOrder>1</ParseOrder>
+        <SingleElement>false</SingleElement>
+        <ItemIndex>Quantity=3,Description=8</ItemIndex>
+        <RegEx>( *((\d+) +(PITCHERS ) *(\r?\n)+))(( +(.*\w.*)(\r?\n)+)( +(.*\w.*)(\r?\n)+)*)</RegEx>
+        <PropertyName>LineItem</PropertyName>
+        <DescriptionSuffix> PITCHERS</DescriptionSuffix>
+      </LineParser>
+      <LineParser>
+        <ParseOrder>2</ParseOrder>
+        <SingleElement>false</SingleElement>
+        <ItemIndex>Quantity=2,Description=3</ItemIndex>
+        <RegEx>((\d+) ((?!PITCHERS\b)\b\w.+)\r?\n)(( +((.*\w.*))\r?\n)*)</RegEx>
+        <PropertyName>LineItem</PropertyName>
+      </LineParser>
+    </ArrayOfLineParser>
+    <ArrayOfLineParser>
+      <LineParser>
+        <ParseOrder>2</ParseOrder>
+        <SingleElement>true</SingleElement>
+        <RegEx>(CHK )([0-9]+)</RegEx>
+        <PropertyName>Check</PropertyName>
+      </LineParser>
+    </ArrayOfLineParser>
+  </SectionParsers>
+</ParserConfig>

@@ -1,0 +1,71 @@
+﻿<#@ include file="SQLServer.ttinclude" #>
+using System;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+using System.Linq;
+
+namespace <#=Namespace#>
+{
+<#
+    var tables = LoadTables( );
+
+    foreach( Table tbl in tables )
+    {
+	    if( ! ExcludeTables.Contains( tbl.Name ) )
+        {
+			if( tbl.Name.StartsWith( "cs" ) || tbl.Name.StartsWith( "r_" ) || tbl.Name.StartsWith( "XRRpt" ) )
+			{
+				continue;
+			}
+#>
+    /// <summary>
+    /// A partial class to work with the WCF Service Library which represents the <#=tbl.Name #> table in the <#=DatabaseName#> Database.
+    /// </summary>
+    [DataContract]
+    public partial class <#=tbl.CleanName#> : XRData<<#=tbl.CleanName#>>
+    {
+<#
+			List<Column> dateCols = new List<Column>( );
+		    foreach( Column col in tbl.Columns )
+			{
+				if( col.SysType.Equals( "DateTime" ) && !col.CleanName.Contains( "LstChgDT" ) )
+				{
+					dateCols.Add( col );
+				}
+				if( col.IsPK )
+				{
+#>
+		override public string TablePrimaryKey
+		{
+			get
+			{
+				return <#=col.CleanName #>.ToString( );
+			}
+		}
+<#				
+				}
+#>
+		[DataMember]
+		<# if( col.CleanName.Equals( "Name" ) ) {#>new <#} #>public <#=col.SysType #><#=CheckNullable(col)#> <#=col.CleanName #>{ get; set; }
+<#
+			}
+			if ( dateCols.Count > 0 )
+			{
+#>		override public void AdjustDates( TimeSpan _offset )
+		{
+			base.AdjustDates( _offset );
+<#
+				foreach( Column c in dateCols )
+				{	
+#>
+			<#=c.CleanName#> += _offset;			
+<#				}
+#>		}
+<#			}
+#>			
+    } 
+<#      }
+    }
+    
+#>
+}

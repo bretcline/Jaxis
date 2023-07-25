@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/Jaxis/!svn/ver/143/trunk/RFID/AccountValidator
+END
+frmValidation.resx
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/Jaxis/!svn/ver/143/trunk/RFID/AccountValidator/frmValidation.resx
+END
+AccountValidator.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Jaxis/!svn/ver/143/trunk/RFID/AccountValidator/AccountValidator.csproj
+END
+frmValidation.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/Jaxis/!svn/ver/143/trunk/RFID/AccountValidator/frmValidation.Designer.cs
+END
+frmValidation.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/Jaxis/!svn/ver/143/trunk/RFID/AccountValidator/frmValidation.cs
+END
+app.config
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/Jaxis/!svn/ver/143/trunk/RFID/AccountValidator/app.config
+END
+Program.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/Jaxis/!svn/ver/143/trunk/RFID/AccountValidator/Program.cs
+END
+AccountValidator.sln
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/Jaxis/!svn/ver/143/trunk/RFID/AccountValidator/AccountValidator.sln
+END

@@ -1,0 +1,3 @@
+2011-12-06 10:56:24,350 INFO - Log::GetLogger( DEFAULT ) - Created Logger
+2011-12-06 10:56:24,424 ERROR - Error in ServiceWrapper.WithService: Message = Cannot open database "DrinkReporting" requested by the login. The login failed.
+Login failed for user 'JAXISSOLUTIONS\Bret.Cline'.

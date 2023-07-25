@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsInventory" targetNamespace="http://tempuri.org/dsInventory.xsd" xmlns:mstns="http://tempuri.org/dsInventory.xsd" xmlns="http://tempuri.org/dsInventory.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BeverageMonitor" IsAppSettingsProperty="true" Modifier="Assembly" Name="BevMetMobile (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.BeverageManagement.Properties.Settings.GlobalReference.Default.BevMetMobile" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="rptInventoryTableAdapter" GeneratorDataComponentClassName="rptInventoryTableAdapter" Name="rptInventory" UserDataComponentName="rptInventoryTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BeverageMonitor (Settings)" DbObjectName="BevMetMobile.dbo.rptInventory" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Name, Stock, Tagged, TotalQuantity, MinimumParLevel, TotalVolume, TotalBottleCost, TotalVolumeCost, Expr1 FROM dbo.rptInventory</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Stock" DataSetColumn="Stock" />
+              <Mapping SourceColumn="Tagged" DataSetColumn="Tagged" />
+              <Mapping SourceColumn="TotalQuantity" DataSetColumn="TotalQuantity" />
+              <Mapping SourceColumn="MinimumParLevel" DataSetColumn="MinimumParLevel" />
+              <Mapping SourceColumn="TotalVolume" DataSetColumn="TotalVolume" />
+              <Mapping SourceColumn="TotalBottleCost" DataSetColumn="TotalBottleCost" />
+              <Mapping SourceColumn="TotalVolumeCost" DataSetColumn="TotalVolumeCost" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsInventory" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="dsInventory" msprop:Generator_UserDSName="dsInventory">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="rptInventory" msprop:Generator_TableClassName="rptInventoryDataTable" msprop:Generator_TableVarName="tablerptInventory" msprop:Generator_TablePropName="rptInventory" msprop:Generator_RowDeletingName="rptInventoryRowDeleting" msprop:Generator_UserTableName="rptInventory" msprop:Generator_RowChangingName="rptInventoryRowChanging" msprop:Generator_RowEvHandlerName="rptInventoryRowChangeEventHandler" msprop:Generator_RowDeletedName="rptInventoryRowDeleted" msprop:Generator_RowEvArgName="rptInventoryRowChangeEvent" msprop:Generator_RowChangedName="rptInventoryRowChanged" msprop:Generator_RowClassName="rptInventoryRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Stock" msprop:Generator_ColumnVarNameInTable="columnStock" msprop:Generator_ColumnPropNameInRow="Stock" msprop:Generator_ColumnPropNameInTable="StockColumn" msprop:Generator_UserColumnName="Stock" type="xs:long" minOccurs="0" />
+              <xs:element name="Tagged" msprop:Generator_ColumnVarNameInTable="columnTagged" msprop:Generator_ColumnPropNameInRow="Tagged" msprop:Generator_ColumnPropNameInTable="TaggedColumn" msprop:Generator_UserColumnName="Tagged" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalQuantity" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalQuantity" msprop:Generator_ColumnPropNameInRow="TotalQuantity" msprop:Generator_ColumnPropNameInTable="TotalQuantityColumn" msprop:Generator_UserColumnName="TotalQuantity" type="xs:long" minOccurs="0" />
+              <xs:element name="MinimumParLevel" msprop:Generator_ColumnVarNameInTable="columnMinimumParLevel" msprop:Generator_ColumnPropNameInRow="MinimumParLevel" msprop:Generator_ColumnPropNameInTable="MinimumParLevelColumn" msprop:Generator_UserColumnName="MinimumParLevel" type="xs:int" />
+              <xs:element name="TotalVolume" msprop:Generator_ColumnVarNameInTable="columnTotalVolume" msprop:Generator_ColumnPropNameInRow="TotalVolume" msprop:Generator_ColumnPropNameInTable="TotalVolumeColumn" msprop:Generator_UserColumnName="TotalVolume" type="xs:double" minOccurs="0" />
+              <xs:element name="TotalBottleCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalBottleCost" msprop:Generator_ColumnPropNameInRow="TotalBottleCost" msprop:Generator_ColumnPropNameInTable="TotalBottleCostColumn" msprop:Generator_UserColumnName="TotalBottleCost" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalVolumeCost" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTotalVolumeCost" msprop:Generator_ColumnPropNameInRow="TotalVolumeCost" msprop:Generator_ColumnPropNameInTable="TotalVolumeCostColumn" msprop:Generator_UserColumnName="TotalVolumeCost" type="xs:double" minOccurs="0" />
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

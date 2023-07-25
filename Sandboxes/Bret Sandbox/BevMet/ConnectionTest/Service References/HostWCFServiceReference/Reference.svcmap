@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c9f56c8a-91cf-4aaf-b0d1-1341f2ba7c5f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9091/PourEngineService/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service1.wsdl" MetadataType="Wsdl" ID="1f59a5fa-f46f-42ef-9ea8-f4d3eb70c03a" SourceId="1" SourceUrl="http://localhost:9091/PourEngineService/mex" />
+    <MetadataFile FileName="service2.xsd" MetadataType="Schema" ID="908bee8e-98d3-43ee-99f6-a00c89f2b7b6" SourceId="1" SourceUrl="http://localhost:9091/PourEngineService/mex" />
+    <MetadataFile FileName="service21.xsd" MetadataType="Schema" ID="14ff84b2-5b38-40ed-8157-db1cc3504d80" SourceId="1" SourceUrl="http://localhost:9091/PourEngineService/mex" />
+    <MetadataFile FileName="BEVMET_FULL_BAR.PourEngine1.xsd" MetadataType="Schema" ID="48605b6c-163b-4c14-a515-213fba6cb465" SourceId="1" SourceUrl="http://localhost:9091/PourEngineService/mex" />
+    <MetadataFile FileName="Arrays1.xsd" MetadataType="Schema" ID="41d39c8d-cfff-43d4-b577-acf3b4db791a" SourceId="1" SourceUrl="http://localhost:9091/PourEngineService/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

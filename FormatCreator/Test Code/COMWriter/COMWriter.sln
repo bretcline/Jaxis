@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COMWriter", "COMWriter.csproj", "{EBE1F3B3-090A-4599-8D03-DA754E7998CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ActiveXRFID", "..\ActiveXRFID\ActiveXRFID.csproj", "{6FB8157B-1DD9-4168-9A2B-F92A26549011}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "..\WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{79C47C36-0E13-4583-8BA7-7E0905923D60}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{26795882-AD37-46E8-8913-DC21C091F01D}"
+	ProjectSection(SolutionItems) = preProject
+		COMWriter.vsmdi = COMWriter.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinCOM", "WinCOM\WinCOM.csproj", "{CFD049A7-4D3E-45C0-9884-E07C39A42583}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = COMWriter.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBE1F3B3-090A-4599-8D03-DA754E7998CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBE1F3B3-090A-4599-8D03-DA754E7998CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBE1F3B3-090A-4599-8D03-DA754E7998CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBE1F3B3-090A-4599-8D03-DA754E7998CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FB8157B-1DD9-4168-9A2B-F92A26549011}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FB8157B-1DD9-4168-9A2B-F92A26549011}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FB8157B-1DD9-4168-9A2B-F92A26549011}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FB8157B-1DD9-4168-9A2B-F92A26549011}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79C47C36-0E13-4583-8BA7-7E0905923D60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79C47C36-0E13-4583-8BA7-7E0905923D60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79C47C36-0E13-4583-8BA7-7E0905923D60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79C47C36-0E13-4583-8BA7-7E0905923D60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFD049A7-4D3E-45C0-9884-E07C39A42583}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFD049A7-4D3E-45C0-9884-E07C39A42583}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFD049A7-4D3E-45C0-9884-E07C39A42583}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFD049A7-4D3E-45C0-9884-E07C39A42583}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

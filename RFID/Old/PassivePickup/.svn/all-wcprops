@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/Jaxis/!svn/ver/143/trunk/RFID/PassivePickup
+END
+CustomerInfoDataSet.xsc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/Jaxis/!svn/ver/143/trunk/RFID/PassivePickup/CustomerInfoDataSet.xsc
+END
+CustomerInfoDataSet.xss
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/Jaxis/!svn/ver/143/trunk/RFID/PassivePickup/CustomerInfoDataSet.xss
+END
+DataAccess.cs
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/Jaxis/!svn/ver/143/trunk/RFID/PassivePickup/DataAccess.cs
+END
+CustomerInfoDataSet.xsd
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/Jaxis/!svn/ver/143/trunk/RFID/PassivePickup/CustomerInfoDataSet.xsd
+END
+PassivePickup.sln
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/Jaxis/!svn/ver/143/trunk/RFID/PassivePickup/PassivePickup.sln
+END
+Form1.resx
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/Jaxis/!svn/ver/143/trunk/RFID/PassivePickup/Form1.resx
+END
+Customer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/Jaxis/!svn/ver/143/trunk/RFID/PassivePickup/Customer.cs
+END
+PassivePickup.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/Jaxis/!svn/ver/143/trunk/RFID/PassivePickup/PassivePickup.csproj
+END
+CustomerInfoDataSet.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/Jaxis/!svn/ver/143/trunk/RFID/PassivePickup/CustomerInfoDataSet.Designer.cs
+END
+Form1.Designer.cs
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/Jaxis/!svn/ver/143/trunk/RFID/PassivePickup/Form1.Designer.cs
+END
+CustomerInfo.sdf
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/Jaxis/!svn/ver/143/trunk/RFID/PassivePickup/CustomerInfo.sdf
+END
+Form1.cs
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/Jaxis/!svn/ver/143/trunk/RFID/PassivePickup/Form1.cs
+END
+Program.cs
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/Jaxis/!svn/ver/143/trunk/RFID/PassivePickup/Program.cs
+END

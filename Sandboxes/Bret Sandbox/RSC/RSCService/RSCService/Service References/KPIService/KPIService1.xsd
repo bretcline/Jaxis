@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/KPIBase.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/KPIBase.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfLeniency">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Leniency" nillable="true" type="tns:Leniency" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLeniency" nillable="true" type="tns:ArrayOfLeniency" />
+  <xs:complexType name="Leniency">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReportDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SavingCost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="SplitCost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SplitOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="SplitQuantity" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalOrder" type="xs:int" />
+      <xs:element minOccurs="0" name="TraditionalCost" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Leniency" nillable="true" type="tns:Leniency" />
+  <xs:complexType name="ArrayOfLeniencyDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LeniencyDetail" nillable="true" type="tns:LeniencyDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLeniencyDetail" nillable="true" type="tns:ArrayOfLeniencyDetail" />
+  <xs:complexType name="LeniencyDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReportDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="RequestId" type="xs:int" />
+      <xs:element minOccurs="0" name="SavingCost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="SplitCost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TraditionalCost" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LeniencyDetail" nillable="true" type="tns:LeniencyDetail" />
+  <xs:complexType name="ArrayOfLeniencySum">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LeniencySum" nillable="true" type="tns:LeniencySum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLeniencySum" nillable="true" type="tns:ArrayOfLeniencySum" />
+  <xs:complexType name="LeniencySum">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReportDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SavingCostTotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LeniencySum" nillable="true" type="tns:LeniencySum" />
+  <xs:complexType name="ArrayOfCatalogSpendNonRSCRS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CatalogSpendNonRSCRS" nillable="true" type="tns:CatalogSpendNonRSCRS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCatalogSpendNonRSCRS" nillable="true" type="tns:ArrayOfCatalogSpendNonRSCRS" />
+  <xs:complexType name="CatalogSpendNonRSCRS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentMonth" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Past1Month" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Past2Month" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Percentage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ranked" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="Spend" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Total" type="xs:decimal" />
+      <xs:element minOccurs="0" name="YTD" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CatalogSpendNonRSCRS" nillable="true" type="tns:CatalogSpendNonRSCRS" />
+  <xs:complexType name="ArrayOfCatalogSpendRS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CatalogSpendRS" nillable="true" type="tns:CatalogSpendRS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCatalogSpendRS" nillable="true" type="tns:ArrayOfCatalogSpendRS" />
+  <xs:complexType name="CatalogSpendRS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CurrentMonth" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Past1Month" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Past2Month" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Percentage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ProductDescription" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Ranked" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="Spend" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Total" type="xs:decimal" />
+      <xs:element minOccurs="0" name="YTD" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CatalogSpendRS" nillable="true" type="tns:CatalogSpendRS" />
+  <xs:complexType name="ArrayOfEquipmentUtilization">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EquipmentUtilization" nillable="true" type="tns:EquipmentUtilization" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEquipmentUtilization" nillable="true" type="tns:ArrayOfEquipmentUtilization" />
+  <xs:complexType name="EquipmentUtilization">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OnRentCount" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitCount10" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitCount20" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitCount30" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitCount40" type="xs:int" />
+      <xs:element minOccurs="0" name="UnitCount50" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EquipmentUtilization" nillable="true" type="tns:EquipmentUtilization" />
+  <xs:complexType name="ArrayOfExchangeTopFive">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExchangeTopFive" nillable="true" type="tns:ExchangeTopFive" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExchangeTopFive" nillable="true" type="tns:ArrayOfExchangeTopFive" />
+  <xs:complexType name="ExchangeTopFive">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExchangeCount" type="xs:int" />
+      <xs:element minOccurs="0" name="ExchangeReason" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rank" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExchangeTopFive" nillable="true" type="tns:ExchangeTopFive" />
+  <xs:complexType name="ArrayOfMonthlyReRentInvoiceCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MonthlyReRentInvoiceCount" nillable="true" type="tns:MonthlyReRentInvoiceCount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMonthlyReRentInvoiceCount" nillable="true" type="tns:ArrayOfMonthlyReRentInvoiceCount" />
+  <xs:complexType name="MonthlyReRentInvoiceCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DifferencePaidVSInitialRequest" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DisputeResolution" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Month" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NumberOfVendorInvoicesRejected" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalDisputedInvoices" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalInvoiceAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="TotalNumberOfVendorInvoices" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MonthlyReRentInvoiceCount" nillable="true" type="tns:MonthlyReRentInvoiceCount" />
+  <xs:complexType name="ArrayOfTop10AccountCodeSpend">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Top10AccountCodeSpend" nillable="true" type="tns:Top10AccountCodeSpend" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTop10AccountCodeSpend" nillable="true" type="tns:ArrayOfTop10AccountCodeSpend" />
+  <xs:complexType name="Top10AccountCodeSpend">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AccountCodeValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalAmount" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Top10AccountCodeSpend" nillable="true" type="tns:Top10AccountCodeSpend" />
+  <xs:complexType name="ArrayOfTop10JobsiteSpend">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Top10JobsiteSpend" nillable="true" type="tns:Top10JobsiteSpend" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTop10JobsiteSpend" nillable="true" type="tns:ArrayOfTop10JobsiteSpend" />
+  <xs:complexType name="Top10JobsiteSpend">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MonthAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalAmount" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Top10JobsiteSpend" nillable="true" type="tns:Top10JobsiteSpend" />
+  <xs:complexType name="ArrayOfVendorSpendingTop10">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VendorSpendingTop10" nillable="true" type="tns:VendorSpendingTop10" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfVendorSpendingTop10" nillable="true" type="tns:ArrayOfVendorSpendingTop10" />
+  <xs:complexType name="VendorSpendingTop10">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="InvoiceAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="InvoiceCount" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="VendorId" type="xs:int" />
+      <xs:element minOccurs="0" name="VendorName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VendorSpendingTop10" nillable="true" type="tns:VendorSpendingTop10" />
+  <xs:complexType name="ArrayOfExchangeTopFiveDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExchangeTopFiveDetail" nillable="true" type="tns:ExchangeTopFiveDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExchangeTopFiveDetail" nillable="true" type="tns:ArrayOfExchangeTopFiveDetail" />
+  <xs:complexType name="ExchangeTopFiveDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExchangeCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Rank" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="UptimePercentage" type="xs:int" />
+      <xs:element minOccurs="0" name="Vendor" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VolumePercentage" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExchangeTopFiveDetail" nillable="true" type="tns:ExchangeTopFiveDetail" />
+  <xs:complexType name="ArrayOfEarlyOffRentWithGPS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EarlyOffRentWithGPS" nillable="true" type="tns:EarlyOffRentWithGPS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEarlyOffRentWithGPS" nillable="true" type="tns:ArrayOfEarlyOffRentWithGPS" />
+  <xs:complexType name="EarlyOffRentWithGPS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DayRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DaysInMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="Diff" type="xs:int" />
+      <xs:element minOccurs="0" name="MarkUp" type="xs:float" />
+      <xs:element minOccurs="0" name="MonthRate" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ProrateAfterOneMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="WeekRate" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EarlyOffRentWithGPS" nillable="true" type="tns:EarlyOffRentWithGPS" />
+  <xs:complexType name="ArrayOfFreightAvoidance">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FreightAvoidance" nillable="true" type="tns:FreightAvoidance" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFreightAvoidance" nillable="true" type="tns:ArrayOfFreightAvoidance" />
+  <xs:complexType name="FreightAvoidance">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CostSaving" type="xs:int" />
+      <xs:element minOccurs="0" name="FreightAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ItemRedeploy" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ReportDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalItem" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FreightAvoidance" nillable="true" type="tns:FreightAvoidance" />
+  <xs:complexType name="ArrayOfFreightAvoidanceSum">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FreightAvoidanceSum" nillable="true" type="tns:FreightAvoidanceSum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFreightAvoidanceSum" nillable="true" type="tns:ArrayOfFreightAvoidanceSum" />
+  <xs:complexType name="FreightAvoidanceSum">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CostSaving" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FreightAvoidanceSum" nillable="true" type="tns:FreightAvoidanceSum" />
+  <xs:complexType name="ArrayOfOnRentUsageByDay">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OnRentUsageByDay" nillable="true" type="tns:OnRentUsageByDay" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOnRentUsageByDay" nillable="true" type="tns:ArrayOfOnRentUsageByDay" />
+  <xs:complexType name="OnRentUsageByDay">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Day" type="xs:int" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OnRentUsageByDay" nillable="true" type="tns:OnRentUsageByDay" />
+  <xs:complexType name="ArrayOfOnTimeDelivery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OnTimeDelivery" nillable="true" type="tns:OnTimeDelivery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOnTimeDelivery" nillable="true" type="tns:ArrayOfOnTimeDelivery" />
+  <xs:complexType name="OnTimeDelivery">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="O3PDeliveries" type="xs:int" />
+      <xs:element minOccurs="0" name="O3PLateDeliveries" type="xs:int" />
+      <xs:element minOccurs="0" name="O3POnTimePercentage" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="RscDeliveries" type="xs:int" />
+      <xs:element minOccurs="0" name="RscLateDeliveries" type="xs:int" />
+      <xs:element minOccurs="0" name="RscOnTimePercentage" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OnTimeDelivery" nillable="true" type="tns:OnTimeDelivery" />
+  <xs:complexType name="ArrayOfOffRentCost">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OffRentCost" nillable="true" type="tns:OffRentCost" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOffRentCost" nillable="true" type="tns:ArrayOfOffRentCost" />
+  <xs:complexType name="OffRentCost">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CostSaving" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DaysAdd" type="xs:int" />
+      <xs:element minOccurs="0" name="OffRentAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="RecalculationAmount" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ReportDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OffRentCost" nillable="true" type="tns:OffRentCost" />
+  <xs:complexType name="ArrayOfOffRentCostSum">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OffRentCostSum" nillable="true" type="tns:OffRentCostSum" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOffRentCostSum" nillable="true" type="tns:ArrayOfOffRentCostSum" />
+  <xs:complexType name="OffRentCostSum">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReportDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SavingCostTotal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OffRentCostSum" nillable="true" type="tns:OffRentCostSum" />
+  <xs:complexType name="ArrayOfOffRentNotifications">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OffRentNotifications" nillable="true" type="tns:OffRentNotifications" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOffRentNotifications" nillable="true" type="tns:ArrayOfOffRentNotifications" />
+  <xs:complexType name="OffRentNotifications">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OffRentCount" type="xs:int" />
+      <xs:element minOccurs="0" name="PastDueCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Percentage" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ReportDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OffRentNotifications" nillable="true" type="tns:OffRentNotifications" />
+  <xs:complexType name="ArrayOfCSUtilization">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CSUtilization" nillable="true" type="tns:CSUtilization" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCSUtilization" nillable="true" type="tns:ArrayOfCSUtilization" />
+  <xs:complexType name="CSUtilization">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="TotUtilization" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CSUtilization" nillable="true" type="tns:CSUtilization" />
+  <xs:complexType name="ArrayOfInvoiceInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceInfo" nillable="true" type="tns:InvoiceInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoiceInfo" nillable="true" type="tns:ArrayOfInvoiceInfo" />
+  <xs:complexType name="InvoiceInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InvoiceDiff" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceInfo" nillable="true" type="tns:InvoiceInfo" />
+  <xs:complexType name="ArrayOfServiceCallsTopFive">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServiceCallsTopFive" nillable="true" type="tns:ServiceCallsTopFive" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServiceCallsTopFive" nillable="true" type="tns:ArrayOfServiceCallsTopFive" />
+  <xs:complexType name="ServiceCallsTopFive">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Rank" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="Resolution" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ServiceCount" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServiceCallsTopFive" nillable="true" type="tns:ServiceCallsTopFive" />
+  <xs:complexType name="ArrayOfExchangeAnnual">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExchangeAnnual" nillable="true" type="tns:ExchangeAnnual" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExchangeAnnual" nillable="true" type="tns:ArrayOfExchangeAnnual" />
+  <xs:complexType name="ExchangeAnnual">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReportDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="ServiceCalls" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExchangeAnnual" nillable="true" type="tns:ExchangeAnnual" />
+  <xs:complexType name="ArrayOfPastDueForOffRent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PastDueForOffRent" nillable="true" type="tns:PastDueForOffRent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPastDueForOffRent" nillable="true" type="tns:ArrayOfPastDueForOffRent" />
+  <xs:complexType name="PastDueForOffRent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PastDueForOffRent" nillable="true" type="tns:PastDueForOffRent" />
+  <xs:complexType name="ArrayOfReturnNotifications">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReturnNotifications" nillable="true" type="tns:ReturnNotifications" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReturnNotifications" nillable="true" type="tns:ArrayOfReturnNotifications" />
+  <xs:complexType name="ReturnNotifications">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DueCount" type="xs:int" />
+      <xs:element minOccurs="0" name="ExtensionCount" type="xs:int" />
+      <xs:element minOccurs="0" name="OffRentCount" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportDate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReturnNotifications" nillable="true" type="tns:ReturnNotifications" />
+  <xs:complexType name="ArrayOfLeadTimeEquipment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LeadTimeEquipment" nillable="true" type="tns:LeadTimeEquipment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLeadTimeEquipment" nillable="true" type="tns:ArrayOfLeadTimeEquipment" />
+  <xs:complexType name="LeadTimeEquipment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count00To02" type="xs:int" />
+      <xs:element minOccurs="0" name="Count03To04" type="xs:int" />
+      <xs:element minOccurs="0" name="Count05Plus" type="xs:int" />
+      <xs:element minOccurs="0" name="Count08Plus" type="xs:int" />
+      <xs:element minOccurs="0" name="LineCount" type="xs:int" />
+      <xs:element minOccurs="0" name="OrderCount" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LeadTimeEquipment" nillable="true" type="tns:LeadTimeEquipment" />
+  <xs:complexType name="ArrayOfInvoiceAccuracy">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvoiceAccuracy" nillable="true" type="tns:InvoiceAccuracy" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvoiceAccuracy" nillable="true" type="tns:ArrayOfInvoiceAccuracy" />
+  <xs:complexType name="InvoiceAccuracy">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LineCount" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="RscAccuracy" type="xs:int" />
+      <xs:element minOccurs="0" name="RscIssues" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="TOTAccuracy" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalInvoices" type="xs:int" />
+      <xs:element minOccurs="0" name="UserIssues" type="xs:int" />
+      <xs:element minOccurs="0" name="VendorIssues" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="InvoiceAccuracy" nillable="true" type="tns:InvoiceAccuracy" />
+  <xs:complexType name="ArrayOfMiddleMarkUp">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MiddleMarkUp" nillable="true" type="tns:MiddleMarkUp" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMiddleMarkUp" nillable="true" type="tns:ArrayOfMiddleMarkUp" />
+  <xs:complexType name="MiddleMarkUp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MarkUp" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalInvoice" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MiddleMarkUp" nillable="true" type="tns:MiddleMarkUp" />
+  <xs:complexType name="ArrayOfUtilizationSavings">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UtilizationSavings" nillable="true" type="tns:UtilizationSavings" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUtilizationSavings" nillable="true" type="tns:ArrayOfUtilizationSavings" />
+  <xs:complexType name="UtilizationSavings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CostSavings" type="xs:int" />
+      <xs:element minOccurs="0" name="LineCount" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UtilizationSavings" nillable="true" type="tns:UtilizationSavings" />
+  <xs:complexType name="ArrayOfMonthlyInvoiceCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MonthlyInvoiceCount" nillable="true" type="tns:MonthlyInvoiceCount" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMonthlyInvoiceCount" nillable="true" type="tns:ArrayOfMonthlyInvoiceCount" />
+  <xs:complexType name="MonthlyInvoiceCount">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CostSavings" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ReportDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="SummaryInvPayCost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SummaryInvoices" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalInvoices" type="xs:int" />
+      <xs:element minOccurs="0" name="TradInvPayCost" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MonthlyInvoiceCount" nillable="true" type="tns:MonthlyInvoiceCount" />
+  <xs:complexType name="ArrayOfThirdPartyInvoiceValidation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ThirdPartyInvoiceValidation" nillable="true" type="tns:ThirdPartyInvoiceValidation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfThirdPartyInvoiceValidation" nillable="true" type="tns:ArrayOfThirdPartyInvoiceValidation" />
+  <xs:complexType name="ThirdPartyInvoiceValidation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="TotalInvoiceOnHold" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ThirdPartyInvoiceValidation" nillable="true" type="tns:ThirdPartyInvoiceValidation" />
+  <xs:complexType name="ArrayOfGPSLowUtilization">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GPSLowUtilization" nillable="true" type="tns:GPSLowUtilization" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGPSLowUtilization" nillable="true" type="tns:ArrayOfGPSLowUtilization" />
+  <xs:complexType name="GPSLowUtilization">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NotificationCount" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GPSLowUtilization" nillable="true" type="tns:GPSLowUtilization" />
+  <xs:complexType name="ArrayOfGPSTrackers">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GPSTrackers" nillable="true" type="tns:GPSTrackers" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGPSTrackers" nillable="true" type="tns:ArrayOfGPSTrackers" />
+  <xs:complexType name="GPSTrackers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ReportMonth" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportYear" type="xs:int" />
+      <xs:element minOccurs="0" name="SiteCustomer" type="xs:int" />
+      <xs:element minOccurs="0" name="TrackerCount" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GPSTrackers" nillable="true" type="tns:GPSTrackers" />
+</xs:schema>

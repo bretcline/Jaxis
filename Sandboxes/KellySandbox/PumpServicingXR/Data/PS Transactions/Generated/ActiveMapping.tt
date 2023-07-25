@@ -1,0 +1,67 @@
+﻿<#@ include file="SQLServer.ttinclude" #>
+<#@ include file="Mappings.ttinclude" #>
+using LFI.Sync.Shared;
+
+namespace <#=Namespace #>
+{
+<#
+    var tables = LoadTables();
+
+    foreach(Table tbl in tables)
+    {
+	    if(!ExcludeTables.Contains(tbl.Name))
+        {
+        	if( tbl.Name.StartsWith( "cs" ) || tbl.Name.StartsWith( "r_" ) || tbl.Name.StartsWith( "XRRpt" ) )
+			{
+				continue;
+			}
+#>
+    /// <summary>
+    /// A partial class to work with the XR Transaction Mappings which represents the <#=tbl.Name #> table in the <#=DatabaseName#> Database.
+    /// </summary>
+    public sealed partial class <#=tbl.CleanName#>Map : TableMap
+    {
+		public const string TABLE_NAME = "<#=tbl.CleanName#>";
+		
+<#
+		    foreach(Column col in tbl.Columns)
+			{
+				string colName = ConvertColumn( tbl, col );
+#>		public static string <#=colName #> = "<#=col.CleanName #>";
+<#			}
+#>
+		
+		public sealed partial class Prefixed
+		{
+<#
+		    foreach(Column col in tbl.Columns)
+			{
+				string colName = ConvertColumn( tbl, col );
+#>			public static string <#=colName #> = "<#=tbl.CleanName#>.<#=col.CleanName #>";
+<#			}
+#>		}
+
+		public sealed partial class Aliased
+		{
+<#
+		    foreach(Column col in tbl.Columns)
+			{
+				string colName = ConvertColumn( tbl, col );
+#>			public static string <#=colName #> = "<#=tbl.CleanName#><#=col.CleanName #>";
+<#			}
+#>		}
+
+		public sealed partial class Param
+		{
+<#
+		    foreach(Column col in tbl.Columns)
+			{
+				string colName = ConvertColumn( tbl, col );
+#>			public static string <#=colName #> = "@<#=col.CleanName #>";
+<#			}
+#>		}
+    } 
+<#      }
+    }
+#>
+}

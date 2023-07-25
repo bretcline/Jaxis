@@ -1,0 +1,142 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="JaxisSolutions.master.cs"
+    Inherits="JaxisSolutions" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>Jaxis Custom Solutions Inc.</title>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link href="jaxis-styles.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+    <!--
+        function MM_preloadImages() { //v3.0
+            var d = document; if (d.images) {
+                if (!d.MM_p) d.MM_p = new Array();
+                var i, j = d.MM_p.length, a = MM_preloadImages.arguments; for (i = 0; i < a.length; i++)
+                    if (a[i].indexOf("#") != 0) { d.MM_p[j] = new Image; d.MM_p[j++].src = a[i]; }
+            }
+        }
+        function MM_swapImgRestore() { //v3.0
+            var i, x, a = document.MM_sr; for (i = 0; a && i < a.length && (x = a[i]) && x.oSrc; i++) x.src = x.oSrc;
+        }
+
+        function MM_findObj(n, d) { //v4.01
+            var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+                d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+            }
+            if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+            for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+            if (!x && d.getElementById) x = d.getElementById(n); return x;
+        }
+
+        function MM_swapImage() { //v3.0
+            var i, j = 0, x, a = MM_swapImage.arguments; document.MM_sr = new Array; for (i = 0; i < (a.length - 2); i += 3)
+                if ((x = MM_findObj(a[i])) != null) { document.MM_sr[j++] = x; if (!x.oSrc) x.oSrc = x.src; x.src = a[i + 2]; }
+        }
+    //-->
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table width="100" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td>
+                    <table id="Table_01" width="954" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td colspan="6" class="top">
+                                <div class="topnav">
+                                    <a href="Default.aspx">HOME</a> &nbsp;|&nbsp; <a href="about.aspx">ABOUT</a> &nbsp;|&nbsp; <a href="contact.aspx">CONTACT</a></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">
+                                <a href="Default.aspx">
+                                    <img src="images/index_02.gif" alt="" name="index_02" width="450" height="86" border="0"
+                                        id="index_02" /></a>
+                            </td>
+                            <td>
+                                <a href="services.aspx">
+                                    <img src="images/index_03.jpg" alt="" name="index_03" width="165" height="38" border="0"
+                                        id="index_03" onmouseover="MM_swapImage('index_03','','images/index-over_03.jpg',1)"
+                                        onmouseout="MM_swapImgRestore()" /></a>
+                            </td>
+                            <td>
+                                <img id="index_04" src="images/index_04.jpg" width="6" height="38" alt="" />
+                            </td>
+                            <td>
+                                <a href="clients.aspx">
+                                    <img src="images/index_05.jpg" alt="" name="index_05" width="164" height="38" border="0"
+                                        id="index_05" onmouseover="MM_swapImage('index_05','','images/index-over_05.jpg',1)"
+                                        onmouseout="MM_swapImgRestore()" /></a>
+                            </td>
+                            <td>
+                                <img id="index_06" src="images/index_06.jpg" width="6" height="38" alt="" />
+                            </td>
+                            <td>
+                                <a href="partners.aspx">
+                                    <img src="images/index_07.jpg" alt="" name="index_07" width="163" height="38" border="0"
+                                        id="index_07" onmouseover="MM_swapImage('index_07','','images/index-over_07.jpg',1)"
+                                        onmouseout="MM_swapImgRestore()" /></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">
+                                <img id="index_08" src="images/index_08.gif" width="504" height="48" alt="" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" class="subcontent">
+                                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                                </asp:ContentPlaceHolder>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table width="954" border="0" cellpadding="0" cellspacing="0" id="Table_bottom">
+                        <tr>
+                            <td class="index-13">
+                                <div class="index-13a">
+                                    <h2>
+                                        featured products</h2>
+                                    <p>
+                                        iBIS – an efficient inventory system, tailor made to meet your needs.<br />
+                                        <a href="featured_products.aspx">LEARN MORE</a></p>
+                                </div>
+                            </td>
+                            <td colspan="4" class="index-14">
+                                <div class="index-14a">
+                                    <h2>
+                                        what our customers are saying...</h2>
+                                    <p>
+                                        Jaxis has excelled at every task I’ve put before them. I’ve hired them for multiple, disparate projects, and their broad-based expertise has proven invaluable each time.<br />
+                                        <a href="testimonials.aspx">LEARN MORE</a></p>
+                                </div>
+                            </td>
+                            <td colspan="3" class="index-15">
+                                <div class="index-15a">
+                                    7885 FM 1960<br />
+                                    Dayton, TX 77535<br />
+                                    Phone: 832.390.0067<br />
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td class="copyright">
+                    Copyright &copy; Jaxis Custom Solutions Inc. | <a href="http://www.adWhite.com" target="_blank">
+                        Web site design by adWhite</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

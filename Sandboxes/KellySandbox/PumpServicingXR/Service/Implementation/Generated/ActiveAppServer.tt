@@ -1,0 +1,42 @@
+﻿<#@ include file="SQLServer.ttinclude" #>
+using System;
+using WFT.PSService.ServiceLibrary;
+using WFT.PSService.Data;
+using LFI.Sync.DataManager;
+using System.Collections.Generic;
+
+namespace WFT.PSService.Service
+{
+    /// <summary>
+    /// A partial AppServer class to work with the tables in the <#=DatabaseName#> Database.
+    /// </summary>
+    public partial class AppServer : IRecordAccessor
+    {
+<#
+    var tables = LoadTables();
+    foreach(Table tbl in tables)
+    {
+	    if(!ExcludeTables.Contains(tbl.Name))
+        {
+			if( tbl.Name.StartsWith( "cs" ) || tbl.Name.StartsWith( "r_" ) || tbl.Name.StartsWith( "XRRpt" ) )
+			{
+				continue;
+			}
+			foreach( Column col in tbl.Columns )
+			{
+				if ( col.CleanName.Contains( "LstChgDT" ) )
+				{
+#>
+    
+        public ServiceResult Put<#=tbl.CleanName#>( SyncContext _sync, <#=tbl.CleanName#> _<#=tbl.CleanName#> )
+        {
+			return m_recordProcessor.Process<<#=tbl.CleanName#>, <#=tbl.CleanName#>Transaction>( _sync, _<#=tbl.CleanName#> );
+        }
+<#					break;
+				}
+			}
+		}
+    }
+#>
+	}
+}

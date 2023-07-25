@@ -1,0 +1,141 @@
+﻿<UserControl x:Class="RSCReport.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="1060" d:DesignWidth="1099" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts" xmlns:dxn="http://schemas.devexpress.com/winfx/2008/xaml/navbar" xmlns:local="clr-namespace:RSCReport" BorderBrush="White" Loaded="UserControl_Loaded" xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid">
+
+    <Grid x:Name="LayoutRoot" Width="1031" Height="903">
+        <dxn:NavBarControl HorizontalAlignment="Left" Margin="14,74,0,0" Name="navItems" VerticalAlignment="Top" Height="445" Width="145">
+            <dxn:NavBarControl.Groups>
+                <dxn:NavBarGroup Header="Spend Data" GroupScrollMode="{x:Null}">
+                    <dxn:NavBarItem Name="TopRSC" Content="Top RSC" DataContext="{x:Null}" Click="TopRSC_Click" />
+                    <dxn:NavBarItem Content="Top 3rd Party" DataContext="{x:Null}" Click="NavBarItem_Click" />
+                    <dxn:NavBarItem Content="Top Five 3rd Party" DataContext="{x:Null}" Click="NavBarItem_Click" />
+                </dxn:NavBarGroup>
+                <dxn:NavBarGroup Header="Performance" IsExpanded="False">
+                    <dxn:NavBarItem Content="Service Calls" DataContext="{x:Null}" Click="NavBarItem_Click" />
+                    <dxn:NavBarItem Content="Top Five Resolutions" DataContext="{x:Null}" Click="NavBarItem_Click" />
+                    <dxn:NavBarItem Content="Exchanges" DataContext="{x:Null}" Click="NavBarItem_Click" />
+                    <dxn:NavBarItem Content="Exchange Reasons" DataContext="{x:Null}" Click="NavBarItem_Click" />
+                    <dxn:NavBarItem Content="On-Time Deliveries" DataContext="{x:Null}" Click="NavBarItem_Click" />
+                </dxn:NavBarGroup>
+                <dxn:NavBarGroup Header="Utilization" IsExpanded="False">
+                    <dxn:NavBarItem Content="Usage By Days On-Rent" DataContext="{x:Null}" Click="NavBarItem_Click" />
+                    <dxn:NavBarItem Content="Past Due Notifications" DataContext="{x:Null}" Click="NavBarItem_Click" />
+                    <dxn:NavBarItem Content="Lead Time" DataContext="{x:Null}" Click="NavBarItem_Click" />
+                    <dxn:NavBarItem Content="Equipment Utilization" DataContext="{x:Null}" Click="NavBarItem_Click" />
+                    <dxn:NavBarItem Content="Accounts Receivable" DataContext="{x:Null}" Click="NavBarItem_Click" />
+                </dxn:NavBarGroup>
+                <dxn:NavBarGroup Header="Cost Savings" IsExpanded="False">
+                    <dxn:NavBarItem Content="Savings Summary" DataContext="{x:Null}" Click="NavBarItem_Click" />
+                    <dxn:NavBarItem Content="Leniency" DataContext="{x:Null}" Click="NavBarItem_Click" />
+                    <dxn:NavBarItem Content="Freight Avoidance" DataContext="{x:Null}" Click="NavBarItem_Click" />
+                    <dxn:NavBarItem Content="Utilization - GPS" DataContext="{x:Null}" Click="NavBarItem_Click" />
+                    <dxn:NavBarItem Content="3rd Party Invoice Processing" DataContext="{x:Null}" Click="NavBarItem_Click" />
+                    <dxn:NavBarItem Content="Point of Need Savings" DataContext="{x:Null}" Click="NavBarItem_Click" />
+                </dxn:NavBarGroup>
+            </dxn:NavBarControl.Groups>
+            <dxn:NavBarControl.View>
+                <dxn:NavigationPaneView Focusable="True" />
+            </dxn:NavBarControl.View>
+        </dxn:NavBarControl>
+
+        <dxn:NavBarControl HorizontalAlignment="Left" Margin="14,525,0,248" Name="navReview" Width="145">
+            <dxn:NavBarControl.Groups>
+                <dxn:NavBarGroup Header="Review Summary">
+                    <dxn:NavBarItem Content="815 BP TX City Refinery" DataContext="{x:Null}" />
+                    <dxn:NavBarItem Content="Jan 2011-Mar 2011" DataContext="{x:Null}" />
+                </dxn:NavBarGroup>
+            </dxn:NavBarControl.Groups>
+            <dxn:NavBarControl.View>
+                <dxn:NavigationPaneView Focusable="True" />
+            </dxn:NavBarControl.View>
+        </dxn:NavBarControl>
+
+
+        <dxc:ChartControl Height="160" HorizontalAlignment="Left" Margin="714,74,0,0" Name="chartTop1" VerticalAlignment="Top" Width="305" BorderBrush="White" Foreground="White">
+            <dxc:ChartControl.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.006" />
+                    <GradientStop Color="MidnightBlue" Offset="1" />
+                </LinearGradientBrush>
+            </dxc:ChartControl.Background>
+            <dxc:ChartControl.Titles>
+                <dxc:Title Name="chartTop1Title" Content="" Foreground="White" Dock="Top" HorizontalAlignment="Center" />
+            </dxc:ChartControl.Titles>
+        </dxc:ChartControl>
+        <dxc:ChartControl Height="160" HorizontalAlignment="Left" Margin="714,239,0,0" Name="chartTop2" VerticalAlignment="Top" Width="305" BorderBrush="White">
+            <dxc:ChartControl.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.006" />
+                    <GradientStop Color="MidnightBlue" Offset="1" />
+                </LinearGradientBrush>
+            </dxc:ChartControl.Background>
+        </dxc:ChartControl>
+        <dxc:ChartControl Height="160" HorizontalAlignment="Left" Margin="714,405,0,0" Name="chartTop3" VerticalAlignment="Top" Width="305" BorderBrush="White">
+            <dxc:ChartControl.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.006" />
+                    <GradientStop Color="MidnightBlue" Offset="1" />
+                </LinearGradientBrush>
+            </dxc:ChartControl.Background>
+        </dxc:ChartControl>
+        <dxc:ChartControl Height="160" HorizontalAlignment="Left" Margin="714,571,0,0" Name="chartTop4" VerticalAlignment="Top" Width="305" BorderBrush="White">
+            <dxc:ChartControl.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.006" />
+                    <GradientStop Color="MidnightBlue" Offset="1" />
+                </LinearGradientBrush>
+            </dxc:ChartControl.Background>
+        </dxc:ChartControl>
+        <dxc:ChartControl Height="160" HorizontalAlignment="Left" Margin="714,737,0,0" Name="chartTop5" VerticalAlignment="Top" Width="305" BorderBrush="White">
+            <dxc:ChartControl.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.006" />
+                    <GradientStop Color="MidnightBlue" Offset="1" />
+                </LinearGradientBrush>
+            </dxc:ChartControl.Background>
+        </dxc:ChartControl>
+        <dxc:ChartControl Name="spendChart" MouseMove="chart_MouseMove" MouseLeave="chart_MouseLeave" BorderThickness="1" EnableAnimation="True" Margin="187,405,323,172" BorderBrush="White">
+            <dxc:ChartControl.Legend>
+                <dxc:Legend HorizontalPosition="Right" />
+            </dxc:ChartControl.Legend>
+            <dxc:ChartControl.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.006" />
+                    <GradientStop Color="MidnightBlue" Offset="1" />
+                </LinearGradientBrush>
+            </dxc:ChartControl.Background>
+        </dxc:ChartControl>
+        <dxc:ChartControl Name="topFive" BorderThickness="1" EnableAnimation="True" Margin="187,74,323,504" BorderBrush="Black">
+            <dxc:ChartControl.Legend>
+                <dxc:Legend HorizontalPosition="Right" />
+            </dxc:ChartControl.Legend>
+            <dxc:ChartControl.Titles>
+                <dxc:Title Content="" Dock="Top" HorizontalAlignment="Center" />
+            </dxc:ChartControl.Titles>
+        </dxc:ChartControl>
+        <sdk:Label Height="60" HorizontalAlignment="Center" Margin="0,-1,0,0" Name="label1" VerticalAlignment="Top" Width="1031" Content=" KPI Review" FontSize="46" Foreground="Black" FontWeight="ExtraBold" Background="White" />
+        <Image Height="48" HorizontalAlignment="Left" Margin="14,11,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="90" Source="/RSCReport;component/Images/RSC_Equipment1.jpg" />
+        <dxg:GridControl Margin="187,737,323,0" Name="gridData" VerticalAlignment="Top" Height="160">
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn FieldName="Argument" />
+                <dxg:GridColumn FieldName="HighValue" />
+                <dxg:GridColumn FieldName="LowValue" />
+                <dxg:GridColumn FieldName="OpenValue" />
+                <dxg:GridColumn FieldName="CloseValue" />
+            </dxg:GridControl.Columns>
+            <dxg:GridControl.View>
+                <dxg:TableView Name="tableView1" ShowGroupPanel="False" />
+            </dxg:GridControl.View>
+        </dxg:GridControl>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0" />
+                <GradientStop Color="#FF9A9A9A" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+    </Grid>
+</UserControl>

@@ -1,0 +1,33 @@
+﻿<#@ include file="SQLServer.ttinclude" #>
+using System;
+using System.Collections.Generic;
+using System.ServiceModel;
+
+namespace <#=Namespace#>
+{
+     /// <summary>
+     /// A ServiceContract interface to work with the WCF Service Library which represents all the tables in the <#=DatabaseName#> Database.
+     /// </summary>
+    [ServiceContract( Namespace = "http://www.lyonsforge.com/PumpServicing" )]
+    public interface IRecordAccessor
+    {
+<#
+    var tables = LoadTables();
+    foreach(Table tbl in tables)
+    {
+	    if(!ExcludeTables.Contains(tbl.Name))
+        {
+			if( tbl.Name.StartsWith( "cs" ) || tbl.Name.StartsWith( "r_" ) || tbl.Name.StartsWith( "XRRpt" ) )
+			{
+				continue;
+			}
+#>
+   		[OperationContract]
+		ServiceResult Put<#=tbl.CleanName#>( SyncContext sync, <#=tbl.CleanName#> _<#=tbl.CleanName#> );
+
+<#
+		}
+    }
+#>
+	}
+}

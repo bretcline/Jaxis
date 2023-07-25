@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="615c3116-8001-45f9-8c7a-384889759c47" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8732/Design_Time_Addresses/ClientWCFService/PourEngineConfig/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="529a60c9-0db0-4e88-9ca0-7c708da79c5d" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/ClientWCFService/PourEngineConfig/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="2c59db03-8cd2-44a1-ab72-7aff483efe92" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/ClientWCFService/PourEngineConfig/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="9253e3c1-6419-4f40-96da-211b1c44f804" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/ClientWCFService/PourEngineConfig/mex" />
+    <MetadataFile FileName="BevWebServiceData.xsd" MetadataType="Schema" ID="f78dbfea-b15e-4b20-a83a-8e99a426205a" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/ClientWCFService/PourEngineConfig/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="88af8401-a81d-43b8-a3db-be0005a8b612" SourceId="1" SourceUrl="http://localhost:8732/Design_Time_Addresses/ClientWCFService/PourEngineConfig/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

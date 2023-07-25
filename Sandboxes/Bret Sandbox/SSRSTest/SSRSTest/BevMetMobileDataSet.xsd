@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BevMetMobileDataSet" targetNamespace="http://tempuri.org/BevMetMobileDataSet.xsd" xmlns:mstns="http://tempuri.org/BevMetMobileDataSet.xsd" xmlns="http://tempuri.org/BevMetMobileDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BevMetMobileConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BevMetMobileConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.SSRSTest.Properties.Settings.GlobalReference.Default.BevMetMobileConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vwUPCItemsTableAdapter" GeneratorDataComponentClassName="vwUPCItemsTableAdapter" Name="vwUPCItems" UserDataComponentName="vwUPCItemsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BevMetMobileConnectionString (Settings)" DbObjectName="BevMetMobile.dbo.vwUPCItems" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT UPCID, ItemNumber, Manufacturer, Name, Size, SizeTypeID, CategoryID, RootCategoryID, CategoryName, RootCategory, SubCategoryItemID, NozzleLength, NozzleWidth, NozzleShape FROM dbo.vwUPCItems</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UPCID" DataSetColumn="UPCID" />
+              <Mapping SourceColumn="ItemNumber" DataSetColumn="ItemNumber" />
+              <Mapping SourceColumn="Manufacturer" DataSetColumn="Manufacturer" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Size" DataSetColumn="Size" />
+              <Mapping SourceColumn="SizeTypeID" DataSetColumn="SizeTypeID" />
+              <Mapping SourceColumn="CategoryID" DataSetColumn="CategoryID" />
+              <Mapping SourceColumn="RootCategoryID" DataSetColumn="RootCategoryID" />
+              <Mapping SourceColumn="CategoryName" DataSetColumn="CategoryName" />
+              <Mapping SourceColumn="RootCategory" DataSetColumn="RootCategory" />
+              <Mapping SourceColumn="SubCategoryItemID" DataSetColumn="SubCategoryItemID" />
+              <Mapping SourceColumn="NozzleLength" DataSetColumn="NozzleLength" />
+              <Mapping SourceColumn="NozzleWidth" DataSetColumn="NozzleWidth" />
+              <Mapping SourceColumn="NozzleShape" DataSetColumn="NozzleShape" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BevMetMobileDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="BevMetMobileDataSet" msprop:Generator_UserDSName="BevMetMobileDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="vwUPCItems" msprop:Generator_TableClassName="vwUPCItemsDataTable" msprop:Generator_TableVarName="tablevwUPCItems" msprop:Generator_TablePropName="vwUPCItems" msprop:Generator_RowDeletingName="vwUPCItemsRowDeleting" msprop:Generator_UserTableName="vwUPCItems" msprop:Generator_RowChangingName="vwUPCItemsRowChanging" msprop:Generator_RowEvHandlerName="vwUPCItemsRowChangeEventHandler" msprop:Generator_RowDeletedName="vwUPCItemsRowDeleted" msprop:Generator_RowEvArgName="vwUPCItemsRowChangeEvent" msprop:Generator_RowChangedName="vwUPCItemsRowChanged" msprop:Generator_RowClassName="vwUPCItemsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UPCID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnUPCID" msprop:Generator_ColumnPropNameInRow="UPCID" msprop:Generator_ColumnPropNameInTable="UPCIDColumn" msprop:Generator_UserColumnName="UPCID" type="xs:string" />
+              <xs:element name="ItemNumber" msprop:Generator_ColumnVarNameInTable="columnItemNumber" msprop:Generator_ColumnPropNameInRow="ItemNumber" msprop:Generator_ColumnPropNameInTable="ItemNumberColumn" msprop:Generator_UserColumnName="ItemNumber">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Manufacturer" msprop:Generator_ColumnVarNameInTable="columnManufacturer" msprop:Generator_ColumnPropNameInRow="Manufacturer" msprop:Generator_ColumnPropNameInTable="ManufacturerColumn" msprop:Generator_UserColumnName="Manufacturer">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Size" msprop:Generator_ColumnVarNameInTable="columnSize" msprop:Generator_ColumnPropNameInRow="Size" msprop:Generator_ColumnPropNameInTable="SizeColumn" msprop:Generator_UserColumnName="Size" type="xs:int" />
+              <xs:element name="SizeTypeID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnSizeTypeID" msprop:Generator_ColumnPropNameInRow="SizeTypeID" msprop:Generator_ColumnPropNameInTable="SizeTypeIDColumn" msprop:Generator_UserColumnName="SizeTypeID" type="xs:string" />
+              <xs:element name="CategoryID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnCategoryID" msprop:Generator_ColumnPropNameInRow="CategoryID" msprop:Generator_ColumnPropNameInTable="CategoryIDColumn" msprop:Generator_UserColumnName="CategoryID" type="xs:string" />
+              <xs:element name="RootCategoryID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnRootCategoryID" msprop:Generator_ColumnPropNameInRow="RootCategoryID" msprop:Generator_ColumnPropNameInTable="RootCategoryIDColumn" msprop:Generator_UserColumnName="RootCategoryID" type="xs:string" />
+              <xs:element name="CategoryName" msprop:Generator_ColumnVarNameInTable="columnCategoryName" msprop:Generator_ColumnPropNameInRow="CategoryName" msprop:Generator_ColumnPropNameInTable="CategoryNameColumn" msprop:Generator_UserColumnName="CategoryName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RootCategory" msprop:Generator_ColumnVarNameInTable="columnRootCategory" msprop:Generator_ColumnPropNameInRow="RootCategory" msprop:Generator_ColumnPropNameInTable="RootCategoryColumn" msprop:Generator_UserColumnName="RootCategory">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="256" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubCategoryItemID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnSubCategoryItemID" msprop:Generator_ColumnPropNameInRow="SubCategoryItemID" msprop:Generator_ColumnPropNameInTable="SubCategoryItemIDColumn" msprop:Generator_UserColumnName="SubCategoryItemID" type="xs:string" minOccurs="0" />
+              <xs:element name="NozzleLength" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNozzleLength" msprop:Generator_ColumnPropNameInRow="NozzleLength" msprop:Generator_ColumnPropNameInTable="NozzleLengthColumn" msprop:Generator_UserColumnName="NozzleLength" type="xs:double" minOccurs="0" />
+              <xs:element name="NozzleWidth" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNozzleWidth" msprop:Generator_ColumnPropNameInRow="NozzleWidth" msprop:Generator_ColumnPropNameInTable="NozzleWidthColumn" msprop:Generator_UserColumnName="NozzleWidth" type="xs:double" minOccurs="0" />
+              <xs:element name="NozzleShape" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnNozzleShape" msprop:Generator_ColumnPropNameInRow="NozzleShape" msprop:Generator_ColumnPropNameInTable="NozzleShapeColumn" msprop:Generator_UserColumnName="NozzleShape" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vwUPCItems" />
+      <xs:field xpath="mstns:UPCID" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

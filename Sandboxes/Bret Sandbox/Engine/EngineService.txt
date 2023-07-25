@@ -1,0 +1,1192 @@
+2010-10-01 11:08:49,969 INFO - Log::GetLogger( ) - Created Logger
+2010-10-01 11:08:49,981 INFO - OnStart::EngineService is Starting
+2010-10-01 11:08:57,842 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-01 11:08:57,846 ERROR - No deivce config files.
+2010-10-01 12:02:01,629 INFO - Log::GetLogger( ) - Created Logger
+2010-10-01 12:02:01,639 INFO - OnStart::EngineService is Starting
+2010-10-01 12:02:08,519 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-01 12:02:08,527 ERROR - No deivce config files.
+2010-10-01 12:07:55,301 INFO - Log::GetLogger( ) - Created Logger
+2010-10-01 12:07:55,311 INFO - OnStart::EngineService is Starting
+2010-10-01 12:08:01,830 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-01 12:08:39,370 INFO - Log::GetLogger( ) - Created Logger
+2010-10-01 12:08:39,381 INFO - OnStart::EngineService is Starting
+2010-10-01 12:08:46,218 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-01 12:37:12,321 INFO - Log::GetLogger( ) - Created Logger
+2010-10-01 12:37:12,337 INFO - OnStart::EngineService is Starting
+2010-10-01 14:10:17,726 INFO - Log::GetLogger( ) - Created Logger
+2010-10-01 14:10:17,736 INFO - OnStart::EngineService is Starting
+2010-10-01 14:19:20,626 INFO - Log::GetLogger( ) - Created Logger
+2010-10-01 14:19:20,636 INFO - OnStart::EngineService is Starting
+2010-10-01 14:41:26,632 INFO - Log::GetLogger( ) - Created Logger
+2010-10-01 14:41:26,643 INFO - OnStart::EngineService is Starting
+2010-10-01 14:41:33,252 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-01 14:43:21,742 INFO - Log::GetLogger( ) - Created Logger
+2010-10-01 14:43:21,751 INFO - OnStart::EngineService is Starting
+2010-10-01 14:43:28,251 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-01 14:43:37,513 DEBUG - Device: BevMet Consumer at C:\temp\bevmet\Engine\BevMetConsumer.dll
+2010-10-01 14:43:39,740 DEBUG - Register Device  - DataProducer
+2010-10-01 14:43:41,266 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-01 14:43:42,883 DEBUG - Register Device  - DataProducer
+2010-10-01 14:43:51,561 ERROR - Client::GetSettings
+System.Configuration.ConfigurationErrorsException: The binding at system.serviceModel/bindings/wsHttpBinding does not have a configured binding named 'UnsecuredBinding_IPourEngineService'. This is an invalid value for bindingConfiguration. (C:\temp\bevmet\Engine\EngineService.vshost.exe.Config line 63)
+   at System.Configuration.BaseConfigurationRecord.EvaluateOne(String[] keys, SectionInput input, Boolean isTrusted, FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult)
+   at System.Configuration.BaseConfigurationRecord.Evaluate(FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult, Boolean getLkg, Boolean getRuntimeObject, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSection(String configKey)
+   at System.Configuration.ClientConfigurationSystem.System.Configuration.Internal.IInternalConfigSystem.GetSection(String sectionName)
+   at System.Configuration.ConfigurationManager.GetSection(String sectionName)
+   at System.ServiceModel.Activation.AspNetEnvironment.UnsafeGetSectionFromConfigurationManager(String sectionPath)
+   at System.ServiceModel.Activation.AspNetEnvironment.UnsafeGetConfigurationSection(String sectionPath)
+   at System.ServiceModel.Configuration.ConfigurationHelpers.UnsafeGetAssociatedSection(ContextInformation evalContext, String sectionPath)
+   at System.ServiceModel.Configuration.ConfigurationHelpers.UnsafeGetSection(String sectionPath)
+   at System.ServiceModel.Configuration.ClientSection.UnsafeGetSection()
+   at System.ServiceModel.Description.ConfigLoader.LookupChannel(ContextInformation configurationContext, String configurationName, ContractDescription contract, EndpointAddress address, Boolean wildcard, Boolean useChannelElementKind, ServiceEndpoint& serviceEndpoint)
+   at System.ServiceModel.Description.ConfigLoader.LookupEndpoint(String configurationName, EndpointAddress address, ContractDescription contract, ContextInformation configurationContext)
+   at System.ServiceModel.Description.ConfigLoader.LookupEndpoint(String configurationName, EndpointAddress address, ContractDescription contract)
+   at System.ServiceModel.ChannelFactory.InitializeEndpoint(String configurationName, EndpointAddress address)
+   at System.ServiceModel.ChannelFactory`1..ctor(String endpointConfigurationName, EndpointAddress remoteAddress)
+   at System.ServiceModel.ChannelFactory`1..ctor(String endpointConfigurationName)
+   at System.ServiceModel.EndpointTrait`1.CreateSimplexFactory()
+   at System.ServiceModel.EndpointTrait`1.CreateChannelFactory()
+   at System.ServiceModel.ClientBase`1.CreateChannelFactoryRef(EndpointTrait`1 endpointTrait)
+   at System.ServiceModel.ClientBase`1.InitializeChannelFactoryRef()
+   at System.ServiceModel.ClientBase`1..ctor()
+   at ClientSim.HostWCFServiceReference.PourEngineServiceClient..ctor() in C:\Source\BevMetrics\temp\BevMet\trunk\Code\Banquet System\ClientSim\Service References\HostWCFServiceReference\Reference.cs:line 545
+   at ClientSim.Client.GetSettings(String _deviceID) in C:\Source\BevMetrics\temp\BevMet\trunk\Code\Banquet System\ClientSim\ClientInterface.cs:line 47
+2010-10-01 14:43:54,930 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:43:54,932 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:43:54,934 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:44:46,832 INFO - Log::GetLogger( ) - Created Logger
+2010-10-01 14:44:46,851 INFO - OnStart::EngineService is Starting
+2010-10-01 14:44:47,562 ERROR - ServiceDll.StartWCFService()
+System.Configuration.ConfigurationErrorsException: The element <wsHttpBinding> may only appear once in this section. (C:\temp\bevmet\Engine\EngineService.vshost.exe.Config line 42)
+   at System.Configuration.BaseConfigurationRecord.EvaluateOne(String[] keys, SectionInput input, Boolean isTrusted, FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult)
+   at System.Configuration.BaseConfigurationRecord.Evaluate(FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult, Boolean getLkg, Boolean getRuntimeObject, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSection(String configKey)
+   at System.Configuration.ClientConfigurationSystem.System.Configuration.Internal.IInternalConfigSystem.GetSection(String sectionName)
+   at System.Configuration.ConfigurationManager.GetSection(String sectionName)
+   at System.ServiceModel.Activation.AspNetEnvironment.UnsafeGetSectionFromConfigurationManager(String sectionPath)
+   at System.ServiceModel.Activation.AspNetEnvironment.UnsafeGetConfigurationSection(String sectionPath)
+   at System.ServiceModel.Configuration.ConfigurationHelpers.UnsafeGetAssociatedSection(ContextInformation evalContext, String sectionPath)
+   at System.ServiceModel.Configuration.ConfigurationHelpers.UnsafeGetSection(String sectionPath)
+   at System.ServiceModel.Configuration.ServicesSection.UnsafeGetSection()
+   at System.ServiceModel.Description.ConfigLoader.LookupService(String serviceConfigurationName)
+   at System.ServiceModel.ServiceHostBase.LoadConfigurationSectionInternal(ConfigLoader configLoader, ServiceDescription description, String configurationName)
+   at System.ServiceModel.ServiceHostBase.ApplyConfiguration()
+   at System.ServiceModel.ServiceHostBase.InitializeDescription(UriSchemeKeyedCollection baseAddresses)
+   at System.ServiceModel.ServiceHost.InitializeDescription(Type serviceType, UriSchemeKeyedCollection baseAddresses)
+   at System.ServiceModel.ServiceHost..ctor(Type serviceType, Uri[] baseAddresses)
+   at EngineServiceDll.ServiceDll.StartWCFService() in C:\Source\BevMetrics\temp\Jaxis\trunk\MessageEngine\EngineServiceDll\ServiceDll.cs:line 105
+2010-10-01 14:44:52,696 ERROR - Engine:: StartEngineConfigWCFService
+System.Configuration.ConfigurationErrorsException: The element <wsHttpBinding> may only appear once in this section. (C:\temp\bevmet\Engine\EngineService.vshost.exe.Config line 42)
+   at System.Configuration.BaseConfigurationRecord.EvaluateOne(String[] keys, SectionInput input, Boolean isTrusted, FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult)
+   at System.Configuration.BaseConfigurationRecord.Evaluate(FactoryRecord factoryRecord, SectionRecord sectionRecord, Object parentResult, Boolean getLkg, Boolean getRuntimeObject, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSectionRecursive(String configKey, Boolean getLkg, Boolean checkPermission, Boolean getRuntimeObject, Boolean requestIsHere, Object& result, Object& resultRuntimeObject)
+   at System.Configuration.BaseConfigurationRecord.GetSection(String configKey)
+   at System.Configuration.ClientConfigurationSystem.System.Configuration.Internal.IInternalConfigSystem.GetSection(String sectionName)
+   at System.Configuration.ConfigurationManager.GetSection(String sectionName)
+   at System.ServiceModel.Activation.AspNetEnvironment.UnsafeGetSectionFromConfigurationManager(String sectionPath)
+   at System.ServiceModel.Activation.AspNetEnvironment.UnsafeGetConfigurationSection(String sectionPath)
+   at System.ServiceModel.Configuration.ConfigurationHelpers.UnsafeGetAssociatedSection(ContextInformation evalContext, String sectionPath)
+   at System.ServiceModel.Configuration.ConfigurationHelpers.UnsafeGetSection(String sectionPath)
+   at System.ServiceModel.Configuration.ServicesSection.UnsafeGetSection()
+   at System.ServiceModel.Description.ConfigLoader.LookupService(String serviceConfigurationName)
+   at System.ServiceModel.ServiceHostBase.LoadConfigurationSectionInternal(ConfigLoader configLoader, ServiceDescription description, String configurationName)
+   at System.ServiceModel.ServiceHostBase.ApplyConfiguration()
+   at System.ServiceModel.ServiceHostBase.InitializeDescription(UriSchemeKeyedCollection baseAddresses)
+   at System.ServiceModel.ServiceHost.InitializeDescription(Type serviceType, UriSchemeKeyedCollection baseAddresses)
+   at System.ServiceModel.ServiceHost..ctor(Type serviceType, Uri[] baseAddresses)
+   at EngineServiceDll.ServiceDll.StartEngineConfigWCFService() in C:\Source\BevMetrics\temp\Jaxis\trunk\MessageEngine\EngineServiceDll\ServiceDll.cs:line 138
+2010-10-01 14:44:52,703 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-01 14:44:58,232 DEBUG - Device: BevMet Consumer at C:\temp\bevmet\Engine\BevMetConsumer.dll
+2010-10-01 14:44:59,267 DEBUG - Register Device  - DataProducer
+2010-10-01 14:45:00,113 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-01 14:45:01,073 DEBUG - Register Device  - DataProducer
+2010-10-01 14:46:44,805 INFO - Log::GetLogger( ) - Created Logger
+2010-10-01 14:46:44,816 INFO - OnStart::EngineService is Starting
+2010-10-01 14:46:51,349 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-01 14:46:55,489 DEBUG - Device: BevMet Consumer at C:\temp\bevmet\Engine\BevMetConsumer.dll
+2010-10-01 14:46:56,396 DEBUG - Register Device  - DataProducer
+2010-10-01 14:46:56,397 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-01 14:46:57,712 DEBUG - Register Device  - DataProducer
+2010-10-01 14:47:50,654 INFO - Log::GetLogger( ) - Created Logger
+2010-10-01 14:47:50,664 INFO - OnStart::EngineService is Starting
+2010-10-01 14:47:57,485 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-01 14:47:59,469 DEBUG - Device: BevMet Consumer at C:\temp\bevmet\Engine\BevMetConsumer.dll
+2010-10-01 14:48:00,618 DEBUG - Register Device  - DataProducer
+2010-10-01 14:48:00,620 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-01 14:48:01,771 DEBUG - Register Device  - DataProducer
+2010-10-01 14:48:22,515 ERROR - Client::GetSettings
+System.ServiceModel.CommunicationObjectFaultedException: The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+
+Server stack trace: 
+   at System.ServiceModel.Channels.CommunicationObject.Close(TimeSpan timeout)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.Close()
+   at System.ServiceModel.ClientBase`1.System.IDisposable.Dispose()
+   at ClientSim.Client.GetSettings(String _deviceID) in C:\Source\BevMetrics\temp\BevMet\trunk\Code\Banquet System\ClientSim\ClientInterface.cs:line 71
+2010-10-01 14:48:25,395 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:48:25,396 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:48:25,396 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:48:25,400 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:48:25,398 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:48:25,406 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:48:25,402 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:48:25,403 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:48:35,412 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:48:36,815 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:48:35,422 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:48:37,785 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:48:47,291 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Dormant
+2010-10-01 14:48:49,517 DEBUG - Pour - TagID: 1  Device: 1  Event Type:1
+2010-10-01 14:48:54,766 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:48:55,862 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:48:57,230 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:48:57,232 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:49:00,165 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:49:00,180 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:49:01,769 DEBUG - TagID: 1 0 oz. at 00:00:24 at 32 degrees C
+2010-10-01 14:49:05,558 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:49:05,559 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:49:05,560 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:49:06,856 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:49:06,857 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:49:06,859 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:49:10,348 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Connect
+2010-10-01 14:49:10,351 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:49:10,348 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:49:11,181 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:49:12,172 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:49:11,622 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:49:13,655 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:49:15,052 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:49:10,788 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:49:15,666 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:49:15,674 DEBUG - Pour - TagID: 1  Device: 1  Event Type:2
+2010-10-01 14:49:18,730 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:49:20,818 DEBUG - TagID: 1 0 oz. at 00:00:28 at 34 degrees C
+2010-10-01 14:49:20,837 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:49:20,862 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:49:21,015 ERROR - Client::PushTagEvent
+System.ServiceModel.CommunicationObjectFaultedException: The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+
+Server stack trace: 
+   at System.ServiceModel.Channels.CommunicationObject.Close(TimeSpan timeout)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.Close()
+   at System.ServiceModel.ClientBase`1.System.IDisposable.Dispose()
+   at ClientSim.Client.PushTagEvent(ITagPhase _data) in C:\Source\BevMetrics\temp\BevMet\trunk\Code\Banquet System\ClientSim\ClientInterface.cs:line 133
+2010-10-01 14:49:41,885 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:49:41,887 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:49:41,896 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:49:41,900 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:49:41,906 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:49:41,910 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:49:44,599 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:49:44,601 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:49:44,602 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:49:44,603 DEBUG - Pour - TagID: 1  Device: 1  Event Type:3
+2010-10-01 14:49:44,604 DEBUG - TagID: 1 0 oz. at 00:00:30 at 48 degrees C
+2010-10-01 14:49:44,760 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:49:44,761 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:49:44,763 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:49:44,768 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:49:44,769 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:49:44,770 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:49:47,019 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:49:47,019 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Heartbeat
+2010-10-01 14:49:47,024 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:49:47,029 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:49:49,696 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:49:49,698 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:49:49,699 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:49:49,895 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:49:49,897 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:49:49,898 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:49:49,899 DEBUG - Pour - TagID: 1  Device: 1  Event Type:4
+2010-10-01 14:49:49,900 DEBUG - TagID: 1 0 oz. at 00:00:23 at 66 degrees C
+2010-10-01 14:49:53,537 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:49:53,539 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:49:53,540 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:49:54,030 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:49:54,031 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:49:54,032 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:07,092 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:07,093 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Dormant
+2010-10-01 14:50:07,110 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:07,116 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:07,123 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:07,110 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:08,895 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:08,888 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:08,897 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:08,892 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:08,918 DEBUG - Pour - TagID: 1  Device: 1  Event Type:5
+2010-10-01 14:50:08,919 DEBUG - TagID: 1 0 oz. at 00:00:22 at 36 degrees C
+2010-10-01 14:50:13,890 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:13,891 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:13,893 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:13,894 DEBUG - Pour - TagID: 1  Device: 1  Event Type:6
+2010-10-01 14:50:13,896 DEBUG - TagID: 1 0 oz. at 00:00:26 at 60 degrees C
+2010-10-01 14:50:15,877 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:15,878 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:15,880 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:16,404 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:16,406 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:16,407 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:17,863 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:17,864 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:17,866 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:20,299 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Disconnect
+2010-10-01 14:50:20,302 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:20,308 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:20,300 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:20,314 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:20,336 DEBUG - Pour - TagID: 1  Device: 1  Event Type:7
+2010-10-01 14:50:20,331 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:20,342 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:20,340 DEBUG - TagID: 1 0 oz. at 00:00:22 at 57 degrees C
+2010-10-01 14:50:23,778 ERROR - Client::PushTagEvent
+System.ServiceModel.CommunicationObjectFaultedException: The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+
+Server stack trace: 
+   at System.ServiceModel.Channels.CommunicationObject.Close(TimeSpan timeout)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.Close()
+   at System.ServiceModel.ClientBase`1.System.IDisposable.Dispose()
+   at ClientSim.Client.PushTagEvent(ITagPhase _data) in C:\Source\BevMetrics\temp\BevMet\trunk\Code\Banquet System\ClientSim\ClientInterface.cs:line 133
+2010-10-01 14:50:23,779 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:23,795 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:23,801 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:24,611 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:24,613 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:24,614 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:33,008 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:33,010 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:33,011 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:33,067 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:33,068 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:33,070 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:36,737 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:36,738 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:36,740 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:36,741 DEBUG - Pour - TagID: 1  Device: 1  Event Type:8
+2010-10-01 14:50:36,742 DEBUG - TagID: 1 0 oz. at 00:00:29 at 53 degrees C
+2010-10-01 14:50:39,206 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:39,207 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:39,209 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:39,399 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:39,400 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:39,402 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:40,159 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:40,160 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:40,161 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:40,162 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Disconnect
+2010-10-01 14:50:42,383 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:42,384 ERROR - Client::PushTagEvent
+System.ServiceModel.CommunicationObjectFaultedException: The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+
+Server stack trace: 
+   at System.ServiceModel.Channels.CommunicationObject.Close(TimeSpan timeout)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.Close()
+   at System.ServiceModel.ClientBase`1.System.IDisposable.Dispose()
+   at ClientSim.Client.PushTagEvent(ITagPhase _data) in C:\Source\BevMetrics\temp\BevMet\trunk\Code\Banquet System\ClientSim\ClientInterface.cs:line 133
+2010-10-01 14:50:42,388 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:42,396 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:43,494 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:43,663 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:43,664 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:43,665 DEBUG - Pour - TagID: 1  Device: 1  Event Type:9
+2010-10-01 14:50:43,666 DEBUG - TagID: 1 0 oz. at 00:00:24 at 37 degrees C
+2010-10-01 14:50:48,052 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:48,054 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:48,055 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:52,183 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:52,184 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:52,186 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:53,466 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:53,468 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:53,469 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:54,438 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:54,439 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:54,441 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:54,442 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Heartbeat
+2010-10-01 14:50:56,344 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:56,345 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:56,347 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:56,376 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:56,377 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:56,378 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:56,781 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:50:56,783 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:50:56,784 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:50:56,785 DEBUG - Pour - TagID: 1  Device: 1  Event Type:10
+2010-10-01 14:50:56,786 DEBUG - TagID: 1 0 oz. at 00:00:23 at 66 degrees C
+2010-10-01 14:51:01,462 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:51:01,464 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:51:01,465 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:51:02,272 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:51:02,273 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:51:02,274 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:51:04,035 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:51:04,037 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:51:04,038 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:51:04,039 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Heartbeat
+2010-10-01 14:51:04,969 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:51:04,970 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:51:04,971 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:51:05,130 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:51:05,131 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:51:05,132 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:51:05,133 DEBUG - Pour - TagID: 1  Device: 1  Event Type:11
+2010-10-01 14:51:05,135 DEBUG - TagID: 1 0 oz. at 00:00:24 at 63 degrees C
+2010-10-01 14:51:05,700 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:51:05,703 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:51:05,703 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:51:06,658 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:51:06,660 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:51:06,661 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:51:06,662 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Dormant
+2010-10-01 14:51:10,363 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:51:10,365 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:51:10,367 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:51:14,570 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:51:14,571 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:51:14,572 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:51:14,573 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Dormant
+2010-10-01 14:51:14,703 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:51:14,704 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:51:14,708 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:51:14,909 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:51:14,911 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:51:14,912 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:51:14,913 DEBUG - Pour - TagID: 1  Device: 1  Event Type:12
+2010-10-01 14:51:14,915 DEBUG - TagID: 1 0 oz. at 00:00:22 at 59 degrees C
+2010-10-01 14:51:16,112 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:51:16,114 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:51:16,115 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:51:18,895 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:51:18,897 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:51:18,900 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:51:19,586 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:51:19,588 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:51:19,589 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:51:20,015 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:51:20,016 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:51:20,018 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:51:20,019 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Heartbeat
+2010-10-01 14:51:23,269 DEBUG - Message: RawData - Test Prod
+2010-10-01 14:51:23,270 DEBUG -  - DataProducer : Test Prod
+2010-10-01 14:51:23,271 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-01 14:51:23,279 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Connect
+2010-10-04 11:39:27,290 INFO - Log::GetLogger( ) - Created Logger
+2010-10-04 11:39:27,333 INFO - OnStart::EngineService is Starting
+2010-10-04 11:39:28,715 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-04 11:39:29,054 DEBUG - Device: BevMet Consumer at C:\temp\bevmet\Engine\BevMetConsumer.dll
+2010-10-04 11:39:29,088 DEBUG - Register Device  - DataProducer
+2010-10-04 11:39:29,090 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:30:27,451 INFO - Log::GetLogger( ) - Created Logger
+2010-10-04 12:30:27,461 INFO - OnStart::EngineService is Starting
+2010-10-04 12:30:28,741 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-04 12:30:31,349 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:30:31,367 DEBUG - Register Device  - DataProducer
+2010-10-04 12:30:31,368 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:30:31,369 DEBUG - Register Device  - DataProducer
+2010-10-04 12:30:39,432 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:39,432 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:39,791 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:40,873 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:40,894 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:42,535 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:43,250 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:44,793 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:45,054 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:45,845 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:46,349 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:46,669 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:46,795 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:47,731 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:48,249 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:49,791 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:50,374 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:51,514 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:53,845 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:54,138 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:54,140 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:54,515 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:55,203 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:55,376 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:57,603 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:58,949 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:59,533 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:30:59,749 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:31:00,517 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:31:00,902 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:31:01,800 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:31:03,595 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:31:03,832 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:31:04,441 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:31:04,632 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:31:35,164 INFO - Log::GetLogger( ) - Created Logger
+2010-10-04 12:31:35,173 INFO - OnStart::EngineService is Starting
+2010-10-04 12:31:36,364 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-04 12:31:36,661 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:31:36,683 DEBUG - Register Device  - DataProducer
+2010-10-04 12:31:36,684 DEBUG - Device: BevMet Consumer at C:\temp\bevmet\Engine\BevMetConsumer.dll
+2010-10-04 12:31:36,702 DEBUG - Register Device  - DataProducer
+2010-10-04 12:31:36,704 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:31:36,706 DEBUG - Register Device  - DataProducer
+2010-10-04 12:31:41,812 ERROR - DataConsumer::Start
+System.TypeLoadException: Method 'get_FormulaValues' in type 'ClientSim.HostWCFServiceReference.EngineSettings' from assembly 'ClientSim, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' does not have an implementation.
+   at ClientSim.Client.GetSettings(String _deviceID)
+   at BevMetConsumer.DataConsumer.Start() in C:\Source\BevMetrics\branches\Code\Banquet System\HostServiceSim\BevMetConsumer\DataConsumer.cs:line 56
+2010-10-04 12:31:45,102 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:31:45,104 DEBUG -  - DataProducer : Test Prod
+2010-10-04 12:31:45,106 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 12:31:45,109 DEBUG - Pour - TagID: 1  Device: 1  Event Type:1
+2010-10-04 12:31:45,150 ERROR - Client::PushPour
+System.TypeLoadException: Method 'get_ViscocityByTemperature' in type 'ClientSim.HostWCFServiceReference.UPCData' from assembly 'ClientSim, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' does not have an implementation.
+   at System.Signature.GetSignature(SignatureStruct& signature, Void* pCorSig, Int32 cCorSig, RuntimeFieldHandleInternal fieldHandle, IRuntimeMethodInfo methodHandle, RuntimeType declaringType)
+   at System.Signature..ctor(IRuntimeMethodInfo methodHandle, RuntimeType declaringType)
+   at System.Reflection.RuntimeMethodInfo.FetchNonReturnParameters()
+   at System.Reflection.RuntimeMethodInfo.GetParameters()
+   at System.ServiceModel.Description.ServiceReflector.ValidateParameterMetadata(MethodInfo methodInfo)
+   at System.ServiceModel.Description.TypeLoader.CreateOperationDescriptions(ContractDescription contractDescription, ContractReflectionInfo reflectionInfo, Type contractToGetMethodsFrom, ContractDescription declaringContract, MessageDirection direction)
+   at System.ServiceModel.Description.TypeLoader.CreateContractDescription(ServiceContractAttribute contractAttr, Type contractType, Type serviceType, ContractReflectionInfo& reflectionInfo, Object serviceImplementation)
+   at System.ServiceModel.Description.TypeLoader.LoadContractDescriptionHelper(Type contractType, Type serviceType, Object serviceImplementation)
+   at System.ServiceModel.Description.TypeLoader.LoadContractDescription(Type contractType)
+   at System.ServiceModel.ChannelFactory`1.CreateDescription()
+   at System.ServiceModel.ChannelFactory.InitializeEndpoint(String configurationName, EndpointAddress address)
+   at System.ServiceModel.ChannelFactory`1..ctor(String endpointConfigurationName, EndpointAddress remoteAddress)
+   at System.ServiceModel.ChannelFactory`1..ctor(String endpointConfigurationName)
+   at System.ServiceModel.EndpointTrait`1.CreateSimplexFactory()
+   at System.ServiceModel.EndpointTrait`1.CreateChannelFactory()
+   at System.ServiceModel.ClientBase`1.CreateChannelFactoryRef(EndpointTrait`1 endpointTrait)
+   at System.ServiceModel.ClientBase`1.InitializeChannelFactoryRef()
+   at System.ServiceModel.ClientBase`1..ctor()
+   at ClientSim.HostWCFServiceReference.PourEngineServiceClient..ctor() in C:\Source\BevMetrics\branches\Code\Banquet System\ClientSim\Service References\HostWCFServiceReference\Reference.cs:line 545
+   at ClientSim.Client.PushPour(IPourData _Pour) in C:\Source\BevMetrics\branches\Code\Banquet System\ClientSim\ClientInterface.cs:line 85
+2010-10-04 12:31:45,472 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:31:45,479 DEBUG -  - DataProducer : Test Prod
+2010-10-04 12:31:45,481 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 12:31:45,483 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Disconnect
+2010-10-04 12:32:17,535 INFO - Log::GetLogger( ) - Created Logger
+2010-10-04 12:32:17,570 INFO - OnStart::EngineService is Starting
+2010-10-04 12:32:18,830 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-04 12:32:19,180 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:32:19,203 DEBUG - Register Device  - DataProducer
+2010-10-04 12:32:19,205 DEBUG - Device: BevMet Consumer at C:\temp\bevmet\Engine\BevMetConsumer.dll
+2010-10-04 12:32:19,222 DEBUG - Register Device  - DataProducer
+2010-10-04 12:32:19,224 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:32:19,226 DEBUG - Register Device  - DataProducer
+2010-10-04 12:34:13,569 INFO - Log::GetLogger( ) - Created Logger
+2010-10-04 12:34:13,578 INFO - OnStart::EngineService is Starting
+2010-10-04 12:34:15,004 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-04 12:34:15,325 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:34:15,354 DEBUG - Register Device  - DataProducer
+2010-10-04 12:34:15,357 DEBUG - Device: BevMet Consumer at C:\temp\bevmet\Engine\BevMetConsumer.dll
+2010-10-04 12:34:15,389 DEBUG - Register Device  - DataProducer
+2010-10-04 12:34:15,390 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:34:15,392 DEBUG - Register Device  - DataProducer
+2010-10-04 12:34:50,764 INFO - Log::GetLogger( ) - Created Logger
+2010-10-04 12:34:50,774 INFO - OnStart::EngineService is Starting
+2010-10-04 12:34:52,039 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-04 12:34:52,373 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:34:52,401 DEBUG - Register Device  - DataProducer
+2010-10-04 12:34:52,403 DEBUG - Device: BevMet Consumer at C:\temp\bevmet\Engine\BevMetConsumer.dll
+2010-10-04 12:34:52,432 DEBUG - Register Device  - DataProducer
+2010-10-04 12:34:52,435 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:34:52,436 DEBUG - Register Device  - DataProducer
+2010-10-04 12:36:07,671 INFO - Log::GetLogger( ) - Created Logger
+2010-10-04 12:36:07,680 INFO - OnStart::EngineService is Starting
+2010-10-04 12:36:08,942 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-04 12:36:09,397 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:36:09,463 DEBUG - Register Device  - DataProducer
+2010-10-04 12:36:09,464 DEBUG - Device: BevMet Consumer at C:\temp\bevmet\Engine\BevMetConsumer.dll
+2010-10-04 12:36:09,490 DEBUG - Register Device  - DataProducer
+2010-10-04 12:36:09,493 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:36:09,495 DEBUG - Register Device  - DataProducer
+2010-10-04 12:36:28,458 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:36:28,459 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:36:28,475 DEBUG -  - DataProducer : Test Prod
+2010-10-04 12:36:30,048 DEBUG -  - DataProducer : Test Prod
+2010-10-04 12:36:30,667 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 12:40:18,129 INFO - Log::GetLogger( ) - Created Logger
+2010-10-04 12:40:18,139 INFO - OnStart::EngineService is Starting
+2010-10-04 12:40:19,443 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-04 12:40:19,794 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:40:19,864 DEBUG - Register Device  - DataProducer
+2010-10-04 12:40:19,865 DEBUG - Device: BevMet Consumer at C:\temp\bevmet\Engine\BevMetConsumer.dll
+2010-10-04 12:40:19,897 DEBUG - Register Device  - DataProducer
+2010-10-04 12:40:19,901 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:40:19,904 DEBUG - Register Device  - DataProducer
+2010-10-04 12:40:31,700 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:40:31,700 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:40:31,715 DEBUG -  - DataProducer : Test Prod
+2010-10-04 12:40:32,276 DEBUG -  - DataProducer : Test Prod
+2010-10-04 12:40:33,150 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 12:40:33,156 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 12:40:33,158 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:40:33,154 ERROR - DataConsumer::Start
+System.TypeLoadException: Method 'get_FormulaValues' in type 'ClientSim.HostWCFServiceReference.EngineSettings' from assembly 'ClientSim, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' does not have an implementation.
+   at ClientSim.Client.GetSettings(String _deviceID)
+   at BevMetConsumer.DataConsumer.Start() in C:\Source\BevMetrics\branches\Code\Banquet System\HostServiceSim\BevMetConsumer\DataConsumer.cs:line 58
+2010-10-04 12:40:33,172 DEBUG -  - DataProducer : Test Prod
+2010-10-04 12:40:33,182 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 12:41:44,144 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:41:44,145 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:41:44,144 DEBUG - Message: RawData - Test Prod
+2010-10-04 12:41:44,155 DEBUG -  - DataProducer : Test Prod
+2010-10-04 12:41:44,160 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Heartbeat
+2010-10-04 12:41:44,175 DEBUG -  - DataProducer : Test Prod
+2010-10-04 12:41:44,188 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 12:41:44,180 DEBUG -  - DataProducer : Test Prod
+2010-10-04 12:41:44,195 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 12:41:44,200 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 12:41:44,215 DEBUG - Pour - TagID: 1  Device: 1  Event Type:1
+2010-10-04 12:41:55,694 INFO - Log::GetLogger( ) - Created Logger
+2010-10-04 12:41:55,704 INFO - OnStart::EngineService is Starting
+2010-10-04 12:41:56,967 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-04 12:41:57,326 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:41:57,352 DEBUG - Register Device  - DataProducer
+2010-10-04 12:41:57,354 DEBUG - Device: BevMet Consumer at C:\temp\bevmet\Engine\BevMetConsumer.dll
+2010-10-04 12:41:57,383 DEBUG - Register Device  - DataProducer
+2010-10-04 12:41:57,385 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:41:57,386 DEBUG - Register Device  - DataProducer
+2010-10-04 12:44:08,082 INFO - Log::GetLogger( ) - Created Logger
+2010-10-04 12:44:08,092 INFO - OnStart::EngineService is Starting
+2010-10-04 12:44:09,403 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-04 12:44:09,829 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:44:09,858 DEBUG - Register Device  - DataProducer
+2010-10-04 12:44:09,860 DEBUG - Device: BevMet Consumer at C:\temp\bevmet\Engine\BevMetConsumer.dll
+2010-10-04 12:44:09,879 DEBUG - Register Device  - DataProducer
+2010-10-04 12:44:09,880 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 12:44:09,882 DEBUG - Register Device  - DataProducer
+2010-10-04 13:12:53,260 INFO - Log::GetLogger( ) - Created Logger
+2010-10-04 13:12:53,271 INFO - OnStart::EngineService is Starting
+2010-10-04 13:12:54,565 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-04 13:12:55,014 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 13:12:55,061 DEBUG - Register Device  - DataProducer
+2010-10-04 13:12:55,066 DEBUG - Device: BevMet Consumer at C:\temp\bevmet\Engine\BevMetConsumer.dll
+2010-10-04 13:12:55,114 DEBUG - Register Device  - DataProducer
+2010-10-04 13:12:55,115 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 13:12:55,124 DEBUG - Register Device  - DataProducer
+2010-10-04 13:19:23,393 INFO - Log::GetLogger( ) - Created Logger
+2010-10-04 13:19:23,404 INFO - OnStart::EngineService is Starting
+2010-10-04 13:19:24,841 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-04 13:19:25,226 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 13:19:25,250 DEBUG - Register Device  - DataProducer
+2010-10-04 13:19:25,252 DEBUG - Device: BevMet Consumer at C:\temp\bevmet\Engine\BevMetConsumer.dll
+2010-10-04 13:19:25,289 DEBUG - Register Device  - DataProducer
+2010-10-04 13:19:25,290 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 13:19:25,293 DEBUG - Register Device  - DataProducer
+2010-10-04 13:22:04,865 INFO - Log::GetLogger( ) - Created Logger
+2010-10-04 13:22:04,885 INFO - OnStart::EngineService is Starting
+2010-10-04 13:22:06,219 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-04 13:22:06,647 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 13:22:06,675 DEBUG - Register Device  - DataProducer
+2010-10-04 13:22:06,677 DEBUG - Device: BevMet Consumer at C:\temp\bevmet\Engine\BevMetConsumer.dll
+2010-10-04 13:22:06,699 DEBUG - Register Device  - DataProducer
+2010-10-04 13:22:06,700 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 13:22:06,702 DEBUG - Register Device  - DataProducer
+2010-10-04 13:23:34,072 INFO - Log::GetLogger( ) - Created Logger
+2010-10-04 13:23:34,082 INFO - OnStart::EngineService is Starting
+2010-10-04 13:23:35,549 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-04 13:23:37,456 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 13:23:37,481 DEBUG - Register Device  - DataProducer
+2010-10-04 13:23:37,483 DEBUG - Device: BevMet Consumer at C:\temp\bevmet\Engine\BevMetConsumer.dll
+2010-10-04 13:23:37,521 DEBUG - Register Device  - DataProducer
+2010-10-04 13:23:37,532 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 13:23:37,541 DEBUG - Register Device  - DataProducer
+2010-10-04 13:23:44,843 ERROR - Client::GetSettings
+System.ServiceModel.CommunicationObjectFaultedException: The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+
+Server stack trace: 
+   at System.ServiceModel.Channels.CommunicationObject.Close(TimeSpan timeout)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.Close()
+   at System.ServiceModel.ClientBase`1.System.IDisposable.Dispose()
+   at ClientSim.Client.GetSettings(String _deviceID) in C:\Source\BevMetrics\temp\BevMet\trunk\Code\Banquet System\ClientSim\ClientInterface.cs:line 72
+2010-10-04 13:23:46,353 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:23:46,356 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:23:46,359 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:23:47,857 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:23:47,859 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:23:47,861 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:23:48,218 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:23:48,220 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:23:48,221 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:23:48,225 DEBUG - Pour - TagID: 1  Device: 1  Event Type:1
+2010-10-04 13:23:48,229 DEBUG - TagID: 1 0 oz. at 00:00:22 at 41 degrees C
+2010-10-04 13:23:49,136 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:23:49,138 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:23:49,139 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:23:50,055 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:23:50,057 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:23:50,060 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:23:50,062 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Disconnect
+2010-10-04 13:23:50,776 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:23:50,778 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:23:50,779 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:23:51,068 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:23:51,070 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:23:51,072 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:23:52,038 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:23:52,040 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:23:52,041 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:23:52,043 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Disconnect
+2010-10-04 13:23:52,900 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:23:52,902 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:23:52,903 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:23:53,514 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:23:53,516 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:23:53,517 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:23:53,519 DEBUG - Pour - TagID: 1  Device: 1  Event Type:1
+2010-10-04 13:23:53,521 DEBUG - TagID: 1 0 oz. at 00:00:26 at 36 degrees C
+2010-10-04 13:23:54,371 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:23:54,373 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:23:54,374 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:23:54,597 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:23:54,599 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:23:54,600 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:00,044 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:00,045 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:00,048 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:00,067 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:00,045 ERROR - Client::PushTagEvent
+System.ServiceModel.CommunicationObjectFaultedException: The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+
+Server stack trace: 
+   at System.ServiceModel.Channels.CommunicationObject.Close(TimeSpan timeout)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.Close()
+   at System.ServiceModel.ClientBase`1.System.IDisposable.Dispose()
+   at ClientSim.Client.PushTagEvent(ITagPhase _data) in C:\Source\BevMetrics\temp\BevMet\trunk\Code\Banquet System\ClientSim\ClientInterface.cs:line 134
+2010-10-04 13:24:00,072 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:00,075 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:00,083 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:00,052 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:00,055 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:00,116 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:00,120 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:00,123 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:03,886 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:03,888 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:03,890 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:05,364 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:05,366 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:05,367 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:05,577 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:05,579 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:05,580 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:05,582 DEBUG - Pour - TagID: 1  Device: 1  Event Type:2
+2010-10-04 13:24:05,583 DEBUG - TagID: 1 0 oz. at 00:00:24 at 47 degrees C
+2010-10-04 13:24:06,225 ERROR - Client::PushTagEvent
+System.ServiceModel.CommunicationObjectFaultedException: The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+
+Server stack trace: 
+   at System.ServiceModel.Channels.CommunicationObject.Close(TimeSpan timeout)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.Close()
+   at System.ServiceModel.ClientBase`1.System.IDisposable.Dispose()
+   at ClientSim.Client.PushTagEvent(ITagPhase _data) in C:\Source\BevMetrics\temp\BevMet\trunk\Code\Banquet System\ClientSim\ClientInterface.cs:line 134
+2010-10-04 13:24:07,336 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:07,338 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:07,340 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:08,399 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:08,401 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:08,402 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:09,449 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:09,451 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:09,452 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:09,554 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:09,557 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:09,560 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:12,406 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:12,408 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:12,411 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:14,325 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:14,327 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:14,328 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:15,561 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:15,563 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:15,564 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:16,971 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:16,973 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:16,974 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:17,036 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:17,038 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:17,039 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:18,791 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:18,793 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:18,794 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:20,071 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:20,073 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:20,074 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:20,076 DEBUG - Pour - TagID: 1  Device: 1  Event Type:2
+2010-10-04 13:24:20,077 DEBUG - TagID: 1 0 oz. at 00:00:25 at 66 degrees C
+2010-10-04 13:24:21,011 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:21,013 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:21,014 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:21,016 DEBUG - Pour - TagID: 1  Device: 1  Event Type:3
+2010-10-04 13:24:21,019 DEBUG - TagID: 1 0 oz. at 00:00:24 at 36 degrees C
+2010-10-04 13:24:22,861 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:22,864 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:22,866 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:22,890 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:22,892 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:22,894 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:23,252 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:23,254 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:23,255 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:23,257 DEBUG - Pour - TagID: 1  Device: 1  Event Type:3
+2010-10-04 13:24:23,259 DEBUG - TagID: 1 0 oz. at 00:00:23 at 63 degrees C
+2010-10-04 13:24:23,641 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:23,643 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:23,645 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:23,646 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Connect
+2010-10-04 13:24:23,762 ERROR - Client::PushTagEvent
+System.ServiceModel.CommunicationObjectFaultedException: The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+
+Server stack trace: 
+   at System.ServiceModel.Channels.CommunicationObject.Close(TimeSpan timeout)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.Close()
+   at System.ServiceModel.ClientBase`1.System.IDisposable.Dispose()
+   at ClientSim.Client.PushTagEvent(ITagPhase _data) in C:\Source\BevMetrics\temp\BevMet\trunk\Code\Banquet System\ClientSim\ClientInterface.cs:line 134
+2010-10-04 13:24:25,051 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:25,053 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:25,054 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:26,170 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:26,171 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:26,173 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:26,174 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Dormant
+2010-10-04 13:24:26,865 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:26,867 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:26,868 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:27,435 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:27,436 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:27,438 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:27,440 DEBUG - Pour - TagID: 1  Device: 1  Event Type:4
+2010-10-04 13:24:27,441 DEBUG - TagID: 1 0 oz. at 00:00:26 at 64 degrees C
+2010-10-04 13:24:27,914 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:27,916 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:27,917 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:30,550 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:30,552 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:30,554 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:31,022 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:31,024 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:31,026 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:31,028 DEBUG - Pour - TagID: 1  Device: 1  Event Type:4
+2010-10-04 13:24:31,030 DEBUG - TagID: 1 0 oz. at 00:00:25 at 59 degrees C
+2010-10-04 13:24:32,477 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:32,479 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:32,480 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:36,591 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:36,593 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:36,595 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:37,454 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:37,456 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:37,457 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:38,062 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:38,064 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:38,065 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:38,980 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:38,982 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:38,984 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:38,985 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Heartbeat
+2010-10-04 13:24:39,942 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:39,944 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:39,945 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:39,947 DEBUG - Pour - TagID: 1  Device: 1  Event Type:5
+2010-10-04 13:24:39,948 DEBUG - TagID: 1 0 oz. at 00:00:25 at 50 degrees C
+2010-10-04 13:24:40,425 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:40,428 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:40,430 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:40,432 DEBUG - Pour - TagID: 1  Device: 1  Event Type:5
+2010-10-04 13:24:40,433 DEBUG - TagID: 1 0 oz. at 00:00:22 at 33 degrees C
+2010-10-04 13:24:40,847 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:40,849 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:40,851 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:41,040 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:41,042 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:41,045 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:41,046 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Dormant
+2010-10-04 13:24:41,929 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:41,932 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:41,935 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:42,555 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:42,557 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:42,559 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:42,560 DEBUG - Pour - TagID: 1  Device: 1  Event Type:6
+2010-10-04 13:24:42,562 DEBUG - TagID: 1 0 oz. at 00:00:24 at 46 degrees C
+2010-10-04 13:24:43,763 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:43,765 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:43,766 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:44,373 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:44,375 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:44,377 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:44,818 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:44,820 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:44,821 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:44,823 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Connect
+2010-10-04 13:24:44,898 ERROR - Client::PushTagEvent
+System.ServiceModel.CommunicationObjectFaultedException: The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+
+Server stack trace: 
+   at System.ServiceModel.Channels.CommunicationObject.Close(TimeSpan timeout)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.Close()
+   at System.ServiceModel.ClientBase`1.System.IDisposable.Dispose()
+   at ClientSim.Client.PushTagEvent(ITagPhase _data) in C:\Source\BevMetrics\temp\BevMet\trunk\Code\Banquet System\ClientSim\ClientInterface.cs:line 134
+2010-10-04 13:24:46,357 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:46,358 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:46,360 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:46,362 DEBUG - Pour - TagID: 1  Device: 1  Event Type:7
+2010-10-04 13:24:46,363 DEBUG - TagID: 1 0 oz. at 00:00:24 at 67 degrees C
+2010-10-04 13:24:46,599 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:46,600 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:46,602 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:46,604 DEBUG - Pour - TagID: 1  Device: 1  Event Type:6
+2010-10-04 13:24:46,607 DEBUG - TagID: 1 0 oz. at 00:00:22 at 65 degrees C
+2010-10-04 13:24:47,036 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:47,038 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:47,040 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:47,598 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:47,599 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:47,601 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:47,603 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Disconnect
+2010-10-04 13:24:50,547 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:50,548 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:50,551 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:51,562 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:51,565 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:51,570 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:52,789 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:52,790 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:52,792 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:53,323 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:53,325 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:53,327 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:54,917 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:54,930 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:54,942 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:54,983 ERROR - Client::PushTagEvent
+System.ServiceModel.CommunicationObjectFaultedException: The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+
+Server stack trace: 
+   at System.ServiceModel.Channels.CommunicationObject.Close(TimeSpan timeout)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.Close()
+   at System.ServiceModel.ClientBase`1.System.IDisposable.Dispose()
+   at ClientSim.Client.PushTagEvent(ITagPhase _data) in C:\Source\BevMetrics\temp\BevMet\trunk\Code\Banquet System\ClientSim\ClientInterface.cs:line 134
+2010-10-04 13:24:55,623 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:55,625 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:55,627 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:56,007 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:56,009 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:56,010 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:24:58,364 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:24:58,366 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:24:58,367 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:00,831 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:00,833 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:00,834 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:01,037 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:01,039 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:01,040 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:01,042 DEBUG - Pour - TagID: 1  Device: 1  Event Type:7
+2010-10-04 13:25:01,043 DEBUG - TagID: 1 0 oz. at 00:00:26 at 47 degrees C
+2010-10-04 13:25:01,505 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:01,508 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:01,512 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:01,514 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Heartbeat
+2010-10-04 13:25:01,881 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:01,883 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:01,885 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:02,567 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:02,569 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:02,570 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:02,572 DEBUG - Pour - TagID: 1  Device: 1  Event Type:8
+2010-10-04 13:25:02,575 DEBUG - TagID: 1 0 oz. at 00:00:22 at 59 degrees C
+2010-10-04 13:25:04,053 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:04,058 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:04,061 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:05,331 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:05,332 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:05,334 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:07,013 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:07,017 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:07,019 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:07,683 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:07,703 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:07,724 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:08,910 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:08,912 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:08,913 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:08,915 DEBUG - Pour - TagID: 1  Device: 1  Event Type:8
+2010-10-04 13:25:08,917 DEBUG - TagID: 1 0 oz. at 00:00:26 at 34 degrees C
+2010-10-04 13:25:09,314 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:09,316 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:09,320 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:09,840 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:09,842 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:09,843 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:10,360 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:10,362 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:10,363 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:10,365 DEBUG - Pour - TagID: 1  Device: 1  Event Type:9
+2010-10-04 13:25:10,366 DEBUG - TagID: 1 0 oz. at 00:00:22 at 50 degrees C
+2010-10-04 13:25:10,854 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:10,856 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:10,857 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:10,859 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Disconnect
+2010-10-04 13:25:10,935 ERROR - Client::PushTagEvent
+System.ServiceModel.CommunicationObjectFaultedException: The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+
+Server stack trace: 
+   at System.ServiceModel.Channels.CommunicationObject.Close(TimeSpan timeout)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.Close()
+   at System.ServiceModel.ClientBase`1.System.IDisposable.Dispose()
+   at ClientSim.Client.PushTagEvent(ITagPhase _data) in C:\Source\BevMetrics\temp\BevMet\trunk\Code\Banquet System\ClientSim\ClientInterface.cs:line 134
+2010-10-04 13:25:12,344 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:12,346 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:12,347 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:12,975 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:12,977 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:12,978 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:12,980 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Heartbeat
+2010-10-04 13:25:13,344 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:13,346 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:13,350 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:14,409 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:14,411 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:14,412 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:14,431 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:14,432 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:14,434 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:14,436 DEBUG - Pour - TagID: 1  Device: 1  Event Type:10
+2010-10-04 13:25:14,437 DEBUG - TagID: 1 0 oz. at 00:00:26 at 46 degrees C
+2010-10-04 13:25:15,321 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:15,323 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:15,324 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:15,326 DEBUG - Pour - TagID: 1  Device: 1  Event Type:9
+2010-10-04 13:25:15,327 DEBUG - TagID: 1 0 oz. at 00:00:18 at 49 degrees C
+2010-10-04 13:25:18,038 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:18,040 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:18,043 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:18,357 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:18,359 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:18,360 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:21,157 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:21,159 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:21,161 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:22,849 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:22,852 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:22,855 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:22,983 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:22,984 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:22,986 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:24,141 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:24,143 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:24,148 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:24,150 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Connect
+2010-10-04 13:25:24,237 ERROR - Client::PushTagEvent
+System.ServiceModel.CommunicationObjectFaultedException: The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+
+Server stack trace: 
+   at System.ServiceModel.Channels.CommunicationObject.Close(TimeSpan timeout)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.Close()
+   at System.ServiceModel.ClientBase`1.System.IDisposable.Dispose()
+   at ClientSim.Client.PushTagEvent(ITagPhase _data) in C:\Source\BevMetrics\temp\BevMet\trunk\Code\Banquet System\ClientSim\ClientInterface.cs:line 134
+2010-10-04 13:25:25,908 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:25,910 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:25,912 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:26,570 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:26,572 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:26,575 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:26,577 DEBUG - Pour - TagID: 1  Device: 1  Event Type:10
+2010-10-04 13:25:26,580 DEBUG - TagID: 1 0 oz. at 00:00:26 at 51 degrees C
+2010-10-04 13:25:27,265 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:27,267 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:27,268 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:27,617 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:27,619 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:27,623 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:27,626 DEBUG - Pour - TagID: 1  Device: 1  Event Type:11
+2010-10-04 13:25:27,629 DEBUG - TagID: 1 0 oz. at 00:00:24 at 58 degrees C
+2010-10-04 13:25:28,297 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:28,299 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:28,301 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:29,563 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:29,565 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:29,566 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:29,568 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Dormant
+2010-10-04 13:25:30,631 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:30,632 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:30,635 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:32,890 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:32,892 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:32,893 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:33,764 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:33,765 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:33,767 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:35,708 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:35,710 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:35,711 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:36,811 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:36,813 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:36,814 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:36,817 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:36,818 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:36,820 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:36,821 DEBUG - Pour - TagID: 1  Device: 1  Event Type:12
+2010-10-04 13:25:36,823 DEBUG - TagID: 1 0 oz. at 00:00:20 at 44 degrees C
+2010-10-04 13:25:37,335 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:37,337 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:37,338 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:38,387 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:38,388 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:38,392 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:38,395 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Connect
+2010-10-04 13:25:38,474 ERROR - Client::PushTagEvent
+System.ServiceModel.CommunicationObjectFaultedException: The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.
+
+Server stack trace: 
+   at System.ServiceModel.Channels.CommunicationObject.Close(TimeSpan timeout)
+
+Exception rethrown at [0]: 
+   at System.Runtime.Remoting.Proxies.RealProxy.HandleReturnMessage(IMessage reqMsg, IMessage retMsg)
+   at System.Runtime.Remoting.Proxies.RealProxy.PrivateInvoke(MessageData& msgData, Int32 type)
+   at System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.System.ServiceModel.ICommunicationObject.Close(TimeSpan timeout)
+   at System.ServiceModel.ClientBase`1.Close()
+   at System.ServiceModel.ClientBase`1.System.IDisposable.Dispose()
+   at ClientSim.Client.PushTagEvent(ITagPhase _data) in C:\Source\BevMetrics\temp\BevMet\trunk\Code\Banquet System\ClientSim\ClientInterface.cs:line 134
+2010-10-04 13:25:41,351 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:41,353 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:41,354 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:41,503 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:41,505 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:41,507 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:41,515 DEBUG - Pour - TagID: 1  Device: 1  Event Type:11
+2010-10-04 13:25:41,517 DEBUG - TagID: 1 0 oz. at 00:00:23 at 34 degrees C
+2010-10-04 13:25:41,793 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:41,795 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:41,796 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:41,798 DEBUG - Phase - TagID: 1  Device: 1  Event Type:Heartbeat
+2010-10-04 13:25:42,216 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:42,217 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:42,219 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:42,493 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:42,495 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:42,497 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:42,498 DEBUG - Pour - TagID: 1  Device: 1  Event Type:13
+2010-10-04 13:25:42,500 DEBUG - TagID: 1 0 oz. at 00:00:23 at 44 degrees C
+2010-10-04 13:25:42,992 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:42,994 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:42,998 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:44,000 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:44,002 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:44,003 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:44,544 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:44,546 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:44,548 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:47,999 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:48,002 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:48,006 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:49,594 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:49,596 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:49,597 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:49,755 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:49,757 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:49,758 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:51,294 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:51,296 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:51,297 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:51,477 DEBUG - Message: RawData - Test Prod
+2010-10-04 13:25:51,479 DEBUG -  - DataProducer : Test Prod
+2010-10-04 13:25:51,480 DEBUG - To Consume:  - DataProducer : Test Prod
+2010-10-04 13:25:51,482 DEBUG - Pour - TagID: 1  Device: 1  Event Type:14
+2010-10-04 13:25:51,484 DEBUG - TagID: 1 0 oz. at 00:00:26 at 38 degrees C
+2010-10-04 13:35:55,562 INFO - Log::GetLogger( ) - Created Logger
+2010-10-04 13:35:55,571 INFO - OnStart::EngineService is Starting
+2010-10-04 13:35:56,858 DEBUG - C:\temp\bevmet\Engine\JaxisEngine.dll
+2010-10-04 13:35:57,234 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 13:35:57,253 DEBUG - Register Device  - DataProducer
+2010-10-04 13:35:57,254 DEBUG - Device: BevMet Consumer at C:\temp\bevmet\Engine\BevMetConsumer.dll
+2010-10-04 13:35:57,276 DEBUG - Register Device  - DataProducer
+2010-10-04 13:35:57,278 DEBUG - Device: Test Prod at C:\temp\bevmet\Engine\TestProdDev.dll
+2010-10-04 13:35:57,280 DEBUG - Register Device  - DataProducer

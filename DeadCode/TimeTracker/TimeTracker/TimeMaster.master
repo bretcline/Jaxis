@@ -1,0 +1,45 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="TimeMaster.master.cs" Inherits="TimeMaster"  MasterPageFile="~/SiteMaster.master" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="SitePage" runat="server">
+
+<script type="text/javascript">
+
+function MouseOver( LinkToChange )
+{
+    LinkToChange.style.color = "#CC00FF"; //Grape
+}
+
+function MouseOut( LinkToChange )
+{
+    LinkToChange.style.color = "#380474"; //Blue Deep
+}
+
+</script>
+     <div>
+        <table style="width:100%;" id = "tblHoldMenu">
+            <tr>
+                <td align="center">
+                    
+                <a href="TimeEntry.aspx" id = "lnkTimeEntry" onmouseover = "javascript:MouseOver( lnkTimeEntry )" 
+                    onmouseout = "javascript:MouseOut( lnkTimeEntry )" style="color: #380474"><b>Time Entry</b></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="TimeView.aspx" id = "lnkTimeView" onmouseover = "javascript:MouseOver( lnkTimeView )" 
+                    onmouseout = "javascript:MouseOut( lnkTimeView )" style="color: #380474"><b>Time View</b></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="UsersAdmin.aspx" id = "lnkAdmin" onmouseover = "javascript:MouseOver( lnkAdmin )" 
+                    onmouseout = "javascript:MouseOut( lnkAdmin )" style="color: #380474"><b>Admin</b></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="TimesByUserReport.aspx" id = "lnkReports" onmouseover = "javascript:MouseOver( lnkReports )" 
+                    onmouseout = "javascript:MouseOut( lnkReports )" style="color: #380474"><b>Reports</b></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="Login.aspx" id = "lnkLogout" onmouseover = "javascript:MouseOver( lnkLogout )" 
+                    onmouseout = "javascript:MouseOut( lnkLogout )" style="color: #380474"><b>Logout</b></a>
+                    
+                <hr color= "#380474" width = "390" align = "center" />
+                </td>
+            </tr>
+        </table>
+        <asp:ContentPlaceHolder id="AdminMenu" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        <asp:ContentPlaceHolder id="PageData" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>

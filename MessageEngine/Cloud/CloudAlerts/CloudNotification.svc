@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="CloudAlerts.CloudNotification" CodeBehind="CloudNotification.svc.cs" %>

@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ISO_Demo", "ISO_Demo\ISO_Demo.csproj", "{BCDC6300-B904-41EE-AFA7-46C6A045B43D}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{42CCD831-E590-4543-B0F5-2125E954048D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RFID3 API", "..\RFID3 API\RFID3 API.csproj", "{4B892F64-AD7B-429C-B319-C10B2336286B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCDC6300-B904-41EE-AFA7-46C6A045B43D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCDC6300-B904-41EE-AFA7-46C6A045B43D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCDC6300-B904-41EE-AFA7-46C6A045B43D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCDC6300-B904-41EE-AFA7-46C6A045B43D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42CCD831-E590-4543-B0F5-2125E954048D}.Debug|Any CPU.ActiveCfg = Debug
+		{42CCD831-E590-4543-B0F5-2125E954048D}.Release|Any CPU.ActiveCfg = Release
+		{4B892F64-AD7B-429C-B319-C10B2336286B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B892F64-AD7B-429C-B319-C10B2336286B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B892F64-AD7B-429C-B319-C10B2336286B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B892F64-AD7B-429C-B319-C10B2336286B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

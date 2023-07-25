@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="SiteMaster.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+<script type="text/javascript">
+
+function MouseOver( LinkToChange )
+{
+    LinkToChange.style.color = "#CC00FF"; //Grape
+}
+
+function MouseOut( LinkToChange )
+{
+    LinkToChange.style.color = "#380474"; //Blue Deep
+}
+
+</script> 
+
+    <title>Site Master</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+    
+    <table style="width:100%;">
+                <tr>
+                    <td align="center">
+                        <asp:Image ID="imgLogo" runat="server" Height="65px" 
+                            ImageUrl="~/Images/Jaxis logo-1c.jpg" Width="480px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                <a href="" id = "lnkHome" onmouseover = "javascript:MouseOver( lnkHome )" 
+                    onmouseout = "javascript:MouseOut( lnkHome )" style="color: #380474"><b>Home</b></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    
+                <a href="" id = "lnkAbout" onmouseover = "javascript:MouseOver( lnkAbout )" 
+                    onmouseout = "javascript:MouseOut( lnkAbout )" style="color: #380474"><b>About</b></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    
+                <a href="" id = "lnkProducts" onmouseover = "javascript:MouseOver( lnkProducts )" 
+                    onmouseout = "javascript:MouseOut( lnkProducts )" style="color: #380474"><b>Products</b></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                    
+                <a href="" id = "lnkContactUs" onmouseover = "javascript:MouseOver( lnkContactUs )" 
+                    onmouseout = "javascript:MouseOut( lnkContactUs )" style="color: #380474"><b>Contact Us</b></a>&nbsp;&nbsp;|&nbsp;&nbsp
+                    
+                <a href="Login.aspx" id = "lnkUsers" onmouseover = "javascript:MouseOver( lnkUsers )" 
+                    onmouseout = "javascript:MouseOut( lnkUsers )" style="color: #380474"><b>Users</b></a>
+                    
+                <hr color= "#380474" align = "center" /></td>
+                </tr>
+            </table>
+    
+        <asp:ContentPlaceHolder id="SitePage" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        
+    </div>
+    </form>
+</body>
+</html>

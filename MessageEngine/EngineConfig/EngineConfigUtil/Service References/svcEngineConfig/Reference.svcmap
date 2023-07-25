@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="93566946-a40f-4575-a2e3-80fd347d6736" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8989/EngineConfigWCF/EngineConfigService/" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="item1.disco" MetadataType="Disco" ID="590ccc3f-6f61-41a9-b117-16d3fc5d5e99" SourceId="1" SourceUrl="http://localhost:8989/EngineConfigWCF/EngineConfigService/?disco" />
+    <MetadataFile FileName="item5.xsd" MetadataType="Schema" ID="11a7e83f-d071-47a6-b596-952e14bad4e1" SourceId="1" SourceUrl="http://localhost:8989/EngineConfigWCF/EngineConfigService/?xsd=xsd0" />
+    <MetadataFile FileName="item51.xsd" MetadataType="Schema" ID="e5af8f05-fc7c-425a-b1ae-30e80dd788e3" SourceId="1" SourceUrl="http://localhost:8989/EngineConfigWCF/EngineConfigService/?xsd=xsd1" />
+    <MetadataFile FileName="item52.xsd" MetadataType="Schema" ID="15abc69c-3e04-45f6-90cc-a84ae3fa3731" SourceId="1" SourceUrl="http://localhost:8989/EngineConfigWCF/EngineConfigService/?xsd=xsd4" />
+    <MetadataFile FileName="item53.xsd" MetadataType="Schema" ID="6feff634-95c3-4192-bc96-1a8322304f59" SourceId="1" SourceUrl="http://localhost:8989/EngineConfigWCF/EngineConfigService/?xsd=xsd2" />
+    <MetadataFile FileName="item54.xsd" MetadataType="Schema" ID="ec6fbd0b-0e17-4bf1-8592-0560be3dfcf5" SourceId="1" SourceUrl="http://localhost:8989/EngineConfigWCF/EngineConfigService/?xsd=xsd3" />
+    <MetadataFile FileName="EngineConfigService1.wsdl" MetadataType="Wsdl" ID="f0a9dae3-d042-4900-b1ff-cbe70675b54c" SourceId="1" SourceUrl="http://localhost:8989/EngineConfigWCF/EngineConfigService/?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,92 @@
+﻿@using Jaxis.DrinkInventory.Reporting.Web2.Infrastructure
+@model Jaxis.DrinkInventory.Reporting.Web2.Models.ReportModel
+
+@{
+    ViewBag.Title = "Reports";
+}
+
+@Html.DevExpress().GetStyleSheets(
+    new StyleSheet { ExtensionSuite = ExtensionSuite.NavigationAndLayout, Theme = "SoftOrange" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Editors, Theme = "SoftOrange" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.HtmlEditor, Theme = "SoftOrange" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.GridView, Theme = "SoftOrange" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Chart, Theme = "SoftOrange" },
+    new StyleSheet { ExtensionSuite = ExtensionSuite.Report, Theme = "SoftOrange" } 
+) 
+
+@Html.DevExpress().GetScripts(
+    new Script { ExtensionSuite = ExtensionSuite.NavigationAndLayout },
+    new Script { ExtensionSuite = ExtensionSuite.Editors }, 
+    new Script { ExtensionSuite = ExtensionSuite.HtmlEditor }, 
+    new Script { ExtensionSuite = ExtensionSuite.GridView }, 
+    new Script { ExtensionSuite = ExtensionSuite.Chart },
+    new Script { ExtensionSuite = ExtensionSuite.Report } 
+)
+
+@if (Model != null)
+{
+    <table class="layout">
+        <tr>
+            <td class="layoutleft">
+                <div class="navbarbody">
+                    <h1>Reports</h1>
+                    <select id="reportList" size="5">
+                        @foreach (var report in Model.Reports)
+                        {
+                            if (report.ReportId == Model.SelectedReportId)
+                            {
+                                <option value="@report.ReportId" selected="selected">@report.Name</option>
+                            }
+                            else
+                            {
+                                <option value="@report.ReportId">@report.Name</option>
+                            }
+                        }
+                    </select>
+                </div>
+            </td>
+            <td class="layoutright">
+                @if (Model.ReportViewModel != null)
+                {
+                    <div class="viewbody">
+                        <h1>@Model.ReportViewModel.ReportName</h1>
+                        <div class="viewsection">
+                            <h2>Filter</h2>
+                            TEMPORARILY OUT OF ORDER
+                        </div>
+                        <div class="viewsection">
+                            <h2>Report</h2>
+                            <div class="viewsectionreport">
+                                @Html.DevExpress().ReportToolbar(
+                                    settings =>
+                                    {
+                                        settings.Name = "ReportToolbar";
+                                        settings.ReportViewerName = Model.ReportViewModel.ShortName;
+                                    }
+                                ).GetHtml()
+                                <div id="@( "vd_" + Model.ReportViewModel.ShortName)">
+                                    @Html.Partial("_ViewDataPartial", Model.ReportViewModel)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </td>
+        </tr>
+    </table>
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function ()
+    {
+        $('#reportList').change(onChangeReport);
+    });
+
+    function onChangeReport()
+    {
+        var reportId = $('#reportList option:selected').val();
+        window.location.href = '@Url.Action("Index")' + '?_reportId=' + reportId;
+    }
+
+</script>

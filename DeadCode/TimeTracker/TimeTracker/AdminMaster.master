@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/TimeMaster.master" AutoEventWireup="false" CodeFile="AdminMaster.master.cs" Inherits="AdminMaster" %>
+
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="AdminMenu" Runat="Server">
+
+    <script type="text/javascript">
+
+function MouseOver( LinkToChange )
+{
+    LinkToChange.style.color = "#CC00FF"; //Grape
+}
+
+function MouseOut( LinkToChange )
+{
+    LinkToChange.style.color = "#380474"; //Blue Deep
+}
+
+</script>
+
+    <table id="tblAdminMenu" style="width:100%;">
+        <tr>
+            <td align="center">
+                <a href="UsersAdmin.aspx" id = "lnkUsersAdmin" 
+                    onmouseover = "javascript:MouseOver( lnkUsersAdmin )" 
+                    onmouseout = "javascript:MouseOut( lnkUsersAdmin )" style="color: #380474"><b>Users Admin</b></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="ProjectsAdmin.aspx" id = "lnkProjectsAdmin" 
+                    onmouseover = "javascript:MouseOver( lnkProjectsAdmin )" 
+                    onmouseout = "javascript:MouseOut( lnkProjectsAdmin )" style="color: #380474"><b>Projects Admin</b></a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="GroupsAdmin.aspx" id = "lnkGroupsAdmin"
+                    onmouseover = "javascript:MouseOver( lnkGroupsAdmin )" 
+                    onmouseout = "javascript:MouseOut( lnkGroupsAdmin )" style="color: #380474"><b>Groups Admin</b></a>
+            </td>
+        </tr>
+    </table>
+    
+</asp:Content>
+<asp:Content ID="SubPage" ContentPlaceHolderID="PageData" Runat="Server">
+        <asp:ContentPlaceHolder id="SubPage2" runat="server">
+       
+        </asp:ContentPlaceHolder>
+</asp:Content>

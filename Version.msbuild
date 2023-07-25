@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="All" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\Build\RadiantWave.Tasks.Targets" />
+
+	<!--Properties-->
+	
+	<PropertyGroup>
+		<VersionFile Condition=" '$(VersionFile)' == '' ">c:\Temp\JaxisVersion.txt</VersionFile>
+		<Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+	</PropertyGroup>
+
+	<Target Name="Build" DependsOnTargets="Version">
+		<Version VersionFile="$(VersionFile)" RevisionType="None">
+			<Output TaskParameter="Major" PropertyName="Major" />
+			<Output TaskParameter="Minor" PropertyName="Minor" />
+			<Output TaskParameter="Build" PropertyName="Build" />
+			<Output TaskParameter="Revision" PropertyName="Revision" />
+		</Version>
+
+		<SvnVersion LocalPath="$(MSBuildProjectDirectory)">
+			<Output TaskParameter="Revision" PropertyName="Revision" />
+		</SvnVersion>
+
+		<WriteLinesToFile File="$(VersionFile)" Lines="$(Major).$(Minor).$(Build).$(Revision)" Overwrite="true" />
+		<Exec Command="del $(AssemblyInfoPath)" />
+	</Target>
+</Project>

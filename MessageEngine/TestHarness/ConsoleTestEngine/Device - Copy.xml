@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeviceConfigCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Configs>
+        <DeviceConfig>
+            <AssemblyName>Identec.dll</AssemblyName>
+            <AssemblyType>Jaxis.Readers.Identec.IdentecDev</AssemblyType>
+            <AssemblyVersion>1.0</AssemblyVersion>
+            <ID>09435M0331</ID>
+            <Name>09435M0331</Name>
+            <Type>DataProducer</Type>
+            <State>Stopped</State>
+            <ConsumerMessageType>0</ConsumerMessageType>
+            <ProducerMessageType>8</ProducerMessageType>
+            <Options>
+                <DeviceConfigOption>
+                    <Name>IP Address</Name>
+                    <Value>192.168.236.70</Value>
+                </DeviceConfigOption>
+                <DeviceConfigOption>
+                    <Name>Timeout</Name>
+                    <Value></Value>
+                </DeviceConfigOption>
+                <DeviceConfigOption>
+                    <Name>Frequency</Name>
+                    <Value>NorthAmerican</Value>
+                </DeviceConfigOption>
+                <DeviceConfigOption>
+                    <Name>RF Baud Rate</Name>
+                    <Value></Value>
+                </DeviceConfigOption>
+                <DeviceConfigOption>
+                    <Name>Allow Heartbeat</Name>
+                    <Value>true</Value>
+                </DeviceConfigOption>
+                <DeviceConfigOption>
+                    <Name>AllowPours</Name>
+                    <Value>true</Value>
+                </DeviceConfigOption>
+            </Options>
+            <Filters>
+                <FilterConfig>
+                    <AssemblyName>Jaxis.Engine.Filter.dll</AssemblyName>
+                    <AssemblyType>Jaxis.Engine.Filter.DuplicateTagMessageFilter</AssemblyType>
+                    <AssemblyVersion>1.0</AssemblyVersion>
+                    <Name>Read Time Filter</Name>
+                    <Type>Outbound</Type>
+                    <Options>
+                        <!-- Timeout -->
+                        <DeviceConfigOption>
+                            <Name>Timeout</Name>
+                            <Value>1.5</Value>
+                        </DeviceConfigOption>
+                        <DeviceConfigOption>
+                            <Name>Message Types</Name>
+                            <Value>PhaseMessage|TagAlertMessage</Value>
+                        </DeviceConfigOption>
+                    </Options>
+                </FilterConfig>
+            </Filters>
+        </DeviceConfig>
+        <DeviceConfig>
+            <AssemblyName>Identec.dll</AssemblyName>
+            <AssemblyType>Jaxis.Readers.Identec.IdentecDetachPlugin</AssemblyType>
+            <AssemblyVersion>1.0</AssemblyVersion>
+            <ID>109</ID>
+            <Name>Identec Detach Filter</Name>
+            <Type>DataProducerConsumer</Type>
+            <State>Started</State>
+            <ConsumerMessageType>8</ConsumerMessageType>
+            <ProducerMessageType>1</ProducerMessageType>
+            <Options>
+                <DeviceConfigOption>
+                    <Name>Timeout</Name>
+                    <Value>5</Value>
+                </DeviceConfigOption>
+            </Options>
+        </DeviceConfig>
+        <DeviceConfig>
+            <AssemblyName>Jaxis.BeverageManagement.Plugin.dll</AssemblyName>
+            <AssemblyType>Jaxis.BeverageManagement.Plugin.DataConsumer</AssemblyType>
+            <AssemblyVersion>1.0</AssemblyVersion>
+            <ID>101</ID>
+            <Name>Jaxis Consumer</Name>
+            <Type>DataConsumer</Type>
+            <State>Stopped</State>
+            <ConsumerMessageType>1</ConsumerMessageType>
+            <ProducerMessageType>32</ProducerMessageType>
+            <Options>
+                <DeviceConfigOption>
+                    <Name>Service Endpoint</Name>
+                    <Value>http://localhost:8223/HostWCFService/PourEngineService/</Value>
+                </DeviceConfigOption>
+                <DeviceConfigOption>
+                    <Name>Max Spout Diameter</Name>
+                    <Value>10</Value>
+                </DeviceConfigOption>
+                <DeviceConfigOption>
+                    <Name>Connection String</Name>
+                    <Value></Value>
+                </DeviceConfigOption>
+                <DeviceConfigOption>
+                    <Name>Detach Volume</Name>
+                    <Value>35</Value>
+                </DeviceConfigOption>
+                <DeviceConfigOption>
+                    <Name>Simulator</Name>
+                    <Value>false</Value>
+                </DeviceConfigOption>
+            </Options>
+        </DeviceConfig>
+        <DeviceConfig>
+            <AssemblyName>Jaxis.BeverageManagement.Plugin.dll</AssemblyName>
+            <AssemblyType>Jaxis.BeverageManagement.Plugin.HeartbeatMonitor</AssemblyType>
+            <AssemblyVersion>1.0</AssemblyVersion>
+            <ID>105</ID>
+            <Name>Jaxis Heartbeat Monitor</Name>
+            <Type>DataConsumer</Type>
+            <State>Stopped</State>
+            <ConsumerMessageType>1</ConsumerMessageType>
+            <ProducerMessageType>0</ProducerMessageType>
+            <Options>
+                <DeviceConfigOption>
+                    <Name>Interval</Name>
+                    <Value>10</Value>
+                </DeviceConfigOption>
+            </Options>
+        </DeviceConfig>
+        <DeviceConfig>
+            <AssemblyName>Sprint.dll</AssemblyName>
+            <AssemblyType>Jaxis.Readers.Sprint.Trish</AssemblyType>
+            <AssemblyVersion>1.0</AssemblyVersion>
+            <ID>TRISH</ID>
+            <Name>TRISH</Name>
+            <Type>DataProducer</Type>
+            <State>Stopped</State>
+            <ConsumerMessageType>0</ConsumerMessageType>
+            <ProducerMessageType>1</ProducerMessageType>
+            <Options>
+                <DeviceConfigOption>
+                    <Name>COM Port</Name>
+                    <Value>COM3</Value>
+                </DeviceConfigOption>
+                <DeviceConfigOption>
+                    <Name>Poll Interval</Name>
+                    <Value>10</Value>
+                </DeviceConfigOption>
+                <DeviceConfigOption>
+                    <Name>Overpour Amount</Name>
+                    <Value>10000</Value>
+                </DeviceConfigOption>
+                <DeviceConfigOption>
+                    <Name>Event</Name>
+                    <Value>Default Event</Value>
+                </DeviceConfigOption>
+                <DeviceConfigOption>
+                    <Name>User Simulator</Name>
+                    <Value>false</Value>
+                </DeviceConfigOption>
+            </Options>
+        </DeviceConfig>
+        <DeviceConfig>
+            <AssemblyName>Jaxis.BeverageManagement.Plugin.DataCollector.dll</AssemblyName>
+            <AssemblyType>Jaxis.BeverageManagement.Plugin.PourCollector.DataCollector</AssemblyType>
+            <AssemblyVersion>1.0</AssemblyVersion>
+            <ID>101</ID>
+            <Name>Jaxis Data Collector</Name>
+            <Type>DataConsumer</Type>
+            <State>Started</State>
+            <ConsumerMessageType>1</ConsumerMessageType>
+            <ProducerMessageType>0</ProducerMessageType>
+            <Options>
+            </Options>
+        </DeviceConfig>
+        <DeviceConfig>
+            <AssemblyName>TrishEmulator.dll</AssemblyName>
+            <AssemblyType>Jaxis.Readers.Sprint.TrishEmulator</AssemblyType>
+            <AssemblyVersion>1.0</AssemblyVersion>
+            <ID>TrishEmulator</ID>
+            <Name>TrishEmulator</Name>
+            <Type>DataConsumer</Type>
+            <State>Stopped</State>
+            <ConsumerMessageType>32</ConsumerMessageType>
+            <ProducerMessageType>0</ProducerMessageType>
+            <Options>
+                <DeviceConfigOption>
+                    <Name>TCP Port</Name>
+                    <Value>555</Value>
+                </DeviceConfigOption>
+                <DeviceConfigOption>
+                    <Name>Message Types</Name>
+                    <Value>Trish,Identec</Value>
+                </DeviceConfigOption>
+            </Options>
+        </DeviceConfig>
+    </Configs>
+</DeviceConfigCollection>

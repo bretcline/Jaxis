@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FormatDef xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>00000000-0000-0000-0000-000000000002</ID>
+  <Name>Chemical Treatment</Name>
+  <Description>Chemical Treatment History</Description>
+  <HeaderRowDef>
+    <ElementDefs>
+      <DataElementDef>
+        <Name>Lease</Name>
+        <DataType>Text</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Well Name</Name>
+        <DataType>Text</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Operator</Name>
+        <DataType>PickList</DataType>
+        <Required>true</Required>
+        <Constraints>OXY|BP|Chevron</Constraints>
+      </DataElementDef>
+    </ElementDefs>
+  </HeaderRowDef>
+  <DataRowDef>
+    <ElementDefs>
+      <DataElementDef>
+        <Name>Tech</Name>
+        <DataType>Text</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>      
+      <DataElementDef>
+        <Name>Treatment Date</Name>
+        <DataType>DateTime</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Chemical</Name>
+        <DataType>PickList</DataType>
+        <Required>true</Required>
+        <Constraints>Foamer|Corrosian Inhibitor|Scale Inhibitor</Constraints>
+      </DataElementDef>
+      <DataElementDef>
+        <Name>Unit of Measure</Name>
+        <DataType>PickList</DataType>
+        <Required>true</Required>
+        <Constraints>Quart|Gallon|Barrel</Constraints>
+      </DataElementDef>      <DataElementDef>
+        <Name>As Found</Name>
+        <DataType>Float</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+      <DataElementDef>
+        <Name>As Left</Name>
+        <DataType>Float</DataType>
+        <Required>true</Required>
+        <Constraints />
+      </DataElementDef>
+    </ElementDefs>
+  </DataRowDef>
+  <MaxDataRows>10</MaxDataRows>
+</FormatDef>

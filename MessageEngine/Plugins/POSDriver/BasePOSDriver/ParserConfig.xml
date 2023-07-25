@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ParserConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Cleanup>
+    <LineParser>
+      <ParseOrder>0</ParseOrder>
+      <SingleElement>false</SingleElement>
+      <RegEx>^\r\n</RegEx>
+    </LineParser>
+    <LineParser>
+      <ParseOrder>1</ParseOrder>
+      <SingleElement>true</SingleElement>
+      <RegEx>Redirect from:\s*.*</RegEx>
+    </LineParser>
+    <LineParser>
+      <ParseOrder>2</ParseOrder>
+      <SingleElement>true</SingleElement>
+      <RegEx>\*\*\* END OF CHECK \*\*\*</RegEx>
+    </LineParser>
+    <LineParser>
+      <ParseOrder>3</ParseOrder>
+      <SingleElement>true</SingleElement>
+      <RegEx>\r</RegEx>
+    </LineParser>
+  </Cleanup>
+  <SectionMarker>                    </SectionMarker>
+  <SectionParsers>
+    <ArrayOfLineParser>
+      <LineParser>
+        <ParseOrder>0</ParseOrder>
+        <SingleElement>true</SingleElement>
+        <RegEx>(\w*) *(\d*:\d* [A|P]M)</RegEx>
+        <PropertyName>Server</PropertyName>
+      </LineParser>
+      <LineParser>
+        <ParseOrder>0</ParseOrder>
+        <SingleElement>true</SingleElement>
+        <RegEx>(Bar:\d*)</RegEx>
+        <PropertyName>Table</PropertyName>
+      </LineParser>
+      <LineParser>
+        <ParseOrder>1</ParseOrder>
+        <SingleElement>true</SingleElement>
+        <RegEx>(Guests: \d*)</RegEx>
+        <PropertyName>Table</PropertyName>
+      </LineParser>
+      <LineParser>
+        <ParseOrder>2</ParseOrder>
+        <SingleElement>true</SingleElement>
+        <RegEx>(Check: )([0-9]+)</RegEx>
+        <PropertyName>Check</PropertyName>
+      </LineParser>
+    </ArrayOfLineParser>
+    <ArrayOfLineParser>
+      <LineParser>
+        <ParseOrder>0</ParseOrder>
+        <SingleElement>false</SingleElement>
+        <RegEx>(\(\d*\) )*((\w.*)\n)(  (\w+.))*</RegEx>
+        <PropertyName>LineItem</PropertyName>
+      </LineParser>
+    </ArrayOfLineParser>
+  </SectionParsers>
+</ParserConfig>

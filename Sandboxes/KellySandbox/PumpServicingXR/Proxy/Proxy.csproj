@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1B1479E1-4020-4B37-B96A-A62A063A984B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WFT.PSService.Proxy</RootNamespace>
+    <AssemblyName>Proxy</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\AppServer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataManager\DataManager.csproj">
+      <Project>{3EB163AA-87DB-4DE8-89B2-F9B953C025E5}</Project>
+      <Name>DataManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceLibrary\ServiceLibrary.csproj">
+      <Project>{A4261486-9B80-46B2-A733-C8D28455FED9}</Project>
+      <Name>ServiceLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Proxy.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.Assembly.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.AssemblyComponent.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.AssemblyComponentBblPlgMeasure.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.AssemblyComponentSRPump.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.BusinessOrganization.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.Component.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.ComponentSRPump.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.csDBEntity.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.csDBIndexes.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.csDBMessage.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.csDBRelations.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.csDBRepLangDep.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.csErrorLog.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.DatabaseConfiguration.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.DeletedLog.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.Document.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.Event.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.EventAssembleSRPump.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.EventComponentFailure.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.EventDetailCosts.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.EventDisassembleSRPump.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.EventInstallPump.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.EventPullPump.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.Facility.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.Invoice.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.Job.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.JobStatusChangeLog.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.Lease.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.Owner.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APIPumpGraphics.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APIPumpGraphicsStatusIcons.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPBarrelType.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPExtBarrelType.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPExtBblAcc.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPExtPlgAcc.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPExtPlgPin.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPExtPlgType.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPExtPumpType.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPExtSand.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPExtSeatAssyLocation.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPExtSeatAssyType.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPExtSV.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPExtSVCage.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPExtTV.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPExtTVCage.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPExtTVStPlg.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPExtVRod.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPExtWiper.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPPumpBore.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPPumpType.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPSeatAssyLocation.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPSeatAssyType.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_APISRPTubingSize.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_AssemblyType.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_BusinessOrganizationPriceList.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_BusinessOrganizationType.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_CatalogItem.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_CatalogItemDesc.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_CatalogPriceList.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_CatalogServices.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_ComponentCategory.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_ComponentCondition.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_ComponentDisposition.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_ComponentGrouping.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_ComponentOrigin.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_CorrosionAmount.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_CorrosionLocation.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_CorrosionType.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_Country.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_County.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_DiscountMethod.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_Engineer.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_EventCategoryReason.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_EventCategoryType.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_EventType.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_FacilityType.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_FailureInternalExternal.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_FailureLocation.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_FailureObservation.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_Field.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_Foreman.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_JobStatus.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_LanguageCode.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_Manufacturer.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_Material.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_MessageActivityPriorityCd.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_MessageActivityType.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_MfgCatalogItem.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_PartType.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_PartTypeComponentGrouping.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_PriceList.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_PSRSubAssemblyStatus.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_PSStatus.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_PumpJobType.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_Reservoir.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_SRPumpFailureReason.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_StateProvince.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_StickyNoteStatus.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_SurfaceCondition.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_TotalCategory.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_UOMClass.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_UOMUnit.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_WellProfile.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_WorkorderStatus.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_WorkorderType.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_WorkorderTypeTaskType.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.r_YearMonth.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.StickyNotes.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.TemplatePump.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.TemplatePumpDetail.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.TemplateSubAssembly.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.TemplateSubAssemblyDetail.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.UserMaster.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.Well.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.WellCompletionReservoirs.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.WellCompletionXRef.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.Workorder.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.WorkorderStatusHistory.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.WorkorderSubAssemblies.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.WorkorderSubAssembliesStatusHistory.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.XRRpt_Parts.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.XRRpt_PumpEvents.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.XRRpt_PumpView.datasource" />
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.XRRpt_WellView.datasource" />
+    <None Include="Service References\AppServer\AppServer.wsdl" />
+    <None Include="Service References\AppServer\AppServer.xsd" />
+    <None Include="Service References\AppServer\AppServer1.wsdl" />
+    <None Include="Service References\AppServer\AppServer1.xsd" />
+    <None Include="Service References\AppServer\AppServer2.xsd" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\AppServer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AppServer\AppServer.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AppServer\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\AppServer\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\DataSources\WFT.PSService.ServiceLibrary.ServiceResult.datasource" />
+    <None Include="Service References\AppServer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

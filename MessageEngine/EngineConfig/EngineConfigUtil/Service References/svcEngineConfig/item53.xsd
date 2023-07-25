@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Jaxis.Engine.Base.Device" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Jaxis.Engine.Base.Device" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8989/EngineConfigWCF/EngineConfigService/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Jaxis.Interfaces" />
+  <xs:complexType name="ArrayOfDeviceConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DeviceConfig" nillable="true" type="tns:DeviceConfig" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDeviceConfig" nillable="true" type="tns:ArrayOfDeviceConfig" />
+  <xs:complexType name="DeviceConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssemblyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssemblyType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssemblyVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ConsumerMessageType" type="xs:unsignedLong" />
+      <xs:element minOccurs="0" name="Filters" nillable="true" type="tns:ArrayOfFilterConfig" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Jaxis.Interfaces" minOccurs="0" name="Options" nillable="true" type="q1:ArrayOfDeviceConfigOption" />
+      <xs:element minOccurs="0" name="ProducerMessageType" type="xs:unsignedLong" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Jaxis.Interfaces" minOccurs="0" name="State" type="q2:DeviceState" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Jaxis.Interfaces" minOccurs="0" name="Type" type="q3:DeviceType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeviceConfig" nillable="true" type="tns:DeviceConfig" />
+  <xs:complexType name="ArrayOfFilterConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FilterConfig" nillable="true" type="tns:FilterConfig" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFilterConfig" nillable="true" type="tns:ArrayOfFilterConfig" />
+  <xs:complexType name="FilterConfig">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssemblyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssemblyType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AssemblyVersion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Jaxis.Interfaces" minOccurs="0" name="Options" nillable="true" type="q4:ArrayOfDeviceConfigOption" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Jaxis.Interfaces" minOccurs="0" name="Type" type="q5:FilterType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FilterConfig" nillable="true" type="tns:FilterConfig" />
+  <xs:simpleType name="EngineState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Started" />
+      <xs:enumeration value="Stopped" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EngineState" nillable="true" type="tns:EngineState" />
+</xs:schema>

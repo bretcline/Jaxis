@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LFI.RFID.Format" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LFI.RFID.Format" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:56355/FormatService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://localhost:56355/FormatService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="TagData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataRows" nillable="true" type="tns:ArrayOfDataRow" />
+      <xs:element minOccurs="0" name="FormatID" type="ser:guid" />
+      <xs:element minOccurs="0" name="HeaderRow" nillable="true" type="tns:DataRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TagData" nillable="true" type="tns:TagData" />
+  <xs:complexType name="ArrayOfDataRow">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataRow" nillable="true" type="tns:DataRow" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataRow" nillable="true" type="tns:ArrayOfDataRow" />
+  <xs:complexType name="DataRow">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsLocked" type="xs:boolean" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Values" nillable="true" type="q1:ArrayOfKeyValueOfstringstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataRow" nillable="true" type="tns:DataRow" />
+  <xs:complexType name="FormatDef">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DataRowDef" nillable="true" type="tns:DataRowDef" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HeaderRowDef" nillable="true" type="tns:DataRowDef" />
+      <xs:element minOccurs="0" name="ID" type="ser:guid" />
+      <xs:element minOccurs="0" name="MaxDataRows" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FormatDef" nillable="true" type="tns:FormatDef" />
+  <xs:complexType name="DataRowDef">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ElementDefs" nillable="true" type="tns:ArrayOfDataElementDef" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataRowDef" nillable="true" type="tns:DataRowDef" />
+  <xs:complexType name="ArrayOfDataElementDef">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DataElementDef" nillable="true" type="tns:DataElementDef" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDataElementDef" nillable="true" type="tns:ArrayOfDataElementDef" />
+  <xs:complexType name="DataElementDef">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Constraints" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DataType" type="tns:DataType" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Required" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataElementDef" nillable="true" type="tns:DataElementDef" />
+  <xs:simpleType name="DataType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Text" />
+      <xs:enumeration value="TextUnicode" />
+      <xs:enumeration value="DateOnly" />
+      <xs:enumeration value="TimeOnly" />
+      <xs:enumeration value="DateTime" />
+      <xs:enumeration value="PickList" />
+      <xs:enumeration value="PickListUnicode" />
+      <xs:enumeration value="PickListKeyValue" />
+      <xs:enumeration value="Bool" />
+      <xs:enumeration value="Double" />
+      <xs:enumeration value="Float" />
+      <xs:enumeration value="Int16" />
+      <xs:enumeration value="Int32" />
+      <xs:enumeration value="Guid" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DataType" nillable="true" type="tns:DataType" />
+</xs:schema>

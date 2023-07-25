@@ -1,0 +1,2 @@
+- The solution "Examples" is the solution containing the examples AND the setup package
+- The solution "Code Examples" contains all the code examples and is deployed in the setup package

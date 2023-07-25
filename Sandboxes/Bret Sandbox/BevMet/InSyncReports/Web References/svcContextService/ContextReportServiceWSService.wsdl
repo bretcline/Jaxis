@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.web.context.edgeware.insync.com/" xmlns:ns1="http://cxf.apache.org/bindings/xformat" name="ContextReportServiceWSService" targetNamespace="http://service.web.context.edgeware.insync.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns:tns="http://lang.java" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://lang.java">
+      <xsd:complexType name="Throwable">
+        <xsd:sequence />
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://service.web.context.edgeware.insync.com" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://service.web.context.edgeware.insync.com">
+      <xsd:complexType name="ArrayOfReportParameterComposer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ReportParameterComposer" nillable="true" type="tns:ReportParameterComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ReportDefinitionComposer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="category" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="chartType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="displayName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="fields" nillable="true" type="tns:ArrayOfReportFieldComposer" />
+          <xsd:element minOccurs="0" name="lastRunBy" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="lastRunStringTime" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="majorVersion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="minorVersion" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="parameters" nillable="true" type="tns:ArrayOfReportParameterComposer" />
+          <xsd:element minOccurs="0" name="reportKey" nillable="true" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="reportName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="reportType" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ReportFieldComposer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="columnName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="dataFormat" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="dataType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="displayName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="fieldName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="hidden" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="ordinal" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ReportParameterComposer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="dataType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="fieldName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="opnd1" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="opnd2" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="ordinal" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="paramType" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="tableAlias" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="tableName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="val1" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="val2" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfReportFieldComposer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ReportFieldComposer" nillable="true" type="tns:ReportFieldComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://util.common.insync.com" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://util.common.insync.com">
+      <xsd:complexType name="ArrayOfResultDataComposer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="ResultDataComposer" nillable="true" type="tns:ResultDataComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DataComposer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="value" nillable="true" type="xsd:anyType" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfDataComposer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="DataComposer" nillable="true" type="tns:DataComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ResultDataComposer">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="dataList" nillable="true" type="tns:ArrayOfDataComposer" />
+          <xsd:element minOccurs="0" name="key" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="level" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="parent" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:tns="http://soap.xml.javax" xmlns:ns0="http://lang.java" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://soap.xml.javax">
+      <xsd:import namespace="http://lang.java" />
+      <xsd:complexType name="SOAPException">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="cause" nillable="true" type="ns0:Throwable" />
+          <xsd:element minOccurs="0" name="message" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns:ns0="http://util.common.insync.com" xmlns:ns2="http://soap.xml.javax" xmlns:ns1="http://service.web.context.edgeware.insync.com" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://service.web.context.edgeware.insync.com/">
+      <xsd:import namespace="http://util.common.insync.com" />
+      <xsd:import namespace="http://service.web.context.edgeware.insync.com" />
+      <xsd:complexType name="string2stringMap">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="entry">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element minOccurs="0" name="key" type="xsd:string" />
+                <xsd:element minOccurs="0" name="value" type="xsd:string" />
+              </xsd:sequence>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="query" type="tns:query" />
+      <xsd:complexType name="query">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="reportName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="organizationName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="parameters" nillable="true" type="tns:string2stringMap" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="queryResponse" type="tns:queryResponse" />
+      <xsd:complexType name="queryResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns0:ArrayOfResultDataComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getReportPageCount" type="tns:getReportPageCount" />
+      <xsd:complexType name="getReportPageCount">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="reportName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="organizationName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="parameters" nillable="true" type="tns:string2stringMap" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getReportPageCountResponse" type="tns:getReportPageCountResponse" />
+      <xsd:complexType name="getReportPageCountResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns0:ResultDataComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getReportDefinition" type="tns:getReportDefinition" />
+      <xsd:complexType name="getReportDefinition">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="reportName" nillable="true" type="xsd:string" />
+          <xsd:element minOccurs="0" name="organizationName" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="getReportDefinitionResponse" type="tns:getReportDefinitionResponse" />
+      <xsd:complexType name="getReportDefinitionResponse">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="return" nillable="true" type="ns1:ReportDefinitionComposer" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="SOAPException" nillable="true" type="ns2:SOAPException" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getReportPageCount">
+    <wsdl:part name="parameters" element="tns:getReportPageCount" />
+  </wsdl:message>
+  <wsdl:message name="getReportPageCountResponse">
+    <wsdl:part name="parameters" element="tns:getReportPageCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="queryResponse">
+    <wsdl:part name="parameters" element="tns:queryResponse" />
+  </wsdl:message>
+  <wsdl:message name="getReportDefinition">
+    <wsdl:part name="parameters" element="tns:getReportDefinition" />
+  </wsdl:message>
+  <wsdl:message name="getReportDefinitionResponse">
+    <wsdl:part name="parameters" element="tns:getReportDefinitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SOAPException">
+    <wsdl:part name="SOAPException" element="tns:SOAPException" />
+  </wsdl:message>
+  <wsdl:message name="query">
+    <wsdl:part name="parameters" element="tns:query" />
+  </wsdl:message>
+  <wsdl:portType name="ContextReportService">
+    <wsdl:operation name="query">
+      <wsdl:input name="query" message="tns:query" />
+      <wsdl:output name="queryResponse" message="tns:queryResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+    <wsdl:operation name="getReportPageCount">
+      <wsdl:input name="getReportPageCount" message="tns:getReportPageCount" />
+      <wsdl:output name="getReportPageCountResponse" message="tns:getReportPageCountResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+    <wsdl:operation name="getReportDefinition">
+      <wsdl:input name="getReportDefinition" message="tns:getReportDefinition" />
+      <wsdl:output name="getReportDefinitionResponse" message="tns:getReportDefinitionResponse" />
+      <wsdl:fault name="SOAPException" message="tns:SOAPException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ContextReportServiceWSServiceSoapBinding" type="tns:ContextReportService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="query">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="query">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="queryResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReportPageCount">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getReportPageCount">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getReportPageCountResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getReportDefinition">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getReportDefinition">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getReportDefinitionResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="SOAPException">
+        <soap:fault use="literal" name="SOAPException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ContextReportServiceWSService">
+    <wsdl:port name="ContextReportServiceWSPort" binding="tns:ContextReportServiceWSServiceSoapBinding">
+      <soap:address location="http://204.232.156.182:8080/sensornet/services/swContextService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

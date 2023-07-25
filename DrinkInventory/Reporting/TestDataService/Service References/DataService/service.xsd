@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" />
+  <xs:element name="GetUPC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="_organizationId" type="q1:guid" />
+        <xs:element minOccurs="0" name="_ItemNumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUPCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetUPCResult" nillable="true" type="xs:anyType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUPC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="_organizationId" type="q2:guid" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" minOccurs="0" name="_upc" nillable="true" type="q3:UPC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUPCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveUPCResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUPCs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="_organizationId" type="q4:guid" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" minOccurs="0" name="_upcs" nillable="true" type="q5:ArrayOfUPC" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveUPCsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveUPCsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePour">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="_organizationId" type="q6:guid" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" minOccurs="0" name="_pour" nillable="true" type="q7:Pour" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePourResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SavePourResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePours">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="_organizationId" type="q8:guid" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" minOccurs="0" name="_pours" nillable="true" type="q9:ArrayOfPour" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePoursResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SavePoursResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePour">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="_organizationId" type="q10:guid" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" minOccurs="0" name="_pourUpdate" nillable="true" type="q11:PourUpdate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePourResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdatePourResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePours">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="_organizationId" type="q12:guid" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" minOccurs="0" name="_pourUpdates" nillable="true" type="q13:ArrayOfPourUpdate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePoursResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdatePoursResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveAlert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="_organizationId" type="q14:guid" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" minOccurs="0" name="_alert" nillable="true" type="q15:Alert" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveAlertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveAlertResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveAlerts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="_organizationId" type="q16:guid" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" minOccurs="0" name="_alerts" nillable="true" type="q17:ArrayOfAlert" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveAlertsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveAlertsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDevice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="_organizationId" type="q18:guid" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" minOccurs="0" name="_device" nillable="true" type="q19:Device" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDeviceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveDeviceResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDevices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="_organizationId" type="q20:guid" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" minOccurs="0" name="_devices" nillable="true" type="q21:ArrayOfDevice" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveDevicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveDevicesResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePOSTicketItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="_organizationId" type="q22:guid" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" minOccurs="0" name="_posTicketItem" nillable="true" type="q23:POSTicketItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePOSTicketItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SavePOSTicketItemResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePOSTicketItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="_organizationId" type="q24:guid" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" minOccurs="0" name="_posTicketItems" nillable="true" type="q25:ArrayOfPOSTicketItem" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SavePOSTicketItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SavePOSTicketItemsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePOSTicketItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="_organizationId" type="q26:guid" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" minOccurs="0" name="_posUpdate" nillable="true" type="q27:POSUpdate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePOSTicketItemResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdatePOSTicketItemResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePOSTicketItems">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="_organizationId" type="q28:guid" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" minOccurs="0" name="_posUpdates" nillable="true" type="q29:ArrayOfPOSUpdate" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePOSTicketItemsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdatePOSTicketItemsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

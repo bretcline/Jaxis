@@ -1,0 +1,64 @@
+﻿<dx:DXWindow
+    x:Class="LeaderBoard.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:LeaderBoard"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:dxd="http://schemas.devexpress.com/winfx/2008/xaml/docking"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:dxga="http://schemas.devexpress.com/winfx/2008/xaml/gauges"
+    Title="Beverage Metrics" Height="768" Width="1095"
+    SnapsToDevicePixels="True" UseLayoutRounding="True"
+    dx:ThemeManager.ThemeName="DeepBlue" FontSize="20">
+
+    <dxb:BarManager Name="barManager" CreateStandardLayout="True">
+        <dxd:DockLayoutManager>
+            <dxd:LayoutGroup>
+                <dxd:DocumentGroup ItemHeight="3*" SelectedTabIndex="0" ItemWidth="1.17*">
+                    <dxd:DocumentPanel Caption="Leader Board" ItemHeight="3*">
+                        <dxg:GridControl AutoPopulateColumns="True" ShowBorder="False" UseLayoutRounding="True">
+                            <dxg:GridControl.Columns>
+                                <dxg:GridColumn Width="360" FieldName="Text" Header="Name" />
+                                <dxg:GridColumn Width="160" FieldName="Number" Header="Pour Amount" UnboundType="Decimal" />
+                            </dxg:GridControl.Columns>
+                            <dxg:GridControl.ItemsSource>
+                                <local:SourceList Capacity="10">
+                                    <local:TestData Text="Bret Cline" Number="2.0" />
+                                    <local:TestData Text="Zach Lawrence" Number="1.9" />
+                                    <local:TestData Text="Pete Smith" Number="2.1" />
+                                    <local:TestData Text="James Rhodes" Number="1.8" />
+                                    <local:TestData Text="Peter Linke" Number="2.2" />
+                                    <local:TestData Text="Crash Lowe" Number="2.5" />
+                                </local:SourceList>
+                            </dxg:GridControl.ItemsSource>
+                            <dxg:GridControl.View>
+                                <dxg:TableView />
+                            </dxg:GridControl.View>
+                        </dxg:GridControl>
+                    </dxd:DocumentPanel>
+                </dxd:DocumentGroup>
+                <dxd:LayoutPanel Caption="DetailView" ItemHeight="2*" ItemWidth="0.83*">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0" />
+                            <ColumnDefinition Width="35*" />
+                        </Grid.ColumnDefinitions>
+                        <dxga:DigitalGaugeControl Name="digitalGaugeControl" Grid.Column="1" Padding="16" VerticalAlignment="Center" Background="White">
+                            <dxga:DigitalGaugeControl.Model>
+                                <dxga:DigitalEcoModel />
+                            </dxga:DigitalGaugeControl.Model>
+                            <dxga:DigitalGaugeControl.Layers>
+                                <dxga:DigitalGaugeLayer />
+                            </dxga:DigitalGaugeControl.Layers>
+                            <dxga:DigitalGaugeControl.SymbolView>
+                                <dxga:FourteenSegmentsView />
+                            </dxga:DigitalGaugeControl.SymbolView>
+                        </dxga:DigitalGaugeControl>
+                    </Grid>
+                </dxd:LayoutPanel>
+            </dxd:LayoutGroup>
+        </dxd:DockLayoutManager>
+    </dxb:BarManager>
+
+</dx:DXWindow>

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="Timetracker" Class="TimetrackerLinqDataContext" Serialization="Unidirectional" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=HP8000;Initial Catalog=Timetracker;Persist Security Info=True;User ID=TimeTracker" SettingsObjectName="TimetrackerData.Properties.Settings" SettingsPropertyName="TimetrackerConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Projects" Member="Projects">
+    <Type Name="Project">
+      <Column Name="ProjectID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(1024)" CanBeNull="true" />
+      <Column Name="ProjectVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="GroupXProject_Project" Member="GroupXProject" ThisKey="ProjectID" OtherKey="ProjectID" Type="GroupXProject" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TimeEntries" Member="TimeEntries">
+    <Type Name="TimeEntry">
+      <Column Name="TimeEntryID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="StartTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(4096)" CanBeNull="true" />
+      <Association Name="Project_TimeEntry" Member="Project" ThisKey="ProjectID" Type="Project" IsForeignKey="true" />
+      <Association Name="User_TimeEntry" Member="User" ThisKey="UserID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Security" Member="Securities">
+    <Type Name="Security">
+      <Column Name="SecurityID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PageURL" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="ControlName" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Association Name="GroupXSecurity_Security" Member="GroupXSecurity" ThisKey="SecurityID" OtherKey="SecurityID" Type="GroupXSecurity" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserSessions" Member="UserSessions">
+    <Type Name="UserSession">
+      <Column Name="UserSessionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SessionID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="User_UserSession" Member="User" ThisKey="UserID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vwTimeEntries" Member="vwTimeEntries">
+    <Type Name="vwTimeEntry">
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(4096)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TimeEntryID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="StartTime" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="[Elapsed Time]" Member="Elapsed_Time" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ProjectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Groups" Member="Groups">
+    <Type Name="Group">
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GroupName" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="GroupDescription" Type="System.String" DbType="VarChar(4096)" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Group_GroupXSecurity" Member="GroupXSecurities" OtherKey="GroupID" Type="GroupXSecurity" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GroupXProject" Member="GroupXProjects">
+    <Type Name="GroupXProject">
+      <Column Name="GxPID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ProjectID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Group_GroupXProject" Member="Group" ThisKey="GroupID" Type="Group" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GroupXSecurity" Member="GroupXSecurities">
+    <Type Name="GroupXSecurity">
+      <Column Name="GxSID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SecurityID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="GroupXSecurity_Security" Member="Securities" ThisKey="SecurityID" OtherKey="SecurityID" Type="Security" />
+      <Association Name="Group_GroupXSecurity" Member="Group" ThisKey="GroupID" Type="Group" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserXGroup" Member="UserXGroups">
+    <Type Name="UserXGroup">
+      <Column Name="UxGID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Group_UserXGroup" Member="Group" ThisKey="GroupID" Type="Group" IsForeignKey="true" />
+      <Association Name="User_UserXGroup" Member="User" ThisKey="UserID" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Login" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Company" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="UserVisible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="PersonalGroupID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="User_TimeEntry" Member="TimeEntries" OtherKey="UserID" Type="TimeEntry" />
+      <Association Name="User_UserSession" Member="UserSessions" OtherKey="UserID" Type="UserSession" />
+      <Association Name="User_UserXGroup" Member="UserXGroups" OtherKey="UserID" Type="UserXGroup" />
+    </Type>
+  </Table>
+</Database>

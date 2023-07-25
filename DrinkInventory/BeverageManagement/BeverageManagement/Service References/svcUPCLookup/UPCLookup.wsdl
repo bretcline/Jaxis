@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:typens="urn:UPCLookup" xmlns="http://schemas.xmlsoap.org/wsdl/" name="urn:UPCLookup" targetNamespace="urn:UPCLookup" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:UPCLookup">
+      <xsd:complexType name="UPCLookupResult">
+        <xsd:all>
+          <xsd:element name="description" type="xsd:string" />
+          <xsd:element name="sizeWeight" type="xsd:string" />
+          <xsd:element name="manufacturer" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getProductInfo">
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="password" type="xsd:string" />
+    <wsdl:part name="upc" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getProductInfoResponse">
+    <wsdl:part name="return" type="typens:UPCLookupResult" />
+  </wsdl:message>
+  <wsdl:portType name="UPCLookupPort">
+    <wsdl:operation name="getProductInfo">
+      <wsdl:input message="typens:getProductInfo" />
+      <wsdl:output message="typens:getProductInfoResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UPCLookupBinding" type="typens:UPCLookupPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="getProductInfo">
+      <soap:operation soapAction="urn:UPCLookupAction" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:UPCLookup" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:UPCLookup" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UPCLookupService">
+    <documentation>Enter the all digits printed on the UPC bar code, including any numbers to the right or left of the bar code itself, even if they don't line up with the main row of numbers.  This service will return the product name, description, size, and manufacturer.</documentation>
+    <wsdl:port name="UPCLookupPort" binding="typens:UPCLookupBinding">
+      <soap:address location="http://www.flash-db.com/services/ws/upcLookup.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileLineRemover", "FileLineRemover\FileLineRemover.csproj", "{ECB4E579-A88A-41F0-89B3-E8F98F589557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSDescriptions", "..\POSDescriptions\POSDescriptions.csproj", "{2876F63E-B34B-4E3A-9DB0-F39382DE283F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECB4E579-A88A-41F0-89B3-E8F98F589557}.Debug|x86.ActiveCfg = Debug|x86
+		{ECB4E579-A88A-41F0-89B3-E8F98F589557}.Debug|x86.Build.0 = Debug|x86
+		{ECB4E579-A88A-41F0-89B3-E8F98F589557}.Release|x86.ActiveCfg = Release|x86
+		{ECB4E579-A88A-41F0-89B3-E8F98F589557}.Release|x86.Build.0 = Release|x86
+		{2876F63E-B34B-4E3A-9DB0-F39382DE283F}.Debug|x86.ActiveCfg = Debug|x86
+		{2876F63E-B34B-4E3A-9DB0-F39382DE283F}.Debug|x86.Build.0 = Debug|x86
+		{2876F63E-B34B-4E3A-9DB0-F39382DE283F}.Release|x86.ActiveCfg = Release|x86
+		{2876F63E-B34B-4E3A-9DB0-F39382DE283F}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

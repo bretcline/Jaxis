@@ -1,0 +1,498 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Assembly" xml:space="preserve">
+    <value>Assembly</value>
+  </data>
+  <data name="AssemblyComponent" xml:space="preserve">
+    <value>AssemblyComponent</value>
+  </data>
+  <data name="AssemblyComponentBblPlgMeasure" xml:space="preserve">
+    <value>AssemblyComponentBblPlgMeasure</value>
+  </data>
+  <data name="AssemblyComponentSRPump" xml:space="preserve">
+    <value>AssemblyComponentSRPump</value>
+  </data>
+  <data name="BusinessOrganization" xml:space="preserve">
+    <value>BusinessOrganization</value>
+  </data>
+  <data name="Component" xml:space="preserve">
+    <value>Component</value>
+  </data>
+  <data name="ComponentSRPump" xml:space="preserve">
+    <value>ComponentSRPump</value>
+  </data>
+  <data name="csDBEntity" xml:space="preserve">
+    <value>Entity</value>
+  </data>
+  <data name="csDBIndexes" xml:space="preserve">
+    <value>Indexes</value>
+  </data>
+  <data name="csDBMessage" xml:space="preserve">
+    <value>Message</value>
+  </data>
+  <data name="csDBRelations" xml:space="preserve">
+    <value>Relations</value>
+  </data>
+  <data name="csDBRep" xml:space="preserve">
+    <value>Rep</value>
+  </data>
+  <data name="csDBRepLangDep" xml:space="preserve">
+    <value>RepLangDep</value>
+  </data>
+  <data name="csErrorLog" xml:space="preserve">
+    <value>ErrorLog</value>
+  </data>
+  <data name="DatabaseConfiguration" xml:space="preserve">
+    <value>DatabaseConfiguration</value>
+  </data>
+  <data name="DeletedLog" xml:space="preserve">
+    <value>DeletedLog</value>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>Document</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>Event</value>
+  </data>
+  <data name="EventAssembleSRPump" xml:space="preserve">
+    <value>EventAssembleSRPump</value>
+  </data>
+  <data name="EventComponentFailure" xml:space="preserve">
+    <value>EventComponentFailure</value>
+  </data>
+  <data name="EventDetailCosts" xml:space="preserve">
+    <value>EventDetailCosts</value>
+  </data>
+  <data name="EventDisassembleSRPump" xml:space="preserve">
+    <value>EventDisassembleSRPump</value>
+  </data>
+  <data name="EventInstallPump" xml:space="preserve">
+    <value>EventInstallPump</value>
+  </data>
+  <data name="EventPullPump" xml:space="preserve">
+    <value>EventPullPump</value>
+  </data>
+  <data name="Facility" xml:space="preserve">
+    <value>Facility</value>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>Invoice</value>
+  </data>
+  <data name="Job" xml:space="preserve">
+    <value>Job</value>
+  </data>
+  <data name="JobStatusChangeLog" xml:space="preserve">
+    <value>JobStatusChangeLog</value>
+  </data>
+  <data name="Lease" xml:space="preserve">
+    <value>Lease</value>
+  </data>
+  <data name="Owner" xml:space="preserve">
+    <value>Owner</value>
+  </data>
+  <data name="r_APIPumpGraphics" xml:space="preserve">
+    <value>APIPumpGraphics</value>
+  </data>
+  <data name="r_APIPumpGraphicsStatusIcons" xml:space="preserve">
+    <value>APIPumpGraphicsStatusIcons</value>
+  </data>
+  <data name="r_APISRPBarrelType" xml:space="preserve">
+    <value>BarrelType</value>
+  </data>
+  <data name="r_APISRPExtBarrelType" xml:space="preserve">
+    <value>ExtBarrelType</value>
+  </data>
+  <data name="r_APISRPExtBblAcc" xml:space="preserve">
+    <value>ExtBblAcc</value>
+  </data>
+  <data name="r_APISRPExtPlgAcc" xml:space="preserve">
+    <value>ExtPlgAcc</value>
+  </data>
+  <data name="r_APISRPExtPlgPin" xml:space="preserve">
+    <value>ExtPlgPin</value>
+  </data>
+  <data name="r_APISRPExtPlgType" xml:space="preserve">
+    <value>ExtPlgType</value>
+  </data>
+  <data name="r_APISRPExtPumpType" xml:space="preserve">
+    <value>ExtPumpType</value>
+  </data>
+  <data name="r_APISRPExtSand" xml:space="preserve">
+    <value>ExtSand</value>
+  </data>
+  <data name="r_APISRPExtSeatAssyLocation" xml:space="preserve">
+    <value>ExtSeatAssyLocation</value>
+  </data>
+  <data name="r_APISRPExtSeatAssyType" xml:space="preserve">
+    <value>ExtSeatAssyType</value>
+  </data>
+  <data name="r_APISRPExtSV" xml:space="preserve">
+    <value>ExtSV</value>
+  </data>
+  <data name="r_APISRPExtSVCage" xml:space="preserve">
+    <value>ExtSVCage</value>
+  </data>
+  <data name="r_APISRPExtTV" xml:space="preserve">
+    <value>ExtTV</value>
+  </data>
+  <data name="r_APISRPExtTVCage" xml:space="preserve">
+    <value>ExtTVCage</value>
+  </data>
+  <data name="r_APISRPExtTVStPlg" xml:space="preserve">
+    <value>ExtTVStPlg</value>
+  </data>
+  <data name="r_APISRPExtVRod" xml:space="preserve">
+    <value>ExtVRod</value>
+  </data>
+  <data name="r_APISRPExtWiper" xml:space="preserve">
+    <value>ExtWiper</value>
+  </data>
+  <data name="r_APISRPPumpBore" xml:space="preserve">
+    <value>PumpBore</value>
+  </data>
+  <data name="r_APISRPPumpType" xml:space="preserve">
+    <value>PumpType</value>
+  </data>
+  <data name="r_APISRPSeatAssyLocation" xml:space="preserve">
+    <value>SeatAssyLocation</value>
+  </data>
+  <data name="r_APISRPSeatAssyType" xml:space="preserve">
+    <value>SeatAssyType</value>
+  </data>
+  <data name="r_APISRPTubingSize" xml:space="preserve">
+    <value>TubingSize</value>
+  </data>
+  <data name="r_AssemblyType" xml:space="preserve">
+    <value>AssemblyType</value>
+  </data>
+  <data name="r_BusinessOrganizationPriceList" xml:space="preserve">
+    <value>BusinessOrganizationPriceList</value>
+  </data>
+  <data name="r_BusinessOrganizationType" xml:space="preserve">
+    <value>BusinessOrganizationType</value>
+  </data>
+  <data name="r_CatalogItem" xml:space="preserve">
+    <value>CatalogItem</value>
+  </data>
+  <data name="r_CatalogItemDesc" xml:space="preserve">
+    <value>CatalogItemDesc</value>
+  </data>
+  <data name="r_CatalogPriceList" xml:space="preserve">
+    <value>CatalogPriceList</value>
+  </data>
+  <data name="r_CatalogServices" xml:space="preserve">
+    <value>CatalogServices</value>
+  </data>
+  <data name="r_ComponentCategory" xml:space="preserve">
+    <value>ComponentCategory</value>
+  </data>
+  <data name="r_ComponentCondition" xml:space="preserve">
+    <value>ComponentCondition</value>
+  </data>
+  <data name="r_ComponentDisposition" xml:space="preserve">
+    <value>ComponentDisposition</value>
+  </data>
+  <data name="r_ComponentGrouping" xml:space="preserve">
+    <value>ComponentGrouping</value>
+  </data>
+  <data name="r_ComponentOrigin" xml:space="preserve">
+    <value>ComponentOrigin</value>
+  </data>
+  <data name="r_CorrosionAmount" xml:space="preserve">
+    <value>CorrosionAmount</value>
+  </data>
+  <data name="r_CorrosionLocation" xml:space="preserve">
+    <value>CorrosionLocation</value>
+  </data>
+  <data name="r_CorrosionType" xml:space="preserve">
+    <value>CorrosionType</value>
+  </data>
+  <data name="r_Country" xml:space="preserve">
+    <value>Country</value>
+  </data>
+  <data name="r_County" xml:space="preserve">
+    <value>County</value>
+  </data>
+  <data name="r_DiscountMethod" xml:space="preserve">
+    <value>DiscountMethod</value>
+  </data>
+  <data name="r_Engineer" xml:space="preserve">
+    <value>Engineer</value>
+  </data>
+  <data name="r_EventCategoryReason" xml:space="preserve">
+    <value>EventCategoryReason</value>
+  </data>
+  <data name="r_EventCategoryType" xml:space="preserve">
+    <value>EventCategoryType</value>
+  </data>
+  <data name="r_EventType" xml:space="preserve">
+    <value>EventType</value>
+  </data>
+  <data name="r_FacilityType" xml:space="preserve">
+    <value>FacilityType</value>
+  </data>
+  <data name="r_FailureInternalExternal" xml:space="preserve">
+    <value>FailureInternalExternal</value>
+  </data>
+  <data name="r_FailureLocation" xml:space="preserve">
+    <value>FailureLocation</value>
+  </data>
+  <data name="r_FailureObservation" xml:space="preserve">
+    <value>FailureObservation</value>
+  </data>
+  <data name="r_Field" xml:space="preserve">
+    <value>Field</value>
+  </data>
+  <data name="r_Foreman" xml:space="preserve">
+    <value>Foreman</value>
+  </data>
+  <data name="r_JobStatus" xml:space="preserve">
+    <value>JobStatus</value>
+  </data>
+  <data name="r_LanguageCode" xml:space="preserve">
+    <value>LanguageCode</value>
+  </data>
+  <data name="r_Manufacturer" xml:space="preserve">
+    <value>Manufacturer</value>
+  </data>
+  <data name="r_Material" xml:space="preserve">
+    <value>Material</value>
+  </data>
+  <data name="r_MessageActivityPriorityCd" xml:space="preserve">
+    <value>MessageActivityPriorityCd</value>
+  </data>
+  <data name="r_MessageActivityType" xml:space="preserve">
+    <value>MessageActivityType</value>
+  </data>
+  <data name="r_MfgCatalogItem" xml:space="preserve">
+    <value>MfgCatalogItem</value>
+  </data>
+  <data name="r_PartType" xml:space="preserve">
+    <value>PartType</value>
+  </data>
+  <data name="r_PartTypeComponentGrouping" xml:space="preserve">
+    <value>PartTypeComponentGrouping</value>
+  </data>
+  <data name="r_PriceList" xml:space="preserve">
+    <value>PriceList</value>
+  </data>
+  <data name="r_PSRSubAssemblyStatus" xml:space="preserve">
+    <value>PSRSubAssemblyStatus</value>
+  </data>
+  <data name="r_PSStatus" xml:space="preserve">
+    <value>PSStatus</value>
+  </data>
+  <data name="r_PumpJobType" xml:space="preserve">
+    <value>PumpJobType</value>
+  </data>
+  <data name="r_Reservoir" xml:space="preserve">
+    <value>Reservoir</value>
+  </data>
+  <data name="r_SRPumpFailureReason" xml:space="preserve">
+    <value>SRPumpFailureReason</value>
+  </data>
+  <data name="r_StateProvince" xml:space="preserve">
+    <value>StateProvince</value>
+  </data>
+  <data name="r_StickyNoteStatus" xml:space="preserve">
+    <value>StickyNoteStatus</value>
+  </data>
+  <data name="r_SurfaceCondition" xml:space="preserve">
+    <value>SurfaceCondition</value>
+  </data>
+  <data name="r_TotalCategory" xml:space="preserve">
+    <value>TotalCategory</value>
+  </data>
+  <data name="r_UOMClass" xml:space="preserve">
+    <value>UOMClass</value>
+  </data>
+  <data name="r_UOMUnit" xml:space="preserve">
+    <value>UOMUnit</value>
+  </data>
+  <data name="r_WellProfile" xml:space="preserve">
+    <value>WellProfile</value>
+  </data>
+  <data name="r_WorkorderStatus" xml:space="preserve">
+    <value>WorkorderStatus</value>
+  </data>
+  <data name="r_WorkorderType" xml:space="preserve">
+    <value>WorkorderType</value>
+  </data>
+  <data name="r_WorkorderTypeTaskType" xml:space="preserve">
+    <value>WorkorderTypeTaskType</value>
+  </data>
+  <data name="r_YearMonth" xml:space="preserve">
+    <value>YearMonth</value>
+  </data>
+  <data name="StickyNotes" xml:space="preserve">
+    <value>StickyNotes</value>
+  </data>
+  <data name="sysdiagrams" xml:space="preserve">
+    <value>sysdiagrams</value>
+  </data>
+  <data name="TemplatePump" xml:space="preserve">
+    <value>TemplatePump</value>
+  </data>
+  <data name="TemplatePumpDetail" xml:space="preserve">
+    <value>TemplatePumpDetail</value>
+  </data>
+  <data name="TemplateSubAssembly" xml:space="preserve">
+    <value>TemplateSubAssembly</value>
+  </data>
+  <data name="TemplateSubAssemblyDetail" xml:space="preserve">
+    <value>TemplateSubAssemblyDetail</value>
+  </data>
+  <data name="UserMaster" xml:space="preserve">
+    <value>UserMaster</value>
+  </data>
+  <data name="Well" xml:space="preserve">
+    <value>Well</value>
+  </data>
+  <data name="WellCompletionReservoirs" xml:space="preserve">
+    <value>WellCompletionReservoirs</value>
+  </data>
+  <data name="WellCompletionXRef" xml:space="preserve">
+    <value>WellCompletionXRef</value>
+  </data>
+  <data name="Workorder" xml:space="preserve">
+    <value>Workorder</value>
+  </data>
+  <data name="WorkorderStatusHistory" xml:space="preserve">
+    <value>WorkorderStatusHistory</value>
+  </data>
+  <data name="WorkorderSubAssemblies" xml:space="preserve">
+    <value>WorkorderSubAssemblies</value>
+  </data>
+  <data name="WorkorderSubAssembliesStatusHistory" xml:space="preserve">
+    <value>WorkorderSubAssembliesStatusHistory</value>
+  </data>
+  <data name="XRRpt_Parts" xml:space="preserve">
+    <value>XRRpt_Parts</value>
+  </data>
+  <data name="XRRpt_PumpEvents" xml:space="preserve">
+    <value>XRRpt_PumpEvents</value>
+  </data>
+  <data name="XRRpt_PumpView" xml:space="preserve">
+    <value>XRRpt_PumpView</value>
+  </data>
+  <data name="XRRpt_WellView" xml:space="preserve">
+    <value>XRRpt_WellView</value>
+  </data>
+</root>

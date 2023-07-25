@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetTags" targetNamespace="http://tempuri.org/DataSetTags.xsd" xmlns:mstns="http://tempuri.org/DataSetTags.xsd" xmlns="http://tempuri.org/DataSetTags.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetTags" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSetTags" msprop:Generator_DataSetName="DataSetTags">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTableTags" msprop:Generator_UserTableName="DataTableTags" msprop:Generator_RowDeletedName="DataTableTagsRowDeleted" msprop:Generator_TableClassName="DataTableTagsDataTable" msprop:Generator_RowChangedName="DataTableTagsRowChanged" msprop:Generator_RowClassName="DataTableTagsRow" msprop:Generator_RowChangingName="DataTableTagsRowChanging" msprop:Generator_RowEvArgName="DataTableTagsRowChangeEvent" msprop:Generator_RowEvHandlerName="DataTableTagsRowChangeEventHandler" msprop:Generator_TablePropName="DataTableTags" msprop:Generator_TableVarName="tableDataTableTags" msprop:Generator_RowDeletingName="DataTableTagsRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SerialNumber" msprop:Generator_UserColumnName="SerialNumber" msprop:Generator_ColumnPropNameInRow="SerialNumber" msprop:Generator_ColumnVarNameInTable="columnSerialNumber" msprop:Generator_ColumnPropNameInTable="SerialNumberColumn" type="xs:string" />
+              <xs:element name="SignalStrength" msprop:Generator_UserColumnName="SignalStrength" msprop:Generator_ColumnPropNameInRow="SignalStrength" msprop:Generator_ColumnVarNameInTable="columnSignalStrength" msprop:Generator_ColumnPropNameInTable="SignalStrengthColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="Model" msprop:Generator_UserColumnName="Model" msprop:Generator_ColumnPropNameInRow="Model" msprop:Generator_ColumnVarNameInTable="columnModel" msprop:Generator_ColumnPropNameInTable="ModelColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="LongRangeEnabled" msprop:Generator_UserColumnName="LongRangeEnabled" msprop:Generator_ColumnPropNameInRow="LongRangeEnabled" msprop:Generator_ColumnVarNameInTable="columnLongRangeEnabled" msprop:Generator_ColumnPropNameInTable="LongRangeEnabledColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="BatteryConsumed" msprop:Generator_UserColumnName="BatteryConsumed" msprop:Generator_ColumnPropNameInRow="BatteryConsumed" msprop:Generator_ColumnVarNameInTable="columnBatteryConsumed" msprop:Generator_ColumnPropNameInTable="BatteryConsumedColumn" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTableTags" />
+      <xs:field xpath="mstns:SerialNumber" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

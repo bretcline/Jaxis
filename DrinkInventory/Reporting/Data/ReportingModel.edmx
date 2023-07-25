@@ -1,0 +1,1199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DrinkReportingModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="DrinkReportingModelStoreContainer">
+          <EntitySet Name="Alerts" EntityType="DrinkReportingModel.Store.Alerts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AreaMemberships" EntityType="DrinkReportingModel.Store.AreaMemberships" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Areas" EntityType="DrinkReportingModel.Store.Areas" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Columns" EntityType="DrinkReportingModel.Store.Columns" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Devices" EntityType="DrinkReportingModel.Store.Devices" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Organizations" EntityType="DrinkReportingModel.Store.Organizations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Parameters" EntityType="DrinkReportingModel.Store.Parameters" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="POSTicketItems" EntityType="DrinkReportingModel.Store.POSTicketItems" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Pours" EntityType="DrinkReportingModel.Store.Pours" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Reports" EntityType="DrinkReportingModel.Store.Reports" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Schema" EntityType="DrinkReportingModel.Store.Schema" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sessions" EntityType="DrinkReportingModel.Store.Sessions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UPCs" EntityType="DrinkReportingModel.Store.UPCs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserGroupMemberships" EntityType="DrinkReportingModel.Store.UserGroupMemberships" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserGroups" EntityType="DrinkReportingModel.Store.UserGroups" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="UserGroupXOrganizations" EntityType="DrinkReportingModel.Store.UserGroupXOrganizations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="DrinkReportingModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SecurityView" EntityType="DrinkReportingModel.Store.SecurityView" store:Type="Views" store:Schema="dbo" store:Name="SecurityView">
+            <DefiningQuery>SELECT 
+      [SecurityView].[OrganizationId] AS [OrganizationId], 
+      [SecurityView].[SessionId] AS [SessionId]
+      FROM [dbo].[SecurityView] AS [SecurityView]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_AreaMemberships_Areas" Association="DrinkReportingModel.Store.FK_AreaMemberships_Areas">
+            <End Role="Areas" EntitySet="Areas" />
+            <End Role="AreaMemberships" EntitySet="AreaMemberships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AreaMemberships_UserGroups" Association="DrinkReportingModel.Store.FK_AreaMemberships_UserGroups">
+            <End Role="UserGroups" EntitySet="UserGroups" />
+            <End Role="AreaMemberships" EntitySet="AreaMemberships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Columns_Reports" Association="DrinkReportingModel.Store.FK_Columns_Reports">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="Columns" EntitySet="Columns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organizations_Organizations" Association="DrinkReportingModel.Store.FK_Organizations_Organizations">
+            <End Role="Organizations" EntitySet="Organizations" />
+            <End Role="Organizations1" EntitySet="Organizations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Parameters_Reports" Association="DrinkReportingModel.Store.FK_Parameters_Reports">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="Parameters" EntitySet="Parameters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pours_POSTicketItems" Association="DrinkReportingModel.Store.FK_Pours_POSTicketItems">
+            <End Role="POSTicketItems" EntitySet="POSTicketItems" />
+            <End Role="Pours" EntitySet="Pours" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sessions_Users" Association="DrinkReportingModel.Store.FK_Sessions_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Sessions" EntitySet="Sessions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroupMemberships_UserGroups" Association="DrinkReportingModel.Store.FK_UserGroupMemberships_UserGroups">
+            <End Role="UserGroups" EntitySet="UserGroups" />
+            <End Role="UserGroupMemberships" EntitySet="UserGroupMemberships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroupMemberships_Users" Association="DrinkReportingModel.Store.FK_UserGroupMemberships_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserGroupMemberships" EntitySet="UserGroupMemberships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroups_Organizations" Association="DrinkReportingModel.Store.FK_UserGroups_Organizations">
+            <End Role="Organizations" EntitySet="Organizations" />
+            <End Role="UserGroups" EntitySet="UserGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroupXOrganizations_Organizations" Association="DrinkReportingModel.Store.FK_UserGroupXOrganizations_Organizations">
+            <End Role="Organizations" EntitySet="Organizations" />
+            <End Role="UserGroupXOrganizations" EntitySet="UserGroupXOrganizations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroupXOrganizations_UserGroups" Association="DrinkReportingModel.Store.FK_UserGroupXOrganizations_UserGroups">
+            <End Role="UserGroups" EntitySet="UserGroups" />
+            <End Role="UserGroupXOrganizations" EntitySet="UserGroupXOrganizations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Organizations" Association="DrinkReportingModel.Store.FK_Users_Organizations">
+            <End Role="Organizations" EntitySet="Organizations" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Alerts">
+          <Key>
+            <PropertyRef Name="AlertId" />
+          </Key>
+          <Property Name="AlertId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Message" Type="nvarchar" Nullable="false" MaxLength="152" />
+          <Property Name="AlertTime" Type="datetime" Nullable="false" />
+          <Property Name="AlertType" Type="int" Nullable="false" />
+          <Property Name="OrganizationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Severity" Type="int" Nullable="false" />
+          <Property Name="LocationName" Type="nvarchar" MaxLength="256" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AreaMemberships">
+          <Key>
+            <PropertyRef Name="AreaMembershipId" />
+          </Key>
+          <Property Name="AreaMembershipId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AreaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserGroupId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Areas">
+          <Key>
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="AreaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="Order" Type="int" Nullable="false" />
+          <Property Name="ShortName" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="Controller" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Columns">
+          <Key>
+            <PropertyRef Name="ColumnId" />
+          </Key>
+          <Property Name="ColumnId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="DisplayName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="ReportId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="Devices">
+          <Key>
+            <PropertyRef Name="DeviceNumber" />
+          </Key>
+          <Property Name="DeviceId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DeviceNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="OrganizationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="LocationName" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="Organizations">
+          <Key>
+            <PropertyRef Name="OrganizationId" />
+          </Key>
+          <Property Name="OrganizationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="ParentId" Type="uniqueidentifier" />
+          <Property Name="ShortName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Path" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" MaxLength="512" />
+        </EntityType>
+        <EntityType Name="Parameters">
+          <Key>
+            <PropertyRef Name="ParameterId" />
+          </Key>
+          <Property Name="ParameterId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="ReportId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Order" Type="int" Nullable="false" />
+          <Property Name="Label" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="POSTicketItems">
+          <Key>
+            <PropertyRef Name="POSTicketItemId" />
+          </Key>
+          <Property Name="POSTicketItemId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CheckNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="256" />
+          <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Price" Type="money" />
+          <Property Name="Quantity" Type="int" Nullable="false" />
+          <Property Name="LocationName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Establishment" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="TicketDate" Type="datetime" Nullable="false" />
+          <Property Name="OrganizationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pours">
+          <Key>
+            <PropertyRef Name="PourId" />
+          </Key>
+          <Property Name="PourId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="PourTime" Type="datetime" Nullable="false" />
+          <Property Name="TagNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="DeviceNumber" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Volume" Type="float" Nullable="false" />
+          <Property Name="Duration" Type="float" Nullable="false" />
+          <Property Name="AmountLeft" Type="float" Nullable="false" />
+          <Property Name="Temperature" Type="float" Nullable="false" />
+          <Property Name="RawData" Type="nvarchar" MaxLength="2048" />
+          <Property Name="BatteryVoltage" Type="float" Nullable="false" />
+          <Property Name="ItemNumber" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="LocationName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="OrganizationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="POSTicketItemId" Type="uniqueidentifier" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reports">
+          <Key>
+            <PropertyRef Name="ReportId" />
+          </Key>
+          <Property Name="ReportId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Order" Type="int" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="SelectCommand" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ShortName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ReportClassName" Type="nvarchar" Nullable="false" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Schema">
+          <Key>
+            <PropertyRef Name="SchemaId" />
+          </Key>
+          <Property Name="SchemaId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="Version" Type="int" />
+        </EntityType>
+        <EntityType Name="Sessions">
+          <Key>
+            <PropertyRef Name="SessionId" />
+          </Key>
+          <Property Name="SessionId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ExpirationTime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UPCs">
+          <Key>
+            <PropertyRef Name="ItemNumber" />
+          </Key>
+          <Property Name="UPCId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ItemNumber" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="ChildItemNumber" Type="nvarchar" MaxLength="256" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Size" Type="int" Nullable="false" />
+          <Property Name="SizeLabel" Type="nvarchar" Nullable="false" MaxLength="20" />
+          <Property Name="CategoryName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="RootCategoryName" Type="nvarchar" Nullable="false" MaxLength="256" />
+          <Property Name="Validated" Type="bit" Nullable="false" />
+          <Property Name="BottleCount" Type="int" />
+          <Property Name="ManufacturerName" Type="nvarchar" Nullable="false" MaxLength="512" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserGroupMemberships">
+          <Key>
+            <PropertyRef Name="UserGroupMembershipId" />
+          </Key>
+          <Property Name="UserGroupMembershipId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserGroupId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserGroups">
+          <Key>
+            <PropertyRef Name="UserGroupId" />
+          </Key>
+          <Property Name="UserGroupId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="OrganizationId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserGroupXOrganizations">
+          <Key>
+            <PropertyRef Name="UserGroupXOrganizationId" />
+          </Key>
+          <Property Name="UserGroupXOrganizationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="UserGroupId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="OrganizationId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ModifiedOn" Type="datetime" Nullable="false" />
+          <Property Name="VisibleWidgetIds" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OrganizationId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'DrinkReporting.dbo.SecurityView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="SecurityView">
+          <Key>
+            <PropertyRef Name="OrganizationId" />
+            <PropertyRef Name="SessionId" />
+          </Key>
+          <Property Name="OrganizationId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SessionId" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AreaMemberships_Areas">
+          <End Role="Areas" Type="DrinkReportingModel.Store.Areas" Multiplicity="1" />
+          <End Role="AreaMemberships" Type="DrinkReportingModel.Store.AreaMemberships" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Areas">
+              <PropertyRef Name="AreaId" />
+            </Principal>
+            <Dependent Role="AreaMemberships">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AreaMemberships_UserGroups">
+          <End Role="UserGroups" Type="DrinkReportingModel.Store.UserGroups" Multiplicity="1" />
+          <End Role="AreaMemberships" Type="DrinkReportingModel.Store.AreaMemberships" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserGroups">
+              <PropertyRef Name="UserGroupId" />
+            </Principal>
+            <Dependent Role="AreaMemberships">
+              <PropertyRef Name="UserGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Columns_Reports">
+          <End Role="Reports" Type="DrinkReportingModel.Store.Reports" Multiplicity="0..1" />
+          <End Role="Columns" Type="DrinkReportingModel.Store.Columns" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="ReportId" />
+            </Principal>
+            <Dependent Role="Columns">
+              <PropertyRef Name="ReportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organizations_Organizations">
+          <End Role="Organizations" Type="DrinkReportingModel.Store.Organizations" Multiplicity="0..1" />
+          <End Role="Organizations1" Type="DrinkReportingModel.Store.Organizations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organizations">
+              <PropertyRef Name="OrganizationId" />
+            </Principal>
+            <Dependent Role="Organizations1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Parameters_Reports">
+          <End Role="Reports" Type="DrinkReportingModel.Store.Reports" Multiplicity="1" />
+          <End Role="Parameters" Type="DrinkReportingModel.Store.Parameters" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="ReportId" />
+            </Principal>
+            <Dependent Role="Parameters">
+              <PropertyRef Name="ReportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pours_POSTicketItems">
+          <End Role="POSTicketItems" Type="DrinkReportingModel.Store.POSTicketItems" Multiplicity="0..1" />
+          <End Role="Pours" Type="DrinkReportingModel.Store.Pours" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POSTicketItems">
+              <PropertyRef Name="POSTicketItemId" />
+            </Principal>
+            <Dependent Role="Pours">
+              <PropertyRef Name="POSTicketItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sessions_Users">
+          <End Role="Users" Type="DrinkReportingModel.Store.Users" Multiplicity="1" />
+          <End Role="Sessions" Type="DrinkReportingModel.Store.Sessions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Sessions">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroupMemberships_UserGroups">
+          <End Role="UserGroups" Type="DrinkReportingModel.Store.UserGroups" Multiplicity="1" />
+          <End Role="UserGroupMemberships" Type="DrinkReportingModel.Store.UserGroupMemberships" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserGroups">
+              <PropertyRef Name="UserGroupId" />
+            </Principal>
+            <Dependent Role="UserGroupMemberships">
+              <PropertyRef Name="UserGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroupMemberships_Users">
+          <End Role="Users" Type="DrinkReportingModel.Store.Users" Multiplicity="1" />
+          <End Role="UserGroupMemberships" Type="DrinkReportingModel.Store.UserGroupMemberships" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserGroupMemberships">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroups_Organizations">
+          <End Role="Organizations" Type="DrinkReportingModel.Store.Organizations" Multiplicity="1" />
+          <End Role="UserGroups" Type="DrinkReportingModel.Store.UserGroups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organizations">
+              <PropertyRef Name="OrganizationId" />
+            </Principal>
+            <Dependent Role="UserGroups">
+              <PropertyRef Name="OrganizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroupXOrganizations_Organizations">
+          <End Role="Organizations" Type="DrinkReportingModel.Store.Organizations" Multiplicity="1" />
+          <End Role="UserGroupXOrganizations" Type="DrinkReportingModel.Store.UserGroupXOrganizations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organizations">
+              <PropertyRef Name="OrganizationId" />
+            </Principal>
+            <Dependent Role="UserGroupXOrganizations">
+              <PropertyRef Name="OrganizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroupXOrganizations_UserGroups">
+          <End Role="UserGroups" Type="DrinkReportingModel.Store.UserGroups" Multiplicity="1" />
+          <End Role="UserGroupXOrganizations" Type="DrinkReportingModel.Store.UserGroupXOrganizations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserGroups">
+              <PropertyRef Name="UserGroupId" />
+            </Principal>
+            <Dependent Role="UserGroupXOrganizations">
+              <PropertyRef Name="UserGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Organizations">
+          <End Role="Organizations" Type="DrinkReportingModel.Store.Organizations" Multiplicity="1" />
+          <End Role="Users" Type="DrinkReportingModel.Store.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organizations">
+              <PropertyRef Name="OrganizationId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="OrganizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DrinkReportingModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="DrinkReportingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Alerts" EntityType="DrinkReportingModel.Alert" />
+          <EntitySet Name="AreaMemberships" EntityType="DrinkReportingModel.AreaMembership" />
+          <EntitySet Name="Areas" EntityType="DrinkReportingModel.Area" />
+          <EntitySet Name="Columns" EntityType="DrinkReportingModel.Column" />
+          <EntitySet Name="Devices" EntityType="DrinkReportingModel.Device" />
+          <EntitySet Name="Organizations" EntityType="DrinkReportingModel.Organization" />
+          <EntitySet Name="Parameters" EntityType="DrinkReportingModel.Parameter" />
+          <EntitySet Name="POSTicketItems" EntityType="DrinkReportingModel.POSTicketItem" />
+          <EntitySet Name="Pours" EntityType="DrinkReportingModel.Pour" />
+          <EntitySet Name="Schemata" EntityType="DrinkReportingModel.Schema" />
+          <EntitySet Name="Sessions" EntityType="DrinkReportingModel.Session" />
+          <EntitySet Name="UPCs" EntityType="DrinkReportingModel.UPC" />
+          <EntitySet Name="UserGroupMemberships" EntityType="DrinkReportingModel.UserGroupMembership" />
+          <EntitySet Name="UserGroups" EntityType="DrinkReportingModel.UserGroup" />
+          <EntitySet Name="UserGroupXOrganizations" EntityType="DrinkReportingModel.UserGroupXOrganization" />
+          <EntitySet Name="Users" EntityType="DrinkReportingModel.User" />
+          <EntitySet Name="SecurityViews" EntityType="DrinkReportingModel.SecurityView" />
+          <AssociationSet Name="FK_AreaMemberships_Areas" Association="DrinkReportingModel.FK_AreaMemberships_Areas">
+            <End Role="Areas" EntitySet="Areas" />
+            <End Role="AreaMemberships" EntitySet="AreaMemberships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AreaMemberships_UserGroups" Association="DrinkReportingModel.FK_AreaMemberships_UserGroups">
+            <End Role="UserGroups" EntitySet="UserGroups" />
+            <End Role="AreaMemberships" EntitySet="AreaMemberships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Organizations_Organizations" Association="DrinkReportingModel.FK_Organizations_Organizations">
+            <End Role="Organizations" EntitySet="Organizations" />
+            <End Role="Organizations1" EntitySet="Organizations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroups_Organizations" Association="DrinkReportingModel.FK_UserGroups_Organizations">
+            <End Role="Organizations" EntitySet="Organizations" />
+            <End Role="UserGroups" EntitySet="UserGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroupXOrganizations_Organizations" Association="DrinkReportingModel.FK_UserGroupXOrganizations_Organizations">
+            <End Role="Organizations" EntitySet="Organizations" />
+            <End Role="UserGroupXOrganizations" EntitySet="UserGroupXOrganizations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Organizations" Association="DrinkReportingModel.FK_Users_Organizations">
+            <End Role="Organizations" EntitySet="Organizations" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sessions_Users" Association="DrinkReportingModel.FK_Sessions_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Sessions" EntitySet="Sessions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroupMemberships_UserGroups" Association="DrinkReportingModel.FK_UserGroupMemberships_UserGroups">
+            <End Role="UserGroups" EntitySet="UserGroups" />
+            <End Role="UserGroupMemberships" EntitySet="UserGroupMemberships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroupMemberships_Users" Association="DrinkReportingModel.FK_UserGroupMemberships_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserGroupMemberships" EntitySet="UserGroupMemberships" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserGroupXOrganizations_UserGroups" Association="DrinkReportingModel.FK_UserGroupXOrganizations_UserGroups">
+            <End Role="UserGroups" EntitySet="UserGroups" />
+            <End Role="UserGroupXOrganizations" EntitySet="UserGroupXOrganizations" />
+          </AssociationSet>
+          <EntitySet Name="Reports" EntityType="DrinkReportingModel.Report" />
+          <AssociationSet Name="FK_Columns_Reports" Association="DrinkReportingModel.FK_Columns_Reports">
+            <End Role="Report" EntitySet="Reports" />
+            <End Role="Column" EntitySet="Columns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Parameters_Reports" Association="DrinkReportingModel.FK_Parameters_Reports">
+            <End Role="Report" EntitySet="Reports" />
+            <End Role="Parameter" EntitySet="Parameters" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pours_POSTicketItems" Association="DrinkReportingModel.FK_Pours_POSTicketItems">
+            <End Role="POSTicketItem" EntitySet="POSTicketItems" />
+            <End Role="Pour" EntitySet="Pours" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Alert">
+          <Key>
+            <PropertyRef Name="AlertId" />
+          </Key>
+          <Property Name="AlertId" Type="Guid" Nullable="false" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="152" Unicode="true" FixedLength="false" />
+          <Property Name="AlertTime" Type="DateTime" Nullable="false" />
+          <Property Name="AlertType" Type="Int32" Nullable="false" />
+          <Property Name="OrganizationId" Type="Guid" Nullable="false" />
+          <Property Name="Severity" Type="Int32" Nullable="false" />
+          <Property Name="LocationName" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AreaMembership">
+          <Key>
+            <PropertyRef Name="AreaMembershipId" />
+          </Key>
+          <Property Name="AreaMembershipId" Type="Guid" Nullable="false" />
+          <Property Name="AreaId" Type="Guid" Nullable="false" />
+          <Property Name="UserGroupId" Type="Guid" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="ShortName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Area" Relationship="DrinkReportingModel.FK_AreaMemberships_Areas" FromRole="AreaMemberships" ToRole="Areas" />
+          <NavigationProperty Name="UserGroup" Relationship="DrinkReportingModel.FK_AreaMemberships_UserGroups" FromRole="AreaMemberships" ToRole="UserGroups" />
+        </EntityType>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="AreaId" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="Order" Type="Int32" Nullable="false" />
+          <Property Name="ShortName" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="Controller" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="AreaMemberships" Relationship="DrinkReportingModel.FK_AreaMemberships_Areas" FromRole="Areas" ToRole="AreaMemberships" />
+        </EntityType>
+        <EntityType Name="Column">
+          <Key>
+            <PropertyRef Name="ColumnId" />
+          </Key>
+          <Property Name="ColumnId" Type="Guid" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="DisplayName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Type="Guid" Name="ReportId" />
+          <NavigationProperty Name="NavReport" Relationship="DrinkReportingModel.FK_Columns_Reports" FromRole="Column" ToRole="Report" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="DeviceNumber" />
+          </Key>
+          <Property Name="DeviceId" Type="Guid" Nullable="false" />
+          <Property Name="DeviceNumber" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="OrganizationId" Type="Guid" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <Property Type="String" Name="LocationName" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Organization">
+          <Key>
+            <PropertyRef Name="OrganizationId" />
+          </Key>
+          <Property Name="OrganizationId" Type="Guid" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="ParentId" Type="Guid" />
+          <Property Name="ShortName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Path" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="512" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="NavChildren" Relationship="DrinkReportingModel.FK_Organizations_Organizations" FromRole="Organizations" ToRole="Organizations1" />
+          <NavigationProperty Name="NavParent" Relationship="DrinkReportingModel.FK_Organizations_Organizations" FromRole="Organizations1" ToRole="Organizations" />
+          <NavigationProperty Name="NavUserGroups" Relationship="DrinkReportingModel.FK_UserGroups_Organizations" FromRole="Organizations" ToRole="UserGroups" />
+          <NavigationProperty Name="UserGroupXOrganizations" Relationship="DrinkReportingModel.FK_UserGroupXOrganizations_Organizations" FromRole="Organizations" ToRole="UserGroupXOrganizations" />
+          <NavigationProperty Name="NavUsers" Relationship="DrinkReportingModel.FK_Users_Organizations" FromRole="Organizations" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Parameter">
+          <Key>
+            <PropertyRef Name="ParameterId" />
+          </Key>
+          <Property Name="ParameterId" Type="Guid" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Order" Type="Int32" Nullable="false" />
+          <Property Name="Label" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Type="Guid" Name="ReportId" Nullable="false" />
+          <NavigationProperty Name="NavReport" Relationship="DrinkReportingModel.FK_Parameters_Reports" FromRole="Parameter" ToRole="Report" />
+        </EntityType>
+        <EntityType Name="POSTicketItem">
+          <Key>
+            <PropertyRef Name="POSTicketItemId" />
+          </Key>
+          <Property Name="POSTicketItemId" Type="Guid" Nullable="false" />
+          <Property Name="CheckNumber" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Comment" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Price" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Quantity" Type="Int32" Nullable="false" />
+          <Property Name="LocationName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Establishment" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="TicketDate" Type="DateTime" Nullable="false" />
+          <Property Name="OrganizationId" Type="Guid" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <Property Type="Int32" Name="Status" Nullable="false" />
+          <NavigationProperty Name="NavPours" Relationship="DrinkReportingModel.FK_Pours_POSTicketItems" FromRole="POSTicketItem" ToRole="Pour" />
+        </EntityType>
+        <EntityType Name="Pour">
+          <Key>
+            <PropertyRef Name="PourId" />
+          </Key>
+          <Property Name="PourId" Type="Guid" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="PourTime" Type="DateTime" Nullable="false" />
+          <Property Name="TagNumber" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DeviceNumber" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Volume" Type="Double" Nullable="false" />
+          <Property Name="Duration" Type="Double" Nullable="false" />
+          <Property Name="AmountLeft" Type="Double" Nullable="false" />
+          <Property Name="Temperature" Type="Double" Nullable="false" />
+          <Property Name="RawData" Type="String" MaxLength="2048" Unicode="true" FixedLength="false" />
+          <Property Name="BatteryVoltage" Type="Double" Nullable="false" />
+          <Property Name="ItemNumber" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="LocationName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="OrganizationId" Type="Guid" Nullable="false" />
+          <Property Type="Int32" Name="Status" Nullable="false" />
+          <Property Type="Decimal" Name="Cost" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="NavPOSTicketItem" Relationship="DrinkReportingModel.FK_Pours_POSTicketItems" FromRole="Pour" ToRole="POSTicketItem" />
+          <Property Type="Guid" Name="POSTicketItemId" />
+        </EntityType>
+        <EntityType Name="Schema">
+          <Key>
+            <PropertyRef Name="SchemaId" />
+          </Key>
+          <Property Name="SchemaId" Type="Guid" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="Version" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="SessionId" />
+          </Key>
+          <Property Name="SessionId" Type="Guid" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="ExpirationTime" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="NavUser" Relationship="DrinkReportingModel.FK_Sessions_Users" FromRole="Sessions" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="UPC">
+          <Key>
+            <PropertyRef Name="ItemNumber" />
+          </Key>
+          <Property Name="UPCId" Type="Guid" Nullable="false" />
+          <Property Name="ItemNumber" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="ChildItemNumber" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Size" Type="Int32" Nullable="false" />
+          <Property Name="SizeLabel" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="CategoryName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="RootCategoryName" Type="String" Nullable="false" MaxLength="256" Unicode="true" FixedLength="false" />
+          <Property Name="Validated" Type="Boolean" Nullable="false" />
+          <Property Name="BottleCount" Type="Int32" />
+          <Property Name="ManufacturerName" Type="String" Nullable="false" MaxLength="512" Unicode="true" FixedLength="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserGroupMembership">
+          <Key>
+            <PropertyRef Name="UserGroupMembershipId" />
+          </Key>
+          <Property Name="UserGroupMembershipId" Type="Guid" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="UserGroupId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="UserGroup" Relationship="DrinkReportingModel.FK_UserGroupMemberships_UserGroups" FromRole="UserGroupMemberships" ToRole="UserGroups" />
+          <NavigationProperty Name="User" Relationship="DrinkReportingModel.FK_UserGroupMemberships_Users" FromRole="UserGroupMemberships" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="UserGroup">
+          <Key>
+            <PropertyRef Name="UserGroupId" />
+          </Key>
+          <Property Name="UserGroupId" Type="Guid" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" Unicode="true" FixedLength="false" />
+          <Property Name="OrganizationId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="AreaMemberships" Relationship="DrinkReportingModel.FK_AreaMemberships_UserGroups" FromRole="UserGroups" ToRole="AreaMemberships" />
+          <NavigationProperty Name="NavOrganization" Relationship="DrinkReportingModel.FK_UserGroups_Organizations" FromRole="UserGroups" ToRole="Organizations" />
+          <NavigationProperty Name="UserGroupMemberships" Relationship="DrinkReportingModel.FK_UserGroupMemberships_UserGroups" FromRole="UserGroups" ToRole="UserGroupMemberships" />
+          <NavigationProperty Name="UserGroupXOrganizations" Relationship="DrinkReportingModel.FK_UserGroupXOrganizations_UserGroups" FromRole="UserGroups" ToRole="UserGroupXOrganizations" />
+        </EntityType>
+        <EntityType Name="UserGroupXOrganization">
+          <Key>
+            <PropertyRef Name="UserGroupXOrganizationId" />
+          </Key>
+          <Property Name="UserGroupXOrganizationId" Type="Guid" Nullable="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="UserGroupId" Type="Guid" Nullable="false" />
+          <Property Name="OrganizationId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="Organization" Relationship="DrinkReportingModel.FK_UserGroupXOrganizations_Organizations" FromRole="UserGroupXOrganizations" ToRole="Organizations" />
+          <NavigationProperty Name="UserGroup" Relationship="DrinkReportingModel.FK_UserGroupXOrganizations_UserGroups" FromRole="UserGroupXOrganizations" ToRole="UserGroups" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ModifiedOn" Type="DateTime" Nullable="false" />
+          <Property Name="VisibleWidgetIds" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="OrganizationId" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="NavOrganization" Relationship="DrinkReportingModel.FK_Users_Organizations" FromRole="Users" ToRole="Organizations" />
+          <NavigationProperty Name="NavSessions" Relationship="DrinkReportingModel.FK_Sessions_Users" FromRole="Users" ToRole="Sessions" />
+          <NavigationProperty Name="NavUserGroupMemberships" Relationship="DrinkReportingModel.FK_UserGroupMemberships_Users" FromRole="Users" ToRole="UserGroupMemberships" />
+        </EntityType>
+        <EntityType Name="SecurityView">
+          <Key>
+            <PropertyRef Name="OrganizationId" />
+            <PropertyRef Name="SessionId" />
+          </Key>
+          <Property Name="OrganizationId" Type="Guid" Nullable="false" />
+          <Property Name="SessionId" Type="Guid" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AreaMemberships_Areas">
+          <End Role="Areas" Type="DrinkReportingModel.Area" Multiplicity="1" />
+          <End Role="AreaMemberships" Type="DrinkReportingModel.AreaMembership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Areas">
+              <PropertyRef Name="AreaId" />
+            </Principal>
+            <Dependent Role="AreaMemberships">
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AreaMemberships_UserGroups">
+          <End Role="UserGroups" Type="DrinkReportingModel.UserGroup" Multiplicity="1" />
+          <End Role="AreaMemberships" Type="DrinkReportingModel.AreaMembership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserGroups">
+              <PropertyRef Name="UserGroupId" />
+            </Principal>
+            <Dependent Role="AreaMemberships">
+              <PropertyRef Name="UserGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Organizations_Organizations">
+          <End Role="Organizations" Type="DrinkReportingModel.Organization" Multiplicity="0..1" />
+          <End Role="Organizations1" Type="DrinkReportingModel.Organization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organizations">
+              <PropertyRef Name="OrganizationId" />
+            </Principal>
+            <Dependent Role="Organizations1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroups_Organizations">
+          <End Role="Organizations" Type="DrinkReportingModel.Organization" Multiplicity="1" />
+          <End Role="UserGroups" Type="DrinkReportingModel.UserGroup" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organizations">
+              <PropertyRef Name="OrganizationId" />
+            </Principal>
+            <Dependent Role="UserGroups">
+              <PropertyRef Name="OrganizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroupXOrganizations_Organizations">
+          <End Role="Organizations" Type="DrinkReportingModel.Organization" Multiplicity="1" />
+          <End Role="UserGroupXOrganizations" Type="DrinkReportingModel.UserGroupXOrganization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organizations">
+              <PropertyRef Name="OrganizationId" />
+            </Principal>
+            <Dependent Role="UserGroupXOrganizations">
+              <PropertyRef Name="OrganizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Organizations">
+          <End Role="Organizations" Type="DrinkReportingModel.Organization" Multiplicity="1" />
+          <End Role="Users" Type="DrinkReportingModel.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organizations">
+              <PropertyRef Name="OrganizationId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="OrganizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sessions_Users">
+          <End Role="Users" Type="DrinkReportingModel.User" Multiplicity="1" />
+          <End Role="Sessions" Type="DrinkReportingModel.Session" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="Sessions">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroupMemberships_UserGroups">
+          <End Role="UserGroups" Type="DrinkReportingModel.UserGroup" Multiplicity="1" />
+          <End Role="UserGroupMemberships" Type="DrinkReportingModel.UserGroupMembership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserGroups">
+              <PropertyRef Name="UserGroupId" />
+            </Principal>
+            <Dependent Role="UserGroupMemberships">
+              <PropertyRef Name="UserGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroupMemberships_Users">
+          <End Role="Users" Type="DrinkReportingModel.User" Multiplicity="1" />
+          <End Role="UserGroupMemberships" Type="DrinkReportingModel.UserGroupMembership" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserId" />
+            </Principal>
+            <Dependent Role="UserGroupMemberships">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserGroupXOrganizations_UserGroups">
+          <End Role="UserGroups" Type="DrinkReportingModel.UserGroup" Multiplicity="1" />
+          <End Role="UserGroupXOrganizations" Type="DrinkReportingModel.UserGroupXOrganization" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserGroups">
+              <PropertyRef Name="UserGroupId" />
+            </Principal>
+            <Dependent Role="UserGroupXOrganizations">
+              <PropertyRef Name="UserGroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="ReportId" />
+          </Key>
+          <Property Type="Guid" Name="ReportId" Nullable="false" />
+          <Property Type="DateTime" Name="ModifiedOn" Nullable="false" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Order" Nullable="false" />
+          <Property Type="String" Name="Type" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SelectCommand" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ShortName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReportClassName" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NavColumns" Relationship="DrinkReportingModel.FK_Columns_Reports" FromRole="Report" ToRole="Column" />
+          <NavigationProperty Name="NavParameters" Relationship="DrinkReportingModel.FK_Parameters_Reports" FromRole="Report" ToRole="Parameter" />
+        </EntityType>
+        <Association Name="FK_Columns_Reports">
+          <End Type="DrinkReportingModel.Report" Role="Report" Multiplicity="0..1" />
+          <End Type="DrinkReportingModel.Column" Role="Column" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report">
+              <PropertyRef Name="ReportId" />
+            </Principal>
+            <Dependent Role="Column">
+              <PropertyRef Name="ReportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Parameters_Reports">
+          <End Type="DrinkReportingModel.Report" Role="Report" Multiplicity="1" />
+          <End Type="DrinkReportingModel.Parameter" Role="Parameter" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Report">
+              <PropertyRef Name="ReportId" />
+            </Principal>
+            <Dependent Role="Parameter">
+              <PropertyRef Name="ReportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pours_POSTicketItems">
+          <End Type="DrinkReportingModel.POSTicketItem" Role="POSTicketItem" Multiplicity="0..1" />
+          <End Type="DrinkReportingModel.Pour" Role="Pour" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="POSTicketItem">
+              <PropertyRef Name="POSTicketItemId" />
+            </Principal>
+            <Dependent Role="Pour">
+              <PropertyRef Name="POSTicketItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DrinkReportingModelStoreContainer" CdmEntityContainer="DrinkReportingEntities">
+          <EntitySetMapping Name="Alerts"><EntityTypeMapping TypeName="DrinkReportingModel.Alert"><MappingFragment StoreEntitySet="Alerts">
+            <ScalarProperty Name="AlertId" ColumnName="AlertId" />
+            <ScalarProperty Name="Message" ColumnName="Message" />
+            <ScalarProperty Name="AlertTime" ColumnName="AlertTime" />
+            <ScalarProperty Name="AlertType" ColumnName="AlertType" />
+            <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+            <ScalarProperty Name="Severity" ColumnName="Severity" />
+            <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="AreaMemberships"><EntityTypeMapping TypeName="DrinkReportingModel.AreaMembership"><MappingFragment StoreEntitySet="AreaMemberships">
+            <ScalarProperty Name="AreaMembershipId" ColumnName="AreaMembershipId" />
+            <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+            <ScalarProperty Name="UserGroupId" ColumnName="UserGroupId" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Areas"><EntityTypeMapping TypeName="DrinkReportingModel.Area"><MappingFragment StoreEntitySet="Areas">
+            <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+            <ScalarProperty Name="Order" ColumnName="Order" />
+            <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+            <ScalarProperty Name="Controller" ColumnName="Controller" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Columns"><EntityTypeMapping TypeName="DrinkReportingModel.Column"><MappingFragment StoreEntitySet="Columns">
+            <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+                <ScalarProperty Name="ColumnId" ColumnName="ColumnId" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+            <ScalarProperty Name="DisplayName" ColumnName="DisplayName" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Devices"><EntityTypeMapping TypeName="DrinkReportingModel.Device"><MappingFragment StoreEntitySet="Devices">
+            <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+                <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+            <ScalarProperty Name="DeviceNumber" ColumnName="DeviceNumber" />
+            <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+            <ScalarProperty Name="Status" ColumnName="Status" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Organizations"><EntityTypeMapping TypeName="DrinkReportingModel.Organization"><MappingFragment StoreEntitySet="Organizations">
+            <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+            <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+            <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+            <ScalarProperty Name="Path" ColumnName="Path" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Parameters"><EntityTypeMapping TypeName="DrinkReportingModel.Parameter"><MappingFragment StoreEntitySet="Parameters">
+            <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+                <ScalarProperty Name="ParameterId" ColumnName="ParameterId" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+            <ScalarProperty Name="Type" ColumnName="Type" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Order" ColumnName="Order" />
+            <ScalarProperty Name="Label" ColumnName="Label" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="POSTicketItems"><EntityTypeMapping TypeName="DrinkReportingModel.POSTicketItem"><MappingFragment StoreEntitySet="POSTicketItems">
+            <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="POSTicketItemId" ColumnName="POSTicketItemId" />
+            <ScalarProperty Name="CheckNumber" ColumnName="CheckNumber" />
+            <ScalarProperty Name="Comment" ColumnName="Comment" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="Price" ColumnName="Price" />
+            <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+            <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+            <ScalarProperty Name="Establishment" ColumnName="Establishment" />
+            <ScalarProperty Name="TicketDate" ColumnName="TicketDate" />
+            <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Pours"><EntityTypeMapping TypeName="DrinkReportingModel.Pour"><MappingFragment StoreEntitySet="Pours">
+            <ScalarProperty Name="POSTicketItemId" ColumnName="POSTicketItemId" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="PourId" ColumnName="PourId" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+            <ScalarProperty Name="PourTime" ColumnName="PourTime" />
+            <ScalarProperty Name="TagNumber" ColumnName="TagNumber" />
+            <ScalarProperty Name="DeviceNumber" ColumnName="DeviceNumber" />
+            <ScalarProperty Name="Volume" ColumnName="Volume" />
+            <ScalarProperty Name="Duration" ColumnName="Duration" />
+            <ScalarProperty Name="AmountLeft" ColumnName="AmountLeft" />
+            <ScalarProperty Name="Temperature" ColumnName="Temperature" />
+            <ScalarProperty Name="RawData" ColumnName="RawData" />
+            <ScalarProperty Name="BatteryVoltage" ColumnName="BatteryVoltage" />
+            <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
+            <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+            <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Schemata"><EntityTypeMapping TypeName="DrinkReportingModel.Schema"><MappingFragment StoreEntitySet="Schema">
+            <ScalarProperty Name="SchemaId" ColumnName="SchemaId" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+            <ScalarProperty Name="Version" ColumnName="Version" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Sessions"><EntityTypeMapping TypeName="DrinkReportingModel.Session"><MappingFragment StoreEntitySet="Sessions">
+            <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="ExpirationTime" ColumnName="ExpirationTime" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="UPCs"><EntityTypeMapping TypeName="DrinkReportingModel.UPC"><MappingFragment StoreEntitySet="UPCs">
+            <ScalarProperty Name="UPCId" ColumnName="UPCId" />
+            <ScalarProperty Name="ItemNumber" ColumnName="ItemNumber" />
+            <ScalarProperty Name="ChildItemNumber" ColumnName="ChildItemNumber" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Size" ColumnName="Size" />
+            <ScalarProperty Name="SizeLabel" ColumnName="SizeLabel" />
+            <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+            <ScalarProperty Name="RootCategoryName" ColumnName="RootCategoryName" />
+            <ScalarProperty Name="Validated" ColumnName="Validated" />
+            <ScalarProperty Name="BottleCount" ColumnName="BottleCount" />
+            <ScalarProperty Name="ManufacturerName" ColumnName="ManufacturerName" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="UserGroupMemberships"><EntityTypeMapping TypeName="DrinkReportingModel.UserGroupMembership"><MappingFragment StoreEntitySet="UserGroupMemberships">
+            <ScalarProperty Name="UserGroupMembershipId" ColumnName="UserGroupMembershipId" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="UserGroupId" ColumnName="UserGroupId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="UserGroups"><EntityTypeMapping TypeName="DrinkReportingModel.UserGroup"><MappingFragment StoreEntitySet="UserGroups">
+            <ScalarProperty Name="UserGroupId" ColumnName="UserGroupId" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="UserGroupXOrganizations"><EntityTypeMapping TypeName="DrinkReportingModel.UserGroupXOrganization"><MappingFragment StoreEntitySet="UserGroupXOrganizations">
+            <ScalarProperty Name="UserGroupXOrganizationId" ColumnName="UserGroupXOrganizationId" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+            <ScalarProperty Name="UserGroupId" ColumnName="UserGroupId" />
+            <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="DrinkReportingModel.User"><MappingFragment StoreEntitySet="Users">
+            <ScalarProperty Name="UserId" ColumnName="UserId" />
+            <ScalarProperty Name="UserName" ColumnName="UserName" />
+            <ScalarProperty Name="Password" ColumnName="Password" />
+            <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+            <ScalarProperty Name="VisibleWidgetIds" ColumnName="VisibleWidgetIds" />
+            <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SecurityViews"><EntityTypeMapping TypeName="DrinkReportingModel.SecurityView"><MappingFragment StoreEntitySet="SecurityView">
+            <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+            <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Reports">
+            <EntityTypeMapping TypeName="DrinkReportingModel.Report">
+              <MappingFragment StoreEntitySet="Reports">
+                <ScalarProperty Name="ReportClassName" ColumnName="ReportClassName" />
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="SelectCommand" ColumnName="SelectCommand" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="ReportingModel">
+        <EntityTypeShape EntityType="DrinkReportingModel.Alert" Width="1.5" PointX="10.75" PointY="1.125" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkReportingModel.AreaMembership" Width="1.5" PointX="6" PointY="4.75" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkReportingModel.Area" Width="1.5" PointX="3" PointY="0.75" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkReportingModel.Column" Width="1.5" PointX="9.75" PointY="11.375" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkReportingModel.Device" Width="1.5" PointX="10.75" PointY="5.125" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkReportingModel.Organization" Width="2.125" PointX="0.5" PointY="6.125" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkReportingModel.Parameter" Width="1.5" PointX="9.75" PointY="14.125" Height="2.5571907552083353" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkReportingModel.POSTicketItem" Width="1.5" PointX="7.25" PointY="11.75" Height="3.5186979166666656" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkReportingModel.Pour" Width="1.75" PointX="11.75" PointY="8" Height="4.4802050781250014" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkReportingModel.Schema" Width="1.5" PointX="12.75" PointY="4.125" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkReportingModel.Session" Width="1.5" PointX="6.125" PointY="8.5" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkReportingModel.UPC" Width="1.5" PointX="11.75" PointY="13.125" Height="3.3263964843750031" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkReportingModel.UserGroupMembership" Width="2" PointX="8.25" PointY="6.75" Height="2.1725878906249951" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkReportingModel.UserGroup" Width="2" PointX="3" PointY="4.75" Height="2.5571907552083388" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkReportingModel.UserGroupXOrganization" Width="1.5" PointX="8.25" PointY="3" Height="2.172587890624996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkReportingModel.User" Width="2.125" PointX="3" PointY="8" Height="2.7494921875000031" IsExpanded="true" />
+        <EntityTypeShape EntityType="DrinkReportingModel.SecurityView" Width="1.5" PointX="13.75" PointY="7.125" Height="1.4033821614583397" IsExpanded="true" />
+        <AssociationConnector Association="DrinkReportingModel.FK_AreaMemberships_Areas" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="1.9324446614583337" />
+          <ConnectorPoint PointX="6.75" PointY="1.9324446614583337" />
+          <ConnectorPoint PointX="6.75" PointY="4.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="DrinkReportingModel.FK_AreaMemberships_UserGroups" ManuallyRouted="false">
+          <ConnectorPoint PointX="5" PointY="6.0285953776041659" />
+          <ConnectorPoint PointX="6" PointY="6.0285953776041659" />
+        </AssociationConnector>
+        <AssociationConnector Association="DrinkReportingModel.FK_Organizations_Organizations" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.2535576923076923" PointY="9.451396484375" />
+          <ConnectorPoint PointX="1.2535576923076923" PointY="9.701396484375" />
+          <ConnectorPoint PointX="1.8861538461538461" PointY="9.701396484375" />
+          <ConnectorPoint PointX="1.8861538461538461" PointY="9.451396484375" />
+        </AssociationConnector>
+        <AssociationConnector Association="DrinkReportingModel.FK_UserGroups_Organizations" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.625" PointY="6.7160953776041694" />
+          <ConnectorPoint PointX="3" PointY="6.7160953776041694" />
+        </AssociationConnector>
+        <AssociationConnector Association="DrinkReportingModel.FK_UserGroupXOrganizations_Organizations" ManuallyRouted="false">
+          <ConnectorPoint PointX="1.5625" PointY="6.125" />
+          <ConnectorPoint PointX="1.5625" PointY="3.9324446614583337" />
+          <ConnectorPoint PointX="4.697916666666667" PointY="3.9324446614583333" />
+          <ConnectorPoint PointX="4.864583333333333" PointY="3.9324446614583337" />
+          <ConnectorPoint PointX="6.666666666666667" PointY="3.9324446614583333" />
+          <ConnectorPoint PointX="6.833333333333333" PointY="3.9324446614583337" />
+          <ConnectorPoint PointX="8.25" PointY="3.9324446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="DrinkReportingModel.FK_Users_Organizations" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.625" PointY="8.7256982421875" />
+          <ConnectorPoint PointX="3" PointY="8.7256982421875" />
+        </AssociationConnector>
+        <AssociationConnector Association="DrinkReportingModel.FK_Sessions_Users" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.125" PointY="9.49014322916667" />
+          <ConnectorPoint PointX="6.125" PointY="9.49014322916667" />
+        </AssociationConnector>
+        <AssociationConnector Association="DrinkReportingModel.FK_UserGroupMemberships_UserGroups" ManuallyRouted="false">
+          <ConnectorPoint PointX="4" PointY="7.3071907552083388" />
+          <ConnectorPoint PointX="4" PointY="7.836293945312498" />
+          <ConnectorPoint PointX="8.25" PointY="7.836293945312498" />
+        </AssociationConnector>
+        <AssociationConnector Association="DrinkReportingModel.FK_UserGroupMemberships_Users" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.125" PointY="8.21875" />
+          <ConnectorPoint PointX="8.25" PointY="8.21875" />
+        </AssociationConnector>
+        <AssociationConnector Association="DrinkReportingModel.FK_UserGroupXOrganizations_UserGroups" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.78125" PointY="4.75" />
+          <ConnectorPoint PointX="4.78125" PointY="3.5236644921874998" />
+          <ConnectorPoint PointX="6.666666666666667" PointY="3.5236644921874993" />
+          <ConnectorPoint PointX="6.833333333333333" PointY="3.5236644921874998" />
+          <ConnectorPoint PointX="8.25" PointY="3.5236644921874998" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="DrinkReportingModel.Report" Width="1.5" PointX="14.375" PointY="10" Height="2.9417936197916674" />
+        <AssociationConnector Association="DrinkReportingModel.FK_Columns_Reports" >
+          <ConnectorPoint PointX="14.375" PointY="12.742249348958335" />
+          <ConnectorPoint PointX="11.25" PointY="12.742249348958335" />
+        </AssociationConnector>
+        <AssociationConnector Association="DrinkReportingModel.FK_Parameters_Reports" >
+          <ConnectorPoint PointX="15.125" PointY="12.941793619791667" />
+          <ConnectorPoint PointX="15.125" PointY="16.598043619791667" />
+          <ConnectorPoint PointX="11.25" PointY="16.598043619791667" />
+        </AssociationConnector>
+        <AssociationConnector Association="DrinkReportingModel.FK_Pours_POSTicketItems" >
+          <ConnectorPoint PointX="7.866211796875" PointY="11.75" />
+          <ConnectorPoint PointX="7.866211796875" PointY="10.776095681429471" />
+          <ConnectorPoint PointX="11.75" PointY="10.776095681429471" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

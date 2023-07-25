@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Jaxis.Inventory.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Jaxis.Inventory.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8223/HostWCFService/PourEngineService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="DataPour">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Alerted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AmountLeft" type="xs:double" />
+      <xs:element minOccurs="0" name="BatteryVoltage" type="xs:double" />
+      <xs:element minOccurs="0" name="DeviceID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Duration" type="xs:double" />
+      <xs:element minOccurs="0" name="LocationID" type="ser:guid" />
+      <xs:element minOccurs="0" name="POSTicketItemID" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="PourID" type="ser:guid" />
+      <xs:element minOccurs="0" name="PourTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RawData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TagID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Temperature" type="xs:double" />
+      <xs:element minOccurs="0" name="UPCID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Volume" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataPour" nillable="true" type="tns:DataPour" />
+  <xs:complexType name="DataTagActivity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityType" type="xs:int" />
+      <xs:element minOccurs="0" name="DeviceID" type="ser:guid" />
+      <xs:element minOccurs="0" name="LocationID" type="ser:guid" />
+      <xs:element minOccurs="0" name="RawData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignalStrength" type="xs:double" />
+      <xs:element minOccurs="0" name="TagActivityID" type="ser:guid" />
+      <xs:element minOccurs="0" name="TagID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataTagActivity" nillable="true" type="tns:DataTagActivity" />
+  <xs:complexType name="DataTagAlert">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlertTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AlertType" type="xs:int" />
+      <xs:element minOccurs="0" name="DeviceID" type="ser:guid" />
+      <xs:element minOccurs="0" name="LocationID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Severity" type="xs:int" />
+      <xs:element minOccurs="0" name="TagAlertID" type="ser:guid" />
+      <xs:element minOccurs="0" name="TagID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataTagAlert" nillable="true" type="tns:DataTagAlert" />
+  <xs:complexType name="DataDeviceAlert">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlertTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AlertType" type="xs:int" />
+      <xs:element minOccurs="0" name="DeviceAlertID" type="ser:guid" />
+      <xs:element minOccurs="0" name="DeviceID" type="ser:guid" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataDeviceAlert" nillable="true" type="tns:DataDeviceAlert" />
+  <xs:complexType name="DataTagMove">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DeviceID" type="ser:guid" />
+      <xs:element minOccurs="0" name="LocationID" type="ser:guid" />
+      <xs:element minOccurs="0" name="MoveTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="SignalStrength" type="xs:double" />
+      <xs:element minOccurs="0" name="TagID" type="ser:guid" />
+      <xs:element minOccurs="0" name="TagMoveID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataTagMove" nillable="true" type="tns:DataTagMove" />
+  <xs:complexType name="DataActivityLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActivityIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="ActivityLogID" type="ser:guid" />
+      <xs:element minOccurs="0" name="ActivityTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ActivityTypeID" type="xs:int" />
+      <xs:element minOccurs="0" name="DeviceID" type="ser:guid" />
+      <xs:element minOccurs="0" name="LocationID" type="ser:guid" />
+      <xs:element minOccurs="0" name="RawData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SignalStrength" type="xs:double" />
+      <xs:element minOccurs="0" name="TagID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataActivityLog" nillable="true" type="tns:DataActivityLog" />
+  <xs:complexType name="DataPOSTicket">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CheckNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comments" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CustomerTable" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Establishment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GuestCount" type="xs:int" />
+      <xs:element minOccurs="0" name="LocationID" type="ser:guid" />
+      <xs:element minOccurs="0" name="POSTicketID" type="ser:guid" />
+      <xs:element minOccurs="0" name="RawData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TicketDate" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DataPOSTicket" nillable="true" type="tns:DataPOSTicket" />
+</xs:schema>

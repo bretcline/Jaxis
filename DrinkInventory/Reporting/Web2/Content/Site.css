@@ -1,0 +1,523 @@
+body
+{
+    background-image: url('images/bar-background.png');
+    font-size: 12px;
+    font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    color: Black;
+    padding: 20px;
+}
+
+.header
+{
+    background-color: #000000;
+    border-radius: 8px 8px 0px 0px;
+    -webkit-border-radius: 8px 8px 0px 0px;
+    -moz-border-radius: 8px 8px 0px 0px;
+    opacity: 0.75;
+    padding: 0;
+}
+
+h1
+{
+    font-size: 16px;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h2
+{
+    color: Teal;
+    font-style: italic;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.main 
+{
+    padding: 30px 30px 0px 30px;
+    background-color: rgb(178,84,58);
+    border-radius: 0px 0px 8px 8px;
+    -webkit-border-radius: 0px 0px 8px 8px;
+    -moz-border-radius: 0px 0px 8px 8px;
+}
+
+.appTitle
+{
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0 0 0 10px;
+    color: rgb(255,161,67);
+    border: none;
+    font-size: 24px;
+    text-shadow: 1px 1px 2px rgb(238,53,51);
+}
+
+.pagecontainer
+{
+    background-color: rgb(238,209,175);
+    padding: 10px;
+    min-height: 200px;
+    border: 1px solid Black;
+    display: none;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+}
+
+.footer
+{
+    padding: 15px;
+    text-align: center;
+    line-height: normal;
+}
+
+.footer a
+{
+    color: White;
+}
+
+input[type="text"], 
+input[type="password"] 
+{
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+    width: 200px;
+}
+
+select 
+{
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 12px;
+    height: 150px;
+    width: 300px;
+}
+
+input[type="submit"],
+input[type="button"]
+{
+    background-color: #444444;
+    border: none;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    color: White;
+    cursor: pointer;
+    font-family: "Trebuchet MS",Verdana,Helvetica,Sans-Serif;
+    font-size: 12px;
+    padding: 2px 20px 2px 20px;
+    text-decoration: none;
+    margin: 4px;
+}
+
+input[type="submit"]:hover,
+input[type="button"]:hover
+{
+    background-color: #eeeeee;
+    color: Black;
+}
+
+.error 
+{
+    padding: 10px;
+    color: Red;
+    background-color: White;
+    border: 5px solid #dd0000;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.logindisplay {
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    margin: 10px 35px 10px 10px;
+    color: White;
+    float: right;
+    vertical-align:top;
+}
+
+.logindisplay a:link {
+    color: White;
+    text-decoration: underline;
+}
+
+.logindisplay a:visited {
+    color: White;
+    text-decoration: underline;
+}
+
+.logindisplay a:hover {
+    color: Blue;
+    text-decoration: none;
+}
+
+.editor-label
+{
+    float: left;
+}
+
+.editor-label,
+.large-editor-label
+{
+    font-weight: bold;
+    width: 170px;
+    vertical-align: middle;
+    margin-top: 4px;
+    margin-left: 4px;
+}
+
+.large-editor-label
+{
+    margin-bottom: 2px;
+}
+
+.editor-field
+{
+    margin-bottom: 4px;
+}
+
+.navbarbody select
+{
+    height: 300px;
+    width: 250px;
+}
+
+.navbaritem span,
+.navbaritemselected span
+{
+    display: block;
+    background: inherit;
+    padding: 4px 8px 4px 4px;
+}
+
+.navbaritemselected span
+{
+    padding: 8px 8px 8px 4px;
+}
+
+.navbaritem a
+{
+    text-decoration: none;
+    color: Black;
+    text-align: right;
+}
+
+.navbaritemselected a
+{
+    background-color: #aa0000;
+    color: White;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: default;
+    text-align: right;
+}
+
+.navbarbody,
+.viewbody
+{
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: White;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+}
+
+.viewsection
+{
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #fff7e0;
+    border-left: 10px solid #efe7d0;
+    border-right: 2px solid #efe7d0;
+    border-top: 2px solid #efe7d0;
+    border-bottom: 2px solid #efe7d0;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+}
+
+table.datagrid
+{
+    width: 100%;
+    height: 100%;
+    border: solid 1px #e8eef4;
+    border-collapse: collapse;
+}
+
+table.datagrid th
+{
+    padding: 2px;
+    text-align: center;
+    background-color: rgb(238,209,175);
+    border: solid 1px rgb(238,209,175);
+    font-weight: bold;
+}
+
+table.datagrid td
+{
+    padding: 2px;
+    border: solid 1px rgb(238,209,175);
+    text-align: left;
+    background-color: White;
+}
+
+table.layout
+{
+    width:100%;
+}
+
+td.layoutleft
+{
+    vertical-align: top;
+    width: 130px;
+    padding: 0 5px 0 0;
+    margin: 3px;
+}
+
+td.layoutright
+{
+    vertical-align: top;
+    padding: 0 0 0 5px;
+    margin: 3px;
+}
+
+.menuBar 
+{
+    padding: 0px;
+    margin: 0px 0px 3px 7px;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.menuBar a 
+{
+    padding: 1px 12px 3px 12px;
+    text-decoration: none;
+    background-color: #444444;
+    /*color: rgb(169,79,55);*/
+    color: #cccccc;
+    border-left: 1px solid Black;
+    border-top: 1px solid Black;
+    border-right: 1px solid Black;
+    border-radius: 8px 8px 0px 0px;
+    -webkit-border-radius: 8px 8px 0px 0px;
+    -moz-border-radius: 8px 8px 0px 0px;
+    margin-right: -1px;
+    opacity: 0.5;
+}
+
+.menuBar a:active {
+    background-color: #a6e2a6;
+    text-decoration: none;
+}
+
+.menuBar a.selected {
+    padding: 3px 14px 4px 14px;
+    background-color: rgb(238,209,175);
+    color: Black;
+    cursor: default;
+    opacity: 1;
+}
+
+.menuBar a.normal {
+}
+
+.viewsectionreport
+{
+    margin: auto;
+    padding: 0;
+    text-align: center;
+}
+
+div.smallmargin
+{
+    margin: 2px;
+}
+
+.orgtree
+{
+    background-color: White;
+    border: 1px solid Scrollbar;
+    margin: 0;
+    padding: 2px;
+    overflow-y: scroll;
+    width: 250px;
+    height: 300px;
+}
+
+.orgtreeitem
+{
+    padding: 2px;
+    margin: 3px 3px 3px 8px;
+}
+
+.orgtreeitem img
+{
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 3px;
+}
+
+.orgtreeitemtitle
+{
+    background-color: White;
+    cursor: pointer;
+    padding: 3px;
+}
+
+.orgtreeitemtitleselected
+{
+    background-color: #0000ff;
+    color: White;
+}
+
+.editor-field #orgtree
+{
+    height: 150px;
+}
+
+#serverMessage
+{
+    border: 5px solid White;
+    background: Black;
+    color: White;
+    padding: 20px;
+    display: none;
+    position: fixed;
+    left: 100px;
+    top: 100px;
+    font-size: 18px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+}
+
+.buttonPanel
+{
+    margin-top: 10px;
+}
+
+#widgetContainer
+{
+    min-height: 245px;    
+}
+
+#widgetTray
+{
+    display: none;
+}
+
+div.widget
+{
+    float: left;
+    vertical-align: top;
+    border: 2px solid rgb(178,84,58);
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    background-color: #fff7e0;
+    margin: 2px;
+}
+
+div.clear
+{
+    clear: both;
+    float: none;
+}
+
+div.widgetTitle
+{
+    text-align: center;
+    vertical-align: middle;
+    border-bottom: 1px solid rgb(178,84,58);
+    color: rgb(178,84,58);
+    font-size: 16px;
+    margin: 0px;
+    height: 22px;
+    cursor: move;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+div.widgetContent
+{
+    text-align: center;
+    width: 370px;
+    height: 215px;
+    overflow: auto;
+    vertical-align: middle;
+    margin: 4px;
+    float: left;
+}
+
+.loading
+{
+    text-align: center;
+    width: 370px;
+    height: 135px;
+    padding-top: 80px;
+    overflow: auto;
+    vertical-align: middle;
+    display: none;
+    margin: 4px;
+    background-color: White;
+    float: left;
+}
+
+#widgetTray div.widgetTitle
+{
+    width: 150px;
+    border: none;
+}
+
+
+#widgetContainer div.widgetTitle
+{
+    width: 378px;
+}
+
+#viewUrl, #saveUrl
+{
+    display: none;
+}
+
+div.refreshButton
+{
+    float: left;
+    margin-left: 6px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+div.minButton
+{
+    float: right;
+    margin-right: 6px;
+    margin-top: 3px;
+    cursor: pointer;
+}
+
+div#widgetTray div.minButton,
+div#widgetTray div.refreshButton,
+div#widgetTray div.widgetContent
+{
+    display: none;
+}
+
+#widgetTray div.widgetTitle:hover
+{
+    
+    background-color: rgb(178,84,58);
+    cursor: pointer;
+    color: White;
+}
+

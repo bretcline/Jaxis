@@ -1,0 +1,224 @@
+/* ----------------- Main ----------------- */
+/* Loading panel */
+.dxheLoadingDiv_SoftOrange
+{
+    background: white;
+    opacity: 0.85;
+    filter: alpha(opacity=85);
+    cursor: wait;
+}
+.dxheLoadingPanel_SoftOrange
+{
+    font: 12px Tahoma;
+	color: #f88538;
+}
+.dxheLoadingPanel_SoftOrange td.dx
+{
+    white-space: nowrap;
+    text-align: center;
+	padding: 12px;
+}
+
+.dxheControl_SoftOrange
+{
+    border: Solid 3px #D3D3D3;
+}
+
+/* Area */
+.dxheErrorFrame_SoftOrange
+{
+    font-size: 12px;
+    font-family: Tahoma;
+    color: #D00707;
+    background-color: #FBC7C7;
+    border-bottom: solid 1px #DEC0C0;
+}
+.dxheErrorFrame_SoftOrange .dxhe {
+    padding: 5px;
+}
+.dxheErrorFrame_SoftOrange .dxhe td {
+    padding: 0px;
+}
+.dxheErrorFrame_SoftOrange .dxheErrorFrameCloseButton_SoftOrange {
+    cursor: pointer;
+}
+.dxheContentArea_SoftOrange
+{
+    padding: 4px;
+	padding-bottom: 6px;
+    background-color: #E5E5E5;
+}
+.dxheViewArea_SoftOrange
+{
+    border: Solid 3px #D3D3D3;    
+}
+.dxheHtmlViewEdit_SoftOrange,
+.dxheDesignViewArea_SoftOrange,
+.dxhePreviewArea_SoftOrange 
+{
+    margin: 0px;
+    background-color: #FFFFFF;
+    background-image: none;
+    font-size: smaller;
+    font: normal 12px Arial;
+}
+td.dxheHtmlViewEdit_SoftOrange, body.dxheDesignViewArea_SoftOrange, body.dxhePreviewArea_SoftOrange
+{
+    padding: 0 0 0 4px;
+}
+.dxheControl_SoftOrange.dxhe-rtl td.dxheHtmlViewEdit_SoftOrange, 
+.dxheControl_SoftOrange.dxhe-rtl .dxeMemo_SoftOrange td,
+body.dxheDesignViewArea_SoftOrange.dxhe-rtl, 
+body.dxhePreviewArea_SoftOrange.dxhe-rtl
+{
+    padding: 0 4px 0 0;
+}
+.dxheControl_SoftOrange .dxeMemo_SoftOrange textarea 
+{
+	resize:none;
+}
+/* Element appearance in DesignView */
+body.dxheDesignViewArea_SoftOrange table.dxEmptyBorderTable,
+body.dxheDesignViewArea_SoftOrange table.dxEmptyBorderTable td  {
+    border:1px dotted gray;
+}
+@media print 
+{
+	body.dxheDesignViewArea_SoftOrange table.dxEmptyBorderTable,
+	body.dxheDesignViewArea_SoftOrange table.dxEmptyBorderTable td  {
+		border:0px;
+	}
+}
+/* Status Bar */
+.dxheStatusBar_SoftOrange 
+{
+}
+.dxheStatusBarTab_SoftOrange 
+{    
+}
+.dxheStatusBarActiveTab_SoftOrange 
+{
+}
+.dxHtmlEditor_heSizeGrip_SoftOrange 
+{
+    cursor: se-resize;
+}
+.dxHtmlEditor_heSizeGripRtl_SoftOrange 
+{
+    cursor: ne-resize;
+}
+.dxheSizeGripContainer_SoftOrange 
+{
+    float: left;
+    height: 0;
+    width: 100%;
+    text-align: right;
+    font-size: 0;
+    margin-top:-12px;
+}
+.dxheControl_SoftOrange.dxhe-rtl .dxheSizeGripContainer_SoftOrange 
+{
+	text-align: left;
+}
+/* ----------------- Dialog Forms ----------------- */
+#dxInsertTableForm .buttonsCell,
+#dxInsertLinkForm .buttonsCell,
+#dxInsertImageForm .buttonsCell,
+#dxPasteFromWordForm .buttonsCell,
+#dxTableColumnPropertiesForm .buttonsCell,
+.dxheCustomDialog_SoftOrange .dxhecd-Buttons
+{
+	background-color: #F9F9F9;
+	border-top: solid 1px #E0E0E0;
+    padding: 11px;
+}
+#dxInsertImageForm .imagePreviewCell
+{
+    color: #878787;
+    border: dashed 1px #cac8c8;
+}
+#dxPasteFromWordForm .pasteContainerCell td
+{
+	border: Solid 1px #A0A0A0;
+}
+/*----------------- Toolbars -----------------*/
+.dxtbSpacing_SoftOrange
+{
+	height: 3px;
+}
+.dxtbControl_SoftOrange 
+{
+	font: 12px Tahoma;
+	color: black;
+	background-color: #D3D3D3;
+    border-bottom: Solid 3px #D3D3D3;
+}
+
+.dxtbControl_SoftOrange td.dxmtb.dxmMenu_SoftOrange
+{
+	border:0px;
+}
+.dxtbComboBoxMenuItem_SoftOrange
+{
+    padding-top: 1px;
+}
+
+/* Toolbars Lightweight Mode */
+.dxtbControl_SoftOrange .dxmLite_SoftOrange .dxm-main.dxmtb {
+    border-width: 0px;
+}
+.dxtbControl_SoftOrange .dxmLite_SoftOrange .dxmtb .dxtb-comboBoxMenuItem {
+	border-width: 0px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+.dxtbControl_SoftOrange .dxmLite_SoftOrange .dxm-horizontal.dxmtb .dxm-image-l .dxm-dropDownMode.dxtb-cb .dxm-content, 
+.dxtbControl_SoftOrange .dxmLite_SoftOrange .dxm-horizontal.dxmtb .dxm-image-r .dxm-dropDownMode.dxtb-cb .dxm-content
+{
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+.dxtbControl_SoftOrange .dxmLite_SoftOrange .dxm-horizontal.dxmtb .dxm-image-l .dxm-item.dxtb-cddi .dxm-content, 
+.dxtbControl_SoftOrange .dxmLite_SoftOrange .dxm-horizontal.dxmtb .dxm-image-r .dxm-item.dxtb-cddi .dxm-content
+{
+	padding-top: 5px;
+	padding-bottom: 4px;
+}
+
+.dxmLite_SoftOrange .dxhetipControl_SoftOrange img
+{
+	vertical-align: top;
+}
+
+/* ToolbarColorButton */
+.dxtcbControl_SoftOrange { }
+.dxtcbColorDiv_SoftOrange
+{
+	width: 16px;
+	height: 4px;
+	font-size:0px;
+	background-color: Red;
+}
+
+/*----------------- RoundPanel -----------------*/
+.dxheRP.dxrpControl_SoftOrange td.dxrp,
+.dxheRP.dxrpControlGB_SoftOrange td.dxrp
+{
+	color: #000000;	
+}
+.dxheRP.dxrpControl_SoftOrange .dxrpcontent
+{
+    padding: 9px 8px;
+}
+
+/* Header */
+.dxheRP.dxrpControl_SoftOrange .dxrpHeader_SoftOrange td.dxrp,
+.dxheRP.dxrpControlGB_SoftOrange span.dxrpHeader_SoftOrange
+{
+    font-size: 13px;
+    font-weight: bold;
+	font-family: Tahoma;    
+	color: #313131;
+	text-align: left;	
+}
+

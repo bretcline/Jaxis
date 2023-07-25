@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/BevWebServiceData" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BevWebServiceData" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="UPCData">
+    <xs:sequence>
+      <xs:element name="_x003C_AmountInBottle_x003E_k__BackingField" type="xs:short" />
+      <xs:element name="_x003C_BottleSize_x003E_k__BackingField" type="xs:short" />
+      <xs:element name="_x003C_NozzleDiameter_x003E_k__BackingField" type="xs:float" />
+      <xs:element name="_x003C_TagID_x003E_k__BackingField" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_ViscocityByTemperature_x003E_k__BackingField" nillable="true" type="q1:ArrayOfKeyValueOfintdouble" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UPCData" nillable="true" type="tns:UPCData" />
+  <xs:complexType name="EngineSettings">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_FormulaValues_x003E_k__BackingField" nillable="true" type="q2:ArrayOfKeyValueOfstringstring" />
+      <xs:element name="_x003C_Formula_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_IPAddress_x003E_k__BackingField" nillable="true" type="xs:string" />
+      <xs:element name="_x003C_Port_x003E_k__BackingField" type="xs:short" />
+      <xs:element name="_x003C_SleepTime_x003E_k__BackingField" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EngineSettings" nillable="true" type="tns:EngineSettings" />
+  <xs:complexType name="PourData">
+    <xs:sequence>
+      <xs:element name="_x003C_DeviceID_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_EventID_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_PourAmount_x003E_k__BackingField" type="xs:short" />
+      <xs:element name="_x003C_PourTime_x003E_k__BackingField" type="ser:duration" />
+      <xs:element name="_x003C_RawData_x003E_k__BackingField" nillable="true" type="xs:base64Binary" />
+      <xs:element name="_x003C_TagID_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Temperature_x003E_k__BackingField" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PourData" nillable="true" type="tns:PourData" />
+  <xs:complexType name="TagPhase">
+    <xs:sequence>
+      <xs:element name="_x003C_BatteryVoltage_x003E_k__BackingField" type="xs:short" />
+      <xs:element name="_x003C_EventTime_x003E_k__BackingField" type="xs:dateTime" />
+      <xs:element name="_x003C_EventType_x003E_k__BackingField" type="tns:TagPhaseType" />
+      <xs:element name="_x003C_TagID_x003E_k__BackingField" type="xs:int" />
+      <xs:element name="_x003C_Temperature_x003E_k__BackingField" type="xs:short" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TagPhase" nillable="true" type="tns:TagPhase" />
+  <xs:simpleType name="TagPhaseType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Heartbeat" />
+      <xs:enumeration value="Connect" />
+      <xs:enumeration value="Disconnect" />
+      <xs:enumeration value="Dormant" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TagPhaseType" nillable="true" type="tns:TagPhaseType" />
+  <xs:complexType name="ArrayOfTagPhase">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TagPhase" nillable="true" type="tns:TagPhase" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTagPhase" nillable="true" type="tns:ArrayOfTagPhase" />
+</xs:schema>

@@ -1,0 +1,499 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="UPCLabel" xml:space="preserve">
+    <value>UPC</value>
+  </data>
+  <data name="Event" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Barcode_icon_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Barcode-icon.32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Addupc_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Addupc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InventoryManagement" xml:space="preserve">
+    <value>Inventory Management</value>
+  </data>
+  <data name="increaseinventoryWithArrow_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\increaseinventoryWithArrow.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddCategory_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddCategory.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stop" xml:space="preserve">
+    <value>Stop</value>
+  </data>
+  <data name="NozzleDiameter" xml:space="preserve">
+    <value>Nozzle Diameter</value>
+  </data>
+  <data name="Subcategories" xml:space="preserve">
+    <value>Subcategories</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="IncreaseInventory_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IncreaseInventory.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bottle_full_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bottle_full.32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="bottle_full" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bottle_full.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Branding" xml:space="preserve">
+    <value>Branding</value>
+  </data>
+  <data name="InvalidLogin" xml:space="preserve">
+    <value>The user name or password you entered is incorrect.</value>
+  </data>
+  <data name="RemoveFromBar" xml:space="preserve">
+    <value>Remove from Bar</value>
+  </data>
+  <data name="IncreaseInventory" xml:space="preserve">
+    <value>Increase Inventory</value>
+  </data>
+  <data name="BarManagement" xml:space="preserve">
+    <value>Bar Management</value>
+  </data>
+  <data name="Activity_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Activity.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="upc_image" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\upc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
+  </data>
+  <data name="ReportExport" xml:space="preserve">
+    <value>Report Export</value>
+  </data>
+  <data name="RemoveBarManagement_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RemoveBarManagement.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Liquor" xml:space="preserve">
+    <value>Liquor</value>
+  </data>
+  <data name="DecreaseInventory" xml:space="preserve">
+    <value>Decrease Inventory</value>
+  </data>
+  <data name="Activity" xml:space="preserve">
+    <value>Activity</value>
+  </data>
+  <data name="AllowKeyboardEntry" xml:space="preserve">
+    <value>Allow Keyboard Entry</value>
+  </data>
+  <data name="SelectEvent" xml:space="preserve">
+    <value>Please select an bar/event before proceeding.</value>
+  </data>
+  <data name="AddLocation" xml:space="preserve">
+    <value>Add Location</value>
+  </data>
+  <data name="Beer_full" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Beer-full.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Stats_Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Stats Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Administration" xml:space="preserve">
+    <value>Administration</value>
+  </data>
+  <data name="All" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\All.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddLocation_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddLocation.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Zoom1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zoom.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Branding_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Branding.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Wine_full" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wine-full.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SaveBarManagement_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SaveBarManagement.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DecreaseZeroItems" xml:space="preserve">
+    <value>There are no more unbranded items.</value>
+  </data>
+  <data name="MoveInventory" xml:space="preserve">
+    <value>Move Inventory</value>
+  </data>
+  <data name="alias" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alias.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="upc_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\upc.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MainFormTitle" xml:space="preserve">
+    <value>Beverage Monitor - {0}</value>
+  </data>
+  <data name="Tools_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Tools.32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Refresh_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Refresh.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SizeType" xml:space="preserve">
+    <value>Size Type</value>
+  </data>
+  <data name="UserID" xml:space="preserve">
+    <value>User ID</value>
+  </data>
+  <data name="RunReport" xml:space="preserve">
+    <value>Run Report</value>
+  </data>
+  <data name="TagNotBranded" xml:space="preserve">
+    <value>Tag {0} is not branded.  Would you like to brand it now?</value>
+  </data>
+  <data name="BrandFrom" xml:space="preserve">
+    <value>Is this item from existing inventory?</value>
+  </data>
+  <data name="InvalidTagNumber" xml:space="preserve">
+    <value>Invalid Tag number, please rescan the tag associated with the bottle.</value>
+  </data>
+  <data name="Beer" xml:space="preserve">
+    <value>Beer</value>
+  </data>
+  <data name="AddUPC" xml:space="preserve">
+    <value>Add UPC</value>
+  </data>
+  <data name="RemoveBranding_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RemoveBranding.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PasswordsDontMatch" xml:space="preserve">
+    <value>Passwords don't match</value>
+  </data>
+  <data name="Wine" xml:space="preserve">
+    <value>Wine</value>
+  </data>
+  <data name="Zoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Zoom.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AddToBar" xml:space="preserve">
+    <value>Add to Bar</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Management" xml:space="preserve">
+    <value>Management</value>
+  </data>
+  <data name="RemoveText" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="Inventory" xml:space="preserve">
+    <value>Inventory</value>
+  </data>
+  <data name="NoInventory" xml:space="preserve">
+    <value>There is no {0} in the current inventory.  Continue to add to inventory?</value>
+  </data>
+  <data name="SaveBranding" xml:space="preserve">
+    <value>Would you like to save the branded items?</value>
+  </data>
+  <data name="Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UPCManagement" xml:space="preserve">
+    <value>UPC Management</value>
+  </data>
+  <data name="cash-register-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cash-register-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TagID" xml:space="preserve">
+    <value>Tag ID</value>
+  </data>
+  <data name="Mixed_full" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mixed-full.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="Cog_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cog.32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NoInventoryCost" xml:space="preserve">
+    <value>You must assign this item a cost.</value>
+  </data>
+  <data name="AddInventory_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddInventory.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Subcategory" xml:space="preserve">
+    <value>Subcategory</value>
+  </data>
+  <data name="ExistingInventory" xml:space="preserve">
+    <value>Existing Inventory</value>
+  </data>
+  <data name="AddSubCategory_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddSubCategory.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Manufacturers" xml:space="preserve">
+    <value>Manufacturers</value>
+  </data>
+  <data name="Bottles" xml:space="preserve">
+    <value>Bottles</value>
+  </data>
+  <data name="AddSubCategory" xml:space="preserve">
+    <value>Add Sub Category</value>
+  </data>
+  <data name="EditUPC" xml:space="preserve">
+    <value>Edit UPC</value>
+  </data>
+  <data name="SaveBranding_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SaveBranding.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BarActivity" xml:space="preserve">
+    <value>Bar Activity</value>
+  </data>
+  <data name="NewInventory" xml:space="preserve">
+    <value>New Inventory</value>
+  </data>
+  <data name="InvalidLocation" xml:space="preserve">
+    <value>Please select a valid locaiton</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="frmTicketItemAliases_RecipeList_NullItem" xml:space="preserve">
+    <value>None (Ignore ticket item)</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="UnbrandBottle" xml:space="preserve">
+    <value>Unbrand Bottle</value>
+  </data>
+  <data name="flask-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\flask-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="Manufacturer" xml:space="preserve">
+    <value>Manufacturer</value>
+  </data>
+  <data name="BarManagement_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BarManagement.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Chart" xml:space="preserve">
+    <value>Chart</value>
+  </data>
+  <data name="Inventory_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Inventory.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Bar" xml:space="preserve">
+    <value>Bar</value>
+  </data>
+  <data name="Remove" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Remove.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ApplicationTitle" xml:space="preserve">
+    <value>Beverage Monitor</value>
+  </data>
+  <data name="AddInventory" xml:space="preserve">
+    <value>Add Inventory</value>
+  </data>
+  <data name="Move" xml:space="preserve">
+    <value>Move</value>
+  </data>
+  <data name="Wood_2_icon_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Wood-2-icon.32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CurrentPours" xml:space="preserve">
+    <value>Current Pours</value>
+  </data>
+  <data name="Errors" xml:space="preserve">
+    <value>Errors</value>
+  </data>
+  <data name="Size" xml:space="preserve">
+    <value>Size</value>
+  </data>
+  <data name="InventoryExists" xml:space="preserve">
+    <value>This inventory item ({0}) already exists at this location ({1}).</value>
+  </data>
+  <data name="RebrandTag" xml:space="preserve">
+    <value>Tag {1} is already associated with {0}.  Do you want to rebrand this tag?</value>
+  </data>
+  <data name="Addupc_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Addupc.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bottle_empty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bottle_empty.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="bottle_full_save_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bottle_full_save.32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BrandBottle" xml:space="preserve">
+    <value>Brand Bottle</value>
+  </data>
+  <data name="ValueIsMissing" xml:space="preserve">
+    <value>{0} is missing...{1}</value>
+  </data>
+  <data name="ReportParameters" xml:space="preserve">
+    <value>Report Parameters</value>
+  </data>
+  <data name="AddCategory" xml:space="preserve">
+    <value>Add Category</value>
+  </data>
+  <data name="bar_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bar.32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="bottle_full_remove_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bottle_full_remove.32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="DecreaseInventory_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DecreaseInventory.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="beer_icon_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\beer-icon.32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EditUpc_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EditUpc.48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SaveInventory" xml:space="preserve">
+    <value>Would you like to save the updated items?</value>
+  </data>
+  <data name="SaveUnbrandedItems" xml:space="preserve">
+    <value>Would you like to remove the items from inventory?</value>
+  </data>
+</root>

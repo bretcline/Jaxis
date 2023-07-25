@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="TestElevation.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="408" d:DesignWidth="400" xmlns:my="clr-namespace:ElevationControl;assembly=ElevationControl" BorderBrush="#FF581B1B" BorderThickness="5" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" Foreground="#FF0E1B62">
+
+    <Grid x:Name="LayoutRoot" Background="White" Cursor="Arrow" Height="399">
+        <Rectangle Height="222" HorizontalAlignment="Left" Margin="88,80,0,0" Name="recGradient" Stroke="Red" StrokeThickness="1" VerticalAlignment="Top" Width="75" Loaded="recGradient_Loaded" />
+    </Grid>
+</UserControl>

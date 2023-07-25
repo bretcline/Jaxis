@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C431984-169F-4611-99A1-B3619453D661}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Jaxis.DrinkInventory.Reporting.Test</RootNamespace>
+    <AssemblyName>Jaxis.DrinkInventory.Reporting.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v14.1.Core, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v14.1.Wizard, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v14.1.Core, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    
+    <Reference Include="DevExpress.XtraReports.v14.1.Extensions, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v14.1.Core, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v14.1.UI, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="JaxisLog4Net, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2a8dcec5c60797b6, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Jaxis\JaxisLog4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\Jaxis\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\nUnit\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 3\Assemblies\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessTest\BaseBusinessTest.cs" />
+    <Compile Include="BusinessTest\BusinessProviderBaseTest.cs" />
+    <Compile Include="BusinessTest\BusinessProviderToFakesTest.cs" />
+    <Compile Include="BusinessTest\BusinessProviderToEntitiesTest.cs" />
+    <Compile Include="BusinessTest\UserTest.cs" />
+    <Compile Include="DataTest\DataTest.cs" />
+    <Compile Include="Fakes\FakeArea.cs" />
+    <Compile Include="Fakes\FakeAreaDataManager.cs" />
+    <Compile Include="Fakes\FakeAreaMembership.cs" />
+    <Compile Include="Fakes\FakeAreaMembershipDataManager.cs" />
+    <Compile Include="Fakes\FakeBOrganization.cs" />
+    <Compile Include="Fakes\FakeBusinessProvider.cs" />
+    <Compile Include="Fakes\FakeBusinessUser.cs" />
+    <Compile Include="Fakes\FakeBusinessUserGroup.cs" />
+    <Compile Include="Fakes\FakeClock.cs" />
+    <Compile Include="Fakes\FakeDataManager.cs" />
+    <Compile Include="Fakes\FakeDataManagerFactory.cs" />
+    <Compile Include="Fakes\FakeDataProvider.cs" />
+    <Compile Include="Fakes\FakeDomainObject.cs" />
+    <Compile Include="Fakes\FakeOrganization.cs" />
+    <Compile Include="Fakes\FakeOrganizationDataManager.cs" />
+    <Compile Include="Fakes\FakeReportingService.cs" />
+    <Compile Include="Fakes\FakeServiceWrapper.cs" />
+    <Compile Include="Fakes\FakeServiceWrapperFactory.cs" />
+    <Compile Include="Fakes\FakeSession.cs" />
+    <Compile Include="Fakes\FakeSessionDataManager.cs" />
+    <Compile Include="Fakes\FakeSessionProvider.cs" />
+    <Compile Include="Fakes\FakeUser.cs" />
+    <Compile Include="Fakes\FakeUserDataManager.cs" />
+    <Compile Include="Fakes\FakeUserGroup.cs" />
+    <Compile Include="Fakes\FakeUserGroupDataManager.cs" />
+    <Compile Include="Fakes\FakeUserGroupMembership.cs" />
+    <Compile Include="Fakes\FakeUserGroupMembershipDataManager.cs" />
+    <Compile Include="Fakes\FakeUserGroupXOrganization.cs" />
+    <Compile Include="Fakes\FakeUserGroupXOrganizationManager.cs" />
+    <Compile Include="Fakes\FakeView.cs" />
+    <Compile Include="Fakes\FakeViewDataManager.cs" />
+    <Compile Include="Fakes\FakeWebSession.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomStuff\RandomTest.cs" />
+    <Compile Include="TestHelpers.cs" />
+    <Compile Include="WcfServiceTest\ReportingServiceTest.cs" />
+    <Compile Include="Web2Test\ReportControllerTest.cs" />
+    <Compile Include="Web2Test\ReportFactoryTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessInterfaces\BusinessInterfaces.csproj">
+      <Project>{A0D725ED-13A6-4A51-890B-2E75FE24CD4D}</Project>
+      <Name>BusinessInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{950D49EE-28F8-45E3-AA2F-4EDFAB363B9D}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{F4F98C6C-CCBD-45D0-B206-EF7E654323B8}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataInterfaces\DataInterfaces.csproj">
+      <Project>{DC28F4AE-233B-46A7-BC5F-BA100DE90168}</Project>
+      <Name>DataInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{8E685B53-23AE-4F4E-8A08-5816E5E594EE}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\POCO\POCO.csproj">
+      <Project>{F596D231-FDED-4EF5-9991-F0ED522256C5}</Project>
+      <Name>POCO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\Tools.csproj">
+      <Project>{2DC314A4-7058-47C1-B89F-6F391BBB23F1}</Project>
+      <Name>Tools</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WcfService\WcfService.csproj">
+      <Project>{885C5C88-E6FE-48BF-8528-20194E2D067F}</Project>
+      <Name>WcfService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web2\Web2.csproj">
+      <Project>{C2FAFB3E-00EF-468F-8839-43DAF1A4D4CF}</Project>
+      <Name>Web2</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Web2Test\ReportFiles\Report1.repx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Web2Test\ReportFiles\Report2.repx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

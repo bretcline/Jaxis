@@ -1,0 +1,240 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A6DF581B-4B84-48CE-B262-9186CFDA5A6A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MobileInterrogator</RootNamespace>
+    <AssemblyName>MobileInterrogator</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>PocketPC</PlatformFamilyName>
+    <PlatformID>b2c48bd2-963d-4549-9169-1fa021dce484</PlatformID>
+    <OSVersion>5.2</OSVersion>
+    <DeployDirSuffix>MobileInterrogator</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows Mobile 6 Professional SDK</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LFI.Mobile.Controls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ce0550a59d833505, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdParty\LFI\LFI.Mobile.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsCE.Forms" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppContext.cs" />
+    <Compile Include="ValueEditors\ValueEditorDate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ValueEditors\ValueEditorDate.designer.cs">
+      <DependentUpon>ValueEditorDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValueEditors\ValueEditorText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ValueEditors\ValueEditorText.designer.cs">
+      <DependentUpon>ValueEditorText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValueEditors\ValueEditorNumber.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ValueEditors\ValueEditorNumber.designer.cs">
+      <DependentUpon>ValueEditorNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValueEditors\ValueEditorPicklist.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ValueEditors\ValueEditorPicklist.designer.cs">
+      <DependentUpon>ValueEditorPicklist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValueEditors\ValueEditorFactory.cs" />
+    <Compile Include="ValueEditors\IValueEditor.cs" />
+    <Compile Include="Screens\ValueEditScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\ValueEditScreen.Designer.cs">
+      <DependentUpon>ValueEditScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ValueEditContext.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IconResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>IconResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen Manager\BaseScreen.resx">
+      <DependentUpon>BaseScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\ValueEditScreen.resx">
+      <DependentUpon>ValueEditScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValueEditors\ValueEditorDate.resx">
+      <DependentUpon>ValueEditorDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValueEditors\ValueEditorText.resx">
+      <DependentUpon>ValueEditorText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValueEditors\ValueEditorNumber.resx">
+      <DependentUpon>ValueEditorNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValueEditors\ValueEditorPicklist.resx">
+      <DependentUpon>ValueEditorPicklist.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="IconResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IconResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Screen Manager\BaseScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screen Manager\BaseScreen.designer.cs">
+      <DependentUpon>BaseScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen Manager\IScreen.cs" />
+    <Compile Include="Screen Manager\ScreenChangeEventArgs.cs" />
+    <Compile Include="Screen Manager\ScreenManager.cs" />
+    <Compile Include="Screen Manager\ScreenResults.cs" />
+    <Compile Include="Screens\DataRowScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\DataRowScreen.Designer.cs">
+      <DependentUpon>DataRowScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\HeaderScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\HeaderScreen.Designer.cs">
+      <DependentUpon>HeaderScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\FormatScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\FormatScreen.Designer.cs">
+      <DependentUpon>FormatScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\HomeScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Screens\HomeScreen.Designer.cs">
+      <DependentUpon>HomeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ScreenEnums.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FormatLibrary\TagData.csproj">
+      <Project>{51DCF668-20D9-4BA9-B52B-3B4BFF507BED}</Project>
+      <Name>TagData</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RFIDReaderLib\RFIDReaderLib.csproj">
+      <Project>{24D64182-04A9-4FE7-9768-4C7AA89058CF}</Project>
+      <Name>RFIDReaderLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Formats\00000000-0000-0000-0000-000000000000.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Formats\00000000-0000-0000-0000-000000000001.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Formats\00000000-0000-0000-0000-000000000002.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Icons\Add.Disabled.ico" />
+    <Content Include="Icons\Add.ico">
+    </Content>
+    <Content Include="Icons\Backspace.ico" />
+    <Content Include="Icons\Clear.ico" />
+    <Content Include="Icons\Decimal.ico" />
+    <Content Include="Icons\Edit.ico" />
+    <Content Include="Icons\Edit.Disabled.ico" />
+    <Content Include="Icons\Move.Next.Disabled.ico" />
+    <Content Include="Icons\Move.Next.ico" />
+    <Content Include="Icons\Move.Previous.Disabled.ico" />
+    <Content Include="Icons\Move.Previous.ico" />
+    <Content Include="Icons\Number0.ico" />
+    <Content Include="Icons\Number1.ico" />
+    <Content Include="Icons\Number2.ico" />
+    <Content Include="Icons\Number3.ico" />
+    <Content Include="Icons\Number4.ico" />
+    <Content Include="Icons\Number5.ico" />
+    <Content Include="Icons\Number6.ico" />
+    <Content Include="Icons\Number7.ico" />
+    <Content Include="Icons\Number8.ico" />
+    <Content Include="Icons\Number9.ico" />
+    <Content Include="Icons\Sign.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

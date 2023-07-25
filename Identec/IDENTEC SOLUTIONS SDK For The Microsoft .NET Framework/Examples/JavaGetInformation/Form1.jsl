@@ -1,0 +1,157 @@
+/* COPYRIGHT AND COMPANY INFORMATION ****************************************************************************
+ *  
+ * Copyright (C) 2006 by Identec Solutions.
+ *
+ * This Copyright notice may not be removed or modified without prior written consent of Identec Solutions.
+ * Identec Solutions, reserves the right to modify this software without notice.
+ *
+ * IDENTEC Solutions, Inc.
+ * Phone: (250) 860-6567; Fax: (250) 860-6541;
+ * Suite 200 - 1358 Saint Paul Street
+ * Kelowna, British Columbia, Canada V1Y 9X1
+ * www.identecsolutions.com                  
+ * 
+ * Europe Headquarters
+ * Identec Solutions AG         Tel.: +43 (0)5577 87387-0
+ * Millennium Park 2            Fax.: +43 (0)5577 87387-15   
+ * A-6890 Lustenau              http://www.identecsolutions.com                      
+ *
+ * IDENTEC SOLUTIONS Inc. grants you a nonexclusive copyright license to use all programming code examples 
+ * from which you can generate similar function tailored to your own specific needs.
+ *
+ * All sample code is provided by IDENTEC SOLUTIONS Inc. for illustrative purposes only. 
+ * These examples have not been thoroughly tested under all conditions. IDENTEC SOLUTIONS Inc., therefore, 
+ * cannot guarantee or imply reliability, serviceability, or function of these programs.
+ *
+ * All programs contained herein are provided to you "AS IS" without any warranties of any kind. 
+ * The implied warranties of non-infringement, 
+ * merchantability and fitness for a particular purpose are expressly disclaimed.
+ *
+ ****************************************************************************************************************/
+//////////////////////////////////////////////////////////////////////
+// $Log$
+// Revision 1.1  2006/09/08 23:57:54  darcya
+// sample application with i-CARD3
+//
+// Revision 0.1  2006/09/08 15:25:24  darcya
+// Initial add to CVS
+//
+
+package jsharp;
+
+import System.Drawing.*;
+import System.Collections.*;
+import System.ComponentModel.*;
+import System.Windows.Forms.*;
+import System.Data.*;
+import IDENTEC.Readers.*;
+
+/**
+ * Summary description for Form1.
+ */
+public class Form1 extends System.Windows.Forms.Form
+{
+	private System.Windows.Forms.Button button1;
+	private System.Windows.Forms.TextBox textBox1;
+	private System.Windows.Forms.Label label1;
+	/**
+	 * Required designer variable.
+	 */
+	private System.ComponentModel.Container components = null;
+
+	public Form1()
+	{
+		//
+		// Required for Windows Form Designer support
+		//
+		InitializeComponent();
+
+		//
+		// TODO: Add any constructor code after InitializeComponent call
+		//
+	}
+
+	/**
+	 * Clean up any resources being used.
+	 */
+	protected void Dispose(boolean disposing)
+	{
+		if (disposing)
+		{
+			if (components != null)
+			{
+				components.Dispose();
+			}
+		}
+		super.Dispose(disposing);
+	}
+
+	#region Windows Form Designer generated code
+	/**
+	 * Required method for Designer support - do not modify
+	 * the contents of this method with the code editor.
+	 */
+	private void InitializeComponent()
+	{
+		this.button1 = new System.Windows.Forms.Button();
+		this.textBox1 = new System.Windows.Forms.TextBox();
+		this.label1 = new System.Windows.Forms.Label();
+		this.SuspendLayout();
+		// 
+		// button1
+		// 
+		this.button1.set_Location(new System.Drawing.Point(24, 48));
+		this.button1.set_Name("button1");
+		this.button1.set_Size(new System.Drawing.Size(96, 24));
+		this.button1.set_TabIndex(0);
+		this.button1.set_Text("connect");
+		this.button1.add_Click( new System.EventHandler(this.button1_Click) );
+		// 
+		// textBox1
+		// 
+		this.textBox1.set_Location(new System.Drawing.Point(24, 80));
+		this.textBox1.set_Name("textBox1");
+		this.textBox1.set_Size(new System.Drawing.Size(216, 20));
+		this.textBox1.set_TabIndex(1);
+		this.textBox1.set_Text("");
+		// 
+		// label1
+		// 
+		this.label1.set_Location(new System.Drawing.Point(24, 8));
+		this.label1.set_Name("label1");
+		this.label1.set_Size(new System.Drawing.Size(216, 32));
+		this.label1.set_TabIndex(2);
+		this.label1.set_Text("This will connect and show the result of the iCard3.get_Information() call.");
+		// 
+		// Form1
+		// 
+		this.set_AutoScaleBaseSize(new System.Drawing.Size(5, 13));
+		this.set_ClientSize(new System.Drawing.Size(264, 118));
+		this.get_Controls().Add(this.label1);
+		this.get_Controls().Add(this.textBox1);
+		this.get_Controls().Add(this.button1);
+		this.set_Name("Form1");
+		this.set_Text("Connect to i-CARD 3");
+		this.ResumeLayout(false);
+
+	}
+	#endregion
+
+	/**
+	 * The main entry point for the application.
+	 */
+	/** @attribute System.STAThread() */
+	public static void main(String[] args) 
+	{
+		Application.Run(new Form1());
+	}
+
+	private void button1_Click (Object sender, System.EventArgs e)
+	{
+		iCard3 icard = new iCard3();
+		icard.Connect();
+		String sinfo;
+		sinfo = icard.get_Information();
+		textBox1.set_Text( sinfo );
+	}
+}

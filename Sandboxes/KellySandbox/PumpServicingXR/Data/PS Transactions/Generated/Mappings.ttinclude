@@ -1,0 +1,15 @@
+﻿<#+ 
+	public string ConvertColumn( Table _table, Column _column )
+	{
+		string rc = _column.CleanName;
+		if ( _table.PrimaryKey == rc )
+		{
+			rc = "ID";
+		}
+		else if ( rc.Contains( "LstChgDT" ) )
+		{
+			rc = "LastModified";
+		}
+		return rc;
+	}
+#>

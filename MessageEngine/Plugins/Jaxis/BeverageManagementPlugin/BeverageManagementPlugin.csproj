@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{43BF589B-6F4C-4336-88A9-FDC9194485A0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Jaxis.BeverageManagement.Plugin</RootNamespace>
+    <AssemblyName>Jaxis.BeverageManagement.Plugin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JaxisLog4Net">
+      <HintPath>..\..\..\..\DLLS\JaxisLog4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\DLLS\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SubSonic.Core">
+      <HintPath>..\..\..\..\DLLS\SubSonic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alerts\CloudAlerts.cs" />
+    <Compile Include="Alerts\EmailAlertMessages.cs" />
+    <Compile Include="Alerts\UdpAlerts.cs" />
+    <Compile Include="Alerts\UdpAlertsConfig.cs" />
+    <Compile Include="BaseBevManDevice.cs" />
+    <Compile Include="BeverageConsumer.cs" />
+    <Compile Include="DataConsumerConfig.cs" />
+    <Compile Include="Alerts\EmailAlerts.cs" />
+    <Compile Include="Alerts\EmailAlertsConfig.cs" />
+    <Compile Include="HeartbeatMonitor\HeartbeatMonitor.cs" />
+    <Compile Include="HeartbeatMonitor\HeartbeatMonitorConfig.cs" />
+    <Compile Include="POSConsumption\InventoryReduction.cs" />
+    <Compile Include="POSReconcile\PourPosReconcile.cs" />
+    <Compile Include="POSReconcile\PourPosReconcileConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\PourDataService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\svcCloudNotification\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TicketConsumer.cs" />
+    <Compile Include="WCFProcessors\WCFProcessor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\JaxisExtensions\JaxisExtensions.csproj">
+      <Project>{0A31F19C-1B83-46D3-BAD3-77052D4F0977}</Project>
+      <Name>JaxisExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Utils\JaxisMath\JaxisMath.csproj">
+      <Project>{EE15498B-A346-4BB8-B0BA-AB140111D824}</Project>
+      <Name>JaxisMath</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\JaxisInterfaces\JaxisInterfaces.csproj">
+      <Project>{77AB9947-1F31-4BF2-86ED-24D20ED9A5DB}</Project>
+      <Name>JaxisInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Messages\MessageLibrary\MessageLibrary.csproj">
+      <Project>{CF1F61FD-C28D-4B31-A3D8-FA07E8AC1175}</Project>
+      <Name>MessageLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\BaseDevice\BaseDevice.csproj">
+      <Project>{9768CE9C-343E-4EC1-B6DF-F5B86A721C8D}</Project>
+      <Name>BaseDevice</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{202e2743-c9de-431d-83f3-bc0cc8619569}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IDataAccess\IDataAccess.csproj">
+      <Project>{a9552b6c-5bfa-4d23-b813-9fbb548610ff}</Project>
+      <Name>IDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="BeverageMonitorEntities\BeverageMonitorEntities.csproj">
+      <Project>{19251F7F-DB2C-4085-A24C-7DD7215F85E2}</Project>
+      <Name>BeverageMonitorEntities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\PourDataService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PourDataService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PourDataService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PourDataService\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PourDataService\item31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PourDataService\PourEngineService.wsdl" />
+    <None Include="Service References\svcCloudNotification\CloudNotification.wsdl" />
+    <None Include="Service References\svcCloudNotification\CloudNotification.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCloudNotification\CloudNotification1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCloudNotification\CloudNotification2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\svcCloudNotification\CloudNotification3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\PourDataService\" />
+    <WCFMetadataStorage Include="Service References\svcCloudNotification\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PourDataService\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PourDataService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PourDataService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PourDataService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcCloudNotification\CloudNotification.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcCloudNotification\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcCloudNotification\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcCloudNotification\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

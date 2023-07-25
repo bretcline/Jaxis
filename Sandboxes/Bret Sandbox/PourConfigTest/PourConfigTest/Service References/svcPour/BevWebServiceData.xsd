@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BevWebServiceData" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BevWebServiceData" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="UPCData">
+    <xs:sequence>
+      <xs:element name="_x003C_AmountInBottle_x003E_k__BackingField" type="xs:short" />
+      <xs:element name="_x003C_BottleSize_x003E_k__BackingField" type="xs:short" />
+      <xs:element name="_x003C_NozzleDiameter_x003E_k__BackingField" type="xs:float" />
+      <xs:element name="_x003C_TagID_x003E_k__BackingField" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" name="_x003C_ViscocityByTemperature_x003E_k__BackingField" nillable="true" type="q1:ArrayOfKeyValueOfintdouble" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UPCData" nillable="true" type="tns:UPCData" />
+  <xs:complexType name="ArrayOfUPCData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UPCData" nillable="true" type="tns:UPCData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUPCData" nillable="true" type="tns:ArrayOfUPCData" />
+</xs:schema>

@@ -1,0 +1,1494 @@
+/* iOS */
+.dxeTrackBar_SoftOrange, 
+.dxeIRadioButton_SoftOrange, 
+.dxeButtonEdit_SoftOrange, 
+.dxeTextBox_SoftOrange, 
+.dxeRadioButtonList_SoftOrange, 
+.dxeCheckBoxList_SoftOrange, 
+.dxeMemo_SoftOrange, 
+.dxeListBox_SoftOrange, 
+.dxeCalendar_SoftOrange, 
+.dxeColorTable_SoftOrange
+{
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* TrackBar */
+.dxeTrackBar_SoftOrange
+{
+	user-select: none;
+	-moz-user-select: -moz-none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	visibility:hidden;
+}
+
+.dxeDisabled_SoftOrange .dxeTBHSys a,
+.dxeDisabled_SoftOrange .dxeTBVSys a
+{
+    cursor: default;
+}
+
+.dxeTBBarHighlight_SoftOrange
+{
+	font-size: 0;
+}
+
+.dxeTBScale_SoftOrange,
+.dxeTBTrack_SoftOrange,
+.dxeTBBarHighlight_SoftOrange
+{
+	cursor: pointer;
+}
+
+.dxeTBScale_SoftOrange
+{
+	z-index: 1;
+}
+.dxeTBSecondaryDH_SoftOrange,
+.dxeTBMainDH_SoftOrange
+{
+	z-index: 4;
+}
+
+.dxeTBHSys
+{
+	width: 170px;
+	height: 41px;
+}
+.dxeTBVSys
+{
+	height: 170px;
+	width: 41px;
+}
+.dxeTrackBar_SoftOrange.dxeTBBScaleSys.dxeTBVSys
+{
+	width: 62px;
+}
+.dxeTrackBar_SoftOrange.dxeTBBScaleSys.dxeTBHSys
+{	
+	height: 62px;
+}
+
+.dxeTBTrack_SoftOrange
+{
+	z-index: 2;
+	position: absolute;
+}
+
+.dxeTBHSys .dxeTBTrack_SoftOrange
+{
+	background-image:  url('edtTrackBarTrackH.gif');
+}
+.dxeTBVSys .dxeTBTrack_SoftOrange
+{
+	background-image:  url('edtTrackBarTrackV.gif');
+}
+
+.dxeTBHSys .dxeTBTrack_SoftOrange, 
+.dxeTBHSys .dxeTBBarHighlight_SoftOrange
+{
+	height: 9px;
+}
+.dxeTBVSys .dxeTBTrack_SoftOrange, 
+.dxeTBVSys .dxeTBBarHighlight_SoftOrange
+{
+	width: 9px;
+}
+
+.dxeTBHSys .dxeTBMainDH_SoftOrange,
+.dxeTBHSys .dxeTBSecondaryDH_SoftOrange
+{	
+	top: -3px;
+	width: 9px;
+	height: 15px;
+}
+.dxeTBVSys .dxeTBMainDH_SoftOrange,
+.dxeTBVSys .dxeTBSecondaryDH_SoftOrange
+{
+	left: -3px;
+	width: 15px;
+	height: 9px;
+}
+
+.dxeTBVSys .dxeTBRBScaleSys .dxeTBTrack_SoftOrange,
+.dxeTBVSys .dxeTBTrack_SoftOrange
+{
+	left: 6px;
+}
+.dxeTBVSys .dxeTBLTScaleSys .dxeTBTrack_SoftOrange
+{
+	right: 6px;
+	left: auto;
+}
+.dxeTBHSys .dxeTBLTScaleSys .dxeTBTrack_SoftOrange
+{
+	bottom: 6px;
+	top: auto;
+}
+.dxeTBHSys .dxeTBRBScaleSys .dxeTBTrack_SoftOrange,
+.dxeTBHSys .dxeTBTrack_SoftOrange
+{
+	top: 6px;
+}
+
+.dxeTBBarHighlight_SoftOrange
+{
+	left: 0px;
+	top: 0px;
+	position:absolute;
+	z-index: 3;
+}
+
+.dxeTBHSys .dxeTBBarHighlight_SoftOrange
+{
+	background-image:  url('edtTrackBarBarHighlightH.gif');
+}
+.dxeTBVSys .dxeTBBarHighlight_SoftOrange
+{
+	background-image:  url('edtTrackBarBarHighlightV.gif');
+}
+
+.dxeTBRBLabel_SoftOrange,
+.dxeTBLTLabel_SoftOrange
+{
+	font: 11px Tahoma;
+	text-align: center;
+	cursor: default;
+}
+.dxeTBSmallTickSys .dxeTBRBLabel_SoftOrange,
+.dxeTBSmallTickSys .dxeTBLTLabel_SoftOrange,
+.dxeTBLargeTickSys .dxeTBRBLabel_SoftOrange,
+.dxeTBLargeTickSys .dxeTBLTLabel_SoftOrange
+{	
+	position: absolute;
+}
+
+.dxeTBHSys .dxeTBRBLabel_SoftOrange,
+.dxeTBHSys .dxeTBLTLabel_SoftOrange
+{
+	width: 100%;
+}
+
+.dxeTBIncBtn_SoftOrange,
+.dxeTBDecBtn_SoftOrange
+{
+	padding: 2px;
+	width: 17px;
+	height: 17px;
+}
+
+.dxeTBVSys .dxeTBRBLabel_SoftOrange,
+.dxeTBVSys .dxeTBLTLabel_SoftOrange
+{
+	padding-top: 2px;
+}
+.dxeTBHSys .dxeTBBScaleSys .dxeTBRBLabel_SoftOrange
+{
+	margin-left: -4px;
+}
+.dxeTBVSys .dxeTBRBScaleSys .dxeTBRBLabel_SoftOrange,
+.dxeTBVSys .dxeTBBScaleSys .dxeTBLTLabel_SoftOrange
+{
+	right: 0px;
+}
+.dxeTBVSys .dxeTBLTScaleSys .dxeTBLTLabel_SoftOrange,
+.dxeTBVSys .dxeTBBScaleSys .dxeTBRBLabel_SoftOrange
+{
+	left: 0px;
+}
+.dxeTBHSys .dxeTBRBScaleSys .dxeTBRBLabel_SoftOrange,
+.dxeTBHSys .dxeTBBScaleSys .dxeTBLTLabel_SoftOrange
+{
+	bottom: 0px;
+}
+.dxeTBHSys .dxeTBLTScaleSys .dxeTBLTLabel_SoftOrange,
+.dxeTBHSys .dxeTBBScaleSys .dxeTBRBLabel_SoftOrange
+{
+	top: 0px;
+}
+
+.dxeTBHSys .dxeTBItem_SoftOrange .dxeTBRBLabel_SoftOrange,
+.dxeTBHSys .dxeTBItem_SoftOrange .dxeTBLTLabel_SoftOrange
+{
+	display: inline-block;
+	margin-left: 0px!important;
+}
+.dxeTBHSys .dxeTBRBScaleSys .dxeTBItem_SoftOrange .dxeTBRBLabel_SoftOrange
+{
+	padding-top: 12px;
+}
+.dxeTBHSys .dxeTBLTScaleSys .dxeTBItem_SoftOrange .dxeTBLTLabel_SoftOrange
+{
+	margin-top: 8px;
+}
+.dxeTBVSys .dxeTBRBScaleSys .dxeTBItem_SoftOrange .dxeTBRBLabel_SoftOrange 
+{
+	margin-left: 5px;
+}
+
+.dxeTBSelectedItem_SoftOrange .dxeTBRBLabel_SoftOrange,
+.dxeTBSelectedItem_SoftOrange .dxeTBLTLabel_SoftOrange,
+.dxeTBSelectedTick_SoftOrange .dxeTBRBLabel_SoftOrange,
+.dxeTBSelectedTick_SoftOrange .dxeTBLTLabel_SoftOrange
+{
+	color: #666666;
+}
+
+.dxeDisabled_SoftOrange .dxeTBSelectedItem_SoftOrange .dxeTBRBLabel_SoftOrange,
+.dxeDisabled_SoftOrange .dxeTBSelectedItem_SoftOrange .dxeTBLTLabel_SoftOrange,
+.dxeDisabled_SoftOrange .dxeTBSelectedTick_SoftOrange .dxeTBRBLabel_SoftOrange,
+.dxeDisabled_SoftOrange .dxeTBSelectedTick_SoftOrange .dxeTBLTLabel_SoftOrange
+{
+	color: #B2B2B2;
+}
+
+.dxeTBRBLabel_SoftOrange,
+.dxeTBLTLabel_SoftOrange,
+.dxeTBItem_SoftOrange
+{
+	color: #B2B2B2;
+}
+
+.dxeDisabled_SoftOrange .dxeTBRBLabel_SoftOrange,
+.dxeDisabled_SoftOrange .dxeTBLTLabel_SoftOrange,
+.dxeDisabled_SoftOrange .dxeTBItem_SoftOrange
+{
+	color: #B2B2B2;
+}
+
+.dxeTBVSys .dxeTBLTScaleSys .dxeTBItem_SoftOrange
+{
+	text-align: left;
+}
+
+.dxeTBVSys .dxeTBRBScaleSys .dxeTBItem_SoftOrange
+{
+	text-align: right;
+}
+
+.dxeTBVSys .dxeTBBScaleSys .dxeTBItem_SoftOrange
+{
+	text-align: center;
+}
+
+.dxeTBHSys .dxeTBItem_SoftOrange
+{
+	background-image:  url('edtTrackBarLargeTickH.gif');
+}
+.dxeTBHSys .dxeTBBScaleSys .dxeTBItem_SoftOrange
+{
+	background-image:  url('edtTrackBarDoubleSmallTickH.gif');
+}
+.dxeTBVSys .dxeTBItem_SoftOrange 
+{
+	background-image:  url('edtTrackBarLargeTickV.gif');
+}
+.dxeTBVSys .dxeTBBScaleSys .dxeTBItem_SoftOrange
+{
+	background-image:  url('edtTrackBarDoubleSmallTickV.gif');
+}
+
+.dxeTBHSys .dxeTBLargeTick_SoftOrange
+{
+	background-image:  url('edtTrackBarLargeTickH.gif');
+}
+.dxeTBVSys .dxeTBLargeTick_SoftOrange
+{
+	background-image: url('edtTrackBarLargeTickV.gif');
+}
+.dxeTBHSys .dxeTBSmallTick_SoftOrange
+{
+	background-image: url('edtTrackBarSmallTickH.gif');
+}
+.dxeTBVSys .dxeTBSmallTick_SoftOrange
+{
+	background-image: url('edtTrackBarSmallTickV.gif');
+}
+.dxeTBHSys .dxeTBBScaleSys .dxeTBLargeTick_SoftOrange
+{
+	background-image: url('edtTrackBarDoubleLargeTickH.gif');
+}
+.dxeTBVSys .dxeTBBScaleSys .dxeTBLargeTick_SoftOrange
+{
+	background-image: url('edtTrackBarDoubleLargeTickV.gif');
+}
+.dxeTBHSys .dxeTBBScaleSys .dxeTBSmallTick_SoftOrange
+{
+	background-image: url('edtTrackBarDoubleSmallTickH.gif');
+}
+.dxeTBVSys .dxeTBBScaleSys .dxeTBSmallTick_SoftOrange
+{
+	background-image: url('edtTrackBarDoubleSmallTickV.gif');
+}
+
+.dxeTBVSys .dxeTBIncBtn_SoftOrange,
+.dxeTBVSys .dxeReversedDirectionSys .dxeTBDecBtn_SoftOrange
+{
+	bottom: 0px;
+	top: auto;
+}
+.dxeTBVSys .dxeTBDecBtn_SoftOrange,
+.dxeTBVSys .dxeReversedDirectionSys .dxeTBIncBtn_SoftOrange
+{
+	top: 0px;
+	bottom: auto;
+}
+.dxeTBHSys .dxeTBDecBtn_SoftOrange, 
+.dxeTBHSys .dxeReversedDirectionSys .dxeTBIncBtn_SoftOrange
+{
+	left: 0px;
+	right: auto;
+}
+.dxeTBHSys .dxeTBIncBtn_SoftOrange,
+.dxeTBHSys .dxeReversedDirectionSys .dxeTBDecBtn_SoftOrange
+{
+	right: 0px;
+	left: auto;
+}
+.dxeTBVSys .dxeTBBScaleSys .dxeTBDecBtn_SoftOrange,
+.dxeTBVSys .dxeTBBScaleSys .dxeTBIncBtn_SoftOrange
+{
+	margin-left: -10px;
+	left: 50%;
+}
+.dxeTBHSys .dxeTBBScaleSys .dxeTBDecBtn_SoftOrange,
+.dxeTBHSys .dxeTBBScaleSys .dxeTBIncBtn_SoftOrange
+{
+	margin-top: -10px;
+	top: 50%;
+}
+.dxeTBVSys .dxeTBBScaleSys .dxeTBTrack_SoftOrange
+{ 
+	margin-left: -4px;
+	left: 50%;
+}
+.dxeTBHSys .dxeTBBScaleSys .dxeTBTrack_SoftOrange
+{ 
+	margin-top: -4px;
+	top: 50%;
+}
+
+.dxeTBVSys .dxeTBLTScaleSys .dxeTBDecBtn_SoftOrange,
+.dxeTBVSys .dxeTBLTScaleSys .dxeTBIncBtn_SoftOrange
+{
+	right: 0px;
+}
+.dxeTBHSys .dxeTBLTScaleSys .dxeTBDecBtn_SoftOrange,
+.dxeTBHSys .dxeTBLTScaleSys .dxeTBIncBtn_SoftOrange
+{
+	bottom: 0px;
+}
+.dxeTBVSys .dxeTBRBScaleSys .dxeTBDecBtn_SoftOrange,
+.dxeTBVSys .dxeTBRBScaleSys .dxeTBIncBtn_SoftOrange
+{
+	left: 0px;
+}
+.dxeTBHSys .dxeTBRBScaleSys .dxeTBDecBtn_SoftOrange,
+.dxeTBHSys .dxeTBRBScaleSys .dxeTBIncBtn_SoftOrange
+{
+	top: 0px;
+}
+
+.dxeTBValueToolTip_SoftOrange
+{
+	padding: 3px 8px 4px 8px;
+    display: inline;
+    position:absolute;
+    border: 0px;
+    font: 12px Tahoma;
+    z-index: 41998;
+    color: White;
+    background: #F99B42;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F99B42', endColorstr='#F88E3D');
+	background: -webkit-gradient(linear, left top, left bottom, from(#F99B42), to(#F88E3D));
+	background: -moz-linear-gradient(top,  #F99B42,  #F88E3D);
+}
+
+/* InternalCheckBox */
+.dxeIRBFocused_SoftOrange
+{
+	border: 1px dotted #676767;
+	margin: 0px!important;
+}
+.dxeIRadioButton_SoftOrange
+{
+	margin: 1px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.dxeLoadingDiv_SoftOrange
+{
+	background: White none;
+	opacity: 0.85;
+	filter: alpha(opacity=85);
+	cursor: wait;
+}
+.dxeLoadingDivWithContent_SoftOrange
+{
+	background: White none;
+	opacity: 0.01;
+	filter: alpha(opacity=1);
+}
+
+.dxeLoadingPanel_SoftOrange,
+.dxeLoadingPanelWithContent_SoftOrange
+{
+	font: 12px Tahoma;
+	color: #f88538;
+	background-color: White;
+	border: 1px solid #F88538;
+}
+
+
+.dxeLoadingPanel_SoftOrange td.dx,
+.dxeLoadingPanelWithContent_SoftOrange td.dx
+{
+	white-space: nowrap;
+	text-align: center;
+	padding: 10px 20px 6px;
+}
+
+.dxeBase_SoftOrange
+{
+	font: 12px Tahoma;
+}
+td.dxic
+{
+	font-size: 0;
+}
+/* -- ErrorFrame -- */
+.dxeErrorCell_SoftOrange,
+.dxeErrorCell_SoftOrange td
+{
+	font: 12px Tahoma;
+	color: red;
+}
+.dxeErrorCell_SoftOrange
+{
+	color: #a91123;
+	padding-left: 4px;
+}
+.dxeErrorFrame_SoftOrange
+{
+}
+.dxeErrorFrameWithoutError_SoftOrange
+{
+	border: 1px solid Red;
+}
+.dxeErrorFrameWithoutError_SoftOrange .dxeControlsCell_SoftOrange
+{
+	padding: 2px;
+}
+.dxeEditArea_SoftOrange
+{
+	font: 12px Tahoma;
+	border: 1px solid #A0A0A0;
+}
+
+/* -- Buttons -- */
+.dxeButtonEdit_SoftOrange
+{
+	background-color: white;
+	width: 170px;
+}
+.dxeButtonEdit_SoftOrange .dxeEditArea_SoftOrange
+{
+	background-color: white;
+}
+.dxeButtonEdit_SoftOrange .dxeEditArea_SoftOrange,
+.dxeButtonEdit_SoftOrange td.dxic
+{
+	width: 100%;
+}
+
+.dxeButtonEditButton_SoftOrange, 
+.dxeSpinIncButton_SoftOrange,
+.dxeSpinDecButton_SoftOrange,
+.dxeSpinLargeIncButton_SoftOrange,
+.dxeSpinLargeDecButton_SoftOrange
+{
+	background-color: #f0f0f0;
+	vertical-align: middle;
+	cursor: pointer;
+} 
+.dxeButtonEditButton_SoftOrange,
+.dxeButtonEditButton_SoftOrange td.dx,
+.dxeSpinIncButton_SoftOrange td.dx,
+.dxeSpinDecButton_SoftOrange td.dx,
+.dxeSpinLargeIncButton_SoftOrange td.dx,
+.dxeSpinLargeDecButton_SoftOrange td.dx,
+.dxeSpinIncButton_SoftOrange,
+.dxeSpinDecButton_SoftOrange,
+.dxeSpinLargeIncButton_SoftOrange,
+.dxeSpinLargeDecButton_SoftOrange
+{
+	font: normal 12px Tahoma;
+	text-align: center;
+} 
+.dxeButtonEditButton_SoftOrange
+{
+	background: #f0653a url('edtButtonEditButtonBack.gif') repeat-x top;
+	padding: 0px 3px;
+}
+.dxeSpinIncButton_SoftOrange,
+.dxeSpinDecButton_SoftOrange,
+.dxeSpinLargeIncButton_SoftOrange,
+.dxeSpinLargeDecButton_SoftOrange
+{
+	border-style: none;
+	padding: 0px;
+}
+
+.dxeButtonEditButton_SoftOrange table.dxbebt
+{
+	width: 12px;
+}
+.dxeButtonEditButton_SoftOrange table.dxbebt td.dx
+{
+	color: White;
+}
+/* SpinButtons */
+.dxeSpinLargeIncButton_SoftOrange
+{
+	padding-left: 1px;
+}
+.dxeSpinIncButton_SoftOrange
+{
+	background: #f67e37 url('edtSpinIncBtnBack.gif') repeat-x left top;
+	border-bottom: 1px Solid #ffffff;
+}
+.dxeSpinDecButton_SoftOrange
+{
+	background: #f0653a url('edtSpinDecBtnBack.gif') repeat-x left top;
+	border-bottom-style: none;
+}
+.dxeSpinLargeIncButton_SoftOrange,
+.dxeSpinLargeDecButton_SoftOrange
+{
+	background: #f0653a url('edtSpinLargeIncBtnBack.gif') repeat-x left top;
+}
+.dxeSpinLargeDecButton_SoftOrange
+{
+}
+.dxeSpinLargeIncButton_SoftOrange
+{
+}
+
+.dxeCalendarButton_SoftOrange
+{
+	font-family: Tahoma;
+	background: #ef643c url('edtCalendarButtonBack.gif') repeat-x left top;
+	border: 1px solid #cb4b31;
+	padding: 4px 10px 5px;
+	cursor: pointer;
+}
+.dxeCalendarButton_SoftOrange table.dxbebt
+{
+	width: 30px;
+}
+/* SpinButtons */
+.dxeSpinIncButton_SoftOrange table.dxbebt,
+.dxeSpinDecButton_SoftOrange table.dxbebt
+{
+	width: 15px;
+}
+.dxeSpinLargeDecButton_SoftOrange table.dxbebt
+{
+	width: 16px;
+}
+.dxeSpinLargeIncButton_SoftOrange table.dxbebt
+{
+	width: 15px;
+}
+
+.dxeCalendarButton_SoftOrange td.dx
+{
+	text-align: center;
+	white-space: nowrap;
+	color: #FFFFFF;
+	font: 12px Tahoma;
+}
+
+/* -- Hover -- */
+.dxeButtonHover_SoftOrange         /* inherits dxeButton */
+{
+	background-color: #E6E3D6;
+}
+.dxeCalendarButtonHover_SoftOrange
+{
+	background: #ef643c url('edtCalendarButtonHoverBack.gif') repeat-x top;
+	border: 1px Solid #cb4b31;
+}
+.dxeButtonEditButtonHover_SoftOrange
+{
+	background: #f88e3d url('edtDropDownButtonHoverBack.gif') repeat-x top;
+}
+/* SpinButtons */
+.dxeSpinIncButtonHover_SoftOrange,
+.dxeSpinDecButtonHover_SoftOrange,
+.dxeSpinLargeIncButtonHover_SoftOrange,
+.dxeSpinLargeDecButtonHover_SoftOrange
+{
+	border-style: none;
+}
+.dxeSpinIncButtonHover_SoftOrange
+{
+	background: #faa947 url('edtSpinIncBtnHBack.gif') repeat-x left top;
+	border-bottom: 1px Solid #ddf2f9;
+}
+.dxeSpinDecButtonHover_SoftOrange
+{
+	background: #faa947 url('edtSpinIncBtnHBack.gif') repeat-x left top;
+	border-bottom-style: none;
+}
+.dxeSpinLargeIncButtonHover_SoftOrange
+{
+	background: #f88e3d url('edtSpinLargeIncBtnHBack.gif') repeat-x left top;
+}
+.dxeSpinLargeDecButtonHover_SoftOrange
+{
+	background: #f88e3d url('edtSpinLargeIncBtnHBack.gif') repeat-x left top;
+}
+/* -- Pressed -- */
+.dxeButtonPressed_SoftOrange       /* inherits dxeButton */
+{
+	background-color: #D4D1C3;
+}
+.dxeCalendarButtonPressed_SoftOrange
+{
+	color: #f1bfac;
+	background: #d95626 url('edtCalendarButtonPressedBack.gif') repeat-x top;
+	border: 1px Solid #ba2000;
+}
+.dxeButtonEditButtonPressed_SoftOrange
+{
+	background: #d34f25 url('edtDropDownButtonPressedBack.gif') repeat-x top;
+}
+/* SpinButtons */
+.dxeSpinIncButtonPressed_SoftOrange,
+.dxeSpinDecButtonPressed_SoftOrange,
+.dxeSpinLargeIncButtonPressed_SoftOrange,
+.dxeSpinLargeDecButtonPressed_SoftOrange
+{
+	border-style: none;
+}
+.dxeSpinIncButtonPressed_SoftOrange
+{
+	background: #d95526 url('edtSpinIncBtnPBack.gif') repeat-x left top;
+	border-bottom: 1px Solid #ddf2f9;
+}
+.dxeSpinDecButtonPressed_SoftOrange
+{
+	background: #d95526 url('edtSpinIncBtnPBack.gif') repeat-x left top;
+	border-bottom-style: none;
+}
+.dxeSpinLargeIncButtonPressed_SoftOrange
+{
+	background: #d95626 url('edtSpinLargeIncBtnPBack.gif') repeat-x left top;
+}
+.dxeSpinLargeDecButtonPressed_SoftOrange
+{
+	background: #d95626 url('edtSpinLargeIncBtnPBack.gif') repeat-x left top;
+}
+
+.dxeButtonEdit_SoftOrange
+{
+	border: 1px solid #a0a0a0;
+}
+.dxeButtonEdit_SoftOrange td.dxic
+{
+	padding: 0px 2px 0px 1px;
+}
+.dxeButtonEdit_SoftOrange .dxeIIC img
+{
+	padding-left: 3px;
+}
+.dxeTextBox_SoftOrange,
+.dxeMemo_SoftOrange
+{
+	background-color: white;
+	border: 1px Solid #a0a0a0;
+}
+.dxeTextBox_SoftOrange td.dxic
+{
+	padding: 1px 2px;
+	width: 100%;
+}
+.dxeTextBox_SoftOrange .dxeEditArea_SoftOrange
+{
+	background-color: white;
+}
+.dxeRadioButtonList_SoftOrange,
+.dxeRadioButtonList_SoftOrange table,
+.dxeCheckBoxList_SoftOrange,
+.dxeCheckBoxList_SoftOrange table
+{
+	font: 12px Tahoma;
+}
+.dxeRadioButtonList_SoftOrange,
+.dxeCheckBoxList_SoftOrange
+{
+	border: 1px Solid #bfbfbf;
+}
+.dxeRadioButtonList_SoftOrange td.dxe,
+.dxeCheckBoxList_SoftOrange td.dxe
+{
+	padding: 6px 5px 6px 11px;
+}
+.dxeRadioButtonList_SoftOrange label,
+.dxeCheckBoxList_SoftOrange label
+{
+	margin-right: 6px;
+}
+.dxeRadioButtonList_SoftOrange img,
+.dxeCheckBoxList_SoftOrange img
+{
+	margin-bottom: -4px;
+    padding-right: 5px;
+}
+/* -- Memo -- */
+.dxeMemo_SoftOrange
+{
+}
+.dxeMemoEditArea_SoftOrange
+{
+	background-color: white;
+	font: 12px Tahoma;
+	outline: none;
+}
+.dxeMemo_SoftOrange td
+{
+	padding: 0 0 0 4px;
+	width: 100%;
+}
+
+/* -- Hyperlink -- */
+.dxeHyperlink_SoftOrange
+{
+	font: normal 12px Tahoma;
+	color: #bc3f26;
+}
+a:hover.dxeHyperlink_SoftOrange
+{
+	color: #f15e34;
+}
+a:visited.dxeHyperlink_SoftOrange
+{
+	color: #a1a1a1;
+}
+
+/* -- ListBox -- */
+.dxeListBox_SoftOrange
+{
+	background-color: white;
+	border: 1px solid #A0A0A0;
+	font: 12px Tahoma;
+	height: 98px;
+	width: 70px;
+}
+
+.dxeListBox_SoftOrange div.dxlbd
+{
+	padding-top: 1px;
+	height: 96px;
+}
+.dxeListBoxItemRow_SoftOrange
+{
+	cursor: default;
+}
+
+.dxeListBoxItem_SoftOrange
+{
+	border-bottom: 1px solid white;
+	border-left: 1px solid white;
+	border-right: 1px solid white;
+	font: normal 12px Tahoma;
+	padding: 2px 2px 2px 3px;
+	white-space: nowrap;
+	text-align: left;
+	color: black;
+}
+.dxeListBoxItem_SoftOrange em
+{
+	background: #ff9460 none repeat 0 0;
+	color: #333333;
+	font-weight: bold;
+	font-style: normal;
+}
+.dxeListBoxItemSelected_SoftOrange     /* inherits dxeListBoxItem */
+{
+	background-color: #d3d3d3;
+	color: #000000;
+}
+.dxeListBox_SoftOrange td.dxeI,
+.dxeListBox_SoftOrange td.dxeIM,
+.dxeListBox_SoftOrange .dxeHIC,
+.dxeListBox_SoftOrange td.dxeFTM,
+.dxeListBox_SoftOrange td.dxeTM,
+.dxeListBox_SoftOrange td.dxeC,
+.dxeListBox_SoftOrange td.dxeCM,
+.dxeListBox_SoftOrange td.dxeHCC,
+.dxeListBox_SoftOrange td.dxeMI,
+.dxeListBox_SoftOrange td.dxeMIM
+{
+	border-right-width: 0!important;
+}
+.dxeListBox_SoftOrange td.dxeIR,
+.dxeListBox_SoftOrange td.dxeIMR,
+.dxeListBox_SoftOrange .dxeHICR,
+.dxeListBox_SoftOrange td.dxeFTMR,
+.dxeListBox_SoftOrange td.dxeTMR,
+.dxeListBox_SoftOrange td.dxeCR,
+.dxeListBox_SoftOrange td.dxeCMR,
+.dxeListBox_SoftOrange td.dxeHCCR,
+.dxeListBox_SoftOrange td.dxeMIR,
+.dxeListBox_SoftOrange td.dxeMIMR
+{
+	border-left-width: 0!important;
+}
+.dxeListBox_SoftOrange td.dxeCM,
+.dxeListBox_SoftOrange td.dxeHCC,
+.dxeListBox_SoftOrange td.dxeCMR,
+.dxeListBox_SoftOrange td.dxeHCCR
+{
+	width: 25px;
+}
+.dxeListBox_SoftOrange td.dxeIM,
+.dxeListBox_SoftOrange td.dxeIMR
+{
+	width: 0;
+}
+.dxeListBox_SoftOrang td.dxeC
+{
+	padding-right: 0!important;
+}
+.dxeListBox_SoftOrange td.dxeT
+{
+	width: 100%;
+	padding-left: 0!important;
+}
+.dxeListBox_SoftOrange td.dxeTR
+{
+	width: 100%;
+	padding-right: 0!important;
+}
+.dxeListBox_SoftOrange td.dxeT,
+.dxeListBox_SoftOrange td.dxeMI
+{
+	border-left-width: 0!important;
+}
+.dxeListBox_SoftOrange td.dxeTR,
+.dxeListBox_SoftOrange td.dxeMIR
+{
+	border-right-width: 0!important;
+}
+.dxeListBox_SoftOrange td.dxeFTM,
+.dxeListBox_SoftOrange td.dxeTM,
+.dxeListBox_SoftOrange td.dxeLTM,
+.dxeListBox_SoftOrange .dxeHFC,
+.dxeListBox_SoftOrange .dxeHC,
+.dxeListBox_SoftOrange .dxeHLC,
+.dxeListBox_SoftOrange td.dxeFTMR,
+.dxeListBox_SoftOrange td.dxeTMR,
+.dxeListBox_SoftOrange td.dxeLTMR,
+.dxeListBox_SoftOrange .dxeHFCR,
+.dxeListBox_SoftOrange .dxeHCR,
+.dxeListBox_SoftOrange .dxeHLCR
+{
+	overflow: hidden;
+}
+.dxeListBox_SoftOrange td.dxeFTM,
+.dxeListBox_SoftOrange td.dxeTM, 
+.dxeListBox_SoftOrange .dxeHFC,
+.dxeListBox_SoftOrange .dxeHC
+{
+	padding-right: 6px!important;
+}
+.dxeListBox_SoftOrange td.dxeFTMR,
+.dxeListBox_SoftOrange td.dxeTMR, 
+.dxeListBox_SoftOrange .dxeHFCR,
+.dxeListBox_SoftOrange .dxeHCR
+{
+	padding-left: 6px!important;
+}
+.dxeListBox_SoftOrange td.dxeLTM,
+.dxeListBox_SoftOrange td.dxeTM, 
+.dxeListBox_SoftOrange .dxeHC,
+.dxeListBox_SoftOrange .dxeHLC
+{
+	padding-left: 6px!important;
+}
+.dxeListBox_SoftOrange td.dxeLTMR,
+.dxeListBox_SoftOrange td.dxeTMR, 
+.dxeListBox_SoftOrange .dxeHCR,
+.dxeListBox_SoftOrange .dxeHLCR
+{
+	padding-right: 6px!important;
+}
+/*Grid lines*/
+.dxeListBox_SoftOrange td.dxeLTM,
+.dxeListBox_SoftOrange td.dxeTM,
+.dxeListBox_SoftOrange td.dxeMIM
+{
+	border-left: 1px solid #cfcfcf!important;
+}
+.dxeListBox_SoftOrange td.dxeLTMR,
+.dxeListBox_SoftOrange td.dxeTMR,
+.dxeListBox_SoftOrange td.dxeMIMR
+{
+	border-right: 1px solid #cfcfcf!important;
+}
+.dxeListBox_SoftOrange td.dxeIM,
+.dxeListBox_SoftOrange td.dxeFTM,
+.dxeListBox_SoftOrange td.dxeTM,
+.dxeListBox_SoftOrange td.dxeLTM,
+.dxeListBox_SoftOrange td.dxeCM,
+.dxeListBox_SoftOrange td.dxeMIM,
+.dxeListBox_SoftOrange td.dxeIMR,
+.dxeListBox_SoftOrange td.dxeFTMR,
+.dxeListBox_SoftOrange td.dxeTMR,
+.dxeListBox_SoftOrange td.dxeLTMR,
+.dxeListBox_SoftOrange td.dxeCMR,
+.dxeListBox_SoftOrange td.dxeMIMR
+{
+	border-bottom: 1px solid #cfcfcf;
+}
+.dxeListBoxItemHover_SoftOrange        /* inherits dxeListBoxItem */
+{
+	background-color: #ff9460;
+	color: #FFFFFF;
+}
+.dxeListBoxItemHover_SoftOrange em,
+.dxeListBoxItemSelected_SoftOrange em
+{
+	background-image: none;
+}
+/*Header*/
+.dxeListBox_SoftOrange .dxeHD
+{
+	background-color: #969696;
+	border-bottom: 1px dotted #5C5C5C;
+}
+.dxeListBox_SoftOrange .dxeHFC,
+.dxeListBox_SoftOrange .dxeHIC,
+.dxeListBox_SoftOrange .dxeHC,
+.dxeListBox_SoftOrange .dxeHLC,
+.dxeListBox_SoftOrange td.dxeHCC,
+.dxeListBox_SoftOrange td.dxeHMIC,
+.dxeListBox_SoftOrange .dxeHFCR,
+.dxeListBox_SoftOrange .dxeHICR,
+.dxeListBox_SoftOrange .dxeHCR,
+.dxeListBox_SoftOrange .dxeHLCR,
+.dxeListBox_SoftOrange td.dxeHCCR,
+.dxeListBox_SoftOrange td.dxeHMICR
+{
+	padding-top: 4px;
+	padding-bottom: 4px;
+	color: White;
+	border-bottom-width: 0;
+}
+.dxeListBox_SoftOrange .dxeHC,
+.dxeListBox_SoftOrange .dxeHLC,
+.dxeListBox_SoftOrange td.dxeHMIC
+{
+	border-left: 1px dotted #5C5C5C;
+}
+.dxeListBox_SoftOrange .dxeHCR,
+.dxeListBox_SoftOrange .dxeHLCR,
+.dxeListBox_SoftOrange td.dxeHMICR
+{
+	border-right: 1px dotted #5C5C5C;
+	text-align: right;
+}
+.dxeListBox_SoftOrange .dxeHIC,
+.dxeListBox_SoftOrange .dxeHFC,
+.dxeListBox_SoftOrange .dxeHCC
+{
+	border-left: 1px solid #969696;
+}
+.dxeListBox_SoftOrange .dxeHICR,
+.dxeListBox_SoftOrange .dxeHFCR,
+.dxeListBox_SoftOrange .dxeHCCR
+{
+	border-right: 1px solid #969696;
+	text-align: right;
+}
+.dxeListBox_SoftOrange .dxeHFC,
+.dxeListBox_SoftOrange .dxeHC,
+.dxeListBox_SoftOrange .dxeHMIC
+{
+	border-right-width: 0;
+}
+.dxeListBox_SoftOrange .dxeHFCR,
+.dxeListBox_SoftOrange .dxeHCR,
+.dxeListBox_SoftOrange .dxeHMICR
+{
+	border-left-width: 0;
+	text-align: right;
+}
+.dxeListBox_SoftOrange .dxeHLC
+{
+	border-right: 1px solid #969696;
+}
+.dxeListBox_SoftOrange .dxeHLCR
+{
+	border-left: 1px solid #969696;
+	text-align: right;
+}
+
+/* -- Calendar -- */
+.dxeCalendar_SoftOrange
+{
+	font-weight: normal;
+	border: 4px solid #d3d3d3;
+	background-color: White;
+	padding: 1px;
+}
+.dxeCalendar_SoftOrange td.dxMonthGrid
+{
+	padding: 10px 20px 8px;
+	cursor: default;
+}
+.dxeCalendar_SoftOrange td.dxMonthGridWithWeekNumbers
+{
+	padding: 9px 20px 8px 8px;
+	cursor: default;
+}
+.dxeCalendar_SoftOrange td.dxMonthGridWithWeekNumbersRtl
+{
+	padding: 9px 8px 8px 20px;
+	cursor: default;
+}
+.dxeCalendarDayHeader_SoftOrange
+{
+	font: 13px Tahoma;
+	padding: 4px 4px 3px;
+	color: Black;
+	border-bottom: 1px solid #cfcfcf;
+}
+.dxeCalendarWeekNumber_SoftOrange
+{
+	font: 9px Tahoma;
+	text-align: right;
+	color: #fbb785;
+	padding: 5px 8px 3px 4px;
+}
+.dxeCalendarDay_SoftOrange
+{
+	font: 12px Tahoma;
+	padding: 5px 7px;
+	color: Black;
+	background-color: White;
+	text-align: center;
+}
+.dxeCalendarWeekend_SoftOrange       	/* inherits dxeCalendarDay */
+{
+	color: #fe3c00;
+}
+.dxeCalendarOtherMonth_SoftOrange    	 /* inherits dxeCalendarDay */
+{
+	color: #acacac;
+}
+.dxeCalendarOutOfRange_SoftOrange        /* inherits dxeCalendarDay */
+{
+	color: #d0d0d0;
+}
+.dxeCalendarSelected_SoftOrange       	/* inherits dxeCalendarDay */
+{
+	background-color: #d7d7d7;
+}
+.dxeCalendarToday_SoftOrange       	        /* inherits dxeCalendarDay */
+{
+	padding: 3px;
+	background-color: #f26f39;
+	color: #FFFFFF;
+}
+.dxeCalendarHeader_SoftOrange
+{
+	font: 13px Tahoma;
+	background: #f4f4f4 url('edtCalendarHeader.gif') repeat-x left top;
+	border-bottom: 1px solid #d3d3d3;
+	text-align: center;
+	padding: 4px 5px 5px;
+}
+.dxeCalendarHeader_SoftOrange td.dxe
+{
+	color: #000000;
+	text-align: center;
+	cursor: pointer;
+}
+.dxeCalendarFooter_SoftOrange
+{
+	background: #f4f4f4 url('edtCalendarHeader.gif') repeat-x left top;
+	padding: 8px 0px 7px;
+	border-top: 1px dotted #5c5c5c;
+}
+.dxeCalendarFastNav_SoftOrange
+{
+	background: white none;
+	border-top: 4px solid #d3d3d3;
+	border-right: 4px solid #d3d3d3;
+	border-bottom: 0px solid #d3d3d3;
+	border-left: 4px solid #d3d3d3;
+	padding: 8px;
+}
+.dxeCalendarFastNavFooter_SoftOrange
+{
+	background: #f4f4f4 url('edtCalendarHeader.gif') repeat-x left top;
+	padding: 6px 0px;
+	border-right: 4px solid #d3d3d3;
+	border-bottom: 4px solid #d3d3d3;
+	border-left: 4px solid #d3d3d3;
+	border-top: 1px dotted #5c5c5c;
+}
+.dxeCalendarFastNavMonth_SoftOrange,
+.dxeCalendarFastNavYear_SoftOrange
+{
+	font: 12px Tahoma;
+	color: Black;
+	padding: 4px 6px;
+	text-align: center;
+	cursor: pointer;
+}
+.dxeCalendarFastNavMonthSelected_SoftOrange,
+.dxeCalendarFastNavYearSelected_SoftOrange
+{
+	background: #d7d7d7 none;
+}
+.dxeCalendarFastNavMonthHover_SoftOrange,
+.dxeCalendarFastNavYearHover_SoftOrange
+{
+	background: #f26f39 none;
+	color: #FFFFFF;
+}
+/* Disabled */
+.dxeDisabled_SoftOrange,
+.dxeDisabled_SoftOrange td.dxe
+{
+	color: #ababab;
+	cursor: default;
+}
+a.dxeDisabled_SoftOrange, a.dxeDisabled_SoftOrange:hover
+{
+	color: #ababab;
+	cursor: default;
+}
+.dxeButtonDisabled_SoftOrange,
+.dxeButtonDisabled_SoftOrange td.dxe
+{
+	color: #808080;
+	background: #c0c0c0 url('edtButtonEditButtonBackDis.gif') repeat-x left top;
+	border-width: 0px;
+	cursor: default;
+}
+/* -- Button -- */
+.dxbButton_SoftOrange
+{
+	color: #FFFFFF;
+	font: normal 12px Tahoma;
+	vertical-align: middle;
+	border: 1px solid #cb4b31;
+	background: #EF643C url('edtButtonBack.gif') repeat-x top;
+	padding: 1px;
+	cursor: pointer;
+}
+.dxbButtonHover_SoftOrange
+{
+	color: #FFFFFF;
+	background: #f88e3d url('edtButtonHoverBack.gif') repeat-x top;
+	border: 1px solid #cb4b31;
+}
+.dxbButtonChecked_SoftOrange
+{
+	color: #f1bfac;
+	background: #9ABDC1 url('edtButtonCheckedBack.gif') repeat-x top;
+	border: 1px solid #ba2000;
+}
+.dxbButtonPressed_SoftOrange
+{
+	color: #f1bfac;
+	background: #d95626 url('edtButtonPressedBack.gif') repeat-x top;
+	border: 1px solid #ba2000;
+}
+.dxbButton_SoftOrange div.dxb
+{
+	padding: 3px 13px 4px;
+	border-width: 0px;
+}
+.dxbButton_SoftOrange div.dxbf
+{
+	padding: 2px 12px 3px;
+	border: 1px dotted #FFFFFF;
+}
+.dxbButton_SoftOrange div.dxb td.dxb
+{
+	background: transparent url('')!important;
+	border-width: 0px!important;
+	padding: 0px!important;
+}
+/* Disabled */
+.dxbDisabled_SoftOrange
+{
+	background: #cacaca url('edtButtonBackDis.gif') repeat-x top;
+	color: #9d9d9d;
+	border-color: #a2a2a2;
+	cursor: default;
+}
+.dxbDisabled_SoftOrange td.dxb
+{
+	color: #9d9d9d;
+}
+/* -- FilterControl -- */
+.dxfcTable_SoftOrange
+{
+	border-collapse: separate!important;
+}
+.dxfcTable_SoftOrange td.dxfc
+{
+	padding: 0px 0px 0px 3px;
+	vertical-align: middle;
+	font: 12px Tahoma;
+	color: Black;
+}
+a.dxfcPropertyName_SoftOrange
+{
+	white-space: nowrap!important;
+	color: Blue!important;
+}
+a.dxfcGroupType_SoftOrange
+{
+	white-space: nowrap!important;
+	padding: 0px 3px!important;
+	color: Red!important;
+}
+a.dxfcOperation_SoftOrange
+{
+	white-space: nowrap!important;
+	color: Green!important;
+}
+a.dxfcValue_SoftOrange
+{
+	white-space: nowrap!important;
+	color: Gray!important;
+}
+.dxfcImageButton_SoftOrange
+{
+	cursor: pointer;
+}
+
+.dxfcLoadingPanel_SoftOrange
+{
+	font: 12px Tahoma;
+	color: #f88538;
+	background-color: White;
+	border: 1px solid #F88538;
+}
+.dxfcLoadingPanel_SoftOrange td.dx
+{
+	white-space: nowrap;
+	text-align: center;
+	padding: 10px 20px 6px;
+}
+.dxfcLoadingDiv_SoftOrange
+{
+	background: white none;
+	opacity: 0.01;
+	filter: alpha(opacity=1);
+}
+
+.dxeMaskHint_SoftOrange
+{
+	background: #ffffe1 none;
+	border: 1px solid black;
+	padding: 2px 5px 3px;
+	color: Black;
+	font: 12px Tahoma;
+}
+/* -- ProgressBar -- */
+.dxeProgressBar_SoftOrange,
+.dxeProgressBar_SoftOrange td
+{
+	font: 12px Tahoma;
+	color: Black;
+}
+.dxeProgressBar_SoftOrange .dxePBMainCell,
+.dxeProgressBar_SoftOrange td
+{
+	padding: 0;
+}
+.dxeProgressBar_SoftOrange
+{
+	border: 3px Solid #D3D3D3;
+	background-color: #E5E5E5;
+}
+.dxeProgressBarIndicator_SoftOrange
+{
+	background-color: #F98936;
+}
+
+/* -- DropDownWindow -- */
+.dxeDropDownWindow_SoftOrange
+{
+	background-color: White;
+	border: 1px solid #a0a0a0;
+}
+
+/*----------------- ColorTable -----------------*/
+.dxeColorIndicator_SoftOrange
+{
+	border: 1px solid #a0a0a0;
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+}
+.dxeColorTable_SoftOrange
+{
+	background-color: White;
+	border: 1px solid #a0a0a0;
+}
+.dxeItemPicker_SoftOrange
+{
+	color: black;
+	background-color: #f9f9f9;
+	border: 1px solid #a8a8a8;
+}
+.dxeColorTable_SoftOrange td.dx,
+.dxeItemPicker_SoftOrange td.dx
+{
+	padding: 4px;
+}
+.dxeColorTableCell_SoftOrange,
+.dxeItemPickerCell_SoftOrange
+{
+	padding: 3px;
+	cursor: pointer;
+}
+.dxeColorTableCellDiv_SoftOrange
+{
+	border: 1px solid #808080;
+	width: 12px;
+	height: 12px;
+	font-size: 0px;
+}
+.dxeColorTableCellSelected_SoftOrange,
+.dxeItemPickerCellSelected_SoftOrange
+{
+	padding: 2px!important;
+}
+.dxeColorTableCellSelected_SoftOrange
+{
+	background-color: #CBCBCB;
+	border: 1px solid #888888;
+}
+.dxeItemPickerCellSelected_SoftOrange
+{
+	background-color: #f15e34;
+	border: 1px solid #f15e34;
+	color: #FFFFFF;
+}
+.dxeColorTableCellHover_SoftOrange,
+.dxeItemPickerCellHover_SoftOrange
+{
+	padding: 2px!important;
+	background-color: #F2F2F2;
+	border: 1px solid #888888;
+}
+
+/* -- Invalid Style -- */
+.dxeInvalid_SoftOrange
+{
+}
+.dxeInvalid_SoftOrange .dxeEditArea_SoftOrange,
+.dxeInvalid_SoftOrange .dxeMemoEditArea_SoftOrange
+{
+}
+
+/* -- Focused Style -- */
+.dxeFocused_SoftOrange
+{
+	border-color: #7a7a7a;
+}
+
+.dxeFocused_SoftOrange.dxeTrackBar_SoftOrange
+{	
+	border: 0px;
+}
+
+/* -- Null Text Style -- */
+.dxeNullText_SoftOrange .dxeEditArea_SoftOrange,
+.dxeNullText_SoftOrange .dxeMemoEditArea_SoftOrange
+{
+	color: #ababab;
+}
+
+/* -- Captcha -- */
+.dxcaControl_SoftOrange
+{
+}
+
+.dxcaRefreshButton_SoftOrange
+{
+	font: 13px Tahoma;
+	text-decoration: none;
+	color: #bc3f26;
+}
+
+.dxcaDisabledRefreshButton_SoftOrange
+{
+	color: #ababab;
+}
+
+.dxcaRefreshButtonCell_SoftOrange
+{
+}
+
+.dxcaRefreshButtonText_SoftOrange
+{
+	text-decoration: underline;
+}
+
+.dxcaDisabledRefreshButtonText_SoftOrange
+{
+	text-decoration: none;
+}
+
+.dxcaTextBoxCell_SoftOrange
+{
+	font: 12px Tahoma;
+}
+
+.dxcaTextBoxCell_SoftOrange,
+.dxcaTextBoxCellNoIndent_SoftOrange
+{
+	font: 12px Tahoma;
+}
+
+.dxcaTextBoxCellNoIndent_SoftOrange .dxeErrorCell_SoftOrange
+{
+	padding-left: 0px;
+	padding-top: 4px;
+	color: Red;
+}
+
+.dxcaTextBoxLabel_SoftOrange
+{
+	padding-bottom: 4px;
+	display: block;
+}
+
+.dxcaLoadingPanel_SoftOrange
+{
+	font: 12px Tahoma;
+	color: #f88538;
+}
+
+.dxcaLoadingPanel_SoftOrange td.dx
+{
+	white-space: nowrap;
+	text-align: center;
+	padding: 10px 20px 6px;
+}
+
+
+

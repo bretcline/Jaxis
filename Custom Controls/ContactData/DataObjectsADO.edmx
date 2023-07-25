@@ -1,0 +1,1831 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SecureRiskModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="SecureRiskModelStoreContainer">
+          <EntitySet Name="Addresses" EntityType="SecureRiskModel.Store.Addresses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AddressTypes" EntityType="SecureRiskModel.Store.AddressTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="AssignedTypes" EntityType="SecureRiskModel.Store.AssignedTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Companies" EntityType="SecureRiskModel.Store.Companies" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="CompanyXAddresses" EntityType="SecureRiskModel.Store.CompanyXAddresses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Contacts" EntityType="SecureRiskModel.Store.Contacts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContactTypes" EntityType="SecureRiskModel.Store.ContactTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ContactXAddresses" EntityType="SecureRiskModel.Store.ContactXAddresses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Groups" EntityType="SecureRiskModel.Store.Groups" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="JobAssignments" EntityType="SecureRiskModel.Store.JobAssignments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="JobLocations" EntityType="SecureRiskModel.Store.JobLocations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Jobs" EntityType="SecureRiskModel.Store.Jobs" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="JobStatuses" EntityType="SecureRiskModel.Store.JobStatuses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Notes" EntityType="SecureRiskModel.Store.Notes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Parents" EntityType="SecureRiskModel.Store.Parents" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ParentTypes" EntityType="SecureRiskModel.Store.ParentTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PhoneNumbers" EntityType="SecureRiskModel.Store.PhoneNumbers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PhoneNumberTypes" EntityType="SecureRiskModel.Store.PhoneNumberTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Policies" EntityType="SecureRiskModel.Store.Policies" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Relationships" EntityType="SecureRiskModel.Store.Relationships" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="RelationshipTypes" EntityType="SecureRiskModel.Store.RelationshipTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="SecureRiskModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WorkItems" EntityType="SecureRiskModel.Store.WorkItems" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WorkItemsXJobLocations" EntityType="SecureRiskModel.Store.WorkItemsXJobLocations" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Addresses_AddressTypes" Association="SecureRiskModel.Store.FK_Addresses_AddressTypes">
+            <End Role="AddressTypes" EntitySet="AddressTypes" />
+            <End Role="Addresses" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Companies_Contacts" Association="SecureRiskModel.Store.FK_Companies_Contacts">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="Companies" EntitySet="Companies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Companies_PhoneNumbers" Association="SecureRiskModel.Store.FK_Companies_PhoneNumbers">
+            <End Role="PhoneNumbers" EntitySet="PhoneNumbers" />
+            <End Role="Companies" EntitySet="Companies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Companies_RelationshipTypes" Association="SecureRiskModel.Store.FK_Companies_RelationshipTypes">
+            <End Role="RelationshipTypes" EntitySet="RelationshipTypes" />
+            <End Role="Companies" EntitySet="Companies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyXAddresses_Addresses" Association="SecureRiskModel.Store.FK_CompanyXAddresses_Addresses">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="CompanyXAddresses" EntitySet="CompanyXAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyXAddresses_Companies" Association="SecureRiskModel.Store.FK_CompanyXAddresses_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="CompanyXAddresses" EntitySet="CompanyXAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyXAddresses_Relationships" Association="SecureRiskModel.Store.FK_CompanyXAddresses_Relationships">
+            <End Role="Relationships" EntitySet="Relationships" />
+            <End Role="CompanyXAddresses" EntitySet="CompanyXAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_Addresses" Association="SecureRiskModel.Store.FK_Contacts_Addresses">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_ContactTypes" Association="SecureRiskModel.Store.FK_Contacts_ContactTypes">
+            <End Role="ContactTypes" EntitySet="ContactTypes" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_PhoneNumbers" Association="SecureRiskModel.Store.FK_Contacts_PhoneNumbers">
+            <End Role="PhoneNumbers" EntitySet="PhoneNumbers" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContactXAddresses_Addresses" Association="SecureRiskModel.Store.FK_ContactXAddresses_Addresses">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="ContactXAddresses" EntitySet="ContactXAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContactXAddresses_Contacts" Association="SecureRiskModel.Store.FK_ContactXAddresses_Contacts">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="ContactXAddresses" EntitySet="ContactXAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobAssignments_AssignedTypes" Association="SecureRiskModel.Store.FK_JobAssignments_AssignedTypes">
+            <End Role="AssignedTypes" EntitySet="AssignedTypes" />
+            <End Role="JobAssignments" EntitySet="JobAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobAssignments_Contacts" Association="SecureRiskModel.Store.FK_JobAssignments_Contacts">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="JobAssignments" EntitySet="JobAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobAssignments_Jobs" Association="SecureRiskModel.Store.FK_JobAssignments_Jobs">
+            <End Role="Jobs" EntitySet="Jobs" />
+            <End Role="JobAssignments" EntitySet="JobAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobLocations_Addresses" Association="SecureRiskModel.Store.FK_JobLocations_Addresses">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="JobLocations" EntitySet="JobLocations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobLocations_Jobs" Association="SecureRiskModel.Store.FK_JobLocations_Jobs">
+            <End Role="Jobs" EntitySet="Jobs" />
+            <End Role="JobLocations" EntitySet="JobLocations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Jobs_Companies" Association="SecureRiskModel.Store.FK_Jobs_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="Jobs" EntitySet="Jobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Jobs_JobStatuses" Association="SecureRiskModel.Store.FK_Jobs_JobStatuses">
+            <End Role="JobStatuses" EntitySet="JobStatuses" />
+            <End Role="Jobs" EntitySet="Jobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notes_Parents" Association="SecureRiskModel.Store.FK_Notes_Parents">
+            <End Role="Parents" EntitySet="Parents" />
+            <End Role="Notes" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notes_ParentTypes" Association="SecureRiskModel.Store.FK_Notes_ParentTypes">
+            <End Role="ParentTypes" EntitySet="ParentTypes" />
+            <End Role="Notes" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhoneNumbers_PhoneNumberTypes" Association="SecureRiskModel.Store.FK_PhoneNumbers_PhoneNumberTypes">
+            <End Role="PhoneNumberTypes" EntitySet="PhoneNumberTypes" />
+            <End Role="PhoneNumbers" EntitySet="PhoneNumbers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkItemsXJobLocations_JobLocations" Association="SecureRiskModel.Store.FK_WorkItemsXJobLocations_JobLocations">
+            <End Role="JobLocations" EntitySet="JobLocations" />
+            <End Role="WorkItemsXJobLocations" EntitySet="WorkItemsXJobLocations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkItemsXJobs_WorkItems" Association="SecureRiskModel.Store.FK_WorkItemsXJobs_WorkItems">
+            <End Role="WorkItems" EntitySet="WorkItems" />
+            <End Role="WorkItemsXJobLocations" EntitySet="WorkItemsXJobLocations" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Addresses">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Name="AddressID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AddressTypeID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Street" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="State" Type="varchar" MaxLength="50" />
+          <Property Name="Zip" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="AddressTypes">
+          <Key>
+            <PropertyRef Name="AddressTypeID" />
+          </Key>
+          <Property Name="AddressTypeID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AddressTypeName" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="AssignedTypes">
+          <Key>
+            <PropertyRef Name="AssignedTypeID" />
+          </Key>
+          <Property Name="AssignedTypeID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Companies">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+          <Property Name="PrimaryContactID" Type="uniqueidentifier" />
+          <Property Name="PrimaryAddressID" Type="uniqueidentifier" />
+          <Property Name="PrimaryPhoneNumberID" Type="uniqueidentifier" />
+          <Property Name="RelationshipTypeID" Type="uniqueidentifier" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CompanyXAddresses">
+          <Key>
+            <PropertyRef Name="CompanyXAddressID" />
+          </Key>
+          <Property Name="CompanyXAddressID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CompanyID" Type="uniqueidentifier" />
+          <Property Name="AddressID" Type="uniqueidentifier" />
+          <Property Name="RelationshipID" Type="uniqueidentifier" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Contacts">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ContactTypeID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="PrimaryAddressID" Type="uniqueidentifier" />
+          <Property Name="CompanyID" Type="uniqueidentifier" />
+          <Property Name="PrimaryPhoneNumberID" Type="uniqueidentifier" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ContactTypes">
+          <Key>
+            <PropertyRef Name="ContactTypeID" />
+          </Key>
+          <Property Name="ContactTypeID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ContactXAddresses">
+          <Key>
+            <PropertyRef Name="ContactXAddressID" />
+          </Key>
+          <Property Name="ContactXAddressID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ContactID" Type="uniqueidentifier" />
+          <Property Name="AddressID" Type="uniqueidentifier" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Groups">
+          <Key>
+            <PropertyRef Name="GroupID" />
+          </Key>
+          <Property Name="GroupID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="JobAssignments">
+          <Key>
+            <PropertyRef Name="JobAssignmentID" />
+          </Key>
+          <Property Name="JobAssignmentID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="JobID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AssignedDate" Type="datetime" Nullable="false" />
+          <Property Name="DueDate" Type="datetime" Nullable="false" />
+          <Property Name="CompleteDate" Type="datetime" />
+          <Property Name="AssignedTypeID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="AssignedID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Rates" Type="varchar" MaxLength="50" />
+          <Property Name="Hours" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="JobLocations">
+          <Key>
+            <PropertyRef Name="JobLocationID" />
+          </Key>
+          <Property Name="JobLocationID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="JobID" Type="uniqueidentifier" />
+          <Property Name="AddressID" Type="uniqueidentifier" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Jobs">
+          <Key>
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="RequestDate" Type="datetime" />
+          <Property Name="DueDate" Type="datetime" />
+          <Property Name="CompletionDate" Type="datetime" />
+          <Property Name="InsuranceName" Type="varchar" MaxLength="50" />
+          <Property Name="InsuranceCompanyID" Type="uniqueidentifier" />
+          <Property Name="WorkItemNote" Type="varchar" MaxLength="50" />
+          <Property Name="JobStatusID" Type="uniqueidentifier" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="JobStatuses">
+          <Key>
+            <PropertyRef Name="JobStatusID" />
+          </Key>
+          <Property Name="JobStatusID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Notes">
+          <Key>
+            <PropertyRef Name="NoteID" />
+          </Key>
+          <Property Name="NoteID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ParentID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="ParentTypeID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="NoteTitle" Type="varchar" MaxLength="50" />
+          <Property Name="Note" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Parents">
+          <Key>
+            <PropertyRef Name="ParentID" />
+          </Key>
+          <Property Name="ParentID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ParentTypes">
+          <Key>
+            <PropertyRef Name="ParentTypeID" />
+          </Key>
+          <Property Name="ParentTypeID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PhoneNumbers">
+          <Key>
+            <PropertyRef Name="PhoneNumberID" />
+          </Key>
+          <Property Name="PhoneNumberID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PhoneNumberTypeID" Type="uniqueidentifier" />
+          <Property Name="AreaCode" Type="varchar" MaxLength="50" />
+          <Property Name="Prefix" Type="varchar" MaxLength="50" />
+          <Property Name="Suffix" Type="varchar" MaxLength="50" />
+          <Property Name="Extension" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PhoneNumberTypes">
+          <Key>
+            <PropertyRef Name="PhoneNumberTypeID" />
+          </Key>
+          <Property Name="PhoneNumberTypeID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Policies">
+          <Key>
+            <PropertyRef Name="PolicyID" />
+          </Key>
+          <Property Name="PolicyID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PolicyNumber" Type="varchar" MaxLength="50" />
+          <Property Name="PolicyAmount" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="1024" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Relationships">
+          <Key>
+            <PropertyRef Name="RelationshipID" />
+          </Key>
+          <Property Name="RelationshipID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="RelationshipTypes">
+          <Key>
+            <PropertyRef Name="RelationshipTypeID" />
+          </Key>
+          <Property Name="RelationshipTypeID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="WorkItems">
+          <Key>
+            <PropertyRef Name="WorkItemID" />
+          </Key>
+          <Property Name="WorkItemID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="WorkItemsXJobLocations">
+          <Key>
+            <PropertyRef Name="WorkItemXJobLocation" />
+          </Key>
+          <Property Name="WorkItemXJobLocation" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="JobLocationID" Type="uniqueidentifier" />
+          <Property Name="WorkItemID" Type="uniqueidentifier" />
+          <Property Name="NoteID" Type="uniqueidentifier" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Addresses_AddressTypes">
+          <End Role="AddressTypes" Type="SecureRiskModel.Store.AddressTypes" Multiplicity="1" />
+          <End Role="Addresses" Type="SecureRiskModel.Store.Addresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AddressTypes">
+              <PropertyRef Name="AddressTypeID" />
+            </Principal>
+            <Dependent Role="Addresses">
+              <PropertyRef Name="AddressTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Companies_Contacts">
+          <End Role="Contacts" Type="SecureRiskModel.Store.Contacts" Multiplicity="0..1" />
+          <End Role="Companies" Type="SecureRiskModel.Store.Companies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="Companies">
+              <PropertyRef Name="PrimaryContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Companies_PhoneNumbers">
+          <End Role="PhoneNumbers" Type="SecureRiskModel.Store.PhoneNumbers" Multiplicity="0..1" />
+          <End Role="Companies" Type="SecureRiskModel.Store.Companies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhoneNumbers">
+              <PropertyRef Name="PhoneNumberID" />
+            </Principal>
+            <Dependent Role="Companies">
+              <PropertyRef Name="PrimaryPhoneNumberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Companies_RelationshipTypes">
+          <End Role="RelationshipTypes" Type="SecureRiskModel.Store.RelationshipTypes" Multiplicity="0..1" />
+          <End Role="Companies" Type="SecureRiskModel.Store.Companies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RelationshipTypes">
+              <PropertyRef Name="RelationshipTypeID" />
+            </Principal>
+            <Dependent Role="Companies">
+              <PropertyRef Name="RelationshipTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompanyXAddresses_Addresses">
+          <End Role="Addresses" Type="SecureRiskModel.Store.Addresses" Multiplicity="0..1" />
+          <End Role="CompanyXAddresses" Type="SecureRiskModel.Store.CompanyXAddresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="CompanyXAddresses">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompanyXAddresses_Companies">
+          <End Role="Companies" Type="SecureRiskModel.Store.Companies" Multiplicity="0..1" />
+          <End Role="CompanyXAddresses" Type="SecureRiskModel.Store.CompanyXAddresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="CompanyXAddresses">
+              <PropertyRef Name="CompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CompanyXAddresses_Relationships">
+          <End Role="Relationships" Type="SecureRiskModel.Store.Relationships" Multiplicity="0..1" />
+          <End Role="CompanyXAddresses" Type="SecureRiskModel.Store.CompanyXAddresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relationships">
+              <PropertyRef Name="RelationshipID" />
+            </Principal>
+            <Dependent Role="CompanyXAddresses">
+              <PropertyRef Name="RelationshipID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_Addresses">
+          <End Role="Addresses" Type="SecureRiskModel.Store.Addresses" Multiplicity="0..1" />
+          <End Role="Contacts" Type="SecureRiskModel.Store.Contacts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="PrimaryAddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_ContactTypes">
+          <End Role="ContactTypes" Type="SecureRiskModel.Store.ContactTypes" Multiplicity="1" />
+          <End Role="Contacts" Type="SecureRiskModel.Store.Contacts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContactTypes">
+              <PropertyRef Name="ContactTypeID" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="ContactTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contacts_PhoneNumbers">
+          <End Role="PhoneNumbers" Type="SecureRiskModel.Store.PhoneNumbers" Multiplicity="0..1" />
+          <End Role="Contacts" Type="SecureRiskModel.Store.Contacts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhoneNumbers">
+              <PropertyRef Name="PhoneNumberID" />
+            </Principal>
+            <Dependent Role="Contacts">
+              <PropertyRef Name="PrimaryPhoneNumberID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContactXAddresses_Addresses">
+          <End Role="Addresses" Type="SecureRiskModel.Store.Addresses" Multiplicity="0..1" />
+          <End Role="ContactXAddresses" Type="SecureRiskModel.Store.ContactXAddresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="ContactXAddresses">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContactXAddresses_Contacts">
+          <End Role="Contacts" Type="SecureRiskModel.Store.Contacts" Multiplicity="0..1" />
+          <End Role="ContactXAddresses" Type="SecureRiskModel.Store.ContactXAddresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="ContactXAddresses">
+              <PropertyRef Name="ContactID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobAssignments_AssignedTypes">
+          <End Role="AssignedTypes" Type="SecureRiskModel.Store.AssignedTypes" Multiplicity="1" />
+          <End Role="JobAssignments" Type="SecureRiskModel.Store.JobAssignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AssignedTypes">
+              <PropertyRef Name="AssignedTypeID" />
+            </Principal>
+            <Dependent Role="JobAssignments">
+              <PropertyRef Name="AssignedTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobAssignments_Contacts">
+          <End Role="Contacts" Type="SecureRiskModel.Store.Contacts" Multiplicity="1" />
+          <End Role="JobAssignments" Type="SecureRiskModel.Store.JobAssignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contacts">
+              <PropertyRef Name="ContactID" />
+            </Principal>
+            <Dependent Role="JobAssignments">
+              <PropertyRef Name="AssignedID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobAssignments_Jobs">
+          <End Role="Jobs" Type="SecureRiskModel.Store.Jobs" Multiplicity="1" />
+          <End Role="JobAssignments" Type="SecureRiskModel.Store.JobAssignments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jobs">
+              <PropertyRef Name="JobID" />
+            </Principal>
+            <Dependent Role="JobAssignments">
+              <PropertyRef Name="JobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobLocations_Addresses">
+          <End Role="Addresses" Type="SecureRiskModel.Store.Addresses" Multiplicity="0..1" />
+          <End Role="JobLocations" Type="SecureRiskModel.Store.JobLocations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="JobLocations">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_JobLocations_Jobs">
+          <End Role="Jobs" Type="SecureRiskModel.Store.Jobs" Multiplicity="0..1" />
+          <End Role="JobLocations" Type="SecureRiskModel.Store.JobLocations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jobs">
+              <PropertyRef Name="JobID" />
+            </Principal>
+            <Dependent Role="JobLocations">
+              <PropertyRef Name="JobID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Jobs_Companies">
+          <End Role="Companies" Type="SecureRiskModel.Store.Companies" Multiplicity="0..1" />
+          <End Role="Jobs" Type="SecureRiskModel.Store.Jobs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Companies">
+              <PropertyRef Name="CompanyID" />
+            </Principal>
+            <Dependent Role="Jobs">
+              <PropertyRef Name="InsuranceCompanyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Jobs_JobStatuses">
+          <End Role="JobStatuses" Type="SecureRiskModel.Store.JobStatuses" Multiplicity="0..1" />
+          <End Role="Jobs" Type="SecureRiskModel.Store.Jobs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobStatuses">
+              <PropertyRef Name="JobStatusID" />
+            </Principal>
+            <Dependent Role="Jobs">
+              <PropertyRef Name="JobStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notes_Parents">
+          <End Role="Parents" Type="SecureRiskModel.Store.Parents" Multiplicity="1" />
+          <End Role="Notes" Type="SecureRiskModel.Store.Notes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parents">
+              <PropertyRef Name="ParentID" />
+            </Principal>
+            <Dependent Role="Notes">
+              <PropertyRef Name="ParentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Notes_ParentTypes">
+          <End Role="ParentTypes" Type="SecureRiskModel.Store.ParentTypes" Multiplicity="1" />
+          <End Role="Notes" Type="SecureRiskModel.Store.Notes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ParentTypes">
+              <PropertyRef Name="ParentTypeID" />
+            </Principal>
+            <Dependent Role="Notes">
+              <PropertyRef Name="ParentTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PhoneNumbers_PhoneNumberTypes">
+          <End Role="PhoneNumberTypes" Type="SecureRiskModel.Store.PhoneNumberTypes" Multiplicity="0..1" />
+          <End Role="PhoneNumbers" Type="SecureRiskModel.Store.PhoneNumbers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PhoneNumberTypes">
+              <PropertyRef Name="PhoneNumberTypeID" />
+            </Principal>
+            <Dependent Role="PhoneNumbers">
+              <PropertyRef Name="PhoneNumberTypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkItemsXJobLocations_JobLocations">
+          <End Role="JobLocations" Type="SecureRiskModel.Store.JobLocations" Multiplicity="0..1" />
+          <End Role="WorkItemsXJobLocations" Type="SecureRiskModel.Store.WorkItemsXJobLocations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="JobLocations">
+              <PropertyRef Name="JobLocationID" />
+            </Principal>
+            <Dependent Role="WorkItemsXJobLocations">
+              <PropertyRef Name="JobLocationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkItemsXJobs_WorkItems">
+          <End Role="WorkItems" Type="SecureRiskModel.Store.WorkItems" Multiplicity="0..1" />
+          <End Role="WorkItemsXJobLocations" Type="SecureRiskModel.Store.WorkItemsXJobLocations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WorkItems">
+              <PropertyRef Name="WorkItemID" />
+            </Principal>
+            <Dependent Role="WorkItemsXJobLocations">
+              <PropertyRef Name="WorkItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SecureRiskModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="SecureRiskEntities1">
+          <EntitySet Name="Addresses" EntityType="SecureRiskModel.Addresses" />
+          <EntitySet Name="AddressTypes" EntityType="SecureRiskModel.AddressTypes" />
+          <EntitySet Name="AssignedTypes" EntityType="SecureRiskModel.AssignedTypes" />
+          <EntitySet Name="Companies" EntityType="SecureRiskModel.Companies" />
+          <EntitySet Name="CompanyXAddresses" EntityType="SecureRiskModel.CompanyXAddresses" />
+          <EntitySet Name="Contacts" EntityType="SecureRiskModel.Contacts" />
+          <EntitySet Name="ContactTypes" EntityType="SecureRiskModel.ContactTypes" />
+          <EntitySet Name="ContactXAddresses" EntityType="SecureRiskModel.ContactXAddresses" />
+          <EntitySet Name="Groups" EntityType="SecureRiskModel.Groups" />
+          <EntitySet Name="JobAssignments" EntityType="SecureRiskModel.JobAssignments" />
+          <EntitySet Name="JobLocations" EntityType="SecureRiskModel.JobLocations" />
+          <EntitySet Name="Jobs" EntityType="SecureRiskModel.Jobs" />
+          <EntitySet Name="JobStatuses" EntityType="SecureRiskModel.JobStatuses" />
+          <EntitySet Name="Notes" EntityType="SecureRiskModel.Notes" />
+          <EntitySet Name="Parents" EntityType="SecureRiskModel.Parents" />
+          <EntitySet Name="ParentTypes" EntityType="SecureRiskModel.ParentTypes" />
+          <EntitySet Name="PhoneNumbers" EntityType="SecureRiskModel.PhoneNumbers" />
+          <EntitySet Name="PhoneNumberTypes" EntityType="SecureRiskModel.PhoneNumberTypes" />
+          <EntitySet Name="Policies" EntityType="SecureRiskModel.Policies" />
+          <EntitySet Name="Relationships" EntityType="SecureRiskModel.Relationships" />
+          <EntitySet Name="RelationshipTypes" EntityType="SecureRiskModel.RelationshipTypes" />
+          <EntitySet Name="sysdiagrams" EntityType="SecureRiskModel.sysdiagrams" />
+          <EntitySet Name="WorkItems" EntityType="SecureRiskModel.WorkItems" />
+          <EntitySet Name="WorkItemsXJobLocations" EntityType="SecureRiskModel.WorkItemsXJobLocations" />
+          <AssociationSet Name="FK_Addresses_AddressTypes" Association="SecureRiskModel.FK_Addresses_AddressTypes">
+            <End Role="AddressTypes" EntitySet="AddressTypes" />
+            <End Role="Addresses" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyXAddresses_Addresses" Association="SecureRiskModel.FK_CompanyXAddresses_Addresses">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="CompanyXAddresses" EntitySet="CompanyXAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_Addresses" Association="SecureRiskModel.FK_Contacts_Addresses">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContactXAddresses_Addresses" Association="SecureRiskModel.FK_ContactXAddresses_Addresses">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="ContactXAddresses" EntitySet="ContactXAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobLocations_Addresses" Association="SecureRiskModel.FK_JobLocations_Addresses">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="JobLocations" EntitySet="JobLocations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobAssignments_AssignedTypes" Association="SecureRiskModel.FK_JobAssignments_AssignedTypes">
+            <End Role="AssignedTypes" EntitySet="AssignedTypes" />
+            <End Role="JobAssignments" EntitySet="JobAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Companies_Contacts" Association="SecureRiskModel.FK_Companies_Contacts">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="Companies" EntitySet="Companies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Companies_PhoneNumbers" Association="SecureRiskModel.FK_Companies_PhoneNumbers">
+            <End Role="PhoneNumbers" EntitySet="PhoneNumbers" />
+            <End Role="Companies" EntitySet="Companies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Companies_RelationshipTypes" Association="SecureRiskModel.FK_Companies_RelationshipTypes">
+            <End Role="RelationshipTypes" EntitySet="RelationshipTypes" />
+            <End Role="Companies" EntitySet="Companies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyXAddresses_Companies" Association="SecureRiskModel.FK_CompanyXAddresses_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="CompanyXAddresses" EntitySet="CompanyXAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Jobs_Companies" Association="SecureRiskModel.FK_Jobs_Companies">
+            <End Role="Companies" EntitySet="Companies" />
+            <End Role="Jobs" EntitySet="Jobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CompanyXAddresses_Relationships" Association="SecureRiskModel.FK_CompanyXAddresses_Relationships">
+            <End Role="Relationships" EntitySet="Relationships" />
+            <End Role="CompanyXAddresses" EntitySet="CompanyXAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_ContactTypes" Association="SecureRiskModel.FK_Contacts_ContactTypes">
+            <End Role="ContactTypes" EntitySet="ContactTypes" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contacts_PhoneNumbers" Association="SecureRiskModel.FK_Contacts_PhoneNumbers">
+            <End Role="PhoneNumbers" EntitySet="PhoneNumbers" />
+            <End Role="Contacts" EntitySet="Contacts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContactXAddresses_Contacts" Association="SecureRiskModel.FK_ContactXAddresses_Contacts">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="ContactXAddresses" EntitySet="ContactXAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobAssignments_Contacts" Association="SecureRiskModel.FK_JobAssignments_Contacts">
+            <End Role="Contacts" EntitySet="Contacts" />
+            <End Role="JobAssignments" EntitySet="JobAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobAssignments_Jobs" Association="SecureRiskModel.FK_JobAssignments_Jobs">
+            <End Role="Jobs" EntitySet="Jobs" />
+            <End Role="JobAssignments" EntitySet="JobAssignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_JobLocations_Jobs" Association="SecureRiskModel.FK_JobLocations_Jobs">
+            <End Role="Jobs" EntitySet="Jobs" />
+            <End Role="JobLocations" EntitySet="JobLocations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkItemsXJobLocations_JobLocations" Association="SecureRiskModel.FK_WorkItemsXJobLocations_JobLocations">
+            <End Role="JobLocations" EntitySet="JobLocations" />
+            <End Role="WorkItemsXJobLocations" EntitySet="WorkItemsXJobLocations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Jobs_JobStatuses" Association="SecureRiskModel.FK_Jobs_JobStatuses">
+            <End Role="JobStatuses" EntitySet="JobStatuses" />
+            <End Role="Jobs" EntitySet="Jobs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notes_Parents" Association="SecureRiskModel.FK_Notes_Parents">
+            <End Role="Parents" EntitySet="Parents" />
+            <End Role="Notes" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Notes_ParentTypes" Association="SecureRiskModel.FK_Notes_ParentTypes">
+            <End Role="ParentTypes" EntitySet="ParentTypes" />
+            <End Role="Notes" EntitySet="Notes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PhoneNumbers_PhoneNumberTypes" Association="SecureRiskModel.FK_PhoneNumbers_PhoneNumberTypes">
+            <End Role="PhoneNumberTypes" EntitySet="PhoneNumberTypes" />
+            <End Role="PhoneNumbers" EntitySet="PhoneNumbers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkItemsXJobs_WorkItems" Association="SecureRiskModel.FK_WorkItemsXJobs_WorkItems">
+            <End Role="WorkItems" EntitySet="WorkItems" />
+            <End Role="WorkItemsXJobLocations" EntitySet="WorkItemsXJobLocations" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Addresses">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Name="AddressID" Type="Guid" Nullable="false" />
+          <Property Name="Street" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="State" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Zip" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Country" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="AddressTypes" Relationship="SecureRiskModel.FK_Addresses_AddressTypes" FromRole="Addresses" ToRole="AddressTypes" />
+          <NavigationProperty Name="CompanyXAddresses" Relationship="SecureRiskModel.FK_CompanyXAddresses_Addresses" FromRole="Addresses" ToRole="CompanyXAddresses" />
+          <NavigationProperty Name="Contacts" Relationship="SecureRiskModel.FK_Contacts_Addresses" FromRole="Addresses" ToRole="Contacts" />
+          <NavigationProperty Name="ContactXAddresses" Relationship="SecureRiskModel.FK_ContactXAddresses_Addresses" FromRole="Addresses" ToRole="ContactXAddresses" />
+          <NavigationProperty Name="JobLocations" Relationship="SecureRiskModel.FK_JobLocations_Addresses" FromRole="Addresses" ToRole="JobLocations" />
+        </EntityType>
+        <EntityType Name="AddressTypes">
+          <Key>
+            <PropertyRef Name="AddressTypeID" />
+          </Key>
+          <Property Name="AddressTypeID" Type="Guid" Nullable="false" />
+          <Property Name="AddressTypeName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="Addresses" Relationship="SecureRiskModel.FK_Addresses_AddressTypes" FromRole="AddressTypes" ToRole="Addresses" />
+        </EntityType>
+        <EntityType Name="AssignedTypes">
+          <Key>
+            <PropertyRef Name="AssignedTypeID" />
+          </Key>
+          <Property Name="AssignedTypeID" Type="Guid" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="JobAssignments" Relationship="SecureRiskModel.FK_JobAssignments_AssignedTypes" FromRole="AssignedTypes" ToRole="JobAssignments" />
+        </EntityType>
+        <EntityType Name="Companies">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="Guid" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PrimaryAddressID" Type="Guid" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="Contacts" Relationship="SecureRiskModel.FK_Companies_Contacts" FromRole="Companies" ToRole="Contacts" />
+          <NavigationProperty Name="PhoneNumbers" Relationship="SecureRiskModel.FK_Companies_PhoneNumbers" FromRole="Companies" ToRole="PhoneNumbers" />
+          <NavigationProperty Name="RelationshipTypes" Relationship="SecureRiskModel.FK_Companies_RelationshipTypes" FromRole="Companies" ToRole="RelationshipTypes" />
+          <NavigationProperty Name="CompanyXAddresses" Relationship="SecureRiskModel.FK_CompanyXAddresses_Companies" FromRole="Companies" ToRole="CompanyXAddresses" />
+          <NavigationProperty Name="Jobs" Relationship="SecureRiskModel.FK_Jobs_Companies" FromRole="Companies" ToRole="Jobs" />
+        </EntityType>
+        <EntityType Name="CompanyXAddresses">
+          <Key>
+            <PropertyRef Name="CompanyXAddressID" />
+          </Key>
+          <Property Name="CompanyXAddressID" Type="Guid" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="Addresses" Relationship="SecureRiskModel.FK_CompanyXAddresses_Addresses" FromRole="CompanyXAddresses" ToRole="Addresses" />
+          <NavigationProperty Name="Companies" Relationship="SecureRiskModel.FK_CompanyXAddresses_Companies" FromRole="CompanyXAddresses" ToRole="Companies" />
+          <NavigationProperty Name="Relationships" Relationship="SecureRiskModel.FK_CompanyXAddresses_Relationships" FromRole="CompanyXAddresses" ToRole="Relationships" />
+        </EntityType>
+        <EntityType Name="Contacts">
+          <Key>
+            <PropertyRef Name="ContactID" />
+          </Key>
+          <Property Name="ContactID" Type="Guid" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CompanyID" Type="Guid" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="Addresses" Relationship="SecureRiskModel.FK_Contacts_Addresses" FromRole="Contacts" ToRole="Addresses" />
+          <NavigationProperty Name="Companies" Relationship="SecureRiskModel.FK_Companies_Contacts" FromRole="Contacts" ToRole="Companies" />
+          <NavigationProperty Name="ContactTypes" Relationship="SecureRiskModel.FK_Contacts_ContactTypes" FromRole="Contacts" ToRole="ContactTypes" />
+          <NavigationProperty Name="PhoneNumbers" Relationship="SecureRiskModel.FK_Contacts_PhoneNumbers" FromRole="Contacts" ToRole="PhoneNumbers" />
+          <NavigationProperty Name="ContactXAddresses" Relationship="SecureRiskModel.FK_ContactXAddresses_Contacts" FromRole="Contacts" ToRole="ContactXAddresses" />
+          <NavigationProperty Name="JobAssignments" Relationship="SecureRiskModel.FK_JobAssignments_Contacts" FromRole="Contacts" ToRole="JobAssignments" />
+        </EntityType>
+        <EntityType Name="ContactTypes">
+          <Key>
+            <PropertyRef Name="ContactTypeID" />
+          </Key>
+          <Property Name="ContactTypeID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="Contacts" Relationship="SecureRiskModel.FK_Contacts_ContactTypes" FromRole="ContactTypes" ToRole="Contacts" />
+        </EntityType>
+        <EntityType Name="ContactXAddresses">
+          <Key>
+            <PropertyRef Name="ContactXAddressID" />
+          </Key>
+          <Property Name="ContactXAddressID" Type="Guid" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="Addresses" Relationship="SecureRiskModel.FK_ContactXAddresses_Addresses" FromRole="ContactXAddresses" ToRole="Addresses" />
+          <NavigationProperty Name="Contacts" Relationship="SecureRiskModel.FK_ContactXAddresses_Contacts" FromRole="ContactXAddresses" ToRole="Contacts" />
+        </EntityType>
+        <EntityType Name="Groups">
+          <Key>
+            <PropertyRef Name="GroupID" />
+          </Key>
+          <Property Name="GroupID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="JobAssignments">
+          <Key>
+            <PropertyRef Name="JobAssignmentID" />
+          </Key>
+          <Property Name="JobAssignmentID" Type="Guid" Nullable="false" />
+          <Property Name="AssignedDate" Type="DateTime" Nullable="false" />
+          <Property Name="DueDate" Type="DateTime" Nullable="false" />
+          <Property Name="CompleteDate" Type="DateTime" />
+          <Property Name="Rates" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Hours" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="AssignedTypes" Relationship="SecureRiskModel.FK_JobAssignments_AssignedTypes" FromRole="JobAssignments" ToRole="AssignedTypes" />
+          <NavigationProperty Name="Contacts" Relationship="SecureRiskModel.FK_JobAssignments_Contacts" FromRole="JobAssignments" ToRole="Contacts" />
+          <NavigationProperty Name="Jobs" Relationship="SecureRiskModel.FK_JobAssignments_Jobs" FromRole="JobAssignments" ToRole="Jobs" />
+        </EntityType>
+        <EntityType Name="JobLocations">
+          <Key>
+            <PropertyRef Name="JobLocationID" />
+          </Key>
+          <Property Name="JobLocationID" Type="Guid" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="Addresses" Relationship="SecureRiskModel.FK_JobLocations_Addresses" FromRole="JobLocations" ToRole="Addresses" />
+          <NavigationProperty Name="Jobs" Relationship="SecureRiskModel.FK_JobLocations_Jobs" FromRole="JobLocations" ToRole="Jobs" />
+          <NavigationProperty Name="WorkItemsXJobLocations" Relationship="SecureRiskModel.FK_WorkItemsXJobLocations_JobLocations" FromRole="JobLocations" ToRole="WorkItemsXJobLocations" />
+        </EntityType>
+        <EntityType Name="Jobs">
+          <Key>
+            <PropertyRef Name="JobID" />
+          </Key>
+          <Property Name="JobID" Type="Guid" Nullable="false" />
+          <Property Name="RequestDate" Type="DateTime" />
+          <Property Name="DueDate" Type="DateTime" />
+          <Property Name="CompletionDate" Type="DateTime" />
+          <Property Name="InsuranceName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="WorkItemNote" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="Companies" Relationship="SecureRiskModel.FK_Jobs_Companies" FromRole="Jobs" ToRole="Companies" />
+          <NavigationProperty Name="JobAssignments" Relationship="SecureRiskModel.FK_JobAssignments_Jobs" FromRole="Jobs" ToRole="JobAssignments" />
+          <NavigationProperty Name="JobLocations" Relationship="SecureRiskModel.FK_JobLocations_Jobs" FromRole="Jobs" ToRole="JobLocations" />
+          <NavigationProperty Name="JobStatuses" Relationship="SecureRiskModel.FK_Jobs_JobStatuses" FromRole="Jobs" ToRole="JobStatuses" />
+        </EntityType>
+        <EntityType Name="JobStatuses">
+          <Key>
+            <PropertyRef Name="JobStatusID" />
+          </Key>
+          <Property Name="JobStatusID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="Jobs" Relationship="SecureRiskModel.FK_Jobs_JobStatuses" FromRole="JobStatuses" ToRole="Jobs" />
+        </EntityType>
+        <EntityType Name="Notes">
+          <Key>
+            <PropertyRef Name="NoteID" />
+          </Key>
+          <Property Name="NoteID" Type="Guid" Nullable="false" />
+          <Property Name="NoteTitle" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Note" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="Parents" Relationship="SecureRiskModel.FK_Notes_Parents" FromRole="Notes" ToRole="Parents" />
+          <NavigationProperty Name="ParentTypes" Relationship="SecureRiskModel.FK_Notes_ParentTypes" FromRole="Notes" ToRole="ParentTypes" />
+        </EntityType>
+        <EntityType Name="Parents">
+          <Key>
+            <PropertyRef Name="ParentID" />
+          </Key>
+          <Property Name="ParentID" Type="Guid" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="Notes" Relationship="SecureRiskModel.FK_Notes_Parents" FromRole="Parents" ToRole="Notes" />
+        </EntityType>
+        <EntityType Name="ParentTypes">
+          <Key>
+            <PropertyRef Name="ParentTypeID" />
+          </Key>
+          <Property Name="ParentTypeID" Type="Guid" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="Notes" Relationship="SecureRiskModel.FK_Notes_ParentTypes" FromRole="ParentTypes" ToRole="Notes" />
+        </EntityType>
+        <EntityType Name="PhoneNumbers">
+          <Key>
+            <PropertyRef Name="PhoneNumberID" />
+          </Key>
+          <Property Name="PhoneNumberID" Type="Guid" Nullable="false" />
+          <Property Name="AreaCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Prefix" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Suffix" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Extension" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="Companies" Relationship="SecureRiskModel.FK_Companies_PhoneNumbers" FromRole="PhoneNumbers" ToRole="Companies" />
+          <NavigationProperty Name="Contacts" Relationship="SecureRiskModel.FK_Contacts_PhoneNumbers" FromRole="PhoneNumbers" ToRole="Contacts" />
+          <NavigationProperty Name="PhoneNumberTypes" Relationship="SecureRiskModel.FK_PhoneNumbers_PhoneNumberTypes" FromRole="PhoneNumbers" ToRole="PhoneNumberTypes" />
+        </EntityType>
+        <EntityType Name="PhoneNumberTypes">
+          <Key>
+            <PropertyRef Name="PhoneNumberTypeID" />
+          </Key>
+          <Property Name="PhoneNumberTypeID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="PhoneNumbers" Relationship="SecureRiskModel.FK_PhoneNumbers_PhoneNumberTypes" FromRole="PhoneNumberTypes" ToRole="PhoneNumbers" />
+        </EntityType>
+        <EntityType Name="Policies">
+          <Key>
+            <PropertyRef Name="PolicyID" />
+          </Key>
+          <Property Name="PolicyID" Type="Guid" Nullable="false" />
+          <Property Name="PolicyNumber" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PolicyAmount" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="1024" Unicode="false" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+        </EntityType>
+        <EntityType Name="Relationships">
+          <Key>
+            <PropertyRef Name="RelationshipID" />
+          </Key>
+          <Property Name="RelationshipID" Type="Guid" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="CompanyXAddresses" Relationship="SecureRiskModel.FK_CompanyXAddresses_Relationships" FromRole="Relationships" ToRole="CompanyXAddresses" />
+        </EntityType>
+        <EntityType Name="RelationshipTypes">
+          <Key>
+            <PropertyRef Name="RelationshipTypeID" />
+          </Key>
+          <Property Name="RelationshipTypeID" Type="Guid" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="Companies" Relationship="SecureRiskModel.FK_Companies_RelationshipTypes" FromRole="RelationshipTypes" ToRole="Companies" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="WorkItems">
+          <Key>
+            <PropertyRef Name="WorkItemID" />
+          </Key>
+          <Property Name="WorkItemID" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="WorkItemsXJobLocations" Relationship="SecureRiskModel.FK_WorkItemsXJobs_WorkItems" FromRole="WorkItems" ToRole="WorkItemsXJobLocations" />
+        </EntityType>
+        <EntityType Name="WorkItemsXJobLocations">
+          <Key>
+            <PropertyRef Name="WorkItemXJobLocation" />
+          </Key>
+          <Property Name="WorkItemXJobLocation" Type="Guid" Nullable="false" />
+          <Property Name="NoteID" Type="Guid" />
+          <Property Name="CreateDate" Type="DateTime" />
+          <Property Name="ModifyDate" Type="DateTime" />
+          <NavigationProperty Name="JobLocations" Relationship="SecureRiskModel.FK_WorkItemsXJobLocations_JobLocations" FromRole="WorkItemsXJobLocations" ToRole="JobLocations" />
+          <NavigationProperty Name="WorkItems" Relationship="SecureRiskModel.FK_WorkItemsXJobs_WorkItems" FromRole="WorkItemsXJobLocations" ToRole="WorkItems" />
+        </EntityType>
+        <Association Name="FK_Addresses_AddressTypes">
+          <End Role="AddressTypes" Type="SecureRiskModel.AddressTypes" Multiplicity="1" />
+          <End Role="Addresses" Type="SecureRiskModel.Addresses" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_CompanyXAddresses_Addresses">
+          <End Role="Addresses" Type="SecureRiskModel.Addresses" Multiplicity="0..1" />
+          <End Role="CompanyXAddresses" Type="SecureRiskModel.CompanyXAddresses" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Contacts_Addresses">
+          <End Role="Addresses" Type="SecureRiskModel.Addresses" Multiplicity="0..1" />
+          <End Role="Contacts" Type="SecureRiskModel.Contacts" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_ContactXAddresses_Addresses">
+          <End Role="Addresses" Type="SecureRiskModel.Addresses" Multiplicity="0..1" />
+          <End Role="ContactXAddresses" Type="SecureRiskModel.ContactXAddresses" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_JobLocations_Addresses">
+          <End Role="Addresses" Type="SecureRiskModel.Addresses" Multiplicity="0..1" />
+          <End Role="JobLocations" Type="SecureRiskModel.JobLocations" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_JobAssignments_AssignedTypes">
+          <End Role="AssignedTypes" Type="SecureRiskModel.AssignedTypes" Multiplicity="1" />
+          <End Role="JobAssignments" Type="SecureRiskModel.JobAssignments" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Companies_Contacts">
+          <End Role="Contacts" Type="SecureRiskModel.Contacts" Multiplicity="0..1" />
+          <End Role="Companies" Type="SecureRiskModel.Companies" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Companies_PhoneNumbers">
+          <End Role="PhoneNumbers" Type="SecureRiskModel.PhoneNumbers" Multiplicity="0..1" />
+          <End Role="Companies" Type="SecureRiskModel.Companies" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Companies_RelationshipTypes">
+          <End Role="RelationshipTypes" Type="SecureRiskModel.RelationshipTypes" Multiplicity="0..1" />
+          <End Role="Companies" Type="SecureRiskModel.Companies" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_CompanyXAddresses_Companies">
+          <End Role="Companies" Type="SecureRiskModel.Companies" Multiplicity="0..1" />
+          <End Role="CompanyXAddresses" Type="SecureRiskModel.CompanyXAddresses" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Jobs_Companies">
+          <End Role="Companies" Type="SecureRiskModel.Companies" Multiplicity="0..1" />
+          <End Role="Jobs" Type="SecureRiskModel.Jobs" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_CompanyXAddresses_Relationships">
+          <End Role="Relationships" Type="SecureRiskModel.Relationships" Multiplicity="0..1" />
+          <End Role="CompanyXAddresses" Type="SecureRiskModel.CompanyXAddresses" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Contacts_ContactTypes">
+          <End Role="ContactTypes" Type="SecureRiskModel.ContactTypes" Multiplicity="1" />
+          <End Role="Contacts" Type="SecureRiskModel.Contacts" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Contacts_PhoneNumbers">
+          <End Role="PhoneNumbers" Type="SecureRiskModel.PhoneNumbers" Multiplicity="0..1" />
+          <End Role="Contacts" Type="SecureRiskModel.Contacts" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_ContactXAddresses_Contacts">
+          <End Role="Contacts" Type="SecureRiskModel.Contacts" Multiplicity="0..1" />
+          <End Role="ContactXAddresses" Type="SecureRiskModel.ContactXAddresses" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_JobAssignments_Contacts">
+          <End Role="Contacts" Type="SecureRiskModel.Contacts" Multiplicity="1" />
+          <End Role="JobAssignments" Type="SecureRiskModel.JobAssignments" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_JobAssignments_Jobs">
+          <End Role="Jobs" Type="SecureRiskModel.Jobs" Multiplicity="1" />
+          <End Role="JobAssignments" Type="SecureRiskModel.JobAssignments" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_JobLocations_Jobs">
+          <End Role="Jobs" Type="SecureRiskModel.Jobs" Multiplicity="0..1" />
+          <End Role="JobLocations" Type="SecureRiskModel.JobLocations" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_WorkItemsXJobLocations_JobLocations">
+          <End Role="JobLocations" Type="SecureRiskModel.JobLocations" Multiplicity="0..1" />
+          <End Role="WorkItemsXJobLocations" Type="SecureRiskModel.WorkItemsXJobLocations" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Jobs_JobStatuses">
+          <End Role="JobStatuses" Type="SecureRiskModel.JobStatuses" Multiplicity="0..1" />
+          <End Role="Jobs" Type="SecureRiskModel.Jobs" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Notes_Parents">
+          <End Role="Parents" Type="SecureRiskModel.Parents" Multiplicity="1" />
+          <End Role="Notes" Type="SecureRiskModel.Notes" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Notes_ParentTypes">
+          <End Role="ParentTypes" Type="SecureRiskModel.ParentTypes" Multiplicity="1" />
+          <End Role="Notes" Type="SecureRiskModel.Notes" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_PhoneNumbers_PhoneNumberTypes">
+          <End Role="PhoneNumberTypes" Type="SecureRiskModel.PhoneNumberTypes" Multiplicity="0..1" />
+          <End Role="PhoneNumbers" Type="SecureRiskModel.PhoneNumbers" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_WorkItemsXJobs_WorkItems">
+          <End Role="WorkItems" Type="SecureRiskModel.WorkItems" Multiplicity="0..1" />
+          <End Role="WorkItemsXJobLocations" Type="SecureRiskModel.WorkItemsXJobLocations" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="SecureRiskModelStoreContainer" CdmEntityContainer="SecureRiskEntities1">
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.Addresses)">
+              <MappingFragment StoreEntitySet="Addresses">
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AddressTypes">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.AddressTypes)">
+              <MappingFragment StoreEntitySet="AddressTypes">
+                <ScalarProperty Name="AddressTypeID" ColumnName="AddressTypeID" />
+                <ScalarProperty Name="AddressTypeName" ColumnName="AddressTypeName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AssignedTypes">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.AssignedTypes)">
+              <MappingFragment StoreEntitySet="AssignedTypes">
+                <ScalarProperty Name="AssignedTypeID" ColumnName="AssignedTypeID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.Companies)">
+              <MappingFragment StoreEntitySet="Companies">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="PrimaryAddressID" ColumnName="PrimaryAddressID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompanyXAddresses">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.CompanyXAddresses)">
+              <MappingFragment StoreEntitySet="CompanyXAddresses">
+                <ScalarProperty Name="CompanyXAddressID" ColumnName="CompanyXAddressID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.Contacts)">
+              <MappingFragment StoreEntitySet="Contacts">
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactTypes">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.ContactTypes)">
+              <MappingFragment StoreEntitySet="ContactTypes">
+                <ScalarProperty Name="ContactTypeID" ColumnName="ContactTypeID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContactXAddresses">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.ContactXAddresses)">
+              <MappingFragment StoreEntitySet="ContactXAddresses">
+                <ScalarProperty Name="ContactXAddressID" ColumnName="ContactXAddressID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.Groups)">
+              <MappingFragment StoreEntitySet="Groups">
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobAssignments">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.JobAssignments)">
+              <MappingFragment StoreEntitySet="JobAssignments">
+                <ScalarProperty Name="JobAssignmentID" ColumnName="JobAssignmentID" />
+                <ScalarProperty Name="AssignedDate" ColumnName="AssignedDate" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="CompleteDate" ColumnName="CompleteDate" />
+                <ScalarProperty Name="Rates" ColumnName="Rates" />
+                <ScalarProperty Name="Hours" ColumnName="Hours" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobLocations">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.JobLocations)">
+              <MappingFragment StoreEntitySet="JobLocations">
+                <ScalarProperty Name="JobLocationID" ColumnName="JobLocationID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jobs">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.Jobs)">
+              <MappingFragment StoreEntitySet="Jobs">
+                <ScalarProperty Name="JobID" ColumnName="JobID" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="CompletionDate" ColumnName="CompletionDate" />
+                <ScalarProperty Name="InsuranceName" ColumnName="InsuranceName" />
+                <ScalarProperty Name="WorkItemNote" ColumnName="WorkItemNote" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JobStatuses">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.JobStatuses)">
+              <MappingFragment StoreEntitySet="JobStatuses">
+                <ScalarProperty Name="JobStatusID" ColumnName="JobStatusID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notes">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.Notes)">
+              <MappingFragment StoreEntitySet="Notes">
+                <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+                <ScalarProperty Name="NoteTitle" ColumnName="NoteTitle" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parents">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.Parents)">
+              <MappingFragment StoreEntitySet="Parents">
+                <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ParentTypes">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.ParentTypes)">
+              <MappingFragment StoreEntitySet="ParentTypes">
+                <ScalarProperty Name="ParentTypeID" ColumnName="ParentTypeID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhoneNumbers">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.PhoneNumbers)">
+              <MappingFragment StoreEntitySet="PhoneNumbers">
+                <ScalarProperty Name="PhoneNumberID" ColumnName="PhoneNumberID" />
+                <ScalarProperty Name="AreaCode" ColumnName="AreaCode" />
+                <ScalarProperty Name="Prefix" ColumnName="Prefix" />
+                <ScalarProperty Name="Suffix" ColumnName="Suffix" />
+                <ScalarProperty Name="Extension" ColumnName="Extension" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhoneNumberTypes">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.PhoneNumberTypes)">
+              <MappingFragment StoreEntitySet="PhoneNumberTypes">
+                <ScalarProperty Name="PhoneNumberTypeID" ColumnName="PhoneNumberTypeID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Policies">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.Policies)">
+              <MappingFragment StoreEntitySet="Policies">
+                <ScalarProperty Name="PolicyID" ColumnName="PolicyID" />
+                <ScalarProperty Name="PolicyNumber" ColumnName="PolicyNumber" />
+                <ScalarProperty Name="PolicyAmount" ColumnName="PolicyAmount" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Relationships">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.Relationships)">
+              <MappingFragment StoreEntitySet="Relationships">
+                <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RelationshipTypes">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.RelationshipTypes)">
+              <MappingFragment StoreEntitySet="RelationshipTypes">
+                <ScalarProperty Name="RelationshipTypeID" ColumnName="RelationshipTypeID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.sysdiagrams)">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkItems">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.WorkItems)">
+              <MappingFragment StoreEntitySet="WorkItems">
+                <ScalarProperty Name="WorkItemID" ColumnName="WorkItemID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkItemsXJobLocations">
+            <EntityTypeMapping TypeName="IsTypeOf(SecureRiskModel.WorkItemsXJobLocations)">
+              <MappingFragment StoreEntitySet="WorkItemsXJobLocations">
+                <ScalarProperty Name="WorkItemXJobLocation" ColumnName="WorkItemXJobLocation" />
+                <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_Addresses_AddressTypes" TypeName="SecureRiskModel.FK_Addresses_AddressTypes" StoreEntitySet="Addresses">
+            <EndProperty Name="AddressTypes">
+              <ScalarProperty Name="AddressTypeID" ColumnName="AddressTypeID" />
+            </EndProperty>
+            <EndProperty Name="Addresses">
+              <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_CompanyXAddresses_Addresses" TypeName="SecureRiskModel.FK_CompanyXAddresses_Addresses" StoreEntitySet="CompanyXAddresses">
+            <EndProperty Name="Addresses">
+              <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+            </EndProperty>
+            <EndProperty Name="CompanyXAddresses">
+              <ScalarProperty Name="CompanyXAddressID" ColumnName="CompanyXAddressID" />
+            </EndProperty>
+            <Condition ColumnName="AddressID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Contacts_Addresses" TypeName="SecureRiskModel.FK_Contacts_Addresses" StoreEntitySet="Contacts">
+            <EndProperty Name="Addresses">
+              <ScalarProperty Name="AddressID" ColumnName="PrimaryAddressID" />
+            </EndProperty>
+            <EndProperty Name="Contacts">
+              <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+            </EndProperty>
+            <Condition ColumnName="PrimaryAddressID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_ContactXAddresses_Addresses" TypeName="SecureRiskModel.FK_ContactXAddresses_Addresses" StoreEntitySet="ContactXAddresses">
+            <EndProperty Name="Addresses">
+              <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+            </EndProperty>
+            <EndProperty Name="ContactXAddresses">
+              <ScalarProperty Name="ContactXAddressID" ColumnName="ContactXAddressID" />
+            </EndProperty>
+            <Condition ColumnName="AddressID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_JobLocations_Addresses" TypeName="SecureRiskModel.FK_JobLocations_Addresses" StoreEntitySet="JobLocations">
+            <EndProperty Name="Addresses">
+              <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+            </EndProperty>
+            <EndProperty Name="JobLocations">
+              <ScalarProperty Name="JobLocationID" ColumnName="JobLocationID" />
+            </EndProperty>
+            <Condition ColumnName="AddressID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_JobAssignments_AssignedTypes" TypeName="SecureRiskModel.FK_JobAssignments_AssignedTypes" StoreEntitySet="JobAssignments">
+            <EndProperty Name="AssignedTypes">
+              <ScalarProperty Name="AssignedTypeID" ColumnName="AssignedTypeID" />
+            </EndProperty>
+            <EndProperty Name="JobAssignments">
+              <ScalarProperty Name="JobAssignmentID" ColumnName="JobAssignmentID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Companies_Contacts" TypeName="SecureRiskModel.FK_Companies_Contacts" StoreEntitySet="Companies">
+            <EndProperty Name="Contacts">
+              <ScalarProperty Name="ContactID" ColumnName="PrimaryContactID" />
+            </EndProperty>
+            <EndProperty Name="Companies">
+              <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+            </EndProperty>
+            <Condition ColumnName="PrimaryContactID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Companies_PhoneNumbers" TypeName="SecureRiskModel.FK_Companies_PhoneNumbers" StoreEntitySet="Companies">
+            <EndProperty Name="PhoneNumbers">
+              <ScalarProperty Name="PhoneNumberID" ColumnName="PrimaryPhoneNumberID" />
+            </EndProperty>
+            <EndProperty Name="Companies">
+              <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+            </EndProperty>
+            <Condition ColumnName="PrimaryPhoneNumberID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Companies_RelationshipTypes" TypeName="SecureRiskModel.FK_Companies_RelationshipTypes" StoreEntitySet="Companies">
+            <EndProperty Name="RelationshipTypes">
+              <ScalarProperty Name="RelationshipTypeID" ColumnName="RelationshipTypeID" />
+            </EndProperty>
+            <EndProperty Name="Companies">
+              <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+            </EndProperty>
+            <Condition ColumnName="RelationshipTypeID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_CompanyXAddresses_Companies" TypeName="SecureRiskModel.FK_CompanyXAddresses_Companies" StoreEntitySet="CompanyXAddresses">
+            <EndProperty Name="Companies">
+              <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+            </EndProperty>
+            <EndProperty Name="CompanyXAddresses">
+              <ScalarProperty Name="CompanyXAddressID" ColumnName="CompanyXAddressID" />
+            </EndProperty>
+            <Condition ColumnName="CompanyID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Jobs_Companies" TypeName="SecureRiskModel.FK_Jobs_Companies" StoreEntitySet="Jobs">
+            <EndProperty Name="Companies">
+              <ScalarProperty Name="CompanyID" ColumnName="InsuranceCompanyID" />
+            </EndProperty>
+            <EndProperty Name="Jobs">
+              <ScalarProperty Name="JobID" ColumnName="JobID" />
+            </EndProperty>
+            <Condition ColumnName="InsuranceCompanyID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_CompanyXAddresses_Relationships" TypeName="SecureRiskModel.FK_CompanyXAddresses_Relationships" StoreEntitySet="CompanyXAddresses">
+            <EndProperty Name="Relationships">
+              <ScalarProperty Name="RelationshipID" ColumnName="RelationshipID" />
+            </EndProperty>
+            <EndProperty Name="CompanyXAddresses">
+              <ScalarProperty Name="CompanyXAddressID" ColumnName="CompanyXAddressID" />
+            </EndProperty>
+            <Condition ColumnName="RelationshipID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Contacts_ContactTypes" TypeName="SecureRiskModel.FK_Contacts_ContactTypes" StoreEntitySet="Contacts">
+            <EndProperty Name="ContactTypes">
+              <ScalarProperty Name="ContactTypeID" ColumnName="ContactTypeID" />
+            </EndProperty>
+            <EndProperty Name="Contacts">
+              <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Contacts_PhoneNumbers" TypeName="SecureRiskModel.FK_Contacts_PhoneNumbers" StoreEntitySet="Contacts">
+            <EndProperty Name="PhoneNumbers">
+              <ScalarProperty Name="PhoneNumberID" ColumnName="PrimaryPhoneNumberID" />
+            </EndProperty>
+            <EndProperty Name="Contacts">
+              <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+            </EndProperty>
+            <Condition ColumnName="PrimaryPhoneNumberID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_ContactXAddresses_Contacts" TypeName="SecureRiskModel.FK_ContactXAddresses_Contacts" StoreEntitySet="ContactXAddresses">
+            <EndProperty Name="Contacts">
+              <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+            </EndProperty>
+            <EndProperty Name="ContactXAddresses">
+              <ScalarProperty Name="ContactXAddressID" ColumnName="ContactXAddressID" />
+            </EndProperty>
+            <Condition ColumnName="ContactID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_JobAssignments_Contacts" TypeName="SecureRiskModel.FK_JobAssignments_Contacts" StoreEntitySet="JobAssignments">
+            <EndProperty Name="Contacts">
+              <ScalarProperty Name="ContactID" ColumnName="AssignedID" />
+            </EndProperty>
+            <EndProperty Name="JobAssignments">
+              <ScalarProperty Name="JobAssignmentID" ColumnName="JobAssignmentID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_JobAssignments_Jobs" TypeName="SecureRiskModel.FK_JobAssignments_Jobs" StoreEntitySet="JobAssignments">
+            <EndProperty Name="Jobs">
+              <ScalarProperty Name="JobID" ColumnName="JobID" />
+            </EndProperty>
+            <EndProperty Name="JobAssignments">
+              <ScalarProperty Name="JobAssignmentID" ColumnName="JobAssignmentID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_JobLocations_Jobs" TypeName="SecureRiskModel.FK_JobLocations_Jobs" StoreEntitySet="JobLocations">
+            <EndProperty Name="Jobs">
+              <ScalarProperty Name="JobID" ColumnName="JobID" />
+            </EndProperty>
+            <EndProperty Name="JobLocations">
+              <ScalarProperty Name="JobLocationID" ColumnName="JobLocationID" />
+            </EndProperty>
+            <Condition ColumnName="JobID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_WorkItemsXJobLocations_JobLocations" TypeName="SecureRiskModel.FK_WorkItemsXJobLocations_JobLocations" StoreEntitySet="WorkItemsXJobLocations">
+            <EndProperty Name="JobLocations">
+              <ScalarProperty Name="JobLocationID" ColumnName="JobLocationID" />
+            </EndProperty>
+            <EndProperty Name="WorkItemsXJobLocations">
+              <ScalarProperty Name="WorkItemXJobLocation" ColumnName="WorkItemXJobLocation" />
+            </EndProperty>
+            <Condition ColumnName="JobLocationID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Jobs_JobStatuses" TypeName="SecureRiskModel.FK_Jobs_JobStatuses" StoreEntitySet="Jobs">
+            <EndProperty Name="JobStatuses">
+              <ScalarProperty Name="JobStatusID" ColumnName="JobStatusID" />
+            </EndProperty>
+            <EndProperty Name="Jobs">
+              <ScalarProperty Name="JobID" ColumnName="JobID" />
+            </EndProperty>
+            <Condition ColumnName="JobStatusID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Notes_Parents" TypeName="SecureRiskModel.FK_Notes_Parents" StoreEntitySet="Notes">
+            <EndProperty Name="Parents">
+              <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+            </EndProperty>
+            <EndProperty Name="Notes">
+              <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Notes_ParentTypes" TypeName="SecureRiskModel.FK_Notes_ParentTypes" StoreEntitySet="Notes">
+            <EndProperty Name="ParentTypes">
+              <ScalarProperty Name="ParentTypeID" ColumnName="ParentTypeID" />
+            </EndProperty>
+            <EndProperty Name="Notes">
+              <ScalarProperty Name="NoteID" ColumnName="NoteID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_PhoneNumbers_PhoneNumberTypes" TypeName="SecureRiskModel.FK_PhoneNumbers_PhoneNumberTypes" StoreEntitySet="PhoneNumbers">
+            <EndProperty Name="PhoneNumberTypes">
+              <ScalarProperty Name="PhoneNumberTypeID" ColumnName="PhoneNumberTypeID" />
+            </EndProperty>
+            <EndProperty Name="PhoneNumbers">
+              <ScalarProperty Name="PhoneNumberID" ColumnName="PhoneNumberID" />
+            </EndProperty>
+            <Condition ColumnName="PhoneNumberTypeID" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_WorkItemsXJobs_WorkItems" TypeName="SecureRiskModel.FK_WorkItemsXJobs_WorkItems" StoreEntitySet="WorkItemsXJobLocations">
+            <EndProperty Name="WorkItems">
+              <ScalarProperty Name="WorkItemID" ColumnName="WorkItemID" />
+            </EndProperty>
+            <EndProperty Name="WorkItemsXJobLocations">
+              <ScalarProperty Name="WorkItemXJobLocation" ColumnName="WorkItemXJobLocation" />
+            </EndProperty>
+            <Condition ColumnName="WorkItemID" IsNull="false" />
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="DataObjectsADO">
+        <EntityTypeShape EntityType="SecureRiskModel.Addresses" Width="1.5" PointX="6" PointY="11.5" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.AddressTypes" Width="1.5" PointX="3.75" PointY="12.25" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.AssignedTypes" Width="1.5" PointX="10.5" PointY="14" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.Companies" Width="1.5" PointX="5.25" PointY="7.375" Height="2.9417936197916665" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.CompanyXAddresses" Width="1.5" PointX="10.5" PointY="7.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.Contacts" Width="1.5" PointX="8.25" PointY="7.125" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.ContactTypes" Width="1.5" PointX="6" PointY="3.625" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.ContactXAddresses" Width="1.5" PointX="10.5" PointY="10.875" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.Groups" Width="1.5" PointX="0.75" PointY="1.5" Height="1.7879850260416672" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.JobAssignments" Width="1.5" PointX="12.75" PointY="7.375" Height="3.1340950520833326" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.JobLocations" Width="1.5" PointX="12.75" PointY="3.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.Jobs" Width="1.5" PointX="10.5" PointY="3.125" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.JobStatuses" Width="1.5" PointX="8.25" PointY="3.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.Notes" Width="1.5" PointX="15" PointY="11.625" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.Parents" Width="1.5" PointX="12.75" PointY="12" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.ParentTypes" Width="1.5" PointX="12.75" PointY="17" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.PhoneNumbers" Width="1.5" PointX="3" PointY="7.375" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.PhoneNumberTypes" Width="1.5" PointX="0.75" PointY="7.875" Height="1.9802864583333326" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.Policies" Width="1.5" PointX="0.75" PointY="11.5" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.Relationships" Width="1.5" PointX="8.25" PointY="12" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.RelationshipTypes" Width="1.5" PointX="3" PointY="4.375" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="1.5" Height="1.9802864583333333" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.WorkItems" Width="1.5" PointX="12.75" PointY="0.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="SecureRiskModel.WorkItemsXJobLocations" Width="1.5" PointX="15" PointY="3.75" Height="2.1725878906249996" IsExpanded="true" />
+        <AssociationConnector Association="SecureRiskModel.FK_Addresses_AddressTypes" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.25" PointY="13.240143229166666" />
+          <ConnectorPoint PointX="6" PointY="13.240143229166666" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_CompanyXAddresses_Addresses" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="13.259348958333334" />
+          <ConnectorPoint PointX="8" PointY="13.259348958333334" />
+          <ConnectorPoint PointX="8" PointY="11.75" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="11.75" />
+          <ConnectorPoint PointX="10.208333333333334" PointY="11.75" />
+          <ConnectorPoint PointX="10.25" PointY="11.75" />
+          <ConnectorPoint PointX="10.25" PointY="10.625" />
+          <ConnectorPoint PointX="11.25" PointY="10.625" />
+          <ConnectorPoint PointX="11.25" PointY="9.922587890625" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_Contacts_Addresses" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.15625" PointY="11.5" />
+          <ConnectorPoint PointX="7.15625" PointY="10.511495768229167" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="10.511495768229167" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="10.511495768229167" />
+          <ConnectorPoint PointX="8.25" PointY="10.511495768229167" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_ContactXAddresses_Addresses" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.5" PointY="11.5625" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="11.562499999999998" />
+          <ConnectorPoint PointX="10.333333333333334" PointY="11.5625" />
+          <ConnectorPoint PointX="10.5" PointY="11.5625" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_JobLocations_Addresses" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.546873" PointY="11.5" />
+          <ConnectorPoint PointX="6.546873" PointY="10.816793619791667" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="10.816793619791667" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="10.816793619791667" />
+          <ConnectorPoint PointX="8" PointY="10.816793619791667" />
+          <ConnectorPoint PointX="8" PointY="6.701396484375" />
+          <ConnectorPoint PointX="12.166666666666666" PointY="6.7013964843749987" />
+          <ConnectorPoint PointX="12.333333333333334" PointY="6.701396484375" />
+          <ConnectorPoint PointX="12.375" PointY="6.701396484375" />
+          <ConnectorPoint PointX="12.375" PointY="4.8362939453125" />
+          <ConnectorPoint PointX="12.75" PointY="4.8362939453125" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_JobAssignments_AssignedTypes" ManuallyRouted="false">
+          <ConnectorPoint PointX="12" PointY="14.893992513020834" />
+          <ConnectorPoint PointX="12.375" PointY="14.893992513020834" />
+          <ConnectorPoint PointX="12.375" PointY="8.9420475260416659" />
+          <ConnectorPoint PointX="12.75" PointY="8.9420475260416659" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_Companies_Contacts" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.25" PointY="8.8458968098958337" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="8.8458968098958337" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="8.8458968098958337" />
+          <ConnectorPoint PointX="6.75" PointY="8.8458968098958337" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_Companies_PhoneNumbers" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="8.8458968098958337" />
+          <ConnectorPoint PointX="5.25" PointY="8.8458968098958337" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_Companies_RelationshipTypes" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="6.0115364583333335" />
+          <ConnectorPoint PointX="5.59375" PointY="6.0115364583333335" />
+          <ConnectorPoint PointX="5.59375" PointY="7.375" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_CompanyXAddresses_Companies" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.203127" PointY="7.375" />
+          <ConnectorPoint PointX="6.203127" PointY="6.875" />
+          <ConnectorPoint PointX="7.244791666666667" PointY="6.8749999999999991" />
+          <ConnectorPoint PointX="7.411458333333333" PointY="6.875" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="6.8749999999999991" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="6.875" />
+          <ConnectorPoint PointX="10.125" PointY="6.875" />
+          <ConnectorPoint PointX="10.125" PointY="8.8362939453125" />
+          <ConnectorPoint PointX="10.5" PointY="8.8362939453125" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_Jobs_Companies" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.7968775" PointY="7.375" />
+          <ConnectorPoint PointX="5.7968775" PointY="6.2314664713541665" />
+          <ConnectorPoint PointX="7.244791666666667" PointY="6.2314664713541656" />
+          <ConnectorPoint PointX="7.411458333333333" PointY="6.2314664713541665" />
+          <ConnectorPoint PointX="10.5" PointY="6.2314664713541665" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_CompanyXAddresses_Relationships" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="12.893992513020834" />
+          <ConnectorPoint PointX="10.125" PointY="12.893992513020834" />
+          <ConnectorPoint PointX="10.125" PointY="9.4106929179687491" />
+          <ConnectorPoint PointX="10.5" PointY="9.4106929179687491" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_Contacts_ContactTypes" ManuallyRouted="false">
+          <ConnectorPoint PointX="7.328125" PointY="5.797587890625" />
+          <ConnectorPoint PointX="7.328125" PointY="7.21875" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="7.2187499999999991" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="7.21875" />
+          <ConnectorPoint PointX="8.25" PointY="7.21875" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_Contacts_PhoneNumbers" ManuallyRouted="false">
+          <ConnectorPoint PointX="3.75" PointY="10.316793619791667" />
+          <ConnectorPoint PointX="3.75" PointY="10.608849342447918" />
+          <ConnectorPoint PointX="7.072916666666667" PointY="10.608849342447918" />
+          <ConnectorPoint PointX="7.239583333333333" PointY="10.608849342447918" />
+          <ConnectorPoint PointX="7.916666666666667" PointY="10.608849342447918" />
+          <ConnectorPoint PointX="8.0833333333333339" PointY="10.608849342447918" />
+          <ConnectorPoint PointX="8.25" PointY="10.608849342447918" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_ContactXAddresses_Contacts" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="10.643697916666667" />
+          <ConnectorPoint PointX="9" PointY="11.187498" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="11.187497999999998" />
+          <ConnectorPoint PointX="10.333333333333334" PointY="11.187498" />
+          <ConnectorPoint PointX="10.5" PointY="11.187498" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_JobAssignments_Contacts" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="10.247091471354166" />
+          <ConnectorPoint PointX="10.041666666666666" PointY="10.247091471354166" />
+          <ConnectorPoint PointX="10.208333333333334" PointY="10.247091471354166" />
+          <ConnectorPoint PointX="11.166666666666666" PointY="10.247091471354166" />
+          <ConnectorPoint PointX="11.333333333333334" PointY="10.247091471354166" />
+          <ConnectorPoint PointX="12.291666666666666" PointY="10.247091471354166" />
+          <ConnectorPoint PointX="12.458333333333334" PointY="10.247091471354166" />
+          <ConnectorPoint PointX="12.75" PointY="10.247091471354166" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_JobAssignments_Jobs" ManuallyRouted="false">
+          <ConnectorPoint PointX="12" PointY="3.98064747265625" />
+          <ConnectorPoint PointX="12.25" PointY="3.98064747265625" />
+          <ConnectorPoint PointX="12.25" PointY="8.1272717630208327" />
+          <ConnectorPoint PointX="12.75" PointY="8.1272717630208327" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_JobLocations_Jobs" ManuallyRouted="false">
+          <ConnectorPoint PointX="12" PointY="5.44194091796875" />
+          <ConnectorPoint PointX="12.166666666666666" PointY="5.4419409179687488" />
+          <ConnectorPoint PointX="12.458333333333334" PointY="5.44194091796875" />
+          <ConnectorPoint PointX="12.75" PointY="5.44194091796875" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_WorkItemsXJobLocations_JobLocations" ManuallyRouted="false">
+          <ConnectorPoint PointX="14.25" PointY="4.8362939453125" />
+          <ConnectorPoint PointX="15" PointY="4.8362939453125" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_Jobs_JobStatuses" ManuallyRouted="false">
+          <ConnectorPoint PointX="9.75" PointY="4.8362939453125" />
+          <ConnectorPoint PointX="10.5" PointY="4.8362939453125" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_Notes_Parents" ManuallyRouted="false">
+          <ConnectorPoint PointX="14.25" PointY="12.893992513020834" />
+          <ConnectorPoint PointX="15" PointY="12.893992513020834" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_Notes_ParentTypes" ManuallyRouted="false">
+          <ConnectorPoint PointX="14.25" PointY="17.893992513020834" />
+          <ConnectorPoint PointX="15.75" PointY="17.893992513020834" />
+          <ConnectorPoint PointX="15.75" PointY="13.989889322916667" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_PhoneNumbers_PhoneNumberTypes" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="8.8651432291666659" />
+          <ConnectorPoint PointX="3" PointY="8.8651432291666659" /></AssociationConnector>
+        <AssociationConnector Association="SecureRiskModel.FK_WorkItemsXJobs_WorkItems" ManuallyRouted="false">
+          <ConnectorPoint PointX="14.25" PointY="1.8362939453124998" />
+          <ConnectorPoint PointX="15.75" PointY="1.8362939453124998" />
+          <ConnectorPoint PointX="15.75" PointY="3.75" /></AssociationConnector></Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

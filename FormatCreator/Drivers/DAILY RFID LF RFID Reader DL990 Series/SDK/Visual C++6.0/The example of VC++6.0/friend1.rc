@@ -1,0 +1,303 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\friend1.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\friend1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 RMD reader test"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "RMD reader test 1.0 版",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2005",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_FRIEND1_DIALOG DIALOGEX 0, 0, 537, 344
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "DLL测试"
+FONT 9, "宋体"
+BEGIN
+    GROUPBOX        "参数响应",IDC_STATIC,325,7,205,330
+    CONTROL         "Tab1",IDC_TAB1,"SysTabControl32",0x0,13,13,307,316
+    CONTROL         "",IDC_RICHEDIT1,"RICHEDIT",ES_MULTILINE | ES_READONLY | 
+                    WS_BORDER | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP,328,20,
+                    196,294
+    PUSHBUTTON      "Clear",IDC_BUTTON1,461,319,58,14
+    LTEXT           "",IDC_S,329,317,127,16
+END
+
+IDD_MORE_INFORMATION DIALOG DISCARDABLE  0, 0, 221, 200
+STYLE WS_CHILD | WS_VISIBLE
+FONT 10, "System"
+BEGIN
+    GROUPBOX        "Conmunication Setting",IDC_STATIC,5,0,208,78
+    LTEXT           "Conmunication Port:",IDC_STATIC,9,11,66,8
+    LTEXT           "BaudRate:",IDC_STATIC,40,29,35,8
+    LTEXT           "System Address:",IDC_STATIC,19,47,56,8
+    PUSHBUTTON      "Open",IDC_BUTTON1,99,62,34,12
+    PUSHBUTTON      "Close",IDC_BUTTON2,141,62,34,12
+    CONTROL         131,IDC_STATIC,"Static",SS_BITMAP,5,80,207,100
+    COMBOBOX        IDC_COMBO1,81,10,66,78,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO2,81,26,66,91,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO3,81,43,66,84,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+END
+
+IDD_MORE_INFORMATION2 DIALOGEX 0, 0, 221, 207
+STYLE WS_CHILD | WS_VISIBLE
+FONT 10, "System"
+BEGIN
+    GROUPBOX        "System Commands",IDC_STATIC,5,0,208,62
+    LTEXT           "SetAdress:",IDC_STATIC,19,11,36,8
+    LTEXT           "SetBaudRate:",IDC_STATIC,9,26,46,8
+    LTEXT           "SetSerNum:",IDC_STATIC,15,41,40,8
+    PUSHBUTTON      "setting",IDC_BUTTON1,174,11,34,12
+    PUSHBUTTON      "read",IDC_BUTTON2,174,47,34,12
+    LTEXT           "ReadSerNum:",IDC_STATIC,9,52,46,8
+    EDITTEXT        IDC_EDIT3,60,37,96,12,ES_UPPERCASE | ES_AUTOHSCROLL
+    LTEXT           "",IDC_SERIAL,60,50,96,10,0,WS_EX_STATICEDGE
+    PUSHBUTTON      "setting",IDC_BUTTON3,174,23,34,12
+    PUSHBUTTON      "setting",IDC_BUTTON4,174,35,34,12
+    COMBOBOX        IDC_COMBO3,60,24,75,86,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO4,60,11,75,78,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    GROUPBOX        "read type A",IDC_STATIC,5,64,208,63
+    GROUPBOX        "write type A",IDC_STATIC,5,127,208,78
+    LTEXT           "read mode",IDC_STATIC,122,75,36,8
+    COMBOBOX        IDC_COMBO5,12,87,48,84,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO6,65,74,48,59,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO7,12,74,48,59,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "the start addres",IDC_STATIC,69,103,52,8
+    LTEXT           "the index of blocks to be read",IDC_STATIC,68,91,97,8
+    COMBOBOX        IDC_COMBO8,12,100,48,81,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO9,12,113,101,96,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "six bytes block key",IDC_STATIC,120,114,64,8
+    PUSHBUTTON      "read",IDC_BUTTON5,174,77,34,12
+    LTEXT           "write mode",IDC_STATIC,122,136,37,8
+    COMBOBOX        IDC_COMBO10,12,148,48,84,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO11,65,135,48,59,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO12,12,135,48,59,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "the start addres",IDC_STATIC,69,164,52,8
+    LTEXT           "the index of blocks to be read",IDC_STATIC,68,152,97,8
+    COMBOBOX        IDC_COMBO13,12,161,48,81,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO14,12,174,101,96,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "six bytes block key",IDC_STATIC,120,175,64,8
+    PUSHBUTTON      "write",IDC_BUTTON6,174,138,34,12
+    EDITTEXT        IDC_EDIT1,12,187,158,14,ES_AUTOHSCROLL
+    LTEXT           "write data",IDC_STATIC,172,188,33,8
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "friend1 Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "friend1\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2005\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "friend1.EXE\0"
+            VALUE "ProductName", "friend1 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_FRIEND1_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 530
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 337
+    END
+
+    IDD_MORE_INFORMATION, DIALOG
+    BEGIN
+        RIGHTMARGIN, 220
+        BOTTOMMARGIN, 198
+    END
+
+    IDD_MORE_INFORMATION2, DIALOG
+    BEGIN
+        RIGHTMARGIN, 220
+        BOTTOMMARGIN, 205
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP1             BITMAP  DISCARDABLE     "res\\未命名.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 RMD reader test(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\friend1.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

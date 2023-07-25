@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DeviceConfigCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Configs>
+    <!--
+    <DeviceConfig>
+      <State>Stopped</State>
+      <AssemblyName>Jaxis.BeverageManagement.Plugin.dll</AssemblyName>
+      <AssemblyType>Jaxis.BeverageManagement.Plugin.DataConsumer</AssemblyType>
+      <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      <ID>825bf7e6-774b-4316-aa4d-f2bcf9467c3f</ID>
+      <Name>Jaxis Consumer</Name>
+      <Type>DataConsumer</Type>
+      <ConsumerMessageType>1</ConsumerMessageType>
+      <ProducerMessageType>32</ProducerMessageType>
+      <Options>
+        <DeviceConfigOption>
+          <Name>Service Endpoint</Name>
+          <Value>http://localhost:8223/HostWCFService/PourEngineService/</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Max Spout Diameter</Name>
+          <Value>10</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Allow Multi-Pour</Name>
+          <Value>false</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Detach Volume</Name>
+          <Value>0</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Simulator</Name>
+          <Value>false</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Allow Half-Pour</Name>
+          <Value>false</Value>
+        </DeviceConfigOption>
+      </Options>
+      <Filters />
+    </DeviceConfig>
+    <DeviceConfig>
+      <State>Stopped</State>
+      <AssemblyName>Jaxis.BeverageManagement.Plugin.dll</AssemblyName>
+      <AssemblyType>Jaxis.BeverageManagement.Plugin.PourPosReconcile</AssemblyType>
+      <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      <ID>81082c93-5c66-4375-bd6d-c6a71837d10e</ID>
+      <Name>Jaxis PourPosReconcile</Name>
+      <Type>DataProducer</Type>
+      <ConsumerMessageType>0</ConsumerMessageType>
+      <ProducerMessageType>16</ProducerMessageType>
+      <Options>
+        <DeviceConfigOption>
+          <Name>Connect String</Name>
+          <Value>http://localhost:8223/HostWCFService/PourEngineService/</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Poll Interval</Name>
+          <Value>1</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Alert Interval</Name>
+          <Value>360</Value>
+        </DeviceConfigOption>
+      </Options>
+      <Filters />
+    </DeviceConfig>
+    -->
+    <DeviceConfig>
+      <State>Started</State>
+      <AssemblyName>POSReaderImporter.exe</AssemblyName>
+      <AssemblyType>POSReaderImporter.TicketConsumer</AssemblyType>
+      <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      <ID>70ef2f5b-f8a3-4f22-84a7-2c74598328d9</ID>
+      <Name>Jaxis TicketConsumer</Name>
+      <Type>DataConsumer</Type>
+      <ConsumerMessageType>32</ConsumerMessageType>
+      <ProducerMessageType>0</ProducerMessageType>
+      <Options />
+      <Filters />
+    </DeviceConfig>
+    <DeviceConfig>
+      <State>Started</State>
+      <AssemblyName>POSReaderImporter.exe</AssemblyName>
+      <AssemblyType>POSReaderImporter.POSReaderImport</AssemblyType>
+      <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      <ID>30f181cf-c2d1-4b7e-844a-84d8d6e45f34</ID>
+      <Name>POS File Reader</Name>
+      <Type>DataProducer</Type>
+      <ConsumerMessageType>0</ConsumerMessageType>
+      <ProducerMessageType>32</ProducerMessageType>
+      <Options>
+        <DeviceConfigOption>
+          <Name>Filename</Name>
+          <!--           
+          <Value>C:\temp\RenAix\TestData.jnl</Value> 
+          -->
+          <Value>C:\temp\RenAix\</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Timeout</Name>
+          <Value>10</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Config</Name>
+          <Value>C:\Source\Jaxis\trunk\MessageEngine\TestHarness\POSReaderImporter\ParserConfig.xml</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>BarID</Name>
+          <Value>Unknown</Value>
+        </DeviceConfigOption>
+      </Options>
+      <Filters />
+    </DeviceConfig>
+  </Configs>
+  <Filters />
+</DeviceConfigCollection>

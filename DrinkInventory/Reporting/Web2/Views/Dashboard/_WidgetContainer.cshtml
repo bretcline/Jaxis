@@ -1,0 +1,16 @@
+﻿@model Jaxis.DrinkInventory.Reporting.Web2.Widgets.IWidget
+
+<div class="widget" id="@("w" + Model.Id)">
+        <div class="widgetTitle">
+            @Model.Name
+            <div class="minButton">
+                <img src="@Url.Content("~/Content/images/min.png")" />
+             </div>
+            <div class="refreshButton">
+                <img src="@Url.Content("~/Content/images/refresh.png")" />
+            </div>
+        </div>
+        <div class="loading"><img src="@Url.Content("~/Content/images/loading.gif")" /></div>
+        <div class="widgetContent"></div>
+
+</div>

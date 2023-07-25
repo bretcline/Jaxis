@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c8b20e8c-b784-445a-bd01-bd48efe3d739" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:63317/CloudNotification.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CloudNotification.disco" MetadataType="Disco" ID="dcdd8579-cdfc-460d-8249-226bc3ec78e3" SourceId="1" SourceUrl="http://localhost:63317/CloudNotification.svc?disco" />
+    <MetadataFile FileName="CloudNotification.xsd" MetadataType="Schema" ID="38db9d17-d016-4f9a-baef-de3a3ce46c0b" SourceId="1" SourceUrl="http://localhost:63317/CloudNotification.svc?xsd=xsd3" />
+    <MetadataFile FileName="CloudNotification1.xsd" MetadataType="Schema" ID="52f5f6e8-9089-4c2d-8bc5-0c110fe942fb" SourceId="1" SourceUrl="http://localhost:63317/CloudNotification.svc?xsd=xsd2" />
+    <MetadataFile FileName="CloudNotification2.xsd" MetadataType="Schema" ID="73f76514-ed82-481f-bdd4-25c158226e7f" SourceId="1" SourceUrl="http://localhost:63317/CloudNotification.svc?xsd=xsd1" />
+    <MetadataFile FileName="CloudNotification3.xsd" MetadataType="Schema" ID="86559ba9-ec7b-400a-aaa4-7d6e7a499047" SourceId="1" SourceUrl="http://localhost:63317/CloudNotification.svc?xsd=xsd0" />
+    <MetadataFile FileName="CloudNotification.wsdl" MetadataType="Wsdl" ID="b28dff35-644e-4175-b954-b650117ebd34" SourceId="1" SourceUrl="http://localhost:63317/CloudNotification.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

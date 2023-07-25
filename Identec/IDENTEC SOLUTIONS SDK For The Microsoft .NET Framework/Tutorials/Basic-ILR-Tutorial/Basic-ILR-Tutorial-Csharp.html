@@ -1,0 +1,519 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!---------------------------------------------------------------------------><!--                           INTRODUCTION                                
+
+
+
+ The Code Project article submission template (HTML version)
+
+
+
+Using this template will help us post your article sooner. To use, just 
+
+follow the 3 easy steps below:
+
+ 
+
+     1. Fill in the article description details
+
+     2. Add links to your images and downloads
+
+     3. Include the main article text
+
+
+
+That's all there is to it! All formatting will be done by our submission
+
+scripts and style sheets. 
+
+
+
+--><!---------------------------------------------------------------------------><!--                        IGNORE THIS SECTION                            -->
+  <title>Basic ILR Tutorial for IDENTEC.NET (C#)</title>
+  <style>
+BODY, P, TD { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt }
+H2,H3,H4,H5 { color: #ff9900; font-weight: bold; }
+H2 { font-size: 13pt; }
+H3 { font-size: 12pt; }
+H4 { font-size: 10pt; color: black; }
+PRE { BACKGROUND-COLOR: #FBEDBB; FONT-FAMILY: "Courier New", Courier, mono; WHITE-SPACE: pre; }
+CODE { COLOR: #990000; FONT-FAMILY: "Courier New", Courier, mono; }
+  </style>
+  <link rel="stylesheet" type="text/css" href="/global.css">
+  <meta content="IDENTEC SOLUTIONS Inc." name="author">
+  <meta content="A getting started tutorial for the IDENTEC.NET SDK."
+ name="description">
+</head>
+<body color="#000000" style="background-color: rgb(255, 255, 255);">
+<!---------------------------------------------------------------------------><!-------------------------------     STEP 1      --------------------------->
+<!--  Fill in the details (CodeProject will reformat this section for you) --><span
+ class="cs-keyword"></span><span class="cs-keyword"></span>
+<pre><b><font style="font-size: 16pt;" size="4">Basic ILR Tutorial For IDENTEC.NET (C#)<br></font></b><br><b>By </b><b><a
+ class="under" href="mailto:support@identecsolutions.com">Chris Adamson</a><br></b>Getting started with the IDENTEC SOLUTIONS SDK for the Microsoft&reg; .NET Framework<b>	</b><span
+ class="cs-keyword"></span></pre>
+<a href="../Disclaimer.html">Disclaimer</a><br>
+<br>
+<a href="http://www.identecsolutions.com/"><b><font
+ style="font-size: 16pt;" size="4"><img alt="Logo"
+ title="Visit our home page." src="images/LogoSmall.jpg"
+ style="border: 0px solid ; width: 148px; height: 148px;" vspace="5"></font></b></a><br>
+<br>
+<ul class="download">
+  <li><a href="Code/Basic-ILR-Tutorial/bin/Release.zip">Download Basic
+ILR .NET Tutorial
+Executable<br>
+    </a></li>
+  <li><a href="Code/Basic-ILR-Tutorial.zip">Download source<br>
+    </a></li>
+</ul>
+<br>
+<h2>Contents:</h2>
+<ul>
+  <li><a href="#Background">Background</a></li>
+  <li><a href="#What_you_will_need">What you will need</a><br>
+  </li>
+  <li><a href="#Introduction">Introduction</a><br>
+  </li>
+  <li> <a href="#Starting_a_New_Project">Starting A New Project</a></li>
+  <li><a href="#Setting_Up_Communications_with_an_i-CARD">Setting Up
+Communications with an i-CARD 3</a></li>
+  <ul>
+    <li><a href="#Connecting_to_the_reader">Connecting to an i-CARD 3</a></li>
+  </ul>
+  <li><a href="#Communicating_With_Tags">Communicating with Tags</a></li>
+  <ul>
+    <li><a href="#Scanning_for_Tags">Scanning for tags</a></li>
+    <li><a href="#Pinging_A_Specific_Tag">Pinging a specific tag</a></li>
+    <li><a href="#Writing_Data_on_a_Tag">Writing Data on a Tag</a></li>
+    <li><a href="#Reading_Data_from_a_Tag">Reading Data from a Tag</a></li>
+  </ul>
+  <li><a href="#Conclusion">Conclusion</a></li>
+  <li><a href="#Bonus_Exercises">Bonus Exercises</a></li>
+  <li><a href="#Contact_Us">Contact Us</a><br>
+  </li>
+  <li><a href="#History">History</a><br>
+  </li>
+</ul>
+<a href="www.identecsolutions.com"><br>
+</a>
+<hr style="width: 100%; height: 2px;"><a href="www.identecsolutions.com"></a>
+<h2><a name="Background"></a>Background<br>
+</h2>
+<p>This article assumes that you are familiar with the Microsoft .NET
+Framework 1.1 or 2.0 and that you understand some basic concepts of
+Active RFID. Once you are finished this tutorial you can proceed to the
+<span style="font-style: italic;"></span><a
+ href="../Advanced-ILR-Tutorial/Advanced-ILR-Tutorial-CSharp.html">Advanced
+ILR Tutorial</a><span style="font-style: italic;">. </span>For further
+reference, please refer to the SDK online help which is part of the
+IDENTEC.NET installation package. <br>
+</p>
+<h2><a name="What_you_will_need"></a>What you will need<br>
+</h2>
+One of the following development environments:<br>
+<ul>
+  <li>Visual Studio 2003 .NET</li>
+  <li>Visual Studio 2005</li>
+  <li>Visual C# Express 2005</li>
+</ul>
+<span style="font-style: italic;">All of our examples will be using
+Visual Studio 2003 .NET.</span><br>
+<br>
+ILR Technology:<br>
+<ul>
+  <li>i-CARD 3<br>
+  </li>
+  <li>i-Q Tags</li>
+  <li>i-D2 Tags (optional)</li>
+  <li>IDENTEC SDK for the Microsoft .NET Framework<br>
+  </li>
+</ul>
+And you will need a PC or laptop with at least one free PCMCIA slot and
+the i-CARD 3 driver installed.<br>
+<br>
+<!-------------------------------     STEP 3      --------------------------->
+<!--  Add the article text. Please use simple formatting (<h2>, <p> etc)   -->
+<h2><a name="Introduction"></a>Introduction</h2>
+<p>This tutorial is designed to walk you through a simple instance of
+an ILR program that interacts with IDENTEC SOLUTIONS Inc.&reg; Tags
+through your desktop PC. When finished
+this tutorial you will be familiar with the following ILR programming
+concepts:<br>
+</p>
+<ul>
+  <li>Setting up an ILR Project</li>
+  <li>Basic i-CARD 3 Communications</li>
+  <ul>
+    <li>Setting up a Communication Link with an i-CARD 3<br>
+    </li>
+  </ul>
+  <li>Tag RF interactions:</li>
+  <ul>
+    <li>Scan</li>
+  </ul>
+  <ul>
+    <li>Ping</li>
+  </ul>
+  <ul>
+    <li>Writing Tag Data</li>
+  </ul>
+  <ul>
+    <li>Reading Tag Data</li>
+    <li>Multi-Blink Tag</li>
+  </ul>
+</ul>
+<br>
+<h2><a name="Starting_a_New_Project"></a>Starting a New Project</h2>
+Create a new project using Visual Studio and create a new Windows Forms
+application:<br>
+<br>
+<img alt="New Project" src="images/New-Project.jpg"
+ style="border: 2px solid ; width: 531px; height: 364px;" vspace="5"><br>
+<br>
+Once the wizard generates the project, add the reference the the
+IDENTEC.NET assembly:<br>
+<img alt="Add reference" src="images/Add-reference.jpg"
+ style="border: 2px solid ; width: 274px; height: 332px;" vspace="5"><br>
+<br>
+Add the reference. Note that the version number shown in the image may
+not match the version you have.<br>
+<br>
+<img alt="Reference list" src="images/References-List.jpg"
+ style="border: 2px solid ; width: 566px; height: 439px;" vspace="5"><br>
+<br>
+<br>
+<br>
+<br>
+The last step to enabling the IDENTEC.NET assembly is to add some <span
+ style="font-weight: bold; font-style: italic;">using</span> statements
+to the top of the Form1.cs file:<br>
+<pre><span class="cs-keyword"><span style="color: blue;">using</span> </span>System;<br><span
+ class="cs-keyword"><span style="color: blue;">using </span></span>System.Drawing;<br><span
+ class="cs-keyword"><span style="color: blue;">using </span></span>System.Collections;<br><span
+ class="cs-keyword"><span style="color: blue;">using </span></span>System.ComponentModel;<br><span
+ class="cs-keyword"><span style="color: blue;">using </span></span>System.Windows.Forms;<br><span
+ class="cs-keyword"><span style="color: blue;">using </span></span>System.Data;<br><br><span
+ style="font-style: italic; color: rgb(0, 128, 0);">// IDENTEC SOLUTIONS Inc. specific:</span><br><span
+ class="cs-keyword"><span style="color: blue;">using </span></span>IDENTEC;<br><span
+ class="cs-keyword"><span style="color: blue;">using </span></span>IDENTEC.Readers;<br><span
+ class="cs-keyword"><span style="color: blue;">using </span></span>IDENTEC.Tags;<br><br></pre>
+Note that the IDENTEC.NET assembly has several namespaces. We are only
+going to use the Readers and Tags namespaces in this tutorial.<br>
+<br>
+<h2><a name="Setting_Up_Communications_with_an_i-CARD"></a>Setting Up
+Communications with an i-CARD 3</h2>
+To use an i-CARD 3, you must fist declare an object of type <span
+ style="font-style: italic;">iCard3</span>.&nbsp; This
+reader variable will be re-used throughout the program so it will be
+declared
+as a member of the Form1 class.<br>
+<br>
+Then initialize it in the constructor:<br>
+<br>
+<pre><span class="cs-keyword">private</span> <span class="cs-keyword"></span>iCard3 m_iCard3;<br><br><span
+ style="color: blue;" class="cs-keyword">public</span><span
+ style="color: blue;"> </span><span class="cs-keyword"></span>Form1()<br>{<br><span
+ style="font-style: italic; color: rgb(0, 128, 0);">	//</span><br
+ style="font-style: italic; color: rgb(0, 128, 0);"><span
+ style="font-style: italic; color: rgb(0, 128, 0);">	// Required for Windows Form Designer support</span><br
+ style="font-style: italic; color: rgb(0, 128, 0);"><span
+ style="font-style: italic; color: rgb(0, 128, 0);">	//</span><br>	InitializeComponent();<br>	m_iCard3 = <span
+ style="color: blue;" class="cs-keyword">new</span><span
+ style="color: blue;"> </span>iCard3();<br><span
+ style="font-style: italic; color: rgb(0, 128, 0);">	//</span><br
+ style="font-style: italic; color: rgb(0, 128, 0);"><span
+ style="font-style: italic; color: rgb(0, 128, 0);">	// TODO: Add any constructor code after InitializeComponent call</span><br
+ style="font-style: italic; color: rgb(0, 128, 0);"><span
+ style="font-style: italic; color: rgb(0, 128, 0);">	//</span><br>}<span
+ class="cs-comment"></span></pre>
+<br>
+<h3><a name="Connecting_to_the_reader"></a>Connecting to an i-CARD 3<br>
+</h3>
+Add a button to the Form1 design view and name it <span
+ style="font-style: italic;">buttonConnect</span>. Double click it to
+create a click event handler. Here we will connect to the card:<br>
+<p><br>
+</p>
+<pre><span style="color: blue;" class="cs-keyword">private</span><span
+ style="color: blue;"> </span><span class="cs-keyword"><span
+ style="color: blue;">void</span> </span> buttonConnect_Click(<span
+ style="color: blue;" class="cs-keyword">object</span> sender, System.EventArgs e)<br>{<br>	<span
+ class="cs-keyword"><span style="color: blue;">try</span><br></span>	{<br><span
+ style="font-style: italic;">		<span style="color: rgb(0, 128, 0);">// Note that we are using the easiest override for Connect(). It's only valid if one card is in the system <br>		// and through the PCMCIA interface.<br></span></span>		m_iCard3.Connect();<br>	}<br>	<span
+ style="color: blue;" class="cs-keyword">catch</span><span
+ style="color: blue;"> </span>(Exception ex)<br>	{<br><span
+ style="font-style: italic;"><span style="color: rgb(0, 128, 0);">		// In practice it is better to catch the different types of exceptions that can be thrown when connecting to the i-CARD 3<br>		// Refer to the SDK's documentation for all of the different types of exceptions that can occur when connecting to an i-CARD 3<br></span></span>		MessageBox.Show(ex.Message);<br>	}<br>}<br></pre>
+<p><br>
+Now compile and run the program. Fix any build errors or ask for
+assistance. If everything is correct then you will be able to connect
+to the i-CARD 3 in your machine when
+you click the button. You will notice that when you first click the
+connect button, the LED&#8217;s on the i-CARD 3 will
+blink during the connection process.</p>
+<p>The i-CARD 3 object will automatically disconnect when the program
+exits. <br>
+</p>
+<p><span style="font-weight: bold; font-style: italic;">If you do not
+have an i-CARD physically inserted in your PC or the driver is not
+installed then an exception will be thrown
+when your click the connect button.</span><br>
+</p>
+<p><br>
+</p>
+<h3><a name="Communicating_With_Tags"></a>Communicating With Tags<br>
+</h3>
+<p>The real work with the i-CARD 3 is to communicate with tags. Most
+often this begins with a scan of the read zone for tags. A scan is the
+fastest way to detect multiple tags in a read zone. The reader itself
+takes care of all the low-level timing and communication routines and
+the SDK helps even further to abstract and enable your application to
+access the hardware. This allows you to focus on your business rules
+instead of dealing with low-level protocols and timing routines.<br>
+<br>
+</p>
+<h3><a name="Scanning_for_Tags"></a>Scanning for Tags<br>
+</h3>
+<p>In this section you will learn how to identify tags through
+scanning. This is sometimes referred to as a <span
+ style="font-style: italic;">Roll call</span> of tags. Scanning for
+tags allows you to query the area for tags that
+are within read range. A special collection class
+named <span style="font-weight: bold; font-style: italic;">TagCollection
+</span>contains the tag objects that are
+scanned. This collection can be used as a data source to bind directly
+to a control such as a list box.<br>
+</p>
+<p>If no tags are in the read zone or the antenna is disconnected then
+the <span style="font-style: italic;">TagCollection returned </span>will
+contain 0 tags.<br>
+</p>
+<p>Add a list box to your form in design view and a button for
+scanning. Double click the button to create the click handler.<br>
+</p>
+<pre><span style="color: blue;" class="cs-keyword"></span><span
+ style="color: blue;" class="cs-keyword">private</span><span
+ style="color: blue;"> </span><span class="cs-keyword"><span
+ style="color: blue;">void</span> </span>buttonScan_Click(<span
+ style="color: blue;" class="cs-keyword">object</span><span
+ class="cs-keyword"></span> sender, System.EventArgs e)<br>{<br>	<span
+ class="cs-keyword"><span style="color: blue;">try</span></span><span
+ class="cs-keyword"><br></span>	&nbsp;{<br>		listBoxTags.DataSource = <span
+ class="cs-keyword"><span style="color: blue;">null</span></span>;<br><span
+ style="font-style: italic; color: rgb(0, 128, 0);">		// Scans the area for up to 64 tags and blinks each tag detected</span><br
+ style="font-style: italic; color: rgb(0, 128, 0);"><span
+ style="font-style: italic; color: rgb(0, 128, 0);">		// Note that there is exactly enough room for 64 tags to respond in this call</span><br
+ style="font-style: italic; color: rgb(0, 128, 0);"><span
+ style="font-style: italic; color: rgb(0, 128, 0);">		// So in reality you would want this number to be more than twice the actual number of</span><br
+ style="font-style: italic; color: rgb(0, 128, 0);"><span
+ style="font-style: italic; color: rgb(0, 128, 0);">		// tags in the read zone.</span><br>		TagCollection tags = m_iCard3.ScanForIQTags(64, true);<br><span
+ style="font-style: italic; color: rgb(0, 128, 0);">		//Sort the tags numerically:</span><br>		tags.Sort();<br>		listBoxTags.DataSource = tags;<br>	}<br><span
+ class="cs-keyword">	</span><span style="color: blue;"
+ class="cs-keyword">catch</span><span style="color: blue;"></span> (Exception ex)<br>	{<br>		MessageBox.Show(ex.Message);<br>	}			<br>}<br></pre>
+<p><span style="font-weight: bold;">Sample Screen shot:<br>
+<img alt="Sample Scan" src="images/Tags-Scanned.jpg"
+ style="border: 2px solid ; width: 300px; height: 300px;" vspace="5"></span></p>
+<p>You will see most of the tags blink once during the scanning
+process; however you may find that not all of the tags in the room
+appear in the
+list. <span style="font-weight: bold;">This is expected!</span> Why?
+because we only performed one scan and we haven't optimized the system
+for
+the actual number of tags in the room or the RF power
+settings that are appropriate for your situation. In a production
+application you will want to perform several successive scans to build
+a list of
+tags and possibly change RF output settings for each scan. <span
+ style="font-style: italic;">Some of these concepts are covered
+later in the </span><a
+ href="../Advanced-ILR-Tutorial/Advanced-ILR-Tutorial-CSharp.html">Advanced
+ILR Tutorial</a><span style="font-style: italic;">.
+<br>
+<br>
+</span><span style="font-weight: bold;"></span></p>
+<h3><a name="Pinging_A_Specific_Tag"></a>Pinging A Specific Tag</h3>
+Now that we have a list of tags from the reader's read zone, we can
+start
+communicating with these tags one-on-one. The simplest form of
+communications with an i-Q tag is to <span
+ style="font-weight: bold; font-style: italic;">Ping</span> the tag.<br>
+<br>
+Add a new button to your Form1 class and call it <span
+ style="font-style: italic;">buttonPingTag</span>. Double click the
+button to create the click handler:<br>
+<br>
+<pre><span style="color: blue;" class="cs-keyword"></span><span
+ style="color: blue;" class="cs-keyword">private</span><span
+ style="color: blue;"> </span><span class="cs-keyword"><span
+ style="color: blue;">void</span> </span>buttonPingTag_Click(object sender, System.EventArgs e)<br>{	<br><span
+ class="cs-keyword"><span style="color: blue;">	try</span></span>	<br>	{<br><span
+ style="font-style: italic; color: rgb(0, 128, 0);">		// We have to cast the selected item in the list box to the appropriate ILR object, an iQTag:</span><br>		iQTag t = listBoxTags.SelectedItem as iQTag;<br><span
+ style="color: blue;">		if </span>(t == <span class="cs-keyword"><span
+ style="color: blue;">null</span></span>)<br>		{<br>			MessageBox.Show(<span
+ style="color: rgb(128, 0, 128);">"You must select a tag to ping!"</span>);<br>		}<br>		<span
+ style="color: blue;">else</span><br>		{<br><span
+ style="font-style: italic; color: rgb(0, 128, 0);">			// Before making the call to ping, we <span
+ style="font-weight: bold;">could</span> change the RF output of the i-CARD 3 if we want to change the size of the read zone			<br></span>			if (m_iCard3.PingTag(t))<br>			{<br>				MessageBox.Show(<span
+ style="color: rgb(128, 0, 128);">"Ping Success!"</span>); <span
+ style="font-style: italic; color: rgb(0, 128, 0);">// TODO: set a breakpoint here and examine the iQTag object t<br>			</span>}<br>		}<br>	}<br><span
+ class="cs-keyword">	</span><span style="color: blue;"
+ class="cs-keyword">catch</span><span style="color: blue;"></span> (Exception ex)<br>	{<br>		MessageBox.Show(ex.Message);<br>	}<br>}<br></pre>
+<h3></h3>
+<br>
+<h3><a name="Writing_Data_on_a_Tag"></a>Writing Data on a Tag</h3>
+<br>
+In this section we will write textual data to the tags. Any type of
+data can be stored on the tag, but for easy inspection we will be
+writing text because it is easiest for us to inspect when we read it
+back. On i-Q8 tags, you can write data starting at address 131, data
+below that address is protected and can only be read.<br>
+<br>
+Add a text box to the form and name it <span
+ style="font-style: italic;">textBoxWriteData</span>. For convenience
+make the Multiline property true. Then add a button to write data on
+the tag. Double click the button to create the event handler.<br>
+<br>
+<pre><span style="color: blue;" class="cs-keyword"></span><span
+ style="color: blue;" class="cs-keyword"></span><span
+ style="color: blue;" class="cs-keyword"></span><span
+ style="color: blue;" class="cs-keyword">private</span><span
+ style="color: blue;"> </span><span class="cs-keyword"><span
+ style="color: blue;">void</span> </span>buttonWrite_Click(object sender, System.EventArgs e)<br>{<br><span
+ class="cs-keyword"><span style="color: blue;">	try</span></span>	<br>	{				<br>		iQTag t = listBoxTags.SelectedItem as iQTag;<br>		<span
+ style="color: blue;">if </span>(t == <span class="cs-keyword"><span
+ style="color: blue;">null</span></span>)<br>		{<br>			MessageBox.Show("You must select a tag to write to!");<br>		}<br>		<span
+ style="color: blue;">else</span><br>		{			<br>			TagWriteDataResult result = m_iCard3.WriteTagDataString(t, 132, textBoxWriteData.Text);<br>			if (result.Success)<br>			{<br>				MessageBox.Show(<span
+ style="color: rgb(128, 0, 128);">"Data written to tag!"</span>); <br>			}<br>		}<br>	}<br><span
+ class="cs-keyword">	</span><span style="color: blue;"
+ class="cs-keyword">catch</span><span style="color: blue;"></span> (Exception ex)<br>	{<br>		MessageBox.Show(ex.Message);<br>	}		<br>}<br></pre>
+<br>
+When you run the program now you should be able to select a tag and
+write data to it. Write something like "Hello ILR World!" to the tag.
+In the next section we'll read the data off of the tag to verify the
+operation.<br>
+<br>
+<h3><a name="Reading_Data_from_a_Tag"></a> Reading Data from a Tag<br>
+</h3>
+Reading the text is very similar to writing the data. <br>
+<br>
+We will now read the data we wrote to the tag in the previous section.
+We will use a separate button and text box to read the data from a tag.
+Add a button, call it buttonRead and make the text <span
+ style="font-style: italic;">Read</span>! <br>
+<br>
+The text box should be similar to the previous but with the following
+properties:<br>
+<ul>
+  <li>Readonly</li>
+  <li>Multiline</li>
+  <li>name it textBoxRead (or something appropriate)<br>
+  </li>
+  <li>Ensure the text is empty</li>
+</ul>
+Double click the button in the design view to create the click event
+handler:<br>
+<br>
+<pre><br><span style="color: blue;" class="cs-keyword"></span><span
+ style="color: blue;" class="cs-keyword">private</span><span
+ style="color: blue;"> </span><span class="cs-keyword"><span
+ style="color: blue;">void</span> </span>buttonRead_Click(object sender, System.EventArgs e)<br>{<br><span
+ class="cs-keyword"><span style="color: blue;">	try</span></span>	<br>	{				<br><span
+ style="font-style: italic; color: rgb(0, 128, 0);">		// Clear out the text box so we are sure it gets new data</span><br>		textBoxRead.Text = <span
+ style="color: rgb(128, 0, 128);">""</span>;<br>		iQTag t = listBoxTags.SelectedItem as iQTag;<br>		<span
+ style="color: blue;">if </span>(t == <span class="cs-keyword"><span
+ style="color: blue;">null</span></span>)<br>		{<br>			MessageBox.Show(<span
+ style="color: rgb(128, 0, 128);">"You must select a tag to read from!"</span>);<br>		}<br><span
+ style="color: blue;">		else</span><br>		{			<br>			TagReadStringResult result = m_iCard3.ReadTagDataString(t, 132);<br>			<span
+ style="color: blue;">if </span>(result.Success)<br>			{<br>				textBoxRead.Text = result.Text;						<br>			}<br>			<span
+ style="color: blue;">else</span><br>			{						<br><span
+ style="font-style: italic; color: rgb(0, 128, 0);">				// A quick and dirty error message from the reader itself will give us a clue to what went wrong:</span><br>				MessageBox.Show(m_iCard3.DeviceStatus.ToString(), <span
+ style="color: rgb(128, 0, 128);">"Could not read from tag.!"</span>); <br>			}<br>		}<br>	}<br><span
+ style="font-style: italic; color: rgb(0, 128, 0);">	// TODO: catch the appropriate exceptions such as a data format exception</span><br><span
+ class="cs-keyword">	</span><span style="color: blue;"
+ class="cs-keyword">catch</span><span style="color: blue;"></span> (Exception ex)<br>	{<br>		MessageBox.Show(ex.Message);<br>	}		<br>}</pre>
+<br>
+You should be able to run the program now and write and read data.
+You'll note that if you try to read data from a tag that you have not
+yet written to, then you'll get a data format exception. <br>
+<br>
+Internally, when writing text data to the tag, we store a 5 byte header
+in the data so that when the data is read by the <span
+ style="font-style: italic;">ReadTagDataString</span> method, the SDK
+know how much data to read from the tag.<br>
+<br>
+The 5 byte header contains the following information:<br>
+<ul>
+  <li>1 byte format character</li>
+  <li>2 bytes for data length</li>
+  <li>2 bytes for 16-bit CRC data check</li>
+</ul>
+Keep in mind the 5 byte header if you write text to the tag in
+contiguous memory. That is the total number of bytes actually written
+to the tag is <span style="font-weight: bold; font-style: italic;">TagWriteDataResult.BytesWritten
++ 5</span>. <br>
+<br>
+If you plan on writing binary data on the tag without formatting then
+your application will need to know how many bytes to read. However the
+SDK has calls for reading and writing binary data with the same header
+information stored on the tag as shown above. Please refer to the SDK
+documentation for details.<br>
+<br>
+<br>
+<h2><a name="Conclusion"></a>Conclusion</h2>
+Working with ILR technology using the Microsoft .NET Framework is easy.
+You've learned how to connect to an i-CARD 3, detect tags, and work
+with text on tags. You are now ready for the <span
+ style="font-style: italic;"></span><a
+ href="../Advanced-ILR-Tutorial/Advanced-ILR-Tutorial-CSharp.html">Advanced
+ILR Tutorial</a><span style="font-style: italic;"></span>.<br>
+<br>
+<img alt="Code Complete" src="images/Final-Screen.jpg"
+ style="border: 2px solid ; width: 481px; height: 274px;" vspace="5"><br>
+<br>
+<h2><a name="Bonus_Exercises"></a>Bonus Exercises<br>
+</h2>
+<br>
+<ol>
+  <li>Get the i-CARD information and firmware version and display it.<br>
+  </li>
+  <li>Change the number of tags expected in the scan.</li>
+  <li>Turn on and off the blink during a scan (use a CheckBox control).<br>
+  </li>
+  <li>Try scanning for i-D2 tags instead of i-Q tags.</li>
+  <li>Ping a tag without doing a scan first.<br>
+  </li>
+  <li>Scan multiple times to create the complete list of tags in the
+read zone.<br>
+  </li>
+  <li>Write some binary data to the tag and then read it back (for
+example a small file ~1KB).</li>
+</ol>
+<br>
+<h2><a name="Contact_Us"></a>Contact Us</h2>
+How did we do? Did you find this tutorial useful?<br>
+<br>
+We are always looking for feedback to help provide you
+with the best documentation to improve your programming experience. If
+you have any questions or comments send us an email at <b><a
+ class="under" href="mailto:support@identecsolutions.com">support@identecsolutions.com</a><br>
+<br>
+</b>
+<hr style="width: 100%; height: 2px;"><br>
+<h2><a name="History"></a>History</h2>
+<p>Version 1.1&nbsp; May 16, 2006 <br>
+</p>
+<ul>
+  <li>Code complete<br>
+  </li>
+</ul>
+<p>Version 1.0&nbsp; May 12, 2006 <br>
+</p>
+<ul>
+  <li>First draft<br>
+  </li>
+</ul>
+<p><br>
+<br>
+<!-------------------------------    That's it!   ---------------------------></p>
+</body>
+</html>

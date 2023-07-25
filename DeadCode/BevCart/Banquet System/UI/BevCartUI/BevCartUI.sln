@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BevCartUI", "BevCartUI\BevCartUI.csproj", "{6B3495BE-013E-4687-B521-FDB5FC689565}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCam Capture", "WebCam Capture\WebCam Capture.csproj", "{EF17E645-7BCD-41A5-9428-3E4F71855D30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B3495BE-013E-4687-B521-FDB5FC689565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B3495BE-013E-4687-B521-FDB5FC689565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B3495BE-013E-4687-B521-FDB5FC689565}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B3495BE-013E-4687-B521-FDB5FC689565}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF17E645-7BCD-41A5-9428-3E4F71855D30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF17E645-7BCD-41A5-9428-3E4F71855D30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF17E645-7BCD-41A5-9428-3E4F71855D30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF17E645-7BCD-41A5-9428-3E4F71855D30}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

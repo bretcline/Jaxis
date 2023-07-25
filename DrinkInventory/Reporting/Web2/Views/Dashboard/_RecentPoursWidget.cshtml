@@ -1,0 +1,20 @@
+﻿@using System.Data
+@model Jaxis.DrinkInventory.Reporting.Web2.Widgets.RecentPoursWidget
+
+<table class="datagrid">
+    <tr>
+        @foreach (DataColumn column in Model.Pours.Columns)
+        {
+            <th>@column.ColumnName</th>
+        }
+    </tr>
+    @foreach (DataRow row in Model.Pours.Rows)
+    {
+        <tr>
+            @foreach (DataColumn column in Model.Pours.Columns)
+            {
+                <td>@row[column.ColumnName]</td>
+            } 
+        </tr>
+    }
+</table>

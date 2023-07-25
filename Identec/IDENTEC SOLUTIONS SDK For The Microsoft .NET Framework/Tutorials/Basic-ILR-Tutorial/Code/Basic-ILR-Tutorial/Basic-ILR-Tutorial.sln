@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Basic-ILR-Tutorial", "Basic-ILR-Tutorial.csproj", "{801B1ABB-AB5F-457D-9BF4-60354EF1A723}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{801B1ABB-AB5F-457D-9BF4-60354EF1A723}.Debug.ActiveCfg = Debug|.NET
+		{801B1ABB-AB5F-457D-9BF4-60354EF1A723}.Debug.Build.0 = Debug|.NET
+		{801B1ABB-AB5F-457D-9BF4-60354EF1A723}.Release.ActiveCfg = Release|.NET
+		{801B1ABB-AB5F-457D-9BF4-60354EF1A723}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

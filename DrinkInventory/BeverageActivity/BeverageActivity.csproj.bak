@@ -1,0 +1,505 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4FA5F9CA-3DE0-4DAE-A3CE-0D7ED638A8E9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BeverageActivity</RootNamespace>
+    <AssemblyName>BeverageActivity</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DatabaseUtilities">
+      <HintPath>..\..\DLLS\DatabaseUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Reports.v12.1.Designer, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v12.1.UI, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v12.1.Win, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v12.1.Extensions, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="JaxisLog4Net">
+      <HintPath>..\..\DLLS\JaxisLog4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\DLLS\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Qios.DevSuite.Components, Version=4.0.0.20, Culture=neutral, PublicKeyToken=3cc53827b79c92fa, processorArchitecture=MSIL" />
+    <Reference Include="SubSonic.Core">
+      <HintPath>..\..\DLLS\SubSonic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Activity\frmActivity.cs" />
+    <Compile Include="Activity\frmActivity.Designer.cs">
+      <DependentUpon>frmActivity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\Widgets\ActivityLogWidget.cs" />
+    <Compile Include="Activity\Widgets\ActivityLogWidget.Designer.cs">
+      <DependentUpon>ActivityLogWidget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\Widgets\BeverageCostWidget.cs" />
+    <Compile Include="Activity\Widgets\BeverageCostWidget.Designer.cs">
+      <DependentUpon>BeverageCostWidget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\Widgets\CostWidget.cs" />
+    <Compile Include="Activity\Widgets\CostWidget.Designer.cs">
+      <DependentUpon>CostWidget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\Widgets\CurrentPoursWidget.cs" />
+    <Compile Include="Activity\Widgets\CurrentPoursWidget.Designer.cs">
+      <DependentUpon>CurrentPoursWidget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\Widgets\IActivityControl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Activity\Widgets\LastPourWidget.cs" />
+    <Compile Include="Activity\Widgets\LastPourWidget.Designer.cs">
+      <DependentUpon>LastPourWidget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\Widgets\PieChartWidget.cs" />
+    <Compile Include="Activity\Widgets\PieChartWidget.Designer.cs">
+      <DependentUpon>PieChartWidget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\Widgets\PourAnimationWidget.cs" />
+    <Compile Include="Activity\Widgets\PourAnimationWidget.Designer.cs">
+      <DependentUpon>PourAnimationWidget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\Widgets\PourVolumePieWidget.cs" />
+    <Compile Include="Activity\Widgets\PourVolumePieWidget.Designer.cs">
+      <DependentUpon>PourVolumePieWidget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\Widgets\QueueingWidget.cs" />
+    <Compile Include="Activity\Widgets\ReconciliationWidget.cs" />
+    <Compile Include="Activity\Widgets\ReconciliationWidget.Designer.cs">
+      <DependentUpon>ReconciliationWidget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\Widgets\RevenueWidget.cs" />
+    <Compile Include="Activity\Widgets\RevenueWidget.Designer.cs">
+      <DependentUpon>RevenueWidget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\Widgets\TagAlertWidget.cs" />
+    <Compile Include="Activity\Widgets\TagAlertWidget.Designer.cs">
+      <DependentUpon>TagAlertWidget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\Widgets\TransactionSummaryWidget.cs" />
+    <Compile Include="Activity\Widgets\TransactionSummaryWidget.Designer.cs">
+      <DependentUpon>TransactionSummaryWidget.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Activity\Widgets\UIActivityLog.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Activity\frmActivity.resx">
+      <DependentUpon>frmActivity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\Widgets\ActivityLogWidget.resx">
+      <DependentUpon>ActivityLogWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\Widgets\BeverageCostWidget.resx">
+      <DependentUpon>BeverageCostWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\Widgets\CostWidget.resx">
+      <DependentUpon>CostWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\Widgets\CurrentPoursWidget.resx">
+      <DependentUpon>CurrentPoursWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\Widgets\LastPourWidget.resx">
+      <DependentUpon>LastPourWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\Widgets\PieChartWidget.resx">
+      <DependentUpon>PieChartWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\Widgets\PourAnimationWidget.resx">
+      <DependentUpon>PourAnimationWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\Widgets\PourVolumePieWidget.resx">
+      <DependentUpon>PourVolumePieWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\Widgets\ReconciliationWidget.resx">
+      <DependentUpon>ReconciliationWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\Widgets\RevenueWidget.resx">
+      <DependentUpon>RevenueWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\Widgets\TagAlertWidget.resx">
+      <DependentUpon>TagAlertWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Activity\Widgets\TransactionSummaryWidget.resx">
+      <DependentUpon>TransactionSummaryWidget.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MessageEngine\JaxisInterfaces\JaxisInterfaces.csproj">
+      <Project>{77AB9947-1F31-4BF2-86ED-24D20ED9A5DB}</Project>
+      <Name>JaxisInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MessageEngine\Messages\MessageLibrary\MessageLibrary.csproj">
+      <Project>{CF1F61FD-C28D-4B31-A3D8-FA07E8AC1175}</Project>
+      <Name>MessageLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BeverageManagement\DataAccess\DataAccess.csproj">
+      <Project>{F01FDD3B-FA5D-4629-9CDF-74D02F58109B}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BeverageManagement\HostWCFService\HostWCFService.csproj">
+      <Project>{504A23BB-C324-4D46-990A-87AD2E9A733E}</Project>
+      <Name>HostWCFService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BeverageManagement\IDataAccess\IDataAccess.csproj">
+      <Project>{A9552B6C-5BFA-4D23-B813-9FBB548610FF}</Project>
+      <Name>IDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BeverageManagement\PourAnimation\GlassFill.csproj">
+      <Project>{F2DC9C21-55EC-49B8-B630-7FAF405C2977}</Project>
+      <Name>GlassFill</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BeverageManagement\Reports\BeverageReports\BeverageReports.csproj">
+      <Project>{9820579B-4AA1-4C62-8A9C-CB4B329FEB69}</Project>
+      <Name>BeverageReports %28Reports\BeverageReports%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Activity.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Activity.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Activity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddCategory.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddCategory.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddCategory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddInventory.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddInventory.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddInventory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddLocation.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddLocation.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddLocation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddSubCategory.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddSubCategory.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddSubCategory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Addupc.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddUpc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Addupc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alias.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\All.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bar.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barcode-icon.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarManagement.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarManagement.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarManagement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Beer-full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beer-icon.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottle_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottle_full.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottle_full.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottle_full.64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottle_full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottle_full_remove.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottle_full_save.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Branding.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Branding.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Branding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash-register-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cog.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cog.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DecreaseInventory.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DecreaseInventory.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DecreaseInventory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DecreaseInventoryWithArrow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditUpc.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditUpc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditUpc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flask-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IncreaseInventory.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IncreaseInventory.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IncreaseInventory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\increaseinventoryWithArrow.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IncreaseInventoryWithArrow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\increaseinventoryWithArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inventory.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inventory.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inventory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\message-bottle-icon.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mixed-full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mixed-full1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RemoveBarManagement.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RemoveBarManagement.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RemoveBarManagement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RemoveBranding.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RemoveBranding.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RemoveBranding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveBarManagement.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveBarManagement.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveBarManagement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveBranding.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveBranding.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveBranding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stats Blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tools.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upc.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wine-full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wood-2-icon.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zoom.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

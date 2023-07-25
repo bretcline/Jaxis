@@ -1,0 +1,243 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Text;
+using Jaxis.Util.Log4Net;
+using Jaxis.Engine.Base.Device;
+using Jaxis.Interfaces;
+using Jaxis.Inventory.Data;
+using Jaxis.MessageLibrary;
+
+namespace Jaxis.BeverageManagement.Plugin
+{
+    public class PourPosReconcile : BaseProducerDevice, IProducer
+    {
+
+        private System.Threading.Thread m_WorkerThd = null;
+
+        [Obfuscation(Exclude = true)]
+        public static DeviceConfig GetDefaultDeviceConfig()
+        {
+            DeviceConfig rc = new DeviceConfig();
+            System.Reflection.Assembly Asm = System.Reflection.Assembly.GetExecutingAssembly();
+            rc.AssemblyName = Asm.ManifestModule.Name;
+            rc.AssemblyType = System.Reflection.MethodBase.GetCurrentMethod().DeclaringType.FullName;
+            rc.AssemblyVersion = System.Diagnostics.FileVersionInfo.GetVersionInfo(BaseDevice.GetPath() + "\\" + rc.AssemblyName).FileVersion;
+            rc.ID = Guid.NewGuid().ToString();
+            rc.Name = "Jaxis PourPosReconcile";
+            rc.Type = DeviceType.DataProducer;
+            rc.State = DeviceState.Stopped;
+            rc.ProducerMessageType = 64;
+            rc.ConsumerMessageType = 0;
+            DeviceConfigOption Option1 = new DeviceConfigOption();
+            Option1.Name = "Connect String";
+            Option1.Value = "http://localhost:8223/HostWCFService/PourEngineService/";
+            rc.Options.Add(Option1);
+            DeviceConfigOption Option2 = new DeviceConfigOption();
+            Option2.Name = "Poll Interval";
+            Option2.Value = "1"; // One sec
+            rc.Options.Add(Option2);
+            DeviceConfigOption Option3 = new DeviceConfigOption();
+            Option3.Name = "Alert Interval";
+            Option3.Value = "360"; // One hour
+            rc.Options.Add(Option2);
+            return rc;
+        }
+
+        private void CreateTestData()
+        {
+            IList<string> Result;
+            IQueryable<IUPCItem> UPC = DataManagerFactory.Get().Manage<IUPCItem>().GetAll().Where(U => U.Name.Contains("Absolut") );
+            //List<IUPCItem> ll = UPC.ToList();
+            if (UPC != null && 0 < UPC.Count())
+            {
+                //IRecipe Recipe = DataManagerFactory.Get().Manage<IRecipe>().Create();
+                //Recipe.Description = "Da Killa Vodka Shot";
+                //DataManagerFactory.Get().Manage<IRecipe>().Save(Recipe,out Result);
+
+                //IIngredient Ingredient = DataManagerFactory.Get().Manage<IIngredient>().Create();
+                //Ingredient.Number = 1;
+                //Ingredient.RecipeID = Recipe.ObjectID;
+                //Ingredient.Type = Convert.ToInt32(IngredientType.Required);
+                //Ingredient.UPCID = UPC.First().ObjectID;
+                //DataManagerFactory.Get().Manage<IIngredient>().Save(Ingredient, out Result);
+                //IIngredient Ingredient2 = DataManagerFactory.Get().Manage<IIngredient>().Create();
+                //Ingredient2.Number = 2;
+                //Ingredient2.RecipeID = Recipe.ObjectID;
+                //Ingredient2.Type = Convert.ToInt32(IngredientType.OneOf);
+                //Ingredient2.UPCID = UPC.ToArray()[2].ObjectID;
+                //DataManagerFactory.Get().Manage<IIngredient>().Save(Ingredient2, out Result);
+                //IIngredient Ingredient3 = DataManagerFactory.Get().Manage<IIngredient>().Create();
+                //Ingredient3.Number = 2;
+                //Ingredient3.RecipeID = Recipe.ObjectID;
+                //Ingredient3.Type = Convert.ToInt32(IngredientType.OneOf);
+                //Ingredient3.UPCID = UPC.ToArray()[3].ObjectID;
+                //DataManagerFactory.Get().Manage<IIngredient>().Save(Ingredient3, out Result);
+                //IIngredient Ingredient4 = DataManagerFactory.Get().Manage<IIngredient>().Create();
+                //Ingredient4.Number = 3;
+                //Ingredient4.RecipeID = Recipe.ObjectID;
+                //Ingredient4.Type = Convert.ToInt32(IngredientType.OneOf);
+                //Ingredient4.UPCID = UPC.ToArray()[4].ObjectID;
+                //DataManagerFactory.Get().Manage<IIngredient>().Save(Ingredient4, out Result);
+                //IIngredient Ingredient5 = DataManagerFactory.Get().Manage<IIngredient>().Create();
+                //Ingredient5.Number = 3;
+                //Ingredient5.RecipeID = Recipe.ObjectID;
+                //Ingredient5.Type = Convert.ToInt32(IngredientType.OneOf);
+                //Ingredient5.UPCID = UPC.ToArray()[5].ObjectID;
+                //DataManagerFactory.Get().Manage<IIngredient>().Save(Ingredient5, out Result);
+                //IIngredient Ingredient6 = DataManagerFactory.Get().Manage<IIngredient>().Create();
+                //Ingredient6.Number = 4;
+                //Ingredient6.RecipeID = Recipe.ObjectID;
+                //Ingredient6.Type = Convert.ToInt32(IngredientType.Optional);
+                //Ingredient6.UPCID = UPC.ToArray()[6].ObjectID;
+                //DataManagerFactory.Get().Manage<IIngredient>().Save(Ingredient6, out Result);
+                //IIngredient Ingredient7 = DataManagerFactory.Get().Manage<IIngredient>().Create();
+                //Ingredient7.Number = 5;
+                //Ingredient7.RecipeID = Recipe.ObjectID;
+                //Ingredient7.Type = Convert.ToInt32(IngredientType.Required);
+                //Ingredient7.UPCID = UPC.ToArray()[7].ObjectID;
+                //DataManagerFactory.Get().Manage<IIngredient>().Save(Ingredient7, out Result);
+
+                //IPOSTicket Ticket = DataManagerFactory.Get().Manage<IPOSTicket>().Create();
+                //Ticket.CheckNumber = "5";
+                //Ticket.Comments = "Comments";
+                //Ticket.CustomerTable = "CustomerTable";
+                //Ticket.Establishment = "Establishment";
+                //Ticket.GuestCount = 1;
+                //Ticket.TicketDate = DateTime.Now;
+                //DataManagerFactory.Get().Manage<IPOSTicket>().Save(Ticket, out Result);
+
+                //IPOSTicketItem TicketItem = DataManagerFactory.Get().Manage<IPOSTicketItem>().Create();
+                //TicketItem.Comment = "Comment";
+                //TicketItem.Description = "Da Killa Vodka Shot";
+                //TicketItem.Price = 10;
+                //TicketItem.POSTicketID = Ticket.ObjectID;
+                //DataManagerFactory.Get().Manage<IPOSTicketItem>().Save(TicketItem, out Result);
+
+                //Jaxis.Inventory.Data.IPour UnreconciledPour = DataManagerFactory.Get( ).Manage<Jaxis.Inventory.Data.IPour>( ).Create( );
+                //UnreconciledPour.TagID = DataManagerFactory.Get().Manage<ITag>().GetAll().First().ObjectID;
+                //UnreconciledPour.DeviceID = DataManagerFactory.Get().Manage<Jaxis.Inventory.Data.IDevice>().GetAll().First().ObjectID;
+                //UnreconciledPour.BatteryVoltage = 1.0;
+                //UnreconciledPour.Temperature = 1.0;
+                //UnreconciledPour.PourTime = DateTime.Now;
+                //UnreconciledPour.Duration = 1.0;
+                //UnreconciledPour.Volume = 1.0;
+                //UnreconciledPour.UPCID = UPC.ToArray()[2].ObjectID;
+                //DataManagerFactory.Get().Manage<Jaxis.Inventory.Data.IPour>().Save(UnreconciledPour, out Result);
+
+                //Jaxis.Inventory.Data.IPour Pour2 = DataManagerFactory.Get( ).Manage<Jaxis.Inventory.Data.IPour>( ).Create( );
+                //Pour2.TagID = DataManagerFactory.Get().Manage<ITag>().GetAll().First().ObjectID;
+                //Pour2.DeviceID = DataManagerFactory.Get().Manage<Jaxis.Inventory.Data.IDevice>().GetAll().First().ObjectID;
+                //Pour2.BatteryVoltage = 1.0;
+                //Pour2.Temperature = 1.0;
+                //Pour2.PourTime = DateTime.Now;
+                //Pour2.Duration = 1.0;
+                //Pour2.Volume = 1.0;
+                //Pour2.UPCID = UPC.ToArray()[6].ObjectID;
+                //DataManagerFactory.Get().Manage<Jaxis.Inventory.Data.IPour>().Save(Pour2, out Result);
+            }
+        }
+
+                
+        public PourPosReconcile( )
+            : this(GetDefaultDeviceConfig())
+        {
+        }
+
+
+
+        public PourPosReconcile(IDeviceConfig _config)
+            : base(_config)
+        {
+            //CreateTestData();
+        }
+
+        public override void Start()
+        {
+            try
+            {
+                m_WorkerThd = new System.Threading.Thread( PollThread );
+                m_WorkerThd.Start();
+
+                State = DeviceState.Started;
+                Config.State = DeviceState.Started;
+            }
+            catch (Exception exp)
+            {
+                Log.WriteException("PourPosReconcile::Start", exp);
+            }
+        }
+
+        public override void Stop()
+        {
+            State = DeviceState.Stopped;
+            Config.State = DeviceState.Stopped;
+            if( null != m_WorkerThd )
+            {
+                m_WorkerThd.Join( );
+            }
+        }
+
+        private void SendAlert(AlertTypes _Type, Guid _ObjectID)
+        {
+            Jaxis.MessageLibrary.ReconcileAlert Alert = new MessageLibrary.ReconcileAlert();
+            Alert.AlertType = _Type;
+            Alert.ObjectID = _ObjectID.ToString();
+            ProduceMessage (Alert);
+        }
+
+        private void SendAlerts(int _AlertInterval)
+        {
+            IList<string> Result;
+
+            // Query all Pours that have not been alerted or reconciled and have a PourTime < current time - alert interval
+            IQueryable<Jaxis.Inventory.Data.IPour> Pours = DataManagerFactory.Get().Manage<Jaxis.Inventory.Data.IPour>().GetAll().Where(P => P.POSTicketItemID == null && P.Alerted == false && P.PourTime < DateTime.Now.AddSeconds(-1 * _AlertInterval));
+            foreach (Jaxis.Inventory.Data.IPour P in Pours)
+            {
+                SendAlert(AlertTypes.UnreconciledPour, P.ObjectID);
+                P.Alerted = true;
+                DataManagerFactory.Get().Manage<Jaxis.Inventory.Data.IPour>().Save(P, out Result);
+            }
+
+            // Query all TicketItems that have not been alerted or reconciled and have a TicketDate < current time - alert interval
+            //IQueryable<IPOSTicketItem> TicketItems = from T in DataManagerFactory.Get().Manage<IPOSTicket>().GetAll()
+            //                                         from I in DataManagerFactory.Get().Manage<IPOSTicketItem>().GetAll()
+            //                                         where I.POSTicketID == T.POSTicketID && I.Reconciled == false && I.Alerted == false && T.TicketDate < DateTime.Now.AddSeconds(-1 * _AlertInterval)
+            //                                         select I;
+            IQueryable<IPOSTicketItem> TicketItems = DataManagerFactory.Get().Manage<IPOSTicketItem>().GetAll().Where(I => I.Reconciled == false && I.Alerted == false);
+            foreach (IPOSTicketItem TI in TicketItems)
+            {
+                IQueryable<IPOSTicket> Tickets = DataManagerFactory.Get().Manage<IPOSTicket>().GetAll().Where( T => T.POSTicketID == TI.POSTicketID && T.TicketDate < DateTime.Now.AddSeconds(-1 * _AlertInterval) );
+                if (null != Tickets && 0 != Tickets.Count())
+                {
+                    SendAlert(AlertTypes.TicketItem, TI.ObjectID);
+                    TI.Alerted = true;
+                    DataManagerFactory.Get().Manage<IPOSTicketItem>().Save(TI, out Result);
+                }
+           }
+
+        }
+
+        public void PollThread()
+        {
+            Reconcile Rec = new Reconcile();
+            int SleepTime = 0; // Used to respond to the Device Stop commnad, don't want to sleep to long
+
+            while (DeviceState.Started == State )
+            {
+                if (SleepTime > Config.GetPollInterval())
+                {
+                    Rec.ReconcileNow();
+                    SendAlerts(Config.GetAlertInterval());
+                    SleepTime = 0;
+                }
+                else
+                {
+                    SleepTime += 5 * 1000; // 5 secs
+                    System.Threading.Thread.Sleep(5 * 1000);
+                }
+            }
+        }
+    }
+}

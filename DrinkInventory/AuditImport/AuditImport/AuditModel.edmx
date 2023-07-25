@@ -1,0 +1,1253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BeverageAuditModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="BeverageAuditModelStoreContainer">
+          <EntitySet Name="OrderHeader" EntityType="BeverageAuditModel.Store.OrderHeader" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrderItemMod" EntityType="BeverageAuditModel.Store.OrderItemMod" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SalesCategories" EntityType="BeverageAuditModel.Store.SalesCategories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SalesDepartments" EntityType="BeverageAuditModel.Store.SalesDepartments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SalesIntervalConfigurations" EntityType="BeverageAuditModel.Store.SalesIntervalConfigurations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SalesItems" EntityType="BeverageAuditModel.Store.SalesItems" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SalesItemsConfigurations" EntityType="BeverageAuditModel.Store.SalesItemsConfigurations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SalesMixes" EntityType="BeverageAuditModel.Store.SalesMixes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SalesMixesOthers" EntityType="BeverageAuditModel.Store.SalesMixesOthers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SalesMixesWithCheckTypes" EntityType="BeverageAuditModel.Store.SalesMixesWithCheckTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SalesSubcategories" EntityType="BeverageAuditModel.Store.SalesSubcategories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="ServingLocations" EntityType="BeverageAuditModel.Store.ServingLocations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="sysdiagrams" EntityType="BeverageAuditModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_OrderItemMod_OrderHeader" Association="BeverageAuditModel.Store.FK_OrderItemMod_OrderHeader">
+            <End Role="OrderHeader" EntitySet="OrderHeader" />
+            <End Role="OrderItemMod" EntitySet="OrderItemMod" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItemMod_SalesItems" Association="BeverageAuditModel.Store.FK_OrderItemMod_SalesItems">
+            <End Role="SalesItems" EntitySet="SalesItems" />
+            <End Role="OrderItemMod" EntitySet="OrderItemMod" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesCategories_SalesDepartments" Association="BeverageAuditModel.Store.FK_SalesCategories_SalesDepartments">
+            <End Role="SalesDepartments" EntitySet="SalesDepartments" />
+            <End Role="SalesCategories" EntitySet="SalesCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesItems_SalesSubcategories" Association="BeverageAuditModel.Store.FK_SalesItems_SalesSubcategories">
+            <End Role="SalesSubcategories" EntitySet="SalesSubcategories" />
+            <End Role="SalesItems" EntitySet="SalesItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesItemsConfigurations_SalesSubcategories" Association="BeverageAuditModel.Store.FK_SalesItemsConfigurations_SalesSubcategories">
+            <End Role="SalesSubcategories" EntitySet="SalesSubcategories" />
+            <End Role="SalesItemsConfigurations" EntitySet="SalesItemsConfigurations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesMixes_SalesIntervalConfigurations" Association="BeverageAuditModel.Store.FK_SalesMixes_SalesIntervalConfigurations">
+            <End Role="SalesIntervalConfigurations" EntitySet="SalesIntervalConfigurations" />
+            <End Role="SalesMixes" EntitySet="SalesMixes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesMixes_SalesItems" Association="BeverageAuditModel.Store.FK_SalesMixes_SalesItems">
+            <End Role="SalesItems" EntitySet="SalesItems" />
+            <End Role="SalesMixes" EntitySet="SalesMixes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesMixes_ServingLocations" Association="BeverageAuditModel.Store.FK_SalesMixes_ServingLocations">
+            <End Role="ServingLocations" EntitySet="ServingLocations" />
+            <End Role="SalesMixes" EntitySet="SalesMixes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesMixesOthers_SalesIntervalConfigurations" Association="BeverageAuditModel.Store.FK_SalesMixesOthers_SalesIntervalConfigurations">
+            <End Role="SalesIntervalConfigurations" EntitySet="SalesIntervalConfigurations" />
+            <End Role="SalesMixesOthers" EntitySet="SalesMixesOthers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesMixesOthers_SalesItems" Association="BeverageAuditModel.Store.FK_SalesMixesOthers_SalesItems">
+            <End Role="SalesItems" EntitySet="SalesItems" />
+            <End Role="SalesMixesOthers" EntitySet="SalesMixesOthers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesMixesOthers_ServingLocations" Association="BeverageAuditModel.Store.FK_SalesMixesOthers_ServingLocations">
+            <End Role="ServingLocations" EntitySet="ServingLocations" />
+            <End Role="SalesMixesOthers" EntitySet="SalesMixesOthers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesMixesWithCheckTypes_SalesIntervalConfigurations" Association="BeverageAuditModel.Store.FK_SalesMixesWithCheckTypes_SalesIntervalConfigurations">
+            <End Role="SalesIntervalConfigurations" EntitySet="SalesIntervalConfigurations" />
+            <End Role="SalesMixesWithCheckTypes" EntitySet="SalesMixesWithCheckTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesMixesWithCheckTypes_SalesItems" Association="BeverageAuditModel.Store.FK_SalesMixesWithCheckTypes_SalesItems">
+            <End Role="SalesItems" EntitySet="SalesItems" />
+            <End Role="SalesMixesWithCheckTypes" EntitySet="SalesMixesWithCheckTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesMixesWithCheckTypes_ServingLocations" Association="BeverageAuditModel.Store.FK_SalesMixesWithCheckTypes_ServingLocations">
+            <End Role="ServingLocations" EntitySet="ServingLocations" />
+            <End Role="SalesMixesWithCheckTypes" EntitySet="SalesMixesWithCheckTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesSubcategories_SalesCategories" Association="BeverageAuditModel.Store.FK_SalesSubcategories_SalesCategories">
+            <End Role="SalesCategories" EntitySet="SalesCategories" />
+            <End Role="SalesSubcategories" EntitySet="SalesSubcategories" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="OrderHeader">
+          <Key>
+            <PropertyRef Name="OrderHeaderID" />
+          </Key>
+          <Property Name="Identifier" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="OrderHeaderID" Type="int" Nullable="false" />
+          <Property Name="BusinessDay" Type="int" Nullable="false" />
+          <Property Name="OrderProcessed" Type="datetime" Nullable="false" />
+          <Property Name="CheckNumber" Type="int" Nullable="false" />
+          <Property Name="AssociatedCheckNumber" Type="int" Nullable="false" />
+          <Property Name="CheckTypeID" Type="int" Nullable="false" />
+          <Property Name="CheckStatus" Type="int" Nullable="false" />
+          <Property Name="ProfitCenterID" Type="int" Nullable="false" />
+          <Property Name="MealPeriodID" Type="int" Nullable="false" />
+          <Property Name="VoidReasonID" Type="int" Nullable="false" />
+          <Property Name="TableNumber" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="NumberOfGuests" Type="int" Nullable="false" />
+          <Property Name="PrintCount" Type="int" Nullable="false" />
+          <Property Name="CashierEmployeeID" Type="int" Nullable="false" />
+          <Property Name="ServerEmployeeID" Type="int" Nullable="false" />
+          <Property Name="OpenTime" Type="datetime" Nullable="false" />
+          <Property Name="CloseTime" Type="datetime" Nullable="false" />
+          <Property Name="OpenTerminalID" Type="int" Nullable="false" />
+          <Property Name="CloseTerminalID" Type="int" Nullable="false" />
+          <Property Name="DrawerNumber" Type="int" Nullable="false" />
+          <Property Name="SalesAmountGross" Type="money" Nullable="false" />
+          <Property Name="DiscountAmount" Type="money" Nullable="false" />
+          <Property Name="TaxAmount" Type="money" Nullable="false" />
+          <Property Name="TaxRemovedFlag" Type="bit" Nullable="false" />
+          <Property Name="TipAmount" Type="money" Nullable="false" />
+          <Property Name="GratuityAmount" Type="money" Nullable="false" />
+          <Property Name="ServiceCharge" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrderItemMod">
+          <Key>
+            <PropertyRef Name="OrderItemModID" />
+          </Key>
+          <Property Name="OrderItemModID" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Identifier" Type="nchar" Nullable="false" MaxLength="10" />
+          <Property Name="OrderHeaderID" Type="int" Nullable="false" />
+          <Property Name="CheckSeq" Type="int" Nullable="false" />
+          <Property Name="MenuItemCheckSeq" Type="int" Nullable="false" />
+          <Property Name="ModifierID" Type="int" Nullable="false" />
+          <Property Name="ModifierMenuItemID" Type="int" Nullable="false" />
+          <Property Name="ModifierQuantity" Type="int" Nullable="false" />
+          <Property Name="SalesAmountGross" Type="money" Nullable="false" />
+          <Property Name="DiscountAmount" Type="money" Nullable="false" />
+          <Property Name="DiscountGroup" Type="int" Nullable="false" />
+          <Property Name="TaxAmountInSales" Type="money" Nullable="false" />
+          <Property Name="TaxAmountDiscount" Type="money" Nullable="false" />
+          <Property Name="TaxIncluded" Type="bit" Nullable="false" />
+          <Property Name="VoidTypeID" Type="int" Nullable="false" />
+          <Property Name="VoidReasonID" Type="int" Nullable="false" />
+          <Property Name="CheckVoidReasonID" Type="int" Nullable="false" />
+          <Property Name="ServerEmployeeID" Type="int" Nullable="false" />
+          <Property Name="SplitItemFlag" Type="bit" Nullable="false" />
+          <Property Name="MealPeriodID" Type="int" Nullable="false" />
+          <Property Name="CheckTypeID" Type="int" Nullable="false" />
+          <Property Name="ProfitCenterID" Type="int" Nullable="false" />
+          <Property Name="NestLevel" Type="int" Nullable="false" />
+          <Property Name="PriceLevelID" Type="int" Nullable="false" />
+          <Property Name="ModifierMenuItemIDX" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SalesCategories">
+          <Key>
+            <PropertyRef Name="RevenueCategoryId" />
+          </Key>
+          <Property Name="RevenueCategoryId" Type="int" Nullable="false" />
+          <Property Name="RevenueCategoryName" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="RevenueClassId" Type="int" Nullable="false" />
+          <Property Name="RecordType" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="SalesDepartments">
+          <Key>
+            <PropertyRef Name="RevenueClassId" />
+          </Key>
+          <Property Name="RevenueClassId" Type="int" Nullable="false" />
+          <Property Name="RevenueClassName" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="RecordType" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="SalesIntervalConfigurations">
+          <Key>
+            <PropertyRef Name="SalesIntervalId" />
+          </Key>
+          <Property Name="SalesIntervalId" Type="int" Nullable="false" />
+          <Property Name="IntervalName" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="MilitaryStartTime" Type="time" />
+          <Property Name="MilitaryEndTime" Type="time" />
+          <Property Name="RecordType" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="SalesItems">
+          <Key>
+            <PropertyRef Name="MenuItemId" />
+          </Key>
+          <Property Name="MenuItemId" Type="int" Nullable="false" />
+          <Property Name="MenuItemName" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="ProductClassId" Type="int" Nullable="false" />
+          <Property Name="RecordType" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="SalesItemsConfigurations">
+          <Key>
+            <PropertyRef Name="MenuItemId" />
+          </Key>
+          <Property Name="MenuItemId" Type="int" Nullable="false" />
+          <Property Name="MenuItemName" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="ProductClassId" Type="int" Nullable="false" />
+          <Property Name="SKUIdentifier" Type="varchar" MaxLength="256" />
+          <Property Name="RecordType" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="SalesMixes">
+          <Key>
+            <PropertyRef Name="SalesMixId" />
+          </Key>
+          <Property Name="SalesMixId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="ProfitCenterId" Type="int" Nullable="false" />
+          <Property Name="SalesIntervalId" Type="int" Nullable="false" />
+          <Property Name="MenuItemId" Type="int" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="ExtendedAmount" Type="money" Nullable="false" />
+          <Property Name="RecordType" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="SalesMixesOthers">
+          <Key>
+            <PropertyRef Name="SalesMixesOtherId" />
+          </Key>
+          <Property Name="SalesMixesOtherId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="ProfitCenterId" Type="int" Nullable="false" />
+          <Property Name="CheckTypeId" Type="int" Nullable="false" />
+          <Property Name="SalesIntervalId" Type="int" Nullable="false" />
+          <Property Name="MenuItemId" Type="int" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="ExtendedAmount" Type="money" Nullable="false" />
+          <Property Name="RecordType" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="SalesMixesWithCheckTypes">
+          <Key>
+            <PropertyRef Name="SalesMixWithCheckTypeId" />
+          </Key>
+          <Property Name="SalesMixWithCheckTypeId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="ProfitCenterId" Type="int" Nullable="false" />
+          <Property Name="CheckTypeId" Type="int" Nullable="false" />
+          <Property Name="SalesIntervalId" Type="int" Nullable="false" />
+          <Property Name="MenuItemId" Type="int" Nullable="false" />
+          <Property Name="Price" Type="money" Nullable="false" />
+          <Property Name="Count" Type="int" Nullable="false" />
+          <Property Name="ExtendedAmount" Type="money" Nullable="false" />
+          <Property Name="RecordType" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="SalesSubcategories">
+          <Key>
+            <PropertyRef Name="ProductClassId" />
+          </Key>
+          <Property Name="ProductClassId" Type="int" Nullable="false" />
+          <Property Name="ProductClassName" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="RevenueCategoryId" Type="int" Nullable="false" />
+          <Property Name="RecordType" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="ServingLocations">
+          <Key>
+            <PropertyRef Name="ProfitCenterId" />
+          </Key>
+          <Property Name="ProfitCenterId" Type="int" Nullable="false" />
+          <Property Name="ProfitCenterName" Type="varchar" Nullable="false" MaxLength="256" />
+          <Property Name="RecordType" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_OrderItemMod_OrderHeader">
+          <End Role="OrderHeader" Type="BeverageAuditModel.Store.OrderHeader" Multiplicity="1" />
+          <End Role="OrderItemMod" Type="BeverageAuditModel.Store.OrderItemMod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderHeader">
+              <PropertyRef Name="OrderHeaderID" />
+            </Principal>
+            <Dependent Role="OrderItemMod">
+              <PropertyRef Name="OrderHeaderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItemMod_SalesItems">
+          <End Role="SalesItems" Type="BeverageAuditModel.Store.SalesItems" Multiplicity="1" />
+          <End Role="OrderItemMod" Type="BeverageAuditModel.Store.OrderItemMod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesItems">
+              <PropertyRef Name="MenuItemId" />
+            </Principal>
+            <Dependent Role="OrderItemMod">
+              <PropertyRef Name="ModifierMenuItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesCategories_SalesDepartments">
+          <End Role="SalesDepartments" Type="BeverageAuditModel.Store.SalesDepartments" Multiplicity="1" />
+          <End Role="SalesCategories" Type="BeverageAuditModel.Store.SalesCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesDepartments">
+              <PropertyRef Name="RevenueClassId" />
+            </Principal>
+            <Dependent Role="SalesCategories">
+              <PropertyRef Name="RevenueClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesItems_SalesSubcategories">
+          <End Role="SalesSubcategories" Type="BeverageAuditModel.Store.SalesSubcategories" Multiplicity="1" />
+          <End Role="SalesItems" Type="BeverageAuditModel.Store.SalesItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesSubcategories">
+              <PropertyRef Name="ProductClassId" />
+            </Principal>
+            <Dependent Role="SalesItems">
+              <PropertyRef Name="ProductClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesItemsConfigurations_SalesSubcategories">
+          <End Role="SalesSubcategories" Type="BeverageAuditModel.Store.SalesSubcategories" Multiplicity="1" />
+          <End Role="SalesItemsConfigurations" Type="BeverageAuditModel.Store.SalesItemsConfigurations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesSubcategories">
+              <PropertyRef Name="ProductClassId" />
+            </Principal>
+            <Dependent Role="SalesItemsConfigurations">
+              <PropertyRef Name="ProductClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesMixes_SalesIntervalConfigurations">
+          <End Role="SalesIntervalConfigurations" Type="BeverageAuditModel.Store.SalesIntervalConfigurations" Multiplicity="1" />
+          <End Role="SalesMixes" Type="BeverageAuditModel.Store.SalesMixes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesIntervalConfigurations">
+              <PropertyRef Name="SalesIntervalId" />
+            </Principal>
+            <Dependent Role="SalesMixes">
+              <PropertyRef Name="SalesIntervalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesMixes_SalesItems">
+          <End Role="SalesItems" Type="BeverageAuditModel.Store.SalesItems" Multiplicity="1" />
+          <End Role="SalesMixes" Type="BeverageAuditModel.Store.SalesMixes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesItems">
+              <PropertyRef Name="MenuItemId" />
+            </Principal>
+            <Dependent Role="SalesMixes">
+              <PropertyRef Name="MenuItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesMixes_ServingLocations">
+          <End Role="ServingLocations" Type="BeverageAuditModel.Store.ServingLocations" Multiplicity="1" />
+          <End Role="SalesMixes" Type="BeverageAuditModel.Store.SalesMixes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServingLocations">
+              <PropertyRef Name="ProfitCenterId" />
+            </Principal>
+            <Dependent Role="SalesMixes">
+              <PropertyRef Name="ProfitCenterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesMixesOthers_SalesIntervalConfigurations">
+          <End Role="SalesIntervalConfigurations" Type="BeverageAuditModel.Store.SalesIntervalConfigurations" Multiplicity="1" />
+          <End Role="SalesMixesOthers" Type="BeverageAuditModel.Store.SalesMixesOthers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesIntervalConfigurations">
+              <PropertyRef Name="SalesIntervalId" />
+            </Principal>
+            <Dependent Role="SalesMixesOthers">
+              <PropertyRef Name="SalesIntervalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesMixesOthers_SalesItems">
+          <End Role="SalesItems" Type="BeverageAuditModel.Store.SalesItems" Multiplicity="1" />
+          <End Role="SalesMixesOthers" Type="BeverageAuditModel.Store.SalesMixesOthers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesItems">
+              <PropertyRef Name="MenuItemId" />
+            </Principal>
+            <Dependent Role="SalesMixesOthers">
+              <PropertyRef Name="MenuItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesMixesOthers_ServingLocations">
+          <End Role="ServingLocations" Type="BeverageAuditModel.Store.ServingLocations" Multiplicity="1" />
+          <End Role="SalesMixesOthers" Type="BeverageAuditModel.Store.SalesMixesOthers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServingLocations">
+              <PropertyRef Name="ProfitCenterId" />
+            </Principal>
+            <Dependent Role="SalesMixesOthers">
+              <PropertyRef Name="ProfitCenterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesMixesWithCheckTypes_SalesIntervalConfigurations">
+          <End Role="SalesIntervalConfigurations" Type="BeverageAuditModel.Store.SalesIntervalConfigurations" Multiplicity="1" />
+          <End Role="SalesMixesWithCheckTypes" Type="BeverageAuditModel.Store.SalesMixesWithCheckTypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesIntervalConfigurations">
+              <PropertyRef Name="SalesIntervalId" />
+            </Principal>
+            <Dependent Role="SalesMixesWithCheckTypes">
+              <PropertyRef Name="SalesIntervalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesMixesWithCheckTypes_SalesItems">
+          <End Role="SalesItems" Type="BeverageAuditModel.Store.SalesItems" Multiplicity="1" />
+          <End Role="SalesMixesWithCheckTypes" Type="BeverageAuditModel.Store.SalesMixesWithCheckTypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesItems">
+              <PropertyRef Name="MenuItemId" />
+            </Principal>
+            <Dependent Role="SalesMixesWithCheckTypes">
+              <PropertyRef Name="MenuItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesMixesWithCheckTypes_ServingLocations">
+          <End Role="ServingLocations" Type="BeverageAuditModel.Store.ServingLocations" Multiplicity="1" />
+          <End Role="SalesMixesWithCheckTypes" Type="BeverageAuditModel.Store.SalesMixesWithCheckTypes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServingLocations">
+              <PropertyRef Name="ProfitCenterId" />
+            </Principal>
+            <Dependent Role="SalesMixesWithCheckTypes">
+              <PropertyRef Name="ProfitCenterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesSubcategories_SalesCategories">
+          <End Role="SalesCategories" Type="BeverageAuditModel.Store.SalesCategories" Multiplicity="1" />
+          <End Role="SalesSubcategories" Type="BeverageAuditModel.Store.SalesSubcategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesCategories">
+              <PropertyRef Name="RevenueCategoryId" />
+            </Principal>
+            <Dependent Role="SalesSubcategories">
+              <PropertyRef Name="RevenueCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BeverageAuditModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="AuditEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SalesCategories" EntityType="BeverageAuditModel.SalesCategory" />
+          <EntitySet Name="SalesDepartments" EntityType="BeverageAuditModel.SalesDepartment" />
+          <EntitySet Name="SalesIntervalConfigurations" EntityType="BeverageAuditModel.SalesIntervalConfiguration" />
+          <EntitySet Name="SalesItems" EntityType="BeverageAuditModel.SalesItem" />
+          <EntitySet Name="SalesItemsConfigurations" EntityType="BeverageAuditModel.SalesItemsConfiguration" />
+          <EntitySet Name="SalesMixes" EntityType="BeverageAuditModel.SalesMix" />
+          <EntitySet Name="SalesMixesOthers" EntityType="BeverageAuditModel.SalesMixesOther" />
+          <EntitySet Name="SalesMixesWithCheckTypes" EntityType="BeverageAuditModel.SalesMixesWithCheckType" />
+          <EntitySet Name="SalesSubcategories" EntityType="BeverageAuditModel.SalesSubcategory" />
+          <EntitySet Name="ServingLocations" EntityType="BeverageAuditModel.ServingLocation" />
+          <AssociationSet Name="FK_SalesCategories_SalesDepartments" Association="BeverageAuditModel.FK_SalesCategories_SalesDepartments">
+            <End Role="SalesDepartments" EntitySet="SalesDepartments" />
+            <End Role="SalesCategories" EntitySet="SalesCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesSubcategories_SalesCategories" Association="BeverageAuditModel.FK_SalesSubcategories_SalesCategories">
+            <End Role="SalesCategories" EntitySet="SalesCategories" />
+            <End Role="SalesSubcategories" EntitySet="SalesSubcategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesMixes_SalesIntervalConfigurations" Association="BeverageAuditModel.FK_SalesMixes_SalesIntervalConfigurations">
+            <End Role="SalesIntervalConfigurations" EntitySet="SalesIntervalConfigurations" />
+            <End Role="SalesMixes" EntitySet="SalesMixes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesMixesOthers_SalesIntervalConfigurations" Association="BeverageAuditModel.FK_SalesMixesOthers_SalesIntervalConfigurations">
+            <End Role="SalesIntervalConfigurations" EntitySet="SalesIntervalConfigurations" />
+            <End Role="SalesMixesOthers" EntitySet="SalesMixesOthers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesMixesWithCheckTypes_SalesIntervalConfigurations" Association="BeverageAuditModel.FK_SalesMixesWithCheckTypes_SalesIntervalConfigurations">
+            <End Role="SalesIntervalConfigurations" EntitySet="SalesIntervalConfigurations" />
+            <End Role="SalesMixesWithCheckTypes" EntitySet="SalesMixesWithCheckTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesItems_SalesSubcategories" Association="BeverageAuditModel.FK_SalesItems_SalesSubcategories">
+            <End Role="SalesSubcategories" EntitySet="SalesSubcategories" />
+            <End Role="SalesItems" EntitySet="SalesItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesMixes_SalesItems" Association="BeverageAuditModel.FK_SalesMixes_SalesItems">
+            <End Role="SalesItems" EntitySet="SalesItems" />
+            <End Role="SalesMixes" EntitySet="SalesMixes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesMixesOthers_SalesItems" Association="BeverageAuditModel.FK_SalesMixesOthers_SalesItems">
+            <End Role="SalesItems" EntitySet="SalesItems" />
+            <End Role="SalesMixesOthers" EntitySet="SalesMixesOthers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesMixesWithCheckTypes_SalesItems" Association="BeverageAuditModel.FK_SalesMixesWithCheckTypes_SalesItems">
+            <End Role="SalesItems" EntitySet="SalesItems" />
+            <End Role="SalesMixesWithCheckTypes" EntitySet="SalesMixesWithCheckTypes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesItemsConfigurations_SalesSubcategories" Association="BeverageAuditModel.FK_SalesItemsConfigurations_SalesSubcategories">
+            <End Role="SalesSubcategories" EntitySet="SalesSubcategories" />
+            <End Role="SalesItemsConfigurations" EntitySet="SalesItemsConfigurations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesMixes_ServingLocations" Association="BeverageAuditModel.FK_SalesMixes_ServingLocations">
+            <End Role="ServingLocations" EntitySet="ServingLocations" />
+            <End Role="SalesMixes" EntitySet="SalesMixes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesMixesOthers_ServingLocations" Association="BeverageAuditModel.FK_SalesMixesOthers_ServingLocations">
+            <End Role="ServingLocations" EntitySet="ServingLocations" />
+            <End Role="SalesMixesOthers" EntitySet="SalesMixesOthers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SalesMixesWithCheckTypes_ServingLocations" Association="BeverageAuditModel.FK_SalesMixesWithCheckTypes_ServingLocations">
+            <End Role="ServingLocations" EntitySet="ServingLocations" />
+            <End Role="SalesMixesWithCheckTypes" EntitySet="SalesMixesWithCheckTypes" />
+          </AssociationSet>
+          <EntitySet Name="OrderHeaders" EntityType="BeverageAuditModel.OrderHeader" />
+          <EntitySet Name="OrderItemMods" EntityType="BeverageAuditModel.OrderItemMod" />
+          <EntitySet Name="sysdiagrams" EntityType="BeverageAuditModel.sysdiagram" />
+          <AssociationSet Name="FK_OrderItemMod_OrderHeader" Association="BeverageAuditModel.FK_OrderItemMod_OrderHeader">
+            <End Role="OrderHeader" EntitySet="OrderHeaders" />
+            <End Role="OrderItemMod" EntitySet="OrderItemMods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrderItemMod_SalesItems" Association="BeverageAuditModel.FK_OrderItemMod_SalesItems">
+            <End Role="SalesItem" EntitySet="SalesItems" />
+            <End Role="OrderItemMod" EntitySet="OrderItemMods" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="SalesCategory">
+          <Key>
+            <PropertyRef Name="RevenueCategoryId" />
+          </Key>
+          <Property Name="RevenueCategoryId" Type="Int32" Nullable="false" />
+          <Property Name="RevenueCategoryName" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="RevenueClassId" Type="Int32" Nullable="false" />
+          <Property Name="RecordType" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="SalesDepartment" Relationship="BeverageAuditModel.FK_SalesCategories_SalesDepartments" FromRole="SalesCategories" ToRole="SalesDepartments" />
+          <NavigationProperty Name="SalesSubcategories" Relationship="BeverageAuditModel.FK_SalesSubcategories_SalesCategories" FromRole="SalesCategories" ToRole="SalesSubcategories" />
+        </EntityType>
+        <EntityType Name="SalesDepartment">
+          <Key>
+            <PropertyRef Name="RevenueClassId" />
+          </Key>
+          <Property Name="RevenueClassId" Type="Int32" Nullable="false" />
+          <Property Name="RevenueClassName" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="RecordType" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="SalesCategories" Relationship="BeverageAuditModel.FK_SalesCategories_SalesDepartments" FromRole="SalesDepartments" ToRole="SalesCategories" />
+        </EntityType>
+        <EntityType Name="SalesIntervalConfiguration">
+          <Key>
+            <PropertyRef Name="SalesIntervalId" />
+          </Key>
+          <Property Name="SalesIntervalId" Type="Int32" Nullable="false" />
+          <Property Name="IntervalName" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="MilitaryStartTime" Type="Time" />
+          <Property Name="MilitaryEndTime" Type="Time" />
+          <Property Name="RecordType" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="SalesMixes" Relationship="BeverageAuditModel.FK_SalesMixes_SalesIntervalConfigurations" FromRole="SalesIntervalConfigurations" ToRole="SalesMixes" />
+          <NavigationProperty Name="SalesMixesOthers" Relationship="BeverageAuditModel.FK_SalesMixesOthers_SalesIntervalConfigurations" FromRole="SalesIntervalConfigurations" ToRole="SalesMixesOthers" />
+          <NavigationProperty Name="SalesMixesWithCheckTypes" Relationship="BeverageAuditModel.FK_SalesMixesWithCheckTypes_SalesIntervalConfigurations" FromRole="SalesIntervalConfigurations" ToRole="SalesMixesWithCheckTypes" />
+        </EntityType>
+        <EntityType Name="SalesItem">
+          <Key>
+            <PropertyRef Name="MenuItemId" />
+          </Key>
+          <Property Name="MenuItemId" Type="Int32" Nullable="false" />
+          <Property Name="MenuItemName" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="ProductClassId" Type="Int32" Nullable="false" />
+          <Property Name="RecordType" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="SalesSubcategory" Relationship="BeverageAuditModel.FK_SalesItems_SalesSubcategories" FromRole="SalesItems" ToRole="SalesSubcategories" />
+          <NavigationProperty Name="SalesMixes" Relationship="BeverageAuditModel.FK_SalesMixes_SalesItems" FromRole="SalesItems" ToRole="SalesMixes" />
+          <NavigationProperty Name="SalesMixesOthers" Relationship="BeverageAuditModel.FK_SalesMixesOthers_SalesItems" FromRole="SalesItems" ToRole="SalesMixesOthers" />
+          <NavigationProperty Name="SalesMixesWithCheckTypes" Relationship="BeverageAuditModel.FK_SalesMixesWithCheckTypes_SalesItems" FromRole="SalesItems" ToRole="SalesMixesWithCheckTypes" />
+          <NavigationProperty Name="OrderItemMods" Relationship="BeverageAuditModel.FK_OrderItemMod_SalesItems" FromRole="SalesItem" ToRole="OrderItemMod" />
+        </EntityType>
+        <EntityType Name="SalesItemsConfiguration">
+          <Key>
+            <PropertyRef Name="MenuItemId" />
+          </Key>
+          <Property Name="MenuItemId" Type="Int32" Nullable="false" />
+          <Property Name="MenuItemName" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="ProductClassId" Type="Int32" Nullable="false" />
+          <Property Name="SKUIdentifier" Type="String" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="RecordType" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="SalesSubcategory" Relationship="BeverageAuditModel.FK_SalesItemsConfigurations_SalesSubcategories" FromRole="SalesItemsConfigurations" ToRole="SalesSubcategories" />
+        </EntityType>
+        <EntityType Name="SalesMix">
+          <Key>
+            <PropertyRef Name="SalesMixId" />
+          </Key>
+          <Property Name="SalesMixId" Type="Guid" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <Property Name="ProfitCenterId" Type="Int32" Nullable="false" />
+          <Property Name="SalesIntervalId" Type="Int32" Nullable="false" />
+          <Property Name="MenuItemId" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="ExtendedAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="RecordType" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="SalesIntervalConfiguration" Relationship="BeverageAuditModel.FK_SalesMixes_SalesIntervalConfigurations" FromRole="SalesMixes" ToRole="SalesIntervalConfigurations" />
+          <NavigationProperty Name="SalesItem" Relationship="BeverageAuditModel.FK_SalesMixes_SalesItems" FromRole="SalesMixes" ToRole="SalesItems" />
+          <NavigationProperty Name="ServingLocation" Relationship="BeverageAuditModel.FK_SalesMixes_ServingLocations" FromRole="SalesMixes" ToRole="ServingLocations" />
+        </EntityType>
+        <EntityType Name="SalesMixesOther">
+          <Key>
+            <PropertyRef Name="SalesMixesOtherId" />
+          </Key>
+          <Property Name="SalesMixesOtherId" Type="Guid" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <Property Name="ProfitCenterId" Type="Int32" Nullable="false" />
+          <Property Name="CheckTypeId" Type="Int32" Nullable="false" />
+          <Property Name="SalesIntervalId" Type="Int32" Nullable="false" />
+          <Property Name="MenuItemId" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="ExtendedAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="RecordType" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="SalesIntervalConfiguration" Relationship="BeverageAuditModel.FK_SalesMixesOthers_SalesIntervalConfigurations" FromRole="SalesMixesOthers" ToRole="SalesIntervalConfigurations" />
+          <NavigationProperty Name="SalesItem" Relationship="BeverageAuditModel.FK_SalesMixesOthers_SalesItems" FromRole="SalesMixesOthers" ToRole="SalesItems" />
+          <NavigationProperty Name="ServingLocation" Relationship="BeverageAuditModel.FK_SalesMixesOthers_ServingLocations" FromRole="SalesMixesOthers" ToRole="ServingLocations" />
+        </EntityType>
+        <EntityType Name="SalesMixesWithCheckType">
+          <Key>
+            <PropertyRef Name="SalesMixWithCheckTypeId" />
+          </Key>
+          <Property Name="SalesMixWithCheckTypeId" Type="Guid" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" />
+          <Property Name="ProfitCenterId" Type="Int32" Nullable="false" />
+          <Property Name="CheckTypeId" Type="Int32" Nullable="false" />
+          <Property Name="SalesIntervalId" Type="Int32" Nullable="false" />
+          <Property Name="MenuItemId" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
+          <Property Name="ExtendedAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="RecordType" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="SalesIntervalConfiguration" Relationship="BeverageAuditModel.FK_SalesMixesWithCheckTypes_SalesIntervalConfigurations" FromRole="SalesMixesWithCheckTypes" ToRole="SalesIntervalConfigurations" />
+          <NavigationProperty Name="SalesItem" Relationship="BeverageAuditModel.FK_SalesMixesWithCheckTypes_SalesItems" FromRole="SalesMixesWithCheckTypes" ToRole="SalesItems" />
+          <NavigationProperty Name="ServingLocation" Relationship="BeverageAuditModel.FK_SalesMixesWithCheckTypes_ServingLocations" FromRole="SalesMixesWithCheckTypes" ToRole="ServingLocations" />
+        </EntityType>
+        <EntityType Name="SalesSubcategory">
+          <Key>
+            <PropertyRef Name="ProductClassId" />
+          </Key>
+          <Property Name="ProductClassId" Type="Int32" Nullable="false" />
+          <Property Name="ProductClassName" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="RevenueCategoryId" Type="Int32" Nullable="false" />
+          <Property Name="RecordType" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="SalesCategory" Relationship="BeverageAuditModel.FK_SalesSubcategories_SalesCategories" FromRole="SalesSubcategories" ToRole="SalesCategories" />
+          <NavigationProperty Name="SalesItems" Relationship="BeverageAuditModel.FK_SalesItems_SalesSubcategories" FromRole="SalesSubcategories" ToRole="SalesItems" />
+          <NavigationProperty Name="SalesItemsConfigurations" Relationship="BeverageAuditModel.FK_SalesItemsConfigurations_SalesSubcategories" FromRole="SalesSubcategories" ToRole="SalesItemsConfigurations" />
+        </EntityType>
+        <EntityType Name="ServingLocation">
+          <Key>
+            <PropertyRef Name="ProfitCenterId" />
+          </Key>
+          <Property Name="ProfitCenterId" Type="Int32" Nullable="false" />
+          <Property Name="ProfitCenterName" Type="String" Nullable="false" MaxLength="256" Unicode="false" FixedLength="false" />
+          <Property Name="RecordType" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="SalesMixes" Relationship="BeverageAuditModel.FK_SalesMixes_ServingLocations" FromRole="ServingLocations" ToRole="SalesMixes" />
+          <NavigationProperty Name="SalesMixesOthers" Relationship="BeverageAuditModel.FK_SalesMixesOthers_ServingLocations" FromRole="ServingLocations" ToRole="SalesMixesOthers" />
+          <NavigationProperty Name="SalesMixesWithCheckTypes" Relationship="BeverageAuditModel.FK_SalesMixesWithCheckTypes_ServingLocations" FromRole="ServingLocations" ToRole="SalesMixesWithCheckTypes" />
+        </EntityType>
+        <Association Name="FK_SalesCategories_SalesDepartments">
+          <End Role="SalesDepartments" Type="BeverageAuditModel.SalesDepartment" Multiplicity="1" />
+          <End Role="SalesCategories" Type="BeverageAuditModel.SalesCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesDepartments">
+              <PropertyRef Name="RevenueClassId" />
+            </Principal>
+            <Dependent Role="SalesCategories">
+              <PropertyRef Name="RevenueClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesSubcategories_SalesCategories">
+          <End Role="SalesCategories" Type="BeverageAuditModel.SalesCategory" Multiplicity="1" />
+          <End Role="SalesSubcategories" Type="BeverageAuditModel.SalesSubcategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesCategories">
+              <PropertyRef Name="RevenueCategoryId" />
+            </Principal>
+            <Dependent Role="SalesSubcategories">
+              <PropertyRef Name="RevenueCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesMixes_SalesIntervalConfigurations">
+          <End Role="SalesIntervalConfigurations" Type="BeverageAuditModel.SalesIntervalConfiguration" Multiplicity="1" />
+          <End Role="SalesMixes" Type="BeverageAuditModel.SalesMix" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesIntervalConfigurations">
+              <PropertyRef Name="SalesIntervalId" />
+            </Principal>
+            <Dependent Role="SalesMixes">
+              <PropertyRef Name="SalesIntervalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesMixesOthers_SalesIntervalConfigurations">
+          <End Role="SalesIntervalConfigurations" Type="BeverageAuditModel.SalesIntervalConfiguration" Multiplicity="1" />
+          <End Role="SalesMixesOthers" Type="BeverageAuditModel.SalesMixesOther" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesIntervalConfigurations">
+              <PropertyRef Name="SalesIntervalId" />
+            </Principal>
+            <Dependent Role="SalesMixesOthers">
+              <PropertyRef Name="SalesIntervalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesMixesWithCheckTypes_SalesIntervalConfigurations">
+          <End Role="SalesIntervalConfigurations" Type="BeverageAuditModel.SalesIntervalConfiguration" Multiplicity="1" />
+          <End Role="SalesMixesWithCheckTypes" Type="BeverageAuditModel.SalesMixesWithCheckType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesIntervalConfigurations">
+              <PropertyRef Name="SalesIntervalId" />
+            </Principal>
+            <Dependent Role="SalesMixesWithCheckTypes">
+              <PropertyRef Name="SalesIntervalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesItems_SalesSubcategories">
+          <End Role="SalesSubcategories" Type="BeverageAuditModel.SalesSubcategory" Multiplicity="1" />
+          <End Role="SalesItems" Type="BeverageAuditModel.SalesItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesSubcategories">
+              <PropertyRef Name="ProductClassId" />
+            </Principal>
+            <Dependent Role="SalesItems">
+              <PropertyRef Name="ProductClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesMixes_SalesItems">
+          <End Role="SalesItems" Type="BeverageAuditModel.SalesItem" Multiplicity="1" />
+          <End Role="SalesMixes" Type="BeverageAuditModel.SalesMix" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesItems">
+              <PropertyRef Name="MenuItemId" />
+            </Principal>
+            <Dependent Role="SalesMixes">
+              <PropertyRef Name="MenuItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesMixesOthers_SalesItems">
+          <End Role="SalesItems" Type="BeverageAuditModel.SalesItem" Multiplicity="1" />
+          <End Role="SalesMixesOthers" Type="BeverageAuditModel.SalesMixesOther" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesItems">
+              <PropertyRef Name="MenuItemId" />
+            </Principal>
+            <Dependent Role="SalesMixesOthers">
+              <PropertyRef Name="MenuItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesMixesWithCheckTypes_SalesItems">
+          <End Role="SalesItems" Type="BeverageAuditModel.SalesItem" Multiplicity="1" />
+          <End Role="SalesMixesWithCheckTypes" Type="BeverageAuditModel.SalesMixesWithCheckType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesItems">
+              <PropertyRef Name="MenuItemId" />
+            </Principal>
+            <Dependent Role="SalesMixesWithCheckTypes">
+              <PropertyRef Name="MenuItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesItemsConfigurations_SalesSubcategories">
+          <End Role="SalesSubcategories" Type="BeverageAuditModel.SalesSubcategory" Multiplicity="1" />
+          <End Role="SalesItemsConfigurations" Type="BeverageAuditModel.SalesItemsConfiguration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesSubcategories">
+              <PropertyRef Name="ProductClassId" />
+            </Principal>
+            <Dependent Role="SalesItemsConfigurations">
+              <PropertyRef Name="ProductClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesMixes_ServingLocations">
+          <End Role="ServingLocations" Type="BeverageAuditModel.ServingLocation" Multiplicity="1" />
+          <End Role="SalesMixes" Type="BeverageAuditModel.SalesMix" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServingLocations">
+              <PropertyRef Name="ProfitCenterId" />
+            </Principal>
+            <Dependent Role="SalesMixes">
+              <PropertyRef Name="ProfitCenterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesMixesOthers_ServingLocations">
+          <End Role="ServingLocations" Type="BeverageAuditModel.ServingLocation" Multiplicity="1" />
+          <End Role="SalesMixesOthers" Type="BeverageAuditModel.SalesMixesOther" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServingLocations">
+              <PropertyRef Name="ProfitCenterId" />
+            </Principal>
+            <Dependent Role="SalesMixesOthers">
+              <PropertyRef Name="ProfitCenterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SalesMixesWithCheckTypes_ServingLocations">
+          <End Role="ServingLocations" Type="BeverageAuditModel.ServingLocation" Multiplicity="1" />
+          <End Role="SalesMixesWithCheckTypes" Type="BeverageAuditModel.SalesMixesWithCheckType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ServingLocations">
+              <PropertyRef Name="ProfitCenterId" />
+            </Principal>
+            <Dependent Role="SalesMixesWithCheckTypes">
+              <PropertyRef Name="ProfitCenterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="OrderHeader">
+          <Key>
+            <PropertyRef Name="Identifier" />
+            <PropertyRef Name="OrderHeaderID" />
+            <PropertyRef Name="BusinessDay" />
+            <PropertyRef Name="OrderProcessed" />
+            <PropertyRef Name="CheckNumber" />
+            <PropertyRef Name="AssociatedCheckNumber" />
+            <PropertyRef Name="CheckTypeID" />
+            <PropertyRef Name="CheckStatus" />
+            <PropertyRef Name="ProfitCenterID" />
+            <PropertyRef Name="MealPeriodID" />
+            <PropertyRef Name="VoidReasonID" />
+            <PropertyRef Name="TableNumber" />
+            <PropertyRef Name="NumberOfGuests" />
+            <PropertyRef Name="PrintCount" />
+            <PropertyRef Name="CashierEmployeeID" />
+            <PropertyRef Name="ServerEmployeeID" />
+            <PropertyRef Name="OpenTime" />
+            <PropertyRef Name="CloseTime" />
+            <PropertyRef Name="OpenTerminalID" />
+            <PropertyRef Name="CloseTerminalID" />
+            <PropertyRef Name="DrawerNumber" />
+            <PropertyRef Name="SalesAmountGross" />
+            <PropertyRef Name="DiscountAmount" />
+            <PropertyRef Name="TaxAmount" />
+            <PropertyRef Name="TaxRemovedFlag" />
+            <PropertyRef Name="TipAmount" />
+            <PropertyRef Name="GratuityAmount" />
+            <PropertyRef Name="ServiceCharge" />
+          </Key>
+          <Property Type="String" Name="Identifier" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="OrderHeaderID" Nullable="false" />
+          <Property Type="Int32" Name="BusinessDay" Nullable="false" />
+          <Property Type="DateTime" Name="OrderProcessed" Nullable="false" />
+          <Property Type="Int32" Name="CheckNumber" Nullable="false" />
+          <Property Type="Int32" Name="AssociatedCheckNumber" Nullable="false" />
+          <Property Type="Int32" Name="CheckTypeID" Nullable="false" />
+          <Property Type="Int32" Name="CheckStatus" Nullable="false" />
+          <Property Type="Int32" Name="ProfitCenterID" Nullable="false" />
+          <Property Type="Int32" Name="MealPeriodID" Nullable="false" />
+          <Property Type="Int32" Name="VoidReasonID" Nullable="false" />
+          <Property Type="String" Name="TableNumber" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="NumberOfGuests" Nullable="false" />
+          <Property Type="Int32" Name="PrintCount" Nullable="false" />
+          <Property Type="Int32" Name="CashierEmployeeID" Nullable="false" />
+          <Property Type="Int32" Name="ServerEmployeeID" Nullable="false" />
+          <Property Type="DateTime" Name="OpenTime" Nullable="false" />
+          <Property Type="DateTime" Name="CloseTime" Nullable="false" />
+          <Property Type="Int32" Name="OpenTerminalID" Nullable="false" />
+          <Property Type="Int32" Name="CloseTerminalID" Nullable="false" />
+          <Property Type="Int32" Name="DrawerNumber" Nullable="false" />
+          <Property Type="Decimal" Name="SalesAmountGross" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="DiscountAmount" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="TaxAmount" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Boolean" Name="TaxRemovedFlag" Nullable="false" />
+          <Property Type="Decimal" Name="TipAmount" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="GratuityAmount" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="ServiceCharge" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="OrderItemMods" Relationship="BeverageAuditModel.FK_OrderItemMod_OrderHeader" FromRole="OrderHeader" ToRole="OrderItemMod" />
+        </EntityType>
+        <EntityType Name="OrderItemMod">
+          <Key>
+            <PropertyRef Name="Identifier" />
+            <PropertyRef Name="OrderHeaderID" />
+            <PropertyRef Name="CheckSeq" />
+            <PropertyRef Name="MenuItemCheckSeq" />
+            <PropertyRef Name="ModifierID" />
+            <PropertyRef Name="ModifierMenuItemID" />
+            <PropertyRef Name="ModifierQuantity" />
+            <PropertyRef Name="SalesAmountGross" />
+            <PropertyRef Name="DiscountAmount" />
+            <PropertyRef Name="DiscountGroup" />
+            <PropertyRef Name="TaxAmountInSales" />
+            <PropertyRef Name="TaxAmountDiscount" />
+            <PropertyRef Name="TaxIncluded" />
+            <PropertyRef Name="VoidTypeID" />
+            <PropertyRef Name="VoidReasonID" />
+            <PropertyRef Name="CheckVoidReasonID" />
+            <PropertyRef Name="ServerEmployeeID" />
+            <PropertyRef Name="SplitItemFlag" />
+            <PropertyRef Name="MealPeriodID" />
+            <PropertyRef Name="CheckTypeID" />
+            <PropertyRef Name="ProfitCenterID" />
+            <PropertyRef Name="NestLevel" />
+            <PropertyRef Name="PriceLevelID" />
+            <PropertyRef Name="ModifierMenuItemIDX" />
+            <PropertyRef Name="OrderItemModID" />
+          </Key>
+          <Property Type="String" Name="Identifier" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="Int32" Name="OrderHeaderID" Nullable="false" />
+          <Property Type="Int32" Name="CheckSeq" Nullable="false" />
+          <Property Type="Int32" Name="MenuItemCheckSeq" Nullable="false" />
+          <Property Type="Int32" Name="ModifierID" Nullable="false" />
+          <Property Type="Int32" Name="ModifierMenuItemID" Nullable="false" />
+          <Property Type="Int32" Name="ModifierQuantity" Nullable="false" />
+          <Property Type="Decimal" Name="SalesAmountGross" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="DiscountAmount" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Int32" Name="DiscountGroup" Nullable="false" />
+          <Property Type="Decimal" Name="TaxAmountInSales" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Decimal" Name="TaxAmountDiscount" Nullable="false" Precision="19" Scale="4" />
+          <Property Type="Boolean" Name="TaxIncluded" Nullable="false" />
+          <Property Type="Int32" Name="VoidTypeID" Nullable="false" />
+          <Property Type="Int32" Name="VoidReasonID" Nullable="false" />
+          <Property Type="Int32" Name="CheckVoidReasonID" Nullable="false" />
+          <Property Type="Int32" Name="ServerEmployeeID" Nullable="false" />
+          <Property Type="Boolean" Name="SplitItemFlag" Nullable="false" />
+          <Property Type="Int32" Name="MealPeriodID" Nullable="false" />
+          <Property Type="Int32" Name="CheckTypeID" Nullable="false" />
+          <Property Type="Int32" Name="ProfitCenterID" Nullable="false" />
+          <Property Type="Int32" Name="NestLevel" Nullable="false" />
+          <Property Type="Int32" Name="PriceLevelID" Nullable="false" />
+          <Property Type="Int32" Name="ModifierMenuItemIDX" Nullable="false" />
+          <Property Type="Guid" Name="OrderItemModID" Nullable="false" />
+          <NavigationProperty Name="OrderHeader" Relationship="BeverageAuditModel.FK_OrderItemMod_OrderHeader" FromRole="OrderItemMod" ToRole="OrderHeader" />
+          <NavigationProperty Name="SalesItem" Relationship="BeverageAuditModel.FK_OrderItemMod_SalesItems" FromRole="OrderItemMod" ToRole="SalesItem" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Type="String" Name="name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="principal_id" Nullable="false" />
+          <Property Type="Int32" Name="diagram_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="version" />
+          <Property Type="Binary" Name="definition" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_OrderItemMod_OrderHeader">
+          <End Type="BeverageAuditModel.OrderHeader" Role="OrderHeader" Multiplicity="1" />
+          <End Type="BeverageAuditModel.OrderItemMod" Role="OrderItemMod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OrderHeader">
+              <PropertyRef Name="OrderHeaderID" />
+            </Principal>
+            <Dependent Role="OrderItemMod">
+              <PropertyRef Name="OrderHeaderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrderItemMod_SalesItems">
+          <End Type="BeverageAuditModel.SalesItem" Role="SalesItem" Multiplicity="1" />
+          <End Type="BeverageAuditModel.OrderItemMod" Role="OrderItemMod" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SalesItem">
+              <PropertyRef Name="MenuItemId" />
+            </Principal>
+            <Dependent Role="OrderItemMod">
+              <PropertyRef Name="ModifierMenuItemID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BeverageAuditModelStoreContainer" CdmEntityContainer="AuditEntities">
+          <EntitySetMapping Name="SalesCategories"><EntityTypeMapping TypeName="BeverageAuditModel.SalesCategory"><MappingFragment StoreEntitySet="SalesCategories">
+            <ScalarProperty Name="RevenueCategoryId" ColumnName="RevenueCategoryId" />
+            <ScalarProperty Name="RevenueCategoryName" ColumnName="RevenueCategoryName" />
+            <ScalarProperty Name="RevenueClassId" ColumnName="RevenueClassId" />
+            <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SalesDepartments"><EntityTypeMapping TypeName="BeverageAuditModel.SalesDepartment"><MappingFragment StoreEntitySet="SalesDepartments">
+            <ScalarProperty Name="RevenueClassId" ColumnName="RevenueClassId" />
+            <ScalarProperty Name="RevenueClassName" ColumnName="RevenueClassName" />
+            <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SalesIntervalConfigurations"><EntityTypeMapping TypeName="BeverageAuditModel.SalesIntervalConfiguration"><MappingFragment StoreEntitySet="SalesIntervalConfigurations">
+            <ScalarProperty Name="SalesIntervalId" ColumnName="SalesIntervalId" />
+            <ScalarProperty Name="IntervalName" ColumnName="IntervalName" />
+            <ScalarProperty Name="MilitaryStartTime" ColumnName="MilitaryStartTime" />
+            <ScalarProperty Name="MilitaryEndTime" ColumnName="MilitaryEndTime" />
+            <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SalesItems"><EntityTypeMapping TypeName="BeverageAuditModel.SalesItem"><MappingFragment StoreEntitySet="SalesItems">
+            <ScalarProperty Name="MenuItemId" ColumnName="MenuItemId" />
+            <ScalarProperty Name="MenuItemName" ColumnName="MenuItemName" />
+            <ScalarProperty Name="ProductClassId" ColumnName="ProductClassId" />
+            <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SalesItemsConfigurations"><EntityTypeMapping TypeName="BeverageAuditModel.SalesItemsConfiguration"><MappingFragment StoreEntitySet="SalesItemsConfigurations">
+            <ScalarProperty Name="MenuItemId" ColumnName="MenuItemId" />
+            <ScalarProperty Name="MenuItemName" ColumnName="MenuItemName" />
+            <ScalarProperty Name="ProductClassId" ColumnName="ProductClassId" />
+            <ScalarProperty Name="SKUIdentifier" ColumnName="SKUIdentifier" />
+            <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SalesMixes"><EntityTypeMapping TypeName="BeverageAuditModel.SalesMix"><MappingFragment StoreEntitySet="SalesMixes">
+            <ScalarProperty Name="SalesMixId" ColumnName="SalesMixId" />
+            <ScalarProperty Name="Date" ColumnName="Date" />
+            <ScalarProperty Name="ProfitCenterId" ColumnName="ProfitCenterId" />
+            <ScalarProperty Name="SalesIntervalId" ColumnName="SalesIntervalId" />
+            <ScalarProperty Name="MenuItemId" ColumnName="MenuItemId" />
+            <ScalarProperty Name="Price" ColumnName="Price" />
+            <ScalarProperty Name="Count" ColumnName="Count" />
+            <ScalarProperty Name="ExtendedAmount" ColumnName="ExtendedAmount" />
+            <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SalesMixesOthers"><EntityTypeMapping TypeName="BeverageAuditModel.SalesMixesOther"><MappingFragment StoreEntitySet="SalesMixesOthers">
+            <ScalarProperty Name="SalesMixesOtherId" ColumnName="SalesMixesOtherId" />
+            <ScalarProperty Name="Date" ColumnName="Date" />
+            <ScalarProperty Name="ProfitCenterId" ColumnName="ProfitCenterId" />
+            <ScalarProperty Name="CheckTypeId" ColumnName="CheckTypeId" />
+            <ScalarProperty Name="SalesIntervalId" ColumnName="SalesIntervalId" />
+            <ScalarProperty Name="MenuItemId" ColumnName="MenuItemId" />
+            <ScalarProperty Name="Price" ColumnName="Price" />
+            <ScalarProperty Name="Count" ColumnName="Count" />
+            <ScalarProperty Name="ExtendedAmount" ColumnName="ExtendedAmount" />
+            <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SalesMixesWithCheckTypes"><EntityTypeMapping TypeName="BeverageAuditModel.SalesMixesWithCheckType"><MappingFragment StoreEntitySet="SalesMixesWithCheckTypes">
+            <ScalarProperty Name="SalesMixWithCheckTypeId" ColumnName="SalesMixWithCheckTypeId" />
+            <ScalarProperty Name="Date" ColumnName="Date" />
+            <ScalarProperty Name="ProfitCenterId" ColumnName="ProfitCenterId" />
+            <ScalarProperty Name="CheckTypeId" ColumnName="CheckTypeId" />
+            <ScalarProperty Name="SalesIntervalId" ColumnName="SalesIntervalId" />
+            <ScalarProperty Name="MenuItemId" ColumnName="MenuItemId" />
+            <ScalarProperty Name="Price" ColumnName="Price" />
+            <ScalarProperty Name="Count" ColumnName="Count" />
+            <ScalarProperty Name="ExtendedAmount" ColumnName="ExtendedAmount" />
+            <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="SalesSubcategories"><EntityTypeMapping TypeName="BeverageAuditModel.SalesSubcategory"><MappingFragment StoreEntitySet="SalesSubcategories">
+            <ScalarProperty Name="ProductClassId" ColumnName="ProductClassId" />
+            <ScalarProperty Name="ProductClassName" ColumnName="ProductClassName" />
+            <ScalarProperty Name="RevenueCategoryId" ColumnName="RevenueCategoryId" />
+            <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ServingLocations"><EntityTypeMapping TypeName="BeverageAuditModel.ServingLocation"><MappingFragment StoreEntitySet="ServingLocations">
+            <ScalarProperty Name="ProfitCenterId" ColumnName="ProfitCenterId" />
+            <ScalarProperty Name="ProfitCenterName" ColumnName="ProfitCenterName" />
+            <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="OrderHeaders">
+            <EntityTypeMapping TypeName="BeverageAuditModel.OrderHeader">
+              <MappingFragment StoreEntitySet="OrderHeader">
+                <ScalarProperty Name="ServiceCharge" ColumnName="ServiceCharge" />
+                <ScalarProperty Name="GratuityAmount" ColumnName="GratuityAmount" />
+                <ScalarProperty Name="TipAmount" ColumnName="TipAmount" />
+                <ScalarProperty Name="TaxRemovedFlag" ColumnName="TaxRemovedFlag" />
+                <ScalarProperty Name="TaxAmount" ColumnName="TaxAmount" />
+                <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+                <ScalarProperty Name="SalesAmountGross" ColumnName="SalesAmountGross" />
+                <ScalarProperty Name="DrawerNumber" ColumnName="DrawerNumber" />
+                <ScalarProperty Name="CloseTerminalID" ColumnName="CloseTerminalID" />
+                <ScalarProperty Name="OpenTerminalID" ColumnName="OpenTerminalID" />
+                <ScalarProperty Name="CloseTime" ColumnName="CloseTime" />
+                <ScalarProperty Name="OpenTime" ColumnName="OpenTime" />
+                <ScalarProperty Name="ServerEmployeeID" ColumnName="ServerEmployeeID" />
+                <ScalarProperty Name="CashierEmployeeID" ColumnName="CashierEmployeeID" />
+                <ScalarProperty Name="PrintCount" ColumnName="PrintCount" />
+                <ScalarProperty Name="NumberOfGuests" ColumnName="NumberOfGuests" />
+                <ScalarProperty Name="TableNumber" ColumnName="TableNumber" />
+                <ScalarProperty Name="VoidReasonID" ColumnName="VoidReasonID" />
+                <ScalarProperty Name="MealPeriodID" ColumnName="MealPeriodID" />
+                <ScalarProperty Name="ProfitCenterID" ColumnName="ProfitCenterID" />
+                <ScalarProperty Name="CheckStatus" ColumnName="CheckStatus" />
+                <ScalarProperty Name="CheckTypeID" ColumnName="CheckTypeID" />
+                <ScalarProperty Name="AssociatedCheckNumber" ColumnName="AssociatedCheckNumber" />
+                <ScalarProperty Name="CheckNumber" ColumnName="CheckNumber" />
+                <ScalarProperty Name="OrderProcessed" ColumnName="OrderProcessed" />
+                <ScalarProperty Name="BusinessDay" ColumnName="BusinessDay" />
+                <ScalarProperty Name="OrderHeaderID" ColumnName="OrderHeaderID" />
+                <ScalarProperty Name="Identifier" ColumnName="Identifier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderItemMods">
+            <EntityTypeMapping TypeName="BeverageAuditModel.OrderItemMod">
+              <MappingFragment StoreEntitySet="OrderItemMod">
+                <ScalarProperty Name="OrderItemModID" ColumnName="OrderItemModID" />
+                <ScalarProperty Name="ModifierMenuItemIDX" ColumnName="ModifierMenuItemIDX" />
+                <ScalarProperty Name="PriceLevelID" ColumnName="PriceLevelID" />
+                <ScalarProperty Name="NestLevel" ColumnName="NestLevel" />
+                <ScalarProperty Name="ProfitCenterID" ColumnName="ProfitCenterID" />
+                <ScalarProperty Name="CheckTypeID" ColumnName="CheckTypeID" />
+                <ScalarProperty Name="MealPeriodID" ColumnName="MealPeriodID" />
+                <ScalarProperty Name="SplitItemFlag" ColumnName="SplitItemFlag" />
+                <ScalarProperty Name="ServerEmployeeID" ColumnName="ServerEmployeeID" />
+                <ScalarProperty Name="CheckVoidReasonID" ColumnName="CheckVoidReasonID" />
+                <ScalarProperty Name="VoidReasonID" ColumnName="VoidReasonID" />
+                <ScalarProperty Name="VoidTypeID" ColumnName="VoidTypeID" />
+                <ScalarProperty Name="TaxIncluded" ColumnName="TaxIncluded" />
+                <ScalarProperty Name="TaxAmountDiscount" ColumnName="TaxAmountDiscount" />
+                <ScalarProperty Name="TaxAmountInSales" ColumnName="TaxAmountInSales" />
+                <ScalarProperty Name="DiscountGroup" ColumnName="DiscountGroup" />
+                <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+                <ScalarProperty Name="SalesAmountGross" ColumnName="SalesAmountGross" />
+                <ScalarProperty Name="ModifierQuantity" ColumnName="ModifierQuantity" />
+                <ScalarProperty Name="ModifierMenuItemID" ColumnName="ModifierMenuItemID" />
+                <ScalarProperty Name="ModifierID" ColumnName="ModifierID" />
+                <ScalarProperty Name="MenuItemCheckSeq" ColumnName="MenuItemCheckSeq" />
+                <ScalarProperty Name="CheckSeq" ColumnName="CheckSeq" />
+                <ScalarProperty Name="OrderHeaderID" ColumnName="OrderHeaderID" />
+                <ScalarProperty Name="Identifier" ColumnName="Identifier" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="BeverageAuditModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="AuditModel">
+        <EntityTypeShape EntityType="BeverageAuditModel.SalesCategory" Width="1.5" PointX="3" PointY="7.875" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeverageAuditModel.SalesDepartment" Width="1.5" PointX="0.75" PointY="8.125" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeverageAuditModel.SalesIntervalConfiguration" Width="1.5" PointX="7.5" PointY="2.875" Height="2.5571907552083335" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeverageAuditModel.SalesItem" Width="1.5" PointX="7.5" PointY="6.25" Height="2.5571907552083344" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeverageAuditModel.SalesItemsConfiguration" Width="1.5" PointX="7.5" PointY="9.5" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeverageAuditModel.SalesMix" Width="1.5" PointX="9.75" PointY="5.875" Height="3.3263964843749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeverageAuditModel.SalesMixesOther" Width="1.5" PointX="12.75" PointY="5.75" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeverageAuditModel.SalesMixesWithCheckType" Width="1.5" PointX="9.75" PointY="0.75" Height="3.5186979166666674" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeverageAuditModel.SalesSubcategory" Width="1.5" PointX="5.25" PointY="7.75" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeverageAuditModel.ServingLocation" Width="1.5" PointX="7.5" PointY="13.125" Height="2.1725878906249996" IsExpanded="true" />
+        <AssociationConnector Association="BeverageAuditModel.FK_SalesCategories_SalesDepartments" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="9.0189925130208337" />
+          <ConnectorPoint PointX="3" PointY="9.0189925130208337" />
+        </AssociationConnector>
+        <AssociationConnector Association="BeverageAuditModel.FK_SalesSubcategories_SalesCategories" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="8.9612939453125" />
+          <ConnectorPoint PointX="5.25" PointY="8.9612939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="BeverageAuditModel.FK_SalesMixes_SalesIntervalConfigurations" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="5.4310359090544873" />
+          <ConnectorPoint PointX="9.3785744349011217" PointY="5.8060359090544873" />
+          <ConnectorPoint PointX="9.3785744349011217" PointY="5.5035744349011209" />
+          <ConnectorPoint PointX="9.4202411015677878" PointY="5.545241101567786" />
+          <ConnectorPoint PointX="9.5380922317655443" PointY="5.6630922317655443" />
+          <ConnectorPoint PointX="9.75" PointY="5.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="BeverageAuditModel.FK_SalesMixesOthers_SalesIntervalConfigurations" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="4.8498644128605761" />
+          <ConnectorPoint PointX="9.3541666666666661" PointY="4.8498644128605752" />
+          <ConnectorPoint PointX="9.5624999999999982" PointY="4.8498644128605761" />
+          <ConnectorPoint PointX="13.5" PointY="4.8498644128605761" />
+          <ConnectorPoint PointX="13.5" PointY="5.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="BeverageAuditModel.FK_SalesMixesWithCheckTypes_SalesIntervalConfigurations" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="3.5718489583333337" />
+          <ConnectorPoint PointX="9.3541666666666661" PointY="3.5718489583333328" />
+          <ConnectorPoint PointX="9.5624999999999982" PointY="3.5718489583333337" />
+          <ConnectorPoint PointX="9.75" PointY="3.5718489583333337" />
+        </AssociationConnector>
+        <AssociationConnector Association="BeverageAuditModel.FK_SalesItems_SalesSubcategories" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="8.37474609375" />
+          <ConnectorPoint PointX="7.5" PointY="8.37474609375" />
+        </AssociationConnector>
+        <AssociationConnector Association="BeverageAuditModel.FK_SalesMixes_SalesItems" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="8.34697121484375" />
+          <ConnectorPoint PointX="9.3229166666666661" PointY="8.34697121484375" />
+          <ConnectorPoint PointX="9.5624999999999982" PointY="8.34697121484375" />
+          <ConnectorPoint PointX="9.75" PointY="8.34697121484375" />
+        </AssociationConnector>
+        <AssociationConnector Association="BeverageAuditModel.FK_SalesMixesOthers_SalesItems" ManuallyRouted="false">
+          <ConnectorPoint PointX="8.2187475" PointY="6.25" />
+          <ConnectorPoint PointX="8.2187475" PointY="5.78125" />
+          <ConnectorPoint PointX="9.3541666666666661" PointY="5.7812499999999991" />
+          <ConnectorPoint PointX="9.5624999999999982" PointY="5.78125" />
+          <ConnectorPoint PointX="9.5729166666666679" PointY="5.7812499999999991" />
+          <ConnectorPoint PointX="9.7395833333333357" PointY="5.78125" />
+          <ConnectorPoint PointX="11.697916666666666" PointY="5.7812499999999991" />
+          <ConnectorPoint PointX="11.864583333333334" PointY="5.78125" />
+          <ConnectorPoint PointX="12.75" PointY="5.78125" />
+        </AssociationConnector>
+        <AssociationConnector Association="BeverageAuditModel.FK_SalesMixesWithCheckTypes_SalesItems" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="6.3123066923076925" />
+          <ConnectorPoint PointX="9.4375" PointY="5.8748066923076934" />
+          <ConnectorPoint PointX="9.4375" PointY="2.5093489583333337" />
+          <ConnectorPoint PointX="9.75" PointY="2.5093489583333337" />
+        </AssociationConnector>
+        <AssociationConnector Association="BeverageAuditModel.FK_SalesItemsConfigurations_SalesSubcategories" ManuallyRouted="false">
+          <ConnectorPoint PointX="6.75" PointY="9.8074446614583337" />
+          <ConnectorPoint PointX="7.5" PointY="9.8074446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="BeverageAuditModel.FK_SalesMixes_ServingLocations" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="13.131922076923077" />
+          <ConnectorPoint PointX="9.40625" PointY="12.725672076923075" />
+          <ConnectorPoint PointX="9.40625" PointY="7.569450242187501" />
+          <ConnectorPoint PointX="9.75" PointY="7.569450242187501" />
+        </AssociationConnector>
+        <AssociationConnector Association="BeverageAuditModel.FK_SalesMixesOthers_ServingLocations" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="13.150383615384616" />
+          <ConnectorPoint PointX="9.625" PointY="12.525383615384616" />
+          <ConnectorPoint PointX="9.625" PointY="9.6436979166666674" />
+          <ConnectorPoint PointX="11.697916666666666" PointY="9.6436979166666674" />
+          <ConnectorPoint PointX="11.864583333333334" PointY="9.6436979166666674" />
+          <ConnectorPoint PointX="12.375" PointY="9.6436979166666674" />
+          <ConnectorPoint PointX="12.75" PointY="9.2686979166666674" />
+        </AssociationConnector>
+        <AssociationConnector Association="BeverageAuditModel.FK_SalesMixesWithCheckTypes_ServingLocations" ManuallyRouted="false">
+          <ConnectorPoint PointX="9" PointY="13.187306692307692" />
+          <ConnectorPoint PointX="9.4791666666666661" PointY="12.749806692307693" />
+          <ConnectorPoint PointX="9.4791666666666661" PointY="2.5093489583333337" />
+          <ConnectorPoint PointX="9.75" PointY="2.5093489583333337" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="BeverageAuditModel.OrderHeader" Width="1.5" PointX="10.75" PointY="10.75" Height="6.4032194010416674" />
+        <EntityTypeShape EntityType="BeverageAuditModel.OrderItemMod" Width="1.5" PointX="0.75" PointY="0.75" Height="5.6340136718750031" />
+        <EntityTypeShape EntityType="BeverageAuditModel.sysdiagram" Width="1.5" PointX="3.375" PointY="0.75" Height="1.9802864583333388" />
+        <AssociationConnector Association="BeverageAuditModel.FK_OrderItemMod_OrderHeader" >
+          <ConnectorPoint PointX="11.78125" PointY="10.75" />
+          <ConnectorPoint PointX="11.78125" PointY="5.6379703776041667" />
+          <ConnectorPoint PointX="9.5963037109375016" PointY="5.6379703776041659" />
+          <ConnectorPoint PointX="9.295241101567786" PointY="5.6379703776041667" />
+          <ConnectorPoint PointX="9.2922402653140246" PointY="5.6379703776041659" />
+          <ConnectorPoint PointX="9.1255735986473567" PointY="5.6379703776041667" />
+          <ConnectorPoint PointX="2.25" PointY="5.6379703776041667" />
+        </AssociationConnector>
+        <AssociationConnector Association="BeverageAuditModel.FK_OrderItemMod_SalesItems" >
+          <ConnectorPoint PointX="7.5" PointY="6.605458984375" />
+          <ConnectorPoint PointX="2.25" PointY="6.605458984375" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,22 @@
+LIBRARY     MI.DLL
+
+EXPORTS
+    API_CloseComm                  @1   ; API_CloseComm
+    API_ISO14443TypeBTransCOSCmd   @11  ; API_ISO14443TypeBTransCOSCmd
+    API_ISO15693Lock               @10  ; API_ISO15693Lock
+    API_ISO15693Read               @8   ; API_ISO15693Read
+    API_ISO15693Write              @9   ; API_ISO15693Write
+    API_OpenComm                   @2   ; API_OpenComm
+    API_PCDDec                     @6   ; API_PCDDec
+    API_PCDInc                     @7   ; API_PCDInc
+    API_PCDInitVal                 @5   ; API_PCDInitVal
+    API_PCDRead                    @3   ; API_PCDRead
+    API_PCDWrite                   @4   ; API_PCDWrite
+    API_WCCreateFile               @13  ; API_WCCreateFile
+    API_WCKeyVerify                @12  ; API_WCKeyVerify
+    API_WCModifyKey                @17  ; API_WCModifyKey
+    API_WCReadRecord               @16  ; API_WCReadRecord
+    API_WCReset                    @18  ; API_WCReset
+    API_WCSelectFile               @14  ; API_WCSelectFile
+    API_WCWriteRecord              @15  ; API_WCWriteRecord
+    ___CPPdebugHook                @19  ; ___CPPdebugHook

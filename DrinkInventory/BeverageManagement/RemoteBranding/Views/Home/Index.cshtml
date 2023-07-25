@@ -1,0 +1,29 @@
+﻿@model RemoteBranding.Models.BrandedBottle
+
+@{
+    ViewBag.Title = "Remote Branding";
+}
+
+<h2>@ViewBag.Message</h2>
+<p>
+<div>
+@using (Html.BeginForm() )
+{ 
+    <fieldset> 
+        <legend>Brand Bottle</legend> 
+        <div> 
+            @Html.LabelFor( m => m.UPC )
+            @Html.EditorFor( m => m.UPC )
+        </div> 
+        <div> 
+            @Html.LabelFor( m => m.TagNumber)
+            @Html.EditorFor(m => m.TagNumber)
+        </div> 
+        <div> 
+            <label>&nbsp;</label> 
+            <input type="submit" value="Submit" class="submit" /> 
+        </div> 
+    </fieldset> 
+}
+</div>
+</p>

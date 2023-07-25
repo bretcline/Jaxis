@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountValidator", "AccountValidator.csproj", "{DDAA1DA6-61D5-4EBB-8DDA-0319946593A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidationEngine", "..\ValidationEngine\ValidationEngine.csproj", "{49135498-A290-41EE-BBCA-CAF63172A8F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IValidationEngine", "..\IValidationEngine\IValidationEngine.csproj", "{9932019B-42C8-4391-8172-41DE0780F117}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDAA1DA6-61D5-4EBB-8DDA-0319946593A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDAA1DA6-61D5-4EBB-8DDA-0319946593A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDAA1DA6-61D5-4EBB-8DDA-0319946593A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDAA1DA6-61D5-4EBB-8DDA-0319946593A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49135498-A290-41EE-BBCA-CAF63172A8F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49135498-A290-41EE-BBCA-CAF63172A8F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49135498-A290-41EE-BBCA-CAF63172A8F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49135498-A290-41EE-BBCA-CAF63172A8F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9932019B-42C8-4391-8172-41DE0780F117}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9932019B-42C8-4391-8172-41DE0780F117}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9932019B-42C8-4391-8172-41DE0780F117}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9932019B-42C8-4391-8172-41DE0780F117}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactControls", "ContactControls\ContactControls.csproj", "{47B28F7E-0EF5-4435-AB3B-CBD091B6C907}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFContactControls", "..\WPFContactControls\WPFContactControls.csproj", "{696388FB-9F10-44A1-BAB9-3CD8341F5D7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactDataInterfaces", "ContactDataInterfaces\ContactDataInterfaces.csproj", "{A70C59C4-BC4A-4866-A69E-A5827B1C77B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactData", "..\ContactData\ContactData.csproj", "{01D26C3C-AF17-439B-B261-63E5E2CBE348}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47B28F7E-0EF5-4435-AB3B-CBD091B6C907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47B28F7E-0EF5-4435-AB3B-CBD091B6C907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47B28F7E-0EF5-4435-AB3B-CBD091B6C907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47B28F7E-0EF5-4435-AB3B-CBD091B6C907}.Release|Any CPU.Build.0 = Release|Any CPU
+		{696388FB-9F10-44A1-BAB9-3CD8341F5D7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{696388FB-9F10-44A1-BAB9-3CD8341F5D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{696388FB-9F10-44A1-BAB9-3CD8341F5D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{696388FB-9F10-44A1-BAB9-3CD8341F5D7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A70C59C4-BC4A-4866-A69E-A5827B1C77B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A70C59C4-BC4A-4866-A69E-A5827B1C77B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A70C59C4-BC4A-4866-A69E-A5827B1C77B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A70C59C4-BC4A-4866-A69E-A5827B1C77B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01D26C3C-AF17-439B-B261-63E5E2CBE348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01D26C3C-AF17-439B-B261-63E5E2CBE348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01D26C3C-AF17-439B-B261-63E5E2CBE348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01D26C3C-AF17-439B-B261-63E5E2CBE348}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

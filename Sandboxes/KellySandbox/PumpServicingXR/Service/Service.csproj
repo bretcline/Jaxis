@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2AAB5F42-AF65-4AEC-8DA3-3B83D442A70D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WFT.PSService.Service</RootNamespace>
+    <AssemblyName>WFT.PSService.Service</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd Party\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Implementation\Generated\ActiveAppServer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ActiveAppServer.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Implementation\Processors\RecordProcessor.cs" />
+    <Compile Include="Properties\ApplicationInfo.cs" />
+    <Compile Include="Implementation\AppServer.cs" />
+    <Compile Include="Implementation\AppServerPartialClasses.cs" />
+    <Compile Include="Implementation\TransactionFactory.cs" />
+    <Compile Include="LoggedException.cs" />
+    <Compile Include="Persistence\DataCache.cs" />
+    <Compile Include="Persistence\DataConverter.cs" />
+    <Compile Include="Persistence\PersistenceManager.cs" />
+    <Compile Include="Persistence\SyncManager.cs" />
+    <Compile Include="Persistence\PSCache.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Implementation\Generated\ActiveAppServer.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ActiveAppServer.cs</LastGenOutput>
+    </None>
+    <None Include="Implementation\Generated\Settings.ttinclude" />
+    <None Include="Implementation\Generated\SQLServer.ttinclude" />
+    <None Include="log4net.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataManager\DataManager.csproj">
+      <Project>{3EB163AA-87DB-4DE8-89B2-F9B953C025E5}</Project>
+      <Name>DataManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{48FFFCA5-8D7F-4EC1-B500-96D5DDB47060}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PS.Shared\PS.Shared.csproj">
+      <Project>{D84261F6-D6A4-493B-B538-6FC504A6096F}</Project>
+      <Name>PS.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ServiceLibrary\ServiceLibrary.csproj">
+      <Project>{A4261486-9B80-46B2-A733-C8D28455FED9}</Project>
+      <Name>ServiceLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Sync.Shared\LFI.Sync.Shared.csproj">
+      <Project>{A2190EEE-D4C6-4B57-8ECD-EFDD09F1E888}</Project>
+      <Name>LFI.Sync.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

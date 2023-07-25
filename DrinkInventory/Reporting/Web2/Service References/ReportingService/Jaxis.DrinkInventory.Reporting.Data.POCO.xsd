@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="UserGroup">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="AreaIds" nillable="true" type="q1:ArrayOfguid" />
+      <xs:element minOccurs="0" name="AreaMemberships" nillable="true" type="tns:ArrayOfAreaMembership" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NavAreas" nillable="true" type="tns:ArrayOfArea" />
+      <xs:element minOccurs="0" name="NavOrganization" nillable="true" type="tns:Organization" />
+      <xs:element minOccurs="0" name="NavOrganizations" nillable="true" type="tns:ArrayOfOrganization" />
+      <xs:element minOccurs="0" name="NavUsers" nillable="true" type="tns:ArrayOfUser" />
+      <xs:element minOccurs="0" name="Organization" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="OrganizationId" type="ser:guid" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="OrganizationIds" nillable="true" type="q2:ArrayOfguid" />
+      <xs:element minOccurs="0" name="UserGroupId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UserGroupMemberships" nillable="true" type="tns:ArrayOfUserGroupMembership" />
+      <xs:element minOccurs="0" name="UserGroupXOrganizations" nillable="true" type="tns:ArrayOfUserGroupXOrganization" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UserIds" nillable="true" type="q3:ArrayOfguid" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="UserGroup" nillable="true" type="tns:UserGroup" />
+  <xs:complexType name="ArrayOfAreaMembership">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AreaMembership" nillable="true" type="tns:AreaMembership" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAreaMembership" nillable="true" type="tns:ArrayOfAreaMembership" />
+  <xs:complexType name="AreaMembership">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Area" nillable="true" type="tns:Area" />
+      <xs:element minOccurs="0" name="AreaId" type="ser:guid" />
+      <xs:element minOccurs="0" name="AreaMembershipId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UserGroup" nillable="true" type="tns:UserGroup" />
+      <xs:element minOccurs="0" name="UserGroupId" type="ser:guid" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="AreaMembership" nillable="true" type="tns:AreaMembership" />
+  <xs:complexType name="Area">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AreaId" type="ser:guid" />
+      <xs:element minOccurs="0" name="AreaMemberships" nillable="true" type="tns:ArrayOfAreaMembership" />
+      <xs:element minOccurs="0" name="Controller" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Area" nillable="true" type="tns:Area" />
+  <xs:complexType name="ArrayOfArea">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Area" nillable="true" type="tns:Area" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArea" nillable="true" type="tns:ArrayOfArea" />
+  <xs:complexType name="Organization">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NavChildren" nillable="true" type="tns:ArrayOfOrganization" />
+      <xs:element minOccurs="0" name="NavParent" nillable="true" type="tns:Organization" />
+      <xs:element minOccurs="0" name="NavUserGroups" nillable="true" type="tns:ArrayOfUserGroup" />
+      <xs:element minOccurs="0" name="NavUsers" nillable="true" type="tns:ArrayOfUser" />
+      <xs:element minOccurs="0" name="OrganizationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ParentId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="Path" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UserGroupIds" nillable="true" type="q4:ArrayOfguid" />
+      <xs:element minOccurs="0" name="UserGroupXOrganizations" nillable="true" type="tns:ArrayOfUserGroupXOrganization" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Organization" nillable="true" type="tns:Organization" />
+  <xs:complexType name="ArrayOfOrganization">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Organization" nillable="true" type="tns:Organization" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrganization" nillable="true" type="tns:ArrayOfOrganization" />
+  <xs:complexType name="ArrayOfUserGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserGroup" nillable="true" type="tns:UserGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserGroup" nillable="true" type="tns:ArrayOfUserGroup" />
+  <xs:complexType name="ArrayOfUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUser" nillable="true" type="tns:ArrayOfUser" />
+  <xs:complexType name="User">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NavOrganization" nillable="true" type="tns:Organization" />
+      <xs:element minOccurs="0" name="NavSessions" nillable="true" type="tns:ArrayOfSession" />
+      <xs:element minOccurs="0" name="NavUserGroupMemberships" nillable="true" type="tns:ArrayOfUserGroupMembership" />
+      <xs:element minOccurs="0" name="NavUserGroups" nillable="true" type="tns:ArrayOfUserGroup" />
+      <xs:element minOccurs="0" name="OrganizationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UserGroupIds" nillable="true" type="q5:ArrayOfguid" />
+      <xs:element minOccurs="0" name="UserId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VisibleWidgetIds" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="User" nillable="true" type="tns:User" />
+  <xs:complexType name="ArrayOfSession">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Session" nillable="true" type="tns:Session" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSession" nillable="true" type="tns:ArrayOfSession" />
+  <xs:complexType name="Session">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExpirationTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NavUser" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="SessionId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UserId" type="ser:guid" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Session" nillable="true" type="tns:Session" />
+  <xs:complexType name="ArrayOfUserGroupMembership">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserGroupMembership" nillable="true" type="tns:UserGroupMembership" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserGroupMembership" nillable="true" type="tns:ArrayOfUserGroupMembership" />
+  <xs:complexType name="UserGroupMembership">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="User" nillable="true" type="tns:User" />
+      <xs:element minOccurs="0" name="UserGroup" nillable="true" type="tns:UserGroup" />
+      <xs:element minOccurs="0" name="UserGroupId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UserGroupMembershipId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UserId" type="ser:guid" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="UserGroupMembership" nillable="true" type="tns:UserGroupMembership" />
+  <xs:complexType name="ArrayOfUserGroupXOrganization">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserGroupXOrganization" nillable="true" type="tns:UserGroupXOrganization" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUserGroupXOrganization" nillable="true" type="tns:ArrayOfUserGroupXOrganization" />
+  <xs:complexType name="UserGroupXOrganization">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Organization" nillable="true" type="tns:Organization" />
+      <xs:element minOccurs="0" name="OrganizationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UserGroup" nillable="true" type="tns:UserGroup" />
+      <xs:element minOccurs="0" name="UserGroupId" type="ser:guid" />
+      <xs:element minOccurs="0" name="UserGroupXOrganizationId" type="ser:guid" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="UserGroupXOrganization" nillable="true" type="tns:UserGroupXOrganization" />
+  <xs:complexType name="ArrayOfReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Report" nillable="true" type="tns:Report" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReport" nillable="true" type="tns:ArrayOfReport" />
+  <xs:complexType name="Report">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NavColumns" nillable="true" type="tns:ArrayOfColumn" />
+      <xs:element minOccurs="0" name="NavParameters" nillable="true" type="tns:ArrayOfParameter" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="ReportClassName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ReportId" type="ser:guid" />
+      <xs:element minOccurs="0" name="SelectCommand" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ShortName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Report" nillable="true" type="tns:Report" />
+  <xs:complexType name="ArrayOfColumn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Column" nillable="true" type="tns:Column" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfColumn" nillable="true" type="tns:ArrayOfColumn" />
+  <xs:complexType name="Column">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ColumnId" type="ser:guid" />
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NavReport" nillable="true" type="tns:Report" />
+      <xs:element minOccurs="0" name="ReportId" nillable="true" type="ser:guid" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Column" nillable="true" type="tns:Column" />
+  <xs:complexType name="ArrayOfParameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Parameter" nillable="true" type="tns:Parameter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParameter" nillable="true" type="tns:ArrayOfParameter" />
+  <xs:complexType name="Parameter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Label" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NavReport" nillable="true" type="tns:Report" />
+      <xs:element minOccurs="0" name="Order" type="xs:int" />
+      <xs:element minOccurs="0" name="ParameterId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ReportId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Type" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Parameter" nillable="true" type="tns:Parameter" />
+  <xs:complexType name="ArrayOfUPC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UPC" nillable="true" type="tns:UPC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUPC" nillable="true" type="tns:ArrayOfUPC" />
+  <xs:complexType name="UPC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BottleCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChildItemNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManufacturerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RootCategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Size" type="xs:int" />
+      <xs:element minOccurs="0" name="SizeLabel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPCId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Validated" type="xs:boolean" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="UPC" nillable="true" type="tns:UPC" />
+</xs:schema>

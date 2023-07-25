@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSCReport", "RSCReport\RSCReport.csproj", "{5232DCFC-05FC-4F4C-8DD5-D1A7E31A01FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RSCReport.Web", "RSCReport.Web\RSCReport.Web.csproj", "{5BE7B10E-9825-4943-8307-701368B16D09}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5232DCFC-05FC-4F4C-8DD5-D1A7E31A01FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5232DCFC-05FC-4F4C-8DD5-D1A7E31A01FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5232DCFC-05FC-4F4C-8DD5-D1A7E31A01FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5232DCFC-05FC-4F4C-8DD5-D1A7E31A01FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BE7B10E-9825-4943-8307-701368B16D09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BE7B10E-9825-4943-8307-701368B16D09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BE7B10E-9825-4943-8307-701368B16D09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BE7B10E-9825-4943-8307-701368B16D09}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,12 @@
+﻿@using Jaxis.DrinkInventory.Reporting.Web2.Infrastructure
+@model Jaxis.DrinkInventory.Reporting.Web2.Models.ReportViewModel
+
+@Html.DevExpress().ReportViewer(
+    settings => {
+        settings.Name = Model.ShortName;
+        settings.Report = Model.XtraReport;
+        settings.CallbackRouteValues = new { Controller = "Report", Action = "RefreshView", _reportId = Model.ReportId };
+        settings.ExportRouteValues = new { Controller = "Report", Action = "ReportViewerExportTo", _reportId = Model.ReportId };
+        settings.AutoSize = true;
+    }
+).GetHtml()

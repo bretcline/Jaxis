@@ -1,0 +1,17 @@
+﻿using System;
+
+namespace Jaxis.Inventory.Data
+{
+    public interface IPOSTicket : IDataObject<IPOSTicket>
+    {
+        Guid POSTicketID { get; }
+
+        string CheckNumber { get; set; }
+        string Comments { get; set; }
+        DateTime TicketDate { get; set; }
+        string Establishment { get; set; }
+        int GuestCount { get; set; }
+        string RawData { get; set; }
+        string CustomerTable { get; set; }
+    }
+}

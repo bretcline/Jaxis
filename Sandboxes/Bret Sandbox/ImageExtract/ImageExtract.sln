@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageExtract", "ImageExtract.csproj", "{7243B7D6-2EF2-4B5D-BBA5-14663700F476}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7243B7D6-2EF2-4B5D-BBA5-14663700F476}.Debug|x86.ActiveCfg = Debug|x86
+		{7243B7D6-2EF2-4B5D-BBA5-14663700F476}.Debug|x86.Build.0 = Debug|x86
+		{7243B7D6-2EF2-4B5D-BBA5-14663700F476}.Release|x86.ActiveCfg = Release|x86
+		{7243B7D6-2EF2-4B5D-BBA5-14663700F476}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

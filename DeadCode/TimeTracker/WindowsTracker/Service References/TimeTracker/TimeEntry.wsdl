@@ -1,0 +1,1505 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="_UID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="_PWD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoginResult" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Logout">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogoutResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Start">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="_TimeEntry" type="tns:TimeEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="TimeEntry">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TimeEntryID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProjectID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndTime" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Notes" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Project" type="tns:Project" />
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="tns:User" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Project">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProjectID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProjectVisible" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupXProject" type="tns:GroupXProject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GroupXProject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="GxPID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GroupID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProjectID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Group" type="tns:Group" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Group">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="GroupID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupDescription" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupXSecurities" type="tns:ArrayOfGroupXSecurity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfGroupXSecurity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GroupXSecurity" nillable="true" type="tns:GroupXSecurity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GroupXSecurity">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="GxSID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GroupID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SecurityID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Securities" type="tns:ArrayOfSecurity" />
+          <s:element minOccurs="0" maxOccurs="1" name="Group" type="tns:Group" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSecurity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Security" nillable="true" type="tns:Security" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Security">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="SecurityID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PageURL" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ControlName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="GroupXSecurity" type="tns:GroupXSecurity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="User">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Login" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Company" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserVisible" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PersonalGroupID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TimeEntries" type="tns:ArrayOfTimeEntry" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserSessions" type="tns:ArrayOfUserSession" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserXGroups" type="tns:ArrayOfUserXGroup" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTimeEntry">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TimeEntry" nillable="true" type="tns:TimeEntry" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUserSession">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserSession" nillable="true" type="tns:UserSession" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserSession">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UserSessionID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SessionID" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="tns:User" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfUserXGroup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="UserXGroup" nillable="true" type="tns:UserXGroup" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UserXGroup">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="UxGID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="GroupID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Group" type="tns:Group" />
+          <s:element minOccurs="0" maxOccurs="1" name="User" type="tns:User" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="StartResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StartResult" type="tns:TimeEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Stop">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="_TimeEntry" type="tns:TimeEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StopResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StopResult" type="tns:TimeEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjects">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_NeedAddNew" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectsResult" type="tns:ArrayOfProject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Project" nillable="true" type="tns:Project" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProjectsInGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="_RecievedGroup" type="tns:Group" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectsInGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectsInGroupResult" type="tns:ArrayOfProject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectsNotInGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="_RecievedGroup" type="tns:Group" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectsNotInGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectsNotInGroupResult" type="tns:ArrayOfProject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectByProjectID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_ProjectID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectByProjectIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectByProjectIDResult" type="tns:Project" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveAProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ProjectToRemove" type="tns:Project" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveAProjectResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetActiveProjects">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_AfterDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveProjectsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveProjectsResult" type="tns:ArrayOfProject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetActiveTimeEntries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="_ProjectIDs" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetActiveTimeEntriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveTimeEntriesResult" type="tns:ArrayOfTimeEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTimeEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="_TheTE" type="tns:TimeEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveTimeEntryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SaveTimeEntryResult" type="tns:TimeEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrEditProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="_RecievedProject" type="tns:Project" />
+            <s:element minOccurs="1" maxOccurs="1" name="_IsNew" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrEditProjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddOrEditProjectResult" type="tns:Project" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddProjectToGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_ProjectToAddID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_GroupID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddProjectToGroupResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveProjectFromGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_ProjectToRemoveID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_GroupID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveProjectFromGroupResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSessionResult" type="tns:UserSession" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeEntryByTEID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_TEID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeEntryByTEIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTimeEntryByTEIDResult" type="tns:TimeEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTERangeByUserID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_UserID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_StartTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="_EndTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTERangeByUserIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTERangeByUserIDResult" type="tns:ArrayOfTimeEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTERangeByProjectID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_ProjectID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_StartTime" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="_EndTime" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTERangeByProjectIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTERangeByProjectIDResult" type="tns:ArrayOfTimeEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserByUserID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_UserID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserByUserIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserByUserIDResult" type="tns:User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrEditUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="_RecievedUser" type="tns:User" />
+            <s:element minOccurs="1" maxOccurs="1" name="_IsNew" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrEditUserResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddUserToGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_UserToAddID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_GroupID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddUserToGroupResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="_RecievedUser" type="tns:User" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveUserResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveUserFromGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_UserToRemoveID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="_GroupID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveUserFromGroupResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetUsersInGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="_RecievedGroup" type="tns:Group" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersInGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUsersInGroupResult" type="tns:ArrayOfUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUser">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="User" nillable="true" type="tns:User" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetUsersNotInGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="_RecievedGroup" type="tns:Group" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUsersNotInGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUsersNotInGroupResult" type="tns:ArrayOfUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllGroups">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllGroupsResult" type="tns:ArrayOfGroup" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGroup">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Group" nillable="true" type="tns:Group" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllProjects">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllProjectsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllProjectsResult" type="tns:ArrayOfProject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllUsersResult" type="tns:ArrayOfUser" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupByGroupID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="1" maxOccurs="1" name="_TheGroupID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupByGroupIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGroupByGroupIDResult" type="tns:Group" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrEditGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="_RecievedGroup" type="tns:Group" />
+            <s:element minOccurs="1" maxOccurs="1" name="_IsNew" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddOrEditGroupResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RemoveGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="_SessionID" type="s1:guid" />
+            <s:element minOccurs="0" maxOccurs="1" name="_RecievedGroup" type="tns:Group" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoveGroupResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogoutSoapIn">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="LogoutSoapOut">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartSoapIn">
+    <wsdl:part name="parameters" element="tns:Start" />
+  </wsdl:message>
+  <wsdl:message name="StartSoapOut">
+    <wsdl:part name="parameters" element="tns:StartResponse" />
+  </wsdl:message>
+  <wsdl:message name="StopSoapIn">
+    <wsdl:part name="parameters" element="tns:Stop" />
+  </wsdl:message>
+  <wsdl:message name="StopSoapOut">
+    <wsdl:part name="parameters" element="tns:StopResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProjects" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectsInGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProjectsInGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectsInGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectsInGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectsNotInGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProjectsNotInGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectsNotInGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectsNotInGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectByProjectIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProjectByProjectID" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectByProjectIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectByProjectIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveAProject" />
+  </wsdl:message>
+  <wsdl:message name="RemoveAProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveAProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveProjectsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveProjects" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveProjectsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveProjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveTimeEntriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveTimeEntries" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveTimeEntriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveTimeEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveTimeEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:SaveTimeEntry" />
+  </wsdl:message>
+  <wsdl:message name="SaveTimeEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:SaveTimeEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOrEditProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOrEditProject" />
+  </wsdl:message>
+  <wsdl:message name="AddOrEditProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOrEditProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddProjectToGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:AddProjectToGroup" />
+  </wsdl:message>
+  <wsdl:message name="AddProjectToGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:AddProjectToGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveProjectFromGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveProjectFromGroup" />
+  </wsdl:message>
+  <wsdl:message name="RemoveProjectFromGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveProjectFromGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSession" />
+  </wsdl:message>
+  <wsdl:message name="GetSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeEntryByTEIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTimeEntryByTEID" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeEntryByTEIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeEntryByTEIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTERangeByUserIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTERangeByUserID" />
+  </wsdl:message>
+  <wsdl:message name="GetTERangeByUserIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTERangeByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTERangeByProjectIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTERangeByProjectID" />
+  </wsdl:message>
+  <wsdl:message name="GetTERangeByProjectIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTERangeByProjectIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserByUserIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserByUserID" />
+  </wsdl:message>
+  <wsdl:message name="GetUserByUserIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserByUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOrEditUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOrEditUser" />
+  </wsdl:message>
+  <wsdl:message name="AddOrEditUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOrEditUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddUserToGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:AddUserToGroup" />
+  </wsdl:message>
+  <wsdl:message name="AddUserToGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:AddUserToGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveUserSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveUser" />
+  </wsdl:message>
+  <wsdl:message name="RemoveUserSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveUserFromGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveUserFromGroup" />
+  </wsdl:message>
+  <wsdl:message name="RemoveUserFromGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveUserFromGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsersInGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersInGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersInGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersNotInGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUsersNotInGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetUsersNotInGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUsersNotInGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllGroups" />
+  </wsdl:message>
+  <wsdl:message name="GetAllGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProjectsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllProjects" />
+  </wsdl:message>
+  <wsdl:message name="GetAllProjectsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllProjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="GetAllUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupByGroupIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroupByGroupID" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupByGroupIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupByGroupIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddOrEditGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:AddOrEditGroup" />
+  </wsdl:message>
+  <wsdl:message name="AddOrEditGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:AddOrEditGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoveGroup" />
+  </wsdl:message>
+  <wsdl:message name="RemoveGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoveGroupResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TimeEntryServiceSoap">
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input message="tns:LogoutSoapIn" />
+      <wsdl:output message="tns:LogoutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Start">
+      <wsdl:input message="tns:StartSoapIn" />
+      <wsdl:output message="tns:StartSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Stop">
+      <wsdl:input message="tns:StopSoapIn" />
+      <wsdl:output message="tns:StopSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjects">
+      <wsdl:input message="tns:GetProjectsSoapIn" />
+      <wsdl:output message="tns:GetProjectsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectsInGroup">
+      <wsdl:input message="tns:GetProjectsInGroupSoapIn" />
+      <wsdl:output message="tns:GetProjectsInGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectsNotInGroup">
+      <wsdl:input message="tns:GetProjectsNotInGroupSoapIn" />
+      <wsdl:output message="tns:GetProjectsNotInGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectByProjectID">
+      <wsdl:input message="tns:GetProjectByProjectIDSoapIn" />
+      <wsdl:output message="tns:GetProjectByProjectIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAProject">
+      <wsdl:input message="tns:RemoveAProjectSoapIn" />
+      <wsdl:output message="tns:RemoveAProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveProjects">
+      <wsdl:input message="tns:GetActiveProjectsSoapIn" />
+      <wsdl:output message="tns:GetActiveProjectsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveTimeEntries">
+      <wsdl:input message="tns:GetActiveTimeEntriesSoapIn" />
+      <wsdl:output message="tns:GetActiveTimeEntriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTimeEntry">
+      <wsdl:input message="tns:SaveTimeEntrySoapIn" />
+      <wsdl:output message="tns:SaveTimeEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrEditProject">
+      <wsdl:input message="tns:AddOrEditProjectSoapIn" />
+      <wsdl:output message="tns:AddOrEditProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProjectToGroup">
+      <wsdl:input message="tns:AddProjectToGroupSoapIn" />
+      <wsdl:output message="tns:AddProjectToGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProjectFromGroup">
+      <wsdl:input message="tns:RemoveProjectFromGroupSoapIn" />
+      <wsdl:output message="tns:RemoveProjectFromGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSession">
+      <wsdl:input message="tns:GetSessionSoapIn" />
+      <wsdl:output message="tns:GetSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeEntryByTEID">
+      <wsdl:input message="tns:GetTimeEntryByTEIDSoapIn" />
+      <wsdl:output message="tns:GetTimeEntryByTEIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTERangeByUserID">
+      <wsdl:input message="tns:GetTERangeByUserIDSoapIn" />
+      <wsdl:output message="tns:GetTERangeByUserIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTERangeByProjectID">
+      <wsdl:input message="tns:GetTERangeByProjectIDSoapIn" />
+      <wsdl:output message="tns:GetTERangeByProjectIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByUserID">
+      <wsdl:input message="tns:GetUserByUserIDSoapIn" />
+      <wsdl:output message="tns:GetUserByUserIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrEditUser">
+      <wsdl:input message="tns:AddOrEditUserSoapIn" />
+      <wsdl:output message="tns:AddOrEditUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToGroup">
+      <wsdl:input message="tns:AddUserToGroupSoapIn" />
+      <wsdl:output message="tns:AddUserToGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUser">
+      <wsdl:input message="tns:RemoveUserSoapIn" />
+      <wsdl:output message="tns:RemoveUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFromGroup">
+      <wsdl:input message="tns:RemoveUserFromGroupSoapIn" />
+      <wsdl:output message="tns:RemoveUserFromGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInGroup">
+      <wsdl:input message="tns:GetUsersInGroupSoapIn" />
+      <wsdl:output message="tns:GetUsersInGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersNotInGroup">
+      <wsdl:input message="tns:GetUsersNotInGroupSoapIn" />
+      <wsdl:output message="tns:GetUsersNotInGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGroups">
+      <wsdl:input message="tns:GetAllGroupsSoapIn" />
+      <wsdl:output message="tns:GetAllGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProjects">
+      <wsdl:input message="tns:GetAllProjectsSoapIn" />
+      <wsdl:output message="tns:GetAllProjectsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <wsdl:input message="tns:GetAllUsersSoapIn" />
+      <wsdl:output message="tns:GetAllUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupByGroupID">
+      <wsdl:input message="tns:GetGroupByGroupIDSoapIn" />
+      <wsdl:output message="tns:GetGroupByGroupIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddOrEditGroup">
+      <wsdl:input message="tns:AddOrEditGroupSoapIn" />
+      <wsdl:output message="tns:AddOrEditGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroup">
+      <wsdl:input message="tns:RemoveGroupSoapIn" />
+      <wsdl:output message="tns:RemoveGroupSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TimeEntryServiceSoap" type="tns:TimeEntryServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="http://tempuri.org/Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Start">
+      <soap:operation soapAction="http://tempuri.org/Start" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Stop">
+      <soap:operation soapAction="http://tempuri.org/Stop" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjects">
+      <soap:operation soapAction="http://tempuri.org/GetProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectsInGroup">
+      <soap:operation soapAction="http://tempuri.org/GetProjectsInGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectsNotInGroup">
+      <soap:operation soapAction="http://tempuri.org/GetProjectsNotInGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectByProjectID">
+      <soap:operation soapAction="http://tempuri.org/GetProjectByProjectID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAProject">
+      <soap:operation soapAction="http://tempuri.org/RemoveAProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveProjects">
+      <soap:operation soapAction="http://tempuri.org/GetActiveProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveTimeEntries">
+      <soap:operation soapAction="http://tempuri.org/GetActiveTimeEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTimeEntry">
+      <soap:operation soapAction="http://tempuri.org/SaveTimeEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrEditProject">
+      <soap:operation soapAction="http://tempuri.org/AddOrEditProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProjectToGroup">
+      <soap:operation soapAction="http://tempuri.org/AddProjectToGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProjectFromGroup">
+      <soap:operation soapAction="http://tempuri.org/RemoveProjectFromGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSession">
+      <soap:operation soapAction="http://tempuri.org/GetSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeEntryByTEID">
+      <soap:operation soapAction="http://tempuri.org/GetTimeEntryByTEID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTERangeByUserID">
+      <soap:operation soapAction="http://tempuri.org/GetTERangeByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTERangeByProjectID">
+      <soap:operation soapAction="http://tempuri.org/GetTERangeByProjectID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByUserID">
+      <soap:operation soapAction="http://tempuri.org/GetUserByUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrEditUser">
+      <soap:operation soapAction="http://tempuri.org/AddOrEditUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToGroup">
+      <soap:operation soapAction="http://tempuri.org/AddUserToGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUser">
+      <soap:operation soapAction="http://tempuri.org/RemoveUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFromGroup">
+      <soap:operation soapAction="http://tempuri.org/RemoveUserFromGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInGroup">
+      <soap:operation soapAction="http://tempuri.org/GetUsersInGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersNotInGroup">
+      <soap:operation soapAction="http://tempuri.org/GetUsersNotInGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGroups">
+      <soap:operation soapAction="http://tempuri.org/GetAllGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProjects">
+      <soap:operation soapAction="http://tempuri.org/GetAllProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <soap:operation soapAction="http://tempuri.org/GetAllUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupByGroupID">
+      <soap:operation soapAction="http://tempuri.org/GetGroupByGroupID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrEditGroup">
+      <soap:operation soapAction="http://tempuri.org/AddOrEditGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroup">
+      <soap:operation soapAction="http://tempuri.org/RemoveGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TimeEntryServiceSoap12" type="tns:TimeEntryServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap12:operation soapAction="http://tempuri.org/Logout" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Start">
+      <soap12:operation soapAction="http://tempuri.org/Start" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Stop">
+      <soap12:operation soapAction="http://tempuri.org/Stop" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjects">
+      <soap12:operation soapAction="http://tempuri.org/GetProjects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectsInGroup">
+      <soap12:operation soapAction="http://tempuri.org/GetProjectsInGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectsNotInGroup">
+      <soap12:operation soapAction="http://tempuri.org/GetProjectsNotInGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectByProjectID">
+      <soap12:operation soapAction="http://tempuri.org/GetProjectByProjectID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveAProject">
+      <soap12:operation soapAction="http://tempuri.org/RemoveAProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveProjects">
+      <soap12:operation soapAction="http://tempuri.org/GetActiveProjects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveTimeEntries">
+      <soap12:operation soapAction="http://tempuri.org/GetActiveTimeEntries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveTimeEntry">
+      <soap12:operation soapAction="http://tempuri.org/SaveTimeEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrEditProject">
+      <soap12:operation soapAction="http://tempuri.org/AddOrEditProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProjectToGroup">
+      <soap12:operation soapAction="http://tempuri.org/AddProjectToGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveProjectFromGroup">
+      <soap12:operation soapAction="http://tempuri.org/RemoveProjectFromGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSession">
+      <soap12:operation soapAction="http://tempuri.org/GetSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeEntryByTEID">
+      <soap12:operation soapAction="http://tempuri.org/GetTimeEntryByTEID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTERangeByUserID">
+      <soap12:operation soapAction="http://tempuri.org/GetTERangeByUserID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTERangeByProjectID">
+      <soap12:operation soapAction="http://tempuri.org/GetTERangeByProjectID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByUserID">
+      <soap12:operation soapAction="http://tempuri.org/GetUserByUserID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrEditUser">
+      <soap12:operation soapAction="http://tempuri.org/AddOrEditUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddUserToGroup">
+      <soap12:operation soapAction="http://tempuri.org/AddUserToGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUser">
+      <soap12:operation soapAction="http://tempuri.org/RemoveUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveUserFromGroup">
+      <soap12:operation soapAction="http://tempuri.org/RemoveUserFromGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersInGroup">
+      <soap12:operation soapAction="http://tempuri.org/GetUsersInGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersNotInGroup">
+      <soap12:operation soapAction="http://tempuri.org/GetUsersNotInGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllGroups">
+      <soap12:operation soapAction="http://tempuri.org/GetAllGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProjects">
+      <soap12:operation soapAction="http://tempuri.org/GetAllProjects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <soap12:operation soapAction="http://tempuri.org/GetAllUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupByGroupID">
+      <soap12:operation soapAction="http://tempuri.org/GetGroupByGroupID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddOrEditGroup">
+      <soap12:operation soapAction="http://tempuri.org/AddOrEditGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveGroup">
+      <soap12:operation soapAction="http://tempuri.org/RemoveGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TimeEntryService">
+    <wsdl:port name="TimeEntryServiceSoap" binding="tns:TimeEntryServiceSoap">
+      <soap:address location="http://localhost/Timetracker/TimeEntry.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TimeEntryServiceSoap12" binding="tns:TimeEntryServiceSoap12">
+      <soap12:address location="http://localhost/Timetracker/TimeEntry.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

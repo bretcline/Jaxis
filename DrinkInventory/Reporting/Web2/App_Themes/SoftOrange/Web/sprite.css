@@ -1,0 +1,589 @@
+.dxWeb_rpHeaderTopLeftCorner_SoftOrange,
+.dxWeb_rpHeaderTopRightCorner_SoftOrange,
+.dxWeb_rpBottomLeftCorner_SoftOrange,
+.dxWeb_rpBottomRightCorner_SoftOrange,
+.dxWeb_rpTopLeftCorner_SoftOrange,
+.dxWeb_rpTopRightCorner_SoftOrange,
+.dxWeb_rpGroupBoxBottomLeftCorner_SoftOrange,
+.dxWeb_rpGroupBoxBottomRightCorner_SoftOrange,
+.dxWeb_rpGroupBoxTopLeftCorner_SoftOrange,
+.dxWeb_rpGroupBoxTopRightCorner_SoftOrange,
+.dxWeb_mHorizontalPopOut_SoftOrange,
+.dxWeb_mHorizontalPopOutSelected_SoftOrange,
+.dxWeb_mVerticalPopOut_SoftOrange,
+.dxWeb_mVerticalPopOutRtl_SoftOrange,
+.dxWeb_mSubMenuItem_SoftOrange,
+.dxWeb_mSubMenuItemChecked_SoftOrange,
+.dxWeb_mScrollUp_SoftOrange,
+.dxWeb_mScrollDown_SoftOrange,
+.dxWeb_tcScrollLeft_SoftOrange,
+.dxWeb_tcScrollRight_SoftOrange,
+.dxWeb_tcScrollLeftHover_SoftOrange,
+.dxWeb_tcScrollRightHover_SoftOrange,
+.dxWeb_tcScrollLeftPressed_SoftOrange,
+.dxWeb_tcScrollRightPressed_SoftOrange,
+.dxWeb_tcScrollLeftDisabled_SoftOrange,
+.dxWeb_tcScrollRightDisabled_SoftOrange,
+.dxWeb_nbCollapse_SoftOrange,
+.dxWeb_nbExpand_SoftOrange,
+.dxWeb_splVSeparator_SoftOrange,
+.dxWeb_splVSeparatorHover_SoftOrange,
+.dxWeb_splHSeparator_SoftOrange,
+.dxWeb_splHSeparatorHover_SoftOrange,
+.dxWeb_splVCollapseBackwardButton_SoftOrange,
+.dxWeb_splVCollapseBackwardButtonHover_SoftOrange,
+.dxWeb_splHCollapseBackwardButton_SoftOrange,
+.dxWeb_splHCollapseBackwardButtonHover_SoftOrange,
+.dxWeb_splVCollapseForwardButton_SoftOrange,
+.dxWeb_splVCollapseForwardButtonHover_SoftOrange,
+.dxWeb_splHCollapseForwardButton_SoftOrange,
+.dxWeb_splHCollapseForwardButtonHover_SoftOrange,
+.dxWeb_pcCloseButton_SoftOrange,
+.dxWeb_pcSizeGrip_SoftOrange,
+.dxWeb_pcSizeGripRtl_SoftOrange,
+.dxWeb_pAll_SoftOrange,
+.dxWeb_pAllDisabled_SoftOrange,
+.dxWeb_pPrev_SoftOrange,
+.dxWeb_pPrevDisabled_SoftOrange,
+.dxWeb_pNext_SoftOrange,
+.dxWeb_pNextDisabled_SoftOrange,
+.dxWeb_pLast_SoftOrange,
+.dxWeb_pLastDisabled_SoftOrange,
+.dxWeb_pFirst_SoftOrange,
+.dxWeb_pFirstDisabled_SoftOrange,
+.dxWeb_BackToTop_SoftOrange,
+.dxWeb_tvColBtn_SoftOrange,
+.dxWeb_tvColBtnRtl_SoftOrange,
+.dxWeb_tvExpBtn_SoftOrange,
+.dxWeb_tvExpBtnRtl_SoftOrange,
+.dxWeb_fmFolder_SoftOrange,
+.dxWeb_fmFolderLocked_SoftOrange,
+.dxWeb_fmCreateButton_SoftOrange,
+.dxWeb_fmMoveButton_SoftOrange,
+.dxWeb_fmRenameButton_SoftOrange,
+.dxWeb_fmDeleteButton_SoftOrange,
+.dxWeb_fmRefreshButton_SoftOrange,
+.dxWeb_fmDwnlButton_SoftOrange,
+.dxWeb_fmCreateButtonDisabled_SoftOrange,
+.dxWeb_fmMoveButtonDisabled_SoftOrange,
+.dxWeb_fmRenameButtonDisabled_SoftOrange,
+.dxWeb_fmDeleteButtonDisabled_SoftOrange,
+.dxWeb_fmRefreshButtonDisabled_SoftOrange,
+.dxWeb_fmDwnlButtonDisabled_SoftOrange,
+.dxWeb_ucClearButton_SoftOrange,
+.dxWeb_ucClearButtonDisabled_SoftOrange {
+    background-image: url('sprite.png');
+    -background-image: url('sprite.gif'); /* for IE6 */
+    background-repeat: no-repeat;
+    background-color: transparent;
+    display:block;
+}
+.dxWeb_mScrollUp_SoftOrange, .dxWeb_mScrollDown_SoftOrange
+{
+	margin: auto;
+}
+.dxWeb_BackToTop_SoftOrange,
+.dxWeb_pAll_SoftOrange,
+.dxWeb_pAllDisabled_SoftOrange,
+.dxWeb_pPrev_SoftOrange,
+.dxWeb_pPrevDisabled_SoftOrange,
+.dxWeb_pNext_SoftOrange,
+.dxWeb_pNextDisabled_SoftOrange,
+.dxWeb_pLast_SoftOrange,
+.dxWeb_pLastDisabled_SoftOrange,
+.dxWeb_pFirst_SoftOrange,
+.dxWeb_pFirstDisabled_SoftOrange
+{
+	display:inline;
+}
+
+.dxWeb_edtCheckBoxChecked_SoftOrange,
+.dxWeb_edtCheckBoxUnchecked_SoftOrange,
+.dxWeb_edtCheckBoxGrayed_SoftOrange,
+.dxWeb_edtCheckBoxCheckedDisabled_SoftOrange,
+.dxWeb_edtCheckBoxUncheckedDisabled_SoftOrange,
+.dxWeb_edtCheckBoxGrayedDisabled_SoftOrange {
+	background-image: url('sprite.png');
+    -background-image: url('sprite.gif'); /* for IE6 */
+    background-repeat: no-repeat;
+    background-color: transparent;
+	width: 15px;
+    height: 15px;
+}
+
+.dxWeb_edtCheckBoxUnchecked_SoftOrange {
+	background-position: -138px -104px;
+}
+.dxWeb_edtCheckBoxChecked_SoftOrange {
+	background-position: -138px -119px; 
+}
+.dxWeb_edtCheckBoxGrayed_SoftOrange {
+	background-position: -154px -104px;
+}
+.dxWeb_edtCheckBoxUncheckedDisabled_SoftOrange {
+	background-position: -154px -119px;
+}
+.dxWeb_edtCheckBoxCheckedDisabled_SoftOrange {
+	background-position: -170px -104px;
+}
+.dxWeb_edtCheckBoxGrayedDisabled_SoftOrange {
+	background-position: -170px -119px;
+}
+
+.dxWeb_rpHeaderTopLeftCorner_SoftOrange {
+    background-position: -104px -88px;
+    width: 9px;
+    height: 9px;
+}
+
+.dxWeb_rpHeaderTopRightCorner_SoftOrange {
+    background-position: -117px -88px;
+    width: 9px;
+    height: 9px;
+}
+
+.dxWeb_rpBottomLeftCorner_SoftOrange {
+    background-position: -78px -88px;
+    width: 9px;
+    height: 9px;
+}
+
+.dxWeb_rpBottomRightCorner_SoftOrange {
+    background-position: -91px -88px;
+    width: 9px;
+    height: 9px;
+}
+
+.dxWeb_rpTopLeftCorner_SoftOrange {
+    background-position: -52px -88px;
+    width: 9px;
+    height: 9px;
+}
+
+.dxWeb_rpTopRightCorner_SoftOrange {
+    background-position: -65px -88px;
+    width: 9px;
+    height: 9px;
+}
+
+.dxWeb_rpGroupBoxBottomLeftCorner_SoftOrange {
+    background-position: -26px -88px;
+    width: 9px;
+    height: 9px;
+}
+
+.dxWeb_rpGroupBoxBottomRightCorner_SoftOrange {
+    background-position: -39px -88px;
+    width: 9px;
+    height: 9px;
+}
+
+.dxWeb_rpGroupBoxTopLeftCorner_SoftOrange {
+    background-position: 0px -88px;
+    width: 9px;
+    height: 9px;
+}
+
+.dxWeb_rpGroupBoxTopRightCorner_SoftOrange {
+    background-position: -13px -88px;
+    width: 9px;
+    height: 9px;
+}
+
+.dxWeb_mHorizontalPopOut_SoftOrange {
+    background-position: -85px -61px;
+    width: 6px;
+    height: 4px;
+}
+
+.dxWeb_mHorizontalPopOutSelected_SoftOrange {
+    background-position: -85px -66px;
+    width: 6px;
+    height: 4px;
+}
+
+.dxWeb_mVerticalPopOut_SoftOrange {
+    background-position: -105px -50px;
+    width: 4px;
+    height: 8px;
+}
+
+.dxWeb_mVerticalPopOutRtl_SoftOrange {
+    background-position: -123px -50px;
+    width: 4px;
+    height: 8px;
+}
+
+.dxWeb_mSubMenuItem_SoftOrange {
+    background-position: -48px -50px;
+    width: 14px;
+    height: 14px;
+}
+
+.dxWeb_mSubMenuItemChecked_SoftOrange {
+    background-position: -70px -50px;
+    width: 14px;
+    height: 14px;
+}
+
+.dxWeb_mScrollUp_SoftOrange {
+    background-position: -85px -50px;
+    width: 7px;
+    height: 4px;
+}
+
+.dxWeb_mScrollDown_SoftOrange {
+    background-position: -85px -55px;
+    width: 7px;
+    height: 4px;
+}
+
+.dxmScrollButtonHover_SoftOrange .dxWeb_mScrollUp_SoftOrange,
+.dxmScrollButtonPressed_SoftOrange .dxWeb_mScrollUp_SoftOrange,
+.dxmLite_SoftOrange .dxm-scrollBtnHovered .dxWeb_mScrollUp_SoftOrange,
+.dxmLite_SoftOrange .dxm-scrollBtnPressed .dxWeb_mScrollUp_SoftOrange
+{
+    background-position: -93px -50px;
+    width: 7px;
+    height: 4px;
+}
+
+.dxmScrollButtonHover_SoftOrange .dxWeb_mScrollDown_SoftOrange,
+.dxmScrollButtonPressed_SoftOrange .dxWeb_mScrollDown_SoftOrange,
+.dxmLite_SoftOrange .dxm-scrollBtnHovered .dxWeb_mScrollDown_SoftOrange,
+.dxmLite_SoftOrange .dxm-scrollBtnPressed .dxWeb_mScrollDown_SoftOrange
+{
+    background-position: -93px -55px;
+    width: 7px;
+    height: 4px;
+}
+
+.dxWeb_tcScrollLeft_SoftOrange 
+{
+	background-position: -148px 0;
+	width: 19px;
+	height: 19px;
+}
+
+.dxWeb_tcScrollRight_SoftOrange
+{
+	background-position: -168px 0;
+	width: 19px;
+	height: 19px;
+}
+
+.dxWeb_tcScrollLeftHover_SoftOrange
+{
+	background-position: -148px -20px;
+	width: 19px;
+	height: 19px;
+}
+
+.dxWeb_tcScrollRightHover_SoftOrange
+{
+	background-position: -168px -20px;
+	width: 19px;
+	height: 19px;
+}
+
+.dxWeb_tcScrollLeftPressed_SoftOrange
+{
+	background-position: -148px -40px;
+	width: 19px;
+	height: 19px;
+}
+
+.dxWeb_tcScrollRightPressed_SoftOrange
+{
+	background-position: -168px -40px;
+	width: 19px;
+	height: 19px;
+}
+
+.dxWeb_tcScrollLeftDisabled_SoftOrange
+{
+	background-position: -148px -60px;
+	width: 19px;
+	height: 19px;
+}
+
+.dxWeb_tcScrollRightDisabled_SoftOrange
+{
+	background-position: -168px -60px;
+	width: 19px;
+	height: 19px;
+}
+
+.dxWeb_nbCollapse_SoftOrange {
+    background-position: -129px 0px;
+    width: 18px;
+    height: 18px;
+}
+
+.dxWeb_nbExpand_SoftOrange {
+    background-position: -129px -23px;
+    width: 18px;
+    height: 18px;
+}
+
+.dxWeb_splVSeparator_SoftOrange {
+    background-position: -92px -62px;
+    width: 6px;
+    height: 18px;
+}
+
+.dxWeb_splVSeparatorHover_SoftOrange {
+    background-position: -99px -62px;
+    width: 6px;
+    height: 18px;
+}
+
+.dxWeb_splHSeparator_SoftOrange {
+    background-position: -58px -74px;
+    width: 18px;
+    height: 6px;
+}
+
+.dxWeb_splHSeparatorHover_SoftOrange {
+    background-position: -58px -81px;
+    width: 18px;
+    height: 6px;
+}
+
+.dxWeb_splVCollapseBackwardButton_SoftOrange {
+    background-position: -30px -74px;
+    width: 6px;
+    height: 7px;
+}
+
+.dxWeb_splVCollapseBackwardButtonHover_SoftOrange {
+    background-position: -37px -74px;
+    width: 6px;
+    height: 7px;
+}
+
+.dxWeb_splHCollapseBackwardButton_SoftOrange {
+    background-position: 0px -74px;
+    width: 7px;
+    height: 6px;
+}
+
+.dxWeb_splHCollapseBackwardButtonHover_SoftOrange {
+    background-position: 0px -81px;
+    width: 7px;
+    height: 6px;
+}
+
+.dxWeb_splVCollapseForwardButton_SoftOrange {
+    background-position: -44px -74px;
+    width: 6px;
+    height: 7px;
+}
+
+.dxWeb_splVCollapseForwardButtonHover_SoftOrange {
+    background-position: -51px -74px;
+    width: 6px;
+    height: 7px;
+}
+
+.dxWeb_splHCollapseForwardButton_SoftOrange {
+    background-position: -15px -74px;
+    width: 7px;
+    height: 6px;
+}
+
+.dxWeb_splHCollapseForwardButtonHover_SoftOrange {
+    background-position: -15px -81px;
+    width: 7px;
+    height: 6px;
+}
+
+.dxWeb_pcCloseButton_SoftOrange {
+    background-position: 0px -50px;
+    width: 18px;
+    height: 18px;
+}
+
+.dxWeb_pcSizeGrip_SoftOrange {
+    background-position: -24px -50px;
+    width: 12px;
+    height: 12px;
+}
+
+.dxWeb_pcSizeGripRtl_SoftOrange {
+    background-position: -129px -85px;
+    width: 12px;
+    height: 12px;
+}
+
+.dxWeb_pAll_SoftOrange {
+    background-position: 0px 0px;
+    width: 28px;
+    height: 19px;
+}
+
+.dxWeb_pAllDisabled_SoftOrange {
+    background-position: 0px -25px;
+    width: 28px;
+    height: 19px;
+}
+
+.dxWeb_pPrev_SoftOrange {
+    background-position: -105px 0px;
+    width: 19px;
+    height: 19px;
+}
+
+.dxWeb_pPrevDisabled_SoftOrange {
+    background-position: -105px -25px;
+    width: 19px;
+    height: 19px;
+}
+
+.dxWeb_pNext_SoftOrange {
+    background-position: -81px 0px;
+    width: 19px;
+    height: 19px;
+}
+
+.dxWeb_pNextDisabled_SoftOrange {
+    background-position: -81px -25px;
+    width: 19px;
+    height: 19px;
+}
+
+.dxWeb_pLast_SoftOrange {
+    background-position: -55px 0px;
+    width: 23px;
+    height: 19px;
+}
+
+.dxWeb_pLastDisabled_SoftOrange {
+    background-position: -55px -25px;
+    width: 23px;
+    height: 19px;
+}
+
+.dxWeb_pFirst_SoftOrange {
+    background-position: -29px 0px;
+    width: 23px;
+    height: 19px;
+}
+
+.dxWeb_pFirstDisabled_SoftOrange {
+    background-position: -29px -25px;
+    width: 23px;
+    height: 19px;
+}
+
+.dxWeb_BackToTop_SoftOrange {
+    background-position: -115px -50px;
+    width: 5px;
+    height: 7px;
+}
+
+.dxWeb_tvColBtn_SoftOrange,
+.dxWeb_tvColBtnRtl_SoftOrange {
+	background-position: -167px -80px;
+    width: 17px;
+    height: 17px;
+}
+
+.dxWeb_tvExpBtn_SoftOrange,
+.dxWeb_tvExpBtnRtl_SoftOrange {
+	background-position: -148px -80px;
+    width: 17px;
+    height: 17px;
+}
+
+.dxWeb_fmFolder_SoftOrange {
+	background-position: 0px -98px;
+    width: 16px;
+    height: 16px;
+}
+
+.dxWeb_fmFolderLocked_SoftOrange {
+	background-position: -20px -98px;
+    width: 16px;
+    height: 16px;
+}
+
+.dxWeb_fmCreateButton_SoftOrange {
+	background-position: -40px -98px;
+    width: 16px;
+    height: 16px;
+}
+
+.dxWeb_fmRenameButton_SoftOrange {
+	background-position: -60px -98px;
+    width: 16px;
+    height: 16px;
+}
+
+.dxWeb_fmMoveButton_SoftOrange {
+	background-position: -80px -98px;
+    width: 16px;
+    height: 16px;
+}
+
+.dxWeb_fmDeleteButton_SoftOrange {
+	background-position: -100px -98px;
+    width: 16px;
+    height: 16px;
+}
+
+.dxWeb_fmRefreshButton_SoftOrange {
+	background-position: -120px -98px;
+    width: 16px;
+    height: 16px;
+}
+.dxWeb_fmDwnlButton_SoftOrange {
+	background-position: 0px -122px;
+    width: 16px;
+    height: 16px;
+}
+.dxWeb_fmDwnlButtonDisabled_SoftOrange {
+	background-position: -20px -122px;
+    width: 16px;
+    height: 16px;
+}
+.dxWeb_fmCreateButtonDisabled_SoftOrange {
+	background-position: -40px -122px;
+    width: 16px;
+    height: 16px;
+}
+
+.dxWeb_fmRenameButtonDisabled_SoftOrange {
+	background-position: -60px -122px;
+    width: 16px;
+    height: 16px;
+}
+
+.dxWeb_fmMoveButtonDisabled_SoftOrange {
+	background-position: -80px -122px;
+    width: 16px;
+    height: 16px;
+}
+
+.dxWeb_fmDeleteButtonDisabled_SoftOrange {
+	background-position: -100px -122px;
+    width: 16px;
+    height: 16px;
+}
+
+.dxWeb_fmRefreshButtonDisabled_SoftOrange {
+	background-position: -120px -122px;
+    width: 16px;
+    height: 16px;
+}
+
+.dxWeb_ucClearButton_SoftOrange {
+    background-position: -100px -98px;
+    width: 16px;
+    height: 16px;
+}
+.dxWeb_ucClearButtonDisabled_SoftOrange {
+    background-position: -100px -122px;
+    width: 16px;
+    height: 16px;
+}

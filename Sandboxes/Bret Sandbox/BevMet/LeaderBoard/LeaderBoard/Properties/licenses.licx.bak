@@ -1,0 +1,4 @@
+DevExpress.Xpf.Bars.BarManager, DevExpress.Xpf.Core.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.Xpf.Grid.GridControl, DevExpress.Xpf.Grid.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.Xpf.Gauges.DigitalGaugeControl, DevExpress.Xpf.Gauges.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.Xpf.Docking.DockLayoutManager, DevExpress.Xpf.Docking.v11.2, Version=11.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a

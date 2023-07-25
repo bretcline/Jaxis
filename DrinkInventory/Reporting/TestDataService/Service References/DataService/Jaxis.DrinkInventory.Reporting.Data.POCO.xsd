@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Jaxis.DrinkInventory.Reporting.Data.POCO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="UPC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BottleCount" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ChildItemNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ManufacturerName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RootCategoryName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Size" type="xs:int" />
+      <xs:element minOccurs="0" name="SizeLabel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UPCId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Validated" type="xs:boolean" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="UPC" nillable="true" type="tns:UPC" />
+  <xs:complexType name="ArrayOfUPC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UPC" nillable="true" type="tns:UPC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUPC" nillable="true" type="tns:ArrayOfUPC" />
+  <xs:complexType name="Pour">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AmountLeft" type="xs:double" />
+      <xs:element minOccurs="0" name="BatteryVoltage" type="xs:double" />
+      <xs:element minOccurs="0" name="Cost" type="xs:decimal" />
+      <xs:element minOccurs="0" name="DeviceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Duration" type="xs:double" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ItemNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NavPOSTicketItem" nillable="true" type="tns:POSTicketItem" />
+      <xs:element minOccurs="0" name="OrganizationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="POSTicketItemId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="PourId" type="ser:guid" />
+      <xs:element minOccurs="0" name="PourTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RawData" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="TagNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Temperature" type="xs:double" />
+      <xs:element minOccurs="0" name="Volume" type="xs:double" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Pour" nillable="true" type="tns:Pour" />
+  <xs:complexType name="POSTicketItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CheckNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Establishment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="NavPours" nillable="true" type="tns:ArrayOfPour" />
+      <xs:element minOccurs="0" name="OrganizationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="POSTicketItemId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Price" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="Quantity" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="TicketDate" type="xs:dateTime" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="POSTicketItem" nillable="true" type="tns:POSTicketItem" />
+  <xs:complexType name="ArrayOfPour">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Pour" nillable="true" type="tns:Pour" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPour" nillable="true" type="tns:ArrayOfPour" />
+  <xs:complexType name="PourUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="POSTicketItemId" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="PourId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PourUpdate" nillable="true" type="tns:PourUpdate" />
+  <xs:complexType name="ArrayOfPourUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PourUpdate" nillable="true" type="tns:PourUpdate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPourUpdate" nillable="true" type="tns:ArrayOfPourUpdate" />
+  <xs:complexType name="Alert">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AlertId" type="ser:guid" />
+      <xs:element minOccurs="0" name="AlertTime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="AlertType" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrganizationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Severity" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Alert" nillable="true" type="tns:Alert" />
+  <xs:complexType name="ArrayOfAlert">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Alert" nillable="true" type="tns:Alert" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAlert" nillable="true" type="tns:ArrayOfAlert" />
+  <xs:complexType name="Device">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DeviceId" type="ser:guid" />
+      <xs:element minOccurs="0" name="DeviceNumber" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsNew" type="xs:boolean" />
+      <xs:element minOccurs="0" name="LocationName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="OrganizationId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="Device" nillable="true" type="tns:Device" />
+  <xs:complexType name="ArrayOfDevice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Device" nillable="true" type="tns:Device" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDevice" nillable="true" type="tns:ArrayOfDevice" />
+  <xs:complexType name="ArrayOfPOSTicketItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="POSTicketItem" nillable="true" type="tns:POSTicketItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPOSTicketItem" nillable="true" type="tns:ArrayOfPOSTicketItem" />
+  <xs:complexType name="POSUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="POSTicketItemId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="POSUpdate" nillable="true" type="tns:POSUpdate" />
+  <xs:complexType name="ArrayOfPOSUpdate">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="POSUpdate" nillable="true" type="tns:POSUpdate" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPOSUpdate" nillable="true" type="tns:ArrayOfPOSUpdate" />
+</xs:schema>

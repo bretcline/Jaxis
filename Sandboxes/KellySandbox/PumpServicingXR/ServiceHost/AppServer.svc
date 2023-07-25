@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Factory="WFT.PSService.ServiceHost.PSAppServerHostFactory" Language="C#" Debug="true" Service="WFT.PSService.Service.AppServer" %>

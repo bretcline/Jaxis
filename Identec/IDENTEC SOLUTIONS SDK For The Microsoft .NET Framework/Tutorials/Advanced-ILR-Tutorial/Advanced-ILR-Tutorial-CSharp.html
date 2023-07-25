@@ -1,0 +1,827 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<!---------------------------------------------------------------------------><!--                           INTRODUCTION                                
+
+
+
+ The Code Project article submission template (HTML version)
+
+
+
+Using this template will help us post your article sooner. To use, just 
+
+follow the 3 easy steps below:
+
+ 
+
+     1. Fill in the article description details
+
+     2. Add links to your images and downloads
+
+     3. Include the main article text
+
+
+
+That's all there is to it! All formatting will be done by our submission
+
+scripts and style sheets. 
+
+
+
+--><!---------------------------------------------------------------------------><!--                        IGNORE THIS SECTION                            -->
+  <title>Advanced ILR&reg; Tutorial For IDENTEC.NET (C#)</title>
+  <style>
+BODY, P, TD { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10pt }
+H2,H3,H4,H5 { color: #ff9900; font-weight: bold; }
+H2 { font-size: 13pt; }
+H3 { font-size: 12pt; }
+H4 { font-size: 10pt; color: black; }
+PRE { BACKGROUND-COLOR: #FBEDBB; FONT-FAMILY: "Courier New", Courier, mono; WHITE-SPACE: pre; }
+CODE { COLOR: #990000; FONT-FAMILY: "Courier New", Courier, mono; }
+  </style>
+  <link rel="stylesheet" type="text/css" href="/global.css">
+  <meta content="IDENTEC SOLUTIONS Inc." name="author">
+  <meta
+ content="How to maximize performance and get the most our of ILR&reg; technology."
+ name="description">
+</head>
+<body color="#000000" style="background-color: rgb(255, 255, 255);">
+<!---------------------------------------------------------------------------><!-------------------------------     STEP 1      --------------------------->
+<!--  Fill in the details (CodeProject will reformat this section for you) --><span
+ class="cs-keyword"></span><span class="cs-keyword"></span>
+<pre><b><font style="font-size: 16pt;" size="4">Advanced ILR&reg; Tutorial For IDENTEC.NET (C#)<br></font></b><small>Version 1.10</small><br><b><br>By </b><b><a
+ class="under" href="mailto:support@identecsolutions.com">Chris Adamson</a><br></b>How to maximize performance and get the most out of ILR&reg; technology using the Microsoft&reg; .NET Framework.<span
+ class="cs-keyword"></span></pre>
+<div style="text-align: left;"><a href="../Disclaimer.html">Disclaimer</a><br>
+<br>
+<a href="http://www.identecsolutions.com/"><b><font
+ style="font-size: 16pt;" size="4"><img alt="Logo"
+ title="Visit our home page." src="images/LogoSmall.jpg"
+ style="border: 0px solid ; width: 148px; height: 148px;" align="left"
+ hspace="20" vspace="5"></font></b></a><br>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<ul class="download">
+  <li><a
+ href="Code/Advanced-ILR-Tutorial/Advanced-ILR-Tutorial/bin/Release.zip">Download
+The
+Advanced
+ILR .NET Tutorial
+Executable<br>
+    </a></li>
+  <li><a href="Code/Advanced-ILR-Tutorial-Start.zip">Download source
+(completed project)</a><br>
+  </li>
+</ul>
+<h2>Contents:</h2>
+<ul>
+  <li><a href="#Background">Background</a></li>
+  <li><a href="#What_you_will_need">What you will need</a><br>
+  </li>
+  <li><a href="#Introduction">Introduction</a><br>
+  </li>
+  <li> <a href="#Starting_the_project">Starting The Project</a></li>
+  <li><a href="#Querying_the_i-CARD_for_Capabilities">Querying the
+i-CARD 3 for capabilities</a></li>
+  <li><a href="#Optimizing_Scanning">Optimizing Scanning</a></li>
+  <ul>
+    <li><a href="#Expected_Tags">Expected Tags</a></li>
+    <li><a href="#To_Blink_or_Not_To_Blink">To Blink or not to Blink</a></li>
+    <li><a href="#Scanning_repetitively_to_build_a_unique">Scanning
+repetitively to build a unique tag list</a></li>
+    <li><a href="#RF_Settings_and_Scanning">RF Settings and Scanning</a></li>
+  </ul>
+  <li><a href="#Long_Range_and_Normal_Range_i-Q_Tags">Long Range and
+Normal Range i-Q Tags</a></li>
+  <li><a href="#Pick-to-light:_The_Tag_multi-blink">Pick-to-light: The
+Tag multi-blink process</a></li>
+  <li><a href="#Finishing_Touches">Finishing Touches</a></li>
+  <li><a href="#Conclusion">Conclusion</a></li>
+  <li><a href="#Bonus_Exercises">Bonus Exercises</a></li>
+  <li><a href="#Contact_Us">Contact Us</a><br>
+  </li>
+  <li><a href="#History">History</a><br>
+  </li>
+</ul>
+<a href="www.identecsolutions.com"><br>
+</a>
+<hr style="width: 100%; height: 2px;"><a href="www.identecsolutions.com"></a>
+<h2><a name="Background"></a>Background<br>
+</h2>
+<p>To get the most out of this tutorial, it is strongly recommended
+that you complete the <a
+ href="../Basic-ILR-Tutorial/Basic-ILR-Tutorial%28C%23%29.html">Basic
+ILR Tutorial </a>first. <br>
+</p>
+<h2><a name="What_you_will_need"></a>What you will need<br>
+</h2>
+One of the following development environments:<br>
+<ul>
+  <li>Visual Studio 2005</li>
+  <li>Visual C# Express 2005</li>
+  <ul>
+    <li>Visit the <b><a
+ href="http://msdn.microsoft.com/vstudio/express/" class="stdLink">Microsoft
+Visual Studio 2005 Express Editions</a>&nbsp; </b>home page<b><br>
+      </b></li>
+  </ul>
+</ul>
+Note that we will be using the DataGrid control which is not available
+in .NET 1.1 so <span style="font-weight: bold;">you will not be able
+to follow this tutorial using anything previous to Visual Studio 2005</span>.<br>
+<br>
+<span style="font-style: italic;">All of our examples will be using
+Visual Studio 2005, the express edition's screens may vary slightly.</span><br>
+<br>
+<span style="font-weight: bold;">ILR&reg; Technology Covered:</span><br>
+<ul>
+  <li><a href="http://www.identecsolutions.com/i-card3.asp">i-CARD 3</a><a
+ href="http://www.identecsolutions.com/i-q_tags.asp"><br>
+    </a> </li>
+  <li><a href="http://www.identecsolutions.com/i-q_tags.asp">i-Q Tags</a></li>
+  <li><a href="http://www.identecsolutions.com/i-d_tags.asp">i-D2 Tags</a>
+(optional)</li>
+  <li>IDENTEC SDK for the Microsoft .NET Framework<br>
+  </li>
+</ul>
+And you will need a PC or laptop with at least one free PCMCIA slot and
+the i-CARD 3 driver installed. Alternatively, an i-PORT 3 or i-CARD CF
+could be used as they implement the same interface for working with i-Q
+tags.<br>
+<br>
+<!-------------------------------     STEP 3      --------------------------->
+<!--  Add the article text. Please use simple formatting (<h2>, <p> etc)   -->
+<h2><a name="Introduction"></a>Introduction</h2>
+<p>This tutorial is designed to walk you through several important
+concepts an ILR program should implement to maximize the capabilities
+of ILR&reg; Technology. When finished
+this tutorial you will be familiar with the following ILR&reg;
+programming
+concepts:</p>
+<ul>
+</ul>
+<ul>
+  <li>Changing the number of expected tags during a scan</li>
+  <li>Scanning multiple times to build a complete tag list</li>
+  <li>The effect of blinking the tags during a scan<br>
+  </li>
+  <li>Changing the RF power options to best suite your needs</li>
+  <ul>
+    <li>Maximizing and minimizing a read zone sizes<br>
+    </li>
+  </ul>
+  <li>Switching an i-Q tag's range mode <br>
+  </li>
+  <ul>
+    <li>long range</li>
+    <li>normal range<br>
+    </li>
+  </ul>
+  <li>Blinking a tag for pick-to-light applications</li>
+</ul>
+You will find that this tutorial will help you explore ILR&reg;
+technology by playing with the resulting application and all the
+possible settings. The code presented here is specific to i-CARD 3 and
+i-Q tags. However, switching to i-D2 tags or another reader would
+require only minor code changes. <br>
+<br>
+<h2><a name="Starting_the_project"></a>Starting The Project<br>
+</h2>
+Open <a href="Code/Advanced-ILR-Tutorial-Start.zip">this zip file</a>
+and extract the contents to a working folder. This solution will be our
+starting point for the tutorial. Once you've extracted the code open
+the solution, build and run it.<br>
+<br>
+<div style="text-align: center;"><img alt="First Screen"
+ src="images/Starting-Project.jpg" style="width: 718px; height: 498px;"
+ vspace="10"><br>
+</div>
+<br>
+<br>
+<br>
+<h2><a name="Querying_the_i-CARD_for_Capabilities"></a>Querying the
+i-CARD for Capabilities<br>
+</h2>
+You should check the card for it's maximum output capability and
+minimum output so that you do not accidentally try and set the power
+beyond these limits. If you do attempt to set the transmission power
+beyond the bounds then an exception will be thrown.<br>
+<br>
+<span style="font-style: italic;">You will want to note that the i-CARD
+CF has a lesser output power than i-CARD 3.</span><br>
+<br>
+Fill in the following code and then run the program again to see what
+your card is set for:<br>
+<pre><span style="color: blue;" class="cs-keyword">private</span><span
+ style="color: blue;"> </span><span class="cs-keyword"><span
+ style="color: blue;">void</span> </span>MainForm_Load(<span
+ style="color: blue;">object </span>sender, EventArgs e)<br>{	<br><span
+ style="color: blue;" class="cs-keyword">	try</span><span
+ style="color: blue;"></span>	<br>	{<br>		m_iCard3.Connect();<br><span
+ style="font-style: italic;"><span style="color: rgb(0, 128, 0);">		// Hint: the current transmit power is set to maximum when the card connects <br></span></span><span
+ style="font-style: italic;"><span style="color: rgb(0, 128, 0);">		// so there is no point in trying to set the output power before connecting</span></span><span
+ style="font-style: italic;"><span style="color: rgb(0, 128, 0);"><br></span></span>		DisplayCardInformation();<br>		InitializeRFPowerGroupBox();<br>	}<br>	<span
+ style="color: blue;" class="cs-keyword">catch</span><span
+ style="color: blue;"> </span>(Exception ex)<br>	{<br>		MessageBox.Show(ex.Message);<br>		this.Close();<br>	}<br>}<br><br><span
+ style="color: blue;" class="cs-keyword">private</span><span
+ style="color: blue;"> </span><span class="cs-keyword"><span
+ style="color: blue;">void</span> </span>InitializeRFPowerGroupBox()<br>{<br><span
+ style="font-style: italic;"><span style="color: rgb(0, 128, 0);">     // This run-time check ensures that we don't go beyond the bounds <br>     // of the power settings for the RF output</span></span><br>     trackBarOutputPower.Maximum = m_iCard3.MaxOutputdBmIQ;<br>     trackBarOutputPower.Minimum = m_iCard3.MinOutputdBm;<br>     trackBarOutputPower.Value = m_iCard3.TxPowerIQ;<br>     checkBoxRxBoost.Checked = m_iCard3.EnableReceiveBoost;	<br>	<br><span
+ style="font-style: italic;"><span style="color: rgb(0, 128, 0);">     // Show the current output power the card is set to use:</span></span><br>     textBoxCurrentOutput.Text = m_iCard3.TxPowerIQ + "dBm";<br><span
+ style="font-style: italic;"><span style="color: rgb(0, 128, 0);"></span></span>}<br><br><span
+ style="color: blue;" class="cs-keyword">private</span><span
+ style="color: blue;"> </span><span class="cs-keyword"><span
+ style="color: blue;">void</span> </span>DisplayCardInformation()<br>{<br><span
+ style="font-style: italic;"><span style="color: rgb(0, 128, 0);">	// It's important to track the serial number and firmware information in your app:<br></span></span>	toolStripStatusLabelCardInfo.Text = <span
+ style="color: rgb(128, 0, 128);">"Firmware Info: "</span> + m_iCard3.Information;<br>	toolStripStatusLabelCardSerialNumber.Text = <span
+ style="color: rgb(128, 0, 128);">"Serial #: "</span> + m_iCard3.SerialNumber;<br>}<span
+ style="color: blue;" class="cs-keyword"></span></pre>
+<div style="text-align: center;"><img alt="The Card Capabilities"
+ src="images/Card-Capabilities.jpg" style="width: 718px; height: 498px;"
+ vspace="10"><br>
+</div>
+<br>
+In the example screen shot you see that our max output is 6dBm and that
+the firmware is version 2.9.<br>
+<br>
+<span style="font-weight: bold; font-style: italic;">Side Note on
+Regional Frequency:</span><br>
+We did not display the region that the i-CARD 3 is set to use by
+default.
+In most cases this is not important as your application will be dealing
+only with tags set to work in your frequency region (916.5 MHz in North
+America, 868MHz in Europe and most other regions). If you do require
+the ability to use the card in multiple regions, you can switch the
+working region from your application using the <span
+ style="font-weight: bold;">iCard3.Region</span> property at any time
+after a connection is established.<br>
+<br>
+Now that we've hooked up all the controls we can start scanning. We
+will look at the <span style="font-style: italic;">Scanning Options</span>
+and <span style="font-style: italic;">RF Settings</span> in more
+detail later.<br>
+<br>
+<h2><a name="Optimizing_Scanning"></a>Optimizing Scanning<br>
+</h2>
+Scanning is probably the most important process your application will
+perform to detect and manage groups of tags. This is especially true if
+your application is unaware of what tags are available in the read zone
+through some other means (database record, bar code scan, etc).<br>
+<br>
+There are a few things to consider when scanning:<br>
+<br>
+<ul>
+  <li>How many tags do we expect in the read zone?<br>
+  </li>
+  <li>How much time to we have to detect all the tags?</li>
+  <ul>
+    <li>Is it a slow or static environment<br>
+    </li>
+  </ul>
+  <li>Do we need visual feedback during the scanning process for
+personnel located within the read zone (blink enabled)?</li>
+  <li>Do we need any information other than just the tag ID?</li>
+  <ul>
+    <li>Tag model</li>
+    <li>Battery % consumed</li>
+    <li>Tag mode (long range/normal range)</li>
+  </ul>
+</ul>
+There is no <span style="font-style: italic;">one-setting-fits-all</span>
+that will magically work for every situation. By changing the various
+parameters and observing the results you will understand what will work
+for your solution.<br>
+<br>
+<h3><a name="Expected_Tags"></a>Expected Tags</h3>
+During the scanning process, the reader sends out a hint to the tags as
+part of the scan request. The hint is the number of tags that the
+reader will wait to respond. The hint informs the tags that there are x
+number of time slots available for each tag to respond to the scan
+request. For example, if the hint is that
+16 tags are expected to respond then each of the tags will randomly
+choose a slot in time allotted for 16 tags. <br>
+<br>
+Here's an example diagram of a <span style="font-weight: bold;">good
+ratio</span> of actual tags in the field
+versus the expected tag settings. As you can see, 4 tags respond
+comfortably within the allotted 16 time slots (16 expected tags).<br>
+<br>
+<div style="text-align: center;"><img alt="Good-Time-Slots"
+ src="images/Good-Time-Slots.jpg" style="width: 698px; height: 302px;"
+ vspace="10"><br>
+</div>
+<br>
+But what happens when the expected tags is less than the actual number
+of
+tags responding? This will lead to collisions where two (or more) tags
+attempt to
+respond within the same time slot, that is, simultaneously. When
+multiple tags respond within
+the
+same slot, neither tag's signal can be interpreted by the reader
+(signal collision). Thus
+tags that respond within the same slot are not detected. The diagram
+below illustrates this:<br>
+<br>
+<div style="text-align: center;"><img
+ alt="Too many tags for the time slots" src="images/Bad-Time-Slots.jpg"
+ style="width: 762px; height: 334px;" vspace="10"><br>
+<div style="text-align: left;">Note that 16 time slots were available
+and 25 tags were called upon to respond. Many collisions occurred and
+only 8 tags were properly detected. Also note that one of the slots was
+not chosen by any of the tags.<br>
+<br>
+<span style="font-weight: bold; font-style: italic;">We recommend that
+you set your expected tags to at least twice the number of actual tags
+in the read zone so that there is enough opportunity for the tags to
+each respond in a unique (non colliding) time slot.</span><br>
+<br>
+<br>
+Fill in the following code to enable scanning in the application:<br>
+<br>
+</div>
+</div>
+<br>
+<pre><span style="color: blue;" class="cs-keyword"></span><span
+ style="color: blue;" class="cs-keyword">private</span><span
+ style="color: blue;"> </span><span class="cs-keyword"><span
+ style="color: blue;">void</span> </span>ScanThreadProc()<br>{<br><span
+ style="font-style: italic;"><span style="color: rgb(0, 128, 0);">	// We'll use a stopwatch to help us time the code to get an idea of how long a scan takes.</span></span><br>	Stopwatch s = <span
+ style="color: blue;">new </span>Stopwatch();<br>	<span
+ style="color: blue;">for </span>(<span style="color: blue;">int </span>i = 0; i &lt; m_ScanRepeats; i++)<br>	{<br>		s.Reset();<br>                s.Start();		<br><span
+ style="font-style: italic;"><span style="color: rgb(0, 128, 0);">		// Note that there are two overloaded ScanForIQTags methods, <br>		// one does not include blinking the tags<br></span></span>		&nbsp;TagCollection tags = m_iCard3.ScanForIQTags(m_ExpectedTags, m_blinkOnScan);<br>                s.Stop();<br>                AddMessage(<span
+ style="color: rgb(128, 0, 128);">"Scan took "</span> + s.Elapsed.ToString() + <span
+ style="color: rgb(128, 0, 128);">" and detected "</span> + tags.Count.ToString() <br>                    + <span
+ style="color: rgb(128, 0, 128);">" tags with options: Expected Tags: "</span> +  m_ExpectedTags <br>                    + <span
+ style="color: rgb(128, 0, 128);">", Blink: "</span> + m_blinkOnScan.ToString() + <span
+ style="color: rgb(128, 0, 128);">" and " </span><br>                    + m_iCard3.TxPowerIQ.ToString() + <span
+ style="color: rgb(128, 0, 128);">"dBm output, Rx Boost: "</span><br>                    + m_iCard3.EnableReceiveBoost.ToString());<br>                DisplayTags(tags);<br>	}<br>	ScanFinished();<br>}<br></pre>
+Run the program and start scanning. You'll see the total number of tags
+detected in the status bar and one of the tab pages gives you messages
+about the settings and results. The larger the expected tags, the more
+time (and possibly) tags that are detected. It's a trade-off between
+how long you can wait for one scan versus scanning several times in
+succession in order to detect many tags.<br>
+<br>
+<div style="text-align: center;"><img alt="Messages"
+ src="images/Messages-Tab.jpg" style="width: 718px; height: 498px;"
+ vspace="10"><br>
+</div>
+<br>
+<br>
+The timing for scanning with blink disabled can be estimated as: 100ms
++
+(Expected tags&nbsp; * 1.2ms/tag slot) + host-to-card-communications
+overhead. <br>
+<br>
+<h3><a name="To_Blink_or_Not_To_Blink"></a>To Blink or Not To Blink</h3>
+<img alt="Blinking tags" src="images/Scanned-Tags.gif"
+ style="width: 500px; height: 100px;" vspace="10"><br>
+Sometimes it is useful to blink the tags during a scan for visual
+feedback. We find this especially useful during installations to
+determine the size of the read zone and to help us tune the read zone
+to the appropriate size.<br>
+<br>
+Under the hood, the SDK actually performs a scan and then pings each
+tag in the list so that the tags blink. The blink is actually a
+side-effect of pinging a tag. <br>
+<br>
+Scanning alone only returns the tag's ID and the signal strength. Other
+information such as tag model, tag range mode and battery consumed are
+retrieved from a Ping (or any read/write operation), and so enabling
+the blink option in the scan
+command will Ping each tag scanned and return some information for each
+tag.<br>
+<br>
+You'll notice when you enable the blink on the scanning options tab of
+the application, the scan will take longer than previously, and the
+grid view will show all the missing tag information. <span
+ style="font-style: italic;"></span><br>
+<br>
+<div style="text-align: center;"><img alt="Scan with blink"
+ src="images/Scan-with-blink.jpg" style="width: 718px; height: 498px;"
+ vspace="10"><br>
+</div>
+<span style="font-style: italic;"></span><br>
+<big><big><span style="font-weight: bold;"></span></big></big>Now you
+can click any of column headers to sort the tags accordingly! <br>
+<br>
+<span style="font-weight: bold; font-style: italic;">At this point
+you'll probably want to explore some of the code to see how we populate
+the DataGridView with all the tag information.</span><br>
+<br>
+<h3><a name="Scanning_repetitively_to_build_a_unique"></a>Scanning
+repetitively to build a unique tag list</h3>
+One of the features in the options page of the application is to scan
+several times in succession. We encourage you to increase the <span
+ style="font-style: italic;">Repeats</span> to see how many scans it
+takes to detect all the tags in the read zone. Vary the expected tags
+and explore what settings make sense for your solution. You'll find
+that even with a small number of expected tags, given enough scans you
+will detect all the tags in the read zone even if the number of actual
+tags is much greater than the expected tags. <br>
+<br>
+Keep in mind that we are creating a unique list of tags via the DataSet
+in the application. This is purely for example purposes and allows us
+to quickly display the results in the <span style="font-style: italic;">DataGridView
+</span>easily.<br>
+<br>
+<h3><a name="RF_Settings_and_Scanning"></a>RF Settings and Scanning</h3>
+Tuning the RF settings is extremely important when you need to size
+the read zone (either to small or to large). You have a great degree of
+control over the power settings both on the transmission side of the
+reader and the receive side of the reader (remember there are two paths
+of communications between tags and readers).<br>
+<br>
+On the transmission side of the reader we can set the power in
+increments of 1 dBm. Typically the maximum output for an i-CARD 3 is
+6dBm but it may be less in your region. This is why it is best to query
+the card's <span style="font-style: italic;">MaxOutputdBmIQ </span>property.
+<br>
+<br>
+Find out more about dBm on Wikipedia <a class="wiki_link_ext"
+ href="http://en.wikipedia.org/wiki/DBm" rel="nofollow">here.</a><br>
+<br>
+Here's a table summarizing typical dBm values you may encounter:<br>
+<br>
+<table
+ style="width: 60%; text-align: left; margin-left: auto; margin-right: auto;"
+ border="1" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: center;"><span
+ style="font-weight: bold;">dBm Level</span><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><span
+ style="font-weight: bold;">Power</span><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;"><span
+ style="font-weight: bold;">Notes</span><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">80 dBm<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">100000 W</td>
+      <td style="vertical-align: top; text-align: left;">
+      <ul>
+        <li>Common for FM radio stations</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">60 dBm<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">1000 W<br>
+      </td>
+      <td style="vertical-align: top; text-align: left;">
+      <ul>
+        <li>1000 Watt Microwave Oven</li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">40 dBm<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">10 W<br>
+      </td>
+      <td style="vertical-align: top; text-align: left;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">30 dBm<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">1 W<br>
+      </td>
+      <td style="vertical-align: top; text-align: left;">
+      <ul>
+        <li>Typical leakage from a 1000 Watt Microwave Oven<br>
+        </li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;"><span
+ style="font-weight: bold;">27 dBm</span><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">500 mW<br>
+      </td>
+      <td style="vertical-align: top; text-align: left;">
+      <ul>
+        <li>Maximum transmission power for i-CARD 3 with i-D2 tags</li>
+        <li>Cell phone transmission power<br>
+        </li>
+      </ul>
+      <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;"><span
+ style="font-weight: bold;">24 dBm</span><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">250 mW<br>
+      </td>
+      <td style="vertical-align: top; text-align: left;">
+      <ul>
+        <li>Maximum transmission power&nbsp; for i-PORT 3 with i-D2 tags<br>
+        </li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">20 dBm<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">100 mW<br>
+      </td>
+      <td style="vertical-align: top; text-align: left;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">10 dBm<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">10 mW<br>
+      </td>
+      <td style="vertical-align: top; text-align: left;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;"><span
+ style="font-weight: bold;">6 dBm</span><br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">4 mW<br>
+      </td>
+      <td style="vertical-align: top; text-align: left;">
+      <ul>
+        <li>Maximum transmission power&nbsp; for i-CARD 3 and i-PORT 3
+with i-Q tags<br>
+        </li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">3 dBm<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">2 mW<br>
+      </td>
+      <td style="vertical-align: top; text-align: left;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">0 dBm<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">1 mW<br>
+      </td>
+      <td style="vertical-align: top; text-align: left;">
+      <ul>
+        <li>Maximum transmission power&nbsp; for i-CARD CF (i-Q Tags)</li>
+        <li>0 dBm called the reference point (1 mW)<br>
+        </li>
+      </ul>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">-5 dBm<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">0.32 mW<br>
+      </td>
+      <td style="vertical-align: top; text-align: left;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top; text-align: center;">-10 dBm<br>
+      </td>
+      <td style="vertical-align: top; text-align: center;">0.1 mW<br>
+      </td>
+      <td style="vertical-align: top; text-align: left;"><br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<span style="font-weight: bold; font-style: italic;">It is very
+important to note that the antenna choice affects actual transmission
+patterns and therefore distances, however in general the greater the
+transmission power the further you can communicate over RF.</span><br>
+<br>
+<br>
+Now hook up the controls so you can change the power settings:<br>
+<br>
+<pre><span style="color: blue;" class="cs-keyword"></span><span
+ style="color: blue;" class="cs-keyword">private</span><span
+ style="color: blue;"> </span><span class="cs-keyword"><span
+ style="color: blue;">void</span> </span>trackBarOutputPower_ValueChanged(<span
+ style="color: blue;">object </span>sender, EventArgs e)<br>{<br><span
+ style="font-style: italic;"><span style="color: rgb(0, 128, 0);">	// We shouldn't have to do any try/catch here as we've already <br>	// queried the card and set the control within the allowed bounds</span></span><br>	m_iCard3.TxPowerIQ = (int)trackBarOutputPower.Value;<br>	textBoxCurrentOutput.Text = m_iCard3.TxPowerIQ.ToString() + <span
+ style="color: rgb(128, 0, 128);">"dBm"</span>;<br>}<br><br><span
+ style="color: blue;" class="cs-keyword">private</span><span
+ style="color: blue;"> </span><span class="cs-keyword"><span
+ style="color: blue;">void</span> </span>checkBoxRxBoost_CheckedChanged(<span
+ style="color: blue;">object </span>sender, EventArgs e)<br>{<br>	m_iCard3.EnableReceiveBoost = checkBoxRxBoost.Checked;<br>}<br></pre>
+<br>
+The receive boost enables/disables the <span
+ style="font-style: italic;">hearing aid</span> on the card (actually
+the receive amplifier). That is, with it enabled, the card can <span
+ style="font-style: italic;">hear </span>(receive and decode) signals
+as weak as -90dBm, but with it off the card only decodes signals
+greater than -60dBm. Typically we leave this enabled at all times
+unless you are working with tags at very close distances (less than 10
+feet).<br>
+<br>
+You may want to do some more experimenting at this point. Keep in mind
+that there are two communication paths between the tag and the reader:<br>
+<ol>
+  <li>The Reader to tag request</li>
+  <li>The tag to reader response</li>
+</ol>
+You cannot control the transmission power of the i-Q tag itself, but
+you can switch it into long range mode if you want to maximize the
+reading distance. <br>
+<br>
+<br>
+<h2><a name="Long_Range_and_Normal_Range_i-Q_Tags"></a>Long Range and
+Normal Range i-Q Tags</h2>
+i-Q tags have the ability to turn on their own <span
+ style="font-style: italic;">hearing aid</span> to allow them to decode
+weaker signals (and thus increasing the range at which they can decode
+a request). When an i-Q tag is in long range mode, it is far more
+sensitive to signals from readers and sometimes is too sensitive when
+the tag is too close to a reader's antenna. In such cases, the tag will
+be unable to hear the request from the reader because the signal is
+blasting from the reader's antenna. Think of it as someone yelling in
+your ear so loud that you can't understand what they are saying.<br>
+<br>
+To switch an i-Q tag's mode, we will do so via the GridViewControl's
+toggle button column:<br>
+<br>
+<pre><span style="color: blue;" class="cs-keyword"></span><span
+ style="color: rgb(0, 0, 255);">private void</span> dataGridViewTags_CellClick(<span
+ style="color: rgb(0, 0, 255);">object </span>sender, DataGridViewCellEventArgs e)<br>{<br>    <span
+ style="color: rgb(0, 0, 255);">try</span><br>    {<br>        <span
+ style="color: rgb(0, 0, 255);">if </span>(e.RowIndex &lt; 0) <span
+ style="color: rgb(0, 128, 0);">//Check for the header being clicked</span><br>        {<br>        }<br>        <span
+ style="color: rgb(0, 0, 255);">else</span><br>        {                    <br>            DataRowView v = dataGridViewTags.CurrentRow.DataBoundItem as DataRowView;<br>            <span
+ style="color: rgb(0, 0, 255);">if </span>(v != null)<br>            {<br>                DataSetTags.DataTableTagsRow row = v.Row <span
+ style="color: rgb(0, 0, 255);">as </span>DataSetTags.DataTableTagsRow;<br>                <span
+ style="color: rgb(0, 0, 255);">if </span>(row != null)<br>                {<br><span
+ style="color: rgb(0, 128, 0);">                    //Get Tag ID:</span><br>                    iQTag t = <span
+ style="color: rgb(0, 0, 255);">new </span>iQTag();<br>                    t.Label = row.SerialNumber;<br><span
+ style="color: rgb(0, 128, 0);">                    //Get Current sens:</span><br>                    if (row.IsLongRangeEnabledNull() || e.ColumnIndex != ColumnToggleSens.Index)<br>                    {<br><span
+ style="color: rgb(0, 128, 0);">                        //Ping tag to confirm sensitivity status</span><br>                        if (m_iCard3.PingTag(t))<br>                        {<br><span
+ style="color: rgb(0, 128, 0);">                            // we'll only update the user interface in this case</span><br>                            UpdateTagRow(row, t);<br>                        }<br>                        else<br>                        {<br>                            AddMessage("Could not ping tag " + t.Label + ". Device error code: " + m_iCard3.DeviceStatus.ToString());<br>                        }<br>                    }<br>                    else <span
+ style="color: rgb(0, 128, 0);">//We'll switch the sens:</span><br>                    {<br>                        if (m_iCard3.SetTagRangeState(t, !row.LongRangeEnabled))<br>                        {<br>                            UpdateTagRow(row, t);<br>                        }<br>                        else<br>                        {<br>                            AddMessage("Could not toggle tag range mode for tag" + t.Label + ". Device error code: " + m_iCard3.DeviceStatus.ToString());<br>                        }<br>                    }<br>                }<br>            }<br>        }<br>    }<br>    <span
+ style="color: rgb(0, 0, 255);">catch </span>(Exception ex)<br>    {<br>        MessageBox.Show(ex.Message);<br>    }<br>}<br><br></pre>
+<br>
+You should be able to switch tags range mode easily now. However, you
+may find it more difficult to switch tags that are close to the
+reader's antenna from long range mode into normal range mode. Try
+fiddling with the transmission power of the i-CARD to get the best
+results.<br>
+<br>
+<span style="font-style: italic;">Be aware that the i-Q series of tags
+can be switched to and from long range mode at run time whereas the
+i-D2 series of tags is permanently set during production</span>.<br>
+<br>
+<br>
+<h2><a name="Pick-to-light:_The_Tag_multi-blink"></a>Pick-to-light: The
+Tag multi-blink process</h2>
+One of the features of the i-Q tag is it's bright LED. You've already
+seen that it blinks as a side effect of the Ping command. But what if
+you need to blink the tag many times over without dedicating the i-CARD
+to performing continuous Ping operations? The solution is the <span
+ style="font-style: italic;">MultiBlink</span> command!<br>
+<br>
+To enable this we'll need to add two controls to the ToolStrip control
+at the top of the main window. Add a TextBox and a button for blinking
+the selected tag. Double click the button to create the event handler:<br>
+<br>
+<pre>        <span style="color: blue;" class="cs-keyword">private</span><span
+ style="color: blue;"> </span><span class="cs-keyword"><span
+ style="color: blue;">void</span></span> toolStripButtonMultiBlink_Click(<span
+ style="color: blue;">object </span>sender, EventArgs e)<br>        {<br><span
+ style="font-style: italic;"><span style="color: rgb(0, 128, 0);">		// To be safe we don't want to allow two threads accessing the card at once:</span></span><br>            <span
+ style="color: blue;">if </span>(!toolStripButtonStartScan.Enabled)<br>                <span
+ style="color: blue;">return</span>;<br><span
+ style="font-style: italic;"><span style="color: rgb(0, 128, 0);">		// We'll keep a collection of the tags that succeeded in blinking </span></span><span
+ style="font-style: italic;"><span style="color: rgb(0, 128, 0);">		</span></span> <br>            TagCollection tags = <span
+ style="color: blue;">new </span>TagCollection();<br>            <span
+ style="color: blue;">foreach </span>(DataGridViewRow viewRow in dataGridViewTags.SelectedRows)<br>            {<br>                <span
+ style="color: blue;">if </span>(viewRow.Index &gt; 0)<br>                {<br>                    string tagLabel = viewRow.Cells[0].Value.ToString();<br>                    iQTag tag = <span
+ style="color: blue;">new </span>iQTag();<br>                    tag.Label = tagLabel;<br><br><span
+ style="font-style: italic;"><span style="color: rgb(0, 128, 0);">		    // The blink command is very much like the Ping command. <br>		    // Although it is i-Q tag specific</span></span><br>                    <span
+ style="color: blue;">if </span>(m_iCard3.BlinkTag(tag, <span
+ style="color: blue;">int</span>.Parse(toolStripTextBoxBlinkCount.Text)))<br>                    {<br>                        AddMessage(tagLabel + <span
+ style="color: rgb(128, 0, 128);">" now blinking."</span>);<br>                        tags.Add(tag);<br>                    }<br>                    <span
+ style="color: blue;">else</span><br>                    {<br>                        AddMessage(tagLabel + <span
+ style="color: rgb(128, 0, 128);">" failed to blink. Device code: "</span> <br>				+ m_iCard3.DeviceStatus.ToString());<br>                    }<br>                }<br>            }<br><span
+ style="font-style: italic;"><span style="color: rgb(0, 128, 0);">	// Tags that succeeded are updated in the display</span></span><br>            DisplayTags(tags);<br>        }<br></pre>
+<br>
+By selecting one or more rows, you can set the tags into a multi-blink
+state. Light the place up like a Christmas tree!<br>
+<br>
+<div style="text-align: center;"><img alt="Blinking multiple tags"
+ src="images/Blink-Tags.jpg" style="width: 718px; height: 498px;"
+ vspace="10"><br>
+</div>
+<br>
+<span style="font-style: italic;">Be aware that the i-Q series of tags
+implement the multi-blink functionality whereas the
+i-D2 series of tags do not</span>.<br>
+<h2><a name="Finishing_Touches"></a>Finishing Touches</h2>
+Wouldn't it be nice to save our results to a file and be able to load
+them into another program such as Microsoft Excel? It's easy! All we
+have to do is call&nbsp; <span style="font-style: italic;">myTagsDataset.WriteXml();
+</span>and supply a filename. <br>
+<br>
+<h2><a name="Conclusion"></a>Conclusion</h2>
+The application presented in this tutorial allows you to explore many
+of the possible configurations with ILR Technology.<br>
+<br>
+<br>
+<h2><a name="Bonus_Exercises"></a>Bonus Exercises<br>
+</h2>
+<ol>
+  <li>Add the ability to change the transmission power of the i-CARD
+during each scan (hint, use the for loop in the scanning repeats and
+change the output power of the card).</li>
+  <li>Export the detected tags to an xml file (hint, see the comment in
+the Finishing Touches section above).<br>
+  </li>
+  <li>Ping each tag in the DataGridView upon a cell click</li>
+  <li>Add Support for i-D2 tags</li>
+  <li>Ping the entire collection of tags detected only after all the
+scan repeats have completed and report the status of each ping in the
+message tab instead of enabling the blink in the scan command.</li>
+  <li>Add a retry scheme for switching tag range &amp; blinking the
+tags such that retries are attempted at various transmission settings
+of the i-CARD 3. <br>
+  </li>
+  <li>Add proper exception handling for the various calls to the <span
+ style="font-style: italic;">iCard3 </span>class.<br>
+  </li>
+</ol>
+<br>
+<h2><a name="Contact_Us"></a>Contact Us</h2>
+How did we do? Did you find this tutorial useful?<br>
+<br>
+We are always looking for feedback to help provide you
+with the best documentation to improve your programming experience. If
+you have any questions or comments send us an email at <b><a
+ class="under" href="mailto:support@identecsolutions.com">support@identecsolutions.com</a></b><b>
+</b>
+<hr style="width: 100%; height: 2px;"><br>
+<h2><a name="History"></a>History</h2>
+<p>Version 1.10 October 31, 2006<br>
+</p>
+<ul>
+  <li>Reworked the toggling of the tag sensitivity by adding a button
+to the grid control</li>
+  <li>Added more boilerplate code to speed up tutorial completion time</li>
+  <li>All fields are now read-only<br>
+  </li>
+</ul>
+<p><br>
+Version 1.04 May 29, 2006<br>
+</p>
+<ul>
+  <li>Minor bug fix in casting a bool in dataGridViewTags_CellEndEdit()</li>
+</ul>
+<p>Version 1.03 May 23, 2006<br>
+</p>
+<ul>
+  <li>Made some comments about i-D2 tags</li>
+  <li>Minor wording changes as per Dave Heath suggestions<br>
+  </li>
+</ul>
+<p>Version 1.02 May 19, 2006<br>
+</p>
+<ul>
+  <li>Disclaimer added</li>
+  <li>Some rewording <br>
+  </li>
+</ul>
+<p>Version 1.01 May 18, 2006<br>
+</p>
+<ul>
+  <li>Code complete<br>
+  </li>
+</ul>
+<p>Version 1.0&nbsp; May 17, 2006 <br>
+</p>
+<ul>
+  <li>First draft<br>
+  </li>
+</ul>
+<p><br>
+<br>
+<!-------------------------------    That's it!   ---------------------------></p>
+</body>
+</html>

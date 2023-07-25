@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="77c95410-ffe8-49c3-b70c-3c665616e997" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ArrayList" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://192.206.176.194/KPIBase/KPIService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="KPIService.xsd" MetadataType="Schema" ID="0180a096-943e-4680-9098-34a4d6c90a39" SourceId="1" SourceUrl="http://192.206.176.194/KPIBase/KPIService.svc?xsd=xsd2" />
+    <MetadataFile FileName="KPIService1.xsd" MetadataType="Schema" ID="b22b1431-aa2f-40d4-8d11-19194e04fcff" SourceId="1" SourceUrl="http://192.206.176.194/KPIBase/KPIService.svc?xsd=xsd3" />
+    <MetadataFile FileName="KPIService.wsdl" MetadataType="Wsdl" ID="e55d0e4c-38a0-47cf-8083-67f9fcc0c7a7" SourceId="1" SourceUrl="http://192.206.176.194/KPIBase/KPIService.svc?wsdl" />
+    <MetadataFile FileName="KPIService2.xsd" MetadataType="Schema" ID="62ee4f95-f02b-4438-8107-2a71526266ef" SourceId="1" SourceUrl="http://192.206.176.194/KPIBase/KPIService.svc?xsd=xsd1" />
+    <MetadataFile FileName="KPIService3.xsd" MetadataType="Schema" ID="ccc2085c-e7be-4071-bd49-6574cfcec5d0" SourceId="1" SourceUrl="http://192.206.176.194/KPIBase/KPIService.svc?xsd=xsd0" />
+    <MetadataFile FileName="KPIService.disco" MetadataType="Disco" ID="fcd6d4cc-77a0-4268-b4db-fcb787834cc9" SourceId="1" SourceUrl="http://192.206.176.194/KPIBase/KPIService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

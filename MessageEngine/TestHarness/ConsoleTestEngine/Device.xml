@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DeviceConfigCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Configs>
+
+<!--
+    <DeviceConfig>
+      <State>Started</State>
+      <AssemblyName>SqlWatcher.dll</AssemblyName>
+      <AssemblyType>SQLWatcher.SQLWatcher</AssemblyType>
+      <AssemblyVersion>1.0</AssemblyVersion>
+      <Name>Sql Watcher</Name>
+      <Type>DataProducer</Type>
+      <ConsumerMessageType>1</ConsumerMessageType>
+      <ProducerMessageType>2</ProducerMessageType>
+      <Options>
+        <DeviceConfigOption>
+          <Name>Connection String</Name>
+          <Value>server=.;Integrated Security=true;database=WSP;</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Database Table</Name>
+          <Value>[dbo].[WellDailyProductionOFM]</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Column Name</Name>
+          <Value>[Oil]</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Data Type</Name>
+          <Value>Float</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Min Value</Name>
+          <Value>0</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Max Value</Name>
+          <Value>4000</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Query Interval (Seconds)</Name>
+          <Value>10</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Retention Cycle</Name>
+          <Value>3</Value>
+        </DeviceConfigOption>
+      </Options>
+      <Filters />
+    </DeviceConfig>
+    
+    <DeviceConfig>
+      <State>Stopped</State>
+      <AssemblyName>Jaxis.BeverageManagement.Plugin.dll</AssemblyName>
+      <AssemblyType>Jaxis.BeverageManagement.Plugin.Alerts.EmailAlerts</AssemblyType>
+      <AssemblyVersion>1.0</AssemblyVersion>
+      <ID>eb722a76-da84-40fc-b1d1-f152f4b5ce3b</ID>
+      <Name>Email Alerts</Name>
+      <Type>DataConsumer</Type>
+      <ConsumerMessageType>16</ConsumerMessageType>
+      <ProducerMessageType>0</ProducerMessageType>
+      <Options>
+        <DeviceConfigOption>
+          <Name>Host</Name>
+          <Value>smtp.gmail.com</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Port</Name>
+          <Value>587</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Enable SSL</Name>
+          <Value>true</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>From Account</Name>
+          <Value>Alert@beveragemonitor.com</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Password</Name>
+          <Value>rfid123!!!</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>email address,(1-n)|AlertType,(1-n); </Name>
+          <Value>bret@bretcline.com|SqlLowValue,SqlHighValue</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>DeliveryMethod </Name>
+          <Value>Network</Value>
+        </DeviceConfigOption>
+      </Options>
+      <Filters />
+    </DeviceConfig>
+
+    <DeviceConfig>
+      <State>Stopped</State>
+      <AssemblyName>Jaxis.BeverageManagement.Plugin.dll</AssemblyName>
+      <AssemblyType>Jaxis.BeverageManagement.Plugin.Alerts.UdpAlerts</AssemblyType>
+      <AssemblyVersion>1.0</AssemblyVersion>
+      <ID>B7E42ADE-818E-4DD8-846D-E499838F39DE</ID>
+      <Name>UDP Alerts</Name>
+      <Type>DataConsumer</Type>
+      <ConsumerMessageType>16</ConsumerMessageType>
+      <ProducerMessageType>0</ProducerMessageType>
+      <Options>
+        <DeviceConfigOption>
+          <Name>Udp Host</Name>
+          <Value>127.0.0.1</Value>
+        </DeviceConfigOption>
+        <DeviceConfigOption>
+          <Name>Udp Port</Name>
+          <Value>32123</Value>
+        </DeviceConfigOption>
+      </Options>
+      <Filters />
+    </DeviceConfig>
+
+    <DeviceConfig>
+      <State>Started</State>
+      <AssemblyName>Jaxis.Engine.Device.dll</AssemblyName>
+      <AssemblyType>Jaxis.Engine.Device.TestMessageConsumer</AssemblyType>
+      <AssemblyVersion>1.0</AssemblyVersion>
+      <Name>Test Message Consumer</Name>
+      <Type>DataConsumer</Type>
+      <ConsumerMessageType>1</ConsumerMessageType>
+      <ProducerMessageType>0</ProducerMessageType>
+      <Options />
+      <Filters />
+    </DeviceConfig>
+    <DeviceConfig>
+      <State>Started</State>
+      <AssemblyName>Jaxis.Engine.Device.dll</AssemblyName>
+      <AssemblyType>Jaxis.Engine.Device.TestMessageGenerator</AssemblyType>
+      <AssemblyVersion>1.0</AssemblyVersion>
+      <Name>Test Message Consumer</Name>
+      <Type>DataConsumer</Type>
+      <ConsumerMessageType>0</ConsumerMessageType>
+      <ProducerMessageType>1</ProducerMessageType>
+      <Options />
+      <Filters />
+    </DeviceConfig>
+    <DeviceConfig>
+      <State>Started</State>
+      <AssemblyName>Jaxis.Engine.Device.dll</AssemblyName>
+      <AssemblyType>Jaxis.Engine.Device.TestMessageGenerator</AssemblyType>
+      <AssemblyVersion>1.0</AssemblyVersion>
+      <Name>Test Message Consumer</Name>
+      <Type>DataConsumer</Type>
+      <ConsumerMessageType>0</ConsumerMessageType>
+      <ProducerMessageType>1</ProducerMessageType>
+      <Options />
+      <Filters />
+    </DeviceConfig>
+    <DeviceConfig>
+      <State>Started</State>
+      <AssemblyName>Jaxis.Engine.Device.dll</AssemblyName>
+      <AssemblyType>Jaxis.Engine.Device.TestMessageGenerator</AssemblyType>
+      <AssemblyVersion>1.0</AssemblyVersion>
+      <Name>Test Message Consumer</Name>
+      <Type>DataConsumer</Type>
+      <ConsumerMessageType>0</ConsumerMessageType>
+      <ProducerMessageType>1</ProducerMessageType>
+      <Options />
+      <Filters />
+    </DeviceConfig>
+    -->
+  </Configs>
+  <Filters />
+</DeviceConfigCollection>

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptInstaller", "ScriptInstaller.csproj", "{BE1B1DFF-7715-4668-BC0E-90A7BA9A3B1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseRemoval", "..\DatabaseRemoval\DatabaseRemoval.csproj", "{800F27AC-F42B-4C03-AD3C-E160ABB3C049}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE1B1DFF-7715-4668-BC0E-90A7BA9A3B1B}.Debug|x86.ActiveCfg = Debug|x86
+		{BE1B1DFF-7715-4668-BC0E-90A7BA9A3B1B}.Debug|x86.Build.0 = Debug|x86
+		{BE1B1DFF-7715-4668-BC0E-90A7BA9A3B1B}.Release|x86.ActiveCfg = Release|x86
+		{BE1B1DFF-7715-4668-BC0E-90A7BA9A3B1B}.Release|x86.Build.0 = Release|x86
+		{800F27AC-F42B-4C03-AD3C-E160ABB3C049}.Debug|x86.ActiveCfg = Debug|x86
+		{800F27AC-F42B-4C03-AD3C-E160ABB3C049}.Debug|x86.Build.0 = Debug|x86
+		{800F27AC-F42B-4C03-AD3C-E160ABB3C049}.Release|x86.ActiveCfg = Release|x86
+		{800F27AC-F42B-4C03-AD3C-E160ABB3C049}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

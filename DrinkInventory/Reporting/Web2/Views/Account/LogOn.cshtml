@@ -1,0 +1,38 @@
+﻿@model Jaxis.DrinkInventory.Reporting.Web2.Models.LogOnModel
+
+@{
+    ViewBag.Title = "Log On";
+}
+
+@Html.ValidationSummary(true, "Logon was unsuccessful. Please correct the errors and try again.")
+
+@using (Html.BeginForm()) 
+{
+    <div class="viewbody">
+        <h1>Log On</h1>
+        <div class="viewsection">
+            <h2>Account Information</h2>
+
+            <div class="editor-label">@Html.LabelFor(m => m.UserName)</div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.UserName)
+                @Html.ValidationMessageFor(m => m.UserName)
+            </div>
+
+            <div class="editor-label">@Html.LabelFor(m => m.Password)</div>
+            <div class="editor-field">
+                @Html.PasswordFor(m => m.Password)
+                @Html.ValidationMessageFor(m => m.Password)
+            </div>
+
+            <div class="editor-field">
+                @Html.EditorFor(m => m.StayLoggedIn)
+                @Html.LabelFor(m => m.StayLoggedIn)
+            </div>
+
+            <p>
+                <input type="submit" value="Log On" />
+            </p>
+        </div>
+    </div>
+}

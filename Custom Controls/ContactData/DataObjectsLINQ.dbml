@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="SecureRisk" Class="DataObjectsLINQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=SecureRisk;Integrated Security=True" SettingsObjectName="ContactData.Properties.Settings" SettingsPropertyName="SecureRiskConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Addresses" Member="Addresses">
+    <Type Name="Address">
+      <Column Name="AddressID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AddressTypeID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Street" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="State" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Zip" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Address_CompanyXAddress" Member="CompanyXAddresses" ThisKey="AddressID" OtherKey="AddressID" Type="CompanyXAddress" />
+      <Association Name="Address_Contact" Member="Contacts" ThisKey="AddressID" OtherKey="PrimaryAddressID" Type="Contact" />
+      <Association Name="Address_ContactXAddress" Member="ContactXAddresses" ThisKey="AddressID" OtherKey="AddressID" Type="ContactXAddress" />
+      <Association Name="Address_JobLocation" Member="JobLocations" ThisKey="AddressID" OtherKey="AddressID" Type="JobLocation" />
+      <Association Name="AddressType_Address" Member="AddressType" ThisKey="AddressTypeID" OtherKey="AddressTypeID" Type="AddressType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkItemsXJobLocations" Member="WorkItemsXJobLocations">
+    <Type Name="WorkItemsXJobLocation">
+      <Column Name="WorkItemXJobLocation" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="JobLocationID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="WorkItemID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="NoteID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="JobLocation_WorkItemsXJobLocation" Member="JobLocation" ThisKey="JobLocationID" OtherKey="JobLocationID" Type="JobLocation" IsForeignKey="true" />
+      <Association Name="WorkItem_WorkItemsXJobLocation" Member="WorkItem" ThisKey="WorkItemID" OtherKey="WorkItemID" Type="WorkItem" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AddressTypes" Member="AddressTypes">
+    <Type Name="AddressType">
+      <Column Name="AddressTypeID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AddressTypeName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="AddressType_Address" Member="Addresses" ThisKey="AddressTypeID" OtherKey="AddressTypeID" Type="Address" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AssignedTypes" Member="AssignedTypes">
+    <Type Name="AssignedType">
+      <Column Name="AssignedTypeID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="AssignedType_JobAssignment" Member="JobAssignments" ThisKey="AssignedTypeID" OtherKey="AssignedTypeID" Type="JobAssignment" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Companies" Member="Companies">
+    <Type Name="Company">
+      <Column Name="CompanyID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CompanyName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PrimaryContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="PrimaryAddressID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="PrimaryPhoneNumberID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="RelationshipTypeID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Company_CompanyXAddress" Member="CompanyXAddresses" ThisKey="CompanyID" OtherKey="CompanyID" Type="CompanyXAddress" />
+      <Association Name="Company_Job" Member="Jobs" ThisKey="CompanyID" OtherKey="InsuranceCompanyID" Type="Job" />
+      <Association Name="Contact_Company" Member="Contact" ThisKey="PrimaryContactID" OtherKey="ContactID" Type="Contact" IsForeignKey="true" />
+      <Association Name="PhoneNumber_Company" Member="PhoneNumber" ThisKey="PrimaryPhoneNumberID" OtherKey="PhoneNumberID" Type="PhoneNumber" IsForeignKey="true" />
+      <Association Name="RelationshipType_Company" Member="RelationshipType" ThisKey="RelationshipTypeID" OtherKey="RelationshipTypeID" Type="RelationshipType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CompanyXAddresses" Member="CompanyXAddresses">
+    <Type Name="CompanyXAddress">
+      <Column Name="CompanyXAddressID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="AddressID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="RelationshipID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Address_CompanyXAddress" Member="Address" ThisKey="AddressID" OtherKey="AddressID" Type="Address" IsForeignKey="true" />
+      <Association Name="Company_CompanyXAddress" Member="Company" ThisKey="CompanyID" OtherKey="CompanyID" Type="Company" IsForeignKey="true" />
+      <Association Name="Relationship_CompanyXAddress" Member="Relationship" ThisKey="RelationshipID" OtherKey="RelationshipID" Type="Relationship" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Contacts" Member="Contacts">
+    <Type Name="Contact">
+      <Column Name="ContactID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ContactTypeID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="MiddleName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LastName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PrimaryAddressID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="PrimaryPhoneNumberID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Contact_Company" Member="Companies" ThisKey="ContactID" OtherKey="PrimaryContactID" Type="Company" />
+      <Association Name="Contact_ContactXAddress" Member="ContactXAddresses" ThisKey="ContactID" OtherKey="ContactID" Type="ContactXAddress" />
+      <Association Name="Contact_JobAssignment" Member="JobAssignments" ThisKey="ContactID" OtherKey="AssignedID" Type="JobAssignment" />
+      <Association Name="Address_Contact" Member="Address" ThisKey="PrimaryAddressID" OtherKey="AddressID" Type="Address" IsForeignKey="true" />
+      <Association Name="ContactType_Contact" Member="ContactType" ThisKey="ContactTypeID" OtherKey="ContactTypeID" Type="ContactType" IsForeignKey="true" />
+      <Association Name="PhoneNumber_Contact" Member="PhoneNumber" ThisKey="PrimaryPhoneNumberID" OtherKey="PhoneNumberID" Type="PhoneNumber" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ContactTypes" Member="ContactTypes">
+    <Type Name="ContactType">
+      <Column Name="ContactTypeID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="ContactType_Contact" Member="Contacts" ThisKey="ContactTypeID" OtherKey="ContactTypeID" Type="Contact" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ContactXAddresses" Member="ContactXAddresses">
+    <Type Name="ContactXAddress">
+      <Column Name="ContactXAddressID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ContactID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="AddressID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Address_ContactXAddress" Member="Address" ThisKey="AddressID" OtherKey="AddressID" Type="Address" IsForeignKey="true" />
+      <Association Name="Contact_ContactXAddress" Member="Contact" ThisKey="ContactID" OtherKey="ContactID" Type="Contact" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Groups" Member="Groups">
+    <Type Name="Group">
+      <Column Name="GroupID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JobAssignments" Member="JobAssignments">
+    <Type Name="JobAssignment">
+      <Column Name="JobAssignmentID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="JobID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AssignedDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CompleteDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AssignedTypeID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AssignedID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Rates" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Hours" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="AssignedType_JobAssignment" Member="AssignedType" ThisKey="AssignedTypeID" OtherKey="AssignedTypeID" Type="AssignedType" IsForeignKey="true" />
+      <Association Name="Contact_JobAssignment" Member="Contact" ThisKey="AssignedID" OtherKey="ContactID" Type="Contact" IsForeignKey="true" />
+      <Association Name="Job_JobAssignment" Member="Job" ThisKey="JobID" OtherKey="JobID" Type="Job" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JobLocations" Member="JobLocations">
+    <Type Name="JobLocation">
+      <Column Name="JobLocationID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="JobID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="AddressID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="JobLocation_WorkItemsXJobLocation" Member="WorkItemsXJobLocations" ThisKey="JobLocationID" OtherKey="JobLocationID" Type="WorkItemsXJobLocation" />
+      <Association Name="Address_JobLocation" Member="Address" ThisKey="AddressID" OtherKey="AddressID" Type="Address" IsForeignKey="true" />
+      <Association Name="Job_JobLocation" Member="Job" ThisKey="JobID" OtherKey="JobID" Type="Job" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Jobs" Member="Jobs">
+    <Type Name="Job">
+      <Column Name="JobID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RequestDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DueDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CompletionDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="InsuranceName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="InsuranceCompanyID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="WorkItemNote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="JobStatusID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Job_JobAssignment" Member="JobAssignments" ThisKey="JobID" OtherKey="JobID" Type="JobAssignment" />
+      <Association Name="Job_JobLocation" Member="JobLocations" ThisKey="JobID" OtherKey="JobID" Type="JobLocation" />
+      <Association Name="Company_Job" Member="Company" ThisKey="InsuranceCompanyID" OtherKey="CompanyID" Type="Company" IsForeignKey="true" />
+      <Association Name="JobStatuse_Job" Member="JobStatuse" ThisKey="JobStatusID" OtherKey="JobStatusID" Type="JobStatuse" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.JobStatuses" Member="JobStatuses">
+    <Type Name="JobStatuse">
+      <Column Name="JobStatusID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="JobStatuse_Job" Member="Jobs" ThisKey="JobStatusID" OtherKey="JobStatusID" Type="Job" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Notes" Member="Notes">
+    <Type Name="Note">
+      <Column Name="NoteID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ParentID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="ParentTypeID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="NoteTitle" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Note" Member="Note1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Parent_Note" Member="Parent" ThisKey="ParentID" OtherKey="ParentID" Type="Parent" IsForeignKey="true" />
+      <Association Name="ParentType_Note" Member="ParentType" ThisKey="ParentTypeID" OtherKey="ParentTypeID" Type="ParentType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Parents" Member="Parents">
+    <Type Name="Parent">
+      <Column Name="ParentID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Parent_Note" Member="Notes" ThisKey="ParentID" OtherKey="ParentID" Type="Note" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ParentTypes" Member="ParentTypes">
+    <Type Name="ParentType">
+      <Column Name="ParentTypeID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="ParentType_Note" Member="Notes" ThisKey="ParentTypeID" OtherKey="ParentTypeID" Type="Note" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhoneNumbers" Member="PhoneNumbers">
+    <Type Name="PhoneNumber">
+      <Column Name="PhoneNumberID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PhoneNumberTypeID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="AreaCode" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Prefix" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Suffix" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Extension" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="PhoneNumber_Company" Member="Companies" ThisKey="PhoneNumberID" OtherKey="PrimaryPhoneNumberID" Type="Company" />
+      <Association Name="PhoneNumber_Contact" Member="Contacts" ThisKey="PhoneNumberID" OtherKey="PrimaryPhoneNumberID" Type="Contact" />
+      <Association Name="PhoneNumberType_PhoneNumber" Member="PhoneNumberType" ThisKey="PhoneNumberTypeID" OtherKey="PhoneNumberTypeID" Type="PhoneNumberType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PhoneNumberTypes" Member="PhoneNumberTypes">
+    <Type Name="PhoneNumberType">
+      <Column Name="PhoneNumberTypeID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="PhoneNumberType_PhoneNumber" Member="PhoneNumbers" ThisKey="PhoneNumberTypeID" OtherKey="PhoneNumberTypeID" Type="PhoneNumber" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Policies" Member="Policies">
+    <Type Name="Policy">
+      <Column Name="PolicyID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PolicyNumber" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PolicyAmount" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(1024)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Relationships" Member="Relationships">
+    <Type Name="Relationship">
+      <Column Name="RelationshipID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Relationship_CompanyXAddress" Member="CompanyXAddresses" ThisKey="RelationshipID" OtherKey="RelationshipID" Type="CompanyXAddress" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RelationshipTypes" Member="RelationshipTypes">
+    <Type Name="RelationshipType">
+      <Column Name="RelationshipTypeID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="RelationshipType_Company" Member="Companies" ThisKey="RelationshipTypeID" OtherKey="RelationshipTypeID" Type="Company" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WorkItems" Member="WorkItems">
+    <Type Name="WorkItem">
+      <Column Name="WorkItemID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ModifyDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="WorkItem_WorkItemsXJobLocation" Member="WorkItemsXJobLocations" ThisKey="WorkItemID" OtherKey="WorkItemID" Type="WorkItemsXJobLocation" />
+    </Type>
+  </Table>
+</Database>

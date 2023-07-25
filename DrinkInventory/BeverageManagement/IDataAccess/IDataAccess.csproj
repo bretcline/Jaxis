@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A9552B6C-5BFA-4D23-B813-9FBB548610FF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Jaxis.Inventory.Data</RootNamespace>
+    <AssemblyName>IDataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SubSonic.Core">
+      <HintPath>..\..\..\DLLS\SubSonic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IBLDataItems\IBLActivityLog.cs" />
+    <Compile Include="IBLDataItems\IBLAssociatedBottle.cs" />
+    <Compile Include="IBLDataItems\IBLBrandedBottle.cs" />
+    <Compile Include="IBLDataItems\IBLCart.cs" />
+    <Compile Include="IBLDataItems\IBLCategory.cs" />
+    <Compile Include="IBLDataItems\IBLDevice.cs" />
+    <Compile Include="IBLDataItems\IBLEvent.cs" />
+    <Compile Include="IBLDataItems\IBLEventsXTag.cs" />
+    <Compile Include="IBLDataItems\IBLGroup.cs" />
+    <Compile Include="IBLDataItems\IBLGroupsXSecurableItem.cs" />
+    <Compile Include="IBLDataItems\IBLIngredient.cs" />
+    <Compile Include="IBLDataItems\IBLInventory.cs" />
+    <Compile Include="IBLDataItems\IBLInventoryItem.cs" />
+    <Compile Include="IBLDataItems\IBLLocation.cs" />
+    <Compile Include="IBLDataItems\IBLManufacturer.cs" />
+    <Compile Include="IBLDataItems\IBLNameDescription.cs" />
+    <Compile Include="IBLDataItems\IBLOrganization.cs" />
+    <Compile Include="IBLDataItems\IBLPosPour.cs" />
+    <Compile Include="IBLDataItems\IBLPOSTicket.cs" />
+    <Compile Include="IBLDataItems\IBLPOSTicketItem.cs" />
+    <Compile Include="IBLDataItems\IBLPour.cs" />
+    <Compile Include="IBLDataItems\IBLQuality.cs" />
+    <Compile Include="IBLDataItems\IBLRecipe.cs" />
+    <Compile Include="IBLDataItems\IBLReport.cs" />
+    <Compile Include="IBLDataItems\IBLSecurableItem.cs" />
+    <Compile Include="IBLDataItems\IBLSizeType.cs" />
+    <Compile Include="IBLDataItems\IBLStandardNozzle.cs" />
+    <Compile Include="IBLDataItems\IBLStandardPour.cs" />
+    <Compile Include="IBLDataItems\IBLStandardPrice.cs" />
+    <Compile Include="IBLDataItems\IBLTag.cs" />
+    <Compile Include="IBLDataItems\IBLTagAlert.cs" />
+    <Compile Include="IBLDataItems\IBLTicketItemAlias.cs" />
+    <Compile Include="IBLDataItems\IBLUPCItem.cs" />
+    <Compile Include="IBLDataItems\IBLUser.cs" />
+    <Compile Include="IBLDataItems\IBLUserSession.cs" />
+    <Compile Include="IBLManager.cs" />
+    <Compile Include="IBLManagerFactory.cs" />
+    <Compile Include="IDataItems\IActivityLog.cs" />
+    <Compile Include="IDataItems\IDataObject.cs" />
+    <Compile Include="IDataItems\IDevice.cs" />
+    <Compile Include="IDataItems\IGroupsXSecurableItem.cs" />
+    <Compile Include="IDataItems\IIngredient.cs" />
+    <Compile Include="IDataItems\IManufacturer.cs" />
+    <Compile Include="IDataItems\IParLevel.cs" />
+    <Compile Include="IDataItems\IPosPour.cs" />
+    <Compile Include="IDataItems\IPOSTicket.cs" />
+    <Compile Include="IDataItems\IPOSTicketItem.cs" />
+    <Compile Include="IDataItems\IPOSTicketItemModifier.cs" />
+    <Compile Include="IDataItems\IQuality.cs" />
+    <Compile Include="IDataItems\IRecipe.cs" />
+    <Compile Include="IDataItems\IReport.cs" />
+    <Compile Include="IDataItems\IReportParameter.cs" />
+    <Compile Include="IDataItems\ISecurableItem.cs" />
+    <Compile Include="IDataItems\ICart.cs" />
+    <Compile Include="IDataItems\ICategory.cs" />
+    <Compile Include="IDataItems\IEvent.cs" />
+    <Compile Include="IDataItems\IEventsXTag.cs" />
+    <Compile Include="IDataItems\IGroup.cs" />
+    <Compile Include="IDataItems\IInventory.cs" />
+    <Compile Include="IDataItems\ILocation.cs" />
+    <Compile Include="IDataItems\INameDescription.cs" />
+    <Compile Include="IDataItems\INamedObject.cs" />
+    <Compile Include="IDataItems\IOrganization.cs" />
+    <Compile Include="IDataItems\IPour.cs" />
+    <Compile Include="IDataItems\ISizeType.cs" />
+    <Compile Include="IDataItems\IStandardNozzle.cs" />
+    <Compile Include="IDataItems\IStandardPour.cs" />
+    <Compile Include="IDataItems\IStandardPrice.cs" />
+    <Compile Include="IDataItems\ITag.cs" />
+    <Compile Include="IDataItems\ITagActivity.cs" />
+    <Compile Include="IDataItems\ITagAlert.cs" />
+    <Compile Include="IDataItems\ITagMove.cs" />
+    <Compile Include="IDataItems\ITicketItemAlias.cs" />
+    <Compile Include="IDataItems\IUPCItem.cs" />
+    <Compile Include="IDataItems\IUPCItemView.cs" />
+    <Compile Include="IDataItems\IUser.cs" />
+    <Compile Include="IDataItems\IUserSession.cs" />
+    <Compile Include="IDataManager.cs" />
+    <Compile Include="IDataManagerFactory.cs" />
+    <Compile Include="IUIDataItems\INozzle.cs" />
+    <Compile Include="IUIDataItems\IUIActivityLog.cs" />
+    <Compile Include="IUIDataItems\IUIPosDisplay.cs" />
+    <Compile Include="IUIDataItems\IUIPosPour.cs" />
+    <Compile Include="IUIDataItems\IUISecurableItem.cs" />
+    <Compile Include="IUIDataItems\IUIAssociatedBottle.cs" />
+    <Compile Include="IUIDataItems\IUIBrandedBottle.cs" />
+    <Compile Include="IUIDataItems\IUICart.cs" />
+    <Compile Include="IUIDataItems\IUICategory.cs" />
+    <Compile Include="IUIDataItems\IUIEvent.cs" />
+    <Compile Include="IUIDataItems\IUIEventsXTag.cs" />
+    <Compile Include="IUIDataItems\IUIGroup.cs" />
+    <Compile Include="IUIDataItems\IUIGroupsXSecurableItem.cs" />
+    <Compile Include="IUIDataItems\IUIInventory.cs" />
+    <Compile Include="IUIDataItems\IUILocation.cs" />
+    <Compile Include="IUIDataItems\IUINameDescription.cs" />
+    <Compile Include="IUIDataItems\IUIOrganization.cs" />
+    <Compile Include="IUIDataItems\IUIPour.cs" />
+    <Compile Include="IUIDataItems\IUISizeType.cs" />
+    <Compile Include="IUIDataItems\IUITag.cs" />
+    <Compile Include="IUIDataItems\IUIUser.cs" />
+    <Compile Include="IUIDataItems\IUIUserSession.cs" />
+    <Compile Include="IUIDataItems\IUIUPCItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\IRPourTotals.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\MessageEngine\JaxisInterfaces\JaxisInterfaces.csproj">
+      <Project>{77AB9947-1F31-4BF2-86ED-24D20ED9A5DB}</Project>
+      <Name>JaxisInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\MessageEngine\Messages\MessageLibrary\MessageLibrary.csproj">
+      <Project>{CF1F61FD-C28D-4B31-A3D8-FA07E8AC1175}</Project>
+      <Name>MessageLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,148 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "i-CARD CF B", "i-CARD CF B\i-CARD CF B.csproj", "{001D022C-495C-4AA6-A56A-14A104038FA9}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "i-Card R2", "i-Card R2\i-Card R2.csproj", "{2EBA3BB9-C51D-43C2-A736-4B0CF0324BC2}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "i-PORT R2", "i-PORT R2\i-PORT R2.csproj", "{1FCD6062-5E36-4E4C-8737-293692FC1D0F}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCard Info", "iCard Info\iCard Info.csproj", "{F7C7EEDE-97F9-4CB4-A175-1BD1F1813B16}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCard3Scan", "iCard3Scan\iCard3Scan.csproj", "{0737B006-7798-4373-8EA2-5BA596D5FC69}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCardConnectAndPingi-D2Tag", "iCardConnectAndPingi-D2Tag\iCardConnectAndPingi-D2Tag.csproj", "{1A0D772D-2A9D-4E86-8C64-AD09E19C176D}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCardConnectAndPingTag", "iCardConnectAndPingTag\iCardConnectAndPingTag.csproj", "{73F36578-4D8A-4C75-88CA-37E5A9616A05}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPortIIISample", "iPortIIISample\iPortIIISample.csproj", "{E136443C-008F-4ABD-ADB8-9CD8989F8D1F}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Read and Write Tag Data", "Read and Write Tag Data\Read and Write Tag Data.csproj", "{6DB7DD20-CD25-4D7D-A606-448A283964C3}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScanAndSleep", "ScanAndSleep\ScanAndSleep.csproj", "{CE65F665-8971-457E-B054-9E03A02A8F81}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Temperature Logging", "Temperature Logging\Temperature Logging.csproj", "{6EF0CC2B-D349-4A46-A1DF-A5961676E2EB}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "i-CARD 3 Samples", "i-CARD 3 Samples", "{0461F479-7B03-49C5-B36C-012F10DA38FF}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Beacon Technology Samples", "Beacon Technology Samples", "{F34DB841-CA78-488E-90B9-485FDEABA7D4}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.Debug = "False"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{001D022C-495C-4AA6-A56A-14A104038FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{001D022C-495C-4AA6-A56A-14A104038FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{001D022C-495C-4AA6-A56A-14A104038FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{001D022C-495C-4AA6-A56A-14A104038FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EBA3BB9-C51D-43C2-A736-4B0CF0324BC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EBA3BB9-C51D-43C2-A736-4B0CF0324BC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EBA3BB9-C51D-43C2-A736-4B0CF0324BC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EBA3BB9-C51D-43C2-A736-4B0CF0324BC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FCD6062-5E36-4E4C-8737-293692FC1D0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FCD6062-5E36-4E4C-8737-293692FC1D0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FCD6062-5E36-4E4C-8737-293692FC1D0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FCD6062-5E36-4E4C-8737-293692FC1D0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7C7EEDE-97F9-4CB4-A175-1BD1F1813B16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7C7EEDE-97F9-4CB4-A175-1BD1F1813B16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7C7EEDE-97F9-4CB4-A175-1BD1F1813B16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7C7EEDE-97F9-4CB4-A175-1BD1F1813B16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0737B006-7798-4373-8EA2-5BA596D5FC69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0737B006-7798-4373-8EA2-5BA596D5FC69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0737B006-7798-4373-8EA2-5BA596D5FC69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0737B006-7798-4373-8EA2-5BA596D5FC69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A0D772D-2A9D-4E86-8C64-AD09E19C176D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A0D772D-2A9D-4E86-8C64-AD09E19C176D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A0D772D-2A9D-4E86-8C64-AD09E19C176D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A0D772D-2A9D-4E86-8C64-AD09E19C176D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73F36578-4D8A-4C75-88CA-37E5A9616A05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73F36578-4D8A-4C75-88CA-37E5A9616A05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73F36578-4D8A-4C75-88CA-37E5A9616A05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73F36578-4D8A-4C75-88CA-37E5A9616A05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E136443C-008F-4ABD-ADB8-9CD8989F8D1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E136443C-008F-4ABD-ADB8-9CD8989F8D1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E136443C-008F-4ABD-ADB8-9CD8989F8D1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E136443C-008F-4ABD-ADB8-9CD8989F8D1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6DB7DD20-CD25-4D7D-A606-448A283964C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DB7DD20-CD25-4D7D-A606-448A283964C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DB7DD20-CD25-4D7D-A606-448A283964C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DB7DD20-CD25-4D7D-A606-448A283964C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE65F665-8971-457E-B054-9E03A02A8F81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE65F665-8971-457E-B054-9E03A02A8F81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE65F665-8971-457E-B054-9E03A02A8F81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE65F665-8971-457E-B054-9E03A02A8F81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EF0CC2B-D349-4A46-A1DF-A5961676E2EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EF0CC2B-D349-4A46-A1DF-A5961676E2EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EF0CC2B-D349-4A46-A1DF-A5961676E2EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EF0CC2B-D349-4A46-A1DF-A5961676E2EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2EBA3BB9-C51D-43C2-A736-4B0CF0324BC2} = {F34DB841-CA78-488E-90B9-485FDEABA7D4}
+		{1FCD6062-5E36-4E4C-8737-293692FC1D0F} = {F34DB841-CA78-488E-90B9-485FDEABA7D4}
+		{001D022C-495C-4AA6-A56A-14A104038FA9} = {F34DB841-CA78-488E-90B9-485FDEABA7D4}
+		{0737B006-7798-4373-8EA2-5BA596D5FC69} = {0461F479-7B03-49C5-B36C-012F10DA38FF}
+		{1A0D772D-2A9D-4E86-8C64-AD09E19C176D} = {0461F479-7B03-49C5-B36C-012F10DA38FF}
+		{73F36578-4D8A-4C75-88CA-37E5A9616A05} = {0461F479-7B03-49C5-B36C-012F10DA38FF}
+		{6DB7DD20-CD25-4D7D-A606-448A283964C3} = {0461F479-7B03-49C5-B36C-012F10DA38FF}
+		{CE65F665-8971-457E-B054-9E03A02A8F81} = {0461F479-7B03-49C5-B36C-012F10DA38FF}
+		{6EF0CC2B-D349-4A46-A1DF-A5961676E2EB} = {0461F479-7B03-49C5-B36C-012F10DA38FF}
+		{F7C7EEDE-97F9-4CB4-A175-1BD1F1813B16} = {0461F479-7B03-49C5-B36C-012F10DA38FF}
+	EndGlobalSection
+EndGlobal

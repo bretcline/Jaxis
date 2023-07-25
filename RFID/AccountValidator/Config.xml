@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeviceConfigCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<Configs>
+		<DeviceConfig>
+			<AssemblyName>Jaxis.Readers.AlienRFID.dll</AssemblyName>
+			<AssemblyType>Jaxis.Readers.AlienRFID.AlienReader</AssemblyType>
+			<ID>123</ID>
+			<Name>Test Prod</Name>
+			<Type>DataProducer</Type>
+			<ConsumerMessageType>None</ConsumerMessageType>
+			<Options>
+				<string>4000</string>
+				<string>3988</string>
+				<string>30</string>
+			</Options>
+			<Filters>
+				<FilterConfig>
+					<AssemblyName>Jaxis.MessageProcessor.Alien.dll</AssemblyName>
+					<AssemblyType>Jaxis.MessageProcessor.Alien.ReadTimeFilter</AssemblyType>
+					<Name>Read Time Filter</Name>
+					<Type>Inbound</Type>
+					<Options>
+						<string>10</string>
+						<string>10</string>
+					</Options>
+				</FilterConfig>
+			</Filters>
+		</DeviceConfig>
+	</Configs>
+</DeviceConfigCollection>

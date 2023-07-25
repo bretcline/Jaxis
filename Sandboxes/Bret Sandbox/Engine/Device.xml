@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DeviceConfigCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Configs>
+
+    <DeviceConfig>
+      <AssemblyName>TestProdDev.dll</AssemblyName>
+      <AssemblyType>TestProdDev.TestProdDev</AssemblyType>
+      <AssemblyVersion>1.0</AssemblyVersion>
+      <ID>123</ID>
+      <Name>Test Prod</Name>
+      <Type>DataProducer</Type>
+      <State>Started</State>
+      <ConsumerMessageType>None</ConsumerMessageType>
+    </DeviceConfig>   
+<!--    <DeviceConfig>
+      <AssemblyName>BevMetConsumer.dll</AssemblyName>
+      <AssemblyType>BevMetConsumer.DataConsumer</AssemblyType>
+      <AssemblyVersion>1.0</AssemblyVersion>
+      <ID>1</ID>
+      <Name>BevMet Consumer</Name>
+      <Type>DataConsumer</Type>
+      <State>Started</State>
+      <ConsumerMessageType>RawData</ConsumerMessageType>
+    </DeviceConfig> 
+-->
+    <DeviceConfig>
+        <AssemblyName>BevMetConsumer.dll</AssemblyName> 
+        <AssemblyType>BevMetConsumer.DataConsumer</AssemblyType> 
+        <AssemblyVersion>1.0</AssemblyVersion> 
+        <ID>1</ID> 
+        <Name>BevMet Consumer</Name> 
+        <Type>DataConsumer</Type> 
+        <State>Started</State> 
+        <ConsumerMessageType>RawData</ConsumerMessageType> 
+    </DeviceConfig>
+	  <DeviceConfig>
+		  <AssemblyName>TestProdDev.dll</AssemblyName>
+		  <AssemblyType>TestProdDev.TestProdDev</AssemblyType>
+		  <ID>123</ID>
+		  <Name>Test Prod</Name>
+		  <Type>DataProducer</Type>
+		  <ConsumerMessageType>None</ConsumerMessageType>
+	  </DeviceConfig>
+  </Configs>
+</DeviceConfigCollection>

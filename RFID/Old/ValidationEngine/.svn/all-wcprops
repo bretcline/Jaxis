@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/Jaxis/!svn/ver/228/trunk/RFID/ValidationEngine
+END
+ValidationEngine.csproj
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/Jaxis/!svn/ver/143/trunk/RFID/ValidationEngine/ValidationEngine.csproj
+END
+Entity.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/Jaxis/!svn/ver/143/trunk/RFID/ValidationEngine/Entity.cs
+END
+ValidationResults.cs
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/Jaxis/!svn/ver/143/trunk/RFID/ValidationEngine/ValidationResults.cs
+END
+CustomerData.sdf
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/Jaxis/!svn/ver/228/trunk/RFID/ValidationEngine/CustomerData.sdf
+END
+ValidationKey.cs
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/Jaxis/!svn/ver/143/trunk/RFID/ValidationEngine/ValidationKey.cs
+END
+Engine.cs
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/Jaxis/!svn/ver/143/trunk/RFID/ValidationEngine/Engine.cs
+END

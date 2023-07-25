@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{47B28F7E-0EF5-4435-AB3B-CBD091B6C907}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ContactControls</RootNamespace>
+    <AssemblyName>ContactControls</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Printing.v11.2.Core, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v11.2, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v11.2, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v11.2, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v11.2, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v11.2, Version=11.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddressPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddressPanel.Designer.cs">
+      <DependentUpon>AddressPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CollapsiblePannel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CollapsiblePannel.designer.cs">
+      <DependentUpon>CollapsiblePannel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CompanyPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CompanyPanel.Designer.cs">
+      <DependentUpon>CompanyPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContactPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ContactPanel.Designer.cs">
+      <DependentUpon>ContactPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContactTypePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ContactTypePanel.Designer.cs">
+      <DependentUpon>ContactTypePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NotesPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NotesPanel.Designer.cs">
+      <DependentUpon>NotesPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhoneNumberPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PhoneNumberPanel.Designer.cs">
+      <DependentUpon>PhoneNumberPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AddressPanel.resx">
+      <DependentUpon>AddressPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CollapsiblePannel.resx">
+      <DependentUpon>CollapsiblePannel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CompanyPanel.resx">
+      <DependentUpon>CompanyPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactPanel.resx">
+      <DependentUpon>ContactPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContactTypePanel.resx">
+      <DependentUpon>ContactTypePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotesPanel.resx">
+      <DependentUpon>NotesPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhoneNumberPanel.resx">
+      <DependentUpon>PhoneNumberPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\SecureRisk\trunk\Source\SecureRiskDataInterfaces\SecureRiskDataInterfaces.csproj">
+      <Project>{A70C59C4-BC4A-4866-A69E-A5827B1C77B3}</Project>
+      <Name>SecureRiskDataInterfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

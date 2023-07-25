@@ -1,0 +1,21 @@
+4
+
+0	net03.utdallas.edu	5560
+1	net06.utdallas.edu	8979
+2	net23.utdallas.edu	4501
+3	net12.utdallas.edu	3612
+
+0	1 3
+1	0 2
+2	1 3
+3	0 2
+
+2
+
+100
+
+2 3
+
+1 2
+
+0 2

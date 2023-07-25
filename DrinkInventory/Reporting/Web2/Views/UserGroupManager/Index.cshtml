@@ -1,0 +1,263 @@
+﻿@{
+    ViewBag.Title = "User Group Manager";
+}
+
+<table class="layout">
+    <tr>
+        <td class="layoutleft">
+            <div class="navbarbody">
+                <h1>User Groups</h1>
+                <select id="userGroupList" size="5">
+                </select>
+                <div class="buttonPanel">
+                    <input type="button" id="newGroup" value="New" />
+                </div>
+            </div>
+        </td>
+        <td class="layoutright">
+            <div id="editPanel" class="viewbody" style="display: none;">
+                <h1>Edit User Group</h1>
+                <div class="viewsection">
+                    <h2>User Group Information</h2>
+                    <div class="editor-label">User Group Name</div>
+                    <div class="editor-field"><input id="userGroupName" type="text" /></div>
+                    <div class="editor-label"><label for="orgtree">Root Organization</label></div>
+                    <div class="editor-field">@Html.Partial("_OrganizationSelector", "orgtree")</div>
+                    <h2>User Memberships</h2>
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="large-editor-label">Access Granted To</div>
+                                <select size="5" multiple="multiple" id="memberUsers">
+                                </select>
+                            </td>
+                            <td style="padding: 20px;">
+                                <div class="smallmargin"><input type="button" value="&lt;" id="addUser" /></div>
+                                <div class="smallmargin"><input type="button" value="&gt;" id="removeUser" /></div>
+                            </td>
+                            <td>
+                                <div class="large-editor-label">Available Users</div>
+                                <select size="5" multiple="multiple" id="availableUsers">
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <h2>Area Memberships</h2>
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="large-editor-label">Access Granted To</div>
+                                <select size="5" multiple="multiple" id="memberAreas">
+                                </select>
+                            </td>
+                            <td style="padding: 20px;">
+                                <div class="smallmargin"><input type="button" value="&lt;" id="addArea" /></div>
+                                <div class="smallmargin"><input type="button" value="&gt;" id="removeArea" /></div>
+                            </td>
+                            <td>
+                                <div class="large-editor-label">Available Areas</div>
+                                <select size="5" multiple="multiple" id="availableAreas">
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="buttonPanel">
+                        <input type="button" id="saveGroup" value="Save" />
+                        <input type="button" id="deleteGroup" value="Delete" />
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+<input id="userGroupId" type="hidden" />
+
+<script type="text/javascript">
+
+    $(document).ready(function ()
+    {
+        $('#userGroupId').val('');
+        loadUserGroupList();
+        $('#newGroup').click(onClickNewGroup);
+        $('#userGroupList').change(onChangeUserGroup);
+        $('#saveGroup').click(onClickSaveGroup);
+        $('#deleteGroup').click(onClickDeleteGroup);
+        $('#addUser').click(onClickAddUser);
+        $('#removeUser').click(onClickRemoveUser);
+        $('#addArea').click(onClickAddArea);
+        $('#removeArea').click(onClickRemoveArea);
+    });
+
+    function onClickNewGroup()
+    {
+        callServer('@Url.Action("NewUserGroup")', null, 'GET', function (data)
+        {
+            $('#userGroupList').children().removeAttr('selected');
+            setFormGroup(data);
+        });
+    }
+
+    function onClickSaveGroup()
+    {
+        var orgSel = $('#orgtree').data('orgSel');
+        if (orgSel.selectedOrg == null)
+        {
+            showAlertMessage('A root organization must be selected.');
+            return;
+        }
+
+        callServer('@Url.Action("SaveUserGroup")', getFormGroup(), 'POST', function (data)
+        {
+            loadUserGroupList();
+        });
+    }
+
+    function onClickDeleteGroup()
+    {
+        var conf = confirm('Are you sure you want to delete this user group?');
+        if (conf)
+        {
+            callServer('@Url.Action("DeleteUserGroup")', { _userGroupId: $('#userGroupId').val() }, 'POST', function (data)
+            {
+                loadUserGroupList();
+                $('#editPanel').hide();
+            });
+        }
+    }
+
+    function onChangeUserGroup()
+    {
+        callServer('@Url.Action("GetUserGroup")', { _userGroupId: $('#userGroupList option:selected:first').val() }, 'GET', function (data)
+        {
+            setFormGroup(data);
+        });
+    }
+    
+    function loadUserGroupList()
+    {
+        callServer('@Url.Action("GetUserGroups")', null, 'GET', function (data)
+        {
+            var selectElement = $('#userGroupList');
+            $(selectElement).children().remove();
+            $(data).each(function ()
+            {
+                $('<option value="' + this.UserGroupId + '">' + this.Name + '</option>').appendTo(selectElement);
+            });
+
+            $('#userGroupList option#[value=' + $('#userGroupId').val() + ']').attr('selected', true);
+        });
+    }
+
+    function setFormGroup(data)
+    {
+        $('#userGroupId').val(data.UserGroup.UserGroupId);
+        $('#userGroupName').val(data.UserGroup.Name);
+        $('#memberUsers').children().remove();
+        $(data.UserGroup.Users).each(function () { $(buildUserTag(this)).appendTo('#memberUsers'); });
+        $('#availableUsers').children().remove();
+        $(data.AvailableUsers).each(function () { $(buildUserTag(this)).appendTo('#availableUsers'); });
+        $('#memberAreas').children().remove();
+        $(data.UserGroup.Areas).each(function () { $(buildAreaTag(this)).appendTo('#memberAreas'); });
+        $('#availableAreas').children().remove();
+        $(data.AvailableAreas).each(function () { $(buildAreaTag(this)).appendTo('#availableAreas'); });
+        var orgSel = $('#orgtree').data('orgSel');
+        if (data.UserGroup.Organization != null)
+        {
+            orgSel.loadOrg(data.UserGroup.Organization, function ()
+            {
+                orgSel.selectOrg(data.UserGroup.Organization.OrganizationId);
+                $('#editPanel').show();
+                $('#userGroupName').focus().select();
+            });
+        }
+        else
+        {
+            orgSel.selectOrg(null);
+            $('#editPanel').show();
+            $('#userGroupName').focus().select();
+        }
+    }
+
+    function getFormGroup()
+    {
+        var orgSel = $('#orgtree').data('orgSel');
+
+        var memberUserIds = [];
+        $('#memberUsers option').each(function ()
+        {
+            memberUserIds.push($(this).val());
+        });
+
+        var memberAreaIds = [];
+        $('#memberAreas option').each(function ()
+        {
+            memberAreaIds.push($(this).val());
+        });
+
+        var group = 
+        {
+            UserGroupId: $('#userGroupId').val(),
+            Name: $('#userGroupName').val(),
+            UserIds: memberUserIds,
+            AreaIds: memberAreaIds,
+            OrganizationId: orgSel.selectedOrg.OrganizationId
+        };
+
+        return group;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function onClickAddArea()
+    {
+        $('#availableAreas option:selected').moveTo('#memberAreas');
+    }
+
+    function onClickRemoveArea()
+    {
+        $('#memberAreas option:selected').moveTo('#availableAreas');
+    }
+
+    function onClickAddUser()
+    {
+        $('#availableUsers option:selected').moveTo('#memberUsers');
+    }
+
+    function onClickRemoveUser()
+    {
+        $('#memberUsers option:selected').moveTo('#availableUsers');
+    }
+
+    function buildUserTag(user)
+    {
+        var userTag = $('<option value="' + user.UserId + '">' + user.UserName + '</option>');
+        return userTag;
+    }
+
+    function buildAreaTag(area)
+    {
+        var areaTag = $('<option value="' + area.AreaId + '">' + area.Name + '</option>');
+        return areaTag;
+    }
+
+</script>

@@ -1,0 +1,880 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6468B2E1-7492-4EFB-9F17-829B87F0C1C4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BeverageManagement</RootNamespace>
+    <AssemblyName>BeverageManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>BeverageManagement.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BlowfishNET, Version=2.1.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Third Party\BlowfishNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DatabaseUtilities">
+      <HintPath>..\..\..\DLLS\DatabaseUtilities.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v14.1.Core, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.CodeParser.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.1.Wizard, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.1.UI, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v14.1.Core, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v14.1.Win, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v14.1.Core, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.1.Extensions, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v14.1.Core, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.1.UI, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v14.1, Version=14.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JaxisDevExpressExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Third Party\JaxisDevExpressExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="JaxisEncryption, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Third Party\JaxisEncryption.dll</HintPath>
+    </Reference>
+    <Reference Include="JaxisExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DLLS\JaxisExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="JaxisLog4Net">
+      <HintPath>..\..\..\DLLS\JaxisLog4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="JaxisWinformsUtils, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Third Party\JaxisWinformsUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="Qios.DevSuite.Components, Version=4.0.0.20, Culture=neutral, PublicKeyToken=3cc53827b79c92fa, processorArchitecture=MSIL" />
+    <Reference Include="SubSonic.Core, Version=3.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\DLLS\SubSonic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\BottleLevel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BottleLevel.Designer.cs">
+      <DependentUpon>BottleLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\IngredientItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\IngredientItem.Designer.cs">
+      <DependentUpon>IngredientItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ReportParameter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\ReportParameter.Designer.cs">
+      <DependentUpon>ReportParameter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\StandardPourItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\StandardPourItem.Designer.cs">
+      <DependentUpon>StandardPourItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\frmAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\frmAdmin.Designer.cs">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Administration\frmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Administration\frmUsers.Designer.cs">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CommonUI.cs" />
+    <Compile Include="Forms\frmPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmPopup.Designer.cs">
+      <DependentUpon>frmPopup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmSummary.Designer.cs">
+      <DependentUpon>frmSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Inventory\frmAdjustStockInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Inventory\frmAdjustStockInventory.Designer.cs">
+      <DependentUpon>frmAdjustStockInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Inventory\frmInventoryAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Inventory\frmInventoryAdd.Designer.cs">
+      <DependentUpon>frmInventoryAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Inventory\frmInventoryMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Inventory\frmInventoryMove.Designer.cs">
+      <DependentUpon>frmInventoryMove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Inventory\frmInventoryUnBrand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Inventory\frmInventoryUnBrand.Designer.cs">
+      <DependentUpon>frmInventoryUnBrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Inventory\frmLocationAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Inventory\frmLocationAdd.Designer.cs">
+      <DependentUpon>frmLocationAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Inventory\frmQuickBranding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Inventory\frmQuickBranding.Designer.cs">
+      <DependentUpon>frmQuickBranding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reconcile\Extensions.cs" />
+    <Compile Include="Forms\Reconcile\frmAliasUPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reconcile\frmAliasUPC.Designer.cs">
+      <DependentUpon>frmAliasUPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reconcile\frmRecipe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reconcile\frmRecipe.Designer.cs">
+      <DependentUpon>frmRecipe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reconcile\frmTicketItemAliases.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reconcile\frmTicketItemAliases.Designer.cs">
+      <DependentUpon>frmTicketItemAliases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reconcile\frmReconcile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Reconcile\frmReconcile.Designer.cs">
+      <DependentUpon>frmReconcile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Reconcile\IIngredientDisplayItem.cs" />
+    <Compile Include="Forms\Reconcile\IngredientListItem.cs" />
+    <Compile Include="Forms\Reconcile\IRecipesView.cs" />
+    <Compile Include="Forms\Reconcile\IReconcileView.cs" />
+    <Compile Include="Forms\Reconcile\ITicketItemAliasDisplay.cs" />
+    <Compile Include="Forms\Reconcile\ITicketItemAliasesView.cs" />
+    <Compile Include="Forms\Reconcile\ITicketDisplay.cs" />
+    <Compile Include="Forms\Reconcile\ITicketItemDisplay.cs" />
+    <Compile Include="Forms\Reconcile\RecipesPresenter.cs" />
+    <Compile Include="Forms\Reconcile\ReconcilePresenter.cs" />
+    <Compile Include="Forms\Reconcile\TicketDisplay.cs" />
+    <Compile Include="Forms\Reconcile\TicketItemAliasDisplay.cs" />
+    <Compile Include="Forms\Reconcile\TicketItemAliasesPresenter.cs" />
+    <Compile Include="Forms\Reconcile\TicketItemDisplay.cs" />
+    <Compile Include="Forms\Reconcile\ViewPastChoice.cs" />
+    <Compile Include="Forms\UPC\frmCategoryAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UPC\frmCategoryAdd.Designer.cs">
+      <DependentUpon>frmCategoryAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UPC\frmSubCategoryAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UPC\frmSubCategoryAdd.Designer.cs">
+      <DependentUpon>frmSubCategoryAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Inventory\frmManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Inventory\frmManagement.Designer.cs">
+      <DependentUpon>frmManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Inventory\frmInventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Inventory\frmInventory.Designer.cs">
+      <DependentUpon>frmInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UPC\frmUPC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UPC\frmUPC.Designer.cs">
+      <DependentUpon>frmUPC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UPC\frmUPCManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UPC\frmUPCManagement.Designer.cs">
+      <DependentUpon>frmUPCManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UPC\frmUPCSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UPC\frmUPCSearch.Designer.cs">
+      <DependentUpon>frmUPCSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Inventory\frmBranding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Inventory\frmBranding.Designer.cs">
+      <DependentUpon>frmBranding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmScannerCommands.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintRibbonControllerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PrintRibbonControllerResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\frmGridReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmGridReport.Designer.cs">
+      <DependentUpon>frmGridReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Reports\frmDateBoundReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports\frmDateBoundReport.Designer.cs">
+      <DependentUpon>frmDateBoundReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ReportFomat.cs" />
+    <Compile Include="ScannerCommand.cs" />
+    <Compile Include="Service References\svcUPCLookup\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\svcUPCSearch\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="XRDesignRibbonControllerResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XRDesignRibbonControllerResources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\BottleLevel.resx">
+      <DependentUpon>BottleLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\IngredientItem.resx">
+      <DependentUpon>IngredientItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ReportParameter.resx">
+      <DependentUpon>ReportParameter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\StandardPourItem.resx">
+      <DependentUpon>StandardPourItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\frmAdmin.resx">
+      <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Administration\frmUsers.resx">
+      <DependentUpon>frmUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmPopup.resx">
+      <DependentUpon>frmPopup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmSummary.resx">
+      <DependentUpon>frmSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inventory\frmAdjustStockInventory.resx">
+      <DependentUpon>frmAdjustStockInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inventory\frmInventoryAdd.resx">
+      <DependentUpon>frmInventoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inventory\frmInventoryMove.resx">
+      <DependentUpon>frmInventoryMove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inventory\frmInventoryUnBrand.resx">
+      <DependentUpon>frmInventoryUnBrand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inventory\frmLocationAdd.resx">
+      <DependentUpon>frmLocationAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inventory\frmQuickBranding.resx">
+      <DependentUpon>frmQuickBranding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reconcile\frmAliasUPC.resx">
+      <DependentUpon>frmAliasUPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reconcile\frmRecipe.resx">
+      <DependentUpon>frmRecipe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reconcile\frmTicketItemAliases.resx">
+      <DependentUpon>frmTicketItemAliases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Reconcile\frmReconcile.resx">
+      <DependentUpon>frmReconcile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UPC\frmCategoryAdd.resx">
+      <DependentUpon>frmCategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UPC\frmSubCategoryAdd.resx">
+      <DependentUpon>frmSubCategoryAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inventory\frmManagement.resx">
+      <DependentUpon>frmManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inventory\frmInventory.resx">
+      <DependentUpon>frmInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UPC\frmUPC.resx">
+      <DependentUpon>frmUPC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UPC\frmUPCManagement.resx">
+      <DependentUpon>frmUPCManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UPC\frmUPCSearch.resx">
+      <DependentUpon>frmUPCSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Inventory\frmBranding.resx">
+      <DependentUpon>frmBranding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintRibbonControllerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PrintRibbonControllerResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Reports\frmGridReport.resx">
+      <DependentUpon>frmGridReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\frmDateBoundReport.resx">
+      <DependentUpon>frmDateBoundReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XRDesignRibbonControllerResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>XRDesignRibbonControllerResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Service References\svcUPCLookup\BeverageManagement.svcUPCLookup.UPCLookupResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\svcUPCLookup\UPCLookup.wsdl" />
+    <None Include="Service References\svcUPCSearch\UPCSearch.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottle_full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottle_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stats Blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Barcode-icon.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wood-2-icon.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beer-icon.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\message-bottle-icon.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottle_full.64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottle_full.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottle_full.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bar.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottle_full_remove.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottle_full_save.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wine-full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\All.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Beer-full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mixed-full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mixed-full1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\MessageEngine\EngineConfig\EngineConfigUtil\EngineConfigUtil.csproj">
+      <Project>{34ED3943-AFB7-4DA5-82CE-0FB6097EAE24}</Project>
+      <Name>EngineConfigUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\MessageEngine\JaxisInterfaces\JaxisInterfaces.csproj">
+      <Project>{77AB9947-1F31-4BF2-86ED-24D20ED9A5DB}</Project>
+      <Name>JaxisInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\MessageEngine\Messages\MessageLibrary\MessageLibrary.csproj">
+      <Project>{CF1F61FD-C28D-4B31-A3D8-FA07E8AC1175}</Project>
+      <Name>MessageLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
+      <Project>{F01FDD3B-FA5D-4629-9CDF-74D02F58109B}</Project>
+      <Name>DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HostWCFService\HostWCFService.csproj">
+      <Project>{504A23BB-C324-4D46-990A-87AD2E9A733E}</Project>
+      <Name>HostWCFService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IDataAccess\IDataAccess.csproj">
+      <Project>{A9552B6C-5BFA-4D23-B813-9FBB548610FF}</Project>
+      <Name>IDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PourAnimation\GlassFill.csproj">
+      <Project>{F2DC9C21-55EC-49B8-B630-7FAF405C2977}</Project>
+      <Name>GlassFill</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reports\BeverageReports\BeverageReports.csproj">
+      <Project>{9820579B-4AA1-4C62-8A9C-CB4B329FEB69}</Project>
+      <Name>BeverageReports %28Reports\BeverageReports%29</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IncreaseInventory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\increaseinventoryWithArrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inventory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RemoveBarManagement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RemoveBranding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveBarManagement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveBranding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Activity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddCategory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddInventory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddLocation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddSubCategory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Addupc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarManagement.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Branding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DecreaseInventory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditUpc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RemoveBranding.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveBarManagement.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveBranding.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Activity.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddCategory.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddInventory.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddLocation.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddSubCategory.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddUpc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarManagement.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Branding.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DecreaseInventory.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DecreaseInventoryWithArrow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditUpc.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IncreaseInventory.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IncreaseInventoryWithArrow.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inventory.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RemoveBarManagement.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\increaseinventoryWithArrow.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IncreaseInventory.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditUpc.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DecreaseInventory.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Branding.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarManagement.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Addupc.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddSubCategory.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddLocation.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddInventory.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AddCategory.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Activity.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upc.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveBranding.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveBarManagement.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RemoveBranding.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RemoveBarManagement.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Inventory.48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cog.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cog.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tools.32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash-register-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flask-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alias.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\svcUPCLookup\" />
+    <WCFMetadataStorage Include="Service References\svcUPCSearch\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcUPCSearch\UPCSearch.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcUPCSearch\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcUPCSearch\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcUPCSearch\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcUPCLookup\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcUPCLookup\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\svcUPCLookup\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zoom.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

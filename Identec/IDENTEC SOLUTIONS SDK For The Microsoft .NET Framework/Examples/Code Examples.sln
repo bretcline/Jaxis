@@ -1,0 +1,101 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCard Info", "iCard Info\iCard Info.csproj", "{43DBB51F-74A5-420F-A558-840561D889AE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCard3Scan", "iCard3Scan\iCard3Scan.csproj", "{DD199AFA-798D-43FB-A3E1-F0A02D0A2D69}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Read and Write Tag Data", "Read and Write Tag Data\Read and Write Tag Data.csproj", "{8D59AB12-C4E3-47B3-9464-53E70AB2D526}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCardConnectAndPingTag", "iCardConnectAndPingTag\iCardConnectAndPingTag.csproj", "{B780FE35-5946-44DE-AE02-8887BD054FAA}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScanAndSleep", "ScanAndSleep\ScanAndSleep.csproj", "{BC88B88F-DED4-4245-8151-CAC944980DF3}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Temperature Logging", "Temperature Logging\Temperature Logging.csproj", "{807C82A8-DF29-4A1D-B4D4-07AC01AFF2EE}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iPortIIISample", "iPortIIISample\iPortIIISample.csproj", "{AA5CB827-F130-4EE2-A3C4-518B09739AA3}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "i-Card R2", "i-Card R2\i-Card R2.csproj", "{FF28CAB7-44B4-468C-BEC4-61BB9F40DC68}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCardConnectAndPingi-D2Tag", "iCardConnectAndPingi-D2Tag\iCardConnectAndPingi-D2Tag.csproj", "{6A5F2741-8F72-41EB-90A3-49B7023FCAC4}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "i-PORT R2", "i-PORT R2\i-PORT R2.csproj", "{CA929569-6D05-469B-A699-E7D8D192EBC1}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "i-CARD CF B", "i-CARD CF B\i-CARD CF B.csproj", "{36C2791E-D155-4B9C-B193-09038AC9162A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{43DBB51F-74A5-420F-A558-840561D889AE}.Debug.ActiveCfg = Debug|.NET
+		{43DBB51F-74A5-420F-A558-840561D889AE}.Debug.Build.0 = Debug|.NET
+		{43DBB51F-74A5-420F-A558-840561D889AE}.Release.ActiveCfg = Release|.NET
+		{43DBB51F-74A5-420F-A558-840561D889AE}.Release.Build.0 = Release|.NET
+		{DD199AFA-798D-43FB-A3E1-F0A02D0A2D69}.Debug.ActiveCfg = Debug|.NET
+		{DD199AFA-798D-43FB-A3E1-F0A02D0A2D69}.Debug.Build.0 = Debug|.NET
+		{DD199AFA-798D-43FB-A3E1-F0A02D0A2D69}.Release.ActiveCfg = Release|.NET
+		{DD199AFA-798D-43FB-A3E1-F0A02D0A2D69}.Release.Build.0 = Release|.NET
+		{8D59AB12-C4E3-47B3-9464-53E70AB2D526}.Debug.ActiveCfg = Debug|.NET
+		{8D59AB12-C4E3-47B3-9464-53E70AB2D526}.Debug.Build.0 = Debug|.NET
+		{8D59AB12-C4E3-47B3-9464-53E70AB2D526}.Release.ActiveCfg = Release|.NET
+		{8D59AB12-C4E3-47B3-9464-53E70AB2D526}.Release.Build.0 = Release|.NET
+		{B780FE35-5946-44DE-AE02-8887BD054FAA}.Debug.ActiveCfg = Debug|.NET
+		{B780FE35-5946-44DE-AE02-8887BD054FAA}.Debug.Build.0 = Debug|.NET
+		{B780FE35-5946-44DE-AE02-8887BD054FAA}.Release.ActiveCfg = Release|.NET
+		{B780FE35-5946-44DE-AE02-8887BD054FAA}.Release.Build.0 = Release|.NET
+		{BC88B88F-DED4-4245-8151-CAC944980DF3}.Debug.ActiveCfg = Debug|.NET
+		{BC88B88F-DED4-4245-8151-CAC944980DF3}.Debug.Build.0 = Debug|.NET
+		{BC88B88F-DED4-4245-8151-CAC944980DF3}.Release.ActiveCfg = Release|.NET
+		{BC88B88F-DED4-4245-8151-CAC944980DF3}.Release.Build.0 = Release|.NET
+		{807C82A8-DF29-4A1D-B4D4-07AC01AFF2EE}.Debug.ActiveCfg = Debug|.NET
+		{807C82A8-DF29-4A1D-B4D4-07AC01AFF2EE}.Debug.Build.0 = Debug|.NET
+		{807C82A8-DF29-4A1D-B4D4-07AC01AFF2EE}.Release.ActiveCfg = Release|.NET
+		{807C82A8-DF29-4A1D-B4D4-07AC01AFF2EE}.Release.Build.0 = Release|.NET
+		{AA5CB827-F130-4EE2-A3C4-518B09739AA3}.Debug.ActiveCfg = Debug|.NET
+		{AA5CB827-F130-4EE2-A3C4-518B09739AA3}.Debug.Build.0 = Debug|.NET
+		{AA5CB827-F130-4EE2-A3C4-518B09739AA3}.Release.ActiveCfg = Release|.NET
+		{AA5CB827-F130-4EE2-A3C4-518B09739AA3}.Release.Build.0 = Release|.NET
+		{FF28CAB7-44B4-468C-BEC4-61BB9F40DC68}.Debug.ActiveCfg = Debug|.NET
+		{FF28CAB7-44B4-468C-BEC4-61BB9F40DC68}.Debug.Build.0 = Debug|.NET
+		{FF28CAB7-44B4-468C-BEC4-61BB9F40DC68}.Release.ActiveCfg = Release|.NET
+		{FF28CAB7-44B4-468C-BEC4-61BB9F40DC68}.Release.Build.0 = Release|.NET
+		{6A5F2741-8F72-41EB-90A3-49B7023FCAC4}.Debug.ActiveCfg = Debug|.NET
+		{6A5F2741-8F72-41EB-90A3-49B7023FCAC4}.Debug.Build.0 = Debug|.NET
+		{6A5F2741-8F72-41EB-90A3-49B7023FCAC4}.Release.ActiveCfg = Release|.NET
+		{6A5F2741-8F72-41EB-90A3-49B7023FCAC4}.Release.Build.0 = Release|.NET
+		{CA929569-6D05-469B-A699-E7D8D192EBC1}.Debug.ActiveCfg = Debug|.NET
+		{CA929569-6D05-469B-A699-E7D8D192EBC1}.Debug.Build.0 = Debug|.NET
+		{CA929569-6D05-469B-A699-E7D8D192EBC1}.Release.ActiveCfg = Release|.NET
+		{CA929569-6D05-469B-A699-E7D8D192EBC1}.Release.Build.0 = Release|.NET
+		{36C2791E-D155-4B9C-B193-09038AC9162A}.Debug.ActiveCfg = Debug|.NET
+		{36C2791E-D155-4B9C-B193-09038AC9162A}.Debug.Build.0 = Debug|.NET
+		{36C2791E-D155-4B9C-B193-09038AC9162A}.Release.ActiveCfg = Release|.NET
+		{36C2791E-D155-4B9C-B193-09038AC9162A}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

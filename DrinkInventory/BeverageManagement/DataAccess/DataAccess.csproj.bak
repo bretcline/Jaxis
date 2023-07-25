@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F01FDD3B-FA5D-4629-9CDF-74D02F58109B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Jaxis.Inventory.Data</RootNamespace>
+    <AssemblyName>Jaxis.Inventory.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FileHelpers">
+      <HintPath>..\..\..\DLLS\FileHelpers.dll</HintPath>
+    </Reference>
+    <Reference Include="JaxisExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\DLLS\JaxisExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="JaxisLog4Net">
+      <HintPath>..\..\..\DLLS\JaxisLog4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="SubSonic.Core, Version=3.0.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\DLLS\SubSonic.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BusinessLogic\BLManagerFactory.cs" />
+    <Compile Include="BusinessLogic\BLManagers\ActivityLogBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\IngredientBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\InventoryItemBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\ManufacturerBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\PosPourBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\POSTicketBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\POSTicketItemBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\RecipeBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\ReportBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\SecurableItemBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\AssociatedBottleBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\BLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\BLOnlyManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\BrandedBottleBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\CartBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\CategoryBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\EventBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\GroupBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\InventoryBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\LocationBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\OrganizationBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\PourBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\SizeTypeBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\StandardNozzleBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\StandardPourBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\StandardPriceBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\TagActivityBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\TagAlertBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\TagBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\TicketItemAliasBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\UPCItemBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\UserBLManager.cs" />
+    <Compile Include="BusinessLogic\BLManagers\UserSessionBLManager.cs" />
+    <Compile Include="BusinessLogic\BLObjects\BLBrandedBottle.cs" />
+    <Compile Include="BusinessLogic\BLObjects\BLInventoryItem.cs" />
+    <Compile Include="DataAccess\DataManagerFactory.cs" />
+    <Compile Include="DataAccess\DataManagers\ActivityLogDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\DeviceManager.cs" />
+    <Compile Include="DataAccess\DataManagers\IngredientDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\ManufacturerDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\RecipeDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\ReportDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\SecurableItemDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\CartDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\CategoryDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\DataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\EventDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\GroupDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\InventoryDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\LocationDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\OrganizationDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\PourDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\SizeTypeDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\StandardNozzleDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\TagActivityDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\TagAlertDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\TagDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\TagMoveDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\TicketItemAliasDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\UPCItemDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\UserDataManager.cs" />
+    <Compile Include="DataAccess\DataManagers\UserSessionDataManager.cs" />
+    <Compile Include="DataAccess\DataObjects\ActivityLog.cs" />
+    <Compile Include="DataAccess\DataObjects\DataObjectUtilities.cs" />
+    <Compile Include="DataAccess\DataObjects\Device.cs" />
+    <Compile Include="DataAccess\DataObjects\Generated\ActiveRecord.cs">
+      <DependentUpon>ActiveRecord.tt</DependentUpon>
+      <SubType>Code</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DataAccess\DataObjects\Generated\StoredProcedures.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StoredProcedures.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\DataObjects\Ingredient.cs" />
+    <Compile Include="DataAccess\DataObjects\Nozzle.cs" />
+    <Compile Include="DataAccess\DataObjects\POSTicket.cs" />
+    <Compile Include="DataAccess\DataObjects\POSTicketItem.cs" />
+    <Compile Include="DataAccess\DataObjects\Recipe.cs" />
+    <Compile Include="DataAccess\DataObjects\Report.cs" />
+    <Compile Include="DataAccess\DataObjects\ReportParameter.cs" />
+    <Compile Include="DataAccess\DataObjects\SecurableItem.cs" />
+    <Compile Include="DataAccess\DataObjects\POSTicketItemModifier.cs" />
+    <Compile Include="DataAccess\DataObjects\Category.cs" />
+    <Compile Include="DataAccess\DataObjects\Event.cs" />
+    <Compile Include="DataAccess\DataObjects\EventsXTag.cs" />
+    <Compile Include="DataAccess\DataObjects\Generated\Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\DataObjects\Group.cs" />
+    <Compile Include="DataAccess\DataObjects\GroupsXSecurableItem.cs" />
+    <Compile Include="DataAccess\DataObjects\Inventory.cs" />
+    <Compile Include="DataAccess\DataObjects\Location.cs" />
+    <Compile Include="DataAccess\DataObjects\Organization.cs" />
+    <Compile Include="DataAccess\DataObjects\Pour.cs" />
+    <Compile Include="DataAccess\DataObjects\SizeType.cs" />
+    <Compile Include="DataAccess\DataObjects\StandardPour.cs" />
+    <Compile Include="DataAccess\DataObjects\StandardPrice.cs" />
+    <Compile Include="DataAccess\DataObjects\Tag.cs" />
+    <Compile Include="DataAccess\DataObjects\TagActivity.cs" />
+    <Compile Include="DataAccess\DataObjects\TagAlert.cs" />
+    <Compile Include="DataAccess\DataObjects\TagMove.cs" />
+    <Compile Include="DataAccess\DataObjects\TicketItemAlias.cs" />
+    <Compile Include="DataAccess\DataObjects\UPC.cs" />
+    <Compile Include="DataAccess\DataObjects\UPCItem.cs" />
+    <Compile Include="DataAccess\DataObjects\User.cs" />
+    <Compile Include="DataAccess\DataObjects\UserSession.cs" />
+    <Compile Include="DataAccess\DataObjects\vwPosPour.cs" />
+    <Compile Include="DataAccess\DataObjects\vwUPCItem.cs" />
+    <Compile Include="DataAccess\PosPourDataManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\MessageEngine\JaxisInterfaces\JaxisInterfaces.csproj">
+      <Project>{77AB9947-1F31-4BF2-86ED-24D20ED9A5DB}</Project>
+      <Name>JaxisInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\MessageEngine\Messages\MessageLibrary\MessageLibrary.csproj">
+      <Project>{CF1F61FD-C28D-4B31-A3D8-FA07E8AC1175}</Project>
+      <Name>MessageLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Utils\Jaxis.Utility.Encryption\Jaxis.Utility.Encryption.csproj">
+      <Project>{11CDC9C0-D824-42D1-91B0-EB8C39E90C7C}</Project>
+      <Name>Jaxis.Utility.Encryption</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IDataAccess\IDataAccess.csproj">
+      <Project>{A9552B6C-5BFA-4D23-B813-9FBB548610FF}</Project>
+      <Name>IDataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="DataAccess\DataObjects\Generated\ActiveRecord.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ActiveRecord.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccess\DataObjects\Generated\Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Context.cs</LastGenOutput>
+    </None>
+    <None Include="DataAccess\DataObjects\Generated\MySQL.ttinclude" />
+    <Compile Include="DataAccess\DataObjects\Generated\Settings.ttinclude" />
+    <None Include="DataAccess\DataObjects\Generated\SQLServer.ttinclude" />
+    <None Include="DataAccess\DataObjects\Generated\StoredProcedures.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>StoredProcedures.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

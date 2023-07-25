@@ -1,0 +1,192 @@
+﻿<?xml version="1.0"?>
+<!--
+  For more information on how to configure your ASP.NET application, please visit
+  http://go.microsoft.com/fwlink/?LinkId=152368
+  -->
+
+<configuration>
+    <configSections>
+        <sectionGroup name="devExpress">
+            <section name="compression" type="DevExpress.Web.ASPxClasses.CompressionConfigurationSection, DevExpress.Web.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+            <section name="themes" type="DevExpress.Web.ASPxClasses.ThemesConfigurationSection, DevExpress.Web.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+            <section name="errors" type="DevExpress.Web.ASPxClasses.ErrorsConfigurationSection, DevExpress.Web.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+        </sectionGroup>
+      <section name="log4net" type="log4net.Config.Log4NetConfigurationSectionHandler, log4net" />
+    </configSections>
+
+  <appSettings>
+      <add key="webpages:Version" value="1.0.0.0" />
+      <add key="ClientValidationEnabled" value="true" />
+        <add key="UnobtrusiveJavaScriptEnabled" value="true" />
+    </appSettings>
+
+    <system.web>
+        <compilation debug="true" targetFramework="4.0">
+            <assemblies>
+                <add assembly="System.Web.Abstractions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+                <add assembly="System.Web.Helpers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+                <add assembly="System.Web.Routing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+                <add assembly="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+                <add assembly="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31BF3856AD364E35" />
+
+                <add assembly="DevExpress.Data.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.Utils.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.SpellChecker.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.Web.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.Web.ASPxEditors.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.Web.ASPxThemes.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.Web.ASPxGridView.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.Web.ASPxGridView.v12.1.Export, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.Web.ASPxHtmlEditor.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.Web.ASPxSpellChecker.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.Web.Mvc.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.XtraCharts.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.XtraCharts.v12.1.Web, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.Charts.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.Printing.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.XtraReports.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.XtraReports.v12.1.Web, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.XtraPivotGrid.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.PivotGrid.v12.1.Core, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.Web.ASPxPivotGrid.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+                <add assembly="DevExpress.Web.ASPxPivotGrid.v12.1.Export, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+            </assemblies>
+        </compilation>
+
+        <authentication mode="Forms" />
+
+        <pages>
+            <namespaces>
+                <add namespace="System.Web.Helpers" />
+                <add namespace="System.Web.Mvc" />
+                <add namespace="System.Web.Mvc.Ajax" />
+                <add namespace="System.Web.Mvc.Html" />
+                <add namespace="System.Web.Routing" />
+                <add namespace="System.Web.WebPages" />
+
+                <add namespace="DevExpress.Utils" />
+                <add namespace="DevExpress.Web.ASPxClasses" />
+                <add namespace="DevExpress.Web.ASPxGridView" />
+                <add namespace="DevExpress.Web.ASPxGridView.Export" />
+                <add namespace="DevExpress.Web.ASPxEditors" />
+                <add namespace="DevExpress.Web.ASPxCallbackPanel" />
+                <add namespace="DevExpress.Web.ASPxMenu" />
+                <add namespace="DevExpress.Web.ASPxNavBar" />
+                <add namespace="DevExpress.Web.ASPxPopupControl" />
+                <add namespace="DevExpress.Web.ASPxRoundPanel" />
+                <add namespace="DevExpress.Web.ASPxSplitter" />
+                <add namespace="DevExpress.Web.ASPxTabControl" />
+                <add namespace="DevExpress.Web.ASPxTreeView" />
+                <add namespace="DevExpress.Web.ASPxUploadControl" />
+                <add namespace="DevExpress.Web.ASPxHtmlEditor" />
+                <add namespace="DevExpress.Web.ASPxSpellChecker" />
+                <add namespace="DevExpress.XtraCharts" />
+                <add namespace="DevExpress.XtraCharts.Web" />
+                <add namespace="DevExpress.XtraReports" />
+                <add namespace="DevExpress.XtraReports.UI" />
+                <add namespace="DevExpress.XtraReports.Web" />
+                <add namespace="DevExpress.XtraPivotGrid" />
+                <add namespace="DevExpress.Data.PivotGrid" />
+                <add namespace="DevExpress.Web.ASPxPivotGrid" />
+                <add namespace="DevExpress.Web.ASPxPivotGrid.Export" />
+                <add namespace="DevExpress.Web.Mvc" />
+                <add namespace="DevExpress.Web.Mvc.UI" />
+            </namespaces>
+        </pages>
+        <httpHandlers>
+            <add type="DevExpress.Web.ASPxUploadControl.ASPxUploadProgressHttpHandler, DevExpress.Web.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="ASPxUploadProgressHandlerPage.ashx" validate="false" />
+        </httpHandlers>
+
+        <httpModules>
+            <add type="DevExpress.Web.ASPxClasses.ASPxHttpHandlerModule, DevExpress.Web.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" name="ASPxHttpHandlerModule" />
+        </httpModules>
+
+    </system.web>
+
+    <system.webServer>
+        <validation validateIntegratedModeConfiguration="false" />
+        <modules runAllManagedModulesForAllRequests="true">
+            <add type="DevExpress.Web.ASPxClasses.ASPxHttpHandlerModule, DevExpress.Web.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" name="ASPxHttpHandlerModule" />
+        </modules>
+        <handlers>
+            <add type="DevExpress.Web.ASPxUploadControl.ASPxUploadProgressHttpHandler, DevExpress.Web.v12.1, Version=12.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" verb="GET,POST" path="ASPxUploadProgressHandlerPage.ashx" name="ASPxUploadProgressHandler" preCondition="integratedMode" />
+        </handlers>
+    </system.webServer>
+
+    <runtime>
+        <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+            <dependentAssembly>
+                <assemblyIdentity name="System.Web.Mvc" publicKeyToken="31bf3856ad364e35" />
+                <bindingRedirect oldVersion="1.0.0.0-2.0.0.0" newVersion="3.0.0.0" />
+            </dependentAssembly>
+        </assemblyBinding>
+    </runtime>
+
+    <devExpress>
+        <compression enableHtmlCompression="false" enableCallbackCompression="true" enableResourceCompression="true" enableResourceMerging="true" />
+        <themes enableThemesAssembly="true" />
+        <errors callbackErrorRedirectUrl="" />
+    </devExpress>
+
+  <log4net>
+    <appender name="TraceAppender" type="log4net.Appender.TraceAppender">
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%date %-5level - %message %newline" />
+      </layout>
+    </appender>
+    <appender name="ConsoleAppender" type="log4net.Appender.ConsoleAppender">
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%date %-5level - %message %newline" />
+      </layout>
+    </appender>
+    <appender name="RollingFile" type="log4net.Appender.RollingFileAppender">
+      <file value="C:\source\jaxis\trunk\DrinkInventory\Reporting\Log_Web2.txt" />
+      <appendToFile value="true" />
+      <rollingStyle value="Size" />
+      <maxSizeRollBackups value="5" />
+      <maximumFileSize value="10000KB" />
+      <staticLogFileName value="true" />
+      <layout type="log4net.Layout.PatternLayout">
+        <conversionPattern value="%date %level - %message%newline" />
+      </layout>
+    </appender>
+    <root>
+      <level value="DEBUG" />
+      <appender-ref ref="TraceAppender" />
+      <appender-ref ref="RollingFile" /> 
+      <appender-ref ref="ConsoleAppender" />
+    </root>
+  </log4net>
+  
+  <system.serviceModel>
+    <bindings>
+      <wsHttpBinding>
+        <binding name="WSHttpBinding_IReportingService" closeTimeout="00:01:00"
+          openTimeout="00:01:00" receiveTimeout="00:10:00" sendTimeout="00:01:00"
+          bypassProxyOnLocal="false" transactionFlow="false" hostNameComparisonMode="StrongWildcard"
+          maxBufferPoolSize="64000000" maxReceivedMessageSize="64000000" messageEncoding="Text"
+          textEncoding="utf-8" useDefaultWebProxy="true" allowCookies="false">
+          <readerQuotas maxDepth="32" maxStringContentLength="64000000" maxArrayLength="16384"
+            maxBytesPerRead="64000000" maxNameTableCharCount="64000000" />
+          <reliableSession ordered="true" inactivityTimeout="00:10:00"
+            enabled="false" />
+          <security mode="Message">
+            <transport clientCredentialType="Windows" proxyCredentialType="None"
+              realm="" />
+            <message clientCredentialType="Windows" negotiateServiceCredential="true"
+              algorithmSuite="Default" />
+          </security>
+        </binding>
+      </wsHttpBinding>
+    </bindings>
+    <client>
+      <endpoint address="http://localhost:8732/Design_Time_Addresses/Jaxis/DrinkInventory/Reporting/WcfService/ReportingService/"
+        binding="wsHttpBinding" bindingConfiguration="WSHttpBinding_IReportingService"
+        contract="ReportingService.IReportingService" name="WSHttpBinding_IReportingService">
+        <identity>
+          <dns value="localhost" />
+        </identity>
+      </endpoint>
+    </client>
+  </system.serviceModel>
+</configuration>

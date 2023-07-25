@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.377</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2B4F530A-C351-450F-ABC5-2EABCA2399C2}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <AssemblyName>IDENTEC.desktop.NET</AssemblyName>
+    <OutputType>Library</OutputType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="NLog">
+      <HintPath>..\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="IDENTEC\Tags\Tag.cs" />
+    <Compile Include="IDENTEC\Tags\ResponseTag.cs" />
+    <Compile Include="IDENTEC\Tags\iD2Tag.cs" />
+    <Compile Include="IDENTEC\Readers\Port.cs" />
+    <Compile Include="IDENTEC\ByteBufferArray.cs" />
+    <Compile Include="IDENTEC\IC3ProtocolMessage.cs" />
+    <Compile Include="IDENTEC\CRC.cs" />
+    <Compile Include="IDENTEC\Readers\ISolProtocolFramer.cs" />
+    <Compile Include="IDENTEC\Readers\ISolProtocolFramer2.cs" />
+    <Compile Include="IDENTEC\DCB.cs" />
+    <Compile Include="IDENTEC\CommPortException.cs" />
+    <Compile Include="IDENTEC\CommTimeouts.cs" />
+    <Compile Include="IDENTEC\OVERLAPPED.cs" />
+    <Compile Include="IDENTEC\CommEventFlags.cs" />
+    <Compile Include="IDENTEC\EventFlags.cs" />
+    <Compile Include="IDENTEC\CommErrorFlags.cs" />
+    <Compile Include="IDENTEC\CommModemStatusFlags.cs" />
+    <Compile Include="IDENTEC\CommEscapes.cs" />
+    <Compile Include="IDENTEC\APIErrors.cs" />
+    <Compile Include="IDENTEC\APIConstants.cs" />
+    <Compile Include="IDENTEC\CommStat.cs" />
+    <Compile Include="IDENTEC\NativeMethods.cs" />
+    <Compile Include="IDENTEC\Readers\iCardCommunicationsException.cs" />
+    <Compile Include="IDENTEC\Readers\iCardTimeoutException.cs" />
+    <Compile Include="IDENTEC\Readers\ReaderTimeoutException.cs" />
+    <Compile Include="IDENTEC\Readers\Reader.cs" />
+    <Compile Include="IDENTEC\Readers\iCard.cs" />
+    <Compile Include="IDENTEC\Readers\ITagReaderIQ.cs" />
+    <Compile Include="IDENTEC\Readers\ITagReaderID2.cs" />
+    <Compile Include="IDENTEC\Readers\iCard3.cs" />
+    <Compile Include="IDENTEC\IBusDevice.cs" />
+    <Compile Include="IDENTEC\Readers\iCardCF.cs" />
+    <Compile Include="IDENTEC\Frequency.cs" />
+    <Compile Include="IDENTEC\Readers\CRC.cs" />
+    <Compile Include="IDENTEC\Readers\DateTimeConvertor.cs" />
+    <Compile Include="IDENTEC\Readers\iCardProductionInformation.cs" />
+    <Compile Include="IDENTEC\Readers\RegionException.cs" />
+    <Compile Include="IDENTEC\Readers\EngineHourTagHelper.cs" />
+    <Compile Include="IDENTEC\Readers\TagDataFormatter.cs" />
+    <Compile Include="IDENTEC\Readers\CRCException.cs" />
+    <Compile Include="IDENTEC\Readers\iPort3.cs" />
+    <Compile Include="IDENTEC\Readers\iPORT3Exception.cs" />
+    <Compile Include="IDENTEC\ASCII.cs" />
+    <Compile Include="IDENTEC\Handshake.cs" />
+    <Compile Include="IDENTEC\Parity.cs" />
+    <Compile Include="IDENTEC\StopBits.cs" />
+    <Compile Include="IDENTEC\DTRControlFlows.cs" />
+    <Compile Include="IDENTEC\RTSControlFlows.cs" />
+    <Compile Include="IDENTEC\BaudRates.cs" />
+    <Compile Include="IDENTEC\BasicPortSettings.cs" />
+    <Compile Include="IDENTEC\DetailedPortSettings.cs" />
+    <Compile Include="IDENTEC\HandshakeNone.cs" />
+    <Compile Include="IDENTEC\Readers\BeaconReaders\TagBeaconEventArgs.cs" />
+    <Compile Include="IDENTEC\Readers\BeaconReaders\iCardR2ErrorEventArgs.cs" />
+    <Compile Include="IDENTEC\Readers\BeaconReaders\iCardR2.cs" />
+    <Compile Include="IDENTEC\Tags\iQTag.cs" />
+    <Compile Include="IDENTEC\Tags\iQTagVersionInfo.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\IWritableInterface.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\IRTLSTagInterface.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\ILoggerInterface.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\Info\TagFeature.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\Info\Logger.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\Info\Loop.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\Info\Temperature.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\Info\DigitalIO.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\Info\PushButton.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\Info\LED.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\Info\RS232.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\Info\TagDescription.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\Register.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\AlarmFlag.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\EventType.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\BeaconInformation.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\MotionTriggeredRangingBehavior.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\BatteryStatus.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\LEDColor.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\TagType.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\AlarmStatus.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\AlarmInfo.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\ILR350Tag.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\iQ350.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\iQ350Logger.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\iQ350RTLS.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\iB350.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\CompareTagByManufacturerID.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\CompareTagBySerialNumber.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\ILR350TagCollection.cs" />
+    <Compile Include="IDENTEC\ILR350\Tags\iQ350TagCollection.cs" />
+    <Compile Include="IDENTEC\ILR350\RFBaudRate.cs" />
+    <Compile Include="IDENTEC\ILR350\WakeUpMode.cs" />
+    <Compile Include="IDENTEC\iBusModule.cs" />
+    <Compile Include="IDENTEC\ILR350\Readers\ILR350Reader.cs" />
+    <Compile Include="IDENTEC\ILR350\Readers\iPortM350.cs" />
+    <Compile Include="IDENTEC\ILR350\Readers\RTLSDevice.cs" />
+    <Compile Include="IDENTEC\ILR350\Readers\iPortM350RTLS.cs" />
+    <Compile Include="IDENTEC\ILR350\Readers\iSAT.cs" />
+    <Compile Include="IDENTEC\ILR350\Readers\iCardCF350.cs" />
+    <Compile Include="IDENTEC\PositionMarker\SynchSlots.cs" />
+    <Compile Include="IDENTEC\PositionMarker\PositionMarker.cs" />
+    <Compile Include="IDENTEC\Registry.cs" />
+    <Compile Include="IDENTEC\RootKeys.cs" />
+    <Compile Include="IDENTEC\RegistryKey.cs" />
+    <Compile Include="IDENTEC\RegistryValueKind.cs" />
+    <Compile Include="IDENTEC\Tags\DigitalInputLogging\DigitalInputLog.cs" />
+    <Compile Include="IDENTEC\Tags\DigitalInputLogging\DigitalInputLogSample.cs" />
+    <Compile Include="IDENTEC\Tags\DigitalInputLogging\DigitalInputSampleCollection.cs" />
+    <Compile Include="IDENTEC\Tags\DigitalInputLogging\TagHasWrongLoggerException.cs" />
+    <Compile Include="IDENTEC\Readers\CFReaderSearch.cs" />
+    <Compile Include="IDENTEC\Readers\BeaconReaders\IBeaconReader.cs" />
+    <Compile Include="IDENTEC\Readers\BeaconReaders\iCardCFB.cs" />
+    <Compile Include="IDENTEC\Readers\BeaconReaders\TagListBehavior.cs" />
+    <Compile Include="IDENTEC\Readers\ModularReader.cs" />
+    <Compile Include="IDENTEC\Readers\BeaconReaders\iPortR2.cs" />
+    <Compile Include="IDENTEC\Readers\BeaconReaders\iPortMB.cs" />
+    <Compile Include="IDENTEC\AntennaSignals.cs" />
+    <Compile Include="IDENTEC\MultiAntennaSignals.cs" />
+    <Compile Include="IDENTEC\Tags\BatteryStatus.cs" />
+    <Compile Include="IDENTEC\Tags\TagReadDataResult.cs" />
+    <Compile Include="IDENTEC\Tags\TagReadStringResult.cs" />
+    <Compile Include="IDENTEC\Tags\TagWriteDataResult.cs" />
+    <Compile Include="IDENTEC\Tags\TagCollection.cs" />
+    <Compile Include="IDENTEC\Tags\PartialTagCommunicationsException.cs" />
+    <Compile Include="IDENTEC\Tags\InvalidTagOperationException.cs" />
+    <Compile Include="IDENTEC\Tags\TagDataException.cs" />
+    <Compile Include="IDENTEC\Tags\LoopData.cs" />
+    <Compile Include="IDENTEC\Tags\LoopPositionInfo.cs" />
+    <Compile Include="IDENTEC\Tags\BeaconTags\BeaconTag.cs" />
+    <Compile Include="IDENTEC\Tags\BeaconTags\iB2Tag.cs" />
+    <Compile Include="IDENTEC\Tags\BeaconTags\iB2AntennaDetection.cs" />
+    <Compile Include="IDENTEC\Readers\ICompatibleIOStream.cs" />
+    <Compile Include="IDENTEC\Tags\Logging\LogData.cs" />
+    <Compile Include="IDENTEC\Tags\Logging\LogInfoData.cs" />
+    <Compile Include="IDENTEC\Tags\Logging\RawLogData.cs" />
+    <Compile Include="IDENTEC\Tags\Logging\TemperatureLogData.cs" />
+    <Compile Include="IDENTEC\Tags\Logging\CompareTemperatureLogSamplesByLowestTemperature.cs" />
+    <Compile Include="IDENTEC\Tags\Logging\CompareTemperatureLogSamplesByHighestTemperature.cs" />
+    <Compile Include="IDENTEC\Tags\Logging\LogSample.cs" />
+    <Compile Include="IDENTEC\Tags\Logging\Temperature.cs" />
+    <Compile Include="IDENTEC\Tags\Logging\RawLogSample.cs" />
+    <Compile Include="IDENTEC\Tags\Logging\TemperatureLogSample.cs" />
+    <Compile Include="IDENTEC\Tags\Logging\TemperatureLogSampleCollection.cs" />
+    <Compile Include="IDENTEC\Tags\Logging\RawLogSampleCollection.cs" />
+    <Compile Include="IDENTEC\Tags\Logging\TemperatureExtremes.cs" />
+    <Compile Include="IDENTEC\Tags\Logging\TagHasNoLoggerException.cs" />
+    <Compile Include="IDENTEC\InvalidTagStatusException.cs" />
+    <Compile Include="IDENTEC\DeviceException.cs" />
+    <Compile Include="IDENTEC\InvalidDeviceResponseException.cs" />
+    <Compile Include="IDENTEC\DataStream.cs" />
+    <Compile Include="IDENTEC\SerialPortStream.cs" />
+    <Compile Include="IDENTEC\TCPSocketStream.cs" />
+    <Compile Include="IDENTEC\iDeviceHWInfo.cs" />
+    <Compile Include="IDENTEC\iBusDeviceStatus.cs" />
+    <Compile Include="IDENTEC\iBusAdapter.cs" />
+    <Compile Include="IDENTEC\Readers\ModularReaderBus.cs" />
+    <Compile Include="IDENTEC\Readers\iPortMQ.cs" />
+  </ItemGroup>
+</Project>

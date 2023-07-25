@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LogViewer.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="FileSearchPattern" Type="System.String" Scope="User">
+      <Value Profile="(Default)">*.txt</Value>
+    </Setting>
+    <Setting Name="ApplicationTitle" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Jaxis Log Viewer</Value>
+    </Setting>
+    <Setting Name="LogLineRegex" Type="System.String" Scope="User">
+      <Value Profile="(Default)">(\d\d\d\d-\d\d-\d\d \d\d:\d\d:\d\d,\d\d\d) (.{5}) \[(.{5})] - (.*)</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
